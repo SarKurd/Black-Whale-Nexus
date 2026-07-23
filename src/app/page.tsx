@@ -307,7 +307,7 @@ export default function CommandCenter() {
                   <Link
                     key={p.id}
                     href={`/princes/${p.id}`}
-                    className="group flex items-center gap-2.5 border border-line/70 bg-raised/50 px-2.5 py-2 transition-colors hover:border-gold-line"
+                    className="group flex items-start gap-2.5 border border-line/70 bg-raised/50 px-2.5 py-2 transition-colors hover:border-gold-line"
                   >
                     <Monogram characterId={c.id} size="sm" />
                     <span className="min-w-0">
