@@ -2,9 +2,9 @@
 
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
-import { ARC_END, PRE_ARC } from "@/lib/types";
+import { ARC_END } from "@/lib/types";
 
-export type SpoilerMode = "anime" | "chapter" | "full";
+export type SpoilerMode = "chapter" | "full";
 
 interface PreferencesState {
   spoilerMode: SpoilerMode;
@@ -69,14 +69,14 @@ export const useNexusStore = create<PreferencesState>()(
 
 /**
  * The chapter the whole app renders "as of".
- * anime  → PRE_ARC (arc not yet covered by the anime)
  * chapter → user-selected upper bound
  * full   → ARC_END
+ * (A legacy "anime" value from an older persisted pref falls through to the
+ * chapter bound rather than breaking.)
  */
 export function useEffectiveChapter(): number {
   const mode = useNexusStore((s) => s.spoilerMode);
   const ch = useNexusStore((s) => s.spoilerChapter);
-  if (mode === "anime") return PRE_ARC;
   if (mode === "full") return ARC_END;
   return ch;
 }

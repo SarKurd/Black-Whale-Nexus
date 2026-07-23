@@ -5,7 +5,6 @@ import { ARC_END, ARC_START } from "@/lib/types";
 import { useMounted } from "@/lib/useMounted";
 
 const MODES = [
-  { id: "anime", label: "Anime" },
   { id: "chapter", label: "Manga·Ch" },
   { id: "full", label: "Full" },
 ] as const;
@@ -62,11 +61,6 @@ export function ChapterControl({ large = false }: { large?: boolean }) {
             {effChapter}
           </span>
         </div>
-      )}
-      {effMode === "anime" && (
-        <span className="hidden font-mono text-[10px] tracking-wider text-faint lg:inline">
-          pre-voyage intel only
-        </span>
       )}
     </fieldset>
   );
