@@ -706,12 +706,31 @@ export const relationships: Relationship[] = [
     strength: "strong",
     secret: true,
     confirmed: true,
-    startCh: 0,
-    revealCh: 359,
+    startCh: 346,
+    revealCh: 346,
     mutualAwareness: true,
     description:
-      "The Rat: his bodyguard posting doubles as the Zodiacs' window into the succession war — a fact no Kakin faction holds.",
+      "The Rat — Pariston's vacated seat, bought with the one bribe that works on him: a lead on the Scarlet Eyes. His bodyguard posting doubles as the Zodiacs' window into the succession war — a fact no Kakin faction holds.",
+    history: [
+      {
+        ch: 343,
+        text: "Mizaistom recruits him with a photo of the collector holding multiple sets of Scarlet Eyes: Fourth Prince Tserriednich.",
+      },
+      {
+        ch: 346,
+        text: "Seated at his first Zodiacs meeting; immediately asks the room who Beyond's inside man is.",
+      },
+      {
+        ch: 348,
+        text: "His lie-detection screening of the Hunter Exam doubles as a mole hunt inside the Zodiacs themselves.",
+      },
+    ],
     evidence: [
+      {
+        chapter: 346,
+        note: "First meeting attended as the new Rat.",
+        confidence: "canonical",
+      },
       {
         chapter: 359,
         note: "Reporting channel to Mizaistom active.",
@@ -728,12 +747,27 @@ export const relationships: Relationship[] = [
     strength: "moderate",
     secret: true,
     confirmed: true,
-    startCh: 0,
-    revealCh: 359,
+    startCh: 343,
+    revealCh: 343,
     mutualAwareness: true,
     description:
-      "Zodiac tasking runs through the Ox; Kurapika's reports run back.",
+      "Zodiac tasking runs through the Ox; Kurapika's reports run back. The Ox is also the only Zodiac who knows what the Rat's chains actually do — and has promised to keep it that way.",
+    history: [
+      {
+        ch: 343,
+        text: "Recruitment at the Nostrade bar: Cross Game pins three bouncers while Mizaistom waits.",
+      },
+      {
+        ch: 348,
+        text: "The two run the exam's lie-detection screen together and privately confirm the Zodiacs' mole.",
+      },
+    ],
     evidence: [
+      {
+        chapter: 343,
+        note: "Recruitment shown on-page.",
+        confidence: "canonical",
+      },
       {
         chapter: 360,
         note: "Covert reporting shown.",
@@ -1676,6 +1710,78 @@ export const relationships: Relationship[] = [
     evidence: [{ chapter: 0, note: "Pre-arc.", confidence: "canonical" }],
   },
   {
+    id: "rel-shalnark-member-troupe",
+    from: "shalnark",
+    to: "phantom-troupe",
+    kind: "member-of",
+    directed: true,
+    strength: "strong",
+    secret: false,
+    confirmed: true,
+    startCh: 0,
+    revealCh: 0,
+    endCh: 357,
+    endNote:
+      "Killed by Hisoka in a playground ambush hours after confirming Hisoka's 'death' at Heavens Arena.",
+    mutualAwareness: true,
+    description:
+      "Spider member #6 — the Troupe's tech brain, whose lent phones and Black Voice antennae armed Chrollo for the Hisoka duel.",
+    history: [
+      {
+        ch: 351,
+        text: "His Black Voice, borrowed via Skill Hunter, opens Chrollo's deathmatch playbook.",
+      },
+      {
+        ch: 357,
+        text: "Confirms Hisoka's death at the arena morgue; hours later dies with Kortopi's severed head in his hands.",
+      },
+    ],
+    evidence: [
+      { chapter: 0, note: "Pre-arc.", confidence: "canonical" },
+      {
+        chapter: 357,
+        note: "His corpse is left tied to a swing.",
+        confidence: "canonical",
+      },
+    ],
+  },
+  {
+    id: "rel-kortopi-member-troupe",
+    from: "kortopi",
+    to: "phantom-troupe",
+    kind: "member-of",
+    directed: true,
+    strength: "strong",
+    secret: false,
+    confirmed: true,
+    startCh: 0,
+    revealCh: 0,
+    endCh: 357,
+    endNote:
+      "Killed by Hisoka — decapitated in a public bathroom minutes before Shalnark.",
+    mutualAwareness: true,
+    description:
+      "The Troupe's copyist: Gallery Fake mass-produced the audience doubles that became Chrollo's puppet-bomb army at Heavens Arena.",
+    history: [
+      {
+        ch: 352,
+        text: "His copies, lent through Skill Hunter, fill the arena with expendable duplicates for Convert Hands to hide among.",
+      },
+      {
+        ch: 357,
+        text: "Stands over Hisoka's corpse at the morgue; dies first when the corpse gets up.",
+      },
+    ],
+    evidence: [
+      { chapter: 0, note: "Pre-arc.", confidence: "canonical" },
+      {
+        chapter: 357,
+        note: "His severed head is thrown to Shalnark.",
+        confidence: "canonical",
+      },
+    ],
+  },
+  {
     id: "rel-kalluto-member-troupe",
     from: "kalluto",
     to: "phantom-troupe",
@@ -1790,6 +1896,50 @@ export const relationships: Relationship[] = [
     ],
   },
   {
+    id: "rel-hisoka-killed-shalnark",
+    from: "hisoka",
+    to: "shalnark",
+    kind: "killed",
+    directed: true,
+    strength: "strong",
+    secret: false,
+    confirmed: true,
+    startCh: 357,
+    revealCh: 357,
+    mutualAwareness: true,
+    description:
+      "The war's first message, addressed to Chrollo: caught mid-phone-call, handed Kortopi's head, then beaten down in one strike and left tied to a playground swing for the crows.",
+    evidence: [
+      {
+        chapter: 357,
+        note: "The ambush and the staged corpse shown on-page.",
+        confidence: "canonical",
+      },
+    ],
+  },
+  {
+    id: "rel-hisoka-killed-kortopi",
+    from: "hisoka",
+    to: "kortopi",
+    kind: "killed",
+    directed: true,
+    strength: "strong",
+    secret: false,
+    confirmed: true,
+    startCh: 357,
+    revealCh: 357,
+    mutualAwareness: true,
+    description:
+      "First Spider down after the resurrection: decapitated in a bathroom, his head used as the opening line of Hisoka's declaration — 'two down, ten to go.'",
+    evidence: [
+      {
+        chapter: 357,
+        note: "Hisoka exits the bathroom carrying the head.",
+        confidence: "canonical",
+      },
+    ],
+  },
+  {
     id: "rel-hisoka-hunting-chrollo",
     from: "hisoka",
     to: "chrollo",
@@ -1799,14 +1949,33 @@ export const relationships: Relationship[] = [
     secret: false,
     confirmed: true,
     startCh: 0,
-    revealCh: 359,
+    revealCh: 351,
     mutualAwareness: true,
     description:
       "The unfinished duel: Hisoka's war on the Troupe ends at its head or at his own death, whichever comes second.",
+    history: [
+      {
+        ch: 351,
+        text: "The duel finally lands: a Floor Master deathmatch at Heavens Arena, on Chrollo's terms and years of preparation.",
+      },
+      {
+        ch: 356,
+        text: "Hisoka loses — suffocated under two hundred exploding puppets. Post-mortem Bungee Gum, instructed as he died, restarts his heart in the morgue.",
+      },
+      {
+        ch: 357,
+        text: "The rematch is re-scoped: no more formal duels. He will kill the Spiders one by one until only the head is left.",
+      },
+    ],
     evidence: [
       {
         chapter: 0,
-        note: "Declared after Heavens Arena.",
+        note: "Declared after Heavens Arena (York New).",
+        confidence: "canonical",
+      },
+      {
+        chapter: 351,
+        note: "Deathmatch agreed on-page.",
         confidence: "canonical",
       },
     ],
@@ -1820,12 +1989,35 @@ export const relationships: Relationship[] = [
     strength: "strong",
     secret: false,
     confirmed: true,
-    startCh: 359,
-    revealCh: 359,
+    startCh: 351,
+    revealCh: 351,
     mutualAwareness: true,
     description:
       "The sweep of the lower tiers: eleven legs looking for one magician who is also looking for them.",
+    history: [
+      {
+        ch: 351,
+        text: "He accepts the deathmatch only after years of evasion spent assembling the perfect kit: Black Voice, Order Stamp, Gallery Fake, Sun and Moon, and his own Double Face bookmark.",
+      },
+      {
+        ch: 356,
+        text: "The Sun-and-Moon puppet bomb detonates the arena; Hisoka is pronounced dead. Chrollo walks away planning the Black Whale heist.",
+      },
+      {
+        ch: 357,
+        text: "Shalnark and Kortopi are dead within hours of the 'victory'. The hunt restarts with the roles reversed and two abilities lighter.",
+      },
+      {
+        ch: 359,
+        text: "Aboard the Black Whale, the Troupe's treasure hunt becomes a manhunt.",
+      },
+    ],
     evidence: [
+      {
+        chapter: 351,
+        note: "The prepared-abilities reveal shows the fight was long planned.",
+        confidence: "canonical",
+      },
       { chapter: 363, note: "Search grid shown.", confidence: "canonical" },
     ],
   },
@@ -1838,13 +2030,27 @@ export const relationships: Relationship[] = [
     strength: "strong",
     secret: false,
     confirmed: true,
-    startCh: 0,
-    revealCh: 359,
+    startCh: 357,
+    revealCh: 357,
     mutualAwareness: true,
     description:
       "He left her alive to carry the message; she intends to return it personally.",
+    history: [
+      {
+        ch: 357,
+        text: "The morgue scene: she alone stays to stitch up his corpse — he paid in advance — and is kneeling beside it when the post-mortem Nen restarts his heart.",
+      },
+      {
+        ch: 357,
+        text: "Revived, he binds her with Bungee Gum and dictates the declaration of war through her: he will kill every Spider. Her answer — 'you have no chance' — is taken as delivery confirmation.",
+      },
+    ],
     evidence: [
-      { chapter: 0, note: "Heavens Arena aftermath.", confidence: "canonical" },
+      {
+        chapter: 357,
+        note: "Bound with Bungee Gum, threatening to kill him, as he strolls off.",
+        confidence: "canonical",
+      },
     ],
   },
   {
@@ -2356,6 +2562,321 @@ export const relationships: Relationship[] = [
     ],
   },
   {
+    id: "rel-cheadle-commands-zodiacs",
+    from: "cheadle",
+    to: "zodiacs",
+    kind: "commands",
+    directed: true,
+    strength: "strong",
+    secret: false,
+    confirmed: true,
+    startCh: 0,
+    revealCh: 0,
+    mutualAwareness: true,
+    description:
+      "The Dog chairs the table: 14th chairman of the Association and the Zodiacs' operational head for the V6's special mission — hunt Beyond, reach the Dark Continent, come back with one of the Five Threats.",
+    history: [
+      {
+        ch: 340,
+        text: "Her chairmanship announcement is upstaged by Kakin's broadcast; the V6 tasking arrives the same session.",
+      },
+      {
+        ch: 346,
+        text: "She reorganizes the Zodiacs into science, intelligence, and defense teams for the voyage.",
+      },
+    ],
+    evidence: [
+      {
+        chapter: 340,
+        note: "Cheadle presides over the conference and the special mission.",
+        confidence: "canonical",
+      },
+      {
+        chapter: 346,
+        note: "Team assignments issued under her authority.",
+        confidence: "canonical",
+      },
+    ],
+  },
+  {
+    id: "rel-cheadle-member-zodiacs",
+    from: "cheadle",
+    to: "zodiacs",
+    kind: "member-of",
+    directed: true,
+    strength: "strong",
+    secret: false,
+    confirmed: true,
+    startCh: 0,
+    revealCh: 0,
+    mutualAwareness: true,
+    description: "The Dog — chairman and head of the science team.",
+    evidence: [{ chapter: 0, note: "Pre-arc.", confidence: "canonical" }],
+  },
+  {
+    id: "rel-mizaistom-member-zodiacs",
+    from: "mizaistom",
+    to: "zodiacs",
+    kind: "member-of",
+    directed: true,
+    strength: "strong",
+    secret: false,
+    confirmed: true,
+    startCh: 0,
+    revealCh: 0,
+    mutualAwareness: true,
+    description: "The Ox — intelligence team, crime and legal affairs.",
+    evidence: [{ chapter: 0, note: "Pre-arc.", confidence: "canonical" }],
+  },
+  {
+    id: "rel-botobai-member-zodiacs",
+    from: "botobai",
+    to: "zodiacs",
+    kind: "member-of",
+    directed: true,
+    strength: "strong",
+    secret: false,
+    confirmed: true,
+    startCh: 0,
+    revealCh: 0,
+    mutualAwareness: true,
+    description:
+      "The Dragon — the Zodiacs' senior statesman, defense team lead on the voyage.",
+    evidence: [{ chapter: 0, note: "Pre-arc.", confidence: "canonical" }],
+  },
+  {
+    id: "rel-kanzai-member-zodiacs",
+    from: "kanzai",
+    to: "zodiacs",
+    kind: "member-of",
+    directed: true,
+    strength: "strong",
+    secret: false,
+    confirmed: true,
+    startCh: 0,
+    revealCh: 0,
+    mutualAwareness: true,
+    description:
+      "The Tiger — defense team muscle who needed the Dark Continent explained to him twice.",
+    evidence: [{ chapter: 0, note: "Pre-arc.", confidence: "canonical" }],
+  },
+  {
+    id: "rel-saiyu-member-zodiacs",
+    from: "saiyu",
+    to: "zodiacs",
+    kind: "member-of",
+    directed: true,
+    strength: "strong",
+    secret: false,
+    confirmed: true,
+    startCh: 0,
+    revealCh: 0,
+    mutualAwareness: true,
+    description:
+      "The Monkey — defense team, and the one seat at the table that answers to someone else.",
+    evidence: [{ chapter: 0, note: "Pre-arc.", confidence: "canonical" }],
+  },
+  {
+    id: "rel-ginta-member-zodiacs",
+    from: "ginta",
+    to: "zodiacs",
+    kind: "member-of",
+    directed: true,
+    strength: "strong",
+    secret: false,
+    confirmed: true,
+    startCh: 0,
+    revealCh: 0,
+    mutualAwareness: true,
+    description: "The Sheep — defense team.",
+    evidence: [{ chapter: 0, note: "Pre-arc.", confidence: "canonical" }],
+  },
+  {
+    id: "rel-gel-member-zodiacs",
+    from: "gel",
+    to: "zodiacs",
+    kind: "member-of",
+    directed: true,
+    strength: "strong",
+    secret: false,
+    confirmed: true,
+    startCh: 0,
+    revealCh: 0,
+    mutualAwareness: true,
+    description:
+      "The Snake — science team, drafting disease-control procedure for the new world.",
+    evidence: [{ chapter: 0, note: "Pre-arc.", confidence: "canonical" }],
+  },
+  {
+    id: "rel-cluck-member-zodiacs",
+    from: "cluck",
+    to: "zodiacs",
+    kind: "member-of",
+    directed: true,
+    strength: "strong",
+    secret: false,
+    confirmed: true,
+    startCh: 0,
+    revealCh: 0,
+    mutualAwareness: true,
+    description: "The Chicken — intelligence team.",
+    evidence: [{ chapter: 0, note: "Pre-arc.", confidence: "canonical" }],
+  },
+  {
+    id: "rel-saccho-member-zodiacs",
+    from: "saccho",
+    to: "zodiacs",
+    kind: "member-of",
+    directed: true,
+    strength: "strong",
+    secret: false,
+    confirmed: true,
+    startCh: 0,
+    revealCh: 0,
+    mutualAwareness: true,
+    description:
+      "The Horse — intelligence team; volunteered first to stand watch over Beyond.",
+    evidence: [{ chapter: 0, note: "Pre-arc.", confidence: "canonical" }],
+  },
+  {
+    id: "rel-pyon-member-zodiacs",
+    from: "pyon",
+    to: "zodiacs",
+    kind: "member-of",
+    directed: true,
+    strength: "strong",
+    secret: false,
+    confirmed: true,
+    startCh: 0,
+    revealCh: 0,
+    mutualAwareness: true,
+    description:
+      "The Rabbit — intelligence team; by the voyage's end, running the mainland search for the real Woble.",
+    evidence: [{ chapter: 0, note: "Pre-arc.", confidence: "canonical" }],
+  },
+  {
+    id: "rel-leorio-member-zodiacs",
+    from: "leorio",
+    to: "zodiacs",
+    kind: "member-of",
+    directed: true,
+    strength: "strong",
+    secret: false,
+    confirmed: true,
+    startCh: 346,
+    revealCh: 346,
+    mutualAwareness: true,
+    description:
+      "The Boar — Ging's vacated seat, offered on the strength of the punch that made him famous. He took the call only after securing a second opening for someone he had in mind.",
+    history: [
+      {
+        ch: 343,
+        text: "Cheadle's phone offer: a Zodiac seat plus a medical program under her own supervision. His counter-condition is a seat for Kurapika.",
+      },
+      {
+        ch: 346,
+        text: "Seated at the Zodiacs meeting; assigned to the science team supporting Cheadle's medical unit.",
+      },
+    ],
+    evidence: [
+      {
+        chapter: 343,
+        note: "Recruitment call shown on-page.",
+        confidence: "canonical",
+      },
+      {
+        chapter: 346,
+        note: "Attends the meeting as the new Boar.",
+        confidence: "canonical",
+      },
+    ],
+  },
+  {
+    id: "rel-saiyu-secret-alliance-beyond",
+    from: "saiyu",
+    to: "beyond",
+    kind: "secret-alliance",
+    directed: true,
+    strength: "strong",
+    secret: true,
+    confirmed: true,
+    startCh: 340,
+    revealCh: 348,
+    mutualAwareness: true,
+    description:
+      "The mole in the Zodiacs: the Monkey sits on the team assigned to guard Beyond while working for him — with Pariston reconstructed as the arrangement's architect. The Zodiacs' counter-play is to leave him free and arrest him only at the last moment.",
+    history: [
+      {
+        ch: 348,
+        text: "Kurapika's hidden-camera lie-detection of the Zodiacs' ability-sharing session identifies Saiyu as the traitor.",
+      },
+      {
+        ch: 349,
+        text: "Mizaistom and Kurapika conclude Pariston is the mastermind and that the breakout is planned for landing — so Saiyu stays untouched, watched in secret.",
+      },
+      {
+        ch: 412,
+        text: "Still inside: he pulls cell-watch duty over the man he serves, passing Beyond stacks of lawsuit paperwork 'at random'.",
+      },
+    ],
+    evidence: [
+      {
+        chapter: 348,
+        note: "Kurapika identifies Saiyu as the traitor on the monitor.",
+        confidence: "canonical",
+      },
+      {
+        chapter: 349,
+        note: "Saiyu spoke of his ability relaxed and truthfully — sincere, and on Beyond's side.",
+        confidence: "canonical",
+      },
+    ],
+  },
+  {
+    id: "rel-kanzai-monitoring-beyond",
+    from: "kanzai",
+    to: "beyond",
+    kind: "monitoring",
+    directed: true,
+    strength: "moderate",
+    secret: false,
+    confirmed: true,
+    startCh: 358,
+    revealCh: 412,
+    mutualAwareness: true,
+    description:
+      "Cell-watch rotation aboard Tier 1: the Tiger stands guard over the expedition's detained leader — and gets stuck hand-searching a mountain of 1,047 dismissed lawsuits for contraband.",
+    evidence: [
+      {
+        chapter: 412,
+        note: "Kanzai and Saiyu shown on shift at Beyond's cell during Cleapatro's visit.",
+        confidence: "canonical",
+      },
+    ],
+  },
+  {
+    id: "rel-saiyu-monitoring-beyond",
+    from: "saiyu",
+    to: "beyond",
+    kind: "monitoring",
+    directed: true,
+    strength: "moderate",
+    secret: false,
+    confirmed: true,
+    startCh: 358,
+    revealCh: 412,
+    mutualAwareness: true,
+    description:
+      "The fox guarding the henhouse, by design: the Zodiacs' known mole shares cell-watch duty over his own principal, kept in place so the conspiracy stays legible.",
+    evidence: [
+      {
+        chapter: 412,
+        note: "Saiyu on shift at the cell, handing documents through the bars.",
+        confidence: "canonical",
+      },
+    ],
+  },
+  {
     id: "rel-zodiacs-monitoring-beyond",
     from: "zodiacs",
     to: "beyond",
@@ -2364,15 +2885,38 @@ export const relationships: Relationship[] = [
     strength: "strong",
     secret: false,
     confirmed: true,
-    startCh: 0,
-    revealCh: 359,
+    startCh: 341,
+    revealCh: 341,
     mutualAwareness: true,
     description:
       "Custodial surveillance of the expedition's detained leader — terms he negotiated himself, which worries everyone.",
+    history: [
+      {
+        ch: 341,
+        text: "Beyond walks into the Zodiacs' conference room and instructs them to tell the V5 they have 'captured' him.",
+      },
+      {
+        ch: 342,
+        text: "He declares war on the Zodiacs from inside his cell; Cheadle accepts. Plan settled: transport him imprisoned, release him ashore under watch.",
+      },
+      {
+        ch: 345,
+        text: "He signs the IPA contract — one broken rule means life in prison — then muses that only capacity, means, and contract remain.",
+      },
+      {
+        ch: 349,
+        text: "Kurapika's chains confirm he told the truth: no escape planned before landing. The truce is real, and therefore worse.",
+      },
+    ],
     evidence: [
       {
+        chapter: 341,
+        note: "Self-surrender staged on-page.",
+        confidence: "canonical",
+      },
+      {
         chapter: 359,
-        note: "Confinement arrangement shown.",
+        note: "Confinement arrangement shown aboard.",
         confidence: "canonical",
       },
     ],
@@ -2424,24 +2968,192 @@ export const relationships: Relationship[] = [
     evidence: [{ chapter: 0, note: "Pre-arc.", confidence: "canonical" }],
   },
   {
+    id: "rel-leorio-trusts-kurapika",
+    from: "leorio",
+    to: "kurapika",
+    kind: "trusts",
+    directed: false,
+    strength: "strong",
+    secret: false,
+    confirmed: true,
+    startCh: 0,
+    revealCh: 0,
+    mutualAwareness: true,
+    description:
+      "Hunter Exam family of choice. Leorio's price for joining the Zodiacs was a seat for Kurapika; Kurapika, who answers nobody's calls, took that one.",
+    history: [
+      {
+        ch: 343,
+        text: "Offered the Boar's seat, Leorio's first move is to ask whether there's room for someone else.",
+      },
+      {
+        ch: 344,
+        text: "Reunited by phone: Kurapika asks after Gon, then refuses to hand over his e-mail address — friendship on Kurapika's terms.",
+      },
+      {
+        ch: 346,
+        text: "Side by side at the Zodiacs' table, Boar and Rat.",
+      },
+    ],
+    evidence: [
+      { chapter: 0, note: "Pre-arc friendship.", confidence: "canonical" },
+      {
+        chapter: 343,
+        note: "'Is there still another room in the Zodiacs?'",
+        confidence: "canonical",
+      },
+    ],
+  },
+  {
+    id: "rel-gon-trusts-killua",
+    from: "gon",
+    to: "killua",
+    kind: "trusts",
+    directed: false,
+    strength: "strong",
+    secret: false,
+    confirmed: true,
+    startCh: 0,
+    revealCh: 0,
+    mutualAwareness: true,
+    description:
+      "Family of choice, forged from the Hunter Exam through the Chimera War. Parted ways before the voyage — Gon to Whale Island without his Nen, Killua traveling with Alluka — but the bond is the fixed point both orbit.",
+    evidence: [
+      {
+        chapter: 0,
+        note: "Pre-arc; the separation is shown in the election's aftermath.",
+        confidence: "canonical",
+      },
+    ],
+  },
+  {
+    id: "rel-kurapika-trusts-gon",
+    from: "kurapika",
+    to: "gon",
+    kind: "trusts",
+    directed: true,
+    strength: "strong",
+    secret: false,
+    confirmed: true,
+    startCh: 0,
+    revealCh: 414,
+    mutualAwareness: false,
+    description:
+      "The face behind the oath: promising Oito mainland guardians for the real Woble, Kurapika swears on his life that he has 'friends he trusts more than himself' — and pictures Gon. The trust is older than the war; chapter 414 is just the first time it's said out loud.",
+    evidence: [
+      {
+        chapter: 414,
+        note: "The life-sworn promise, with Gon pictured on-page.",
+        confidence: "canonical",
+      },
+    ],
+  },
+  {
+    id: "rel-kurapika-trusts-killua",
+    from: "kurapika",
+    to: "killua",
+    kind: "trusts",
+    directed: true,
+    strength: "strong",
+    secret: false,
+    confirmed: true,
+    startCh: 0,
+    revealCh: 414,
+    mutualAwareness: false,
+    description:
+      "The second face behind the oath: the friends Kurapika trusts 'more than himself' to protect the Prince ashore are Gon and Killua. An assassin's son, silently nominated guardian of a hidden princess.",
+    evidence: [
+      {
+        chapter: 414,
+        note: "The life-sworn promise, with Killua pictured on-page.",
+        confidence: "canonical",
+      },
+    ],
+  },
+  {
     id: "rel-beyond-negotiating-nasubi",
     from: "beyond",
     to: "nasubi",
     kind: "negotiating",
     directed: false,
     strength: "moderate",
-    secret: true,
-    confirmed: false,
-    startCh: 359,
-    revealCh: 365,
+    secret: false,
+    confirmed: true,
+    startCh: 340,
+    revealCh: 340,
     mutualAwareness: true,
     description:
-      "The expedition's leader and the voyage's sovereign have interlocking interests whose exact terms remain sealed.",
+      "The public face of the deal is simple: Kakin hires the legend, the legend gets his ticket. Everything past that — what Nasubi's rite owes Beyond, and what Beyond's curse network owes Nasubi — remains sealed.",
+    history: [
+      {
+        ch: 340,
+        text: "Nasubi announces to the world that Kakin has hired Beyond Netero to lead the Dark Continent voyage.",
+      },
+      {
+        ch: 342,
+        text: "Saccho translates the trade for Kanzai: Beyond offers the king a place in history in exchange for passage to the Dark Continent.",
+      },
+      {
+        ch: 349,
+        text: "Nasubi lobbies the V5 directly to have Beyond attend the departure celebration; Beyond pledges to act in Hui Guo Rou's interest until landing.",
+      },
+    ],
     evidence: [
       {
+        chapter: 340,
+        note: "The hire announced in the worldwide broadcast.",
+        confidence: "canonical",
+      },
+      {
+        chapter: 342,
+        note: "Saccho's summary of the exchange.",
+        confidence: "canonical",
+      },
+      {
         chapter: 365,
-        note: "Arrangement implied by the voyage's structure.",
+        note: "Deeper arrangement implied by the voyage's structure; terms unshown.",
         confidence: "weak-inference",
+      },
+    ],
+  },
+  {
+    id: "rel-beyond-commands-expedition",
+    from: "beyond",
+    to: "beyond-expedition",
+    kind: "commands",
+    directed: true,
+    strength: "strong",
+    secret: false,
+    confirmed: true,
+    startCh: 340,
+    revealCh: 340,
+    mutualAwareness: true,
+    description:
+      "His team, built in his image: specialists, mercenaries, and one saboteur vice-leader — commanded from inside a jail cell through a truce he wrote himself.",
+    history: [
+      {
+        ch: 340,
+        text: "Introduced to the world flanked by ten key followers, Pariston among them.",
+      },
+      {
+        ch: 342,
+        text: "Ging buys into the roster and claims the number-two seat under him.",
+      },
+      {
+        ch: 347,
+        text: "Field command settles: Muherr's word is absolute in battle; Ging's #2 rank stays nominal — all of it still under Beyond's flag.",
+      },
+    ],
+    evidence: [
+      {
+        chapter: 340,
+        note: "Named expedition leader in the broadcast.",
+        confidence: "canonical",
+      },
+      {
+        chapter: 349,
+        note: "Directs strategy from his cell: truce until landing, true goal after.",
+        confidence: "canonical",
       },
     ],
   },

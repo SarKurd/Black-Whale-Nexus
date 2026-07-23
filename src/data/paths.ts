@@ -181,6 +181,27 @@ export const investigationPaths: InvestigationPath[] = [
     ],
   },
   {
+    id: "expedition-deal",
+    title: "Understand the expedition deal",
+    blurb:
+      "Beyond's announcement, the V5's answer, and the Zodiacs' counter-play.",
+    steps: [
+      { label: "Beyond Netero dossier", href: "/characters/beyond" },
+      { label: "Expedition preparation", href: "/storylines/expedition-prep" },
+      { label: "The Zodiacs", href: "/factions/zodiacs" },
+    ],
+  },
+  {
+    id: "heavens-arena-duel",
+    title: "Replay the Heavens Arena deathmatch",
+    blurb: "Hisoka died on that floor. What got up wants the whole Spider.",
+    steps: [
+      { label: "Hisoka dossier", href: "/characters/hisoka" },
+      { label: "The duel storyline", href: "/storylines/heavens-arena-duel" },
+      { label: "Chapter 357 report", href: "/chapters/357" },
+    ],
+  },
+  {
     id: "catch-up",
     title: "Catch up from a selected chapter",
     blurb: "Set your clearance, then replay the record chapter by chapter.",

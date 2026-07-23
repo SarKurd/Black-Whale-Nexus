@@ -1,7 +1,9 @@
 # Black Whale Nexus
 
-An interactive intelligence archive for the Hunter × Hunter **Succession War arc** —
-the fourteen princes, their guards, the mafia families, the Phantom Troupe, Nen
+An interactive intelligence archive for the full Hunter × Hunter **Succession
+War continuity (chapters 340–414)** — from Beyond Netero's Dark Continent
+announcement and the Hisoka–Chrollo deathmatch through the voyage itself: the
+fourteen princes, their guards, the mafia families, the Phantom Troupe, Nen
 abilities, assassinations, hidden alliances, and simultaneous storylines aboard
 Black Whale No. 1.
 
@@ -52,8 +54,9 @@ npx tsx scripts/validate-content.ts   # referential-integrity check for the data
 Defined in [`src/lib/types.ts`](src/lib/types.ts). Key conventions:
 
 - `revealCh` = the chapter the **reader** learns something; `ch` on history
-  entries = when it becomes true in-universe. `0` means "known pre-arc"
-  (visible even at Anime-only clearance).
+  entries = when it becomes true in-universe. `0` means "known before chapter
+  340" — the 2011 anime ends at chapter 339, so these records are visible even
+  at Anime-only clearance.
 - History is preserved (status, location, relationships, knowledge, risk),
   never overwritten — the spoiler engine (`src/lib/spoiler.ts`) replays it.
 - Every load-bearing claim carries evidence with a confidence class:

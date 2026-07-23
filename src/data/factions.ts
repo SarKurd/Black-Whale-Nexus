@@ -681,12 +681,28 @@ export const factions: Faction[] = [
     leaderCharacterId: "cheadle",
     objectives: [
       {
+        text: "Honor Netero's last request: reach the Dark Continent before (or despite) his son, and capture at least one of the Five Threats.",
+        revealCh: 346,
+      },
+      {
         text: "Deliver the expedition; contain Beyond; keep 200,000 passengers out of the crossfire.",
         revealCh: 359,
       },
     ],
-    resources: ["Zodiacs", "Pro Hunter network", "V5 mandate"],
+    resources: ["Zodiacs", "Pro Hunter network", "V6 mandate"],
     operations: [
+      {
+        text: "V5 hands the Association a special mission — hunt Beyond Netero — hours after Kakin's announcement; Ging and Pariston resign the Zodiacs.",
+        ch: 340,
+      },
+      {
+        text: "Beyond containment deal: V6 formed with Kakin as the sixth seat, the Association accepts the chaperone role, and Beyond signs the six-clause confinement contract.",
+        ch: 345,
+      },
+      {
+        text: "289th Hunter Exam doubles as counterintelligence: Kurapika's lie-detection screen fails every one of Beyond's plants.",
+        ch: 348,
+      },
       {
         text: "Hunter bodyguard placements across prince households.",
         ch: 359,
@@ -704,13 +720,41 @@ export const factions: Faction[] = [
     leaderCharacterId: "cheadle",
     parentFactionId: "hunter-association",
     objectives: [
-      { text: "Contain Beyond Netero.", revealCh: 0 },
+      { text: "Contain Beyond Netero.", revealCh: 341 },
+      {
+        text: "Arrest Saiyu — the identified mole — just before landfall, without tipping Beyond or Pariston.",
+        revealCh: 349,
+      },
       {
         text: "Run Kurapika as an intelligence channel into the succession war.",
         revealCh: 359,
       },
     ],
+    internalConflicts: [
+      {
+        text: "Saiyu, the Monkey, is Beyond's mole — known only to Kurapika and Mizaistom, who are letting him run.",
+        revealCh: 348,
+      },
+    ],
     controlledLocationIds: ["beyond-quarters"],
+    operations: [
+      {
+        text: "Recruitment of the second Boar and Rat: Leorio accepts Cheadle's invitation and hands his second seat to Kurapika.",
+        ch: 343,
+      },
+      {
+        text: "Reorganized into four expedition teams (Science, Intelligence, Defense, Flora/Fauna); members share their abilities to prove innocence — a session Kurapika secretly runs as a mole hunt.",
+        ch: 346,
+      },
+      {
+        text: "Kurapika's Dowsing Chain identifies Saiyu as the informant; the arrest is deferred to just before landfall.",
+        ch: 348,
+      },
+      {
+        text: "Aboard: rotation watch on Beyond's cell (Saccho, Kanzai, Saiyu), courthouse and security command (Botobai, Mizaistom), medical (Cheadle, Leorio, Gel), intelligence (Pyon).",
+        ch: 359,
+      },
+    ],
     introducedCh: 0,
   },
   {
@@ -722,15 +766,19 @@ export const factions: Faction[] = [
       "The Spider, aboard as stowaways in the lower tiers: eleven legs sweeping two hundred thousand passengers for the one man who is hunting them back.",
     leaderCharacterId: "chrollo",
     objectives: [
-      { text: "Find and kill Hisoka.", revealCh: 359 },
+      { text: "Find and kill Hisoka.", revealCh: 357 },
       {
-        text: "Plunder the Black Whale's upper decks before landfall.",
-        revealCh: 379,
+        text: "Plunder the Kakin royal treasure on the Black Whale's upper decks before landfall.",
+        revealCh: 357,
       },
     ],
     territoryNote: "No fixed territory; sweep routes through Tiers 3–5.",
     resources: ["Eleven elite Nen users", "Total mutual loyalty"],
     operations: [
+      {
+        text: "Two members killed ashore: Hisoka, revived from on-page death, beheads Kortopi and strikes down Shalnark, declaring war on the Spider through Machi. Chrollo calls the Troupe to board the Black Whale for the Kakin treasure.",
+        ch: 357,
+      },
       { text: "Ship-wide search grid for Hisoka.", ch: 363 },
       { text: "Collisions with mafia patrols in the lower tiers.", ch: 378 },
       {
@@ -747,6 +795,11 @@ export const factions: Faction[] = [
       },
     ],
     statusByChapter: [
+      {
+        ch: 357,
+        value:
+          "Kortopi and Shalnark dead within hours of the arena duel; war with Hisoka opens at two Spiders down before the voyage even begins.",
+      },
       { ch: 377, value: "Sweep expanding; Illumi and Kalluto integrated." },
       { ch: 390, value: "Hisoka still unfound; patience thinning." },
       {
@@ -897,7 +950,7 @@ export const factions: Faction[] = [
       "The civilian expedition to the Dark Continent that the whole voyage nominally serves — its leader in custody, its ranks salted with agendas (Ging, Pariston) that dwarf the manifest. Since ch. 401 the file reads differently: Beyond's real network is a generation of secret, cursed children seeded through Kakin's guard corps.",
     leaderCharacterId: "beyond",
     objectives: [
-      { text: "Reach and survey the Dark Continent.", revealCh: 0 },
+      { text: "Reach and survey the Dark Continent.", revealCh: 340 },
       {
         text: "Steer the succession through the curse-sacrifice children — ten strong curses for fourteen princes, possibly toward an heir of Beyond's own blood.",
         revealCh: 401,
@@ -919,6 +972,18 @@ export const factions: Faction[] = [
     ],
     operations: [
       {
+        text: "Kakin's worldwide broadcast: King Nasubi announces the voyage and unveils Beyond as its leader; volunteers flood in.",
+        ch: 340,
+      },
+      {
+        text: "Beyond surrenders to the Zodiacs ('tell V5 you captured me'), declares war on them from the cell, and signs the six-clause confinement contract.",
+        ch: 345,
+      },
+      {
+        text: "Ging buys the No. 2 slot; Muherr's 'Stone Wall' mercenaries take absolute field command, and the roster of ~25 expert Temp Hunters closes ranks.",
+        ch: 347,
+      },
+      {
         text: "Unma weaponizes Furykov's curse to force the TSK-17 poisoning of Benjamin — Beyond's seal doing work he may never have ordered.",
         ch: 413,
       },
@@ -930,6 +995,6 @@ export const factions: Faction[] = [
           "Leader still in comfortable custody, requesting meetings and filing lawsuits; his curse network is now the war's deepest open question.",
       },
     ],
-    introducedCh: 0,
+    introducedCh: 340,
   },
 ];

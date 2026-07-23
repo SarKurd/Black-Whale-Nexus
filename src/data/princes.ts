@@ -99,6 +99,10 @@ export const princes: Prince[] = [
     },
     developments: [
       {
+        ch: 348,
+        text: "Confirms the contest terms to Tserriednich by phone; his guards skip the Hunter Exam entirely, keeping their abilities off the Association's books.",
+      },
+      {
         ch: 361,
         text: "Guard-exchange gambit places his soldiers in rival suites.",
       },
@@ -371,6 +375,14 @@ export const princes: Prince[] = [
         "Reads people frighteningly well in person; institutionally average.",
     },
     developments: [
+      {
+        ch: 345,
+        text: "On-page debut: two invited guests murdered in his hotel bath between succession errands.",
+      },
+      {
+        ch: 349,
+        text: "Completes the Seed Urn Ceremony — the first prince shown taking a Guardian Spirit Beast egg.",
+      },
       { ch: 368, text: "Forces Theta to begin genuine Nen instruction." },
       {
         ch: 375,
@@ -517,6 +529,10 @@ export const princes: Prince[] = [
       intelligence: "Effectively none.",
     },
     developments: [
+      {
+        ch: 350,
+        text: "Hires Izunavi — one of Kurapika's five planted Hunters — off the pre-voyage bodyguard listings.",
+      },
       { ch: 366, text: "Beast's influence over readers of her book hinted." },
     ],
   },
@@ -584,6 +600,14 @@ export const princes: Prince[] = [
         "His mafia channel cuts both ways — but his personal reads are the household's best asset.",
     },
     developments: [
+      {
+        ch: 348,
+        text: "Every one of his bodyguard applicants fails the 289th Hunter Exam screen.",
+      },
+      {
+        ch: 350,
+        text: "Hires Basho — one of Kurapika's five planted Hunters — off the pre-voyage bodyguard listings.",
+      },
       { ch: 378, text: "Cha-R procurement channel surfaces in the record." },
       {
         ch: 386,
@@ -737,6 +761,10 @@ export const princes: Prince[] = [
         "Transformed: he now sees through Balsamilco's eyes inside Benjamin's own command loop.",
     },
     developments: [
+      {
+        ch: 350,
+        text: "Posted no bodyguard listing; Kurapika profiles him off the six decoy ads, and Oito's trap catches applicants aiming for him.",
+      },
       { ch: 359, text: "Publicly refuses the succession rite." },
       { ch: 375, text: "Beast marks his sleeping guards with seals." },
       {
@@ -812,6 +840,10 @@ export const princes: Prince[] = [
       intelligence: "Sharp personal reads; no network.",
     },
     developments: [
+      {
+        ch: 350,
+        text: "Hires Melody — one of Kurapika's five planted Hunters — off the pre-voyage bodyguard listings.",
+      },
       {
         ch: 381,
         text: "The act drops: the escape plan and the sisters' true bond revealed.",
@@ -963,6 +995,10 @@ export const princes: Prince[] = [
       intelligence: "None.",
     },
     developments: [
+      {
+        ch: 350,
+        text: "Hires Hanzo — one of Kurapika's five planted Hunters — off the pre-voyage bodyguard listings.",
+      },
       { ch: 361, text: "Guard reassignment to Marayam recorded." },
       { ch: 368, text: "Killed; the war's first royal casualty." },
       {
@@ -1023,6 +1059,10 @@ export const princes: Prince[] = [
       intelligence: "None.",
     },
     developments: [
+      {
+        ch: 350,
+        text: "Hires Biscuit — one of Kurapika's five planted Hunters — off the pre-voyage bodyguard listings.",
+      },
       { ch: 361, text: "Momoze's guards absorbed into his detail." },
       {
         ch: 390,
@@ -1116,6 +1156,10 @@ export const princes: Prince[] = [
         "Paradoxically the best-informed camp aboard: Little Eye reconnaissance plus the class network.",
     },
     developments: [
+      {
+        ch: 350,
+        text: "Queen Oito hires Kurapika through the fake 'Halkenburg' listing; her real ask is getting Woble off the ship.",
+      },
       { ch: 359, text: "First guard deaths inside the sealed suite." },
       { ch: 361, text: "Little Eye rat reconnaissance maps hidden passages." },
       {

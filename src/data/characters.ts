@@ -27,10 +27,10 @@ export const characters: Character[] = [
     ],
     monogram: "P1",
     factionIds: ["benjamin-camp", "royal-family", "kakin-military"],
-    introducedCh: 358,
+    introducedCh: 348,
     nenType: "unknown",
     statusHistory: [
-      { ch: 358, status: "alive" },
+      { ch: 348, status: "alive" },
       {
         ch: 413,
         status: "alive",
@@ -87,7 +87,8 @@ export const characters: Character[] = [
       },
     ],
     chapterAppearances: [
-      358, 359, 361, 363, 364, 368, 375, 389, 392, 402, 403, 404, 410, 413,
+      348, 349, 358, 359, 361, 363, 364, 368, 375, 389, 392, 402, 403, 404, 410,
+      413,
     ],
     tags: ["prince", "nen-user", "military"],
   },
@@ -108,10 +109,10 @@ export const characters: Character[] = [
     ],
     monogram: "P2",
     factionIds: ["camilla-camp", "royal-family"],
-    introducedCh: 358,
+    introducedCh: 349,
     nenType: "unknown",
     statusHistory: [
-      { ch: 358, status: "alive" },
+      { ch: 349, status: "alive" },
       {
         ch: 373,
         status: "detained",
@@ -151,7 +152,9 @@ export const characters: Character[] = [
         knownBy: ["sarahell", "fukataki"],
       },
     ],
-    chapterAppearances: [358, 363, 366, 372, 373, 376, 389, 403, 404, 411, 413],
+    chapterAppearances: [
+      349, 358, 363, 366, 372, 373, 376, 389, 403, 404, 411, 413,
+    ],
     tags: ["prince", "nen-user", "assassin"],
   },
   {
@@ -161,8 +164,8 @@ export const characters: Character[] = [
     bio: "A composed pragmatist who prefers negotiation and patronage to open violence. Patron of one of the three mafia families, he plays a longer, quieter game than his elder siblings — buying loyalty with coins his beast produces.",
     monogram: "P3",
     factionIds: ["zhang-lei-camp", "royal-family"],
-    introducedCh: 358,
-    statusHistory: [{ ch: 358, status: "alive" }],
+    introducedCh: 349,
+    statusHistory: [{ ch: 349, status: "alive" }],
     locationHistory: [
       { ch: 359, locationId: "zhang-lei-quarters" },
       {
@@ -183,7 +186,7 @@ export const characters: Character[] = [
         revealCh: 377,
       },
     ],
-    chapterAppearances: [358, 362, 366, 388, 390, 402, 404, 410, 412],
+    chapterAppearances: [349, 358, 362, 366, 388, 390, 402, 404, 410, 412],
     tags: ["prince", "mafia-patron"],
   },
   {
@@ -208,10 +211,10 @@ export const characters: Character[] = [
     ],
     monogram: "P4",
     factionIds: ["tserriednich-camp", "royal-family"],
-    introducedCh: 358,
+    introducedCh: 345,
     nenType: "specialist",
     nenTypeRevealCh: 376,
-    statusHistory: [{ ch: 358, status: "alive" }],
+    statusHistory: [{ ch: 345, status: "alive" }],
     locationHistory: [{ ch: 359, locationId: "tserriednich-quarters" }],
     objectives: [
       {
@@ -242,7 +245,8 @@ export const characters: Character[] = [
       },
     ],
     chapterAppearances: [
-      358, 359, 362, 366, 368, 375, 376, 385, 387, 394, 402, 404, 413,
+      345, 348, 349, 358, 359, 362, 366, 368, 375, 376, 385, 387, 394, 402, 404,
+      413,
     ],
     tags: ["prince", "nen-user", "killer"],
   },
@@ -253,8 +257,8 @@ export const characters: Character[] = [
     bio: "A severe, scientifically minded prince backed by chemical and industrial interests. Approaches the war like an engineering problem: assess, isolate, apply pressure. Quietly probes for alliances with capable outsiders.",
     monogram: "P5",
     factionIds: ["tubeppa-camp", "royal-family"],
-    introducedCh: 358,
-    statusHistory: [{ ch: 358, status: "alive" }],
+    introducedCh: 349,
+    statusHistory: [{ ch: 349, status: "alive" }],
     locationHistory: [
       {
         ch: 359,
@@ -269,7 +273,7 @@ export const characters: Character[] = [
         revealCh: 370,
       },
     ],
-    chapterAppearances: [358, 366, 370],
+    chapterAppearances: [349, 358, 366, 370],
     tags: ["prince"],
     incomplete: true,
   },
@@ -280,8 +284,8 @@ export const characters: Character[] = [
     bio: "A flamboyant romantic who publishes a personal gospel of love and joy. Appears the least martial of the elder princes; her guards suspect her naivety is at least partly sincere.",
     monogram: "P6",
     factionIds: ["tyson-camp", "royal-family"],
-    introducedCh: 358,
-    statusHistory: [{ ch: 358, status: "alive" }],
+    introducedCh: 349,
+    statusHistory: [{ ch: 349, status: "alive" }],
     locationHistory: [
       {
         ch: 359,
@@ -289,7 +293,7 @@ export const characters: Character[] = [
         note: "Quarters not individually depicted; placed in the royal block.",
       },
     ],
-    chapterAppearances: [358, 366, 370],
+    chapterAppearances: [349, 350, 358, 366, 370],
     tags: ["prince"],
     incomplete: true,
   },
@@ -300,8 +304,8 @@ export const characters: Character[] = [
     bio: "A languid prince with an appetite for indulgence, widely read as harmless. His household quietly sources contraband through mafia channels, making his suite a junction between the royal deck and the families below.",
     monogram: "P7",
     factionIds: ["luzurus-camp", "royal-family"],
-    introducedCh: 358,
-    statusHistory: [{ ch: 358, status: "alive" }],
+    introducedCh: 349,
+    statusHistory: [{ ch: 349, status: "alive" }],
     locationHistory: [
       {
         ch: 359,
@@ -316,7 +320,7 @@ export const characters: Character[] = [
         revealCh: 378,
       },
     ],
-    chapterAppearances: [358, 366, 378, 380],
+    chapterAppearances: [349, 350, 358, 366, 378, 380],
     tags: ["prince", "mafia-patron"],
     incomplete: true,
   },
@@ -334,9 +338,9 @@ export const characters: Character[] = [
     ],
     monogram: "P8",
     factionIds: ["salele-camp", "royal-family"],
-    introducedCh: 358,
+    introducedCh: 349,
     statusHistory: [
-      { ch: 358, status: "alive" },
+      { ch: 349, status: "alive" },
       {
         ch: 382,
         status: "dead",
@@ -356,7 +360,7 @@ export const characters: Character[] = [
         note: "Interred beside Momoze, Kacho, and Halkenburg.",
       },
     ],
-    chapterAppearances: [358, 366, 382],
+    chapterAppearances: [349, 358, 366, 382],
     tags: ["prince", "victim"],
   },
   {
@@ -388,10 +392,10 @@ export const characters: Character[] = [
     ],
     monogram: "P9",
     factionIds: ["halkenburg-camp", "royal-family"],
-    introducedCh: 358,
+    introducedCh: 349,
     nenType: "unknown",
     statusHistory: [
-      { ch: 358, status: "alive" },
+      { ch: 349, status: "alive" },
       {
         ch: 403,
         status: "possessed",
@@ -451,7 +455,7 @@ export const characters: Character[] = [
       },
     ],
     chapterAppearances: [
-      358, 359, 366, 375, 382, 385, 386, 390, 403, 404, 407, 411, 413,
+      349, 350, 358, 359, 366, 375, 382, 385, 386, 390, 403, 404, 407, 411, 413,
     ],
     tags: ["prince", "nen-user", "reformist"],
   },
@@ -472,9 +476,9 @@ export const characters: Character[] = [
     ],
     monogram: "P10",
     factionIds: ["kacho-camp", "royal-family"],
-    introducedCh: 358,
+    introducedCh: 349,
     statusHistory: [
-      { ch: 358, status: "alive" },
+      { ch: 349, status: "alive" },
       {
         ch: 383,
         status: "dead",
@@ -513,7 +517,9 @@ export const characters: Character[] = [
         knownBy: ["melody", "kaiser"],
       },
     ],
-    chapterAppearances: [358, 366, 370, 381, 383, 400, 402, 403, 411, 413],
+    chapterAppearances: [
+      349, 350, 358, 366, 370, 381, 383, 400, 402, 403, 411, 413,
+    ],
     tags: ["prince", "victim"],
   },
   {
@@ -533,10 +539,10 @@ export const characters: Character[] = [
     ],
     monogram: "P11",
     factionIds: ["fugetsu-camp", "royal-family"],
-    introducedCh: 358,
+    introducedCh: 349,
     nenType: "unknown",
     statusHistory: [
-      { ch: 358, status: "alive" },
+      { ch: 349, status: "alive" },
       {
         ch: 402,
         status: "incapacitated",
@@ -557,7 +563,7 @@ export const characters: Character[] = [
       },
     ],
     chapterAppearances: [
-      358, 366, 370, 381, 383, 388, 398, 400, 402, 403, 404, 411,
+      349, 358, 366, 370, 381, 383, 388, 398, 400, 402, 403, 404, 411,
     ],
     tags: ["prince", "nen-user"],
   },
@@ -578,9 +584,9 @@ export const characters: Character[] = [
     ],
     monogram: "P12",
     factionIds: ["momoze-camp", "royal-family"],
-    introducedCh: 358,
+    introducedCh: 349,
     statusHistory: [
-      { ch: 358, status: "alive" },
+      { ch: 349, status: "alive" },
       {
         ch: 368,
         status: "dead",
@@ -596,7 +602,7 @@ export const characters: Character[] = [
         note: "Her remains rest in the Princes' Burial Chamber, her Flame of Life lit — confirmed when the chamber is first shown at Halkenburg's interment.",
       },
     ],
-    chapterAppearances: [358, 361, 366, 367, 368],
+    chapterAppearances: [349, 350, 358, 361, 366, 367, 368],
     tags: ["prince", "victim"],
   },
   {
@@ -606,8 +612,8 @@ export const characters: Character[] = [
     bio: "A child prince, too young to understand the rite he was entered into. His mother Sevanti stripped Momoze's household to fortify his. His Guardian Spirit Beast has grown steadily stronger — and no one knows its ceiling.",
     monogram: "P13",
     factionIds: ["marayam-camp", "royal-family"],
-    introducedCh: 358,
-    statusHistory: [{ ch: 358, status: "alive" }],
+    introducedCh: 349,
+    statusHistory: [{ ch: 349, status: "alive" }],
     locationHistory: [
       { ch: 359, locationId: "marayam-quarters" },
       {
@@ -617,7 +623,7 @@ export const characters: Character[] = [
         note: "Hidden with the household inside the beast's duplicate room.",
       },
     ],
-    chapterAppearances: [358, 361, 368, 390, 394],
+    chapterAppearances: [349, 350, 358, 361, 368, 390, 394],
     tags: ["prince", "child"],
   },
   {
@@ -637,9 +643,9 @@ export const characters: Character[] = [
     ],
     monogram: "P14",
     factionIds: ["woble-camp", "royal-family"],
-    introducedCh: 358,
+    introducedCh: 349,
     statusHistory: [
-      { ch: 358, status: "alive" },
+      { ch: 349, status: "alive" },
       {
         ch: 358,
         revealCh: 412,
@@ -663,7 +669,7 @@ export const characters: Character[] = [
         knownBy: ["oito", "shimano", "kurapika", "bill", "sakata", "babimyna"],
       },
     ],
-    chapterAppearances: [358, 359, 360, 361, 362, 368, 370, 412, 414],
+    chapterAppearances: [349, 350, 358, 359, 360, 361, 362, 368, 370, 412, 414],
     tags: ["prince", "infant"],
   },
 
@@ -675,8 +681,8 @@ export const characters: Character[] = [
     bio: "The architect of the succession war: a genial public monarch who entered his fourteen children into a culling rite through the Seed Urn Ceremony. Whether he acts from tradition, faith, or design remains one of the arc's central questions.",
     monogram: "NA",
     factionIds: ["royal-family"],
-    introducedCh: 358,
-    statusHistory: [{ ch: 358, status: "alive" }],
+    introducedCh: 340,
+    statusHistory: [{ ch: 340, status: "alive" }],
     locationHistory: [
       {
         ch: 359,
@@ -684,7 +690,7 @@ export const characters: Character[] = [
         note: "Royal apartments; exact quarters not depicted.",
       },
     ],
-    chapterAppearances: [358, 359, 365, 366],
+    chapterAppearances: [340, 349, 358, 359, 365, 366],
     tags: ["royal"],
   },
   {
@@ -704,8 +710,8 @@ export const characters: Character[] = [
     ],
     monogram: "UN",
     factionIds: ["royal-family"],
-    introducedCh: 358,
-    statusHistory: [{ ch: 358, status: "alive" }],
+    introducedCh: 349,
+    statusHistory: [{ ch: 349, status: "alive" }],
     locationHistory: [{ ch: 359, locationId: "tier-1" }],
     secrets: [
       {
@@ -714,7 +720,7 @@ export const characters: Character[] = [
         knownBy: ["furykov", "benjamin", "halkenburg"],
       },
     ],
-    chapterAppearances: [358, 366, 403],
+    chapterAppearances: [349, 358, 366, 403],
     tags: ["royal", "queen"],
   },
   {
@@ -724,10 +730,10 @@ export const characters: Character[] = [
     bio: "Mother of Camilla, Tubeppa, and Luzurus — and, on the registry, of Halkenburg. Her line spans the war's hottest head and two of its most methodical, and her loaned guards and spies reach into several other households.",
     monogram: "DU",
     factionIds: ["royal-family"],
-    introducedCh: 358,
-    statusHistory: [{ ch: 358, status: "alive" }],
+    introducedCh: 349,
+    statusHistory: [{ ch: 349, status: "alive" }],
     locationHistory: [{ ch: 359, locationId: "tier-1" }],
-    chapterAppearances: [358, 366],
+    chapterAppearances: [349, 358, 366],
     tags: ["royal", "queen"],
     incomplete: true,
   },
@@ -738,10 +744,10 @@ export const characters: Character[] = [
     bio: "Mother of Zhang Lei, her only child. Keeps out of the record; her son's patronage networks do her line's work.",
     monogram: "TZ",
     factionIds: ["royal-family"],
-    introducedCh: 358,
-    statusHistory: [{ ch: 358, status: "alive" }],
+    introducedCh: 349,
+    statusHistory: [{ ch: 349, status: "alive" }],
     locationHistory: [{ ch: 359, locationId: "tier-1" }],
-    chapterAppearances: [358],
+    chapterAppearances: [349, 358],
     tags: ["royal", "queen"],
     incomplete: true,
   },
@@ -752,10 +758,10 @@ export const characters: Character[] = [
     bio: "Mother of Tyson, her only child. Keeps her household's dealings out of view.",
     monogram: "KT",
     factionIds: ["royal-family"],
-    introducedCh: 358,
-    statusHistory: [{ ch: 358, status: "alive" }],
+    introducedCh: 349,
+    statusHistory: [{ ch: 349, status: "alive" }],
     locationHistory: [{ ch: 359, locationId: "tier-1" }],
-    chapterAppearances: [358],
+    chapterAppearances: [349, 358],
     tags: ["royal", "queen"],
     incomplete: true,
   },
@@ -766,10 +772,10 @@ export const characters: Character[] = [
     bio: "Mother of Salé-salé, her only child — a line that floats on the Eighth Prince's pleasure barge and sinks with it.",
     monogram: "SW",
     factionIds: ["royal-family"],
-    introducedCh: 358,
-    statusHistory: [{ ch: 358, status: "alive" }],
+    introducedCh: 349,
+    statusHistory: [{ ch: 349, status: "alive" }],
     locationHistory: [{ ch: 359, locationId: "tier-1" }],
-    chapterAppearances: [358],
+    chapterAppearances: [349, 358],
     tags: ["royal", "queen"],
     incomplete: true,
   },
@@ -780,10 +786,10 @@ export const characters: Character[] = [
     bio: "Mother of the twins Kacho and Fugetsu per supplementary material. Her line's survival now rests entirely on Fugetsu.",
     monogram: "SE",
     factionIds: ["royal-family"],
-    introducedCh: 358,
-    statusHistory: [{ ch: 358, status: "alive" }],
+    introducedCh: 349,
+    statusHistory: [{ ch: 349, status: "alive" }],
     locationHistory: [{ ch: 359, locationId: "tier-1" }],
-    chapterAppearances: [358],
+    chapterAppearances: [349, 358],
     tags: ["royal", "queen"],
     incomplete: true,
   },
@@ -794,8 +800,8 @@ export const characters: Character[] = [
     bio: "Mother of Momoze and Marayam. Sacrificed her daughter's security to fortify her son — a decision the archive records without her ever acknowledging it.",
     monogram: "SV",
     factionIds: ["royal-family"],
-    introducedCh: 358,
-    statusHistory: [{ ch: 358, status: "alive" }],
+    introducedCh: 349,
+    statusHistory: [{ ch: 349, status: "alive" }],
     locationHistory: [
       { ch: 359, locationId: "marayam-quarters" },
       {
@@ -812,7 +818,7 @@ export const characters: Character[] = [
         revealCh: 361,
       },
     ],
-    chapterAppearances: [358, 361, 368, 390],
+    chapterAppearances: [349, 358, 361, 368, 390],
     tags: ["royal", "queen"],
   },
   {
@@ -832,8 +838,8 @@ export const characters: Character[] = [
     ],
     monogram: "OI",
     factionIds: ["woble-camp", "royal-family"],
-    introducedCh: 358,
-    statusHistory: [{ ch: 358, status: "alive" }],
+    introducedCh: 349,
+    statusHistory: [{ ch: 349, status: "alive" }],
     locationHistory: [{ ch: 359, locationId: "room-1014" }],
     objectives: [
       {
@@ -860,7 +866,9 @@ export const characters: Character[] = [
         knownBy: ["kurapika", "bill"],
       },
     ],
-    chapterAppearances: [358, 359, 360, 361, 362, 368, 370, 401, 403, 412, 414],
+    chapterAppearances: [
+      349, 350, 358, 359, 360, 361, 362, 368, 370, 401, 403, 412, 414,
+    ],
     tags: ["royal", "queen"],
   },
 
@@ -872,6 +880,14 @@ export const characters: Character[] = [
     role: "Bodyguard to Prince Woble; Zodiac",
     bio: "Last survivor of the Kurta clan, aboard as Queen Oito's bodyguard and secretly as the Zodiacs' agent. Runs the defense of Room 1014 while hunting the scarlet eyes Tserriednich holds — and burning his own lifespan to do it.",
     bioReveals: [
+      {
+        revealCh: 346,
+        text: "Joined the Zodiacs as the second Rat on Leorio's recommendation. Mizaistom's price for his cooperation was the intelligence he could not refuse: the buyer holding the bulk of the Kurta scarlet eyes is Fourth Prince Tserriednich (ch. 343). Assigned to the Intelligence Team.",
+      },
+      {
+        revealCh: 350,
+        text: "Ran the 289th Hunter Exam's lie-detection screen, failing every one of Beyond's plants, and with Mizaistom secretly identified Saiyu as the Zodiacs' mole (ch. 348). Then planted five trusted Hunters — Izunavi, Biscuit, Basho, Melody, Hanzo — across the princes' bodyguard listings and took the Woble posting himself when the 'Halkenburg' ad turned out to be Queen Oito's trap for people exactly like him.",
+      },
       {
         revealCh: 370,
         text: "Announced a Nen class for rival guards as an intelligence trap, trading his knowledge for a window into every household. Emperor Time's true cost — one hour of life per second — makes each activation a controlled amputation.",
@@ -895,19 +911,24 @@ export const characters: Character[] = [
     statusHistory: [{ ch: 0, status: "alive" }],
     locationHistory: [{ ch: 359, locationId: "room-1014" }],
     objectives: [
-      { text: "Protect Woble and Oito.", kind: "known", revealCh: 358 },
+      { text: "Protect Woble and Oito.", kind: "known", revealCh: 350 },
       {
         text: "Recover the Kurta scarlet eyes from Tserriednich.",
         kind: "hidden",
-        revealCh: 359,
+        revealCh: 343,
       },
       {
         text: "Feed intelligence on the princes to Mizaistom and the Zodiacs.",
         kind: "hidden",
-        revealCh: 359,
+        revealCh: 346,
       },
     ],
     secrets: [
+      {
+        text: "He and Mizaistom know Saiyu is Beyond's mole among the Zodiacs, and plan to arrest him just before landfall without tipping Beyond or Pariston.",
+        revealCh: 348,
+        knownBy: ["mizaistom"],
+      },
       {
         text: "He is the chain user who destroyed the Phantom Troupe's Yorknew operation.",
         revealCh: 0,
@@ -931,8 +952,8 @@ export const characters: Character[] = [
       },
     ],
     chapterAppearances: [
-      358, 359, 360, 361, 362, 363, 367, 368, 370, 371, 373, 375, 377, 385, 390,
-      394, 400, 401, 403, 404, 411, 412, 414,
+      343, 344, 345, 346, 348, 349, 350, 358, 359, 360, 361, 362, 363, 367, 368,
+      370, 371, 373, 375, 377, 385, 390, 394, 400, 401, 403, 404, 411, 412, 414,
     ],
     tags: ["hunter", "nen-user", "zodiac", "protagonist"],
   },
@@ -1211,6 +1232,297 @@ export const characters: Character[] = [
     ],
     chapterAppearances: [359, 365, 385],
     tags: ["hunter", "zodiac"],
+  },
+  {
+    id: "leorio",
+    name: "Leorio Paradinight",
+    aliases: ["Boar (Zodiacs)"],
+    role: "Zodiac; medical student",
+    bio: "Medical student, Hunter, and Kurapika's oldest friend — famous across the Association since the election for punching Ging on live broadcast. Loud, decent, and stubbornly practical about the one thing he wants: to be a doctor for people who cannot afford one.",
+    bioReveals: [
+      {
+        revealCh: 343,
+        text: "Accepted Cheadle's invitation to fill a Zodiac vacancy as the second Boar — on the condition that the other empty seat go to his pick. He recommended Kurapika for the Rat.",
+      },
+      {
+        revealCh: 347,
+        text: "Assigned to the Science Team supporting Cheadle's medical corps (ch. 346). His Nen ability transmits an aura impact through remote surfaces — a 'remote punch' Ging copied and named on-panel, deducing Leorio built it from medical ultrasound thinking: reaching what a scalpel cannot.",
+      },
+      {
+        revealCh: 359,
+        text: "Aboard the Black Whale he works the central medical clinic on Tier 3 with Cheadle, triaging a voyage that shipped one-fifteenth of the doctors it needed.",
+      },
+    ],
+    monogram: "LE",
+    factionIds: ["hunter-association", "zodiacs"],
+    superiorId: "cheadle",
+    introducedCh: 0,
+    nenType: "emitter",
+    nenTypeRevealCh: 0,
+    statusHistory: [{ ch: 0, status: "alive" }],
+    locationHistory: [
+      {
+        ch: 359,
+        locationId: "tier-3-medical",
+        note: "Central medical clinic, organizing supplies with Cheadle.",
+      },
+      {
+        ch: 404,
+        locationId: "tier-3-medical",
+        note: "On Cheadle's emergency team when Halkenburg's failing body is rushed in.",
+      },
+    ],
+    objectives: [
+      {
+        text: "Keep the ship's undersupplied lower-tier medicine functioning; continue his studies under Cheadle.",
+        kind: "known",
+        revealCh: 359,
+      },
+    ],
+    chapterAppearances: [343, 344, 346, 359, 404],
+    tags: ["hunter", "zodiac", "medical"],
+  },
+  {
+    id: "botobai",
+    name: "Botobai Gigante",
+    aliases: ["Dragon (Zodiacs)"],
+    role: "Zodiac; Triple-Star Terrorist Hunter",
+    bio: "The Dragon: the Zodiacs' eldest and most institutional member, a prosecutor by trade with a public prosecutor's gravity. On the expedition's Defense Team, tasked with the post-landing strategy and with making sure Beyond never has anywhere to run.",
+    bioReveals: [
+      {
+        revealCh: 380,
+        text: "Aboard, he and Mizaistom effectively co-run ship security with the Kakin military — redistributing soldiers toward the under-policed lower tiers and quietly minding the Zoldyck brothers once Illumi confirms the whole Troupe is aboard.",
+      },
+    ],
+    monogram: "BO",
+    factionIds: ["hunter-association", "zodiacs"],
+    superiorId: "cheadle",
+    introducedCh: 0,
+    nenType: "unknown",
+    statusHistory: [{ ch: 0, status: "alive" }],
+    locationHistory: [
+      {
+        ch: 359,
+        locationId: "tier-3",
+        note: "Sits the central courthouse on Tier 3.",
+      },
+      {
+        ch: 410,
+        locationId: "ministry-of-justice",
+        note: "Receives Benjamin at the Justice Bureau under Special Martial Law, alongside Mizaistom and Kaiser.",
+      },
+    ],
+    chapterAppearances: [340, 341, 342, 345, 346, 348, 349, 359, 380, 410],
+    tags: ["hunter", "zodiac"],
+  },
+  {
+    id: "kanzai",
+    name: "Kanzai",
+    aliases: ["Tiger (Zodiacs)"],
+    role: "Zodiac; Treasure Hunter",
+    bio: "The Tiger: hot-blooded, loud, and cheerfully out of his depth in any conversation about politics — he had to have the Dark Continent explained to him twice. Defense Team muscle, spending the voyage on the least glamorous job aboard: sitting outside Beyond Netero's cell.",
+    monogram: "KZ",
+    factionIds: ["hunter-association", "zodiacs"],
+    superiorId: "cheadle",
+    introducedCh: 0,
+    nenType: "unknown",
+    statusHistory: [{ ch: 0, status: "alive" }],
+    locationHistory: [
+      {
+        ch: 359,
+        locationId: "beyond-quarters",
+        note: "Holding-cell watch with Saccho and Saiyu; a rotation is proposed so some can support the Royal Army.",
+      },
+      {
+        ch: 412,
+        locationId: "beyond-quarters",
+        note: "Screens Magistrate Cleapatro's mountains of lawsuit files for contraband.",
+      },
+    ],
+    chapterAppearances: [340, 341, 342, 345, 346, 348, 349, 359, 401, 412],
+    tags: ["hunter", "zodiac"],
+    incomplete: true,
+  },
+  {
+    id: "saiyu",
+    name: "Saiyu",
+    aliases: ["Monkey (Zodiacs)"],
+    role: "Zodiac; Blacklist Hunter",
+    bio: "The Monkey: a staff-carrying Blacklist Hunter styled after the Monkey King, assigned by the Defense Team to supervise Beyond personally. The posting is a fox guarding a henhouse — and only two people aboard know it.",
+    monogram: "SY",
+    factionIds: ["hunter-association", "zodiacs"],
+    superiorId: "cheadle",
+    introducedCh: 0,
+    nenType: "unknown",
+    statusHistory: [{ ch: 0, status: "alive" }],
+    locationHistory: [
+      {
+        ch: 359,
+        locationId: "beyond-quarters",
+        note: "Beyond's holding-cell watch, per his own Defense Team assignment.",
+      },
+      {
+        ch: 412,
+        locationId: "beyond-quarters",
+        note: "Passes Cleapatro's case files to Beyond 'at random', taking no requests — a procedure only he controls.",
+      },
+    ],
+    objectives: [
+      {
+        text: "Guard Beyond Netero for the Zodiacs (his official assignment).",
+        kind: "known",
+        revealCh: 346,
+      },
+      {
+        text: "Free Beyond after landfall, as Pariston's inside man.",
+        kind: "hidden",
+        revealCh: 349,
+      },
+    ],
+    secrets: [
+      {
+        text: "He is the mole among the Zodiacs, working for Beyond's side. Kurapika's Dowsing Chain identified him during the ability-sharing session; Beyond himself has not been told he has an ally in the room.",
+        revealCh: 348,
+        knownBy: ["kurapika", "mizaistom", "pariston"],
+      },
+    ],
+    falseBeliefs: [
+      {
+        text: "Believes his cover is intact and the ability-sharing session cleared him.",
+        ch: 348,
+        truth:
+          "Kurapika and Mizaistom marked him the moment he relaxed while describing Three Monkeys; they are letting him run so they can take him just before landfall.",
+      },
+    ],
+    chapterAppearances: [340, 341, 342, 345, 346, 348, 349, 359, 412],
+    tags: ["hunter", "zodiac", "mole"],
+  },
+  {
+    id: "saccho",
+    name: "Saccho Kobayakawa",
+    aliases: ["Horse (Zodiacs)"],
+    role: "Zodiac; Problem Hunter",
+    bio: "The Horse: a lanky, mustachioed pragmatist who volunteered to watch over Beyond back when the deal was struck. Nominally Intelligence Team — background checks — but the voyage finds him where he said he would be: outside the cell.",
+    monogram: "SC",
+    factionIds: ["hunter-association", "zodiacs"],
+    superiorId: "cheadle",
+    introducedCh: 0,
+    nenType: "unknown",
+    statusHistory: [{ ch: 0, status: "alive" }],
+    locationHistory: [
+      {
+        ch: 359,
+        locationId: "beyond-quarters",
+        note: "Holding-cell watch; proposes a Zodiac rotation to Mizaistom so Tier 1 and 2 keep emergency coverage.",
+      },
+    ],
+    chapterAppearances: [340, 341, 342, 345, 346, 348, 349, 359],
+    tags: ["hunter", "zodiac"],
+    incomplete: true,
+  },
+  {
+    id: "pyon",
+    name: "Pyon",
+    aliases: ["Rabbit (Zodiacs)"],
+    role: "Zodiac; Paleograph Hunter",
+    bio: "The Rabbit: a gum-chewing linguist and Paleograph Hunter on the Intelligence Team, who wrote the expedition's language-analysis software and owns the Black Whale's passenger-list data problem. If a record exists anywhere the Association can reach, Pyon is the one who finds it.",
+    bioReveals: [
+      {
+        revealCh: 414,
+        text: "Ran the record search Kurapika quietly commissioned after the baby-swap confession: no official match yet for the real Woble anywhere off-ship — an absence Kurapika immediately weaponized.",
+      },
+    ],
+    monogram: "PY",
+    factionIds: ["hunter-association", "zodiacs"],
+    superiorId: "cheadle",
+    introducedCh: 0,
+    nenType: "unknown",
+    statusHistory: [{ ch: 0, status: "alive" }],
+    locationHistory: [
+      {
+        ch: 359,
+        locationId: "tier-3",
+        note: "Works from the Zodiacs' first-class cabin block with Gel, Ginta, and Cluck.",
+      },
+    ],
+    chapterAppearances: [340, 341, 342, 345, 346, 348, 349, 359],
+    tags: ["hunter", "zodiac", "intel"],
+    incomplete: true,
+  },
+  {
+    id: "ginta",
+    name: "Ginta",
+    aliases: ["Sheep (Zodiacs)"],
+    role: "Zodiac; Poacher Hunter",
+    bio: "The Sheep: a hulking, wild-haired Poacher Hunter on the Flora/Fauna Team, tasked with finding transport specialists in Knov's class for the far side of the voyage. Looks like the muscle; assigned like a naturalist.",
+    bioReveals: [
+      {
+        revealCh: 380,
+        text: "With Botobai, given charge of the ship's most delicate guests: the Zoldyck brothers, after Illumi confirms to Mizaistom that every Phantom Troupe member is aboard.",
+      },
+    ],
+    monogram: "GN",
+    factionIds: ["hunter-association", "zodiacs"],
+    superiorId: "cheadle",
+    introducedCh: 0,
+    nenType: "unknown",
+    statusHistory: [{ ch: 0, status: "alive" }],
+    locationHistory: [
+      {
+        ch: 359,
+        locationId: "tier-3",
+        note: "Zodiacs' first-class cabin block.",
+      },
+    ],
+    chapterAppearances: [340, 341, 342, 345, 346, 348, 349, 359, 380],
+    tags: ["hunter", "zodiac"],
+    incomplete: true,
+  },
+  {
+    id: "gel",
+    name: "Gel",
+    aliases: ["Snake (Zodiacs)"],
+    role: "Zodiac; Poison Hunter",
+    bio: "The Snake: a Poison Hunter, coroner, and pharmacist on the Science Team, writing the expedition's disease-control procedures with Sanbica. Aboard she doubles as the Association's forensics bench — when Cheadle needs a sample analyzed, it goes to Gel.",
+    monogram: "GE",
+    factionIds: ["hunter-association", "zodiacs"],
+    superiorId: "cheadle",
+    introducedCh: 0,
+    nenType: "unknown",
+    statusHistory: [{ ch: 0, status: "alive" }],
+    locationHistory: [
+      {
+        ch: 359,
+        locationId: "tier-3",
+        note: "Zodiacs' first-class cabin block; forensics work for the medical team.",
+      },
+    ],
+    chapterAppearances: [340, 341, 342, 345, 346, 348, 349, 359],
+    tags: ["hunter", "zodiac", "medical"],
+    incomplete: true,
+  },
+  {
+    id: "cluck",
+    name: "Cluck",
+    aliases: ["Chicken (Zodiacs)"],
+    role: "Zodiac; Botanical Hunter",
+    bio: "The Chicken: a Botanical Hunter on the Flora/Fauna Team, aboard to catalogue whatever grows on the far shore of Lake Mobius. One of the quieter seats at the Zodiac table — her real work starts at landfall.",
+    monogram: "CK",
+    factionIds: ["hunter-association", "zodiacs"],
+    superiorId: "cheadle",
+    introducedCh: 0,
+    nenType: "unknown",
+    statusHistory: [{ ch: 0, status: "alive" }],
+    locationHistory: [
+      {
+        ch: 359,
+        locationId: "tier-3",
+        note: "Zodiacs' first-class cabin block.",
+      },
+    ],
+    chapterAppearances: [340, 341, 342, 345, 346, 348, 349, 359],
+    tags: ["hunter", "zodiac"],
+    incomplete: true,
   },
 
   // ── Guards & military ────────────────────────────────────────────────
@@ -1939,7 +2251,17 @@ export const characters: Character[] = [
     id: "chrollo",
     name: "Chrollo Lucilfer",
     role: "Leader of the Phantom Troupe",
-    bio: "The Spider's head, aboard in the lower tiers with most of his surviving members. Killed Hisoka's expectations at Heavens Arena and is now hunted by him in turn; the Troupe's ship-wide sweep is as much a trap for Hisoka as a search.",
+    bio: "The Spider's head, aboard in the lower tiers with most of his surviving members. Killed Hisoka outright at Heavens Arena and is now hunted by the man who refused to stay dead; the Troupe's ship-wide sweep is as much a trap for Hisoka as a search.",
+    bioReveals: [
+      {
+        revealCh: 352,
+        text: "The Heavens Arena duel was engineered end to end: Floor Master status, a members-only crowd to puppetize, and six abilities pre-loaded — Shalnark's Black Voice, Kortopi's Gallery Fake, The Sun and Moon, Order Stamp, Convert Hands, and his own Double Face bookmark, built so Skill Hunter can run two pages at once.",
+      },
+      {
+        revealCh: 357,
+        text: "Won on-page — Hisoka died in the blast — then set the next job by phone before the smoke cleared: gather the Troupe aboard the Black Whale and steal the Kakin royal family's treasure. He promised Shalnark his phone back 'when we board'. Shalnark was dead within the hour.",
+      },
+    ],
     monogram: "CL",
     factionIds: ["phantom-troupe"],
     introducedCh: 0,
@@ -1958,10 +2280,17 @@ export const characters: Character[] = [
       {
         text: "Find and kill Hisoka before Hisoka picks off more members.",
         kind: "known",
-        revealCh: 0,
+        revealCh: 357,
+      },
+      {
+        text: "Steal the Kakin royal family's treasure aboard the Black Whale.",
+        kind: "hidden",
+        revealCh: 357,
       },
     ],
-    chapterAppearances: [371, 377, 380, 392, 393, 395, 405],
+    chapterAppearances: [
+      351, 352, 353, 354, 355, 356, 357, 371, 377, 380, 392, 393, 395, 405,
+    ],
     tags: ["troupe", "nen-user"],
   },
   {
@@ -1970,6 +2299,14 @@ export const characters: Character[] = [
     role: "Rogue Nen user; former Phantom Troupe #4",
     bio: "The magician, presumed aboard and unlocated since the voyage began. Declared war on the Spider after his staged duel with Chrollo, killing Kortopi and Shalnark ashore. Every faction hunting him is working from guesses.",
     bioReveals: [
+      {
+        revealCh: 351,
+        text: "Got the fight he had chased for years: a death match against Chrollo, newly a Floor Master at Heavens Arena. It was a trap from the first bell — Chrollo arrived with six abilities pre-assembled and a members-only crowd to convert into weapons.",
+      },
+      {
+        revealCh: 357,
+        text: "Died on the arena floor — and had already planned for it. Bungee Gum, instructed before death to restart his heart and lungs, revived him on the slab under Machi's needle. He patched the lost hand and leg with Bungee Gum and Texture Surprise, pinned Machi with a message — he will kill every remaining Spider — and opened the account within hours: Kortopi beheaded in a bathroom, Shalnark left tied to a park swing. 'Two down, ten to go.'",
+      },
       {
         revealCh: 405,
         text: "Finally on-page: playing Square-X and slots in the Tier 1 VIP casino, hair down, no makeup, monologuing about his 'normal tastes'. The 'Hisoka' the mafia caught on Tier 3 was Bonolenov in disguise — a decoy Chrollo planted so the families would stand down. Chrollo privately reckons the real one reached Tier 1 as a VIP on some prince's invitation.",
@@ -1982,6 +2319,17 @@ export const characters: Character[] = [
     nenTypeRevealCh: 0,
     statusHistory: [
       { ch: 0, status: "alive" },
+      {
+        ch: 356,
+        revealCh: 357,
+        status: "dead",
+        note: "Killed in the Heavens Arena duel: hand and leg blown off by The Sun and Moon, then suffocated under Chrollo's exploding puppet horde. Death confirmed on-scene by Shalnark, Kortopi, and Machi.",
+      },
+      {
+        ch: 357,
+        status: "alive",
+        note: "Post-mortem Bungee Gum — primed before death to pump his heart and lungs — revives him on the arena floor. Missing parts rebuilt from Bungee Gum and Texture Surprise.",
+      },
       {
         ch: 359,
         status: "missing",
@@ -2009,10 +2357,10 @@ export const characters: Character[] = [
       {
         text: "Kill every remaining Phantom Troupe member, ending with Chrollo.",
         kind: "known",
-        revealCh: 0,
+        revealCh: 357,
       },
     ],
-    chapterAppearances: [405],
+    chapterAppearances: [351, 352, 353, 354, 355, 356, 357, 405],
     tags: ["nen-user", "hunted"],
   },
   {
@@ -2086,6 +2434,12 @@ export const characters: Character[] = [
     name: "Machi Komacine",
     role: "Phantom Troupe #3",
     bio: "Nen-thread specialist and the member with the most personal stake in Hisoka's death — she was the one he spared with a message. Works the sweep with cold focus.",
+    bioReveals: [
+      {
+        revealCh: 357,
+        text: "Stayed behind at the arena to stitch up Hisoka's corpse — he had paid in advance — and became the only witness to his revival. He pinned her with Bungee Gum and made her the courier of his declaration of war: he will fight the Spiders one by one until he has killed them all.",
+      },
+    ],
     monogram: "MC",
     factionIds: ["phantom-troupe"],
     introducedCh: 0,
@@ -2093,7 +2447,7 @@ export const characters: Character[] = [
     nenTypeRevealCh: 0,
     statusHistory: [{ ch: 0, status: "alive" }],
     locationHistory: [{ ch: 359, revealCh: 371, locationId: "tier-5" }],
-    chapterAppearances: [371, 377, 380, 395, 398, 405],
+    chapterAppearances: [357, 371, 377, 380, 395, 398, 405],
     tags: ["troupe", "nen-user"],
   },
   {
@@ -2184,6 +2538,64 @@ export const characters: Character[] = [
     ],
     chapterAppearances: [377, 380],
     tags: ["troupe", "nen-user", "zoldyck", "assassin"],
+  },
+  {
+    id: "shalnark",
+    name: "Shalnark",
+    role: "Phantom Troupe #6 (deceased)",
+    bio: "The Troupe's cheerful technician: a licensed Hunter and its best planner after Chrollo, whose Black Voice antennas turn people into remote-controlled bodies. Lent the ability to Chrollo for the Heavens Arena duel and watched from the stands.",
+    bioReveals: [
+      {
+        revealCh: 357,
+        text: "The last person he spoke to was Chrollo, arranging the Troupe's reunion aboard the Black Whale and the return of his phone 'when we board'. Minutes later Hisoka tossed him Kortopi's severed head and killed him with a single blow while he caught it. His body was left tied to a park swing.",
+      },
+    ],
+    monogram: "SN",
+    factionIds: ["phantom-troupe"],
+    superiorId: "chrollo",
+    introducedCh: 0,
+    nenType: "manipulator",
+    nenTypeRevealCh: 0,
+    statusHistory: [
+      { ch: 0, status: "alive" },
+      {
+        ch: 357,
+        status: "dead",
+        note: "Killed by Hisoka at a park after the Heavens Arena duel — the second name in the war on the Spider. Never boarded the Black Whale.",
+      },
+    ],
+    locationHistory: [],
+    chapterAppearances: [357],
+    tags: ["troupe", "nen-user", "deceased"],
+  },
+  {
+    id: "kortopi",
+    name: "Kortopi",
+    role: "Phantom Troupe #12 (deceased)",
+    bio: "The Troupe's smallest member and its quartermaster of forgeries: Gallery Fake conjured perfect copies of anything he touched, the engine of the Yorknew auction con. Physically the weakest Spider — and loyal enough to lend Chrollo his ability for the Hisoka duel.",
+    bioReveals: [
+      {
+        revealCh: 357,
+        text: "Hisoka's first kill in the war on the Spider: beheaded in a bathroom minutes after leaving Hisoka's confirmed 'corpse', his head handed to Shalnark as the opening move. He never saw it coming.",
+      },
+    ],
+    monogram: "KO",
+    factionIds: ["phantom-troupe"],
+    superiorId: "chrollo",
+    introducedCh: 0,
+    nenType: "conjurer",
+    nenTypeRevealCh: 0,
+    statusHistory: [
+      { ch: 0, status: "alive" },
+      {
+        ch: 357,
+        status: "dead",
+        note: "Beheaded by Hisoka in a bathroom after the Heavens Arena duel — the first Spider killed in Hisoka's war. Never boarded the Black Whale.",
+      },
+    ],
+    locationHistory: [],
+    chapterAppearances: [357],
+    tags: ["troupe", "nen-user", "deceased"],
   },
 
   // ── Mafia ────────────────────────────────────────────────────────────
@@ -2443,6 +2855,10 @@ export const characters: Character[] = [
     bio: "Son of the late chairman and the voyage's nominal reason for existing: the man who sold the Dark Continent to the world. Travels in comfortable confinement under Zodiac guard, radiating the patience of someone whose plan already includes his own imprisonment.",
     bioReveals: [
       {
+        revealCh: 342,
+        text: "Introduced to the world in Kakin's broadcast (ch. 340), he walked into Zodiac headquarters the next chapter and told them to report him 'captured'. From the cell he declared war on the Zodiacs and predicted they would end up releasing him and following him to the Dark Continent — then signed the six-clause confinement contract (24-hour watch, tracking anklet, monitored communication) without hesitation (ch. 345).",
+      },
+      {
         revealCh: 401,
         text: "The contingency has a shape: thirty years of sham marriages produced dozens of secret children — Longhi and Furykov among them — each raised toward a prince's guard detail and each sealed with a death-triggered curse under the tongue. Ten 'strong curse sacrifices' for fourteen princes, and Longhi suspects one prince is his own child.",
       },
@@ -2453,13 +2869,18 @@ export const characters: Character[] = [
     ],
     monogram: "BN",
     factionIds: ["beyond-expedition"],
-    introducedCh: 0,
+    introducedCh: 340,
     nenType: "unknown",
     statusHistory: [
       {
-        ch: 0,
+        ch: 340,
+        status: "alive",
+        note: "Debuts in Kakin's worldwide broadcast as the expedition's leader.",
+      },
+      {
+        ch: 341,
         status: "detained",
-        note: "Voluntary custody aboard, monitored by the Zodiacs.",
+        note: "Surrenders himself to the Zodiacs — 'tell V5 you captured Beyond Netero' — and signs the confinement contract in ch. 345. Voluntary custody, continued aboard.",
       },
     ],
     locationHistory: [{ ch: 359, locationId: "beyond-quarters" }],
@@ -2467,7 +2888,7 @@ export const characters: Character[] = [
       {
         text: "Reach the Dark Continent on his own terms.",
         kind: "known",
-        revealCh: 0,
+        revealCh: 340,
       },
       {
         text: "Whatever contingency makes his detention irrelevant.",
@@ -2488,14 +2909,21 @@ export const characters: Character[] = [
         knownBy: ["longhi", "furykov", "unma"],
       },
     ],
-    chapterAppearances: [359, 365, 385, 401, 412, 414],
+    chapterAppearances: [340, 341, 342, 345, 349, 359, 365, 385, 401, 412, 414],
     tags: ["expedition", "detained"],
   },
   {
     id: "ging",
     name: "Ging Freecss",
-    role: "Double-star Hunter; Beyond expedition member",
-    bio: "Gon's father, embedded in Beyond's civilian expedition roster after outbidding half its specialists. Aboard but peripheral to the succession war — his war is with Pariston, over the expedition itself.",
+    aliases: ["Boar (former Zodiacs)"],
+    role: "Double-star Hunter; Beyond expedition No. 2",
+    bio: "Gon's father, who quit the Zodiacs the moment Kakin announced the voyage and bought his way into Beyond's civilian expedition instead. Aboard but peripheral to the succession war — his war is with Pariston, over the expedition itself.",
+    bioReveals: [
+      {
+        revealCh: 347,
+        text: "Took the team's No. 2 slot by force of wallet and nerve: offered every member double Beyond's pay, shrugged off Pariston's staged mercenary ambush, and revealed he can copy any physical-type Nen ability he has been hit with — demonstrating Leorio's remote punch on the attackers. He settled the money uproar by routing it all into the Norwell Fund for fallen soldiers' families, which places him under Muherr's battlefield chain of command.",
+      },
+    ],
     monogram: "GI",
     factionIds: ["beyond-expedition", "hunter-association"],
     introducedCh: 0,
@@ -2508,9 +2936,15 @@ export const characters: Character[] = [
         note: "Expedition block; exact quarters not depicted.",
       },
     ],
-    chapterAppearances: [359],
+    objectives: [
+      {
+        text: "Help Beyond reach the Dark Continent — freely — while thwarting whatever Pariston is actually planning.",
+        kind: "known",
+        revealCh: 346,
+      },
+    ],
+    chapterAppearances: [340, 342, 343, 344, 345, 346, 347, 359],
     tags: ["hunter", "expedition"],
-    incomplete: true,
   },
   {
     id: "pariston",
@@ -2518,6 +2952,16 @@ export const characters: Character[] = [
     aliases: ["Rat (former Zodiacs)"],
     role: "Beyond expedition vice-leader; former Association chairman",
     bio: "The smiling saboteur: former Zodiac Rat and briefly chairman, now Beyond's deputy for reasons that satisfy nobody. Every faction assumes he is playing them; the only open question is the order.",
+    bioReveals: [
+      {
+        revealCh: 345,
+        text: "Ging's arrival cost him the No. 2 slot and, by his own private admission, taught him what hating someone actually feels like. He staged Muherr's mercenary ambush just to see Ging's abilities — and got caught doing it.",
+      },
+      {
+        revealCh: 349,
+        text: "Mizaistom pegs him as the mastermind behind the Zodiacs' mole: the plan to spring Beyond runs through Saiyu, with the break-out expected at landfall rather than at sea. Pariston himself told Ging he has no escape plan yet — Beyond will free himself once ashore.",
+      },
+    ],
     monogram: "PA",
     factionIds: ["beyond-expedition"],
     introducedCh: 0,
@@ -2530,8 +2974,76 @@ export const characters: Character[] = [
         note: "Expedition block; exact quarters not depicted.",
       },
     ],
-    chapterAppearances: [359],
+    objectives: [
+      {
+        text: "Free Beyond after landfall, on his own schedule — and be entertained along the way.",
+        kind: "hidden",
+        revealCh: 349,
+      },
+    ],
+    chapterAppearances: [340, 342, 343, 344, 345, 346, 347, 359],
     tags: ["expedition", "schemer"],
+  },
+
+  // ── Off-ship ─────────────────────────────────────────────────────────
+  {
+    id: "gon",
+    name: "Gon Freecss",
+    role: "Hunter; off-ship",
+    bio: "The boy who found Ging — and burned out his Nen doing it. Not aboard the Black Whale: after the election he discovered he can no longer see his own aura, and on Ging's advice went home to Whale Island to live with Mito and figure out what he wants next.",
+    bioReveals: [
+      {
+        revealCh: 345,
+        text: "Ging's read on his condition: the aura is probably still flowing — Gon simply can't perceive it anymore. 'You went back to normal. Be thankful that's all it cost.' Gon admits finding Ging was the goal, not staying with him.",
+      },
+      {
+        revealCh: 414,
+        text: "When Kurapika imagines mainland friends who would protect the real Woble without question, the faces he pictures are Gon's and Killua's — the first thread tying the boys back into the war.",
+      },
+    ],
+    monogram: "GO",
+    factionIds: ["hunter-association"],
+    introducedCh: 0,
+    nenType: "enhancer",
+    nenTypeRevealCh: 0,
+    statusHistory: [
+      {
+        ch: 0,
+        status: "alive",
+        note: "Off-ship at Whale Island; unable to use Nen since the election. No on-ship record exists — the location trail is intentionally empty.",
+      },
+    ],
+    locationHistory: [],
+    chapterAppearances: [344, 345, 414],
+    tags: ["hunter", "off-ship"],
+    incomplete: true,
+  },
+  {
+    id: "killua",
+    name: "Killua Zoldyck",
+    role: "Former assassin; off-ship",
+    bio: "Zoldyck heir turned runaway, traveling the world with his sister Alluka after the election. Not aboard the Black Whale — but his advice ghosts through the arc: Kurapika recruited Biscuit using Killua's playbook for handling her.",
+    bioReveals: [
+      {
+        revealCh: 414,
+        text: "Alongside Gon, one of the two faces Kurapika pictures when he starts arranging off-ship protection for the real Woble through Oito's untraceable Yamato mail route.",
+      },
+    ],
+    monogram: "KI",
+    factionIds: [],
+    introducedCh: 0,
+    nenType: "transmuter",
+    nenTypeRevealCh: 0,
+    statusHistory: [
+      {
+        ch: 0,
+        status: "alive",
+        note: "Off-ship, traveling with Alluka. No on-ship record exists — the location trail is intentionally empty.",
+      },
+    ],
+    locationHistory: [],
+    chapterAppearances: [350, 414],
+    tags: ["off-ship", "zoldyck"],
     incomplete: true,
   },
 

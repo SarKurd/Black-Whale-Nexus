@@ -6,16 +6,18 @@
  * than a single "latest" value. `revealCh` marks when the READER learns a
  * fact; `ch` on history entries marks when it becomes true in-universe.
  *
- * Chapter numbering follows the manga. The Succession War arc spans
- * chapters 358–414 in this dataset. `0` on `introducedCh` means the entity
- * was known before the arc (anime-only viewers know it).
+ * Chapter numbering follows the manga. This dataset covers the full
+ * Succession War continuity: chapters 340–414 — from Beyond Netero's
+ * expedition announcement through the current chapter. `0` on
+ * `introducedCh` means the entity was known before chapter 340 (the 2011
+ * anime ends at chapter 339, so anime-only viewers know it).
  */
 
 export type Id = string;
 
-export const ARC_START = 358;
+export const ARC_START = 340;
 export const ARC_END = 414;
-export const PRE_ARC = 357;
+export const PRE_ARC = 339;
 
 /** How certain we are about a claim. Rendered as a visible indicator. */
 export type Confidence =

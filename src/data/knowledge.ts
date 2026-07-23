@@ -16,6 +16,25 @@ export const knowledgeFacts: KnowledgeFact[] = [
     relatedAbilityIds: ["chain-jail", "emperor-time"],
   },
   {
+    id: "fact-hisoka-alive",
+    label: "Hisoka survived Heavens Arena",
+    description:
+      "Hisoka died in the duel's final explosion — suffocated under the puppet horde — and revived himself with a pre-death Bungee Gum instruction. Officially he is among the casualties; actually he is hunting the Phantom Troupe, opening with Kortopi and Shalnark.",
+    kind: "identity",
+    readerRevealCh: 357,
+    relatedCharacterIds: ["hisoka", "machi", "chrollo", "kortopi", "shalnark"],
+    relatedAbilityIds: ["bungee-gum", "texture-surprise"],
+  },
+  {
+    id: "fact-beyond-plan",
+    label: "Beyond's expedition design",
+    description:
+      "Beyond Netero's plan runs on his father's opposition: announce through Kakin, defy the V5 ban, let the Association 'capture' him on schedule, and ride Kakin's royal voyage — the political cover — to a landing point where his own team explores the true Dark Continent unsupervised.",
+    kind: "plan",
+    readerRevealCh: 340,
+    relatedCharacterIds: ["beyond", "pariston", "ging", "cheadle", "nasubi"],
+  },
+  {
     id: "fact-emperor-time-cost",
     label: "Emperor Time costs one hour of life per second",
     description:
@@ -295,6 +314,89 @@ export const characterKnowledge: CharacterKnowledge[] = [
     characterId: "vergei",
     state: "unaware",
     sinceCh: 358,
+  },
+  {
+    factId: "fact-kurapika-is-chain-user",
+    characterId: "mizaistom",
+    state: "was-told",
+    sinceCh: 348,
+    note: "Kurapika explained his chains and their limits during recruit vetting; Mizaistom promised to keep the details from the other Zodiacs.",
+  },
+
+  // fact-hisoka-alive
+  {
+    factId: "fact-hisoka-alive",
+    characterId: "hisoka",
+    state: "hiding",
+    sinceCh: 357,
+    note: "Let the news report his death; boards the Whale disguised.",
+  },
+  {
+    factId: "fact-hisoka-alive",
+    characterId: "machi",
+    state: "knows",
+    sinceCh: 357,
+    note: "Watched the revival at point-blank range, was spared, and carries his declaration of war to the Troupe.",
+  },
+  {
+    factId: "fact-hisoka-alive",
+    characterId: "chrollo",
+    state: "was-told",
+    sinceCh: 358,
+    revealCh: 371,
+    note: "Machi's report plus Kortopi's and Shalnark's murders; by ch 371 he is certain Hisoka is aboard and claims the kill for the whole Troupe.",
+  },
+  {
+    factId: "fact-hisoka-alive",
+    characterId: "illumi",
+    state: "was-told",
+    sinceCh: 358,
+    revealCh: 377,
+    note: "Joined the Troupe at Hisoka's own request — hired to kill him, paid on success.",
+  },
+  {
+    factId: "fact-hisoka-alive",
+    characterId: "kurapika",
+    state: "unaware",
+    sinceCh: 358,
+    note: "Never learned of the Heavens Arena death at all; Hisoka is not on Room 1014's board.",
+  },
+
+  // fact-beyond-plan
+  {
+    factId: "fact-beyond-plan",
+    characterId: "beyond",
+    state: "knows",
+    sinceCh: 340,
+    note: "Author of the plan; scripted his father's countermeasures and his own detention into the schedule.",
+  },
+  {
+    factId: "fact-beyond-plan",
+    characterId: "pariston",
+    state: "knows",
+    sinceCh: 340,
+    note: "Left the Zodiacs to stand among Beyond's ten — inside the plan, playing his own game within it.",
+  },
+  {
+    factId: "fact-beyond-plan",
+    characterId: "ging",
+    state: "knows",
+    sinceCh: 341,
+    note: "Read the surrender as scripted, then bought the expedition's number-two seat by doubling everyone's pay to counter it from inside.",
+  },
+  {
+    factId: "fact-beyond-plan",
+    characterId: "cheadle",
+    state: "suspects",
+    sinceCh: 341,
+    note: "Holds Beyond in custody knowing the 'capture' was offered, not won; maps the rest of the design piecemeal through the V6 negotiations.",
+  },
+  {
+    factId: "fact-beyond-plan",
+    characterId: "nasubi",
+    state: "knows",
+    sinceCh: 340,
+    note: "The counterparty: Kakin's voyage is the plan's political cover, bartered against V6 accession and a cut of the continent.",
   },
 
   // fact-emperor-time-cost

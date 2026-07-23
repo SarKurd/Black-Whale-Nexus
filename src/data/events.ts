@@ -12,6 +12,726 @@ import type { StoryEvent } from "@/lib/types";
 
 export const events: StoryEvent[] = [
   // -------------------------------------------------------------------------
+  // Ch 340–345 — pre-voyage: the announcement and the Zodiacs' response
+  // -------------------------------------------------------------------------
+  {
+    id: "ev-340-kakin-announcement",
+    title: "Nasubi announces the Dark Continent voyage",
+    summary:
+      "Beans interrupts Cheadle's first Zodiac meeting as chairman with a broadcast: Kakin's King Nasubi Hui Guo Rou declares that the voyage to the Dark Continent will launch from Kakin. Having 'technically' become a new nation thirty years ago, Kakin never signed the V5 treaty forbidding the trip.",
+    chapter: 340,
+    kind: "other",
+    locationId: "hunter-hq",
+    participantIds: [
+      "nasubi",
+      "cheadle",
+      "mizaistom",
+      "kanzai",
+      "pyon",
+      "botobai",
+      "gel",
+      "saccho",
+      "ginta",
+      "saiyu",
+      "cluck",
+    ],
+    storylineIds: ["expedition-prep"],
+    consequences: [
+      "The V5 treaty regime is outflanked by a technicality",
+      "The Hunter Association is dragged into Dark Continent politics",
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "ev-340-beyond-revealed",
+    title: "Beyond Netero steps forward as expedition leader",
+    summary:
+      "Nasubi introduces the man Kakin hired to lead the expedition: Beyond Netero, son of the late chairman Isaac Netero — a son the Zodiacs never knew existed. Beyond invites the whole world to come to Kakin and join the journey to the 'new world'.",
+    chapter: 340,
+    kind: "discovery",
+    locationId: "hunter-hq",
+    participantIds: ["beyond", "nasubi", "cheadle"],
+    storylineIds: ["expedition-prep", "beyond-netero"],
+    knowledgeChanges: [
+      { factId: "fact-beyond-plan", characterId: "cheadle", state: "suspects" },
+    ],
+    consequences: [
+      "Netero's posthumous DVD contingency is triggered",
+      "The Association must reckon with its founder's hidden family",
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "ev-340-v5-hunt-order",
+    title: "The V5 order the Zodiacs to hunt Beyond",
+    summary:
+      "Cheadle reveals that Ging and Pariston have resigned from the Zodiacs — and that the V5 have handed the remaining ten a special assignment: hunt down Beyond Netero. Pariston, meanwhile, already stands among Beyond's ten core followers.",
+    chapter: 340,
+    kind: "decision",
+    locationId: "hunter-hq",
+    participantIds: ["cheadle", "ging", "pariston", "beyond"],
+    storylineIds: ["expedition-prep", "beyond-netero"],
+    consequences: [
+      "Two Zodiac seats open — later filled by Leorio and Kurapika",
+      "The Association and Beyond's team are set on a collision course",
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "ev-341-netero-dvd",
+    title: "Netero's second DVD: precede my son",
+    summary:
+      "The Zodiacs watch the DVD Netero left for exactly this contingency. Beyond once defied his father on a Dark Continent trip, took an unexplored route, and brought back new threats — so Netero banned him and the Association from the Continent until his own death. His final request: the Association should reach the Dark Continent before Beyond does.",
+    chapter: 341,
+    kind: "discovery",
+    locationId: "hunter-hq",
+    participantIds: [
+      "cheadle",
+      "mizaistom",
+      "kanzai",
+      "pyon",
+      "botobai",
+      "gel",
+      "saccho",
+      "ginta",
+      "saiyu",
+      "cluck",
+    ],
+    storylineIds: ["expedition-prep", "beyond-netero"],
+    consequences: [
+      "Cheadle accepts the mission on behalf of the Zodiacs",
+      "The Association's rivalry with Beyond becomes a dead man's request",
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "ev-341-beyond-surrenders",
+    title: "Beyond turns himself in",
+    summary:
+      "Mid-argument about how to hunt him, the Zodiacs get a call from Beyond Netero himself — and then the man walks in. He instructs them to tell the V5 that they have 'captured' Beyond Netero, converting his own arrest into the opening move of his negotiation.",
+    chapter: 341,
+    kind: "decision",
+    locationId: "hunter-hq",
+    participantIds: ["beyond", "cheadle", "mizaistom", "botobai", "saiyu"],
+    storylineIds: ["expedition-prep", "beyond-netero"],
+    knowledgeChanges: [
+      { factId: "fact-beyond-plan", characterId: "beyond", state: "hiding" },
+    ],
+    consequences: [
+      "Custody of Beyond becomes the Zodiacs' leverage — and their burden",
+      "Every subsequent 'concession' Beyond makes is a move he planned",
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "ev-342-beyond-declares-war",
+    title: "Beyond declares war on the Zodiacs",
+    summary:
+      "Interviewed in his cell, Beyond predicts the Zodiacs will end up releasing him and joining his voyage, then formally declares war on them; Cheadle accepts and has the exchange recorded. The plan crystallizes: Beyond travels imprisoned, watched, and released only on-site — while he counts on contacting his companions anyway.",
+    chapter: 342,
+    kind: "conversation",
+    locationId: "hunter-hq",
+    participantIds: [
+      "beyond",
+      "cheadle",
+      "mizaistom",
+      "saccho",
+      "kanzai",
+      "gel",
+    ],
+    storylineIds: ["expedition-prep", "beyond-netero"],
+    consequences: [
+      "The Zodiacs commit to going to the Dark Continent with Beyond",
+      "Saccho volunteers as Beyond's warden",
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "ev-342-v6-proposal",
+    title: "The V5 weigh becoming the V6",
+    summary:
+      "With only military options left to stop Kakin, the V5 and the International Permit Agency tally the grim ledger — 149 known attempts on the Dark Continent, 28 survivors, 3 reintegrated — and conclude it is better to usher Kakin into the fold as a sixth member and steer the voyage than to fight it.",
+    chapter: 342,
+    kind: "decision",
+    participantIds: ["nasubi"],
+    storylineIds: ["expedition-prep"],
+    consequences: [
+      "Kakin's voyage moves from rogue act toward sanctioned expedition",
+      "The Hunter Association is slotted in as the trip's chaperone",
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "ev-342-black-whale-presented",
+    title: "The Black Whale is presented to the world",
+    summary:
+      "Kakin unveils its transport vessel: the Black Whale, built to carry 200,000 people, first of a planned fleet meant to move a hundred million emigrants in five years. The maiden voyage will carry Beyond Netero, King Nasubi, and his fourteen princes; civilian berths go by lottery.",
+    chapter: 342,
+    kind: "other",
+    participantIds: ["nasubi", "beyond"],
+    storylineIds: ["expedition-prep", "succession-contest"],
+    consequences: [
+      "The stage of the coming succession war enters the story",
+      "All fourteen princes are committed to the same sealed ship",
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "ev-342-ging-confronts-pariston",
+    title: "Ging challenges Pariston in Beyond's lair",
+    summary:
+      "Ging walks into the expedition team's hideout and calls Pariston's bluff: if the governments stall, Pariston is ready to unleash 5,000 Chimera Ant soldiers he has been sheltering. Ging announces he will no longer let Pariston do as he pleases — he wants to 'play by himself'.",
+    chapter: 342,
+    kind: "conversation",
+    participantIds: ["ging", "pariston"],
+    storylineIds: ["expedition-prep"],
+    consequences: [
+      "Ging inserts himself into Beyond's team as Pariston's counterweight",
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "ev-343-leorio-recruited",
+    title: "Cheadle recruits Leorio to the Zodiacs",
+    summary:
+      "Cheadle phones Leorio and offers him a Zodiac seat, sweetening it with a place in her own medical program for the voyage. Leorio accepts — and immediately asks whether the second vacant chair is still open, because he has someone in mind.",
+    chapter: 343,
+    kind: "decision",
+    participantIds: ["cheadle", "leorio"],
+    storylineIds: ["expedition-prep"],
+    consequences: [
+      "Leorio fills Kanzai's flank as the new Boar",
+      "Kurapika's recruitment is set in motion by his friend",
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "ev-343-mizaistom-recruits-kurapika",
+    title: "Mizaistom offers Kurapika the Rat's seat — and Tserriednich",
+    summary:
+      "Mizaistom tracks Kurapika down and invites him to the Zodiacs at Leorio's recommendation. Kurapika refuses until Mizaistom names the price of joining: the Association knows who holds the largest collection of Scarlet Eyes — Kakin's Fourth Prince, Tserriednich Hui Guo Rou. Kurapika joins.",
+    chapter: 343,
+    kind: "alliance",
+    participantIds: ["mizaistom", "kurapika", "tserriednich"],
+    storylineIds: ["expedition-prep"],
+    consequences: [
+      "Kurapika becomes the Rat — for the eyes, not the voyage",
+      "His collision course with the Fourth Prince is fixed years before boarding",
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "ev-344-ging-buys-team",
+    title: "Ging buys the No. 2 seat",
+    summary:
+      "Rather than fight Beyond's followers, Ging offers to double whatever Beyond paid each of them, upfront, in exchange for the No. 2 position Pariston holds. The team splits over the money — and Ging coolly identifies them all as expert Temp Hunters, about 25 of the Association's 200.",
+    chapter: 344,
+    kind: "decision",
+    participantIds: ["ging", "pariston"],
+    storylineIds: ["expedition-prep"],
+    consequences: [
+      "Ging supplants Pariston as nominal No. 2 of Beyond's team",
+      "Pariston privately admits Ging is the first person he has ever hated",
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "ev-344-gon-nen-lost",
+    title: "Gon cannot use Nen",
+    summary:
+      "Trying to activate his aura, Gon finds nothing answers. Ging later frames it as a return to 'normal' — the price of the contract that gave Gon impossible power against Neferpitou — and tells him to be thankful that was all it cost.",
+    chapter: 344,
+    kind: "discovery",
+    participantIds: ["gon"],
+    storylineIds: ["expedition-prep"],
+    consequences: ["Gon is written out of the coming voyage's power game"],
+    confidence: "canonical",
+  },
+  {
+    id: "ev-344-five-threats-briefing",
+    title: "Ging briefs the team on the Five Threats",
+    summary:
+      "Ging details the five calamities humanity dragged home from the Dark Continent — Brion, Ai, Hellbell, Pap, and the Zobae immortality disease — all deadlier than the Chimera Ants, with containment the only countermeasure. He caps it with a bombshell: the legendary guidebook 'Journey to the New World' is still being written, and its author is Don Freecss.",
+    chapter: 344,
+    kind: "discovery",
+    participantIds: ["ging"],
+    storylineIds: ["expedition-prep"],
+    consequences: [
+      "Beyond's preference for unexplored routes implies a possible sixth threat",
+      "The Freecss name is stitched into the Dark Continent's deep history",
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "ev-345-gon-whale-island",
+    title: "Gon goes home",
+    summary:
+      "On Ging's advice to use the loss as a chance to look for 'something', Gon returns to Whale Island and Mito. Over dinner he admits that finding Ging was the goal, not staying with him — and that without Nen, following his father would only hold him back.",
+    chapter: 345,
+    kind: "movement",
+    participantIds: ["gon"],
+    storylineIds: ["expedition-prep"],
+    confidence: "canonical",
+  },
+  {
+    id: "ev-345-tserriednich-murders",
+    title: "Tserriednich's hotel bathroom",
+    summary:
+      "The Fourth Prince invites two starstruck women to his hotel, chats pleasantly, then phones an aide to order a fresh pair — from a bathroom painted in their blood. In one page the target of Kurapika's mission is revealed as a practiced serial killer.",
+    chapter: 345,
+    kind: "death",
+    participantIds: ["tserriednich"],
+    storylineIds: ["expedition-prep"],
+    consequences: [
+      "Mizaistom's warning about the prince's 'darker side' is grimly confirmed for the reader",
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "ev-345-beyond-contract",
+    title: "Beyond signs the six-clause contract",
+    summary:
+      "At the IPA's direction, Cheadle presents Beyond a contract: 24-hour watch, a tracking anklet, monitored communications, no resistance, all discoveries to the V6, no disclosure — one violation means life in prison. Beyond reads it, signs, stabs the pen through the pad, and notes only three things remain: capacity, means, and contract.",
+    chapter: 345,
+    kind: "decision",
+    locationId: "hunter-hq",
+    participantIds: ["beyond", "cheadle"],
+    storylineIds: ["expedition-prep", "beyond-netero"],
+    knowledgeChanges: [
+      { factId: "fact-beyond-plan", characterId: "cheadle", state: "suspects" },
+    ],
+    consequences: [
+      "Beyond's custody is formalized on paper he clearly plans around",
+    ],
+    confidence: "canonical",
+  },
+  // -------------------------------------------------------------------------
+  // Ch 346–350 — the Zodiacs regroup; Kakin's contest takes shape
+  // -------------------------------------------------------------------------
+  {
+    id: "ev-346-v6-and-roles",
+    title: "The V6 is born; the Zodiacs take their stations",
+    summary:
+      "Cheadle briefs the full Zodiacs — new Rat and Boar included — that the V5 has admitted Kakin and become the V6, and that the Five Threats have been re-ranked above the Chimera Ants. The mission: capture at least one Threat, survive the trip home, and manage Beyond throughout. The twelve split into Science, Intelligence, Defense, and Flora/Fauna teams.",
+    chapter: 346,
+    kind: "decision",
+    locationId: "hunter-hq",
+    participantIds: [
+      "cheadle",
+      "kurapika",
+      "leorio",
+      "mizaistom",
+      "botobai",
+      "saiyu",
+      "kanzai",
+      "gel",
+      "saccho",
+      "ginta",
+      "cluck",
+      "pyon",
+    ],
+    storylineIds: ["expedition-prep"],
+    consequences: [
+      "Kurapika is codenamed Rat; Leorio, Boar",
+      "Kurapika lands on the Intelligence team, handling Beyond and Kakin secrets",
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "ev-346-mole-suspected",
+    title: "Kurapika names the possibility of a Zodiac mole",
+    summary:
+      "In his first meeting, Kurapika asks whether anyone has identified Beyond's allies inside the Association — Beyond planned around his father's death for years, so infiltration is certain. Mizaistom hustles him out and admits he and Cheadle reached the same conclusion: the mole may sit among the Zodiacs themselves, and it must never be mentioned aloud again.",
+    chapter: 346,
+    kind: "investigation",
+    locationId: "hunter-hq",
+    participantIds: ["kurapika", "mizaistom", "cheadle"],
+    storylineIds: ["expedition-prep", "beyond-netero"],
+    consequences: [
+      "Kurapika and Mizaistom begin a private counter-intelligence operation",
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "ev-346-muherr-ultimatum",
+    title: "The mercenaries force the No. 2 question",
+    summary:
+      "A month on, Beyond's assassins have all failed the 289th Hunter Exam — rumor says the new Rat can read minds. Muherr's soldiers present Ging and Pariston two options: one of them leaves the team. Ging offers a third — the assassins leave — and Pariston a fourth: the assassins die.",
+    chapter: 346,
+    kind: "conversation",
+    participantIds: ["ging", "pariston", "kurapika"],
+    storylineIds: ["expedition-prep"],
+    confidence: "canonical",
+  },
+  {
+    id: "ev-347-staged-ambush",
+    title: "Ging dismantles the staged ambush",
+    summary:
+      "Muherr's henchmen open fire with conjured guns; Ging knocks them all out using an imitation of Leorio's remote-punch ability — he can copy any physical technique he has been hit with — then reveals he knew the whole attack was Pariston's stage play to scout his abilities.",
+    chapter: 347,
+    kind: "battle",
+    participantIds: ["ging", "pariston"],
+    storylineIds: ["expedition-prep"],
+    consequences: [
+      "Ging's mimicry talent enters the record",
+      "Pariston's probe fails — and deepens his fixation on Ging",
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "ev-347-ging-number-two",
+    title: "Ging is accepted as No. 2 — on soldiers' terms",
+    summary:
+      "Muherr explains why the money offer nearly broke the team: soldiers run on trust, and a rumor of being bought is ostracism. Ging apologizes, routes the money into the Norwell Fund for fallen soldiers' families — binding himself under mercenary account rules — and is accepted as No. 2, with Muherr holding absolute battlefield command.",
+    chapter: 347,
+    kind: "alliance",
+    participantIds: ["ging", "pariston"],
+    storylineIds: ["expedition-prep"],
+    consequences: [
+      "Ging's authority is nominal by his own design; Pariston declines to reclaim the seat",
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "ev-348-dowsing-screening",
+    title: "Dowsing Chain guards the Hunter Exam",
+    summary:
+      "The 289th exam's final phase is an interview about Beyond's expedition, with Kurapika behind the glass running his Dowsing Chain as a lie detector. Beyond's plants are weeded out — though Kurapika notes the chain would fail against anyone whose memory had been altered.",
+    chapter: 348,
+    kind: "investigation",
+    locationId: "hunter-hq",
+    participantIds: ["kurapika", "mizaistom", "cheadle"],
+    storylineIds: ["expedition-prep"],
+    consequences: [
+      "Spies are kept out of the Association's new intake — but not off the ship",
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "ev-348-succession-decree",
+    title: "Nasubi's decree: the survivor becomes king",
+    summary:
+      "Benjamin phones Tserriednich mid-lion-wrestling with their father's decision: whoever survives the expedition becomes Kakin's next king. Tserriednich thanks God and promises his older brother the throne is his. Both princes' camps begin maneuvering their bodyguards around the Hunter Exam results.",
+    chapter: 348,
+    kind: "decision",
+    participantIds: ["benjamin", "tserriednich", "nasubi"],
+    storylineIds: ["succession-contest"],
+    consequences: [
+      "The succession war exists before anyone boards — as a royal decree",
+      "Tserriednich's five guards pass the exam as Provisional Hunters; Luzurus's all fail",
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "ev-348-saiyu-mole",
+    title: "The mole is Saiyu",
+    summary:
+      "Under cover of the Zodiacs' new ability-sharing session — staged by Mizaistom to 'strengthen cooperation' — Kurapika watches through a hidden camera with his Dowsing Chain. The traitor feeding Beyond's side is Saiyu, the Monkey.",
+    chapter: 348,
+    kind: "discovery",
+    locationId: "hunter-hq",
+    participantIds: ["kurapika", "mizaistom", "saiyu"],
+    storylineIds: ["expedition-prep", "beyond-netero"],
+    consequences: [
+      "Two Zodiacs now share a secret the other nine would condemn",
+      "Saiyu is left in place, unaware, as a monitored asset",
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "ev-349-succession-rules",
+    title: "The rules of the succession war",
+    summary:
+      "Nasubi's messenger lays out the terms to Tserriednich: only children of the eight legal wives may compete, only if they board the Black Whale and attend the departure ceremony, and the war begins when the ship's horn finishes sounding — any death before that cancels everything. All fourteen princes are enumerated for the first time.",
+    chapter: 349,
+    kind: "decision",
+    locationId: "kakin-palace",
+    participantIds: ["tserriednich", "nasubi"],
+    storylineIds: ["succession-contest"],
+    consequences: [
+      "The Black Whale's maiden voyage is formally a duel arena for fourteen heirs",
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "ev-349-seed-urn",
+    title: "Tserriednich completes the Seed Urn ceremony",
+    summary:
+      "Tserriednich drops his blood into the ritual pot said to be conjured by Kakin's first king in imitation of the Worm Toxin poison-magic. A fairy feeds him an egg: every participant unknowingly hosts the seed of a Guardian Spirit Beast, a protector shaped by its host's character. Nasubi's creed: 'vessels' unfit to rule will be culled.",
+    chapter: 349,
+    kind: "ceremony",
+    locationId: "kakin-palace",
+    participantIds: ["tserriednich", "nasubi"],
+    storylineIds: ["succession-contest"],
+    consequences: [
+      "The Guardian Spirit Beasts — the arc's parasitic Nen engine — are seeded",
+      "The succession war is revealed as ritual, not mere politics",
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "ev-349-beyond-festival-refusal",
+    title: "Beyond shrugs at the festival bargain",
+    summary:
+      "Mizaistom offers Beyond attendance at Kakin's departure-eve celebration in exchange for naming the Zodiac spy. Beyond corrects him twice: he knows of no spy, and he does not care about the ceremony — Kakin will pressure the V6, and the Zodiacs themselves will end up begging him to attend. Kurapika, reviewing the tape, confirms every word is true.",
+    chapter: 349,
+    kind: "conversation",
+    locationId: "hunter-hq",
+    participantIds: ["beyond", "mizaistom", "kurapika"],
+    storylineIds: ["expedition-prep", "beyond-netero"],
+    knowledgeChanges: [
+      {
+        factId: "fact-beyond-plan",
+        characterId: "mizaistom",
+        state: "suspects",
+      },
+    ],
+    consequences: [
+      "Pariston, not Beyond, is pegged as the mastermind running Saiyu",
+      "Kurapika and Mizaistom plan to arrest Saiyu just before landing — telling no one",
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "ev-349-princes-hiring",
+    title: "Six princes post for bodyguards",
+    summary:
+      "Word reaches Kurapika, Mizaistom, and Cheadle: six unidentified Kakin princes are hiring bodyguards for the celebration and the voyage, with preference for Hunters. Every spy screened out of the exam now has a side door onto the ship.",
+    chapter: 349,
+    kind: "discovery",
+    participantIds: ["kurapika", "mizaistom", "cheadle"],
+    storylineIds: ["expedition-prep", "succession-contest"],
+    consequences: [
+      "The Association's careful screening is rendered porous overnight",
+      "Kurapika sees his route toward Tserriednich",
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "ev-350-kurapika-recruits-hunters",
+    title: "Kurapika assembles his infiltration team",
+    summary:
+      "Kurapika recruits Biscuit, Basho, Izunavi, Hanzo, and Melody to apply to the six princes' postings and feed him information — anything that gets him physical contact with Tserriednich, at which point everyone may abort with full pay. He profiles the six near-identical listings to guess which one is Halkenburg's.",
+    chapter: 350,
+    kind: "alliance",
+    participantIds: [
+      "kurapika",
+      "biscuit",
+      "basho",
+      "izunavi",
+      "hanzo",
+      "melody",
+    ],
+    storylineIds: ["expedition-prep", "succession-contest"],
+    consequences: [
+      "Five veteran Hunters are seeded across five princes' guard details",
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "ev-350-oito-hires-kurapika",
+    title: "Queen Oito's trap — and her true offer",
+    summary:
+      "The posting Kurapika pegged as Halkenburg's belongs to Queen Oito, mother of the infant Fourteenth Prince: the vagueness was bait for assassins and fake followers, whose self-interest makes them useful shields. She reveals the succession war outright and offers ten times the fee for the real job — get her and Woble off the ship alive. Kurapika accepts, with conditions.",
+    chapter: 350,
+    kind: "alliance",
+    participantIds: ["kurapika", "oito", "woble"],
+    storylineIds: ["expedition-prep", "succession-contest", "kurapika-woble"],
+    consequences: [
+      "The arc's central contract — Room 1014's whole reason to exist — is signed",
+      "Kurapika learns the contest's true nature months before boarding",
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "ev-350-guard-placements",
+    title: "The infiltrators land their posts",
+    summary:
+      "The applications resolve: Izunavi is hired by Tyson, Biscuit by Marayam, Basho by Luzurus, Melody by Kacho, and Hanzo by Momoze. Kurapika's network now touches six royal households — none of them Tserriednich's.",
+    chapter: 350,
+    kind: "movement",
+    participantIds: ["izunavi", "biscuit", "basho", "melody", "hanzo"],
+    storylineIds: ["expedition-prep", "succession-contest"],
+    consequences: [
+      "The bodyguard placements that define the voyage's first act are fixed",
+    ],
+    confidence: "canonical",
+  },
+  // -------------------------------------------------------------------------
+  // Ch 351–357 — Heavens Arena: Hisoka vs. Chrollo
+  // -------------------------------------------------------------------------
+  {
+    id: "ev-351-deathmatch-begins",
+    title: "Hisoka vs. Chrollo — a sanctioned fight to the death",
+    summary:
+      "Chrollo's debut match as a Heavens Arena Floor Master is against the challenger who chose him: Hisoka. Hisoka wants no exhibition; Chrollo agrees to a battle to the death under arena rules, weapons allowed, in front of a paying audience.",
+    chapter: 351,
+    kind: "battle",
+    locationId: "heavens-arena",
+    participantIds: ["hisoka", "chrollo"],
+    storylineIds: ["heavens-arena-duel"],
+    consequences: [
+      "The fight Hisoka postponed York New for finally happens — on Chrollo's terms",
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "ev-351-chrollo-arsenal",
+    title: "Chrollo unveils his borrowed arsenal",
+    summary:
+      "Chrollo plants Black Voice antennas in the judge, then shows the marks of The Sun and Moon — a dead Meteor City elder's ability that turns touched targets into bombs — and Double Face, a bookmark that lets him keep one stolen page active with the book closed. He promises three more abilities before the kill.",
+    chapter: 351,
+    kind: "nen-reveal",
+    locationId: "heavens-arena",
+    participantIds: ["chrollo", "hisoka"],
+    storylineIds: ["heavens-arena-duel"],
+    consequences: [
+      "Chrollo's years avoiding Hisoka are recast as preparation, not flight",
+      "Two-ability combos make Skill Hunter a different weapon than at York New",
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "ev-352-puppet-system",
+    title: "Order Stamp, Gallery Fake, Convert Hands",
+    summary:
+      "Chrollo completes the lecture: Order Stamp drives simple-command puppets, Gallery Fake (Kortopi's ability) copies bodies to puppet, and Convert Hands swaps appearances. The trap inside the tutorial: The Sun and Moon outlives its dead owner, so its marks are permanent — and, as Hisoka will learn too late, they protect marked copies from vanishing.",
+    chapter: 352,
+    kind: "nen-reveal",
+    locationId: "heavens-arena",
+    participantIds: ["chrollo", "hisoka"],
+    storylineIds: ["heavens-arena-duel"],
+    consequences: [
+      "Chrollo's kill-chain is assembled in the open, daring Hisoka to solve it",
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "ev-353-audience-weaponized",
+    title: "The audience becomes the weapon",
+    summary:
+      "Chrollo disappears into the stands, copies spectators with Gallery Fake, stamps the copies, and sends a horde with one order: 'break Hisoka' — sever the head. Between waves he strikes Hisoka himself from disguise, kicking him loose whenever the puppets pin his attention.",
+    chapter: 353,
+    kind: "battle",
+    locationId: "heavens-arena",
+    participantIds: ["chrollo", "hisoka"],
+    storylineIds: ["heavens-arena-duel"],
+    consequences: [
+      "The deathmatch stops being a duel: Hisoka now fights the venue itself",
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "ev-354-decoy-kill",
+    title: "Hisoka kills 'Chrollo' — a decoy",
+    summary:
+      "Hisoka runs down and slams the Chrollo he can see; the broken body is an audience member reshaped by Convert Hands and driven by Black Voice. Working backward through the impossible ability sequence, Hisoka lands on the real problem: a puppet marked by The Sun and Moon never vanishes.",
+    chapter: 354,
+    kind: "battle",
+    locationId: "heavens-arena",
+    participantIds: ["hisoka", "chrollo"],
+    storylineIds: ["heavens-arena-duel"],
+    consequences: [
+      "Every remaining 'corpse' in the arena is potentially a live bomb",
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "ev-355-hand-destroyed",
+    title: "The severed head detonates in Hisoka's hand",
+    summary:
+      "A puppet seizes the announcer's headset and broadcasts 'break Hisoka'; hundreds of marked spectator-copies flood the ring. Hisoka swings a Bungee Gum hammer of puppets to hold the line — until Chrollo, via Black Voice, touches moon to sun and detonates the severed head Hisoka has carried all fight, obliterating four fingers of his right hand.",
+    chapter: 355,
+    kind: "battle",
+    locationId: "heavens-arena",
+    participantIds: ["chrollo", "hisoka"],
+    storylineIds: ["heavens-arena-duel"],
+    consequences: ["Hisoka's own favorite prop was the bomb the whole time"],
+    confidence: "canonical",
+  },
+  {
+    id: "ev-356-hisoka-death",
+    title: "Hisoka dies",
+    summary:
+      "Bomb puppets leap from the balconies; an explosion takes Hisoka's right lower leg, thrown bodies ground him, and the horde closes in. In the final blast Hisoka suffocates under the press of flesh and smoke. The match — and, by every measure available, Hisoka's life — is over.",
+    chapter: 356,
+    kind: "death",
+    locationId: "heavens-arena",
+    participantIds: ["chrollo", "hisoka"],
+    casualtyIds: ["hisoka"],
+    storylineIds: ["heavens-arena-duel"],
+    consequences: [
+      "Chrollo wins the deathmatch outright, with massive civilian collateral",
+      "News reports list Hisoka among the casualties",
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "ev-357-hisoka-revival",
+    title: "Bungee Gum restarts a dead man's heart",
+    summary:
+      "As Machi prepares to stitch the corpse out of professional courtesy, Hisoka's aura surges: before dying he ordered Bungee Gum to activate after death — Nen intensifies post-mortem — and pump his heart and lungs. He wakes, confirms with Machi that he was really dead, and patches his ruined face, hand, and leg with Bungee Gum and Texture Surprise.",
+    chapter: 357,
+    kind: "nen-reveal",
+    locationId: "heavens-arena",
+    participantIds: ["hisoka", "machi"],
+    storylineIds: ["heavens-arena-duel", "troupe-hisoka-hunt"],
+    knowledgeChanges: [
+      { factId: "fact-hisoka-alive", characterId: "machi", state: "knows" },
+      { factId: "fact-hisoka-alive", characterId: "chrollo", state: "unaware" },
+    ],
+    consequences: [
+      "The public record says Hisoka died at Heavens Arena — and stays wrong",
+      "Post-mortem Nen jumps from lore to demonstrated fact",
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "ev-357-hisoka-declares-war",
+    title: "Hisoka declares war on the Spiders",
+    summary:
+      "Hisoka pins Machi with Bungee Gum and gives her a message for the Troupe: he is done picking his battles — he will hunt and fight the Spiders wherever they are, one by one, until every one of them is dead.",
+    chapter: 357,
+    kind: "decision",
+    locationId: "heavens-arena",
+    participantIds: ["hisoka", "machi"],
+    storylineIds: ["heavens-arena-duel", "troupe-hisoka-hunt"],
+    consequences: [
+      "The hunter-and-prey roles of the coming voyage are set — in both directions",
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "ev-357-chrollo-heist-plan",
+    title: "Chrollo sets the Troupe on the Black Whale",
+    summary:
+      "On the phone with Shalnark, Chrollo lays out the next job: the Kakin royal family is inviting civilian passengers on the voyage, and the ship will carry a considerable treasure. The Troupe will board the Black Whale, steal it, and reunite the whole Spider at sea.",
+    chapter: 357,
+    kind: "decision",
+    participantIds: ["chrollo", "shalnark"],
+    storylineIds: ["troupe-hisoka-hunt"],
+    consequences: [
+      "The Phantom Troupe's presence aboard is planned before departure — for treasure, not for Hisoka",
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "ev-357-kortopi-shalnark-killed",
+    title: "Kortopi and Shalnark are murdered",
+    summary:
+      "Minutes after the phone call, Hisoka walks out of a public bathroom carrying Kortopi's severed head, tosses it to Shalnark, and kills him with a single strike while he catches it. He leaves Shalnark's body tied to a swing with Kortopi's head at its feet: 'two down, ten to go.'",
+    chapter: 357,
+    kind: "death",
+    participantIds: ["hisoka", "shalnark", "kortopi"],
+    casualtyIds: ["kortopi", "shalnark"],
+    storylineIds: ["troupe-hisoka-hunt", "heavens-arena-duel"],
+    consequences: [
+      "The Troupe's boarding of the Black Whale gains a second motive: revenge",
+      "Gallery Fake and Black Voice die with their owners — Chrollo's book loses both pages",
+    ],
+    confidence: "canonical",
+  },
+  // -------------------------------------------------------------------------
   // Ch 358 — "Eve", day 0 (pre-departure)
   // -------------------------------------------------------------------------
   {

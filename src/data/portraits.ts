@@ -1,5 +1,5 @@
 /**
- * Portrait manifest — one-time locally committed asset set (93 files).
+ * Portrait manifest — one-time locally committed asset set (106 files).
  * Black-and-white manga artwork sourced from Hunterpedia (Manga tab where
  * available), converted to grayscale JPEG for this unofficial fan project.
  */
@@ -14,6 +14,7 @@ export const portraits: Record<string, string> = {
   bill: "/portraits/bill.jpg",
   biscuit: "/portraits/biscuit.jpg",
   bonolenov: "/portraits/bonolenov.jpg",
+  botobai: "/portraits/botobai.jpg",
   brocco: "/portraits/brocco.jpg",
   butch: "/portraits/butch.jpg",
   camilla: "/portraits/camilla.jpg",
@@ -21,6 +22,7 @@ export const portraits: Record<string, string> = {
   chiyamasi: "/portraits/chiyamasi.jpg",
   chrollo: "/portraits/chrollo.jpg",
   cleapatro: "/portraits/cleapatro.jpg",
+  cluck: "/portraits/cluck.jpg",
   coventoba: "/portraits/coventoba.jpg",
   duazul: "/portraits/duazul.jpg",
   feitan: "/portraits/feitan.jpg",
@@ -28,7 +30,10 @@ export const portraits: Record<string, string> = {
   fugetsu: "/portraits/fugetsu.jpg",
   fukataki: "/portraits/fukataki.jpg",
   furykov: "/portraits/furykov.jpg",
+  gel: "/portraits/gel.jpg",
   ging: "/portraits/ging.jpg",
+  ginta: "/portraits/ginta.jpg",
+  gon: "/portraits/gon.jpg",
   halkenburg: "/portraits/halkenburg.jpg",
   hanzo: "/portraits/hanzo.jpg",
   hashito: "/portraits/hashito.jpg",
@@ -40,10 +45,14 @@ export const portraits: Record<string, string> = {
   kaiser: "/portraits/kaiser.jpg",
   kalluto: "/portraits/kalluto.jpg",
   kanjidol: "/portraits/kanjidol.jpg",
+  kanzai: "/portraits/kanzai.jpg",
   katrono: "/portraits/katrono.jpg",
   "ken-i": "/portraits/ken-i.jpg",
+  killua: "/portraits/killua.jpg",
+  kortopi: "/portraits/kortopi.jpg",
   kurapika: "/portraits/kurapika.jpg",
   ladiolus: "/portraits/ladiolus.jpg",
+  leorio: "/portraits/leorio.jpg",
   loberry: "/portraits/loberry.jpg",
   longhi: "/portraits/longhi.jpg",
   luini: "/portraits/luini.jpg",
@@ -66,8 +75,11 @@ export const portraits: Record<string, string> = {
   onior: "/portraits/onior.jpg",
   pariston: "/portraits/pariston.jpg",
   phinks: "/portraits/phinks.jpg",
+  pyon: "/portraits/pyon.jpg",
   ridge: "/portraits/ridge.jpg",
   rihan: "/portraits/rihan.jpg",
+  saccho: "/portraits/saccho.jpg",
+  saiyu: "/portraits/saiyu.jpg",
   sakata: "/portraits/sakata.jpg",
   salele: "/portraits/salele.jpg",
   salkov: "/portraits/salkov.jpg",
@@ -76,6 +88,7 @@ export const portraits: Record<string, string> = {
   sayird: "/portraits/sayird.jpg",
   seiko: "/portraits/seiko.jpg",
   sevanti: "/portraits/sevanti.jpg",
+  shalnark: "/portraits/shalnark.jpg",
   shikaku: "/portraits/shikaku.jpg",
   shimano: "/portraits/shimano.jpg",
   shizuku: "/portraits/shizuku.jpg",

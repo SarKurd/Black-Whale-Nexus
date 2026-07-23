@@ -83,6 +83,16 @@ export const theories: Theory[] = [
     ],
     supporting: [
       {
+        chapter: 349,
+        note: "The binding is written into the rules: only heirs who board the Black Whale and attend the departure ceremony may participate. The rite cannot happen without the voyage — by design.",
+        confidence: "canonical",
+      },
+      {
+        chapter: 342,
+        note: "Kakin's V6 accession and the promise of a million ships frame the voyage as the founding act of a new era — the kind of undertaking a 'forged' god-king would exist to rule.",
+        confidence: "weak-inference",
+      },
+      {
         chapter: 359,
         note: "The rite's timing is bound to the voyage itself, not to the king's health or court politics.",
         confidence: "weak-inference",
@@ -111,7 +121,7 @@ export const theories: Theory[] = [
       },
     ],
     relatedCharacterIds: ["nasubi", "beyond", "kurapika"],
-    chapters: [359, 371, 411, 413],
+    chapters: [342, 349, 359, 371, 411, 413],
     confidence: "theory",
     lastUpdatedCh: 413,
   },
@@ -501,5 +511,57 @@ export const theories: Theory[] = [
     chapters: [401, 412, 414],
     confidence: "theory",
     lastUpdatedCh: 414,
+  },
+  {
+    id: "th-hisoka-culls-support-first",
+    claim:
+      "Hisoka is disarming Chrollo before dueling him — killing the Spiders whose abilities stock Skill Hunter's arsenal",
+    summary:
+      "The two Spiders he killed first are exactly the two whose powers nearly killed him at Heavens Arena: Shalnark's Black Voice and Kortopi's Gallery Fake. If the borrowed loadout dies with its owners, every kill is a page torn out of Chrollo's book before the rematch.",
+    statusHistory: [
+      {
+        ch: 357,
+        value: "unresolved",
+        note: "Two kills in one afternoon, both of them the duel's ability-donors — pattern or proximity, the sample is two.",
+      },
+      {
+        ch: 405,
+        value: "unresolved",
+        note: "No third Spider has died since boarding. He gambles openly in the Tier 1 casino and lets the hunters come to him — a lure posture, not a cull.",
+      },
+    ],
+    supporting: [
+      {
+        chapter: 351,
+        note: "Chrollo's arsenal for the duel was explicitly borrowed: Black Voice antennae and a stadium of Gallery Fake copies did the killing, not his own hands.",
+        confidence: "canonical",
+      },
+      {
+        chapter: 357,
+        note: "Of ten possible targets, his first two are the donors of those exact abilities — killed within hours of his revival, before the Troupe even knew he was alive.",
+        confidence: "strong-inference",
+      },
+    ],
+    contradicting: [
+      {
+        chapter: 357,
+        note: "The mundane reading: Shalnark and Kortopi were simply the pair who confirmed his 'death' at the morgue — the first Spiders findable that day. Opportunity, not strategy.",
+        confidence: "weak-inference",
+      },
+      {
+        chapter: 357,
+        note: "Nothing on-page confirms Skill Hunter loses a stolen ability when its original owner dies — the disarmament premise itself is unproven.",
+        confidence: "weak-inference",
+      },
+      {
+        chapter: 405,
+        note: "His behavior aboard is theatrical, not surgical: casino appearances and open taunts fit a man staging duels, not one methodically stripping assets.",
+        confidence: "weak-inference",
+      },
+    ],
+    relatedCharacterIds: ["hisoka", "chrollo", "shalnark", "kortopi", "machi"],
+    chapters: [351, 356, 357, 405],
+    confidence: "theory",
+    lastUpdatedCh: 405,
   },
 ];

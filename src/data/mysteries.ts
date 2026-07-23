@@ -689,17 +689,36 @@ export const mysteries: Mystery[] = [
     question: "What does King Nasubi actually intend?",
     summary:
       "A genial monarch who fed fourteen children into a culling rite. Tradition, faith in the Dark Continent's demands, or a design nobody has read yet.",
-    introducedCh: 359,
+    introducedCh: 349,
     statusHistory: [
-      { ch: 359, value: "open" },
+      {
+        ch: 349,
+        value: "open",
+        note: "The succession rules arrive with the Seed Urn: every heir who wants the throne unknowingly swallows a Guardian Spirit Beast egg. The king knows what the jar does; the children don't.",
+      },
       {
         ch: 411,
         value: "partially-answered",
         note: "Kurapika's ritual-stages analysis gives the war a stated purpose: forging a god-king for Kakin's next era.",
       },
     ],
-    relatedCharacterIds: ["nasubi", "benjamin", "halkenburg"],
+    relatedCharacterIds: ["nasubi", "benjamin", "halkenburg", "beyond"],
     evidenceFor: [
+      {
+        chapter: 340,
+        note: "He announces the voyage as 'putting all of humanity's dreams on their back' — and ignores the V5's formal request to withdraw. The expedition is the point, not a means.",
+        confidence: "canonical",
+      },
+      {
+        chapter: 342,
+        note: "The scale of stated ambition: 200,000 aboard the Black Whale now, one million ships promised later. Whatever the rite forges, it is sized for an era, not a reign.",
+        confidence: "canonical",
+      },
+      {
+        chapter: 349,
+        note: "The rules bind the contest to the voyage itself — only heirs who board and attend the departure ceremony participate — and the Seed Urn is presented as the first king's rite, inspired by the 'Worm Toxin': unworthy vessels are not fit to rule.",
+        confidence: "canonical",
+      },
       {
         chapter: 361,
         note: "When Halkenburg asks to withdraw from a contest that will kill his siblings, Nasubi smiles and tells him to do as he wishes.",
@@ -932,6 +951,101 @@ export const mysteries: Mystery[] = [
     latestDevelopment: {
       ch: 414,
       text: "Room 1014 resolves to act as though Woble is cursed: unravel the curse at its source or find Woble and an exorcist. Bill floats turning the whole Association against the contest; Beyond himself remains the only authoritative source, and probably a trap.",
+    },
+  },
+  {
+    id: "my-beyond-endgame",
+    question: "What is Beyond actually planning once ashore?",
+    summary:
+      "He surrendered on purpose, signed a life-in-prison contract without blinking, and told his captors to their faces that his 'true goal lies after landing'. Every layer peeled since — the mole, the curse children, the lawsuit mountain — has been preparation for something still unstated.",
+    introducedCh: 340,
+    statusHistory: [
+      {
+        ch: 340,
+        value: "open",
+        note: "The announcement itself is the first move: a worldwide broadcast that forces the V5's hand and makes hunting him the Zodiacs' job.",
+      },
+      {
+        ch: 349,
+        value: "open",
+        note: "Kurapika's chains verify the truce is genuine — which only sharpens the question of what the truce is buying time for.",
+      },
+      {
+        ch: 401,
+        value: "partially-answered",
+        note: "One layer surfaces: a decades-old program seeding Kakin's military with his curse-bearing children. The endgame has been running since before the voyage was announced.",
+      },
+    ],
+    relatedCharacterIds: [
+      "beyond",
+      "pariston",
+      "saiyu",
+      "ging",
+      "kurapika",
+      "mizaistom",
+      "nasubi",
+    ],
+    evidenceFor: [
+      {
+        chapter: 341,
+        note: "Netero's posthumous DVD: Beyond has already been to the Dark Continent and brought threats back — this voyage is a return trip, and he knows exactly where he wants to go.",
+        confidence: "canonical",
+      },
+      {
+        chapter: 342,
+        note: "From his cell he predicts the Zodiacs will end up releasing him and joining him — the confidence of a man reading from a script the others haven't seen.",
+        confidence: "canonical",
+      },
+      {
+        chapter: 345,
+        note: "He signs the IPA contract, then counts what remains on his fingers: 'capacity, means, and contract' — the checklist of a plan, not a surrender.",
+        confidence: "canonical",
+      },
+      {
+        chapter: 349,
+        note: "On tape, chain-verified: he'll behave in Hui Guo Rou's interest until landing, and his true goal lies after that. Mizaistom and Kurapika expect Saiyu's breakout play at landfall, with Pariston as architect.",
+        confidence: "canonical",
+      },
+      {
+        chapter: 401,
+        note: "Longhi's reveal: the curse-sacrifice program predates the voyage by a generation — Beyond plants fuses measured in decades.",
+        confidence: "canonical",
+      },
+      {
+        chapter: 412,
+        note: "1,047 dismissed lawsuits hauled into his cell, handed to him 'at random' by the Zodiacs' own mole — the paper mountain is either a grievance archive or a delivery channel.",
+        confidence: "weak-inference",
+      },
+    ],
+    evidenceAgainst: [
+      {
+        chapter: 349,
+        note: "The simple reading holds so far: no escape before landing, verified true by lie-detection. His stated dream — unsupervised exploration of the untouched Dark Continent — explains most of the behavior without a hidden layer.",
+        confidence: "canonical",
+      },
+      {
+        chapter: 345,
+        note: "The contract's teeth are real: one broken rule means life in prison, and he accepted the terms without negotiation.",
+        confidence: "canonical",
+      },
+    ],
+    possibleExplanations: [
+      {
+        text: "Exactly what he says: slip his escorts after landfall — via Saiyu and Pariston's staged breakout — and explore the new world unsupervised.",
+        confidence: "strong-inference",
+      },
+      {
+        text: "The curse network and the 'children of legal wives' loophole make Kakin's throne itself part of the plan: prune the succession, seat his own child, and inherit a nation-sized expedition sponsor.",
+        confidence: "theory",
+      },
+      {
+        text: "The prize is something specific he saw on his first trip and could not take alone — the voyage, the king, and the Zodiacs are all logistics for retrieving it.",
+        confidence: "theory",
+      },
+    ],
+    latestDevelopment: {
+      ch: 412,
+      text: "Business as usual in the cell: bickering with Kakin's Supreme Magistrate over his dismissed lawsuits while Kanzai hand-searches the boxes for contraband and Saiyu 'randomly' passes him papers.",
     },
   },
 ];

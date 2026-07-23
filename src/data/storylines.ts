@@ -10,6 +10,204 @@ import type { Storyline } from "@/lib/types";
 
 export const storylines: Storyline[] = [
   {
+    id: "expedition-prep",
+    name: "The Expedition Deal",
+    color: "#7d9bb5",
+    summary:
+      "The two years of maneuvering that put everyone on the same ship: Kakin announces the Dark Continent voyage through a treaty loophole, Beyond Netero surrenders himself as an opening gambit, the V5 absorbs Kakin as the V6, and the gutted Zodiacs rebuild — recruiting Kurapika and Leorio, unmasking Saiyu as the mole, and signing Beyond to a six-clause contract he plainly intends to outlive. It ends where the war begins: at the gangway of the Black Whale.",
+    status: [
+      {
+        ch: 340,
+        value: "active",
+        note: "Kakin's broadcast detonates the V5 order in a single morning.",
+      },
+      {
+        ch: 345,
+        value: "active",
+        note: "Beyond signs; the deal's paper phase is done.",
+      },
+      {
+        ch: 358,
+        value: "resolved",
+        note: "Boarding day. The deal is executed; what survives of it continues as Beyond's long game.",
+      },
+    ],
+    participantIds: [
+      "beyond",
+      "nasubi",
+      "cheadle",
+      "mizaistom",
+      "kurapika",
+      "leorio",
+      "ging",
+      "pariston",
+      "saiyu",
+      "oito",
+    ],
+    factionIds: [
+      "hunter-association",
+      "zodiacs",
+      "beyond-expedition",
+      "royal-family",
+    ],
+    objectives: [
+      "Zodiacs: take custody of Beyond and reach the Dark Continent first, per Netero's last request",
+      "Beyond: get aboard on any terms — the real plan starts after landfall",
+      "Kurapika: use the Rat's seat to reach the Fourth Prince and the Scarlet Eyes",
+    ],
+    openQuestions: [
+      "Who else boarded as Beyond's ally besides Saiyu?",
+      "What are the 'capacity, means, and contract' Beyond counted as still missing?",
+    ],
+    relatedIds: ["beyond-netero", "succession-contest", "kurapika-woble"],
+    nodes: [
+      {
+        ch: 340,
+        kind: "begin",
+        title: "Kakin announces the voyage; Beyond steps forward",
+        eventIds: [
+          "ev-340-kakin-announcement",
+          "ev-340-beyond-revealed",
+          "ev-340-v5-hunt-order",
+        ],
+      },
+      {
+        ch: 341,
+        kind: "advance",
+        title: "Netero's DVD — and Beyond's surrender",
+        eventIds: ["ev-341-netero-dvd", "ev-341-beyond-surrenders"],
+      },
+      {
+        ch: 342,
+        kind: "advance",
+        title: "War accepted; the V6 takes shape",
+        eventIds: [
+          "ev-342-beyond-declares-war",
+          "ev-342-v6-proposal",
+          "ev-342-black-whale-presented",
+        ],
+      },
+      {
+        ch: 343,
+        kind: "advance",
+        title: "The Rat and the Boar are recruited",
+        eventIds: [
+          "ev-343-leorio-recruited",
+          "ev-343-mizaistom-recruits-kurapika",
+        ],
+      },
+      {
+        ch: 345,
+        kind: "advance",
+        title: "Beyond signs the six-clause contract",
+        eventIds: ["ev-345-beyond-contract"],
+      },
+      {
+        ch: 346,
+        kind: "advance",
+        title: "V6 confirmed; the Zodiacs take their stations",
+        eventIds: ["ev-346-v6-and-roles", "ev-346-mole-suspected"],
+      },
+      {
+        ch: 348,
+        kind: "intersect",
+        title: "The mole is Saiyu",
+        linkId: "beyond-netero",
+        eventIds: ["ev-348-saiyu-mole"],
+      },
+      {
+        ch: 350,
+        kind: "trigger",
+        title: "Queen Oito hires Kurapika",
+        linkId: "kurapika-woble",
+        eventIds: ["ev-350-oito-hires-kurapika", "ev-350-guard-placements"],
+      },
+      {
+        ch: 358,
+        kind: "merge",
+        title: "Boarding — the deal becomes the voyage",
+        linkId: "beyond-netero",
+        eventIds: ["ev-358-zodiacs-stretched"],
+      },
+    ],
+    introducedCh: 340,
+  },
+  {
+    id: "heavens-arena-duel",
+    name: "Hisoka vs. Chrollo",
+    color: "#c97a6a",
+    summary:
+      "The deathmatch York New promised, staged as a Heavens Arena Floor Master bout: Chrollo arrives with borrowed abilities layered into a puppet assembly line and turns the audience into beheading, exploding weapons; Hisoka solves the machine one lie too late and dies under it. Then his corpse's pre-set Bungee Gum restarts his heart, and the loser walks out of the morgue declaring war on every Spider — collecting Kortopi and Shalnark before the day ends.",
+    status: [
+      {
+        ch: 351,
+        value: "active",
+        note: "A fight to the death, sanctioned and ticketed.",
+      },
+      {
+        ch: 356,
+        value: "escalating",
+        note: "Hisoka dies in the blast — the arena counts its casualties.",
+      },
+      {
+        ch: 357,
+        value: "resolved",
+        note: "The duel is over; what it started is not.",
+      },
+    ],
+    participantIds: ["hisoka", "chrollo", "machi", "shalnark", "kortopi"],
+    factionIds: ["phantom-troupe"],
+    objectives: [
+      "Hisoka: fight Chrollo at full strength, whatever it costs",
+      "Chrollo: kill Hisoka with a prepared, condition-heavy arsenal — and prove the preparation was the point",
+    ],
+    openQuestions: [
+      "Did Chrollo know post-mortem Nen could undo his win — the same principle his Sun and Moon exploits?",
+      "How much of the 'audience' Hisoka killed was ever alive?",
+    ],
+    relatedIds: ["troupe-hisoka-hunt"],
+    nodes: [
+      {
+        ch: 351,
+        kind: "begin",
+        title: "The deathmatch opens with a lecture",
+        eventIds: ["ev-351-deathmatch-begins", "ev-351-chrollo-arsenal"],
+      },
+      {
+        ch: 353,
+        kind: "advance",
+        title: "The audience is weaponized",
+        eventIds: ["ev-353-audience-weaponized", "ev-352-puppet-system"],
+      },
+      {
+        ch: 355,
+        kind: "advance",
+        title: "The props were bombs",
+        eventIds: ["ev-355-hand-destroyed", "ev-354-decoy-kill"],
+      },
+      {
+        ch: 356,
+        kind: "climax",
+        title: "Hisoka dies",
+        eventIds: ["ev-356-hisoka-death"],
+      },
+      {
+        ch: 357,
+        kind: "trigger",
+        title: "The morgue revival — war on the Spiders",
+        linkId: "troupe-hisoka-hunt",
+        eventIds: ["ev-357-hisoka-revival", "ev-357-hisoka-declares-war"],
+      },
+      {
+        ch: 357,
+        kind: "end",
+        title: "Two down, ten to go",
+        eventIds: ["ev-357-kortopi-shalnark-killed"],
+      },
+    ],
+    introducedCh: 351,
+  },
+  {
     id: "succession-contest",
     name: "The Succession Contest",
     color: "#c9a86a",
@@ -17,9 +215,9 @@ export const storylines: Storyline[] = [
       "Nasubi's fourteen heirs are locked aboard the Black Whale in a sanctioned war of survival: the last prince standing inherits Kakin. By chapter 411 the reader learns it is stage two of a four-stage ritual — and if no sole victor emerges during the voyage, the dynasty itself falls. Four princes are down; the First Prince's martial law turns the endgame into a purge.",
     status: [
       {
-        ch: 358,
+        ch: 348,
         value: "active",
-        note: "The contest is set in motion before departure.",
+        note: "Nasubi's decree: whoever survives the voyage becomes king.",
       },
       {
         ch: 368,
@@ -76,6 +274,7 @@ export const storylines: Storyline[] = [
       "Does a dead prince with a living soul still count?",
     ],
     relatedIds: [
+      "expedition-prep",
       "kacho-fugetsu",
       "benjamin-military",
       "halkenburg-movement",
@@ -83,8 +282,27 @@ export const storylines: Storyline[] = [
     ],
     nodes: [
       {
-        ch: 358,
+        ch: 348,
         kind: "begin",
+        title: "The decree — the survivor becomes king",
+        eventIds: ["ev-348-succession-decree"],
+      },
+      {
+        ch: 349,
+        kind: "advance",
+        title: "Rules and ritual: the Seed Urn plants its beasts",
+        eventIds: ["ev-349-succession-rules", "ev-349-seed-urn"],
+      },
+      {
+        ch: 350,
+        kind: "intersect",
+        title: "Hunters infiltrate the princes' households",
+        linkId: "expedition-prep",
+        eventIds: ["ev-350-oito-hires-kurapika", "ev-350-guard-placements"],
+      },
+      {
+        ch: 358,
+        kind: "advance",
         title: "The contest is framed before boarding",
         eventIds: ["ev-358-kurapika-accepts", "ev-358-ship-structure"],
       },
@@ -143,7 +361,7 @@ export const storylines: Storyline[] = [
         eventIds: ["ev-413-sml-declared"],
       },
     ],
-    introducedCh: 358,
+    introducedCh: 348,
   },
   {
     id: "kurapika-woble",
@@ -868,7 +1086,11 @@ export const storylines: Storyline[] = [
     summary:
       "The Phantom Troupe boards to finish Hisoka before he finishes them — with Illumi seated in Uvogin's chair at Hisoka's own request. The hunt sweeps up through mafia territory, plants a fake Hisoka to blind the families, unearths the Troupe's own founding tragedy in flashback, and finally finds its quarry lounging in the Tier 1 casino while Chrollo quietly targets Kakin's three sacred treasures to evolve Skill Hunter.",
     status: [
-      { ch: 366, value: "active" },
+      {
+        ch: 357,
+        value: "active",
+        note: "Hisoka's declaration of war; Kortopi and Shalnark already dead.",
+      },
       {
         ch: 405,
         value: "escalating",
@@ -887,6 +1109,8 @@ export const storylines: Storyline[] = [
       "kalluto",
       "illumi",
       "hisoka",
+      "shalnark",
+      "kortopi",
     ],
     factionIds: ["phantom-troupe"],
     objectives: [
@@ -897,11 +1121,22 @@ export const storylines: Storyline[] = [
       "Who reaches Hisoka first — the Spiders, or their leader alone?",
       "What does Hisoka's contract with Illumi actually stipulate?",
     ],
-    relatedIds: ["mafia-war"],
+    relatedIds: ["mafia-war", "heavens-arena-duel"],
     nodes: [
       {
-        ch: 366,
+        ch: 357,
         kind: "begin",
+        title: "Two down, ten to go — the vendetta is declared",
+        linkId: "heavens-arena-duel",
+        eventIds: [
+          "ev-357-hisoka-declares-war",
+          "ev-357-kortopi-shalnark-killed",
+          "ev-357-chrollo-heist-plan",
+        ],
+      },
+      {
+        ch: 366,
+        kind: "advance",
         title: "Chrollo surfaces in Hall 37564",
         eventIds: ["ev-366-chrollo-aboard"],
       },
@@ -937,7 +1172,7 @@ export const storylines: Storyline[] = [
         eventIds: ["ev-406-chrollo-treasures"],
       },
     ],
-    introducedCh: 366,
+    introducedCh: 357,
   },
   {
     id: "heil-ly-morena",
@@ -1192,7 +1427,11 @@ export const storylines: Storyline[] = [
     summary:
       "The expedition's caged figurehead turns out to be the arc's deepest architect: for thirty years Beyond seeded Kakin's military with his own children, each a curse sacrifice sealed under the tongue, aimed — probably — at the princes, with one prince possibly his own blood. Longhi's confession, Furykov's reveal, and Bill's defection drag the dormant thread to the war's center while Beyond himself asks, mildly, for a meeting.",
     status: [
-      { ch: 358, value: "active" },
+      {
+        ch: 340,
+        value: "active",
+        note: "Beyond steps out of his father's shadow on world television.",
+      },
       {
         ch: 360,
         value: "paused",
@@ -1216,6 +1455,7 @@ export const storylines: Storyline[] = [
       "cheadle",
       "unma",
       "cleapatro",
+      "saiyu",
     ],
     factionIds: ["beyond-expedition", "zodiacs", "hunter-association"],
     objectives: [
@@ -1228,11 +1468,35 @@ export const storylines: Storyline[] = [
       "Does the curse fire on contest participation or on the Seed Urn ceremony?",
       "Who did Beyond ask to meet?",
     ],
-    relatedIds: ["ship-security-crisis", "kurapika-woble"],
+    relatedIds: ["ship-security-crisis", "kurapika-woble", "expedition-prep"],
     nodes: [
       {
-        ch: 358,
+        ch: 340,
         kind: "begin",
+        title: "The announcement — a son the world never knew",
+        eventIds: ["ev-340-beyond-revealed", "ev-340-v5-hunt-order"],
+      },
+      {
+        ch: 341,
+        kind: "advance",
+        title: "Surrender as an opening move",
+        eventIds: ["ev-341-beyond-surrenders", "ev-341-netero-dvd"],
+      },
+      {
+        ch: 345,
+        kind: "advance",
+        title: "The six-clause contract — 'capacity, means, and contract'",
+        eventIds: ["ev-345-beyond-contract", "ev-342-beyond-declares-war"],
+      },
+      {
+        ch: 349,
+        kind: "advance",
+        title: "Beyond knows no spy — Pariston runs Saiyu",
+        eventIds: ["ev-349-beyond-festival-refusal", "ev-348-saiyu-mole"],
+      },
+      {
+        ch: 358,
+        kind: "advance",
         title: "Custody terms set before departure",
         eventIds: ["ev-358-zodiacs-stretched"],
       },
@@ -1267,7 +1531,7 @@ export const storylines: Storyline[] = [
         eventIds: ["ev-414-bill-turns", "ev-414-curse-council"],
       },
     ],
-    introducedCh: 358,
+    introducedCh: 340,
   },
   {
     id: "special-martial-law",

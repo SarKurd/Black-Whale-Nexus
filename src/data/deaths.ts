@@ -6,6 +6,45 @@ import type { DeathRecord } from "@/lib/types";
  */
 export const deaths: DeathRecord[] = [
   {
+    id: "death-kortopi",
+    victimId: "kortopi",
+    killerId: "hisoka",
+    method:
+      "Decapitated in a public restroom hours after Heavens Arena, while Shalnark waited outside on the phone with Chrollo. Hisoka — officially among the arena's dead — walked out carrying the head and tossed it to Shalnark: the opening kill of his declared war on the Troupe.",
+    chapter: 357,
+    revealCh: 357,
+    witnessIds: ["shalnark"],
+    awareCharacterIds: ["hisoka", "shalnark", "machi", "chrollo"],
+    investigation:
+      "None shown; the Troupe needs no inquest — Machi already carried Hisoka's declaration that he would kill them all.",
+    consequences: [
+      "Gallery Fake lost to the Troupe — and presumably erased from Chrollo's book by the owner-death rule.",
+      "The Troupe's copy-based reconnaissance and forgery capability died with him.",
+      "First proof Hisoka's threat to Machi was operational within hours.",
+    ],
+    confidence: "canonical",
+    factionId: "phantom-troupe",
+  },
+  {
+    id: "death-shalnark",
+    victimId: "shalnark",
+    killerId: "hisoka",
+    method:
+      "Killed moments after catching Kortopi's severed head: a single massive strike as he charged Hisoka. His corpse was staged tied to a park swing, Kortopi's head at his feet, crows picking at both — a message, not a murder scene. 'Two down, ten to go.'",
+    chapter: 357,
+    revealCh: 357,
+    awareCharacterIds: ["hisoka", "machi", "chrollo"],
+    investigation:
+      "None in-world; the Troupe answered by boarding the Black Whale and hunting Hisoka (chs 371, 377).",
+    consequences: [
+      "Black Voice lost — Chrollo still held the phone he had borrowed for the duel and never returned.",
+      "The Troupe's Hisoka hunt became the standing order of their voyage.",
+      "Illumi, hired by Hisoka himself to kill him, joined the Troupe for the hunt (ch 377).",
+    ],
+    confidence: "canonical",
+    factionId: "phantom-troupe",
+  },
+  {
     id: "death-barrigen",
     victimId: "barrigen",
     suspectedKillerIds: ["loberry"],

@@ -9,6 +9,36 @@
 import type { ShipLocation } from "@/lib/types";
 
 export const locations: ShipLocation[] = [
+  // -------------------------------------------------------------------------
+  // Off-ship locations (chapters 340–357, before the voyage)
+  // -------------------------------------------------------------------------
+  {
+    id: "hunter-hq",
+    name: "Hunter Association HQ",
+    kind: "other",
+    canonicity: "canonical",
+    description:
+      "The Hunter Association's headquarters, where the Zodiacs convene. Beans interrupts Cheadle's first meeting as chairman with Kakin's expedition broadcast, Netero's posthumous DVDs are screened here, and Beyond Netero walks in to hand himself over. Beyond's holding cell — the site of his interview, his declaration of war, and the six-clause contract signing — sits within the building.",
+    introducedCh: 340,
+  },
+  {
+    id: "kakin-palace",
+    name: "Kakin Royal Palace",
+    kind: "other",
+    canonicity: "canonical",
+    description:
+      "Seat of the Hui Guo Rou dynasty in the Kakin Empire. Nasubi broadcasts the Dark Continent voyage to the world from here, hosts the V6 signing ceremony that legitimizes the trip, and presents his fourteen princes — the future contestants of the succession war — to the public.",
+    introducedCh: 349,
+  },
+  {
+    id: "heavens-arena",
+    name: "Heavens Arena",
+    kind: "other",
+    canonicity: "canonical",
+    description:
+      "The 251-floor fighting tower where Floor Master matches are broadcast worldwide. Hisoka and Chrollo stage their long-promised deathmatch here — a no-time-limit fight to the death sanctioned under arena rules, fought in front of a packed audience that Chrollo converts into weapons.",
+    introducedCh: 351,
+  },
   {
     id: "black-whale",
     name: "Black Whale No. 1",

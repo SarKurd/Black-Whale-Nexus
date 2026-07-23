@@ -536,22 +536,59 @@ export const nenAbilities: NenAbility[] = [
     kind: "personal",
     nenType: "specialist",
     description:
-      "Chrollo's book: he steals others' abilities under strict conditions and uses them from its pages.",
-    activation: "Conjure Bandit's Secret; fulfill the four theft conditions.",
+      "Chrollo's book, Bandit's Secret: he steals others' abilities under strict conditions and uses them from its pages. The Heavens Arena duel added Double Face — a bookmark of his own design that keeps a marked page's ability live with the book closed, freeing both hands and even running two stolen abilities at once, at the price of extra conditions.",
+    activation:
+      "Conjure Bandit's Secret; open to the desired page (or hold it via the Double Face bookmark).",
     conditions: [
-      "See the ability used.",
-      "Ask about it and receive answers.",
-      "Target's palm on the cover.",
-      "All within one hour.",
+      "Theft: see the ability used.",
+      "Theft: ask about it and receive answers.",
+      "Theft: target's palm on the cover.",
+      "Theft: all within one hour.",
+      "Use: the book must be open to the ability's page — unless Double Face bookmarks it (ch 351).",
+    ],
+    restrictions: [
+      "A stolen ability vanishes from the book when its original owner dies — unless post-mortem-strengthened Nen keeps it there, as with The Sun and Moon (ch 352).",
+      "The original owner loses the stolen ability while Chrollo holds it.",
+      "Only one Double Face bookmark exists; using it layers additional (unstated) conditions onto the ability.",
     ],
     effects: [
       "Permanent theft while the original owner lives (varies by later refinements).",
+      "With Double Face: book-free combat and two stolen abilities running simultaneously.",
     ],
     firstSeenCh: 0,
     revealCh: 0,
+    uses: [
+      {
+        ch: 351,
+        note: "Heavens Arena duel opens: Black Voice antennae in the judge, then The Sun and Moon — Double Face revealed as the enabler for two-handed and paired abilities.",
+      },
+      {
+        ch: 352,
+        note: "The full duel arsenal laid out for Hisoka: Order Stamp, Gallery Fake, Convert Hands — plus the rule that owner-death erases a page, and the Sun and Moon exception.",
+      },
+      {
+        ch: 355,
+        note: "The combo at scale: Gallery Fake copies, sun-marked via Double Face, commanded through Order Stamp, detonated on a Black Voice puppet's touch — hundreds of expendable bombs.",
+      },
+      {
+        ch: 377,
+        note: "Shizuku's fortune request fails: Neon's page has vanished from the book — first evidence her owner is dead.",
+      },
+    ],
     status: "active",
+    awareCharacterIds: [{ characterId: "hisoka", sinceCh: 0 }],
     evidence: [
       { chapter: 0, note: "Established pre-arc.", confidence: "canonical" },
+      {
+        chapter: 351,
+        note: "Double Face bookmark shown and explained by Chrollo himself mid-duel.",
+        confidence: "canonical",
+      },
+      {
+        chapter: 352,
+        note: "Owner-death page loss and the post-mortem exception stated by Chrollo.",
+        confidence: "canonical",
+      },
     ],
     confidence: "canonical",
   },
@@ -562,16 +599,336 @@ export const nenAbilities: NenAbility[] = [
     kind: "personal",
     nenType: "transmuter",
     description:
-      "Hisoka's aura with the properties of both rubber and gum — attachment, elasticity, and every murderous application in between.",
+      "Hisoka's aura with the properties of both rubber and gum — attachment, elasticity, and every murderous application in between. The Heavens Arena duel added its most extreme entry: instructed before death to restart his heart and lungs, it revived him as post-mortem Nen (ch 357).",
     effects: [
       "Adhesive/elastic aura attachable to targets.",
       "Concealable with Texture Surprise.",
+      "Programmable: accepted a standing order — issued while dying — to pump his heart and lungs after death, and executed it (ch 357).",
+      "Field surgery: seals wounds and forms rubber prostheses for lost limbs (ch 357).",
     ],
     firstSeenCh: 0,
     revealCh: 0,
+    uses: [
+      {
+        ch: 351,
+        note: "Duel opener: gum from his own foot to the manipulated judge's chest, reeling the puppet in as a projectile.",
+      },
+      {
+        ch: 353,
+        note: "Severed puppet heads on gum lines — one from the left hand, one from the left leg — the second catches Chrollo in the face.",
+      },
+      {
+        ch: 354,
+        note: "Gum pre-laid on audience members' backs launches them at Chrollo; a leg-line catch slams the 'Chrollo' decoy to the floor.",
+      },
+      {
+        ch: 355,
+        note: "Five puppets on five finger-strands swung as a human hammer against the marked horde.",
+      },
+      {
+        ch: 357,
+        note: "The revival: pre-death instruction pumps his heart and lungs back to life; then gum stops the bleeding, builds a left hand and right leg, and pins Machi for the war declaration.",
+      },
+    ],
     status: "active",
+    awareCharacterIds: [
+      { characterId: "chrollo", sinceCh: 0 },
+      { characterId: "machi", sinceCh: 0 },
+    ],
     evidence: [
       { chapter: 0, note: "Established pre-arc.", confidence: "canonical" },
+      {
+        chapter: 357,
+        note: "Post-mortem revival shown on-page in flashback: Hisoka addresses Bungee Gum by name and orders it to bring him back.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "texture-surprise",
+    name: "Texture Surprise",
+    userCharacterId: "hisoka",
+    kind: "personal",
+    nenType: "conjurer",
+    description:
+      "Aura applied to any smooth, flat surface — paper, cloth, skin, even pure Bungee Gum — manifesting false imagery: over a thousand textures, undetectable by sight, touch, or aura perception, and visible even to non-Nen users. Hisoka's disguise, forgery, and wound-concealment kit.",
+    activation: "Apply aura to a flat surface and impress the false texture.",
+    restrictions: [
+      "Surface must be smooth and flat.",
+      "A texture whose feel mismatches the underlying surface can be exposed by touch.",
+    ],
+    effects: [
+      "Visual forgery of surfaces and writing.",
+      "Conceals wounds and alters his own appearance — layered over Bungee Gum prostheses after the duel (ch 357).",
+      "No detectable aura while active; works on non-Nen observers.",
+    ],
+    firstSeenCh: 0,
+    revealCh: 0,
+    uses: [
+      {
+        ch: 357,
+        note: "Post-revival reconstruction: recreates the flesh blown off his face and skins the Bungee Gum prostheses standing in for his left hand and right leg.",
+      },
+      {
+        ch: 359,
+        note: "Presumed working disguise aboard the Black Whale — every sweep for a 190 cm magician has failed since boarding.",
+      },
+    ],
+    status: "active",
+    awareCharacterIds: [{ characterId: "machi", sinceCh: 357 }],
+    evidence: [
+      {
+        chapter: 0,
+        note: "Established pre-arc (Kastro fight, Yorknew prophecy forgeries).",
+        confidence: "canonical",
+      },
+      {
+        chapter: 357,
+        note: "On-page: applied over Bungee Gum to rebuild his face and limbs.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "gallery-fake",
+    name: "Gallery Fake",
+    userCharacterId: "kortopi",
+    kind: "personal",
+    nenType: "conjurer",
+    description:
+      "Kortopi's copier ('Divine Left Hand, Demonic Right Hand'): touch an object with the left hand, conjure an exact replica with the right. Living things replicate as lifeless bodies; copies last 24 hours and can be tracked through the originals like En. In the Heavens Arena duel Chrollo ran it borrowed through Skill Hunter, mass-producing audience copies as Order Stamp puppets.",
+    activation: "Left hand touches the original; right hand conjures the copy.",
+    restrictions: [
+      "Copies of living beings are inanimate (humans copy as corpses).",
+      "Conjured objects can be copied in form but not in effect.",
+      "Copies vanish after 24 hours — unless protected by a Sun and Moon mark's post-mortem Nen (ch 354).",
+    ],
+    effects: [
+      "Exact physical replicas of touched objects, at a copy every couple of seconds.",
+      "Original-to-copy tracking (En-like) while copies persist.",
+      "Duel combo: copies of spectators and the dead judge served as Order Stamp puppet stock — 200+ at once.",
+    ],
+    firstSeenCh: 0,
+    revealCh: 0,
+    uses: [
+      {
+        ch: 352,
+        note: "Chrollo (borrowed via Skill Hunter) copies the dead judge to demonstrate that Order Stamp moves a copy even though it cannot move a corpse.",
+      },
+      {
+        ch: 353,
+        note: "A crowd of ~30 spectator copies, bookmarked via Double Face, charges Hisoka under Order Stamp's 'break Hisoka'.",
+      },
+      {
+        ch: 355,
+        note: "Production line at full tilt: hundreds of sun-marked copies flood the arena as expendable bombs.",
+      },
+    ],
+    status: "inactive",
+    awareCharacterIds: [
+      { characterId: "chrollo", sinceCh: 0 },
+      { characterId: "hisoka", sinceCh: 0 },
+    ],
+    evidence: [
+      {
+        chapter: 0,
+        note: "Mechanics (copying, 24-hour limit, tracking) established pre-arc in Yorknew.",
+        confidence: "canonical",
+      },
+      {
+        chapter: 352,
+        note: "Kortopi lent it to Chrollo for the duel — named on-page as Kortopi's ability.",
+        confidence: "canonical",
+      },
+      {
+        chapter: 357,
+        note: "Kortopi killed by Hisoka; the page presumably vanished from Bandit's Secret per the owner-death rule.",
+        confidence: "strong-inference",
+      },
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "black-voice",
+    name: "Black Voice",
+    userCharacterId: "shalnark",
+    kind: "personal",
+    nenType: "manipulator",
+    description:
+      "Shalnark's 'Mobile Fate Director': plant a physical antenna in a target and puppet them totally through a phone — direct control, spoken orders, or autopilot. Two targets at once, one of whom can be Shalnark himself (his berserk self-manipulation mode). Chrollo borrowed it for the Heavens Arena duel, phone and all.",
+    activation:
+      "Stick an antenna into the target (usually the neck); operate via the paired phone.",
+    conditions: [
+      "The antennae are real, finite objects — losable, reelable, and limited to two.",
+      "Control lasts until the antenna is removed or the target dies.",
+    ],
+    effects: [
+      "Total mind-and-body control of up to two antennaed targets.",
+      "Voice commands through the phone reach puppets remotely.",
+      "Self-use ('autopilot') trades memory and days of muscle pain for a massive combat boost — and blocks rival Manipulators.",
+    ],
+    weaknesses: [
+      "Antenna supply: Chrollo ended the duel with both spent (ch 357).",
+      "A visible antenna warns anyone who knows the ability.",
+    ],
+    firstSeenCh: 0,
+    revealCh: 0,
+    uses: [
+      {
+        ch: 351,
+        note: "Chrollo (borrowed) opens the duel with it: antenna in the judge, second antenna held as a feint that keeps Hisoka guessing at every approach.",
+      },
+      {
+        ch: 354,
+        note: "A spectator converted into a Chrollo lookalike and puppeted as bait — Hisoka 'kills' the decoy.",
+      },
+      {
+        ch: 355,
+        note: "An antennaed announcer relays 'break Hisoka' arena-wide; a squatting puppet's 'now' touches sun to moon and detonates the severed head in Hisoka's hand.",
+      },
+    ],
+    status: "inactive",
+    awareCharacterIds: [
+      { characterId: "chrollo", sinceCh: 0 },
+      { characterId: "hisoka", sinceCh: 351 },
+    ],
+    evidence: [
+      {
+        chapter: 351,
+        note: "Named and demonstrated by Chrollo mid-duel as Shalnark's ability.",
+        confidence: "canonical",
+      },
+      {
+        chapter: 352,
+        note: "Two-at-a-time limit stated in Chrollo's own comparison with Order Stamp.",
+        confidence: "canonical",
+      },
+      {
+        chapter: 357,
+        note: "Shalnark killed by Hisoka before the phone could be returned; the page presumably vanished from the book.",
+        confidence: "strong-inference",
+      },
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "sun-and-moon",
+    name: "The Sun and Moon",
+    userCharacterId: "chrollo",
+    kind: "borrowed",
+    nenType: "unknown",
+    description:
+      "Stolen from Meteor City's late elder ('Paired Destruction'): a sun-plus mark on Chrollo's left palm, a moon-minus on his right. Marked targets become bombs — the two symbols detonate on contact. Because the elder's Nen intensified after his death, the ability survives in Bandit's Secret against Skill Hunter's owner-death rule, and its marks are indelible until they explode.",
+    activation:
+      "Touch the target with either palm to impress its mark; detonation when a sun mark meets a moon mark.",
+    conditions: [
+      "Instant touch leaves a weak mark (small blast); a full-power bomb needs 3–5 seconds of contact — chargeable even after application by further touch.",
+      "Both marks must touch to detonate.",
+    ],
+    restrictions: [
+      "Marks cannot be removed — they persist until detonation, book open or closed.",
+      "Two-handed use normally conflicts with holding the book; Double Face (or bookmarking the other ability and marking one-handed) is the workaround.",
+    ],
+    effects: [
+      "Turns people, corpses, and Nen copies into contact-triggered bombs; a full charge kills bystanders, not just the bearer.",
+      "Post-mortem protection transfers: a Gallery Fake copy bearing a mark does not vanish when the copy ability deactivates (ch 354) — the loophole that beat Hisoka's deductions.",
+      "A marked body stays a bomb even in pieces: the severed head Hisoka carried took his fingers (ch 355), the body it came from took his leg (ch 356).",
+    ],
+    firstSeenCh: 351,
+    revealCh: 351,
+    uses: [
+      {
+        ch: 351,
+        note: "Debut: the judge's hand and back marked mid-melee; first small blast startles Hisoka off the corpse.",
+      },
+      {
+        ch: 353,
+        note: "Sun marks stamped across the Gallery Fake crowd — every puppet chasing Hisoka is also a bomb.",
+      },
+      {
+        ch: 355,
+        note: "The severed head in Hisoka's left hand detonates on a Black Voice puppet's touch, destroying four fingers.",
+      },
+      {
+        ch: 356,
+        note: "Maximum-power body bomb takes Hisoka's right lower leg; self-destruct orders to the swarm bury him in explosions.",
+      },
+    ],
+    status: "active",
+    awareCharacterIds: [{ characterId: "hisoka", sinceCh: 351 }],
+    evidence: [
+      {
+        chapter: 351,
+        note: "Mechanics — plus/minus palms, instant vs 3–5 second charge — explained by Chrollo on-page.",
+        confidence: "canonical",
+      },
+      {
+        chapter: 352,
+        note: "Origin (Meteor City's elder, message-bombs against outsiders) and the post-mortem retention rule stated.",
+        confidence: "canonical",
+      },
+      {
+        chapter: 354,
+        note: "Marked copies persist beyond Gallery Fake's deactivation — post-death Nen overriding another ability's restriction.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "order-stamp",
+    name: "Order Stamp",
+    userCharacterId: "chrollo",
+    kind: "borrowed",
+    nenType: "manipulator",
+    description:
+      "Stolen ability ('Proof of Humanity'): a conjured stamp bearing the kanji for 'person' that, pressed to a puppet's forehead, binds it to spoken commands. A 'puppet' is any lifeless object with its head attached — which excludes corpses (the original owner refused to see them as objects) but not Nen copies of corpses, the loophole Chrollo built the duel around.",
+    activation:
+      "Stamp the puppet's forehead; issue vocal commands (relayable through Black Voice).",
+    conditions: [
+      "Target must be lifeless with its head attached: beheading a puppet ends its stamp.",
+      "Corpses cannot be controlled; Gallery Fake copies of corpses can.",
+      "Commands must stay simple; copies of people can balk at orders against the original's nature — 'break' works where 'kill' fails.",
+    ],
+    effects: [
+      "Mass control: 200+ stamped puppets at once, versus Black Voice's total-control-of-two.",
+      "Puppets ordered to 'break Hisoka' single-mindedly attempt decapitation.",
+    ],
+    weaknesses: [
+      "Simple-command ceiling; no fine control.",
+      "Decapitation frees a puppet — Hisoka farmed the horde for weapons.",
+    ],
+    firstSeenCh: 352,
+    revealCh: 352,
+    uses: [
+      {
+        ch: 352,
+        note: "Demonstrated on a Gallery Fake copy of the dead judge — Chrollo narrates the corpse/copy distinction and the 'break' workaround.",
+      },
+      {
+        ch: 353,
+        note: "The first stamped crowd of ~30 copies hunts Hisoka through the stands.",
+      },
+      {
+        ch: 356,
+        note: "Swarm directives: puppets ordered to find Hisoka on the second floor and self-destruct beside him.",
+      },
+    ],
+    status: "active",
+    awareCharacterIds: [{ characterId: "hisoka", sinceCh: 352 }],
+    evidence: [
+      {
+        chapter: 352,
+        note: "Full mechanics, including the original owner's corpse/puppet distinction, explained by Chrollo.",
+        confidence: "canonical",
+      },
+      {
+        chapter: 355,
+        note: "Scale demonstrated: hundreds of stamped copies under coordinated orders.",
+        confidence: "canonical",
+      },
     ],
     confidence: "canonical",
   },

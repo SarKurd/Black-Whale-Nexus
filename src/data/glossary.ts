@@ -254,6 +254,34 @@ export const glossary: GlossaryTerm[] = [
     definition:
       "The uncharted landmass beyond the known world's lake-ringed edge: five historical expeditions, five catastrophes, and the voyage's destination anyway.",
     category: "arc",
+    relatedIds: ["dark-continent-expedition", "v5-v6"],
+    introducedCh: 0,
+  },
+  {
+    id: "dark-continent-expedition",
+    term: "Dark Continent expedition",
+    definition:
+      "Two voyages wearing one hull: publicly, Kakin's royal pilgrimage to the sanctioned 'New Continent'; underneath, Beyond Netero's team bound for the true Dark Continent in defiance of the old treaty. Kakin bought legitimacy, Beyond bought a ride, the V6 bought supervision — and the Hunter Association is aboard to keep the leash on Beyond.",
+    category: "arc",
+    relatedIds: ["dark-continent", "v5-v6", "black-whale"],
+    introducedCh: 340,
+  },
+  {
+    id: "v5-v6",
+    term: "V5 / V6",
+    definition:
+      "The five great powers whose 200-year-old Inviolability Treaty banned Dark Continent travel — the wall Beyond's announcement crashed into (ch 340). Unable to stop Kakin by anything short of war, the forum admitted it as a sixth member instead, becoming the V6 (confirmed ch 346): sanction the voyage, share the spoils, supervise the leash.",
+    category: "arc",
+    relatedIds: ["dark-continent", "dark-continent-expedition", "kakin-empire"],
+    introducedCh: 340,
+  },
+  {
+    id: "heavens-arena",
+    term: "Heavens Arena",
+    definition:
+      "The 251-floor fighting tower where combatants climb toward Floor Master status. Site of the pre-voyage duel that reshaped the arc's board: Chrollo killed Hisoka before a paying audience (ch 356) — briefly. Hisoka's revival and war declaration followed him onto the ship.",
+    category: "hunter",
+    relatedIds: ["hunter-association-term"],
     introducedCh: 0,
   },
 
