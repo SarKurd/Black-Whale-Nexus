@@ -1836,6 +1836,74 @@ export const nenAbilities: NenAbility[] = [
     ],
     confidence: "canonical",
   },
+  {
+    id: "cross-game",
+    name: "Cross Game",
+    userCharacterId: "mizaistom",
+    kind: "personal",
+    nenType: "conjurer",
+    description:
+      "Mizaistom's card ability. He first shows a warning card — a declaration that violence is forbidden here — and against anyone who attacks anyway he uses the cards to restrain their movement, pinning them in place while he conducts his business unmolested.",
+    activation: "Present the warning card; on a violent response, restrain with the cards.",
+    conditions: [
+      "The target must have chosen violence after the warning — a self-imposed 'foul' condition consistent with Mizaistom's lawman ethos.",
+    ],
+    effects: [
+      "Immobilizes those who break the no-violence rule.",
+    ],
+    firstSeenCh: 343,
+    revealCh: 343,
+    uses: [
+      {
+        ch: 343,
+        note: "Restrains a bar's toughs who move on him while he tracks down Kurapika to recruit him.",
+      },
+    ],
+    status: "active",
+    awareCharacterIds: [{ characterId: "mizaistom", sinceCh: 343 }],
+    evidence: [
+      {
+        chapter: 343,
+        note: "Named ('most likely his Nen ability, Cross Game') and shown restraining attackers on-page.",
+        confidence: "strong-inference",
+      },
+    ],
+    confidence: "strong-inference",
+  },
+  {
+    id: "three-monkeys",
+    name: "Three Monkeys",
+    userCharacterId: "saiyu",
+    kind: "personal",
+    nenType: "unknown",
+    description:
+      "Saiyu's ability, named for the three wise monkeys: it robs a target of sight, hearing, and speech — see-no, hear-no, speak-no. The reason Kurapika expects Saiyu to be Pariston's chosen instrument for freeing Beyond at landfall, and plans to restrain him only at the last moment.",
+    effects: [
+      "Deprives the target of vision, hearing, and speech.",
+    ],
+    firstSeenCh: 0,
+    revealCh: 349,
+    uses: [
+      {
+        ch: 349,
+        note: "Discussed by Mizaistom and Kurapika while planning to neutralize Saiyu — Pariston's mole — before he can spirit Beyond off the ship.",
+      },
+    ],
+    status: "active",
+    awareCharacterIds: [
+      { characterId: "saiyu", sinceCh: 0 },
+      { characterId: "kurapika", sinceCh: 349 },
+      { characterId: "mizaistom", sinceCh: 349 },
+    ],
+    evidence: [
+      {
+        chapter: 349,
+        note: "Named and its effect (robs vision, hearing, speech) stated in the chapter's notes.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
 ];
 
 /** One record per prince whose beast has been meaningfully observed. */
