@@ -90,6 +90,25 @@ export function AppShell({ children }: { children: React.ReactNode }) {
         </header>
 
         <main className="mx-auto max-w-7xl px-4 py-6 lg:px-8">{children}</main>
+
+        <footer className="mx-auto max-w-7xl border-t border-line px-4 py-5 lg:px-8">
+          <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
+            <span className="intel-label">
+              Unofficial fan archive · Hunter × Hunter © Yoshihiro Togashi
+            </span>
+            <span className="intel-label">
+              Compiled by{" "}
+              <a
+                href="https://sarbast.dev"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gold transition-colors hover:text-gold-bright"
+              >
+                Sarbast · sarbast.dev
+              </a>
+            </span>
+          </div>
+        </footer>
       </div>
 
       <CommandPalette
