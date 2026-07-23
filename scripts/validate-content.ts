@@ -1,8 +1,12 @@
 /**
  * Content validation: referential integrity across all data files.
  * Run with: npx tsx scripts/validate-content.ts
+ *
+ * Also regenerates docs/DATA_STATS.md so the agent-facing docs never go stale.
  */
 
+import { writeFileSync } from "node:fs";
+import { resolve } from "node:path";
 import { chapters } from "../src/data/chapters";
 import { characters } from "../src/data/characters";
 import { deaths } from "../src/data/deaths";
@@ -293,8 +297,46 @@ const allIds = new Set([
 ]);
 for (const g of glossary) checkRefs(g.id, g.relatedIds, allIds, "relatedIds");
 
-console.log(
-  `\nCounts: ${characters.length} characters, ${princes.length} princes, ${factions.length} factions, ${relationships.length} relationships, ${events.length} events, ${chapters.length} chapters, ${locations.length} locations, ${nenAbilities.length} abilities, ${beasts.length} beasts, ${knowledgeFacts.length} facts, ${characterKnowledge.length} knowledge rows, ${deaths.length} deaths, ${storylines.length} storylines, ${mysteries.length} mysteries, ${theories.length} theories, ${glossary.length} glossary terms`,
-);
+const counts: [string, number][] = [
+  ["characters", characters.length],
+  ["princes", princes.length],
+  ["factions", factions.length],
+  ["relationships", relationships.length],
+  ["events", events.length],
+  ["chapters", chapters.length],
+  ["locations", locations.length],
+  ["nen abilities", nenAbilities.length],
+  ["guardian beasts", beasts.length],
+  ["knowledge facts", knowledgeFacts.length],
+  ["knowledge rows", characterKnowledge.length],
+  ["deaths", deaths.length],
+  ["storylines", storylines.length],
+  ["mysteries", mysteries.length],
+  ["theories", theories.length],
+  ["glossary terms", glossary.length],
+];
+
+console.log(`\nCounts: ${counts.map(([k, n]) => `${n} ${k}`).join(", ")}`);
 console.log(`Validation: ${errors} errors, ${warnings} warnings`);
+
+// Regenerate the machine-readable stats snapshot so docs never go stale.
+// This file is committed; the mandatory validate step keeps it current.
+// Chapter span is derived from the data, not hardcoded.
+const chapterNums = chapters.map((c) => c.number).sort((a, b) => a - b);
+const stats = [
+  "# Data snapshot (generated)",
+  "",
+  "> Auto-written by `scripts/validate-content.ts` on every run. Do not edit by",
+  "> hand — re-run the validator instead. Referenced by `docs/DATA_GUIDE.md`.",
+  "",
+  `- Chapter coverage: **${chapterNums[0]}–${chapterNums[chapterNums.length - 1]}**`,
+  `- Validation at last run: **${errors} errors, ${warnings} warnings**`,
+  "",
+  "| Collection | Count |",
+  "| --- | --- |",
+  ...counts.map(([k, n]) => `| ${k} | ${n} |`),
+  "",
+].join("\n");
+writeFileSync(resolve(import.meta.dirname, "../docs/DATA_STATS.md"), stats);
+
 if (errors > 0) process.exit(1);

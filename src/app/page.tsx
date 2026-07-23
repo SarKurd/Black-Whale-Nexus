@@ -314,11 +314,11 @@ export default function CommandCenter() {
                       <span className="block truncate text-sm text-ivory group-hover:text-gold-bright">
                         {c.name}
                       </span>
-                      <span className="flex items-center gap-2">
+                      <span className="flex flex-wrap items-center gap-x-2 gap-y-0.5">
                         {st && <StatusChip status={st.status} />}
                         {risk && (
                           <span
-                            className="font-mono text-[9px] uppercase tracking-widest"
+                            className="shrink-0 font-mono text-[9px] uppercase tracking-widest"
                             style={{ color: RISK_COLOR[risk.risk] }}
                             title={risk.why}
                           >
