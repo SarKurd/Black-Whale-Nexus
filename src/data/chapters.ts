@@ -2825,6 +2825,7 @@ export const chapters: ChapterInfo[] = [
       "ev-406-processing-area",
       "ev-406-lynch-found",
       "ev-406-chrollo-treasures",
+      "ev-406-disgusting-telephone",
     ],
     appearingCharacterIds: [
       "nobunaga",
@@ -2843,7 +2844,7 @@ export const chapters: ChapterInfo[] = [
       "heil-ly-morena",
       "succession-contest",
     ],
-    abilitiesUsedIds: ["skill-hunter"],
+    abilitiesUsedIds: ["skill-hunter", "disgusting-telephone"],
     changes: {
       newKnowledge: [
         "The Seed Urn, Lotus Anchorite, and Sword of Good Omens power the contest's ritual",

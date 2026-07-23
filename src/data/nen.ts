@@ -1790,6 +1790,52 @@ export const nenAbilities: NenAbility[] = [
     ],
     confidence: "strong-inference",
   },
+  {
+    id: "disgusting-telephone",
+    name: "Disgusting Telephone",
+    userCharacterId: "chrollo",
+    kind: "borrowed",
+    nenType: "conjurer",
+    description:
+      "A stolen ability (lit. 'Love Dial 6700'), originally Narumi McGait's and run by Chrollo through Skill Hunter. Conjures a love-themed cell phone that searches for an 'ideal partner' matching input criteria: a 6-to-20-digit number appears, and dialing it guides the caller toward the target's location. Chrollo turns the matchmaker into a manhunt tool — its synergy with Skill Hunter lets him locate Nen users carrying the abilities he wants, Hisoka above all.",
+    activation:
+      "Conjure the phone, input the target's criteria to get a number, then dial it for locating guidance.",
+    conditions: [
+      "Limited number of calls per day (exact allowance, and whether it varies, unknown).",
+      "The target must be within Nen range; if merely far, the phone says so without pinpointing them.",
+    ],
+    effects: [
+      "Generates a dial-number for anyone matching the entered criteria.",
+      "Guides the caller toward the target, or reports 'out of Nen range' and advises waiting or relocating.",
+    ],
+    weaknesses: [
+      "Only guides — it neither delivers nor subdues the target.",
+      "Range-limited by distance and separation: from the Tier 3 funeral crowd it could tell Chrollo only that Hisoka was 'up above'.",
+      "Cooldown between failed calls; the daily cap forces patience.",
+    ],
+    firstSeenCh: 406,
+    revealCh: 406,
+    uses: [
+      {
+        ch: 351,
+        note: "Chrollo notes the locating behaved 'the same back at Heavens Arena', implying he held it during the duel with Hisoka.",
+      },
+      {
+        ch: 406,
+        note: "In the Tier 3 funeral crowd he dials for Hisoka; told the target is beyond signal range, he concludes Hisoka is on Tier 1 and weighs going up.",
+      },
+    ],
+    status: "active",
+    awareCharacterIds: [{ characterId: "chrollo", sinceCh: 351 }],
+    evidence: [
+      {
+        chapter: 406,
+        note: "Chrollo conjures the phone and works the dial-and-relocate process on-page; named 'Disgusting Telephone' / 'Love Dial 6700', stolen from Narumi McGait.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
 ];
 
 /** One record per prince whose beast has been meaningfully observed. */

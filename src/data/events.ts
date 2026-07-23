@@ -3406,6 +3406,22 @@ export const events: StoryEvent[] = [
     confidence: "canonical",
   },
   {
+    id: "ev-406-disgusting-telephone",
+    title: "Chrollo dials for Hisoka",
+    summary:
+      "In the Tier 3 funeral crowd Chrollo conjures Disgusting Telephone — a stolen locator that generates a dial-number for a target and guides the caller in. Hisoka reads as within range but unpinnable, then 'out of Nen range': Chrollo concludes his quarry is on Tier 1 and weighs the risk of going up.",
+    chapter: 406,
+    day: 12,
+    kind: "investigation",
+    locationId: "tier-3",
+    participantIds: ["chrollo"],
+    storylineIds: ["troupe-hisoka-hunt"],
+    consequences: [
+      "Chrollo places Hisoka 'up above' on Tier 1 — narrowing the hunt without reaching him",
+    ],
+    confidence: "canonical",
+  },
+  {
     id: "ev-406-chrollo-treasures",
     title: "Chrollo targets the three sacred treasures",
     summary:
