@@ -28,8 +28,7 @@ export const characters: Character[] = [
     monogram: "P1",
     factionIds: ["benjamin-camp", "royal-family", "kakin-military"],
     introducedCh: 358,
-    nenType: "enhancer",
-    nenTypeRevealCh: 361,
+    nenType: "unknown",
     statusHistory: [
       { ch: 358, status: "alive" },
       {
@@ -110,8 +109,7 @@ export const characters: Character[] = [
     monogram: "P2",
     factionIds: ["camilla-camp", "royal-family"],
     introducedCh: 358,
-    nenType: "specialist",
-    nenTypeRevealCh: 373,
+    nenType: "unknown",
     statusHistory: [
       { ch: 358, status: "alive" },
       {
@@ -137,7 +135,7 @@ export const characters: Character[] = [
       {
         text: "Kill Benjamin and any sibling in her path to the throne.",
         kind: "known",
-        revealCh: 360,
+        revealCh: 363,
       },
       {
         text: "Run the Have-Not curse-assassin program against every rival prince from inside confinement.",
@@ -153,7 +151,7 @@ export const characters: Character[] = [
         knownBy: ["sarahell", "fukataki"],
       },
     ],
-    chapterAppearances: [358, 360, 364, 372, 373, 376, 389, 403, 404, 411],
+    chapterAppearances: [358, 363, 366, 372, 373, 376, 389, 403, 404, 411, 413],
     tags: ["prince", "nen-user", "assassin"],
   },
   {
@@ -165,7 +163,14 @@ export const characters: Character[] = [
     factionIds: ["zhang-lei-camp", "royal-family"],
     introducedCh: 358,
     statusHistory: [{ ch: 358, status: "alive" }],
-    locationHistory: [{ ch: 359, locationId: "zhang-lei-quarters" }],
+    locationHistory: [
+      { ch: 359, locationId: "zhang-lei-quarters" },
+      {
+        ch: 410,
+        locationId: "tier-2",
+        note: "Slipped to Tier 2 through Onior's residence minutes before martial law; Benjamin guesses the Justice Bureau or a mafia rendezvous, but his refuge is unconfirmed.",
+      },
+    ],
     objectives: [
       {
         text: "Survive the war by building obligation networks rather than armies.",
@@ -178,7 +183,7 @@ export const characters: Character[] = [
         revealCh: 377,
       },
     ],
-    chapterAppearances: [358, 361, 366, 377, 388, 390],
+    chapterAppearances: [358, 362, 366, 388, 390, 402, 404, 410, 412],
     tags: ["prince", "mafia-patron"],
   },
   {
@@ -189,7 +194,7 @@ export const characters: Character[] = [
     bio: "A brilliant, charming aesthete and a serial killer who collects human trophies — among them a pair of Kurta scarlet eyes. Regarded even by his family as the most dangerous prince.",
     bioReveals: [
       {
-        revealCh: 372,
+        revealCh: 368,
         text: "Began Nen training under coerced Hunter instructors and progressed at a speed his teacher Theta privately calls monstrous — achieving in days what takes talented students months.",
       },
       {
@@ -205,7 +210,7 @@ export const characters: Character[] = [
     factionIds: ["tserriednich-camp", "royal-family"],
     introducedCh: 358,
     nenType: "specialist",
-    nenTypeRevealCh: 375,
+    nenTypeRevealCh: 376,
     statusHistory: [{ ch: 358, status: "alive" }],
     locationHistory: [{ ch: 359, locationId: "tserriednich-quarters" }],
     objectives: [
@@ -217,7 +222,7 @@ export const characters: Character[] = [
       {
         text: "Master Nen completely, beyond what his coerced teachers intend to give him.",
         kind: "hidden",
-        revealCh: 372,
+        revealCh: 368,
       },
     ],
     secrets: [
@@ -230,14 +235,14 @@ export const characters: Character[] = [
     falseBeliefs: [
       {
         text: "Believes Theta is teaching him Nen faithfully and completely.",
-        ch: 372,
+        ch: 368,
         endCh: 385,
         truth:
           "Theta structured his training around a killshot — which his future-sight ability survived. His beast branded her face as a warning; he now keeps both instructors on a knife's edge.",
       },
     ],
     chapterAppearances: [
-      358, 359, 361, 372, 373, 375, 376, 385, 387, 392, 396, 402, 404, 408,
+      358, 359, 362, 366, 368, 375, 376, 385, 387, 394, 402, 404, 413,
     ],
     tags: ["prince", "nen-user", "killer"],
   },
@@ -365,8 +370,12 @@ export const characters: Character[] = [
         text: "His Guardian Spirit Beast marked his sleeping guards with seals. Whatever he wills, the beast interprets through them — a weapon he never asked for and cannot refuse.",
       },
       {
+        revealCh: 382,
+        text: "Awakened after confronting his father at gunpoint. His power fires as an aura bow and arrow: the shot pierces any guard, robs the struck body of its will — and drops one of his own followers where they stand. His first arrow took Benjamin's soldier Shikaku.",
+      },
+      {
         revealCh: 386,
-        text: "When his beast's power fires, his consciousness appears to transfer into a marked guard's body, expending that guard's life. Each shot costs a follower.",
+        text: "The arrow is a forced exchange: the fallen follower's mind wakes inside the struck body — Sumidori opened Shikaku's eyes. Each shot expends a follower, a price Halkenburg tested to destruction in the staged Room 1007 'suicide'.",
       },
       {
         revealCh: 403,
@@ -380,8 +389,7 @@ export const characters: Character[] = [
     monogram: "P9",
     factionIds: ["halkenburg-camp", "royal-family"],
     introducedCh: 358,
-    nenType: "specialist",
-    nenTypeRevealCh: 375,
+    nenType: "unknown",
     statusHistory: [
       { ch: 358, status: "alive" },
       {
@@ -443,7 +451,7 @@ export const characters: Character[] = [
       },
     ],
     chapterAppearances: [
-      358, 359, 366, 375, 385, 386, 390, 403, 404, 407, 411, 413,
+      358, 359, 366, 375, 382, 385, 386, 390, 403, 404, 407, 411, 413,
     ],
     tags: ["prince", "nen-user", "reformist"],
   },
@@ -454,8 +462,8 @@ export const characters: Character[] = [
     bio: "A sharp-tongued performer who treats her siblings with open contempt. Twin to Fugetsu. Her cruelty toward her sister is theater — a years-long act designed to make the twins look estranged and therefore not worth killing together.",
     bioReveals: [
       {
-        revealCh: 382,
-        text: "Died covering Fugetsu's escape through her sister's beast-made passage. Her own beast — a chorus of puppets — appears to persist around Fugetsu after death, a post-mortem echo whose nature remains unresolved.",
+        revealCh: 383,
+        text: "Died covering Fugetsu's escape: when the lifeboat run went lethal, she forced her sister through a door back to the ship and stayed behind. Her own beast, Without You, can wear a dead twin's face — and the 'Kacho' who walked back holding Fugetsu's hand may be exactly that.",
       },
       {
         revealCh: 400,
@@ -468,17 +476,17 @@ export const characters: Character[] = [
     statusHistory: [
       { ch: 358, status: "alive" },
       {
-        ch: 382,
+        ch: 383,
         status: "dead",
-        note: "Killed during the twins' escape attempt; her Guardian Spirit Beast persists after death wearing her face and memory.",
+        note: "Killed during the twins' lifeboat escape on the eighth night; her Guardian Spirit Beast persists after death wearing her face and memory.",
       },
     ],
     locationHistory: [
       { ch: 359, locationId: "kacho-quarters" },
       {
-        ch: 381,
+        ch: 383,
         locationId: "hidden-passage-network",
-        note: "Escape route via Fugetsu's ability.",
+        note: "Escape attempt: banquet stage to lifeboat via Fugetsu's door; killed off-ship when the route turned predatory. Position approximate.",
       },
       {
         ch: 400,
@@ -505,7 +513,7 @@ export const characters: Character[] = [
         knownBy: ["melody", "kaiser"],
       },
     ],
-    chapterAppearances: [358, 366, 370, 381, 382, 400, 402, 403, 411],
+    chapterAppearances: [358, 366, 370, 381, 383, 400, 402, 403, 411, 413],
     tags: ["prince", "victim"],
   },
   {
@@ -526,8 +534,7 @@ export const characters: Character[] = [
     monogram: "P11",
     factionIds: ["fugetsu-camp", "royal-family"],
     introducedCh: 358,
-    nenType: "conjurer",
-    nenTypeRevealCh: 370,
+    nenType: "unknown",
     statusHistory: [
       { ch: 358, status: "alive" },
       {
@@ -539,9 +546,9 @@ export const characters: Character[] = [
     locationHistory: [
       { ch: 359, locationId: "fugetsu-quarters" },
       {
-        ch: 381,
+        ch: 383,
         locationId: "hidden-passage-network",
-        note: "Escape attempt with Kacho.",
+        note: "Lifeboat escape attempt with Kacho during the Sunday banquet; returned alone through her own door.",
       },
       {
         ch: 383,
@@ -550,7 +557,7 @@ export const characters: Character[] = [
       },
     ],
     chapterAppearances: [
-      358, 366, 370, 381, 382, 383, 388, 398, 400, 402, 403, 404, 411,
+      358, 366, 370, 381, 383, 388, 398, 400, 402, 403, 404, 411,
     ],
     tags: ["prince", "nen-user"],
   },
@@ -562,7 +569,11 @@ export const characters: Character[] = [
     bioReveals: [
       {
         revealCh: 368,
-        text: "Strangled in her quarters while her assigned guard slept — the war's first royal casualty. The killer's identity was shown to the reader only in silhouette; the household investigation went nowhere.",
+        text: "Suffocated in her bedroom on the war's first night — the first royal casualty. Oito, riding a cockroach with the borrowed Little Eye, saw a bodyguard doing the strangling; four of her six watchers stood outside the door, and all six were detained for court-martial.",
+      },
+      {
+        revealCh: 372,
+        text: "The case closed off the record: Hanzo's shadow-double bluffed a confession out of the watcher Tuffdy in his holding cell — one of the two guards 'on break', working through a doppelganger ability — then strangled him. The file reads suicide.",
       },
     ],
     monogram: "P12",
@@ -573,7 +584,7 @@ export const characters: Character[] = [
       {
         ch: 368,
         status: "dead",
-        note: "Strangled; assailant unconfirmed in-world.",
+        note: "Strangled by one of her own watch guards; the culprit, Tuffdy, was identified and killed by Hanzo in ch. 372, officially a suicide.",
       },
     ],
     locationHistory: [
@@ -710,7 +721,7 @@ export const characters: Character[] = [
     id: "duazul",
     name: "Duazul Hui Guo Rou",
     role: "Second Queen of Kakin",
-    bio: "Mother of Camilla, Zhang Lei, and Salé-salé per supplementary material. Her line spans the war's hottest head and two of its coolest.",
+    bio: "Mother of Camilla, Tubeppa, and Luzurus — and, on the registry, of Halkenburg. Her line spans the war's hottest head and two of its most methodical, and her loaned guards and spies reach into several other households.",
     monogram: "DU",
     factionIds: ["royal-family"],
     introducedCh: 358,
@@ -724,7 +735,7 @@ export const characters: Character[] = [
     id: "tang-zhao-li",
     name: "Tang Zhao Li Hui Guo Rou",
     role: "Third Queen of Kakin",
-    bio: "Mother of Tserriednich per some orderings — maternal assignments for the middle queens vary by source; this archive treats her line as uncertain.",
+    bio: "Mother of Zhang Lei, her only child. Keeps out of the record; her son's patronage networks do her line's work.",
     monogram: "TZ",
     factionIds: ["royal-family"],
     introducedCh: 358,
@@ -738,7 +749,7 @@ export const characters: Character[] = [
     id: "katrono",
     name: "Katrono Hui Guo Rou",
     role: "Fourth Queen of Kakin",
-    bio: "Mother of Tubeppa per supplementary material. Keeps her household's dealings out of view.",
+    bio: "Mother of Tyson, her only child. Keeps her household's dealings out of view.",
     monogram: "KT",
     factionIds: ["royal-family"],
     introducedCh: 358,
@@ -752,7 +763,7 @@ export const characters: Character[] = [
     id: "swinko-swinko",
     name: "Swinko-Swinko Hui Guo Rou",
     role: "Fifth Queen of Kakin",
-    bio: "Mother of Luzurus and Halkenburg per supplementary material — one son who dodges the war with indulgence, one who confronts it with principle.",
+    bio: "Mother of Salé-salé, her only child — a line that floats on the Eighth Prince's pleasure barge and sinks with it.",
     monogram: "SW",
     factionIds: ["royal-family"],
     introducedCh: 358,
@@ -811,8 +822,8 @@ export const characters: Character[] = [
     bio: "Youngest and lowest-ranked queen, a former commoner with no faction, no army, and an infant daughter marked for death. Hired Kurapika in desperation and became his true client — and an unexpectedly capable field partner.",
     bioReveals: [
       {
-        revealCh: 361,
-        text: "Using Kurapika's borrowed Little Eye through Emperor Time, she piloted a rat through the ship's walls and mapped hidden passages and rival households — intelligence no other camp possesses.",
+        revealCh: 364,
+        text: "Lent Sayird's confiscated Little Eye through Kurapika's Stealth Dolphin, she piloted a fly and then a cockroach through the royal deck — and became the only witness to Momoze's murder (ch. 368) before the borrowed ability returned to its owner after its single use.",
       },
       {
         revealCh: 412,
@@ -916,7 +927,7 @@ export const characters: Character[] = [
     possessions: [
       {
         text: "Little Eye — Sayird's beetle-drone ability, stolen via Stealth Dolphin.",
-        revealCh: 360,
+        revealCh: 361,
       },
     ],
     chapterAppearances: [
@@ -944,13 +955,14 @@ export const characters: Character[] = [
     factionIds: ["woble-camp", "beyond-expedition"],
     servesPrinceId: "prince-woble",
     superiorId: "kurapika",
-    introducedCh: 359,
+    introducedCh: 358,
     nenType: "enhancer",
-    nenTypeRevealCh: 368,
-    statusHistory: [{ ch: 359, status: "alive" }],
+    nenTypeRevealCh: 388,
+    statusHistory: [{ ch: 358, status: "alive" }],
     locationHistory: [{ ch: 359, locationId: "room-1014" }],
     chapterAppearances: [
-      359, 360, 361, 362, 368, 370, 371, 385, 390, 400, 401, 404, 412, 414,
+      358, 359, 360, 361, 362, 368, 370, 371, 385, 388, 390, 400, 401, 404, 412,
+      414,
     ],
     tags: ["guard", "nen-user"],
   },
@@ -969,9 +981,9 @@ export const characters: Character[] = [
     monogram: "SH",
     factionIds: ["woble-camp"],
     servesPrinceId: "prince-woble",
-    introducedCh: 359,
-    statusHistory: [{ ch: 359, status: "alive" }],
-    locationHistory: [{ ch: 359, locationId: "room-1014" }],
+    introducedCh: 360,
+    statusHistory: [{ ch: 360, status: "alive" }],
+    locationHistory: [{ ch: 360, locationId: "room-1014" }],
     secrets: [
       {
         text: "Knew from the voyage's first days that 'Woble' was a boy and said nothing, judging her duty to be to the mother and child in front of her.",
@@ -979,7 +991,7 @@ export const characters: Character[] = [
         knownBy: ["oito", "kurapika", "bill"],
       },
     ],
-    chapterAppearances: [359, 361, 368, 371, 404, 411, 412, 414],
+    chapterAppearances: [360, 361, 368, 371, 404, 411, 412, 414],
     tags: ["staff"],
   },
   {
@@ -1016,7 +1028,7 @@ export const characters: Character[] = [
         note: "Tier 2 custody, later Kaiser's protection alongside Fugetsu and the beast-'Kacho'.",
       },
     ],
-    chapterAppearances: [359, 366, 370, 381, 382, 383, 400, 402, 403, 411],
+    chapterAppearances: [359, 366, 370, 381, 383, 386, 400, 402, 403, 411],
     tags: ["hunter", "nen-user", "guard"],
   },
   {
@@ -1034,8 +1046,7 @@ export const characters: Character[] = [
     factionIds: ["hunter-association", "luzurus-camp"],
     servesPrinceId: "prince-luzurus",
     introducedCh: 0,
-    nenType: "conjurer",
-    nenTypeRevealCh: 0,
+    nenType: "unknown",
     statusHistory: [{ ch: 0, status: "alive" }],
     locationHistory: [
       {
@@ -1052,12 +1063,18 @@ export const characters: Character[] = [
     name: "Hanzo",
     role: "Bodyguard assigned to Prince Marayam; Hunter",
     bio: "A shinobi of Jappon and Hunter-exam veteran, guarding the child prince Marayam. His ninjutsu discipline — and his shadow-clone Nen — make Marayam's suite one of the hardest rooms on the ship to enter unseen.",
+    bioReveals: [
+      {
+        revealCh: 372,
+        text: "He kept his vow to avenge Momoze, whom he failed to protect: his Hanzo Skill 4 double walked into the holding cells, bluffed the watcher Tuffdy into confessing, and strangled him. The record calls it suicide; Hanzo calls it settled.",
+      },
+    ],
     monogram: "HA",
     factionIds: ["hunter-association", "marayam-camp"],
     servesPrinceId: "prince-marayam",
     introducedCh: 0,
-    nenType: "manipulator",
-    nenTypeRevealCh: 361,
+    nenType: "transmuter",
+    nenTypeRevealCh: 0,
     statusHistory: [{ ch: 0, status: "alive" }],
     locationHistory: [
       { ch: 359, locationId: "marayam-quarters" },
@@ -1068,7 +1085,7 @@ export const characters: Character[] = [
         note: "Inside the duplicate room; operates outward via projection.",
       },
     ],
-    chapterAppearances: [359, 361, 368, 390, 394],
+    chapterAppearances: [359, 361, 368, 372, 375, 390, 394],
     tags: ["hunter", "nen-user", "guard"],
   },
   {
@@ -1105,8 +1122,7 @@ export const characters: Character[] = [
     factionIds: ["hunter-association", "tyson-camp"],
     servesPrinceId: "prince-tyson",
     introducedCh: 0,
-    nenType: "enhancer",
-    nenTypeRevealCh: 0,
+    nenType: "unknown",
     statusHistory: [{ ch: 0, status: "alive" }],
     locationHistory: [
       {
@@ -1121,31 +1137,36 @@ export const characters: Character[] = [
   {
     id: "sayird",
     name: "Sayird",
-    role: "Bodyguard to Prince Woble (original detail)",
-    bio: "One of Woble's original guards. Exposed early when a parasitic puppet ability moved through him against the household; subdued by Kurapika, who extracted and confiscated his beetle-drone ability Little Eye.",
+    role: "Bodyguard to Prince Woble (original detail); Hunter",
+    bio: "A Hunter from Beyond's expedition roster serving in Woble's original detail. Exposed early when a parasitic puppet ability moved through him against the household; subdued by Kurapika, who extracted and confiscated his beetle-drone ability Little Eye.",
     monogram: "SA",
-    factionIds: ["woble-camp"],
+    factionIds: ["woble-camp", "hunter-association", "beyond-expedition"],
     servesPrinceId: "prince-woble",
-    introducedCh: 359,
-    nenType: "manipulator",
-    nenTypeRevealCh: 360,
+    introducedCh: 358,
+    nenType: "emitter",
+    nenTypeRevealCh: 361,
     statusHistory: [
-      { ch: 359, status: "alive" },
+      { ch: 358, status: "alive" },
       {
         ch: 360,
+        status: "possessed",
+        note: "A parasitic manipulation puppet — later traced to Momoze's Guardian Spirit Beast — used him to stab three guards in the suite.",
+      },
+      {
+        ch: 361,
         status: "detained",
-        note: "Removed from the suite after the possession incident; held for investigation.",
+        note: "Subdued and de-parasited by Kurapika, then handed over for questioning.",
       },
     ],
     locationHistory: [
       { ch: 359, locationId: "room-1014" },
       {
-        ch: 360,
+        ch: 361,
         locationId: "justice-bureau-hq",
         note: "Custody placement approximate.",
       },
     ],
-    chapterAppearances: [359, 360],
+    chapterAppearances: [358, 359, 360, 361],
     tags: ["guard", "nen-user", "possessed"],
   },
   {
@@ -1212,9 +1233,9 @@ export const characters: Character[] = [
     factionIds: ["benjamin-camp", "kakin-military"],
     servesPrinceId: "prince-benjamin",
     superiorId: "benjamin",
-    introducedCh: 361,
+    introducedCh: 358,
     statusHistory: [
-      { ch: 361, status: "alive" },
+      { ch: 358, status: "alive" },
       {
         ch: 403,
         status: "possessed",
@@ -1236,7 +1257,7 @@ export const characters: Character[] = [
         note: "Bound to a chair in Room 1009 while Halkenburg's soul fires from his body.",
       },
     ],
-    chapterAppearances: [361, 363, 364, 368, 375, 389, 402, 403, 404, 411, 413],
+    chapterAppearances: [358, 363, 364, 368, 375, 389, 402, 403, 404, 411, 413],
     tags: ["guard", "strategist", "military", "possessed"],
   },
   {
@@ -1248,31 +1269,45 @@ export const characters: Character[] = [
     factionIds: ["benjamin-camp", "kakin-military"],
     servesPrinceId: "prince-benjamin",
     superiorId: "balsamilco",
-    introducedCh: 361,
-    nenType: "emitter",
-    nenTypeRevealCh: 362,
-    statusHistory: [{ ch: 361, status: "alive" }],
+    introducedCh: 363,
+    nenType: "unknown",
+    statusHistory: [{ ch: 363, status: "alive" }],
     locationHistory: [
-      { ch: 361, locationId: "room-1014", note: "Embedded observer." },
+      {
+        ch: 365,
+        locationId: "room-1014",
+        note: "Rotated into Woble's suite as Benjamin's embedded observer.",
+      },
     ],
-    chapterAppearances: [361, 362, 363, 368, 370],
+    chapterAppearances: [363, 365, 368, 370, 386, 388, 412],
     tags: ["guard", "spy", "nen-user", "military"],
   },
   {
     id: "coventoba",
     name: "Coventoba",
-    role: "Benjamin's soldier, posted to Woble's household",
-    bio: "One of the two Benjamin soldiers placed with Woble at departure. Loud where Babimyna is quiet; his role is as much provocation as observation.",
+    role: "Benjamin's soldier, embedded with Zhang Lei's household",
+    bio: "Benjamin's observer inside the Third Prince's Room 1003 under the guard-exchange system — and the only outside witness to the coin-producing beast's early habits, a fact he keeps from his own host.",
+    bioReveals: [
+      {
+        revealCh: 413,
+        text: "Martial law put him in an impossible seat: ordered to secure a prince who had already vanished to Tier 2, he relayed what little Room 1003 knew while Benjamin's reconnaissance squads took over the hunt.",
+      },
+    ],
     monogram: "CO",
     factionIds: ["benjamin-camp", "kakin-military"],
     servesPrinceId: "prince-benjamin",
     superiorId: "balsamilco",
-    introducedCh: 359,
-    statusHistory: [{ ch: 359, status: "alive" }],
+    introducedCh: 358,
+    statusHistory: [{ ch: 358, status: "alive" }],
     locationHistory: [
-      { ch: 359, locationId: "room-1014", note: "Embedded observer." },
+      {
+        ch: 363,
+        revealCh: 366,
+        locationId: "zhang-lei-quarters",
+        note: "Posted into Zhang Lei's Room 1003 under the guard exchange.",
+      },
     ],
-    chapterAppearances: [359, 360, 361, 362],
+    chapterAppearances: [358, 363, 366, 374, 389, 402, 413],
     tags: ["guard", "spy", "military"],
     incomplete: true,
   },
@@ -1315,7 +1350,7 @@ export const characters: Character[] = [
     id: "vict",
     name: "Vict",
     role: "Benjamin's soldier",
-    bio: "A senior soldier of the First Prince's private force, holder of the defensive ability Tackle Shield. Stationed with Halkenburg when Benjamin moved to test his brother's mysterious power.",
+    bio: "A senior soldier of the First Prince's private force, holder of the defensive ability Tackle Shield. First loaned into Momoze's stopgap watch, then — after the court-martial that followed her death — stationed with Halkenburg when Benjamin moved to test his brother's mysterious power.",
     bioReveals: [
       {
         revealCh: 389,
@@ -1330,9 +1365,14 @@ export const characters: Character[] = [
     factionIds: ["benjamin-camp", "kakin-military"],
     servesPrinceId: "prince-benjamin",
     superiorId: "balsamilco",
-    introducedCh: 363,
+    introducedCh: 358,
     statusHistory: [
-      { ch: 363, status: "alive" },
+      { ch: 358, status: "alive" },
+      {
+        ch: 368,
+        status: "detained",
+        note: "One of Momoze's six watch guards, held for court-martial after her murder; later cleared and returned to Benjamin's disposition.",
+      },
       {
         ch: 389,
         status: "possessed",
@@ -1340,7 +1380,16 @@ export const characters: Character[] = [
       },
     ],
     locationHistory: [
-      { ch: 363, locationId: "military-hq" },
+      {
+        ch: 361,
+        locationId: "momoze-quarters",
+        note: "Loaned into the Twelfth Prince's stopgap watch rotation.",
+      },
+      {
+        ch: 368,
+        locationId: "justice-bureau-hq",
+        note: "Court-martial custody with Momoze's five other watchers.",
+      },
       {
         ch: 389,
         locationId: "halkenburg-quarters",
@@ -1352,7 +1401,7 @@ export const characters: Character[] = [
         note: "Deployed by Halkenburg as bait in the courthouse ambush.",
       },
     ],
-    chapterAppearances: [363, 389, 403],
+    chapterAppearances: [358, 368, 389, 403],
     tags: ["guard", "military", "possessed"],
     incomplete: true,
   },
@@ -1384,15 +1433,19 @@ export const characters: Character[] = [
           "Biscuit's on-the-spot transformation broke the denial; he asked to be taught.",
       },
     ],
-    chapterAppearances: [369, 371, 375, 383],
+    chapterAppearances: [361, 367, 368, 369, 373, 374, 375, 376, 383, 413],
     tags: ["guard", "skeptic", "bureau"],
   },
   {
     id: "shikaku",
     name: "Shikaku",
     role: "Benjamin's soldier",
-    bio: "A Manipulator in the First Prince's private force, caught in the crossfire of Halkenburg's first ability experiments.",
+    bio: "A Manipulator in the First Prince's private force, posted into Halkenburg's household as guard and spy — and caught in the crossfire of the Ninth Prince's first ability experiments.",
     bioReveals: [
+      {
+        revealCh: 382,
+        text: "Ordered to intercept Halkenburg's awakened power, he met the aura arrow with his card ability Culdcept — and lost. The arrow pierced card and man alike; when his body stood back up, the mind inside belonged to one of Halkenburg's fallen guards.",
+      },
       {
         revealCh: 386,
         text: "His body — carrying the mind of Halkenburg's guard Sumidori after a forced swap — walked to Luzurus's door, shouted 'Long live First Prince Benjamin!', and shot itself. Whether Shikaku's own mind experienced any of it is exactly the question Halkenburg was testing.",
@@ -1408,29 +1461,34 @@ export const characters: Character[] = [
     superiorId: "balsamilco",
     introducedCh: 363,
     nenType: "manipulator",
-    nenTypeRevealCh: 389,
+    nenTypeRevealCh: 388,
     statusHistory: [
       { ch: 363, status: "alive" },
       {
-        ch: 386,
+        ch: 382,
         status: "possessed",
-        note: "The swap experiment: his body destroyed in the staged suicide while his own soul sleeps on inside Sumidori's body.",
+        note: "Halkenburg's first arrow robbed his body of its will; Sumidori's mind piloted it while his own slept, displaced.",
       },
       {
-        ch: 413,
+        ch: 386,
+        revealCh: 389,
         status: "presumed-dead",
-        note: "Listed among the dead; the moment his dormant soul was spent is not shown on-page.",
+        note: "His body destroyed in the staged Room 1007 suicide; Benjamin's baton lit his star at ch. 389 — the pledge counts him dead — though what became of his displaced mind is exactly what Halkenburg's experiment left ambiguous.",
       },
     ],
     locationHistory: [
-      { ch: 363, locationId: "military-hq" },
+      {
+        ch: 361,
+        locationId: "halkenburg-quarters",
+        note: "Posted into the Ninth Prince's household as guard and spy from the war's first day.",
+      },
       {
         ch: 386,
-        locationId: "royal-quarters",
-        note: "Died at the door of Luzurus's suite.",
+        locationId: "room-1007",
+        note: "His body died at the door of Luzurus's suite.",
       },
     ],
-    chapterAppearances: [363, 386],
+    chapterAppearances: [363, 375, 382, 386],
     tags: ["guard", "military", "victim", "possessed"],
   },
   {
@@ -1500,43 +1558,42 @@ export const characters: Character[] = [
     monogram: "TH",
     factionIds: ["tserriednich-camp"],
     servesPrinceId: "prince-tserriednich",
-    introducedCh: 361,
-    nenType: "emitter",
-    nenTypeRevealCh: 372,
+    introducedCh: 362,
+    nenType: "unknown",
     statusHistory: [
-      { ch: 361, status: "alive" },
+      { ch: 362, status: "alive" },
       {
         ch: 385,
         status: "incapacitated",
         note: "Collapsed after the failed killshot; her face carries the beast's first warning brand. Salkov takes over instruction while she recovers. Alive per later mentions through 413.",
       },
     ],
-    locationHistory: [{ ch: 361, locationId: "tserriednich-quarters" }],
+    locationHistory: [{ ch: 362, locationId: "tserriednich-quarters" }],
     objectives: [
-      { text: "Survive her employer.", kind: "known", revealCh: 372 },
+      { text: "Survive her employer.", kind: "known", revealCh: 362 },
       {
         text: "Kill Tserriednich through a gap she builds into his training.",
         kind: "hidden",
-        revealCh: 375,
+        revealCh: 376,
       },
     ],
     secrets: [
       {
         text: "Her deference is performance; she considers Tserriednich a monster who must die.",
-        revealCh: 375,
+        revealCh: 362,
         knownBy: ["salkov"],
       },
     ],
     falseBeliefs: [
       {
         text: "Believed one clean shot during his Zetsu training would end him.",
-        ch: 375,
+        ch: 376,
         endCh: 385,
         truth:
           "His future-sight let him dodge a bullet he had already 'seen'. The attempt failed; his beast nicked her face as a first warning, promising she ceases to be human on the third lie.",
       },
     ],
-    chapterAppearances: [361, 372, 373, 375, 376, 385, 387, 392, 396, 408],
+    chapterAppearances: [362, 363, 366, 368, 376, 384, 385, 387],
     tags: ["guard", "nen-user", "double-agent"],
   },
   {
@@ -1553,11 +1610,11 @@ export const characters: Character[] = [
     monogram: "SL",
     factionIds: ["tserriednich-camp"],
     servesPrinceId: "prince-tserriednich",
-    introducedCh: 372,
+    introducedCh: 362,
     nenType: "unknown",
-    statusHistory: [{ ch: 372, status: "alive" }],
-    locationHistory: [{ ch: 372, locationId: "tserriednich-quarters" }],
-    chapterAppearances: [372, 375, 385, 392, 396, 402, 404],
+    statusHistory: [{ ch: 362, status: "alive" }],
+    locationHistory: [{ ch: 362, locationId: "tserriednich-quarters" }],
+    chapterAppearances: [362, 385, 386, 387, 394, 402, 404, 413],
     tags: ["guard", "nen-user"],
     incomplete: true,
   },
@@ -1569,58 +1626,79 @@ export const characters: Character[] = [
     monogram: "MA",
     factionIds: ["tubeppa-camp"],
     servesPrinceId: "prince-tubeppa",
-    introducedCh: 370,
-    statusHistory: [{ ch: 370, status: "alive" }],
+    introducedCh: 363,
+    statusHistory: [{ ch: 363, status: "alive" }],
     locationHistory: [
-      { ch: 370, locationId: "royal-quarters", note: "Tubeppa household." },
+      {
+        ch: 363,
+        locationId: "royal-quarters",
+        note: "Tubeppa household (Room 1005).",
+      },
     ],
-    chapterAppearances: [370, 371],
+    chapterAppearances: [363, 370, 371, 388, 401, 411],
     tags: ["guard"],
     incomplete: true,
   },
   {
     id: "mandam",
     name: "Mandam",
-    role: "Zhang Lei's guard",
-    bio: "A composed intermediary in the Third Prince's service, handling the household's Hunter liaisons and its quieter errands toward the families below.",
+    role: "Captain of Queen Duazul's royal bodyguards",
+    bio: "The captain and coordinator of the Second Queen's royal bodyguards — the officer behind Duazul's loaner network, which places men like Slakka, Satobi, and Nipaper inside other lines' households.",
     monogram: "MD",
-    factionIds: ["zhang-lei-camp"],
-    servesPrinceId: "prince-zhang-lei",
+    factionIds: ["royal-family"],
     introducedCh: 366,
     statusHistory: [{ ch: 366, status: "alive" }],
-    locationHistory: [{ ch: 366, locationId: "zhang-lei-quarters" }],
-    chapterAppearances: [366, 377, 388],
+    locationHistory: [
+      {
+        ch: 366,
+        locationId: "tier-1",
+        note: "Operates from Queen Duazul's household in the royal block.",
+      },
+    ],
+    chapterAppearances: [366],
     tags: ["guard"],
     incomplete: true,
   },
   {
     id: "sakata",
     name: "Sakata",
-    role: "Zhang Lei's guard; Hunter",
-    bio: "A blunt professional Hunter attached to the Third Prince's household, doubling as its link to Kurapika's Nen class network.",
+    role: "Zhang Lei's guard, loaned to Woble's household",
+    bio: "A blunt professional in the Third Prince's service, sent with Hashito into Room 1014 to assist Kurapika — where he became Zhang Lei's standing link to the Nen class network. Not yet a Nen user himself, a gap he intends to close.",
     monogram: "ST",
-    factionIds: ["zhang-lei-camp", "hunter-association"],
+    factionIds: ["zhang-lei-camp"],
     servesPrinceId: "prince-zhang-lei",
     introducedCh: 366,
     nenType: "unknown",
     statusHistory: [{ ch: 366, status: "alive" }],
-    locationHistory: [{ ch: 366, locationId: "zhang-lei-quarters" }],
-    chapterAppearances: [366, 370, 377, 388],
-    tags: ["guard", "hunter"],
+    locationHistory: [
+      {
+        ch: 366,
+        locationId: "room-1014",
+        note: "Loaned into Woble's suite by Zhang Lei to assist Kurapika.",
+      },
+    ],
+    chapterAppearances: [366, 367, 370, 386, 388, 411, 412],
+    tags: ["guard"],
     incomplete: true,
   },
   {
     id: "hashito",
     name: "Hashito",
-    role: "Zhang Lei's guard",
-    bio: "Guard in the Third Prince's household. Sparse record; entry maintained for roster completeness.",
+    role: "Zhang Lei's guard, loaned to Woble's household",
+    bio: "Guard in the Third Prince's service, loaned with Sakata into Room 1014 to assist Kurapika. Eager enough about Nen to ask for the awakening out of turn — and be refused for skipping the basics.",
     monogram: "HS",
     factionIds: ["zhang-lei-camp"],
     servesPrinceId: "prince-zhang-lei",
     introducedCh: 366,
     statusHistory: [{ ch: 366, status: "alive" }],
-    locationHistory: [{ ch: 366, locationId: "zhang-lei-quarters" }],
-    chapterAppearances: [366],
+    locationHistory: [
+      {
+        ch: 366,
+        locationId: "room-1014",
+        note: "Loaned into Woble's suite by Zhang Lei to assist Kurapika.",
+      },
+    ],
+    chapterAppearances: [366, 388, 411],
     tags: ["guard"],
     incomplete: true,
   },
@@ -1642,67 +1720,84 @@ export const characters: Character[] = [
     statusHistory: [{ ch: 365, status: "alive" }],
     locationHistory: [
       { ch: 365, locationId: "room-1014", note: "Temporary Woble posting." },
-      { ch: 366, locationId: "zhang-lei-quarters" },
+      {
+        ch: 372,
+        locationId: "zhang-lei-quarters",
+        note: "Recalled to the Third Prince's household between class rounds; exact timing approximate.",
+      },
       {
         ch: 411,
         locationId: "room-1014",
         note: "Gate-crashes the second Nen class; departs after the ineligibility declaration.",
       },
     ],
-    chapterAppearances: [365, 366, 388, 411, 412],
+    chapterAppearances: [365, 366, 367, 370, 371, 376, 388, 411, 412],
     tags: ["guard", "spy"],
     incomplete: true,
   },
   {
     id: "nipaper",
     name: "Nipaper",
-    role: "Guard detailed to Momoze's household",
-    bio: "Second of Momoze's stopgap guards. Sparse record; entry maintained for the death investigation's witness list.",
+    role: "Guard detailed to Momoze's household; Queen Duazul's spy",
+    bio: "One of Momoze's six stopgap watchers — on the books a loaned guard, on Duazul's books a spy. Detained with the rest of the watch after the murder.",
     monogram: "NP",
     factionIds: ["momoze-camp"],
     servesPrinceId: "prince-momoze",
-    introducedCh: 367,
-    statusHistory: [{ ch: 367, status: "alive" }],
-    locationHistory: [{ ch: 367, locationId: "momoze-quarters" }],
-    chapterAppearances: [367, 368],
-    tags: ["guard"],
+    introducedCh: 361,
+    statusHistory: [
+      { ch: 361, status: "alive" },
+      {
+        ch: 368,
+        status: "detained",
+        note: "Court-martial custody with Momoze's five other watchers; disposition after the Tuffdy 'suicide' unrecorded.",
+      },
+    ],
+    locationHistory: [
+      { ch: 361, locationId: "momoze-quarters" },
+      {
+        ch: 368,
+        locationId: "justice-bureau-hq",
+        note: "Custody placement approximate.",
+      },
+    ],
+    chapterAppearances: [361, 367, 368],
+    tags: ["guard", "spy"],
     incomplete: true,
   },
   {
     id: "woody",
     name: "Woody",
     role: "Queen Oito's household guard",
-    bio: "A guard of Woble's original detail, killed in the suite during the Silent Majority attacks that emptied Room 1014's roster one watch at a time.",
+    bio: "A guard of Woble's original detail — loaned in from Queen Swinko-swinko's line — and the war's first shown casualty: found drained bloodless in the suite's bathroom on the first night.",
     monogram: "WO",
     factionIds: ["woble-camp"],
     servesPrinceId: "prince-woble",
-    introducedCh: 359,
+    introducedCh: 358,
     statusHistory: [
-      { ch: 359, status: "alive" },
+      { ch: 358, status: "alive" },
       {
-        ch: 362,
+        ch: 359,
         status: "dead",
-        note: "Killed by the puppet assailants in Room 1014; exact chapter approximate.",
+        note: "Found in Room 1014's bathroom, blood drained through multiple puncture wounds — the first Silent Majority kill shown on-page.",
       },
     ],
-    locationHistory: [{ ch: 359, locationId: "room-1014" }],
-    chapterAppearances: [359, 361, 362],
+    locationHistory: [{ ch: 358, locationId: "room-1014" }],
+    chapterAppearances: [358, 359],
     tags: ["guard", "victim"],
     incomplete: true,
   },
   {
     id: "loberry",
     name: "Loberry",
-    role: "Servant of Queen Seiko's household",
+    role: "Prince Kacho's maid",
     bio: "A class attendee who suddenly saw a woman nobody else could — because Silent Majority's marionette is visible only to its user and the person it possesses. Her outcry was the trigger the killer wanted; Barrigen died seconds later, and Loberry was detained for a murder she was used to stage.",
     monogram: "LO",
     factionIds: ["kacho-camp"],
     servesPrinceId: "prince-kacho",
-    introducedCh: 369,
+    introducedCh: 366,
     nenType: "unknown",
-    nenTypeRevealCh: 372,
     statusHistory: [
-      { ch: 369, status: "alive" },
+      { ch: 366, status: "alive" },
       {
         ch: 370,
         status: "possessed",
@@ -1715,7 +1810,7 @@ export const characters: Character[] = [
       },
     ],
     locationHistory: [
-      { ch: 369, locationId: "kacho-quarters" },
+      { ch: 366, locationId: "kacho-quarters" },
       { ch: 370, locationId: "room-1014", note: "Attending the Nen class." },
       {
         ch: 371,
@@ -1723,7 +1818,7 @@ export const characters: Character[] = [
         note: "Custody pending the 72-hour observation.",
       },
     ],
-    chapterAppearances: [369, 370, 371, 372],
+    chapterAppearances: [366, 370, 371, 372],
     tags: ["staff", "possessed", "detained"],
     incomplete: true,
   },
@@ -1764,17 +1859,30 @@ export const characters: Character[] = [
     monogram: "SU",
     factionIds: ["halkenburg-camp"],
     servesPrinceId: "prince-halkenburg",
-    introducedCh: 375,
+    introducedCh: 362,
     statusHistory: [
       { ch: 362, status: "alive" },
       {
+        ch: 382,
+        revealCh: 386,
+        status: "possessed",
+        note: "The follower spent for Halkenburg's first arrow: his mind crossed into Shikaku's body while his own lay vacant under a brainwave monitor in Room 1009.",
+      },
+      {
         ch: 386,
         status: "dead",
-        note: "His soul — awake inside Shikaku's body after the swap — died in the staged Room 1007 suicide, without a hint of regret. His own body lives on, carrying Shikaku's sleeping mind.",
+        note: "His soul — awake inside Shikaku's body after the swap — died in the staged Room 1007 suicide, without a hint of regret. His own body lives on.",
       },
     ],
-    locationHistory: [{ ch: 375, locationId: "halkenburg-quarters" }],
-    chapterAppearances: [375, 385, 386],
+    locationHistory: [
+      { ch: 362, locationId: "halkenburg-quarters" },
+      {
+        ch: 411,
+        locationId: "tier-2",
+        note: "His body: reassigned below Tier 2 with the rest of the household when 'Balsamilco' disbanded Halkenburg's guards.",
+      },
+    ],
+    chapterAppearances: [362, 375, 382, 386],
     tags: ["guard", "marked"],
     incomplete: true,
   },
@@ -1786,10 +1894,17 @@ export const characters: Character[] = [
     monogram: "YU",
     factionIds: ["halkenburg-camp"],
     servesPrinceId: "prince-halkenburg",
-    introducedCh: 375,
-    statusHistory: [{ ch: 375, status: "alive" }],
-    locationHistory: [{ ch: 375, locationId: "halkenburg-quarters" }],
-    chapterAppearances: [375, 385],
+    introducedCh: 362,
+    statusHistory: [{ ch: 362, status: "alive" }],
+    locationHistory: [
+      { ch: 362, locationId: "halkenburg-quarters" },
+      {
+        ch: 370,
+        locationId: "room-1014",
+        note: "Sent to Kurapika's Nen classes with instructions to learn all he can about Nen beasts.",
+      },
+    ],
+    chapterAppearances: [362, 369, 375, 385],
     tags: ["guard", "marked"],
     incomplete: true,
   },
@@ -1832,7 +1947,7 @@ export const characters: Character[] = [
     nenTypeRevealCh: 0,
     statusHistory: [{ ch: 0, status: "alive" }],
     locationHistory: [
-      { ch: 359, locationId: "tier-5" },
+      { ch: 359, revealCh: 371, locationId: "tier-5" },
       {
         ch: 377,
         locationId: "tier-3",
@@ -1843,10 +1958,10 @@ export const characters: Character[] = [
       {
         text: "Find and kill Hisoka before Hisoka picks off more members.",
         kind: "known",
-        revealCh: 359,
+        revealCh: 0,
       },
     ],
-    chapterAppearances: [359, 363, 377, 379, 390],
+    chapterAppearances: [371, 377, 380, 392, 393, 395, 405],
     tags: ["troupe", "nen-user"],
   },
   {
@@ -1887,7 +2002,7 @@ export const characters: Character[] = [
       {
         ch: 405,
         locationId: "tier-1",
-        note: "VIP casino; how he obtained Tier 1 access is unconfirmed.",
+        note: "VIP casino; how he obtained Tier 1 access is unconfirmed — Chrollo guesses a prince's invitation.",
       },
     ],
     objectives: [
@@ -1897,7 +2012,7 @@ export const characters: Character[] = [
         revealCh: 0,
       },
     ],
-    chapterAppearances: [359, 405],
+    chapterAppearances: [405],
     tags: ["nen-user", "hunted"],
   },
   {
@@ -1912,14 +2027,14 @@ export const characters: Character[] = [
     nenTypeRevealCh: 0,
     statusHistory: [{ ch: 0, status: "alive" }],
     locationHistory: [
-      { ch: 359, locationId: "tier-5" },
+      { ch: 359, revealCh: 371, locationId: "tier-5" },
       {
         ch: 378,
         locationId: "tier-4-central",
         note: "Search sweep; approximate.",
       },
     ],
-    chapterAppearances: [359, 363, 377, 378, 379, 390],
+    chapterAppearances: [371, 377, 378, 379, 380, 384, 392, 393, 394, 398, 405],
     tags: ["troupe", "nen-user"],
   },
   {
@@ -1934,14 +2049,14 @@ export const characters: Character[] = [
     nenTypeRevealCh: 0,
     statusHistory: [{ ch: 0, status: "alive" }],
     locationHistory: [
-      { ch: 359, locationId: "tier-5" },
+      { ch: 359, revealCh: 371, locationId: "tier-5" },
       {
         ch: 378,
         locationId: "tier-4-central",
         note: "Search sweep; approximate.",
       },
     ],
-    chapterAppearances: [359, 370, 377, 378, 379],
+    chapterAppearances: [371, 377, 378, 379, 380, 384, 392, 395, 398, 404],
     tags: ["troupe", "nen-user"],
   },
   {
@@ -1956,14 +2071,14 @@ export const characters: Character[] = [
     nenTypeRevealCh: 0,
     statusHistory: [{ ch: 0, status: "alive" }],
     locationHistory: [
-      { ch: 359, locationId: "tier-5" },
+      { ch: 359, revealCh: 371, locationId: "tier-5" },
       {
         ch: 378,
         locationId: "tier-4-central",
         note: "Search sweep; approximate.",
       },
     ],
-    chapterAppearances: [359, 377, 378, 379],
+    chapterAppearances: [371, 377, 378, 379, 380, 384, 392, 395, 398, 404],
     tags: ["troupe", "nen-user"],
   },
   {
@@ -1977,8 +2092,8 @@ export const characters: Character[] = [
     nenType: "transmuter",
     nenTypeRevealCh: 0,
     statusHistory: [{ ch: 0, status: "alive" }],
-    locationHistory: [{ ch: 359, locationId: "tier-5" }],
-    chapterAppearances: [359, 377, 390],
+    locationHistory: [{ ch: 359, revealCh: 371, locationId: "tier-5" }],
+    chapterAppearances: [371, 377, 380, 395, 398, 405],
     tags: ["troupe", "nen-user"],
   },
   {
@@ -1992,8 +2107,8 @@ export const characters: Character[] = [
     nenType: "emitter",
     nenTypeRevealCh: 0,
     statusHistory: [{ ch: 0, status: "alive" }],
-    locationHistory: [{ ch: 359, locationId: "tier-5" }],
-    chapterAppearances: [359, 377],
+    locationHistory: [{ ch: 359, revealCh: 371, locationId: "tier-5" }],
+    chapterAppearances: [371, 377, 379, 380, 392, 395, 400],
     tags: ["troupe", "nen-user"],
   },
   {
@@ -2007,8 +2122,8 @@ export const characters: Character[] = [
     nenType: "conjurer",
     nenTypeRevealCh: 0,
     statusHistory: [{ ch: 0, status: "alive" }],
-    locationHistory: [{ ch: 359, locationId: "tier-5" }],
-    chapterAppearances: [359, 377],
+    locationHistory: [{ ch: 359, revealCh: 377, locationId: "tier-5" }],
+    chapterAppearances: [377, 380],
     tags: ["troupe", "nen-user"],
   },
   {
@@ -2016,14 +2131,26 @@ export const characters: Character[] = [
     name: "Bonolenov Ndongo",
     role: "Phantom Troupe #10",
     bio: "The bandaged dancer of the Gyudondond, whose body's piercings are wind instruments and whose music is a battlesong. Quietly among the Troupe's most dangerous members.",
+    bioReveals: [
+      {
+        revealCh: 405,
+        text: "Chrollo's decoy: transformed into 'Hisoka' so the mafia would 'contain' him and stand down, he rode the ruse to the VIP floors — where he crossed paths with the real Hisoka at the Tier 1 casino, and where Lynch's truth-punch forced his mask off. He snapped her neck, wore her shape long enough to send Zakuro home reassured, and vanished.",
+      },
+    ],
     monogram: "BO",
     factionIds: ["phantom-troupe"],
     introducedCh: 0,
-    nenType: "conjurer",
-    nenTypeRevealCh: 0,
+    nenType: "unknown",
     statusHistory: [{ ch: 0, status: "alive" }],
-    locationHistory: [{ ch: 359, locationId: "tier-5" }],
-    chapterAppearances: [359, 377],
+    locationHistory: [
+      { ch: 359, revealCh: 377, locationId: "tier-5" },
+      {
+        ch: 405,
+        locationId: "tier-1",
+        note: "In mafia hands as the fake 'Hisoka'; at large again after killing Lynch. Position approximate.",
+      },
+    ],
+    chapterAppearances: [377, 380, 392, 393, 405, 406],
     tags: ["troupe", "nen-user"],
   },
   {
@@ -2037,8 +2164,8 @@ export const characters: Character[] = [
     nenType: "manipulator",
     nenTypeRevealCh: 0,
     statusHistory: [{ ch: 0, status: "alive" }],
-    locationHistory: [{ ch: 359, locationId: "tier-5" }],
-    chapterAppearances: [359, 377],
+    locationHistory: [{ ch: 359, revealCh: 377, locationId: "tier-5" }],
+    chapterAppearances: [377, 380],
     tags: ["troupe", "nen-user", "zoldyck"],
   },
   {
@@ -2055,7 +2182,7 @@ export const characters: Character[] = [
     locationHistory: [
       { ch: 377, locationId: "tier-5", note: "Joins the sweep; approximate." },
     ],
-    chapterAppearances: [377, 378],
+    chapterAppearances: [377, 380],
     tags: ["troupe", "nen-user", "zoldyck", "assassin"],
   },
 
@@ -2067,8 +2194,8 @@ export const characters: Character[] = [
     bio: "The youngest and most radical of the three family bosses, uninterested in territory or tribute. Her ability infects chosen followers, granting power that grows with each person they kill — a pyramid scheme of murder aimed at the ship itself.",
     bioReveals: [
       {
-        revealCh: 386,
-        text: "Claims kinship with the royal line and treats the succession war as a personal grievance; her stated goal is closer to mass vengeance than to victory.",
+        revealCh: 384,
+        text: "Holds royal blood: the three mafia bosses are 'second-track' descendants — illegitimate heirs paid to stay invisible — and she treats the succession war as a personal grievance. Her stated goal is closer to mass vengeance than to victory.",
       },
       {
         revealCh: 408,
@@ -2081,12 +2208,12 @@ export const characters: Character[] = [
     ],
     monogram: "MO",
     factionIds: ["heil-ly"],
-    introducedCh: 377,
+    introducedCh: 378,
     nenType: "specialist",
-    nenTypeRevealCh: 377,
-    statusHistory: [{ ch: 377, status: "alive" }],
+    nenTypeRevealCh: 408,
+    statusHistory: [{ ch: 378, status: "alive" }],
     locationHistory: [
-      { ch: 377, locationId: "heil-ly-territory" },
+      { ch: 378, locationId: "heil-ly-territory" },
       {
         ch: 394,
         revealCh: 409,
@@ -2098,7 +2225,7 @@ export const characters: Character[] = [
       {
         text: "Spread her contagion of killers until the ship devours itself.",
         kind: "known",
-        revealCh: 377,
+        revealCh: 378,
       },
       {
         text: "Destroy Kakin — and after Kakin, everything. The contest is her once-in-a-lifetime container of targets.",
@@ -2113,7 +2240,7 @@ export const characters: Character[] = [
         status: "active",
       },
     ],
-    chapterAppearances: [377, 378, 380, 386, 394, 405, 407, 408, 409, 410],
+    chapterAppearances: [378, 384, 390, 394, 405, 407, 408, 409, 410],
     tags: ["mafia", "nen-user", "boss"],
   },
   {
@@ -2134,12 +2261,12 @@ export const characters: Character[] = [
     monogram: "HN",
     factionIds: ["xi-yu"],
     superiorId: "onior",
-    introducedCh: 371,
-    nenType: "transmuter",
-    nenTypeRevealCh: 378,
-    statusHistory: [{ ch: 371, status: "alive" }],
+    introducedCh: 378,
+    nenType: "conjurer",
+    nenTypeRevealCh: 390,
+    statusHistory: [{ ch: 378, status: "alive" }],
     locationHistory: [
-      { ch: 371, locationId: "xi-yu-territory" },
+      { ch: 378, locationId: "xi-yu-territory" },
       {
         ch: 391,
         locationId: "tier-3",
@@ -2147,7 +2274,7 @@ export const characters: Character[] = [
       },
     ],
     chapterAppearances: [
-      371, 377, 378, 379, 380, 390, 391, 392, 393, 394, 395, 398, 399, 406,
+      378, 380, 390, 391, 392, 393, 394, 395, 398, 399, 404, 406,
     ],
     tags: ["mafia", "nen-user"],
   },
@@ -2165,15 +2292,15 @@ export const characters: Character[] = [
     monogram: "ZA",
     factionIds: ["xi-yu"],
     superiorId: "hinrigh",
-    introducedCh: 378,
-    nenType: "transmuter",
-    nenTypeRevealCh: 378,
-    statusHistory: [{ ch: 378, status: "alive" }],
+    introducedCh: 390,
+    nenType: "manipulator",
+    nenTypeRevealCh: 390,
+    statusHistory: [{ ch: 390, status: "alive" }],
     locationHistory: [
-      { ch: 378, locationId: "xi-yu-territory" },
+      { ch: 390, locationId: "xi-yu-territory" },
       { ch: 391, locationId: "tier-3", note: "Hisoka manhunt with Lynch." },
     ],
-    chapterAppearances: [378, 379, 380, 391, 392, 393, 406],
+    chapterAppearances: [390, 391, 392, 393, 406],
     tags: ["mafia", "nen-user"],
   },
   {
@@ -2190,11 +2317,11 @@ export const characters: Character[] = [
     monogram: "LY",
     factionIds: ["xi-yu"],
     superiorId: "hinrigh",
-    introducedCh: 378,
-    nenType: "enhancer",
-    nenTypeRevealCh: 378,
+    introducedCh: 390,
+    nenType: "emitter",
+    nenTypeRevealCh: 390,
     statusHistory: [
-      { ch: 378, status: "alive" },
+      { ch: 390, status: "alive" },
       {
         ch: 405,
         revealCh: 406,
@@ -2203,10 +2330,10 @@ export const characters: Character[] = [
       },
     ],
     locationHistory: [
-      { ch: 378, locationId: "xi-yu-territory" },
+      { ch: 390, locationId: "xi-yu-territory" },
       { ch: 391, locationId: "tier-3", note: "Hisoka manhunt with Zakuro." },
     ],
-    chapterAppearances: [378, 379, 380, 391, 392, 393, 406],
+    chapterAppearances: [390, 391, 392, 393, 406],
     tags: ["mafia", "nen-user", "victim"],
   },
   {
@@ -2223,10 +2350,11 @@ export const characters: Character[] = [
     monogram: "LU",
     factionIds: ["heil-ly"],
     superiorId: "morena",
-    introducedCh: 390,
-    nenType: "unknown",
+    introducedCh: 378,
+    nenType: "emitter",
+    nenTypeRevealCh: 393,
     statusHistory: [
-      { ch: 390, status: "alive" },
+      { ch: 378, status: "alive" },
       {
         ch: 393,
         status: "dead",
@@ -2255,10 +2383,18 @@ export const characters: Character[] = [
     bio: "The old-line boss of Xi-Yu, patron-bound to Prince Zhang Lei. Delegates the shooting war to Hinrigh while managing the family's obligations upward to the royal deck.",
     monogram: "ON",
     factionIds: ["xi-yu"],
-    introducedCh: 371,
-    statusHistory: [{ ch: 371, status: "alive" }],
-    locationHistory: [{ ch: 371, locationId: "xi-yu-territory" }],
-    chapterAppearances: [371, 377, 388],
+    introducedCh: 378,
+    statusHistory: [{ ch: 378, status: "alive" }],
+    locationHistory: [
+      { ch: 378, locationId: "xi-yu-territory" },
+      {
+        ch: 384,
+        revealCh: 384,
+        locationId: "tier-1",
+        note: "Keeps a room on Tier 1: the bosses are 'second-track' royal descendants housed near the court. Zhang Lei visits ch. 390; his residence is Zhang Lei's escape hatch to Tier 2 ch. 410.",
+      },
+    ],
+    chapterAppearances: [378, 384, 390, 410],
     tags: ["mafia", "boss"],
   },
   {
@@ -2268,25 +2404,33 @@ export const characters: Character[] = [
     bio: "Elder boss of Cha-R, holding Tier 5's entrenched positions. His family's watch over its territory keeps producing the arc's strangest negative result: no trace of Hisoka, anywhere.",
     monogram: "BR",
     factionIds: ["cha-r"],
-    introducedCh: 371,
-    statusHistory: [{ ch: 371, status: "alive" }],
-    locationHistory: [{ ch: 371, locationId: "cha-r-territory" }],
-    chapterAppearances: [371, 377, 380],
+    introducedCh: 378,
+    statusHistory: [{ ch: 378, status: "alive" }],
+    locationHistory: [
+      { ch: 378, locationId: "cha-r-territory" },
+      {
+        ch: 384,
+        revealCh: 384,
+        locationId: "tier-1",
+        note: "Keeps a room on Tier 1: the bosses are 'second-track' royal descendants housed near the court.",
+      },
+    ],
+    chapterAppearances: [378, 384, 405],
     tags: ["mafia", "boss"],
     incomplete: true,
   },
   {
     id: "ken-i",
     name: "Ken'i Wang",
-    role: "Cha-R family senior officer",
-    bio: "A ranking Cha-R officer managing the family's front toward both the Heil-Ly threat and the Troupe's incursions. Record sparse.",
+    role: "Underboss of the Cha-R family",
+    bio: "The Cha-R underboss, managing the family's front toward both the Heil-Ly threat and the Troupe's incursions — including the delicate handling of the 'Hisoka' the families believed they had contained.",
     monogram: "KW",
     factionIds: ["cha-r"],
     superiorId: "brocco",
     introducedCh: 377,
     statusHistory: [{ ch: 377, status: "alive" }],
     locationHistory: [{ ch: 377, locationId: "cha-r-territory" }],
-    chapterAppearances: [377, 380],
+    chapterAppearances: [377, 380, 384, 405],
     tags: ["mafia"],
     incomplete: true,
   },
@@ -2304,7 +2448,7 @@ export const characters: Character[] = [
       },
       {
         revealCh: 412,
-        text: "From his cell he wages a parallel war of paperwork: 1,047 lawsuits against Kakin, all dismissed, argued through his lawyer Cleapatro while the Zodiacs page through the boxes for contraband.",
+        text: "From his cell he wages a parallel war of paperwork: 1,047 lawsuits against Kakin, every one dismissed by Supreme Magistrate Cleapatro, whose case-review visits bring the files — and the Zodiacs — to his door.",
       },
     ],
     monogram: "BN",
@@ -2486,14 +2630,13 @@ export const characters: Character[] = [
     nenType: "unknown",
     statusHistory: [{ ch: 363, status: "alive" }],
     locationHistory: [
-      { ch: 363, locationId: "military-hq" },
       {
-        ch: 386,
+        ch: 363,
         locationId: "room-1007",
-        note: "Embedded in Luzurus's household after the Shikaku incident.",
+        note: "Posted into the Seventh Prince's household under the day-one guard exchange; Benjamin summons him for a debrief after the Shikaku incident at Luzurus's door.",
       },
     ],
-    chapterAppearances: [386, 389, 402, 413, 414],
+    chapterAppearances: [363, 386, 389, 402, 413, 414],
     tags: ["guard", "spy", "military", "killer"],
   },
   {
@@ -2515,11 +2658,15 @@ export const characters: Character[] = [
     nenType: "unknown",
     statusHistory: [{ ch: 358, status: "alive" }],
     locationHistory: [
-      { ch: 363, locationId: "military-hq" },
+      {
+        ch: 363,
+        locationId: "fugetsu-quarters",
+        note: "First posted to the Eleventh Prince's household under the guard exchange.",
+      },
       {
         ch: 381,
         locationId: "royal-quarters",
-        note: "Reassigned into Salé-salé's household for the assassination.",
+        note: "Swapped into Salé-salé's household for the assassination.",
       },
       {
         ch: 413,
@@ -2546,9 +2693,9 @@ export const characters: Character[] = [
     factionIds: ["benjamin-camp", "kakin-military"],
     servesPrinceId: "prince-benjamin",
     superiorId: "balsamilco",
-    introducedCh: 413,
+    introducedCh: 358,
     nenType: "unknown",
-    statusHistory: [{ ch: 413, status: "alive" }],
+    statusHistory: [{ ch: 358, status: "alive" }],
     locationHistory: [
       {
         ch: 413,
@@ -2569,8 +2716,8 @@ export const characters: Character[] = [
     factionIds: ["benjamin-camp", "kakin-military"],
     servesPrinceId: "prince-benjamin",
     superiorId: "benjamin",
-    introducedCh: 402,
-    statusHistory: [{ ch: 402, status: "alive" }],
+    introducedCh: 358,
+    statusHistory: [{ ch: 358, status: "alive" }],
     locationHistory: [{ ch: 402, locationId: "benjamin-quarters" }],
     chapterAppearances: [402, 403, 413],
     tags: ["guard", "military"],
@@ -2591,37 +2738,43 @@ export const characters: Character[] = [
     factionIds: ["benjamin-camp", "kakin-military"],
     servesPrinceId: "prince-benjamin",
     superiorId: "balsamilco",
-    introducedCh: 372,
+    introducedCh: 358,
     nenType: "unknown",
-    statusHistory: [{ ch: 372, status: "alive" }],
+    statusHistory: [{ ch: 358, status: "alive" }],
     locationHistory: [
       {
-        ch: 372,
+        ch: 363,
         locationId: "royal-quarters",
-        note: "Tubeppa's household; Room 1005.",
+        note: "Tubeppa's household; Room 1005. Destroyed Salé-salé's Guardian Spirit Beast with Predator along the way.",
       },
     ],
-    chapterAppearances: [388, 402, 413],
+    chapterAppearances: [386, 388, 402, 413],
     tags: ["guard", "spy", "nen-user", "military"],
     incomplete: true,
   },
   {
     id: "nugui",
     name: "Nugui",
-    role: "Royal priest and attendant",
-    bio: "The priest-attendant of King Nasubi's inner sanctum, conductor of royal funerals and keeper of the burial chamber where each dead prince's Flame of Life either lights — or, as with Halkenburg's, does not.",
-    monogram: "NG",
-    factionIds: ["royal-family"],
-    introducedCh: 413,
-    statusHistory: [{ ch: 413, status: "alive" }],
-    locationHistory: [
+    role: "King Nasubi's personal butler",
+    bio: "The personal butler of King Nasubi's inner sanctum — the voice that told a gun-wielding Halkenburg his actions fell 'within expected parameters'.",
+    bioReveals: [
       {
-        ch: 413,
-        locationId: "royal-quarters",
-        note: "Serves within Nasubi's quarters as keeper of the Princes' Burial Chamber; opened the hidden chamber for Halkenburg's interment.",
+        revealCh: 413,
+        text: "Also the keeper of the Princes' Burial Chamber, where each dead prince's Flame of Life either lights — or, as with Halkenburg's, does not.",
       },
     ],
-    chapterAppearances: [413],
+    monogram: "NG",
+    factionIds: ["royal-family"],
+    introducedCh: 359,
+    statusHistory: [{ ch: 359, status: "alive" }],
+    locationHistory: [
+      {
+        ch: 359,
+        locationId: "royal-quarters",
+        note: "Serves within Nasubi's quarters; opens the hidden burial chamber for Halkenburg's interment ch. 413.",
+      },
+    ],
+    chapterAppearances: [359, 382, 383, 413],
     tags: ["staff", "royal"],
     incomplete: true,
   },
@@ -2629,8 +2782,8 @@ export const characters: Character[] = [
     id: "cleapatro",
     name: "Cleapatro",
     aliases: ["Clea"],
-    role: "Supreme Magistrate; Beyond's lawyer",
-    bio: "Kakin's Supreme Magistrate aboard the Black Whale, ruling on everything from Camilla's confinement to prince-versus-prince litigation — and, improbably, the counsel of record for Beyond Netero's 1,047 dismissed lawsuits against the crown.",
+    role: "Supreme Magistrate of Kakin",
+    bio: "Kakin's Supreme Magistrate aboard the Black Whale, ruling on everything from Camilla's confinement to prince-versus-prince litigation — including all 1,047 of Beyond Netero's lawsuits against the crown, each one dismissed from her bench.",
     monogram: "CP",
     factionIds: ["justice-bureau"],
     introducedCh: 371,
@@ -2667,8 +2820,7 @@ export const characters: Character[] = [
     servesPrinceId: "prince-tubeppa",
     superiorId: "maor",
     introducedCh: 369,
-    nenType: "manipulator",
-    nenTypeRevealCh: 401,
+    nenType: "unknown",
     statusHistory: [{ ch: 369, status: "alive" }],
     locationHistory: [
       {

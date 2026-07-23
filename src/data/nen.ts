@@ -32,29 +32,38 @@ export const nenAbilities: NenAbility[] = [
       "Visible eye change identifies him as a Kurta.",
     ],
     firstSeenCh: 0,
-    revealCh: 370,
+    revealCh: 364,
     uses: [
       {
         ch: 361,
-        note: "Extended use lending Little Eye to Oito during the rat reconnaissance.",
+        note: "Activated to summon Stealth Dolphin after the Steal Chain extraction from Sayird.",
       },
       {
-        ch: 371,
-        note: "Interrogation support during the body-double exposure.",
+        ch: 364,
+        note: "Held active to lend Little Eye to Oito; Kurapika notes the one-hour-per-second price to himself.",
+      },
+      {
+        ch: 368,
+        note: "Twelve continuous hours covering the insect reconnaissance — ends in a nine-hour blackout for both Kurapika and Oito (ch 369).",
       },
     ],
     status: "active",
     awareCharacterIds: [
-      { characterId: "bill", sinceCh: 370 },
-      { characterId: "oito", sinceCh: 361 },
-      { characterId: "babimyna", sinceCh: 362 },
+      { characterId: "bill", sinceCh: 364 },
+      { characterId: "oito", sinceCh: 364 },
+      { characterId: "babimyna", sinceCh: 388 },
     ],
     mysteryIds: ["my-kurapika-lifespan"],
     evidence: [
       {
-        chapter: 370,
-        note: "Cost quantified on-page: one hour per second.",
+        chapter: 364,
+        note: "Cost quantified in Kurapika's own reasoning: one hour of lifespan per second.",
         confidence: "canonical",
+      },
+      {
+        chapter: 369,
+        note: "Overrun rule surfaces: past roughly three hours, he blacks out for around three times the excess.",
+        confidence: "strong-inference",
       },
     ],
     confidence: "canonical",
@@ -114,24 +123,31 @@ export const nenAbilities: NenAbility[] = [
     kind: "personal",
     nenType: "conjurer",
     description:
-      "The chain on his index finger, developed for the voyage: it extracts a target's Nen ability into a syringe-like head for later lending.",
-    activation: "Strike the target with the chain's syringe head.",
-    conditions: ["Target's ability must be extracted while restrained."],
-    effects: [
-      "Removes a Nen ability from the target.",
-      "Stored ability can be lent onward (see Stealth Dolphin).",
+      "The chain on his index finger, developed for the voyage: its syringe head drains a target's aura and extracts one of their Nen abilities, forcing a Zetsu-like state during the drain.",
+    activation: "Pierce the target with the chain's syringe head.",
+    conditions: [
+      "No condition beyond piercing the target; the drain itself immobilizes them.",
+      "The victim cannot use the stolen ability until it is returned.",
     ],
-    firstSeenCh: 360,
-    revealCh: 360,
-    uses: [{ ch: 360, note: "Extracts Little Eye from Sayird." }],
+    effects: [
+      "Removes a Nen ability from the target — even one about to activate.",
+      "Stored ability can be lent onward (see Stealth Dolphin).",
+      "Possession survives the original owner's death (Vincent's Air Blow).",
+    ],
+    firstSeenCh: 361,
+    revealCh: 361,
+    uses: [
+      { ch: 361, note: "Extracts Little Eye from Sayird." },
+      { ch: 364, note: "Drains Vincent and steals his ability mid-standoff." },
+    ],
     status: "active",
     awareCharacterIds: [
-      { characterId: "bill", sinceCh: 360 },
-      { characterId: "oito", sinceCh: 360 },
+      { characterId: "bill", sinceCh: 361 },
+      { characterId: "oito", sinceCh: 361 },
     ],
     evidence: [
       {
-        chapter: 360,
+        chapter: 361,
         note: "Extraction from Sayird shown on-page.",
         confidence: "canonical",
       },
@@ -199,32 +215,39 @@ export const nenAbilities: NenAbility[] = [
     kind: "borrowed",
     nenType: "specialist",
     description:
-      "A dolphin-shaped Emperor Time construct that manages stolen abilities: it can hand a stolen ability to another person, with usage instructions, for one activation.",
+      "A dolphin-shaped Emperor Time construct that manages stolen abilities: it analyzes an equipped ability (name, functions, conditions) and can loan it to another person — even a non-user — for exactly one activation, coaching them by telepathy through a conjured earpiece.",
     activation:
-      "Emperor Time active; dolphin manifests to broker the transfer.",
+      "Emperor Time active; the dolphin-cross design on Steal Chain's barrel grows into the construct.",
     conditions: [
-      "Recipient accepts the lend.",
-      "Ability returns after one full use.",
+      "A loaned ability is used once, then returns to its original owner (Sayird regained Little Eye after Oito's use, ch 369).",
+      "Emperor Time cannot be ended while the dolphin holds an ability — it must be used at least once to be dismissed.",
+      "Loaned abilities run on the aura Steal Chain drained from the owner, so they fire at original power.",
     ],
-    cost: "Runs on Emperor Time (lifespan drain).",
+    cost: "Runs on Emperor Time (lifespan drain) for as long as an ability is loaded or loaned.",
     effects: [
-      "Lends stolen abilities to third parties — even non-Nen users, at their peril.",
+      "Lends stolen abilities to third parties — even non-Nen users.",
+      "Semi-forces a non-user's aura nodes open, effectively awakening them to Nen.",
     ],
-    weaknesses: ["Lending to a non-user exposes them to raw aura strain."],
-    firstSeenCh: 360,
-    revealCh: 361,
+    weaknesses: [
+      "The loan chains Kurapika to Emperor Time until the recipient uses the ability.",
+    ],
+    firstSeenCh: 361,
+    revealCh: 364,
     uses: [
-      { ch: 361, note: "Lends Little Eye to Oito for the rat reconnaissance." },
+      {
+        ch: 364,
+        note: "Loans Little Eye to Oito, opening the insect-reconnaissance channel.",
+      },
     ],
     status: "active",
     awareCharacterIds: [
-      { characterId: "oito", sinceCh: 361 },
-      { characterId: "bill", sinceCh: 361 },
+      { characterId: "oito", sinceCh: 364 },
+      { characterId: "bill", sinceCh: 364 },
     ],
     evidence: [
       {
-        chapter: 361,
-        note: "Lend mechanics narrated during the reconnaissance.",
+        chapter: 364,
+        note: "Loan mechanics shown during the transfer to Oito.",
         confidence: "canonical",
       },
     ],
@@ -235,30 +258,48 @@ export const nenAbilities: NenAbility[] = [
     name: "Little Eye",
     userCharacterId: "sayird",
     kind: "personal",
-    nenType: "manipulator",
+    nenType: "emitter",
     description:
-      "Sayird's beetle-drone ability: co-opt a small creature and pilot it remotely, seeing through its senses. Confiscated by Kurapika via Steal Chain.",
-    activation: "Attach the ability to a small animal host.",
-    conditions: ["Requires a living host creature."],
-    effects: ["Remote reconnaissance through the host's senses."],
-    weaknesses: [
-      "Host fragility.",
-      "User's body is defenseless during deep control.",
+      "Sayird's reconnaissance ability (Emission with a Manipulation component): launch an aura ball at a small creature to capture and pilot it, seeing and hearing everything it does. Stolen by Kurapika's Steal Chain and loaned to Oito; after her single use ended, the ability returned to Sayird.",
+    activation: "Launch an aura ball at a small living creature.",
+    conditions: [
+      "Host must be a living creature no larger than a hamster.",
+      "Cannot be used on beings conjured from aura.",
+      "Consumes so little aura that a novice can sustain it for hours; it survives even the user passing out.",
     ],
-    firstSeenCh: 360,
+    effects: [
+      "Remote reconnaissance through the host's senses.",
+      "The controlled animal retains the user's ability to see aura.",
+    ],
+    weaknesses: [
+      "Host fragility — flies and roaches have many predators.",
+      "Fast animals are hard to capture in the first place.",
+    ],
+    firstSeenCh: 361,
     revealCh: 361,
     uses: [
-      { ch: 361, note: "Oito's rat flight through the ship's hidden spaces." },
+      { ch: 361, note: "Stolen from Sayird by Steal Chain." },
+      { ch: 364, note: "Loaned to Oito; first flown on an inconspicuous fly." },
+      {
+        ch: 368,
+        note: "Oito's cockroach sweep of the royal suites — she witnesses Momoze's murder as it happens.",
+      },
     ],
     status: "active",
     awareCharacterIds: [
-      { characterId: "kurapika", sinceCh: 360 },
-      { characterId: "oito", sinceCh: 361 },
+      { characterId: "kurapika", sinceCh: 361 },
+      { characterId: "bill", sinceCh: 361 },
+      { characterId: "oito", sinceCh: 364 },
     ],
     evidence: [
       {
         chapter: 361,
-        note: "Mechanics shown during Oito's use.",
+        note: "Mechanics explained by Bill during the steal.",
+        confidence: "canonical",
+      },
+      {
+        chapter: 369,
+        note: "Ability returns to Sayird after Oito's completed use.",
         confidence: "canonical",
       },
     ],
@@ -271,19 +312,21 @@ export const nenAbilities: NenAbility[] = [
     name: "Benjamin Baton",
     userCharacterId: "benjamin",
     kind: "personal",
-    nenType: "enhancer",
+    nenType: "unknown",
     description:
-      "Benjamin inherits the Nen ability of any pledged subordinate who dies — each loyal death passes its owner's power up the chain of command. Stars on his palm, one per pledged soldier, tell him at a glance who still lives.",
-    activation: "Automatic on a pledged soldier's death.",
+      "Benjamin inherits the Nen ability of any sworn subordinate who dies — each loyal death passes its owner's power up the chain of command. Four stars on his right palm, one under each finger, mark the inherited slots and read as a life-sign monitor; whether he can hold more than four abilities is unconfirmed. Its Nen type is unconfirmed but resembles Specialization.",
+    activation: "Automatic on a sworn soldier's death.",
     conditions: [
-      "Subordinate must have formally pledged their ability to Benjamin.",
+      "The soldier must have graduated Kakin's Royal Military Academy and serve in Benjamin's private army, sworn to him.",
+      "Inheritance works even if the ability was active — or stolen — at the moment of death (Vincent's Air Blow, taken by Kurapika, still registered).",
     ],
     effects: [
-      "Permanent acquisition of dead subordinates' abilities (Vincent's Air Blow and Musse's Secret Window confirmed by ch 373).",
-      "Palm stars double as a life-sign monitor for the pledged roster.",
+      "Permanent acquisition of dead subordinates' abilities (Vincent's Air Blow and Musse's Secret Window confirmed by ch 373; Shikaku's Culdcept by ch 389).",
+      "The palm stars double as a life-sign monitor for the sworn roster.",
     ],
     weaknesses: [
       "Growth requires his own people to die — a strategic moral hazard.",
+      "It is unclear whether the four stars cap how many abilities he can hold.",
     ],
     firstSeenCh: 373,
     revealCh: 373,
@@ -320,21 +363,24 @@ export const nenAbilities: NenAbility[] = [
   },
   {
     id: "camilla-cat",
-    name: "Cat's Name (revival counter)",
+    name: "Cat's Name",
     userCharacterId: "camilla",
     kind: "personal",
     nenType: "specialist",
     description:
-      "Camilla's counteractive-type ability: a giant cat manifests when she is killed, crushes her killer, and drips their converted life back into her mouth. Dying is her opening move.",
+      "Camilla's counteractive-type ability: when she is killed, a giant cat manifests behind her killer, crushes them in its paws, and extracts their life force — the tip of its tail glows white and pours the essence into Camilla's mouth, healing and resurrecting her. Dying is her opening move; it draws on post-mortem Nen for power.",
     activation: "Automatic upon Camilla's death at another's hands.",
-    conditions: ["She must actually be killed by an aggressor."],
+    conditions: [
+      "She must actually be killed by an aggressor.",
+      "She courted death in Zetsu — whether Zetsu is required for the trigger, or merely made being killed easier, is unresolved.",
+    ],
     effects: [
       "Kills her killer (Musse crushed on-page, ch 373).",
       "Restores Camilla using the killer's remaining life.",
     ],
     weaknesses: [
-      "Useless against detention, starvation, or anything short of murder.",
-      "Benjamin now knows she is a counteractive type (via Secret Window) and plans around triggering it, ch 413.",
+      "Useless against detention, starvation, or anything short of murder — she cannot negate damage without dying.",
+      "Benjamin now knows she is a counteractive type (via the leveled-up Secret Window) and plans around triggering it, ch 413.",
     ],
     firstSeenCh: 373,
     revealCh: 373,
@@ -346,8 +392,9 @@ export const nenAbilities: NenAbility[] = [
     ],
     status: "active",
     awareCharacterIds: [
+      { characterId: "furykov", sinceCh: 373 },
+      { characterId: "balsamilco", sinceCh: 389 },
       { characterId: "benjamin", sinceCh: 413 },
-      { characterId: "furykov", sinceCh: 413 },
     ],
     evidence: [
       {
@@ -367,35 +414,39 @@ export const nenAbilities: NenAbility[] = [
   // ── Mafia / other ────────────────────────────────────────────────────
   {
     id: "morena-contagion",
-    name: "Sinner's Bloodline (contagion)",
+    name: "Contagion",
     userCharacterId: "morena",
     kind: "personal",
-    nenType: "specialist",
+    nenType: "unknown",
     description:
-      "Morena's Specialist 'game': she is the dealer-mother of up to 22 players, each granted a Nen ability tailored to their goals, leveling by kills. She describes it as a high-level hybrid crossing all five other categories — a pyramid scheme where children who bank enough points can become parents themselves. Her recruitment card game is itself part of the ability, with an anti-cheat clause that strips a cheater's choices to Yes or No.",
+      "Morena's 'game' (lit. 'Etude of Love'): as 'Member Zero' she infects up to 22 people through her saliva. Members level up by killing — a civilian is worth 1 level, a Nen user 10, a prince 50 — manifest a bespoke ability at level 20, and at level 100 become a Member Zero able to found their own community. Morena herself sits at level 45 and believes the ability is an advanced hybrid of the other Nen categories. Her recruitment card game is itself part of the ability, with an anti-cheat clause that strips a cheater's choices to Yes or No.",
     activation:
-      "Three conditions, in any order: the negotiation game ends in 'Yes'; Morena infects the recruit via a deep kiss; the recruit witnesses a Heil-Ly murder.",
+      "Three conditions, in any order: her negotiation card game ends with 'Yes' as the recruit's last card; Morena kisses the recruit; the recruit witnesses Morena or an ally commit murder.",
     conditions: [
-      "Cap of 22 concurrent 'children'.",
-      "Growth requires kills (killing a Nen user is worth ten levels).",
-      "Morena always knows each child's level, points, location, and status.",
-      "The 'game' persists until cleared, the admin ceases to exist, or the host dies.",
+      "Cap of 22 concurrent members plus Morena.",
+      "Until all three joining conditions clear, a kissed target is level 0 and gains nothing.",
+      "Morena always knows each member's level, points, location, and status.",
+      "Effects persist until the target or Morena dies — or, per her app metaphor, until the 'game' is cleared.",
     ],
     restrictions: [
-      "Recruitment negotiations are bound by vow-backed honesty — cheating on her side would void the ability's strengthening.",
+      "The card game is a vow-backed limitation: she stakes disclosure of Contagion's workings against the player's stake of their life.",
     ],
     effects: [
       "Mass-produces empowered killers with bespoke abilities.",
-      "Recipients' abilities strengthen per murder.",
+      "Recipients' aura grows with every level gained by murder.",
       "Cheaters in the recruitment game are locked to Yes/No answers (Borksen, ch 410).",
     ],
     weaknesses: [
       "Individually, fresh recipients are weak.",
       "The network dies with its nodes' exposure.",
     ],
-    firstSeenCh: 377,
-    revealCh: 408,
+    firstSeenCh: 378,
+    revealCh: 378,
     uses: [
+      {
+        ch: 378,
+        note: "Morena briefs her 22 followers: level values announced, havoc unleashed on the lower tiers.",
+      },
       {
         ch: 409,
         note: "Recruitment game against Borksen concludes; her cheat triggers the ability's Yes/No clause.",
@@ -410,13 +461,13 @@ export const nenAbilities: NenAbility[] = [
     mysteryIds: ["my-morena-endgame"],
     evidence: [
       {
-        chapter: 377,
-        note: "Recruitment and leveling rules stated on-page.",
+        chapter: 378,
+        note: "Name and leveling rules stated on-page at the Heil-Ly gathering.",
         confidence: "canonical",
       },
       {
         chapter: 410,
-        note: "Dealer/22-player structure, three joining conditions, and anti-cheat clause explained by Morena herself.",
+        note: "Dealer/22-member structure, three joining conditions, and anti-cheat clause explained by Morena herself.",
         confidence: "canonical",
       },
     ],
@@ -428,45 +479,53 @@ export const nenAbilities: NenAbility[] = [
     kind: "unknown",
     nenType: "unknown",
     description:
-      "The ability behind the Room 1014 killings: needle-marked passengers become remotely-operated killers who emerge from concealment, murder, and self-destruct into puppets. The true user has never been identified on-page.",
-    activation: "Unknown; operates through implanted intermediaries.",
+      "The ability behind the Room 1014 killings (lit. 'They Were Eleven!'): the user operates a marionette visible only to themselves and their current puppet, possesses one of the ten people within its range, and conjures four many-mouthed snakes that riddle the victim with holes and drain their blood — 44 seconds for one snake, eleven for all four. The true user has never been identified on-page.",
+    activation:
+      "The marionette selects a host from the ten people within range; the snakes strike when attention is drawn elsewhere.",
     conditions: [
-      "Requires pre-placed intermediaries and, apparently, access routes (hidden passages).",
+      "Only the user and the possessed can see the marionette.",
+      "Targets must be among the ten within the marionette's range.",
+      "If the marionette is deactivated without killing anyone, the 'curse' rebounds onto the user — a risk that powers the ability.",
     ],
     effects: [
-      "Deniable remote assassination.",
-      "Intermediaries die or wipe on capture.",
+      "Deniable remote assassination through possessed intermediaries.",
+      "The conjured snakes are visible to everyone — a deliberate risk-for-power trade (Bill's analysis, ch 371).",
     ],
     weaknesses: [
-      "Intermediaries can be detected by careful Nen screening (En, Dowsing).",
+      "Deactivating mid-operation without a kill rebounds on the user.",
+      "Kurapika reads it as visually-directed remote control — Conjuration plus Manipulation (ch 376).",
     ],
     firstSeenCh: 359,
-    revealCh: 362,
+    revealCh: 370,
     uses: [
       {
-        ch: 376,
-        note: "Myuhan killed; the 'snake charmer' remains active deep into the voyage.",
+        ch: 359,
+        note: "Five of Woble's guards, Woody among them, drained on the first night — attributed by the identical method.",
       },
       {
-        ch: 411,
-        note: "Kurapika still weighs whether the unknown assassin will strike Tserriednich's guards again — user unidentified as of ch 414.",
+        ch: 370,
+        note: "Barrigen drained mid-class through the possessed Loberry; the marionette and snakes shown from the user's own point of view.",
+      },
+      {
+        ch: 376,
+        note: "Myuhan killed; the 'snake charmer' remains active deep into the voyage — user unidentified as of ch 414.",
       },
     ],
     status: "unknown",
     mysteryIds: ["my-silent-majority-user"],
     evidence: [
       {
-        chapter: 362,
-        note: "Puppet mechanism observed by Kurapika's countermeasures.",
+        chapter: 370,
+        note: "Marionette, ten-in-range rule, rebound clause, and snake timings all shown from the user's POV.",
         confidence: "canonical",
       },
       {
-        chapter: 362,
+        chapter: 370,
         note: "User identity: never shown; attribution remains open.",
         confidence: "unknown",
       },
     ],
-    confidence: "strong-inference",
+    confidence: "canonical",
   },
 
   // ── Pre-arc reference files ──────────────────────────────────────────
@@ -520,21 +579,26 @@ export const nenAbilities: NenAbility[] = [
   // ── Guardian Spirit Beast abilities ──────────────────────────────────
   {
     id: "ab-beast-woble",
-    name: "Woble's Beast (unnamed)",
+    name: "Woble's Beast (unconfirmed)",
     userCharacterId: "woble",
     kind: "guardian-beast",
     nenType: "unknown",
     description:
-      "An amorphous, cloaked presence over the infant prince. Its effect has never been demonstrated on-page; its restraint toward Oito is itself a datum.",
-    effects: ["Unknown."],
-    firstSeenCh: 359,
-    revealCh: 359,
+      "The great open question of Room 1014: Kurapika sensed aura rising from the cradle on Day 1 (ch 358), but no beast has ever clearly shown itself or acted. After the swap revelation (ch 412) even its existence is in doubt — the real Woble fed the Seed Urn but is off-ship; the boy aboard never did.",
+    effects: ["Unknown; never demonstrated on-page."],
+    firstSeenCh: 358,
+    revealCh: 358,
     status: "unknown",
     mysteryIds: ["my-woble-beast-ability"],
     evidence: [
       {
-        chapter: 359,
-        note: "Manifestation glimpsed; no effect shown.",
+        chapter: 358,
+        note: "Aura surge sensed from the cradle by Kurapika; nothing visible.",
+        confidence: "canonical",
+      },
+      {
+        chapter: 412,
+        note: "Neither swapped infant completed the full rite — whether a beast attached at all is unknown.",
         confidence: "canonical",
       },
     ],
@@ -562,12 +626,12 @@ export const nenAbilities: NenAbility[] = [
     weaknesses: [
       "One-way exit bleeds the household's staff every time someone must go out.",
     ],
-    firstSeenCh: 361,
+    firstSeenCh: 360,
     revealCh: 375,
     uses: [
       {
-        ch: 372,
-        note: "Room 1013 reads empty from outside; the household has been inside the duplicate.",
+        ch: 373,
+        note: "Hanzo enters Room 1013 and finds Marayam gone — the household has been inside the duplicate.",
       },
       {
         ch: 375,
@@ -594,8 +658,8 @@ export const nenAbilities: NenAbility[] = [
         confidence: "canonical",
       },
       {
-        chapter: 390,
-        note: "Continued growth remarked on by the household's Hunters.",
+        chapter: 372,
+        note: "Accelerated defensive growth noted by Biscuit and Hanzo after Momoze's death.",
         confidence: "canonical",
       },
     ],
@@ -606,44 +670,50 @@ export const nenAbilities: NenAbility[] = [
     name: "Magical Worm (Fugetsu's beast)",
     userCharacterId: "fugetsu",
     kind: "guardian-beast",
-    nenType: "conjurer",
+    nenType: "unknown",
     description:
-      "Conjures paired doors — an Outgoing Door and a Door of Return — linking two locations, the only unrestricted movement aboard the sealed ship. Originally once per day; Fugetsu's late-voyage belief that she can use it freely traces to an enemy mark on her shoulder, and each use visibly drains her.",
+      "A symbiotic teleportation ability (lit. 'Secret Door'): the beast exists as a wormhole. An 'Outgoing Door' — a copy of the twins' childhood playground entrance — opens onto a tunnel to a wished-for location; the 'Door of Return' originally answered to Kacho alone. Baseline was one door per day, each use visibly draining Fugetsu; her late-voyage 'unlimited' use, and the bug-bite mark found on her shoulder blade, are suspected enemy interference.",
     activation:
-      "Fugetsu opens a conjured door; a twin door opens at the destination.",
+      "Fugetsu wishes for a destination and the Outgoing Door appears; she crawls through the tunnel and emerges from a hatch.",
     conditions: [
-      "Fugetsu must have physically visited the destination beforehand.",
-      "Baseline limit of one use per day (ch 402 recap); the 'unlimited' state is suspected enemy interference.",
-      "The Outgoing Door closes when Fugetsu enters the tunnel; the Door of Return when her companion does — others may pass while a door stands open.",
-      "Wishing for a location outside the ship produces no door.",
+      "Baseline of one door per day — Fugetsu's own working theory by ch 376.",
+      "The Outgoing Door closes when Fugetsu enters the tunnel; the Door of Return when her companion does — others may pass while a door stands open (ch 402 recap).",
+      "Wishing for a location outside the ship produces no door (tested, ch 402).",
+      "The Door of Return originally opened only where Kacho chose, and only Kacho could open it (ch 383).",
     ],
     effects: [
-      "Point-to-point travel between decks and sealed sections.",
-      "Return door now appears even when she travels alone (post-'breakthrough', ch 400).",
+      "Point-to-point travel between decks and sealed sections — the only unrestricted movement aboard.",
+      "Post-'breakthrough' (ch 400): usable many times a day, and the return door appears even when she travels alone — possibly empowered by Kacho's death, possibly enemy work.",
     ],
     weaknesses: [
-      "The space between doors is not guaranteed safe — see Kacho's death.",
+      "The space beyond the doors is not guaranteed safe — see Kacho's death.",
       "Overuse is wasting her: evil spirits gather on her Zetsu-weak aura (ch 400–402).",
     ],
-    firstSeenCh: 370,
-    revealCh: 370,
+    firstSeenCh: 374,
+    revealCh: 383,
     status: "active",
     awareCharacterIds: [
-      { characterId: "kacho", sinceCh: 370 },
-      { characterId: "basho", sinceCh: 383 },
-      { characterId: "melody", sinceCh: 400 },
-      { characterId: "kaiser", sinceCh: 402 },
+      { characterId: "kacho", sinceCh: 374 },
+      { characterId: "melody", sinceCh: 377 },
+      { characterId: "yushohi", sinceCh: 381 },
+      { characterId: "rihan", sinceCh: 381 },
+      { characterId: "kaiser", sinceCh: 400 },
     ],
     mysteryIds: ["my-fugetsu-door-limits"],
     evidence: [
       {
-        chapter: 370,
-        note: "Door travel shown on-page.",
+        chapter: 374,
+        note: "First door: a tunnel from Fugetsu's room ending at Kacho's bed.",
+        confidence: "canonical",
+      },
+      {
+        chapter: 383,
+        note: "Named on-page; twin-cooperative mechanics (Fugetsu out, Kacho back) explained.",
         confidence: "canonical",
       },
       {
         chapter: 402,
-        note: "Door rules, prior-visit requirement, and the suspect shoulder mark laid out at the Justice Bureau.",
+        note: "Door-closing rules, the no-exit-from-ship test, and the suspect shoulder mark laid out at the Justice Bureau.",
         confidence: "canonical",
       },
     ],
@@ -654,13 +724,13 @@ export const nenAbilities: NenAbility[] = [
     name: "The Boy Who Shoots the Arrow: Grimmel the Dissonance",
     userCharacterId: "halkenburg",
     kind: "guardian-beast",
-    nenType: "specialist",
+    nenType: "enhancer",
     description:
-      "Halkenburg's group ability, made possible by his Guardian Spirit Beast: a great bow whose arrow forces a mind swap. One marked follower is chosen at random and switches souls with whoever the arrow strikes. Halkenburg has methodically mapped its rules through experiments (Shikaku/Sumidori, Vict) and now runs it as a soul-warfare system — his own body's death did not end him.",
+      "Halkenburg's group ability, made possible by his Guardian Spirit Beast — an Enhancer with a symbiotic 'party form' that also solicits: it marks people's left hands with a conjured pinion feather, knocking them out and editing the memory of it. Marked followers are half-awakened to Nen, and their pooled aura powers a great bow whose arrow forces a mind swap — one marked follower is chosen and switches souls with whoever the arrow strikes. Halkenburg has methodically mapped its rules through experiments (Shikaku/Sumidori, Vict) and now runs it as a soul-warfare system — his own body's death did not end him.",
     activation:
-      "Halkenburg draws the aura bow, powered by a group of seal-marked followers; the arrow can be aimed through walls with spotters.",
+      "Halkenburg draws the aura bow, powered by a group of pinion-marked followers; the arrow pierces any defense and can be aimed through walls with spotters.",
     conditions: [
-      "Requires willing, seal-marked followers to power each shot.",
+      "Requires marked followers to power each shot; the pinion fades after ten minutes on anyone without loyalty to Halkenburg.",
       "One follower's mind is randomly swapped with the arrow's victim.",
       "Only one of two swapped minds can be awake at a time; Halkenburg's side generally gets priority, bought by putting their lives on the line.",
       "If the body on his side dies first, the victim's mind returns home and gets waking priority — Halkenburg pre-empted this with sedatives, buying ~10 hours of control after his own body's death.",
@@ -679,8 +749,12 @@ export const nenAbilities: NenAbility[] = [
     revealCh: 404,
     uses: [
       {
+        ch: 382,
+        note: "First arrow, fired at Shikaku after the confrontation with Nasubi — it pierces Culdcept's card shield; Sumidori's mind takes over Shikaku's body.",
+      },
+      {
         ch: 386,
-        note: "Shikaku/Sumidori experiment: swap confirmed, Shikaku's body destroyed by forced suicide.",
+        note: "Shikaku/Sumidori experiment: Sumidori-in-Shikaku's-body shoots itself outside Room 1007 to map what body-death does to swapped souls.",
       },
       {
         ch: 389,
@@ -705,8 +779,8 @@ export const nenAbilities: NenAbility[] = [
     mysteryIds: ["my-halkenburg-arrow-mechanics"],
     evidence: [
       {
-        chapter: 375,
-        note: "Seal-marking of sleeping guards shown.",
+        chapter: 372,
+        note: "Yuhirai's testimony: guards found feather marks on their hands (ch 369) with no memory of passing out.",
         confidence: "canonical",
       },
       {
@@ -724,23 +798,28 @@ export const nenAbilities: NenAbility[] = [
   },
   {
     id: "ab-beast-tserriednich",
-    name: "Tserriednich's Beast (the many-faced idol)",
+    name: "Tserriednich's Beast (the woman-headed horse)",
     userCharacterId: "tserriednich",
     kind: "guardian-beast",
     nenType: "unknown",
     description:
-      "A towering, many-faced horror even by beast standards, apparently entangled with the prince's own awakening time-perception ability. Where the beast ends and his personal Nen begins is an open research question.",
+      "A horse-like horror with a beautiful woman's head on an extendable neck — stiletto hooves, a flail for a tail, hidden extra eyes, and a hinged face that opens on serrated teeth. It vanishes while the prince holds Zetsu and returns the instant he stops; it threatened and branded Theta after her failed kill (ch 385). Distinct from the jester-like 'alter ego' Specialist beast the prince created by instinct during training (ch 384).",
     effects: [
-      "Unknown; interaction with his future-glimpse ability suspected.",
+      "Unknown; it guards the prince and punishes deception — Theta was warned she would 'cease to be human' if she deceived him again (ch 385).",
     ],
-    firstSeenCh: 361,
-    revealCh: 376,
+    firstSeenCh: 362,
+    revealCh: 362,
     status: "active",
     mysteryIds: ["my-tserriednich-god-beast"],
     evidence: [
       {
-        chapter: 376,
-        note: "Manifestation shown; mechanics undisclosed.",
+        chapter: 362,
+        note: "Manifestation shown looming over Theta; mechanics undisclosed.",
+        confidence: "canonical",
+      },
+      {
+        chapter: 384,
+        note: "A second, self-made 'alter ego' Nen beast appears beside the Guardian Spirit Beast, terrifying Theta.",
         confidence: "canonical",
       },
     ],
@@ -748,41 +827,66 @@ export const nenAbilities: NenAbility[] = [
   },
   {
     id: "ab-beast-momoze",
-    name: "Momoze's Beast (watcher-manipulator)",
+    name: "Momoze's Beast (the 'are you free?' mouse)",
     userCharacterId: "momoze",
     kind: "guardian-beast",
     nenType: "manipulator",
     description:
-      "A beast that worked through those watching over its prince — documented largely after her death, as investigators reconstructed the suite's events.",
-    effects: ["Manipulation of the prince's attendants (reconstructed)."],
-    firstSeenCh: 367,
-    revealCh: 368,
+      "A cartoonish, person-and-a-half-tall mouse — a pseudo-coercive Manipulator. It phases through walls asking people if they are 'free': answer no, and a miniature replica pesters you until you relent; answer yes, and a spider-like Nen beast implanted in your ear seizes your body. It took Sayird in Room 1014 and made him kill three guards (ch 360–361).",
+    conditions: [
+      "Consent question: control begins only on an affirmative answer.",
+      "The ear-spider feeds on the host's aura, not Momoze's — starve it and it flees, freeing the host.",
+      "Controlling even one person fatigued Momoze badly (ch 366).",
+    ],
+    effects: [
+      "Full body control of consenting targets via the implanted spider.",
+      "The strain left Momoze aura-drained — and undefended the night she was murdered (Kurapika's analysis, ch 368).",
+    ],
+    firstSeenCh: 360,
+    revealCh: 361,
     status: "broken",
     evidence: [
       {
+        chapter: 361,
+        note: "Sayird's possession and forced killings shown on-page.",
+        confidence: "canonical",
+      },
+      {
         chapter: 368,
-        note: "Behavior reconstructed post-mortem.",
-        confidence: "weak-inference",
+        note: "Kurapika links the beast's aura drain to Momoze's fatal vulnerability.",
+        confidence: "canonical",
       },
     ],
-    confidence: "weak-inference",
+    confidence: "canonical",
   },
   {
     id: "ab-beast-benjamin",
-    name: "Benjamin's Beast (unrevealed)",
+    name: "Benjamin's Beast (the deathbed deity)",
     userCharacterId: "benjamin",
     kind: "guardian-beast",
     nenType: "unknown",
     description:
-      "Manifestation glimpsed in silhouette among the beasts at the rite; no behavior documented.",
-    effects: ["Unknown."],
-    firstSeenCh: 361,
-    revealCh: 361,
-    status: "unknown",
-    evidence: [
-      { chapter: 361, note: "Silhouette only.", confidence: "unknown" },
+      "A terrifying creature perched on the First Prince's shoulders — Balsamilco called it 'valiant, befitting the next King' (ch 363). Long undemonstrated, it screeched low-level evil spirits away from Fugetsu (ch 402); per Furykov (ch 413), its true power activates on Benjamin's death: it can turn him into a guardian deity of Kakin — a Guardian Spirit Beast in his own right, watching over future kings, potentially replacing the Seed Urn ceremony itself, with Benjamin Baton intact.",
+    effects: [
+      "Dispels lesser evil spirits (shown, ch 402).",
+      "Post-mortem apotheosis: Benjamin as Kakin's guardian deity, retaining Benjamin Baton (per Furykov, ch 413).",
     ],
-    confidence: "unknown",
+    firstSeenCh: 362,
+    revealCh: 413,
+    status: "active",
+    evidence: [
+      {
+        chapter: 363,
+        note: "Seen resting on Benjamin's shoulders; described by Balsamilco.",
+        confidence: "canonical",
+      },
+      {
+        chapter: 413,
+        note: "Deity mechanism explained by Furykov; Benjamin builds his endgame on it.",
+        confidence: "strong-inference",
+      },
+    ],
+    confidence: "strong-inference",
   },
   {
     id: "ab-beast-camilla",
@@ -794,7 +898,10 @@ export const nenAbilities: NenAbility[] = [
       "Distinct from her personal Cat's Name: per the class-arc elaborations, her beast coercively manipulates people once certain conditions are fulfilled. Which conditions, and on whom it has already been used, remain unconfirmed.",
     conditions: ["Unspecified fulfillment conditions precede the coercion."],
     effects: ["Coercive manipulation of conditioned targets."],
-    firstSeenCh: 361,
+    weaknesses: [
+      "It did not manifest when Musse shot Camilla — whether her Zetsu, her momentary death, or something else suppressed it is unknown (ch 373, 389).",
+    ],
+    firstSeenCh: 362,
     revealCh: 375,
     status: "active",
     evidence: [
@@ -808,24 +915,36 @@ export const nenAbilities: NenAbility[] = [
   },
   {
     id: "ab-beast-zhang-lei",
-    name: "Zhang Lei's Beast (coin bearer)",
+    name: "Zhang Lei's Beast (the coin mint)",
     userCharacterId: "zhang-lei",
     kind: "guardian-beast",
     nenType: "conjurer",
     description:
-      "Produces coins through the prince — objects whose full function (currency? tokens? contracts?) is only partly documented.",
-    effects: ["Coin production; downstream function under analysis."],
-    firstSeenCh: 366,
-    revealCh: 366,
+      "A floating dharmachakra wreathed in black flame that ejects a coin from its mouth roughly daily. Someone who holds a coin and fulfills certain conditions gains various abilities (ch 375–376). A coin's number climbs from '1' to '10' after ten days (ch 389–390), its back design changes with its holder (ch 403–404), and returning a coin resets its value. Kurapika reads it as a cumulative Conjuration ability storing Nen against the day Zhang Lei is king — with a possible pseudo-coercive loyalty edge.",
+    conditions: [
+      "Coin effects hinge on undisclosed conditions met by the holder.",
+      "Value compounds tenfold per ten days held; handing a coin back resets it.",
+    ],
+    effects: [
+      "Daily coin production (first coins pocketed by Coventoba and gifted to Tenftory, ch 372–389).",
+      "Deferred, distributed power: circulated coins bank Nen for after the succession (Kurapika's analysis, ch 404).",
+    ],
+    firstSeenCh: 362,
+    revealCh: 375,
     status: "active",
     evidence: [
       {
-        chapter: 366,
-        note: "Coin manifestation shown.",
+        chapter: 374,
+        note: "Coin ejection from the beast's mouth shown.",
+        confidence: "canonical",
+      },
+      {
+        chapter: 404,
+        note: "Number/design experiments run with Kurapika; cumulative-Conjuration reading given on-page.",
         confidence: "canonical",
       },
     ],
-    confidence: "weak-inference",
+    confidence: "strong-inference",
   },
   {
     id: "ab-beast-tubeppa",
@@ -838,8 +957,9 @@ export const nenAbilities: NenAbility[] = [
     conditions: ["Requires a cooperating partner to produce."],
     effects: [
       "Drug synthesis within the beast's body (rules partially documented).",
+      "Manifested facing Rihan right after the Woble–Tubeppa pact — read by him as a conditional type (ch 402).",
     ],
-    firstSeenCh: 361,
+    firstSeenCh: 362,
     revealCh: 375,
     status: "active",
     evidence: [
@@ -853,27 +973,31 @@ export const nenAbilities: NenAbility[] = [
   },
   {
     id: "ab-beast-tyson",
-    name: "Tyson's Beast (devotion enforcer)",
+    name: "Tyson's Beast (the eye-wog levy)",
     userCharacterId: "tyson",
     kind: "guardian-beast",
-    nenType: "manipulator",
+    nenType: "emitter",
     description:
-      "Appears to act on readers of the Book of Tyson, binding them toward devotion; rules thinly documented.",
-    conditions: ["Contact with her gospel appears implicated."],
-    effects: [
-      "Devotion/compliance effects on adherents (partially documented).",
+      "An Emitter with a diffusive levy-type ability: a winged heart with one giant eye that lays lizard-sized 'eye-wogs'. The eye-wogs perch on anyone who encounters Tyson's teachings, collecting aura as a tithe and paying it back as happiness — the more thoroughly one reads the Book of Tyson, the deeper the bliss. Breaking the book's single taboo brings harsh punishment.",
+    conditions: [
+      "Attachment follows contact with the Book of Tyson's teachings.",
+      "Happiness scales with how devoutly the book has been read.",
     ],
-    firstSeenCh: 366,
-    revealCh: 366,
+    effects: [
+      "Continuous small aura levy on adherents (eye-wogs on Izunavi and Giuliano, ch 372).",
+      "Bestowed euphoria; a taboo-breach punishment clause, contents unknown.",
+    ],
+    firstSeenCh: 362,
+    revealCh: 375,
     status: "active",
     evidence: [
       {
-        chapter: 366,
-        note: "Adherent behavior suggestive; mechanics unconfirmed.",
-        confidence: "weak-inference",
+        chapter: 375,
+        note: "Type, eye-wogs, and levy mechanics laid out in the beast overviews.",
+        confidence: "canonical",
       },
     ],
-    confidence: "weak-inference",
+    confidence: "canonical",
   },
   {
     id: "ab-beast-luzurus",
@@ -887,7 +1011,7 @@ export const nenAbilities: NenAbility[] = [
       "Target must take the desire-shaped bait (mechanism partially documented).",
     ],
     effects: ["Manipulation of those caught by a desire-trap."],
-    firstSeenCh: 361,
+    firstSeenCh: 362,
     revealCh: 375,
     status: "active",
     evidence: [
@@ -906,15 +1030,27 @@ export const nenAbilities: NenAbility[] = [
     kind: "guardian-beast",
     nenType: "manipulator",
     description:
-      "A beast whose smoke gradually turned those who inhaled it into the Eighth Prince's devotees — Benjamin's observer clocked full affection in ~8 hours for intimates, ~70 for others, and projected kingdom-scale mind control had he taken the throne. Devoured whole by Rihan's Predator, leaving the prince defenseless.",
+      "A diffusive induction-type Manipulator tied to the prince's libido: it intermittently breathes white smoke (average radius ~7 m) that sways inhalers toward Salé-salé — after enough exposure a small clone forms above their head and spreads the same smoke in a 2 m radius. Rihan clocked full affection at ~8 hours for the well-disposed, ~70 for the indifferent, and projected kingdom-scale mind control had he taken the throne. Devoured whole by his Predator, leaving the prince defenseless.",
+    conditions: [
+      "Smoke and clones are visible only to Nen users; not inhaling — even just blowing the smoke away — prevents infection.",
+    ],
     effects: [
-      "Inhaled smoke escalates affection for Salé-salé over hours (observed on Koroabde).",
+      "Inhaled smoke escalates affection for Salé-salé over hours (observed on Koroabde, whose clone Predator ate first).",
+      "Infected carriers spread the influence themselves.",
       "Extrapolated endgame: an absolute dictatorship of adoration.",
     ],
-    firstSeenCh: 361,
-    revealCh: 381,
+    weaknesses: [
+      "Mirroring its prince, it has no ability to defend itself (Rihan, ch 381).",
+    ],
+    firstSeenCh: 362,
+    revealCh: 374,
     status: "broken",
     evidence: [
+      {
+        chapter: 374,
+        note: "Rihan's running analysis identifies the goodwill-inducing smoke.",
+        confidence: "canonical",
+      },
       {
         chapter: 381,
         note: "Rihan documents the smoke's timetable, then Predator consumes the beast in one bite.",
@@ -925,14 +1061,15 @@ export const nenAbilities: NenAbility[] = [
   },
   {
     id: "ab-beast-kacho",
-    name: "Kacho's Beast (the post-mortem twin)",
+    name: "Without You",
     userCharacterId: "kacho",
     kind: "post-mortem",
-    nenType: "conjurer",
+    nenType: "unknown",
     description:
-      "After Kacho's death, her Guardian Spirit Beast manifests AS Kacho — a walking, talking continuation of the Tenth Prince that stays beside Fugetsu, plans on her behalf, and passes through walls. 'Kacho' herself reasons she was resurrected as a guardian spirit for her twin; maintaining her appearance appears to draw on Fugetsu's aura.",
+      "Kacho's formless Guardian Spirit Beast, named on-page in ch 383 (lit. 'Season of Two'): its ability triggers when one of the twins dies — it assumes the dead sister's appearance, personality, and memories and stays to protect the survivor until her death. Since ch 383 it walks and plans as Kacho beside Fugetsu, visible to everyone; 'Kacho' herself reasons she was resurrected as a guardian spirit, and maintaining her appearance appears to draw on Fugetsu's aura.",
     conditions: [
-      "Fugetsu seeing her confirms Kacho is out of the contest (princes cannot see their own beast, but can see others').",
+      "Activates only on the death of one twin; it protects the other until she, too, dies.",
+      "Fugetsu seeing her confirms Kacho is out of the contest (princes cannot see their own beast).",
       "Sustaining the manifestation appears to burden Fugetsu's weakening aura.",
     ],
     effects: [
@@ -943,9 +1080,13 @@ export const nenAbilities: NenAbility[] = [
     weaknesses: [
       "Visibly fading as Fugetsu weakens (seen kneeling and dimming, ch 404).",
     ],
-    firstSeenCh: 381,
-    revealCh: 400,
+    firstSeenCh: 383,
+    revealCh: 383,
     uses: [
+      {
+        ch: 383,
+        note: "Steps out of the Magical Worm door as Kacho moments after the real Kacho dies on the lifeboat; escorts Fugetsu home.",
+      },
       {
         ch: 400,
         note: "'Kacho' works with Melody and Kaiser inside the Justice Bureau; commits to making Fugetsu King.",
@@ -961,10 +1102,15 @@ export const nenAbilities: NenAbility[] = [
     ],
     status: "active",
     awareCharacterIds: [
-      { characterId: "melody", sinceCh: 383 },
+      { characterId: "melody", sinceCh: 400 },
       { characterId: "kaiser", sinceCh: 400 },
     ],
     evidence: [
+      {
+        chapter: 383,
+        note: "Ability named and its twin-death trigger explained on-page as Kacho dies.",
+        confidence: "canonical",
+      },
       {
         chapter: 400,
         note: "'Kacho' explains her own post-mortem nature and its implications on-page.",
@@ -987,13 +1133,13 @@ export const nenAbilities: NenAbility[] = [
     kind: "personal",
     nenType: "unknown",
     description:
-      "Musse's surveillance owls: Nen-beast birds that eavesdrop through walls or, planted by touch, telepathically relay everything a target does and says. After Camilla's cat killed Musse, Benjamin inherited the ability via Benjamin Baton — and prolonged use has leveled it up: it can now replay what Musse saw before his death.",
+      "Musse's surveillance owls (lit. 'Rear Window Bird'): up to three owl-shaped 'Birds' — one eavesdrops through walls and distance from the user's shoulder; another, planted by touch, telepathically relays everything a target does and says. After Camilla's cat killed Musse, Benjamin inherited the ability via Benjamin Baton — and prolonged use has leveled it up: it can now replay what Musse saw before his death.",
     activation:
       "Manifest an owl; the tracking bird requires physical contact with the target.",
     conditions: [
       "The planted bird is visible only to the user.",
       "Only one bird (or one of each type) can exist at a time.",
-      "The replay function appears to unlock after prolonged continuous use on one target.",
+      "The replay function unlocks after prolonged continuous use on one target — possibly ten days.",
     ],
     effects: [
       "Eavesdropping through physical barriers (shoulder owl).",
@@ -1110,7 +1256,7 @@ export const nenAbilities: NenAbility[] = [
     uses: [
       {
         ch: 381,
-        note: "Stinger ball attached to Fugetsu during the surveillance handoff.",
+        note: "Stinger ball attached to Fugetsu after her first door escape, before he swaps posts with Rihan.",
       },
       { ch: 382, note: "Salé-salé assassinated; Yushohi radios Benjamin." },
       {
@@ -1203,7 +1349,7 @@ export const nenAbilities: NenAbility[] = [
       "Can loan the ability and restrict signatories' actions per the contract text.",
     ],
     weaknesses: ["Everything hinges on the counterparty agreeing to sign."],
-    firstSeenCh: 400,
+    firstSeenCh: 401,
     revealCh: 401,
     uses: [
       {
@@ -1247,7 +1393,7 @@ export const nenAbilities: NenAbility[] = [
     effects: [
       "Curses a predetermined target to death on the sacrifice's demise.",
       "Side effect: bearers use Ten and Zetsu instinctively from birth.",
-      "Furykov fears his curse could destroy a Guardian Spirit Beast's ability — or be reflected back onto himself (ch 413).",
+      "Furykov's fear is not being Benjamin's curse-bearer per se, but that his curse could destroy the ability of Benjamin's Guardian Spirit Beast — reflecting it back onto himself by killing Benjamin first is his chosen counter (ch 413).",
     ],
     weaknesses: [
       "Exorcism remains a theoretical counter; no exorcist confirmed aboard.",
@@ -1296,11 +1442,12 @@ export const beasts: GuardianBeast[] = [
     princeId: "prince-benjamin",
     abilityId: "ab-beast-benjamin",
     appearance:
-      "Silhouette among the manifested beasts; form undescribed in detail.",
-    behaviorNote: "No documented action.",
-    firstSeenCh: 361,
-    status: "unknown",
-    confidence: "unknown",
+      "A fearsome creature perched on the First Prince's shoulders — 'valiant, befitting the next King' per Balsamilco (ch 363).",
+    behaviorNote:
+      "Screeched low-level evil spirits away from Fugetsu (ch 402); per Furykov it can deify Benjamin after death, Benjamin Baton intact (ch 413).",
+    firstSeenCh: 362,
+    status: "active",
+    confidence: "strong-inference",
   },
   {
     id: "beast-camilla",
@@ -1308,8 +1455,8 @@ export const beasts: GuardianBeast[] = [
     abilityId: "ab-beast-camilla",
     appearance: "Undescribed in reliable detail.",
     behaviorNote:
-      "Coercively manipulates people once unspecified conditions are met — distinct from her personal revival counter.",
-    firstSeenCh: 361,
+      "Coercively manipulates people once unspecified conditions are met — distinct from her personal revival counter. Notably absent when Musse shot her.",
+    firstSeenCh: 362,
     status: "active",
     confidence: "strong-inference",
   },
@@ -1317,9 +1464,11 @@ export const beasts: GuardianBeast[] = [
     id: "beast-zhang-lei",
     princeId: "prince-zhang-lei",
     abilityId: "ab-beast-zhang-lei",
-    appearance: "A regal, robed figure attending the Third Prince.",
-    behaviorNote: "Produces coins through the prince; placid otherwise.",
-    firstSeenCh: 366,
+    appearance:
+      "A floating dharma-wheel bordered by black flames, a small face at its hub, hovering near the Third Prince.",
+    behaviorNote:
+      "Ejects a coin from its mouth roughly daily; mildly sentient — it watched Oito avert her eyes (ch 365).",
+    firstSeenCh: 362,
     status: "active",
     confidence: "strong-inference",
   },
@@ -1328,10 +1477,10 @@ export const beasts: GuardianBeast[] = [
     princeId: "prince-tserriednich",
     abilityId: "ab-beast-tserriednich",
     appearance:
-      "A towering many-faced idol, among the most unsettling manifestations recorded.",
+      "A woman-headed, horse-like monster — stiletto hooves, flail tail, an extendable neck, and a hinged face that opens on serrated teeth.",
     behaviorNote:
-      "Looms over the prince's Nen development; interaction with his awakening suspected.",
-    firstSeenCh: 376,
+      "Vanishes during the prince's Zetsu and returns when it ends; branded and threatened Theta after her failed kill (ch 385).",
+    firstSeenCh: 362,
     status: "active",
     confidence: "weak-inference",
   },
@@ -1339,10 +1488,11 @@ export const beasts: GuardianBeast[] = [
     id: "beast-tubeppa",
     princeId: "prince-tubeppa",
     abilityId: "ab-beast-tubeppa",
-    appearance: "Glimpsed in outline; a many-limbed apparatus.",
+    appearance:
+      "A large toad-like creature covered in stubs, with spoked wheels for feet.",
     behaviorNote:
-      "Produces drugs within its body with the help of a partner (per the class-arc beast overviews).",
-    firstSeenCh: 361,
+      "Produces drugs within its body with the help of a partner (per the class-arc beast overviews); croaked and fumed at Rihan right after the Woble pact (ch 402).",
+    firstSeenCh: 362,
     status: "active",
     confidence: "strong-inference",
   },
@@ -1350,11 +1500,13 @@ export const beasts: GuardianBeast[] = [
     id: "beast-tyson",
     princeId: "prince-tyson",
     abilityId: "ab-beast-tyson",
-    appearance: "An ornate winged figure associated with her gospel.",
-    behaviorNote: "Appears to act on the Book of Tyson's readers.",
-    firstSeenCh: 366,
+    appearance:
+      "A heart shape with four small wings and one giant central eye; it lays lizard-sized, eye-headed 'eye-wogs'.",
+    behaviorNote:
+      "Its eye-wogs collect aura from readers of the Book of Tyson and pay it back as happiness; breaking the book's taboo brings punishment.",
+    firstSeenCh: 362,
     status: "active",
-    confidence: "weak-inference",
+    confidence: "canonical",
   },
   {
     id: "beast-luzurus",
@@ -1363,7 +1515,7 @@ export const beasts: GuardianBeast[] = [
     appearance: "Rarely shown directly.",
     behaviorNote:
       "Sets manipulation traps shaped like its targets' desires (per the class-arc beast overviews).",
-    firstSeenCh: 361,
+    firstSeenCh: 362,
     status: "active",
     confidence: "strong-inference",
   },
@@ -1371,22 +1523,24 @@ export const beasts: GuardianBeast[] = [
     id: "beast-salele",
     princeId: "prince-salele",
     abilityId: "ab-beast-salele",
-    appearance: "A smoke-wreathed presence attending the Eighth Prince.",
+    appearance:
+      "A many-mouthed, smoke-breathing presence attending the Eighth Prince, tied to his libido.",
     behaviorNote:
       "Its smoke bred devotion in whoever inhaled it — until Rihan's Predator ate it whole (ch 381).",
-    firstSeenCh: 361,
+    firstSeenCh: 362,
     status: "destroyed",
     statusNote:
-      "Consumed by Rihan's Predator; Salé-salé was assassinated the next day.",
+      "Consumed by Rihan's Predator on Day 5 (ch 381); Salé-salé was assassinated days later, by Day 8 (ch 382).",
     confidence: "canonical",
   },
   {
     id: "beast-halkenburg",
     princeId: "prince-halkenburg",
     abilityId: "ab-beast-halkenburg",
-    appearance: "A great bird-like presence with a drawn bow.",
+    appearance:
+      "A feathered, apish, one-eyed ogre with horns, perched on Halkenburg's shoulders.",
     behaviorNote:
-      "Marks followers with seals and powers the mind-swap arrow; it kept operating after the prince's body died, because his soul did too.",
+      "Marks followers' left hands with conjured pinion feathers and powers the mind-swap arrow; it kept operating after the prince's body died, because his soul did too.",
     firstSeenCh: 375,
     status: "active",
     statusNote:
@@ -1398,23 +1552,24 @@ export const beasts: GuardianBeast[] = [
     princeId: "prince-kacho",
     abilityId: "ab-beast-kacho",
     appearance:
-      "After the prince's death: Kacho herself, indistinguishable in manner and memory.",
+      "Formless until activation; after the prince's death: Kacho herself, indistinguishable in manner and memory, visible even to Fugetsu.",
     behaviorNote:
-      "Manifests as Kacho and guards Fugetsu at the Justice Bureau — planning, scheming, and fading as her twin weakens.",
-    firstSeenCh: 381,
+      "Manifests as Kacho ('Without You') and guards Fugetsu at the Justice Bureau — planning, scheming, phasing through walls, and fading as her twin weakens.",
+    firstSeenCh: 383,
     status: "active",
     statusNote:
-      "Post-mortem manifestation confirmed by its own testimony (ch 400); observed fading (ch 404).",
+      "Post-mortem manifestation explained on-page at activation (ch 383) and by its own testimony (ch 400); observed fading (ch 404).",
     confidence: "canonical",
   },
   {
     id: "beast-fugetsu",
     princeId: "prince-fugetsu",
     abilityId: "ab-beast-fugetsu",
-    appearance: "Rarely shown directly; its doors are its signature.",
+    appearance:
+      "Exists as a wormhole; its childhood-playground doors are its only visible face.",
     behaviorNote:
-      "Conjures paired doors between known locations at the prince's wish.",
-    firstSeenCh: 370,
+      "Opens a door to a wished-for location aboard the ship — baseline once a day, unbounded (and suspect) since ch 400.",
+    firstSeenCh: 374,
     status: "active",
     confidence: "canonical",
   },
@@ -1422,21 +1577,24 @@ export const beasts: GuardianBeast[] = [
     id: "beast-momoze",
     princeId: "prince-momoze",
     abilityId: "ab-beast-momoze",
-    appearance: "Reconstructed from testimony rather than clear depiction.",
-    behaviorNote: "Worked through the prince's watchers; ceased at her death.",
-    firstSeenCh: 367,
+    appearance:
+      "A cartoonish mouse about twice human height, vertical eyes on its forehead, a heart-shaped patch on its belly.",
+    behaviorNote:
+      "Asked bystanders if they were 'free' and seized any who said yes — Sayird killed three guards under its control (ch 360–361); it faded as Momoze's aura ran out.",
+    firstSeenCh: 360,
     status: "destroyed",
     statusNote: "Beasts die with their prince.",
-    confidence: "weak-inference",
+    confidence: "canonical",
   },
   {
     id: "beast-marayam",
     princeId: "prince-marayam",
     abilityId: "ab-beast-marayam",
-    appearance: "Serpentine, and larger every time it is seen.",
+    appearance:
+      "A graceful legged dragon, serpentine and larger every time it is seen.",
     behaviorNote:
-      "Conjures the one-way duplicate of Room 1013 the household hides in; grows with the child toward an unknown ceiling.",
-    firstSeenCh: 361,
+      "Wandered into Room 1014 on Day 1 (ch 360); conjures the one-way duplicate of Room 1013 the household hides in; grows with the child toward an unknown ceiling.",
+    firstSeenCh: 360,
     status: "active",
     confidence: "canonical",
   },
@@ -1444,10 +1602,12 @@ export const beasts: GuardianBeast[] = [
     id: "beast-woble",
     princeId: "prince-woble",
     abilityId: "ab-beast-woble",
-    appearance: "An amorphous cloaked mass, all drape and no face.",
-    behaviorNote: "Hovers over the infant; notably non-hostile toward Oito.",
-    firstSeenCh: 359,
-    status: "active",
-    confidence: "strong-inference",
+    appearance:
+      "Never clearly depicted — the only trace is an aura surge Kurapika sensed from the cradle (ch 358).",
+    behaviorNote:
+      "No documented action; after the swap revelation (ch 412), whether the infant aboard has a Guardian Spirit Beast at all is unknown.",
+    firstSeenCh: 358,
+    status: "unknown",
+    confidence: "unknown",
   },
 ];

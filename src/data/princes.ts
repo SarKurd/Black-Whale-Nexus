@@ -78,7 +78,7 @@ export const princes: Prince[] = [
         why: "Largest private force aboard and first-rank legitimacy.",
       },
       {
-        ch: 364,
+        ch: 373,
         risk: "moderate",
         why: "Camilla's direct move proved elder princes are viable targets.",
       },
@@ -93,7 +93,7 @@ export const princes: Prince[] = [
         "Second only to the king in institutional power; the army treats him as heir presumptive.",
       military:
         "Commands the strongest overt force aboard — a private corps of trained Nen soldiers.",
-      nen: "A trained enhancer whose inheritance ability compounds with every loyal death; ceiling unknown.",
+      nen: "A trained Nen user — type never recorded — whose inheritance ability compounds with every loyal death; ceiling unknown.",
       intelligence:
         "Excellent by structure: embedded observers in most households, filtered through a first-rate strategist.",
     },
@@ -102,7 +102,7 @@ export const princes: Prince[] = [
         ch: 361,
         text: "Guard-exchange gambit places his soldiers in rival suites.",
       },
-      { ch: 364, text: "Repels Camilla's attack; she is detained." },
+      { ch: 373, text: "Repels Camilla's attack; she is detained." },
       { ch: 382, text: "Yushohi assassinates Salé-salé on his order." },
       {
         ch: 389,
@@ -171,14 +171,9 @@ export const princes: Prince[] = [
         why: "Aggression invites retaliation from stronger camps.",
       },
       {
-        ch: 364,
-        risk: "high",
-        why: "In custody, surrounded by rivals' jurisdiction.",
-      },
-      {
         ch: 373,
         risk: "moderate",
-        why: "Her revival ability makes straightforward assassination suicidal.",
+        why: "In custody, surrounded by rivals' jurisdiction — but her revival ability makes straightforward assassination suicidal.",
       },
       {
         ch: 413,
@@ -191,12 +186,15 @@ export const princes: Prince[] = [
         "Squandered court capital with open violence; her mother's rank still shields her.",
       military:
         "A Have-Not guard corps bound to her by emancipation debt — and repurposed as curse assassins.",
-      nen: "A specialist whose counter-kill revival makes her the hardest prince to murder outright.",
+      nen: "Her counter-kill revival makes her the hardest prince to murder outright; Benjamin's analysts can only class her as a 'counteractive type'.",
       intelligence:
         "Thin conventionally; Sarahell's infiltration craft is the exception.",
     },
     developments: [
-      { ch: 360, text: "Moves openly against Benjamin's household." },
+      {
+        ch: 363,
+        text: "Rebuffs the guard exchange and openly threatens Benjamin's men.",
+      },
       {
         ch: 373,
         text: "Killed by Musse, revived by Cat's Name, arrested in Benjamin's quarters.",
@@ -222,11 +220,10 @@ export const princes: Prince[] = [
     motherName: "Tang Zhao Li",
     motherCharacterId: "tang-zhao-li",
     queenRank: 3,
-    siblingNote:
-      "Maternal line per supplementary material; some sources group him under Duazul.",
+    siblingNote: "Only child of Queen Tang Zhao Li.",
     beastId: "beast-zhang-lei",
     guardsOriginal: 13,
-    guardCharacterIds: ["mandam", "sakata", "hashito", "tenftory", "slakka"],
+    guardCharacterIds: ["sakata", "hashito", "tenftory", "slakka", "coventoba"],
     publicStrategy:
       "Patronage and negotiation: convert wealth into obligation, and obligation into survival.",
     hiddenStrategy: {
@@ -284,7 +281,7 @@ export const princes: Prince[] = [
     },
     developments: [
       { ch: 366, text: "Beast's coin manifestation glimpsed." },
-      { ch: 388, text: "Meets mafia leadership as patron; terms undisclosed." },
+      { ch: 390, text: "Meets mafia leadership as patron; terms undisclosed." },
       {
         ch: 402,
         text: "Receives the Woble–Tubeppa pledge: both renounce the throne in his favor if the three are the last standing.",
@@ -307,13 +304,13 @@ export const princes: Prince[] = [
     motherCharacterId: "unma",
     queenRank: 1,
     beastId: "beast-tserriednich",
-    guardsOriginal: 14,
+    guardsOriginal: 15,
     guardCharacterIds: ["theta", "salkov"],
     publicStrategy:
       "Charm the court, patronize the arts, and appear the reasonable alternative to Benjamin.",
     hiddenStrategy: {
       text: "Acquire Nen at forced-march speed from coerced Hunter instructors and enter the war as its strongest individual.",
-      revealCh: 372,
+      revealCh: 368,
     },
     currentObjective: [
       {
@@ -374,7 +371,7 @@ export const princes: Prince[] = [
         "Reads people frighteningly well in person; institutionally average.",
     },
     developments: [
-      { ch: 372, text: "Forces Theta to begin genuine Nen instruction." },
+      { ch: 368, text: "Forces Theta to begin genuine Nen instruction." },
       {
         ch: 375,
         text: "Completes early aura control absurdly fast; Theta revises her plan.",
@@ -402,12 +399,13 @@ export const princes: Prince[] = [
     id: "prince-tubeppa",
     characterId: "tubeppa",
     rank: 5,
-    motherName: "Katrono",
-    motherCharacterId: "katrono",
-    queenRank: 4,
+    motherName: "Duazul",
+    motherCharacterId: "duazul",
+    queenRank: 2,
+    siblingNote: "Full sibling of Camilla and Luzurus under Queen Duazul.",
     beastId: "beast-tubeppa",
     guardsOriginal: 12,
-    guardCharacterIds: ["maor", "longhi"],
+    guardCharacterIds: ["maor", "longhi", "rihan"],
     publicStrategy:
       "Technocratic neutrality: fund research, avoid provocation, survive on competence.",
     hiddenStrategy: {
@@ -482,11 +480,10 @@ export const princes: Prince[] = [
     id: "prince-tyson",
     characterId: "tyson",
     rank: 6,
-    motherName: "Duazul",
-    motherCharacterId: "duazul",
-    queenRank: 2,
-    siblingNote:
-      "Maternal line per supplementary material; sources differ on the middle princes.",
+    motherName: "Katrono",
+    motherCharacterId: "katrono",
+    queenRank: 4,
+    siblingNote: "Only child of Queen Katrono.",
     beastId: "beast-tyson",
     guardsOriginal: 11,
     guardCharacterIds: ["izunavi"],
@@ -527,9 +524,10 @@ export const princes: Prince[] = [
     id: "prince-luzurus",
     characterId: "luzurus",
     rank: 7,
-    motherName: "Swinko-Swinko",
-    motherCharacterId: "swinko-swinko",
-    queenRank: 5,
+    motherName: "Duazul",
+    motherCharacterId: "duazul",
+    queenRank: 2,
+    siblingNote: "Full sibling of Camilla and Tubeppa under Queen Duazul.",
     beastId: "beast-luzurus",
     guardsOriginal: 12,
     guardCharacterIds: ["basho", "ridge", "satobi", "kanjidol"],
@@ -605,10 +603,10 @@ export const princes: Prince[] = [
     id: "prince-salele",
     characterId: "salele",
     rank: 8,
-    motherName: "Duazul",
-    motherCharacterId: "duazul",
-    queenRank: 2,
-    siblingNote: "Maternal line per supplementary material.",
+    motherName: "Swinko-swinko",
+    motherCharacterId: "swinko-swinko",
+    queenRank: 5,
+    siblingNote: "Only child of Queen Swinko-swinko.",
     beastId: "beast-salele",
     guardsOriginal: 10,
     guardCharacterIds: ["yushohi"],
@@ -669,12 +667,14 @@ export const princes: Prince[] = [
     id: "prince-halkenburg",
     characterId: "halkenburg",
     rank: 9,
-    motherName: "Swinko-Swinko",
-    motherCharacterId: "swinko-swinko",
-    queenRank: 5,
+    motherName: "Duazul",
+    motherCharacterId: "duazul",
+    queenRank: 2,
+    siblingNote:
+      "Registered under Duazul's line alongside Camilla, Tubeppa, and Luzurus.",
     beastId: "beast-halkenburg",
-    guardsOriginal: 7,
-    guardCharacterIds: ["ladiolus", "sumidori", "yuhirai"],
+    guardsOriginal: 12,
+    guardCharacterIds: ["sumidori", "yuhirai"],
     publicStrategy:
       "Refuse the rite, denounce it publicly, and force reform by moral example.",
     hiddenStrategy: {
@@ -693,7 +693,7 @@ export const princes: Prince[] = [
     ],
     vulnerabilities: [
       {
-        text: "Smallest guard corps of any adult prince — seven volunteers.",
+        text: "A guard corps of barely a dozen volunteers — men who followed him personally rather than by assignment.",
         revealCh: 359,
       },
       {
@@ -732,7 +732,7 @@ export const princes: Prince[] = [
         "The court's conscience and its irritant; genuine popular moral authority — his funeral drew crowds no other prince would.",
       military:
         "Guards disbanded below Tier 2 after his 'death'; his real force is twelve civilian volunteers powering the arrow.",
-      nen: "Specialist-class phenomenon fully mapped by ch. 404: The Boy Who Shoots the Arrow — group-powered forced mind swap, one mind awake at a time, own side holds priority, death defined as body AND mind.",
+      nen: "A group-powered phenomenon fully mapped by ch. 404: The Boy Who Shoots the Arrow — forced mind swap, one mind awake at a time, own side holds priority, death defined as body AND mind. His own Nen type was never recorded.",
       intelligence:
         "Transformed: he now sees through Balsamilco's eyes inside Benjamin's own command loop.",
     },
@@ -740,8 +740,12 @@ export const princes: Prince[] = [
       { ch: 359, text: "Publicly refuses the succession rite." },
       { ch: 375, text: "Beast marks his sleeping guards with seals." },
       {
+        ch: 382,
+        text: "Confronts Nasubi at gunpoint, awakens, and fires his first arrow: Shikaku's body taken, Sumidori's spent.",
+      },
+      {
         ch: 386,
-        text: "Consciousness-transfer mechanism inferred from the aftermath of the arrow; Shikaku experiment conducted.",
+        text: "Mind-swap mechanism probed via the staged Room 1007 suicide — the Shikaku-Sumidori experiment.",
       },
       {
         ch: 403,
@@ -799,7 +803,7 @@ export const princes: Prince[] = [
         risk: "critical",
         why: "Off-plan escape into passage space, beyond any guard's reach.",
       },
-      { ch: 382, risk: "eliminated", why: "Killed covering Fugetsu's escape." },
+      { ch: 383, risk: "eliminated", why: "Killed covering Fugetsu's escape." },
     ],
     assessment: {
       political: "Deliberately friendless — camouflage that worked too well.",
@@ -813,8 +817,8 @@ export const princes: Prince[] = [
         text: "The act drops: the escape plan and the sisters' true bond revealed.",
       },
       {
-        ch: 382,
-        text: "Dies in the passage; something wearing her shape stays with Fugetsu.",
+        ch: 383,
+        text: "Dies covering the lifeboat escape; something wearing her shape walks back with Fugetsu.",
       },
       {
         ch: 400,
@@ -885,7 +889,7 @@ export const princes: Prince[] = [
     },
     developments: [
       { ch: 370, text: "Door ability used for unauthorized visits." },
-      { ch: 382, text: "Escapes; Kacho does not." },
+      { ch: 383, text: "Escapes; Kacho does not." },
       {
         ch: 388,
         text: "Deterioration documented; the Kacho-presence appears in the record.",
@@ -913,10 +917,10 @@ export const princes: Prince[] = [
     motherCharacterId: "sevanti",
     queenRank: 7,
     siblingNote:
-      "Elder sibling of Marayam; her trained guards were reassigned to him.",
+      "Elder sibling of Marayam; all but six of her guards were reassigned to him.",
     beastId: "beast-momoze",
-    guardsOriginal: 10,
-    guardCharacterIds: ["nipaper"],
+    guardsOriginal: 6,
+    guardCharacterIds: ["nipaper", "vict"],
     publicStrategy:
       "Obedience: accept her mother's decisions, including the ones that doomed her.",
     currentObjective: [
@@ -949,18 +953,22 @@ export const princes: Prince[] = [
       {
         ch: 368,
         risk: "eliminated",
-        why: "Strangled during a sleeping guard's watch.",
+        why: "Strangled by one of her own watch guards while four stood outside the door.",
       },
     ],
     assessment: {
       political: "Sacrificed by her own line before the war began.",
-      military: "On paper ten guards; in practice none that were hers.",
+      military: "Six borrowed watchers; in practice none that were hers.",
       nen: "Beast's manipulation effect documented mostly posthumously.",
       intelligence: "None.",
     },
     developments: [
       { ch: 361, text: "Guard reassignment to Marayam recorded." },
       { ch: 368, text: "Killed; the war's first royal casualty." },
+      {
+        ch: 372,
+        text: "Hanzo's double extracts a confession from her killer, the watcher Tuffdy, and executes him in his cell — filed as suicide.",
+      },
     ],
     mysteryIds: ["my-momoze-assassin"],
   },
@@ -1032,7 +1040,16 @@ export const princes: Prince[] = [
     queenRank: 8,
     beastId: "beast-woble",
     guardsOriginal: 11,
-    guardCharacterIds: ["kurapika", "bill", "sayird", "woody", "shimano"],
+    guardCharacterIds: [
+      "kurapika",
+      "bill",
+      "sayird",
+      "woody",
+      "shimano",
+      "babimyna",
+      "sakata",
+      "hashito",
+    ],
     hunterCharacterIds: ["kurapika", "bill"],
     publicStrategy:
       "An infant has none; Oito's is total dependence on Kurapika's competence.",

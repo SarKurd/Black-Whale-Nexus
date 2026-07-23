@@ -98,15 +98,15 @@ export const relationships: Relationship[] = [
     confirmed: true,
     startCh: 0,
     revealCh: 381,
-    endCh: 382,
-    endNote: "Ended by Kacho's death in the passage.",
+    endCh: 383,
+    endNote: "Ended by Kacho's death on the escape lifeboat.",
     mutualAwareness: true,
     description:
       "Years of staged coldness engineered to make the twins look like non-allies — all of it cover for getting Fugetsu out alive.",
     evidence: [
       {
-        chapter: 382,
-        note: "She dies covering the crossing.",
+        chapter: 383,
+        note: "She sends Fugetsu back through the door and dies on the lifeboat.",
         confidence: "canonical",
       },
     ],
@@ -167,15 +167,25 @@ export const relationships: Relationship[] = [
     secret: false,
     confirmed: true,
     startCh: 358,
-    revealCh: 360,
+    revealCh: 363,
     mutualAwareness: true,
     description:
-      "The war's first open feud: Camilla moved on Benjamin's household within days of sailing.",
-    history: [{ ch: 364, text: "Her direct attack fails; she is detained." }],
+      "The war's first open feud: hostility on display at the first banquet, then an armed sortie on Benjamin's own quarters.",
+    history: [
+      {
+        ch: 373,
+        text: "Her direct attack fails: she shoots her way to Benjamin, is stopped by his aura, and is arrested by Furykov.",
+      },
+    ],
     eventIds: [],
     evidence: [
       {
-        chapter: 364,
+        chapter: 363,
+        note: "Banquet hostility: she demands her siblings volunteer to kill themselves.",
+        confidence: "canonical",
+      },
+      {
+        chapter: 373,
         note: "Attack and detention on-page.",
         confidence: "canonical",
       },
@@ -213,11 +223,15 @@ export const relationships: Relationship[] = [
     secret: false,
     confirmed: true,
     startCh: 375,
-    revealCh: 385,
+    revealCh: 382,
     mutualAwareness: true,
     description:
-      "Benjamin's probe of the Ninth Prince's household turned philosophical opposition into shooting war — and outlived Halkenburg's own body.",
+      "Benjamin's kill order against the Ninth Prince turned philosophical opposition into shooting war — and outlived Halkenburg's own body.",
     history: [
+      {
+        ch: 382,
+        text: "Benjamin orders his embedded soldier Shikaku to kill Halkenburg and take his ability; Halkenburg answers with the first arrow.",
+      },
       {
         ch: 403,
         text: "Halkenburg fires on Balsamilco at the Ministry of Justice, taking Benjamin's strategist off the board from inside.",
@@ -228,7 +242,11 @@ export const relationships: Relationship[] = [
       },
     ],
     evidence: [
-      { chapter: 385, note: "The arrow incident.", confidence: "canonical" },
+      {
+        chapter: 382,
+        note: "The first arrow incident: Shikaku's Culdcept shield is pierced.",
+        confidence: "canonical",
+      },
       {
         chapter: 413,
         note: "An arrow is loosed at Benjamin from Room 1009; Benjamin concludes only the body died.",
@@ -540,14 +558,14 @@ export const relationships: Relationship[] = [
     secret: false,
     confirmed: true,
     startCh: 360,
-    revealCh: 370,
+    revealCh: 369,
     mutualAwareness: true,
     description:
-      "The only person told what Emperor Time actually costs — trust repaid with silence.",
+      "The one who keeps Kurapika's collapses off the record: a nine-hour blackout vigil, hidden from the household, repaid with operational trust.",
     evidence: [
       {
-        chapter: 370,
-        note: "The lifespan disclosure.",
+        chapter: 369,
+        note: "Guards the unconscious Kurapika and conceals the blackout from everyone else.",
         confidence: "canonical",
       },
     ],
@@ -593,20 +611,20 @@ export const relationships: Relationship[] = [
     secret: true,
     confirmed: true,
     startCh: 361,
-    revealCh: 370,
+    revealCh: 364,
     mutualAwareness: false,
     description:
       "She knows the scarlet state exists; he hides that every second of it is an hour of his life.",
     evidence: [
       {
-        chapter: 370,
-        note: "Cost revealed to the reader; Oito remains outside it.",
+        chapter: 364,
+        note: "Cost stated for the reader — an hour of lifespan per second; Oito remains outside it.",
         confidence: "canonical",
       },
     ],
   },
   {
-    id: "rel-kurapika-killed-sayird-ability",
+    id: "rel-kurapika-knows-ability-of-sayird",
     from: "kurapika",
     to: "sayird",
     kind: "knows-ability-of",
@@ -614,14 +632,14 @@ export const relationships: Relationship[] = [
     strength: "strong",
     secret: false,
     confirmed: true,
-    startCh: 360,
-    revealCh: 360,
+    startCh: 361,
+    revealCh: 361,
     mutualAwareness: true,
     description: "Knows Little Eye from the inside — he confiscated it.",
     evidence: [
       {
-        chapter: 360,
-        note: "Steal Chain extraction.",
+        chapter: 361,
+        note: "Steal Chain extraction via the syringe chain.",
         confidence: "canonical",
       },
     ],
@@ -801,13 +819,13 @@ export const relationships: Relationship[] = [
     secret: false,
     confirmed: true,
     startCh: 0,
-    revealCh: 361,
+    revealCh: 363,
     mutualAwareness: true,
     description: "Pledged soldier of the First Prince.",
     evidence: [
       {
-        chapter: 361,
-        note: "Deployment under the guard exchange.",
+        chapter: 363,
+        note: "Briefed with the fourteen soldiers for the royal-guard placements.",
         confidence: "canonical",
       },
     ],
@@ -821,43 +839,63 @@ export const relationships: Relationship[] = [
     strength: "moderate",
     secret: true,
     confirmed: true,
-    startCh: 361,
-    revealCh: 362,
+    startCh: 364,
+    revealCh: 364,
     mutualAwareness: true,
     description:
       "Embedded in Room 1014 as an observer; Kurapika knows, Babimyna knows he knows, and both proceed anyway.",
     history: [
       {
-        ch: 362,
-        text: "Observes Emperor Time's aftermath; reports the outline to Balsamilco.",
+        ch: 368,
+        text: "Sweeps the suite with En during the Little Eye survey; observes Kurapika's collapse from Emperor Time.",
       },
     ],
     evidence: [
       {
-        chapter: 362,
-        note: "Observation and reporting shown.",
+        chapter: 364,
+        note: "Sent after Woble under Benjamin's self-defense declaration.",
+        confidence: "canonical",
+      },
+      {
+        chapter: 368,
+        note: "En surveillance inside the suite shown.",
         confidence: "canonical",
       },
     ],
   },
   {
-    id: "rel-coventoba-monitoring-woble-camp",
+    id: "rel-coventoba-monitoring-zhang-lei-camp",
     from: "coventoba",
-    to: "woble-camp",
+    to: "zhang-lei-camp",
     kind: "monitoring",
     directed: true,
-    strength: "weak",
+    strength: "moderate",
     secret: true,
     confirmed: true,
-    startCh: 359,
-    revealCh: 361,
-    mutualAwareness: false,
+    startCh: 363,
+    revealCh: 366,
+    mutualAwareness: true,
     description:
-      "The louder half of Benjamin's embedded pair in the Woble suite.",
+      "Benjamin's soldier posted to Room 1003 under the guard exchange — and, for days, the only person aboard who knew the coin beast existed, pocketing the intelligence rather than telling his host.",
+    history: [
+      {
+        ch: 374,
+        text: "Palms the first coin dropped by Zhang Lei's beast; says nothing about its source.",
+      },
+      {
+        ch: 413,
+        text: "Panics as martial law begins with his assigned prince already vanished to Tier 2.",
+      },
+    ],
     evidence: [
       {
-        chapter: 361,
-        note: "Guard-exchange placement.",
+        chapter: 366,
+        note: "'Coventoba stays with Zhang Lei' under the exchange arrangement.",
+        confidence: "canonical",
+      },
+      {
+        chapter: 374,
+        note: "The hidden-coin scene.",
         confidence: "canonical",
       },
     ],
@@ -877,8 +915,8 @@ export const relationships: Relationship[] = [
     description: "Household guard and, under coercion, Nen instructor.",
     evidence: [
       {
-        chapter: 372,
-        note: "Instruction begins under duress.",
+        chapter: 368,
+        note: "Threatened at beast-point to tell the truth about learning Nen.",
         confidence: "canonical",
       },
     ],
@@ -892,15 +930,20 @@ export const relationships: Relationship[] = [
     strength: "strong",
     secret: false,
     confirmed: true,
-    startCh: 372,
-    revealCh: 372,
+    startCh: 366,
+    revealCh: 366,
     mutualAwareness: true,
     description:
       "Genuine instruction delivered at gunpoint of circumstance — accurate enough to survive his tests, structured to leave one opening.",
     evidence: [
       {
-        chapter: 373,
-        note: "Water divination instruction shown.",
+        chapter: 366,
+        note: "Training underway; she discovers he is a Nen genius.",
+        confidence: "canonical",
+      },
+      {
+        chapter: 376,
+        note: "Water Divination administered: Specialist, and the water rots.",
         confidence: "canonical",
       },
     ],
@@ -914,15 +957,21 @@ export const relationships: Relationship[] = [
     strength: "strong",
     secret: true,
     confirmed: true,
-    startCh: 375,
-    revealCh: 375,
+    startCh: 385,
+    revealCh: 385,
     mutualAwareness: false,
     description:
-      "The curriculum is a kill plan: she intends to end him through the gap she designed into his training.",
+      "The curriculum is a kill plan: she engineered a 40-minute eyes-closed Zetsu drill as her window, and pulled the trigger — only for his future sight to void the shot.",
+    history: [
+      {
+        ch: 385,
+        text: "The killshot: a bullet through the head that turns out to have struck a vision; the beast nicks her cheek as a first warning.",
+      },
+    ],
     evidence: [
       {
-        chapter: 375,
-        note: "Her intent narrated privately.",
+        chapter: 385,
+        note: "'She has to kill him with certainty' — her intent narrated, then acted on.",
         confidence: "canonical",
       },
     ],
@@ -937,13 +986,13 @@ export const relationships: Relationship[] = [
     secret: false,
     confirmed: true,
     startCh: 0,
-    revealCh: 372,
+    revealCh: 385,
     mutualAwareness: true,
     description: "Second coerced instructor in the Fourth Prince's household.",
     evidence: [
       {
-        chapter: 372,
-        note: "Joint instruction shown.",
+        chapter: 385,
+        note: "Watches over Theta after the failed shot; later runs the Zetsu drills himself.",
         confidence: "canonical",
       },
     ],
@@ -957,13 +1006,17 @@ export const relationships: Relationship[] = [
     strength: "strong",
     secret: true,
     confirmed: true,
-    startCh: 375,
-    revealCh: 375,
+    startCh: 385,
+    revealCh: 385,
     mutualAwareness: true,
     description:
       "Confederates in the plan against their own principal — a conspiracy of two with no exit.",
     evidence: [
-      { chapter: 375, note: "Coordination shown.", confidence: "canonical" },
+      {
+        chapter: 385,
+        note: "'Let me handle things': Salkov covers for her and asks her to plan while resting.",
+        confidence: "canonical",
+      },
     ],
   },
   {
@@ -1004,9 +1057,9 @@ export const relationships: Relationship[] = [
     ],
   },
   {
-    id: "rel-mandam-serves-zhang-lei",
+    id: "rel-mandam-serves-duazul",
     from: "mandam",
-    to: "zhang-lei",
+    to: "duazul",
     kind: "serves",
     directed: true,
     strength: "moderate",
@@ -1016,9 +1069,13 @@ export const relationships: Relationship[] = [
     revealCh: 366,
     mutualAwareness: true,
     description:
-      "Household intermediary handling the Third Prince's quieter channels.",
+      "Captain and coordinator of the Second Queen's royal bodyguards — the desk that moves Duazul's pieces (Slakka among them) around the lower princes' boards.",
     evidence: [
-      { chapter: 366, note: "Service shown.", confidence: "canonical" },
+      {
+        chapter: 366,
+        note: "Introduced alongside the Duazul-affiliated guard arrangements; role per Hunterpedia.",
+        confidence: "strong-inference",
+      },
     ],
   },
   {
@@ -1084,7 +1141,7 @@ export const relationships: Relationship[] = [
     confirmed: true,
     startCh: 359,
     revealCh: 359,
-    endCh: 382,
+    endCh: 383,
     endNote:
       "Kacho's death ends the formal contract — but not the work: Melody stays with the beast wearing Kacho's face.",
     mutualAwareness: true,
@@ -1103,8 +1160,8 @@ export const relationships: Relationship[] = [
     strength: "strong",
     secret: false,
     confirmed: true,
-    startCh: 382,
-    revealCh: 388,
+    startCh: 383,
+    revealCh: 400,
     mutualAwareness: true,
     description:
       "After Kacho's death, Melody's mission becomes Fugetsu: detained beside her at the Tier 2 Justice Bureau, diagnosing the evil spirits on her weakened aura, and standing watch with 'Kacho' and Kaiser while she sleeps off her collapse.",
@@ -1139,8 +1196,8 @@ export const relationships: Relationship[] = [
     strength: "strong",
     secret: true,
     confirmed: true,
-    startCh: 382,
-    revealCh: 388,
+    startCh: 383,
+    revealCh: 383,
     mutualAwareness: true,
     description:
       "The 'Kacho' beside Fugetsu since the escape is her Guardian Spirit Beast completing its duty — a post-mortem presence wearing Kacho's face and memories, sustained partly by Fugetsu's own aura, and openly worried about the cost of that upkeep.",
@@ -1159,6 +1216,11 @@ export const relationships: Relationship[] = [
       },
     ],
     evidence: [
+      {
+        chapter: 383,
+        note: "Without You explained: the beast takes a dead twin's form and guards the survivor; Kacho shown dead on the lifeboat.",
+        confidence: "canonical",
+      },
       {
         chapter: 400,
         note: "'Kacho' self-identifies as the beast maintaining her sister.",
@@ -1203,62 +1265,111 @@ export const relationships: Relationship[] = [
     ],
   },
   {
-    id: "rel-basho-serves-fugetsu",
+    id: "rel-basho-serves-luzurus",
     from: "basho",
-    to: "fugetsu",
+    to: "luzurus",
     kind: "serves",
     directed: true,
     strength: "strong",
     secret: false,
     confirmed: true,
     startCh: 359,
-    revealCh: 359,
+    revealCh: 366,
     mutualAwareness: true,
     description:
-      "Guarding a principal whose own ability keeps walking her out of the protective perimeter.",
+      "Hunter guard in the Seventh Prince's household: brews the prince's 'healthy' smoking blend, reads the Shikaku suicide as Benjamin's red herring, and burns the drug stash when martial law comes.",
+    history: [
+      {
+        ch: 389,
+        text: "Feeds Kanjidol a fake theory about Duazul's men while privately concluding Benjamin's camp staged the Shikaku incident.",
+      },
+      {
+        ch: 402,
+        text: "Slips Fugetsu a haiku talisman that keeps low-level evil spirits off her — quietly buying the Tier 2 conspiracy time.",
+      },
+      {
+        ch: 414,
+        text: "Destroys the household's drugs on Luzurus' order as the purge begins.",
+      },
+    ],
     evidence: [
-      { chapter: 370, note: "Service shown.", confidence: "canonical" },
+      {
+        chapter: 366,
+        note: "Luzurus smokes the drug Basho created for him.",
+        confidence: "canonical",
+      },
+      {
+        chapter: 414,
+        note: "On guard in Room 1007 through the martial-law protocol.",
+        confidence: "canonical",
+      },
     ],
   },
   {
-    id: "rel-izunavi-serves-luzurus",
+    id: "rel-izunavi-serves-tyson",
     from: "izunavi",
-    to: "luzurus",
+    to: "tyson",
     kind: "serves",
     directed: true,
     strength: "moderate",
     secret: false,
     confirmed: true,
     startCh: 359,
-    revealCh: 359,
+    revealCh: 366,
     mutualAwareness: true,
-    description: "Hunter guard in the Seventh Prince's indolent household.",
+    description:
+      "Hunter guard in the Sixth Prince's gospel-of-love household — professionally skeptical of the Book of Tyson, and eventually its most strategic reader.",
+    history: [
+      {
+        ch: 389,
+        text: "Warns Giuliano against getting emotionally attached to the principal.",
+      },
+      {
+        ch: 400,
+        text: "Proposes weaponizing the Book: get the King to read it and end the contest with love.",
+      },
+    ],
     evidence: [
       {
-        chapter: 378,
-        note: "Service shown around the procurement business.",
+        chapter: 366,
+        note: "Praises Tyson's attitude at her side.",
         confidence: "canonical",
       },
     ],
   },
   {
-    id: "rel-ladiolus-serves-halkenburg",
+    id: "rel-ladiolus-serves-fugetsu",
     from: "ladiolus",
-    to: "halkenburg",
+    to: "fugetsu",
     kind: "serves",
     directed: true,
-    strength: "strong",
+    strength: "moderate",
     secret: false,
     confirmed: true,
     startCh: 0,
-    revealCh: 375,
+    revealCh: 369,
     mutualAwareness: true,
     description:
-      "Volunteer, not assignee — loyalty that his prince's beast has priced in lives.",
+      "One of Fugetsu's maids — and the Nen class's proof of concept: the servant Kurapika singled out to show that aura talent ignores rank, gender, and muscle.",
+    history: [
+      {
+        ch: 388,
+        text: "Walks out of Water Divination with a year's worth of trained aura.",
+      },
+      {
+        ch: 411,
+        text: "Returns to the second class round as one of Fugetsu's newly Nen-awakened servants.",
+      },
+    ],
     evidence: [
       {
-        chapter: 375,
-        note: "The marked-guard scene.",
+        chapter: 386,
+        note: "Named and praised in class for producing testable aura.",
+        confidence: "canonical",
+      },
+      {
+        chapter: 411,
+        note: "Identified as Fugetsu's servant alongside Illardia.",
         confidence: "canonical",
       },
     ],
@@ -1274,11 +1385,22 @@ export const relationships: Relationship[] = [
     confirmed: true,
     startCh: 0,
     revealCh: 375,
-    endCh: 386,
+    endCh: 411,
     endNote:
-      "His soul died in the Room 1007 experiment — loyal to the last body he wore.",
+      "Reassigned below Tier 2 with the rest of the disbanded household after the state funeral — alive, his own mind holding priority over Shikaku's sleeping soul inside him.",
     mutualAwareness: true,
-    description: "Seal-marked volunteer of the movement.",
+    description:
+      "Seal-marked volunteer of the movement — the follower whose body was spent to fire the first arrow, and the survivor of the Shikaku suicide experiment.",
+    history: [
+      {
+        ch: 382,
+        text: "Collapses when the arrow fires: his soul rides it into Shikaku's body.",
+      },
+      {
+        ch: 386,
+        text: "Shouts loyalty to Benjamin in Shikaku's body and pulls the trigger; wakes bound to a chair in his own body.",
+      },
+    ],
     evidence: [
       {
         chapter: 375,
@@ -1309,26 +1431,6 @@ export const relationships: Relationship[] = [
     ],
   },
   {
-    id: "rel-slakka-serves-momoze",
-    from: "slakka",
-    to: "momoze",
-    kind: "serves",
-    directed: true,
-    strength: "weak",
-    secret: false,
-    confirmed: true,
-    startCh: 367,
-    revealCh: 367,
-    endCh: 368,
-    endNote: "Principal murdered on his watch.",
-    mutualAwareness: true,
-    description:
-      "Duazul's man loaned to Momoze under the guard rotation — asleep, by his testimony, at the moment that mattered.",
-    evidence: [
-      { chapter: 368, note: "The death scene.", confidence: "canonical" },
-    ],
-  },
-  {
     id: "rel-slakka-serves-zhang-lei",
     from: "slakka",
     to: "zhang-lei",
@@ -1337,12 +1439,16 @@ export const relationships: Relationship[] = [
     strength: "weak",
     secret: false,
     confirmed: true,
-    startCh: 388,
+    startCh: 365,
     revealCh: 411,
     mutualAwareness: true,
     description:
-      "Reassigned after the Momoze debacle: affiliated with Queen Duazul, currently posted to the Third Prince — by his own blunt public announcement at Kurapika's class, made mostly to squeeze Nen knowledge out of Sakata's discomfort.",
+      "Queen Duazul's spy wearing a Zhang Lei uniform: first seen at the Third Prince's side, then loaned into Room 1014 alongside Sakata and Hashito, and finally announcing the assignment to Kurapika's whole class — mostly to squeeze Nen knowledge out of Sakata's discomfort.",
     history: [
+      {
+        ch: 366,
+        text: "Accompanies Sakata and Hashito into Woble's suite, 'colluding with Unma's soldiers' for mutual interest.",
+      },
       {
         ch: 411,
         text: "Crashes the introductory class, declaring his Duazul affiliation and Zhang Lei assignment to the whole room.",
@@ -1407,11 +1513,16 @@ export const relationships: Relationship[] = [
     revealCh: 363,
     mutualAwareness: false,
     description:
-      "Assembled the chain-user identification from Babimyna's reports and Yorknew's pattern library.",
+      "Reads Kurapika as the architect of the stalemate: the emergency call that made Nen common knowledge, the training offer, all of it filed as one Hunter's deliberate strategy to freeze the contest.",
     evidence: [
       {
         chapter: 363,
-        note: "Deduction sequence shown.",
+        note: "His deduction of the announcement's three intended effects.",
+        confidence: "canonical",
+      },
+      {
+        chapter: 370,
+        note: "Furykov and Babimyna's observer reports feed the assessment.",
         confidence: "canonical",
       },
     ],
@@ -1429,7 +1540,7 @@ export const relationships: Relationship[] = [
     revealCh: 363,
     mutualAwareness: false,
     description:
-      "Standing intent rather than active operation: the chain user is on the First Prince's list, pending the war's arithmetic.",
+      "Standing intent rather than active operation: the Hunter running Room 1014 is on the First Prince's list, pending the war's arithmetic.",
     evidence: [
       {
         chapter: 363,
@@ -1807,12 +1918,17 @@ export const relationships: Relationship[] = [
     strength: "strong",
     secret: false,
     confirmed: true,
-    startCh: 371,
-    revealCh: 371,
+    startCh: 0,
+    revealCh: 384,
     mutualAwareness: true,
-    description: "Boss of the Xi-Yu family.",
+    description:
+      "Boss of the Xi-Yu family — a 'second-track faker' of royal blood, residing on Tier 1 like the other bosses.",
     evidence: [
-      { chapter: 371, note: "Leadership shown.", confidence: "canonical" },
+      {
+        chapter: 384,
+        note: "Named on-page in his Tier 1 room; boss protocol explained.",
+        confidence: "canonical",
+      },
     ],
   },
   {
@@ -1824,8 +1940,8 @@ export const relationships: Relationship[] = [
     strength: "strong",
     secret: false,
     confirmed: true,
-    startCh: 371,
-    revealCh: 371,
+    startCh: 0,
+    revealCh: 378,
     mutualAwareness: true,
     description:
       "Underboss and field commander; the family's actual operating system.",
@@ -1842,12 +1958,16 @@ export const relationships: Relationship[] = [
     strength: "moderate",
     secret: false,
     confirmed: true,
-    startCh: 378,
-    revealCh: 378,
+    startCh: 390,
+    revealCh: 390,
     mutualAwareness: true,
-    description: "Field lieutenant on the Heil-Ly hunt.",
+    description: "Field lieutenant on the Hisoka manhunt and the Heil-Ly hunt.",
     evidence: [
-      { chapter: 378, note: "Deployment shown.", confidence: "canonical" },
+      {
+        chapter: 391,
+        note: "Standing orders from Hinrigh: report before engaging Hisoka.",
+        confidence: "canonical",
+      },
     ],
   },
   {
@@ -1859,16 +1979,20 @@ export const relationships: Relationship[] = [
     strength: "moderate",
     secret: false,
     confirmed: true,
-    startCh: 378,
-    revealCh: 378,
-    endCh: 405,
+    startCh: 390,
+    revealCh: 390,
+    endCh: 392,
     endNote:
-      "Killed for seeing through the fake Hisoka; her body surfaces during the funeral patrol (reader learns the killer at 405-406).",
+      "Killed in-universe during the fake-Hisoka encounter for seeing through the disguise; the reader learns the killer at 405 and her body surfaces at 406.",
     mutualAwareness: true,
     description:
       "Field lieutenant on the Hisoka manhunt; her truth-punch ability made her the one person the Troupe's decoy could not afford to leave alive.",
     evidence: [
-      { chapter: 378, note: "Deployment shown.", confidence: "canonical" },
+      {
+        chapter: 391,
+        note: "Deployed with Zakuro on the manhunt.",
+        confidence: "canonical",
+      },
       {
         chapter: 406,
         note: "Body found with a professionally broken neck; Hinrigh reconstructs the killing.",
@@ -1917,13 +2041,22 @@ export const relationships: Relationship[] = [
     strength: "strong",
     secret: false,
     confirmed: true,
-    startCh: 377,
-    revealCh: 377,
+    startCh: 0,
+    revealCh: 378,
     mutualAwareness: true,
     description:
-      "Boss in the technical sense; epidemiologically, she is the index case.",
+      "Boss in the technical sense — a recent, suspicious succession, per the other families; epidemiologically, she is the index case.",
     evidence: [
-      { chapter: 377, note: "Leadership shown.", confidence: "canonical" },
+      {
+        chapter: 378,
+        note: "Named as the boss whose 'members squad' Luini belongs to.",
+        confidence: "canonical",
+      },
+      {
+        chapter: 405,
+        note: "Ken'i: 'the new boss only recently took over.'",
+        confidence: "canonical",
+      },
     ],
   },
   {
@@ -1935,8 +2068,8 @@ export const relationships: Relationship[] = [
     strength: "strong",
     secret: true,
     confirmed: true,
-    startCh: 390,
-    revealCh: 390,
+    startCh: 378,
+    revealCh: 378,
     endCh: 393,
     endNote: "Ended at Nobunaga's katana.",
     mutualAwareness: true,
@@ -1944,8 +2077,8 @@ export const relationships: Relationship[] = [
       "A contagion recipient: his power, his leveling rule, and his leash all trace to her kiss.",
     evidence: [
       {
-        chapter: 390,
-        note: "Recipient status shown.",
+        chapter: 378,
+        note: "Recipient status: 21 levels and a transportation ability from Morena's game.",
         confidence: "canonical",
       },
     ],
@@ -1959,12 +2092,17 @@ export const relationships: Relationship[] = [
     strength: "strong",
     secret: false,
     confirmed: true,
-    startCh: 371,
-    revealCh: 371,
+    startCh: 0,
+    revealCh: 384,
     mutualAwareness: true,
-    description: "Elder boss of the Cha-R family.",
+    description:
+      "Elder boss of the Cha-R family — Brocco Li, another 'second-track faker' seated on Tier 1.",
     evidence: [
-      { chapter: 371, note: "Leadership shown.", confidence: "canonical" },
+      {
+        chapter: 384,
+        note: "Named on-page in his Tier 1 room; boss protocol explained.",
+        confidence: "canonical",
+      },
     ],
   },
   {
@@ -1976,12 +2114,38 @@ export const relationships: Relationship[] = [
     strength: "moderate",
     secret: false,
     confirmed: true,
-    startCh: 377,
-    revealCh: 377,
+    startCh: 0,
+    revealCh: 379,
     mutualAwareness: true,
-    description: "Senior officer of Cha-R.",
+    description: "Underboss of Cha-R, running the family's field operations.",
     evidence: [
-      { chapter: 377, note: "Service shown.", confidence: "canonical" },
+      {
+        chapter: 379,
+        note: "Introduces himself as an Underboss at the warehouse.",
+        confidence: "canonical",
+      },
+    ],
+  },
+  {
+    id: "rel-ken-i-serves-morena",
+    from: "ken-i",
+    to: "morena",
+    kind: "serves",
+    directed: true,
+    strength: "moderate",
+    secret: true,
+    confirmed: true,
+    startCh: 405,
+    revealCh: 405,
+    mutualAwareness: true,
+    description:
+      "The Cha-R's underboss is Morena's man: alone with his thoughts, he addresses her by name — 'we have a problem' — frets that the Troupe will find her ahead of schedule, and weighs playing 'their joker'. How long the arrangement predates chapter 405 is unknown.",
+    evidence: [
+      {
+        chapter: 405,
+        note: "His internal monologue after Tajao pledges Cha-R support to the Troupe.",
+        confidence: "canonical",
+      },
     ],
   },
   {
@@ -1994,14 +2158,14 @@ export const relationships: Relationship[] = [
     secret: false,
     confirmed: true,
     startCh: 0,
-    revealCh: 377,
+    revealCh: 371,
     mutualAwareness: true,
     description:
       "Patron-family vassalage: the Third Prince's deniable arm below decks.",
     evidence: [
       {
-        chapter: 377,
-        note: "Patronage structure explained.",
+        chapter: 371,
+        note: "Xi-Yu named as affiliated with Zhang Lei — 'the most powerful group'.",
         confidence: "canonical",
       },
     ],
@@ -2016,7 +2180,7 @@ export const relationships: Relationship[] = [
     secret: false,
     confirmed: true,
     startCh: 0,
-    revealCh: 377,
+    revealCh: 378,
     mutualAwareness: true,
     description:
       "Patron-family vassalage, currently expressed as a contraband pipeline.",
@@ -2038,7 +2202,7 @@ export const relationships: Relationship[] = [
     secret: false,
     confirmed: true,
     startCh: 0,
-    revealCh: 377,
+    revealCh: 378,
     endCh: 391,
     endNote:
       "Formally severed: Tserriednich cuts ties, then green-lights the other families to crush the Heil-Ly; Morena responds by targeting his soldiers for Contagion.",
@@ -2057,8 +2221,13 @@ export const relationships: Relationship[] = [
     ],
     evidence: [
       {
-        chapter: 377,
-        note: "Nominal structure explained.",
+        chapter: 378,
+        note: "The families' prince-benefactor relations discussed by the Troupe.",
+        confidence: "canonical",
+      },
+      {
+        chapter: 384,
+        note: "'The Heil-Ly have their own door through Tserriednich.'",
         confidence: "canonical",
       },
     ],
@@ -2296,21 +2465,35 @@ export const relationships: Relationship[] = [
     ],
   },
   {
-    id: "rel-fugetsu-knows-kacho-death",
-    from: "fugetsu",
-    to: "kacho",
-    kind: "knows-identity-of",
+    id: "rel-kacho-hiding-info-from-fugetsu",
+    from: "kacho",
+    to: "fugetsu",
+    kind: "hiding-info-from",
     directed: true,
     strength: "strong",
     secret: true,
     confirmed: true,
-    startCh: 382,
-    revealCh: 382,
+    startCh: 383,
+    revealCh: 400,
     mutualAwareness: false,
     description:
-      "The only living witness to what happened in the passage — and to what came back wearing her sister's face.",
+      "Fugetsu never saw her sister die: a 'Kacho' walked back through the door, and the beast — with Melody and Kaiser sworn in — deliberately keeps the death from her. That Fugetsu can see 'Kacho' at all is itself proof the real one is gone.",
+    history: [
+      {
+        ch: 383,
+        text: "Kacho dies on the lifeboat; the beast returns to Fugetsu wearing her face.",
+      },
+      {
+        ch: 400,
+        text: "'We need to keep her death a secret from Fugetsu' — the conspiracy's explicit rule.",
+      },
+    ],
     evidence: [
-      { chapter: 382, note: "Witness status.", confidence: "canonical" },
+      {
+        chapter: 400,
+        note: "The beast's own instruction to Melody and the investigator.",
+        confidence: "canonical",
+      },
     ],
   },
   {
@@ -2338,13 +2521,17 @@ export const relationships: Relationship[] = [
     strength: "moderate",
     secret: true,
     confirmed: true,
-    startCh: 362,
-    revealCh: 362,
+    startCh: 368,
+    revealCh: 368,
     mutualAwareness: true,
     description:
-      "Observed Emperor Time's aftermath from inside the suite; the outline reached Balsamilco within a day.",
+      "Observed Emperor Time's aftermath from inside the suite — Kurapika fainting after the Little Eye marathon — and fed the outline back to Balsamilco.",
     evidence: [
-      { chapter: 362, note: "Observation shown.", confidence: "canonical" },
+      {
+        chapter: 368,
+        note: "En surveillance during the survey; Kurapika's collapse witnessed.",
+        confidence: "canonical",
+      },
     ],
   },
   {
@@ -2356,17 +2543,17 @@ export const relationships: Relationship[] = [
     strength: "strong",
     secret: false,
     confirmed: true,
-    startCh: 385,
-    revealCh: 385,
+    startCh: 389,
+    revealCh: 389,
     endNote:
-      "Not a kill: Vict's body survived the arrow. Benjamin confirmed him alive at ch 388; ch 403-404 show him mind-swapped and used as one of Halkenburg's advance experiments.",
+      "Not a kill: Vict's body survived the arrow. Benjamin confirmed him alive at ch 389; ch 403-404 show him mind-swapped and used as one of Halkenburg's advance experiments.",
     mutualAwareness: true,
     description:
-      "The arrow's first target among Benjamin's men. Early reads treated Vict as a casualty; the truth was stranger — his mind was swapped out and his body repurposed, appearing at the courthouse signing in military code while Halkenburg's side ran its tests.",
+      "The second of Benjamin's men taken by the arrow: stationed with Halkenburg after Shikaku, his Tackle Shield failed against the bow, his mind was swapped out, and his body was repurposed — appearing at the courthouse signing in military code while Halkenburg's side ran its tests.",
     history: [
       {
-        ch: 388,
-        text: "Benjamin's hand-stars confirm Vict alive, whereabouts unknown.",
+        ch: 389,
+        text: "The fourth rumbling; Vict's broken radio call, then silence. Benjamin's hand-stars confirm Vict alive, whereabouts unknown.",
       },
       {
         ch: 403,
@@ -2379,8 +2566,8 @@ export const relationships: Relationship[] = [
     ],
     evidence: [
       {
-        chapter: 385,
-        note: "Incident aftermath; mechanism then unclear.",
+        chapter: 389,
+        note: "The attack over the radio; mechanism then unclear.",
         confidence: "canonical",
       },
       {
@@ -2582,7 +2769,7 @@ export const relationships: Relationship[] = [
     secret: false,
     confirmed: true,
     startCh: 0,
-    revealCh: 400,
+    revealCh: 388,
     mutualAwareness: true,
     description:
       "Guard of the Fifth Prince — who has no idea Longhi is a Nen user, let alone that her guard's contract-magic underwrites the Woble treaty or that her parentage traces to Beyond.",
@@ -2650,14 +2837,14 @@ export const relationships: Relationship[] = [
     secret: false,
     confirmed: true,
     startCh: 0,
-    revealCh: 373,
+    revealCh: 363,
     mutualAwareness: true,
     description:
       "Captain of Camilla's Guards, promoted from the Have-Nots — and, since chapter 411, the camp's deep-cover operator inside Kurapika's classes. She insists the maid persona is the real her.",
     history: [
       {
-        ch: 373,
-        text: "Argues Camilla's self-defense case after the Musse shooting.",
+        ch: 389,
+        text: "Volunteers herself for the Woble curse assignment, having nothing to lose as a Have-Not.",
       },
       {
         ch: 411,
@@ -2681,12 +2868,16 @@ export const relationships: Relationship[] = [
     strength: "strong",
     secret: true,
     confirmed: true,
-    startCh: 404,
-    revealCh: 411,
+    startCh: 389,
+    revealCh: 389,
     mutualAwareness: false,
     description:
       "Disguised as a maid in Kurapika's Nen class, Sarahell is accumulating a curse against Woble: a week if she can't see the prince, five days with a used personal item, instant if Room 1014 ever drops its guard. Her open question is whether the defenders have an exorcist.",
     history: [
+      {
+        ch: 389,
+        text: "Takes the Woble assignment herself in the Have-Not curse program, planning to infiltrate the next round of classes.",
+      },
       {
         ch: 404,
         text: "Camilla's camp announces a single guard will join the classes; Kurapika flags the resolve as suspicious.",
@@ -2697,6 +2888,11 @@ export const relationships: Relationship[] = [
       },
     ],
     evidence: [
+      {
+        chapter: 389,
+        note: "The Have-Not curse program laid out; Sarahell claims the Woble assignment.",
+        confidence: "canonical",
+      },
       {
         chapter: 411,
         note: "Her own accounting of the curse-accumulation conditions.",
@@ -2719,11 +2915,16 @@ export const relationships: Relationship[] = [
     secret: false,
     confirmed: true,
     startCh: 0,
-    revealCh: 404,
+    revealCh: 389,
     mutualAwareness: true,
     description:
-      "Guard in Camilla's confinement suite; Sarahell's confidante on the curse plan and the one who keeps the watch rota running while the captain plays maid.",
+      "Majordomo of Camilla's household; Sarahell's confidante on the curse plan — she keeps the curse timetables and the watch rota running while the captain plays maid.",
     evidence: [
+      {
+        chapter: 389,
+        note: "Summoned as Majordomo; recites the curse timelines.",
+        confidence: "canonical",
+      },
       {
         chapter: 411,
         note: "Coordinates Sarahell's departure and cover from Room 302.",
@@ -2856,7 +3057,7 @@ export const relationships: Relationship[] = [
     secret: false,
     confirmed: true,
     startCh: 0,
-    revealCh: 413,
+    revealCh: 414,
     mutualAwareness: true,
     description:
       "Trusted enough for the quiet jobs: Luzurus personally tasks him with keeping Benjamin's soldier occupied when the purge begins.",
@@ -2925,10 +3126,10 @@ export const relationships: Relationship[] = [
     revealCh: 375,
     endCh: 386,
     endNote:
-      "Dead by his own hand outside Room 1007, shouting loyalty to Benjamin — a suicide later explained by Halkenburg's mind-swap experiments: the body that pulled the trigger wasn't carrying Shikaku's soul on its own terms.",
+      "His body died by 'its own' hand outside Room 1007, shouting loyalty to Benjamin — but the finger on the trigger belonged to Sumidori's soul. Shikaku's own mind survives, asleep and outranked inside Sumidori's body.",
     mutualAwareness: true,
     description:
-      "Manipulator soldier posted against Halkenburg's household; became the arrow ability's first fatal test case.",
+      "Manipulator soldier posted against Halkenburg's household; became the arrow ability's first test case when the ch 382 shot swapped Sumidori's soul into him.",
     history: [
       {
         ch: 386,
@@ -2964,7 +3165,7 @@ export const relationships: Relationship[] = [
     secret: false,
     confirmed: true,
     startCh: 0,
-    revealCh: 401,
+    revealCh: 369,
     mutualAwareness: true,
     description:
       "Senior voice among Luzurus' guards in the Nen classes — affiliated with Queen Duazul, preaching watch-and-wait while the mafia war burns itself out, and hedging his own post-contest future with Nen training.",
@@ -2986,7 +3187,7 @@ export const relationships: Relationship[] = [
     secret: false,
     confirmed: true,
     startCh: 0,
-    revealCh: 401,
+    revealCh: 369,
     mutualAwareness: true,
     description:
       "The Third Prince's coin-rewarded envoy: carries the surrender terms, relays class-side intelligence to Room 1003, and manages how much of Zhang Lei's hand the other camps get to see.",
@@ -3018,7 +3219,7 @@ export const relationships: Relationship[] = [
     secret: false,
     confirmed: true,
     startCh: 359,
-    revealCh: 370,
+    revealCh: 369,
     mutualAwareness: false,
     description:
       "Hunter in the Thirteenth Prince's household and its steady adult in the Nen classes: defended Kurapika's course when suspicion peaked, relays to Room 1013 through staged doorway chats, and now tells Naipei plainly to report any girl in a mask.",
@@ -3047,14 +3248,29 @@ export const relationships: Relationship[] = [
     kind: "serves",
     directed: true,
     strength: "strong",
-    secret: true,
+    secret: false,
     confirmed: true,
     startCh: 0,
-    revealCh: 413,
+    revealCh: 382,
     mutualAwareness: true,
     description:
-      "The king's attendant at the rite's hidden machinery: opens the secret door to the burial chamber, reads the 'Flames of Life' over the dead princes, and notes that Halkenburg's flame — unlike the Eighth, Tenth, and Twelfth's — never lit.",
+      "The king's butler and the attendant at the rite's hidden machinery: he absolves Halkenburg's armed intrusion as 'within expected parameters', opens the secret door to the burial chamber, and reads the 'Flames of Life' — noting that Halkenburg's, unlike the Eighth, Tenth, and Twelfth's, never lit.",
+    history: [
+      {
+        ch: 382,
+        text: "Appears at Nasubi's side after Halkenburg's gunpoint appeal.",
+      },
+      {
+        ch: 413,
+        text: "Conducts the burial-chamber interment; reports the unlit flame.",
+      },
+    ],
     evidence: [
+      {
+        chapter: 382,
+        note: "Introduced as the King's butler.",
+        confidence: "canonical",
+      },
       {
         chapter: 413,
         note: "Conducts the burial-chamber interment beside Nasubi.",
@@ -3063,33 +3279,29 @@ export const relationships: Relationship[] = [
     ],
   },
   {
-    id: "rel-cleapatro-serves-beyond",
+    id: "rel-cleapatro-negotiating-beyond",
     from: "cleapatro",
     to: "beyond",
-    kind: "serves",
-    directed: true,
+    kind: "negotiating",
+    directed: false,
     strength: "moderate",
     secret: false,
     confirmed: true,
-    startCh: 376,
-    revealCh: 376,
+    startCh: 412,
+    revealCh: 412,
     mutualAwareness: true,
     description:
-      "Beyond's lawyer and courtroom instrument — supreme magistrate in the Camilla-Benjamin trial, later hauling 1,047 dismissed lawsuits into his cell, a paper avalanche the Zodiacs must now sift for contraband.",
+      "Not his servant — his judge: Kakin's Supreme Magistrate (she denied Sakata's case in 371 and confined Camilla and Benjamin in 376) personally hauls the results of Beyond's 1,047 lawsuits — every one dismissed, Beyond as plaintiff — into his cell and bickers with him over Kakin's view of human rights.",
     history: [
       {
-        ch: 404,
-        text: "Benjamin routes the dropped charges against Halkenburg's guards through her.",
-      },
-      {
         ch: 412,
-        text: "Delivers the lawsuit mountain to Beyond's cell past Kanzai and Saiyu.",
+        text: "The cell visit past Kanzai and Saiyu; the Zodiacs resign themselves to sifting the paper mountain for contraband.",
       },
     ],
     evidence: [
       {
         chapter: 412,
-        note: "The cell visit; 1,047 cases, all thrown out.",
+        note: "1,047 cases with Beyond as plaintiff, all thrown out; the two argue over her time.",
         confidence: "canonical",
       },
     ],

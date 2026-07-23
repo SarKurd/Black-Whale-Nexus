@@ -10,7 +10,7 @@ export const deaths: DeathRecord[] = [
     victimId: "barrigen",
     suspectedKillerIds: ["loberry"],
     method:
-      "Drained mid-class by Silent Majority's four snakes — eleven seconds to empty a body of blood — after the possessed Loberry's outcry pulled every eye exactly where the killer wanted them.",
+      "Drained mid-class by Silent Majority's four conjured snakes — one snake needs 44 seconds, all four together empty a body of blood in eleven — worked through the possessed Loberry, whom only the user (and Loberry herself) could see the marionette standing beside. Sakata shot the snakes off the corpse.",
     locationId: "room-1014",
     chapter: 370,
     witnessIds: [
@@ -47,11 +47,11 @@ export const deaths: DeathRecord[] = [
     victimId: "woody",
     suspectedKillerIds: [],
     method:
-      "Among the five royal guards killed in the suite on the voyage's first night — the same silent method later used on Barrigen in front of the class.",
+      "Found in the suite's bathroom on the voyage's first night, every drop of blood drained through multiple holes in his body — the first of five royal guards killed by the same silent method later used on Barrigen in front of the class.",
     locationId: "room-1014",
     chapter: 359,
-    revealCh: 360,
-    awareCharacterIds: ["kurapika", "bill", "oito", "vergei"],
+    revealCh: 359,
+    awareCharacterIds: ["kurapika", "bill", "oito"],
     investigation:
       "Filed with the other Silent Majority casualties; no in-world resolution.",
     consequences: ["Woble's original guard detail effectively gutted."],
@@ -63,12 +63,12 @@ export const deaths: DeathRecord[] = [
   {
     id: "death-momoze",
     victimId: "momoze",
-    suspectedKillerIds: ["slakka"],
+    suspectedKillerIds: [],
     method:
-      "Strangled in her quarters while her assigned guard slept. The reader glimpses the act; in-world, the case never closes.",
+      "Suffocated in her quarters on the voyage's first night by one of her own bodyguards — Oito, surveying through Little Eye, watched it happen in real time (ch 368), too late to stop it. Hanzo's clone-work identified the guard Tuffdy, who confessed and was executed by Hanzo's doppelganger the same night (ch 372).",
     locationId: "momoze-quarters",
     chapter: 368,
-    witnessIds: [],
+    witnessIds: ["oito"],
     awareCharacterIds: [
       "sevanti",
       "slakka",
@@ -77,9 +77,13 @@ export const deaths: DeathRecord[] = [
       "biscuit",
       "benjamin",
       "kurapika",
+      "oito",
+      "bill",
+      "babimyna",
+      "vergei",
     ],
     investigation:
-      "Justice Bureau inquiry opened and stalled; the guards' testimony conflicts and no faction pressed for answers.",
+      "Six off-duty guards were detained as suspects and Sevanti demanded their execution; because they belonged to higher-ranked queens, the official inquiry went nowhere. Hanzo solved it privately — Tuffdy's slip confessed his guilt (ch 372) — and Kurapika passed the identification to Vergei (ch 374); the official case never closed.",
     consequences: [
       "First royal casualty of the war.",
       "Every household re-audited its guard loyalty.",
@@ -94,17 +98,17 @@ export const deaths: DeathRecord[] = [
     id: "death-kacho",
     victimId: "kacho",
     method:
-      "Died in the passage space during the twins' escape, covering Fugetsu's crossing. The exact agent of death is only partially shown; the ship's record lists her as missing.",
+      "Killed during the banquet-night lifeboat escape (ch 383): as the boat neared open water, a horde of hands closed in — the ritual's answer to a fleeing prince. Kacho pushed Fugetsu back through the Magical Worm door and was shown dead on the drifting lifeboat; the 'Kacho' who walked back through the door was her Guardian Spirit Beast, Without You.",
     locationId: "hidden-passage-network",
-    chapter: 382,
-    witnessIds: ["fugetsu"],
-    awareCharacterIds: ["fugetsu"],
+    chapter: 383,
+    witnessIds: [],
+    awareCharacterIds: ["melody", "kaiser"],
     investigation:
-      "None in-world — officially she is unaccounted for; only Fugetsu and the reader know.",
+      "None in-world — officially Kacho returned alive; only the beast wearing her shape, and later Melody and Kaiser (ch 400), know the truth. Fugetsu herself believes her sister survived.",
     consequences: [
-      "Fugetsu returned alone, psychologically broken.",
-      "A Kacho-like presence persists beside her twin — nature unresolved.",
-      "The escape route proved the doors work and the space between them kills.",
+      "Fugetsu returned believing Kacho lives — the beast sustains the fiction.",
+      "Without You manifests as Kacho and plans on Fugetsu's behalf.",
+      "The escape proved a prince who tries to leave the ship dies — the contest's vows enforce themselves.",
     ],
     mysteryIds: ["my-fugetsu-door-limits"],
     confidence: "canonical",
@@ -138,7 +142,7 @@ export const deaths: DeathRecord[] = [
     killerId: "yushohi",
     suspectedKillerIds: [],
     method:
-      "Assassinated in his bed by Yushohi's Stand by Me stinger ball, one day after Rihan's Predator devoured his devotion-smoke beast and left him unguarded. Publicly his absence from the banquet was 'illness'.",
+      "Assassinated in his bed by Yushohi's Stand by Me stinger ball, days after Rihan's Predator devoured his devotion-smoke beast (ch 381, Day 5) and left him unguarded; found not breathing on Day 8, hours before the banquet. Publicly his absence was 'illness'.",
     locationId: "royal-quarters",
     chapter: 382,
     witnessIds: ["yushohi"],
@@ -193,10 +197,10 @@ export const deaths: DeathRecord[] = [
     killerId: "balsamilco",
     suspectedKillerIds: [],
     method:
-      "Body death by TSK-17: Balsamilco carried the nerve-agent vial into the courthouse to erase him, but Halkenburg's arrow swapped their minds first — so the prince, wearing Balsamilco's body, administered the poison to his own flesh and managed the 'stomach flu' cover story himself. His body died in hospital in the early hours of Day 12; his soul did not.",
+      "Body death by TSK-17: Balsamilco carried the bioweapon vial into the courthouse to erase him, but Halkenburg's arrow swapped their minds first (ch 403) — so the prince, wearing Balsamilco's body, administered the poison to his own flesh and managed the 'sudden illness' cover story himself. Doctors failed to resuscitate the body in the early hours of Day 12; his soul did not die with it.",
     locationId: "tier-3-medical",
     chapter: 404,
-    witnessIds: ["cheadle"],
+    witnessIds: [],
     awareCharacterIds: [
       "halkenburg",
       "benjamin",

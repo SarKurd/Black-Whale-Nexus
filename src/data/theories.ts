@@ -8,11 +8,15 @@ export const theories: Theory[] = [
     summary:
       "The one territory that keeps returning clean sweeps is Cha-R's. A shapeshifting showman with Texture Surprise could wear a made man's face indefinitely — and the family's own boss would be the last to know.",
     statusHistory: [
-      { ch: 380, value: "unresolved" },
+      {
+        ch: 377,
+        value: "unresolved",
+        note: "The Troupe's sweep of Cha-R-controlled Tier 5 turns up nothing.",
+      },
       {
         ch: 390,
         value: "strengthened",
-        note: "Repeated negative results in Cha-R territory read increasingly like a signature.",
+        note: "The manhunt refocuses on Tiers 3 and 4 while Cha-R's home tier stays conspicuously quiet.",
       },
       {
         ch: 405,
@@ -22,9 +26,9 @@ export const theories: Theory[] = [
     ],
     supporting: [
       {
-        chapter: 390,
-        note: "Every other tier has produced traces, rumors, false positives — Cha-R's ground produces nothing.",
-        confidence: "weak-inference",
+        chapter: 377,
+        note: "The Troupe searched all of Tier 5 — Cha-R's home turf — for anyone over 190 cm and found nothing.",
+        confidence: "canonical",
       },
       {
         chapter: 0,
@@ -50,7 +54,7 @@ export const theories: Theory[] = [
       },
     ],
     relatedCharacterIds: ["hisoka", "brocco", "ken-i", "chrollo"],
-    chapters: [380, 390, 405],
+    chapters: [377, 390, 405],
     confidence: "theory",
     lastUpdatedCh: 405,
   },
@@ -61,7 +65,11 @@ export const theories: Theory[] = [
     summary:
       "Nasubi's serenity while his children die suggests the war is not politics but liturgy — a forging process the voyage's true patrons require of Kakin's next ruler.",
     statusHistory: [
-      { ch: 365, value: "unresolved" },
+      {
+        ch: 371,
+        value: "unresolved",
+        note: "Nasubi calls his murdered daughter 'a foundation to the Great Kakin Tree' — an officiant's vocabulary, not a mourner's.",
+      },
       {
         ch: 411,
         value: "strengthened",
@@ -80,9 +88,9 @@ export const theories: Theory[] = [
         confidence: "weak-inference",
       },
       {
-        chapter: 365,
-        note: "Nasubi shows no grief and no favoritism — consistent with an officiant, not a father.",
-        confidence: "weak-inference",
+        chapter: 371,
+        note: "Beside Momoze's corpse, surrounded by fourteen capsules, Nasubi shows no grief — his daughter, he says, 'still lives' in a brilliant lifestyle.",
+        confidence: "canonical",
       },
       {
         chapter: 411,
@@ -103,7 +111,7 @@ export const theories: Theory[] = [
       },
     ],
     relatedCharacterIds: ["nasubi", "beyond", "kurapika"],
-    chapters: [359, 365, 411, 413],
+    chapters: [359, 371, 411, 413],
     confidence: "theory",
     lastUpdatedCh: 413,
   },
@@ -113,7 +121,7 @@ export const theories: Theory[] = [
     summary:
       "An ability that annihilates distance, aboard a voyage defined by an unreachable destination, held by a prince nobody is watching — narrative economics say the doors open on something bigger than corridors.",
     statusHistory: [
-      { ch: 370, value: "unresolved" },
+      { ch: 374, value: "unresolved" },
       {
         ch: 402,
         value: "weakened",
@@ -122,16 +130,16 @@ export const theories: Theory[] = [
     ],
     supporting: [
       {
-        chapter: 370,
+        chapter: 374,
         note: "The doors are the arc's only unrestricted movement; their strategic ceiling is unexplored.",
         confidence: "weak-inference",
       },
     ],
     contradicting: [
       {
-        chapter: 382,
-        note: "The between-space kills; scaling the ability outward may be exactly what it punishes.",
-        confidence: "weak-inference",
+        chapter: 383,
+        note: "Leaving the ship triggers lethal enforcement — a horde of hands took Kacho at the lifeboat. Scaling the doors outward runs straight into the rite's no-escape vow.",
+        confidence: "strong-inference",
       },
       {
         chapter: 402,
@@ -140,7 +148,7 @@ export const theories: Theory[] = [
       },
     ],
     relatedCharacterIds: ["fugetsu", "kacho"],
-    chapters: [370, 382, 398, 402],
+    chapters: [374, 383, 402],
     confidence: "theory",
     lastUpdatedCh: 411,
   },
@@ -150,7 +158,11 @@ export const theories: Theory[] = [
     summary:
       "The prodigy's future-glimpse emerged only after his beast manifested at scale. The many-faced idol may be lending him its eyes — meaning his ceiling is the beast's, not his own.",
     statusHistory: [
-      { ch: 392, value: "unresolved" },
+      {
+        ch: 387,
+        value: "unresolved",
+        note: "The ten-second future vision runs only while Zetsu seals his aura — exactly when the beast fades from view.",
+      },
       {
         ch: 402,
         value: "strengthened",
@@ -159,8 +171,8 @@ export const theories: Theory[] = [
     ],
     supporting: [
       {
-        chapter: 392,
-        note: "Ability emergence coincided with the beast's active manifestation.",
+        chapter: 387,
+        note: "The future-sight surfaced only under Zetsu, with the beast slowly disappearing as he sealed his aura — timing that ties the vision to something other than his own flow.",
         confidence: "weak-inference",
       },
       {
@@ -171,8 +183,8 @@ export const theories: Theory[] = [
     ],
     contradicting: [
       {
-        chapter: 375,
-        note: "His raw aptitude alone stunned trained instructors before any beast involvement was visible.",
+        chapter: 384,
+        note: "Theta watched him conjure a second Specialist beast — an 'alter ego' — by instinct alone; the prodigy manufactures monsters without the Seed Urn's help.",
         confidence: "strong-inference",
       },
       {
@@ -182,7 +194,7 @@ export const theories: Theory[] = [
       },
     ],
     relatedCharacterIds: ["tserriednich", "theta", "salkov"],
-    chapters: [392, 402, 404],
+    chapters: [384, 387, 402, 404],
     confidence: "theory",
     lastUpdatedCh: 404,
   },
@@ -194,9 +206,9 @@ export const theories: Theory[] = [
     statusHistory: [
       { ch: 386, value: "unresolved" },
       {
-        ch: 390,
+        ch: 389,
         value: "strengthened",
-        note: "Post-incident behavior patterns fit the transfer model.",
+        note: "Vict's garbled radio scream — 'a bow', 'invincible' — and Benjamin's star-count (Shikaku dead, Vict alive) fit the transfer-and-cost model.",
       },
       {
         ch: 404,
@@ -229,7 +241,7 @@ export const theories: Theory[] = [
       },
     ],
     relatedCharacterIds: ["halkenburg", "ladiolus", "sumidori", "balsamilco"],
-    chapters: [385, 386, 390, 403, 404, 413],
+    chapters: [382, 386, 389, 403, 404, 413],
     confidence: "canonical",
     lastUpdatedCh: 413,
   },
@@ -239,7 +251,11 @@ export const theories: Theory[] = [
     summary:
       "Her grievance reads as personal, not political. If she is an unacknowledged Hui Guo Rou, the succession war has a fifteenth participant playing by no rite at all.",
     statusHistory: [
-      { ch: 386, value: "unresolved" },
+      {
+        ch: 378,
+        value: "unresolved",
+        note: "The official record at her debut: Nasubi's scarred illegitimate daughter, a second-track faker barred from succession.",
+      },
       {
         ch: 408,
         value: "disproven",
@@ -248,9 +264,14 @@ export const theories: Theory[] = [
     ],
     supporting: [
       {
-        chapter: 386,
-        note: "Her stated hatred targets the family specifically, with the texture of biography.",
-        confidence: "weak-inference",
+        chapter: 378,
+        note: "Her facial scars and boss title matched the record: illegitimate royal children are scarred at birth, and she is presented as Nasubi's illegitimate daughter.",
+        confidence: "strong-inference",
+      },
+      {
+        chapter: 384,
+        note: "All three mafia bosses are 'Second-track Fakers' — illegitimate heirs compensated to stay in the shadows — a system her title placed her inside.",
+        confidence: "canonical",
       },
       {
         chapter: 408,
@@ -266,7 +287,7 @@ export const theories: Theory[] = [
       },
     ],
     relatedCharacterIds: ["morena", "nasubi"],
-    chapters: [386, 405, 408],
+    chapters: [378, 384, 405, 408],
     confidence: "theory",
     lastUpdatedCh: 408,
   },
@@ -276,7 +297,7 @@ export const theories: Theory[] = [
     summary:
       "The ability needed passage knowledge, funding, and a reason to hit the weakest camp first. That triangulates to a well-resourced camp testing its tools on a low-risk target before the real war.",
     statusHistory: [
-      { ch: 362, value: "unresolved" },
+      { ch: 359, value: "unresolved" },
       {
         ch: 371,
         value: "weakened",
@@ -285,13 +306,18 @@ export const theories: Theory[] = [
       {
         ch: 411,
         value: "unresolved",
-        note: "The second class round reopens the file adjacent threads: a masked girl among the class murders and a 'snake charmer' hitting Tserriednich's guards — if either is the same asset, the employer question is live again.",
+        note: "The second class round reopens adjacent threads: a masked girl among the class murders and a 'snake charmer' hitting Tserriednich's guards — if either is the same asset, the employer question is live again.",
       },
     ],
     supporting: [
       {
-        chapter: 361,
-        note: "Passage-dependent attack routes imply insider knowledge of the royal deck.",
+        chapter: 359,
+        note: "The day-one hit killed five guards inside the royal quarters without a witness — access and timing that imply inside knowledge of Room 1014.",
+        confidence: "strong-inference",
+      },
+      {
+        chapter: 369,
+        note: "The user was physically in the room when Silent Majority activated — one of the vetted attendees or staff — which narrows the employer pool to camps with a body inside.",
         confidence: "strong-inference",
       },
     ],
@@ -303,7 +329,7 @@ export const theories: Theory[] = [
       },
     ],
     relatedCharacterIds: ["kurapika", "benjamin", "tserriednich"],
-    chapters: [360, 362, 371],
+    chapters: [359, 369, 371, 411],
     confidence: "theory",
     lastUpdatedCh: 411,
   },
@@ -313,7 +339,11 @@ export const theories: Theory[] = [
     summary:
       "Beasts die with their prince — usually. A post-mortem chorus-puppet wearing Kacho's face to keep Fugetsu functional would be the rite's cruelest mercy yet.",
     statusHistory: [
-      { ch: 388, value: "unresolved" },
+      {
+        ch: 383,
+        value: "strengthened",
+        note: "Without You's rules — the formless beast takes a dead twin's form to guard the survivor — are revealed in the same beat that shows Kacho dead on the lifeboat. The 'Kacho' who walked back through the door all but names herself.",
+      },
       {
         ch: 400,
         value: "confirmed",
@@ -322,14 +352,9 @@ export const theories: Theory[] = [
     ],
     supporting: [
       {
-        chapter: 388,
-        note: "The presence behaves protectively and only Fugetsu perceives it fully.",
-        confidence: "weak-inference",
-      },
-      {
-        chapter: 382,
-        note: "Kacho's beast was a puppet chorus — mimicry is its native mode.",
-        confidence: "strong-inference",
+        chapter: 383,
+        note: "Without You revealed: Kacho's formless beast takes the form of a dead twin, protecting the living sister and staying by her side until death — as Kacho's body drifts out to sea.",
+        confidence: "canonical",
       },
       {
         chapter: 400,
@@ -345,12 +370,12 @@ export const theories: Theory[] = [
     contradicting: [
       {
         chapter: 368,
-        note: "(Historical) Momoze's beast ceased at her death — Kacho's persistence broke that precedent rather than the theory.",
+        note: "(Historical) Momoze's beast was never seen again after her death — the precedent said beasts end with their prince, which argued the returned 'Kacho' had to be something else.",
         confidence: "weak-inference",
       },
     ],
     relatedCharacterIds: ["kacho", "fugetsu", "melody"],
-    chapters: [382, 388, 400, 404, 411],
+    chapters: [383, 400, 404, 411],
     confidence: "canonical",
     lastUpdatedCh: 411,
   },
@@ -417,18 +442,23 @@ export const theories: Theory[] = [
     ],
     contradicting: [
       {
-        chapter: 413,
-        note: "Nothing on-page has yet failed for him: the beast screeched spirits off Fugetsu on command, and Benjamin Baton has absorbed every dead soldier's ability as designed.",
+        chapter: 402,
+        note: "Nothing on-page has misfired for him: the beast autonomously screeched low-level spirits off Fugetsu — exactly the guardian work it was built for.",
         confidence: "weak-inference",
       },
       {
-        chapter: 413,
-        note: "Nasubi's own framing — power enough to 'sustain a Guardian Spirit Beast befitting a king' — suggests a beast-merged ruler may be the ritual's intended output, not a violation.",
+        chapter: 389,
+        note: "Benjamin Baton has run as designed all arc — the stars on his hand log each pledged soldier's death as their abilities accrue to him.",
+        confidence: "strong-inference",
+      },
+      {
+        chapter: 411,
+        note: "Kurapika's reconstruction of the ritual's payout — power enough to 'sustain a Guardian Spirit Beast befitting a king' — reads like a beast-merged ruler is the intended output, not a violation.",
         confidence: "weak-inference",
       },
     ],
     relatedCharacterIds: ["benjamin", "furykov", "unma", "halkenburg"],
-    chapters: [411, 413],
+    chapters: [389, 402, 411, 413],
     confidence: "theory",
     lastUpdatedCh: 413,
   },

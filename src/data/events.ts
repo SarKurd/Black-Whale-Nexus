@@ -53,7 +53,7 @@ export const events: StoryEvent[] = [
     chapter: 358,
     kind: "conversation",
     locationId: "black-whale",
-    participantIds: ["mizaistom", "kurapika", "cheadle"],
+    participantIds: ["mizaistom", "kurapika"],
     storylineIds: ["ship-security-crisis", "beyond-netero"],
     confidence: "canonical",
   },
@@ -84,7 +84,7 @@ export const events: StoryEvent[] = [
     id: "ev-359-departure",
     title: "The Black Whale departs",
     summary:
-      "Two hundred thousand passengers leave port on a two-month voyage: three weeks in known waters, five in uncharted seas. The moment the gangways lift, the contest's arena is sealed — no prince leaves until landfall.",
+      "The Black Whale leaves port on a two-month voyage: three weeks in known waters, five in uncharted seas. The moment the gangways lift, the contest's arena is sealed — no prince leaves until landfall.",
     chapter: 359,
     day: 1,
     kind: "ceremony",
@@ -97,7 +97,7 @@ export const events: StoryEvent[] = [
     id: "ev-359-five-guards-drained",
     title: "Five royal guards die drained of blood",
     summary:
-      "On the first day, five of Queen Oito's higher-queen-appointed royal guards are found dead, their blood drawn out through small wounds. No intruder, no witness — the debut of the ability later named Silent Majority.",
+      "Within the first two hours of the voyage, five of Queen Oito's higher-queen-appointed royal guards are found dead, their blood drawn out through small wounds. No intruder, no witness — the debut of the ability later named Silent Majority.",
     chapter: 359,
     day: 1,
     kind: "death",
@@ -118,11 +118,11 @@ export const events: StoryEvent[] = [
     id: "ev-359-twins-pact",
     title: "Kacho's plan for the twins",
     summary:
-      "Kacho resolves to 'work with' Fugetsu to kill the other princes — and, if the two of them are last, to beg their father to spare Fugetsu. The ruthless framing is itself a mask over the real plan taking shape between the sisters.",
+      "Kacho resolves to 'work with' Fugetsu to kill the other princes — and, if the two of them are last, to beg their father to spare Fugetsu. Melody, listening nearby, wonders if the princess is fooling herself.",
     chapter: 359,
     day: 1,
     kind: "decision",
-    locationId: "kacho-quarters",
+    locationId: "banquet-hall",
     participantIds: ["kacho", "fugetsu"],
     storylineIds: ["kacho-fugetsu"],
     confidence: "canonical",
@@ -136,7 +136,7 @@ export const events: StoryEvent[] = [
     day: 1,
     kind: "investigation",
     locationId: "room-1014",
-    participantIds: ["kurapika", "bill", "sayird", "shimano", "oito"],
+    participantIds: ["kurapika", "bill", "sayird", "oito"],
     storylineIds: ["kurapika-woble", "silent-majority"],
     confidence: "canonical",
   },
@@ -198,16 +198,13 @@ export const events: StoryEvent[] = [
     id: "ev-360-sayird-possession",
     title: "A possessed Sayird kills three guards",
     summary:
-      "Sayird, puppeted by a Guardian Spirit Beast, kills Kurton and the last two royal guards. Kurapika subdues him without killing — the enemy, whatever it is, can wear the detail's own people.",
+      "Sayird, puppeted by a Guardian Spirit Beast, kills Kurton and the last two royal guards. Kurapika resolves to stop him and take him alive — the enemy, whatever it is, can wear the detail's own people.",
     chapter: 360,
     day: 1,
     kind: "death",
     locationId: "room-1014",
     participantIds: ["sayird", "kurapika", "bill", "oito"],
     storylineIds: ["kurapika-woble", "silent-majority"],
-    consequences: [
-      "Woble's escape plan dies with Kurton, whose ability could have carried five people off the ship",
-    ],
     confidence: "canonical",
   },
 
@@ -255,7 +252,7 @@ export const events: StoryEvent[] = [
     chapter: 361,
     day: 1,
     kind: "nen-reveal",
-    locationId: "room-1014",
+    locationId: "momoze-quarters",
     participantIds: ["momoze"],
     storylineIds: ["silent-majority", "succession-contest"],
     confidence: "canonical",
@@ -264,7 +261,7 @@ export const events: StoryEvent[] = [
     id: "ev-361-halkenburg-withdraw",
     title: "Halkenburg asks to withdraw; Nasubi shrugs",
     summary:
-      "The Ninth Prince, whose bow-armed Guardian Spirit Beast is revealed this chapter, tells his father he wants out of the succession battle. Nasubi's answer — 'do as you wish' — commits him to a contest that has no exit clause.",
+      "The Ninth Prince, whose cyclops-like Guardian Spirit Beast is revealed this chapter, tells his father he wants out of the succession battle. Nasubi's answer — 'do as you wish' — commits him to a contest that has no exit clause.",
     chapter: 361,
     day: 1,
     kind: "conversation",
@@ -307,20 +304,19 @@ export const events: StoryEvent[] = [
     id: "ev-362-beast-rules",
     title: "The beasts' non-aggression rule",
     summary:
-      "A working rule of the system emerges: Guardian Spirit Beasts do not kill each other and do not directly attack other beasts' hosts. The war they enable must be fought through humans.",
+      "A working rule of the system emerges from Nasubi's monologue: Guardian Spirit Beasts do not kill each other and do not directly attack other beasts' hosts. The war they enable must be fought through humans.",
     chapter: 362,
     day: 1,
     kind: "discovery",
     locationId: "royal-quarters",
-    participantIds: ["benjamin", "camilla", "zhang-lei", "tserriednich"],
-    storylineIds: ["succession-contest"],
-    knowledgeChanges: [
-      {
-        factId: "fact-beast-parasitic-nature",
-        characterId: "balsamilco",
-        state: "suspects",
-      },
+    participantIds: [
+      "nasubi",
+      "benjamin",
+      "camilla",
+      "zhang-lei",
+      "tserriednich",
     ],
+    storylineIds: ["succession-contest"],
     confidence: "canonical",
   },
   {
@@ -340,7 +336,7 @@ export const events: StoryEvent[] = [
     id: "ev-362-halkenburg-guards-collapse",
     title: "Halkenburg's guards collapse as one",
     summary:
-      "The Ninth Prince finds his entire loyal guard detail unconscious around him under circumstances no one can explain. His beast has begun conscripting his followers — without asking the pacifist it serves.",
+      "The Ninth Prince finds his entire loyal guard detail unconscious around him under circumstances no one can explain — the first outward sign of whatever his beast is doing.",
     chapter: 362,
     day: 1,
     kind: "discovery",
@@ -373,12 +369,12 @@ export const events: StoryEvent[] = [
     id: "ev-363-zhang-lei-briefed",
     title: "Zhang Lei learns the beasts exist",
     summary:
-      "The Third Prince is briefed on Room 1014's losses and the existence of Nen beasts — news to him and his entire guard corps. Nasubi, meanwhile, remarks that even interpreting the 'sole survivor' rule is part of the contest.",
+      "The Third Prince is briefed on Room 1014's losses and the existence of Nen beasts — news to him and his entire guard corps. In a separate audience, Nasubi tells Camilla and Benjamin that even interpreting the 'sole survivor' rule is part of the contest.",
     chapter: 363,
     day: 1,
     kind: "conversation",
     locationId: "zhang-lei-quarters",
-    participantIds: ["zhang-lei", "sakata", "hashito", "nasubi"],
+    participantIds: ["zhang-lei", "nasubi", "camilla", "benjamin"],
     storylineIds: ["succession-contest"],
     confidence: "canonical",
   },
@@ -386,7 +382,7 @@ export const events: StoryEvent[] = [
     id: "ev-363-vincent-kills-sandra",
     title: "Vincent kills the servant Sandra",
     summary:
-      "Benjamin's soldier Vincent forces his way into Room 1014 as its assigned 'guard' and shoots the servant Sandra dead in the name of self-defense — the military machine testing exactly how much murder its paperwork can absorb.",
+      "Benjamin's soldier Vincent forces his way into Room 1014 as its assigned 'guard' and kills the servant Sandra with a knife in the name of self-defense — the military machine testing exactly how much murder its paperwork can absorb.",
     chapter: 363,
     day: 1,
     kind: "death",
@@ -403,7 +399,7 @@ export const events: StoryEvent[] = [
     id: "ev-364-vincent-suicide",
     title: "Vincent's aura is stolen; he takes his own life",
     summary:
-      "Kurapika drains Vincent with Steal Chain and bluffs an ability that 'forces confessions.' Vincent kills himself rather than talk; Balsamilco reads the bluff as evidence Kurapika is a Manipulator — exactly the misdirection intended. Babimyna is sent as Vincent's replacement.",
+      "Kurapika drains Vincent with Steal Chain and bluffs an ability that 'forces confessions.' Vincent kills himself rather than talk; Balsamilco suspects the bluff is meant to paint Kurapika as a Manipulator. Benjamin sends Babimyna as Vincent's replacement.",
     chapter: 364,
     day: 1,
     kind: "death",
@@ -453,11 +449,11 @@ export const events: StoryEvent[] = [
     id: "ev-365-zhang-lei-truce",
     title: "Zhang Lei offers a truce",
     summary:
-      "Shimano routes the switchboard to Zhang Lei against Kurapika's instructions — and it pays off. The Third Prince offers a truce for information; Kurapika explains Nen basics and reveals the beasts were seeded at the Seed Urn ceremony. Benjamin, kept waiting, hangs up.",
+      "Shimano routes the switchboard to Zhang Lei against Kurapika's instructions — and it pays off. Visiting Room 1003, Kurapika explains Nen basics and reveals the beasts were seeded at the Seed Urn ceremony in exchange for a truce. Benjamin, kept waiting, hangs up.",
     chapter: 365,
     day: 1,
     kind: "alliance",
-    locationId: "room-1014",
+    locationId: "zhang-lei-quarters",
     participantIds: ["zhang-lei", "kurapika", "shimano", "oito"],
     storylineIds: ["kurapika-woble", "succession-contest"],
     confidence: "canonical",
@@ -496,12 +492,12 @@ export const events: StoryEvent[] = [
     id: "ev-366-camilla-plot",
     title: "Camilla plots Benjamin's death; Musse listens",
     summary:
-      "Camilla plans to kill Benjamin first, then Halkenburg, and orders her mother to get close to the Ninth. Benjamin's soldier Musse eavesdrops and plans to secure physical proof with his ability, Secret Window.",
+      "Camilla plans to kill Benjamin first, then Halkenburg, and orders her mother Duazul to get close to the Ninth. Benjamin's soldier Musse eavesdrops and plans to secure physical proof with his ability, Secret Window.",
     chapter: 366,
     day: 1,
     kind: "conversation",
     locationId: "camilla-quarters",
-    participantIds: ["camilla", "musse"],
+    participantIds: ["camilla", "musse", "duazul"],
     storylineIds: ["succession-contest", "benjamin-military"],
     confidence: "canonical",
   },
@@ -581,7 +577,7 @@ export const events: StoryEvent[] = [
     id: "ev-368-kurapika-blackout",
     title: "Emperor Time knocks Kurapika out",
     summary:
-      "Nearly three hours of continuous Emperor Time — roughly 450 days of lifespan — drops Kurapika unconscious mid-sentence. The room's strongest defender has a hard limit, and now his allies have seen it.",
+      "Nearly three hours of continuous Emperor Time — roughly 450 days of lifespan — drops Kurapika without warning, to Bill's shock. The room's strongest defender has a hard limit, and now his closest ally has seen it.",
     chapter: 368,
     day: 1,
     kind: "other",
@@ -618,7 +614,7 @@ export const events: StoryEvent[] = [
     id: "ev-369-kurapika-wakes",
     title: "Nine hours dark: the three-hour rule",
     summary:
-      "Kurapika wakes after nine hours — Oito, linked through Stealth Dolphin, slept exactly as long. He works out Emperor Time's rule of thumb: about three hours of stolen-ability use before blackout, with unconsciousness three times the overage, and roughly five years of lifespan already spent.",
+      "Kurapika wakes after nine hours — Oito, linked through Stealth Dolphin, slept exactly as long. He works out Emperor Time's rule of thumb: about a three-hour limit, with a blackout lasting three times as long once he exceeds it, and roughly five years of lifespan already spent.",
     chapter: 369,
     day: 2,
     kind: "discovery",
@@ -655,15 +651,16 @@ export const events: StoryEvent[] = [
       "furykov",
       "belerainte",
       "babimyna",
-      "hanzo",
-      "basho",
       "loberry",
       "ladiolus",
       "yuhirai",
-      "woody",
+      "maor",
+      "longhi",
+      "satobi",
+      "tenftory",
+      "barrigen",
     ],
     storylineIds: ["nen-classes", "silent-majority"],
-    consequences: ["Attacks on Room 1014 cease while class is in session"],
     confidence: "canonical",
   },
   {
@@ -707,7 +704,7 @@ export const events: StoryEvent[] = [
     id: "ev-370-barrigen-killed",
     title: "Silent Majority kills Barrigen mid-class",
     summary:
-      "Four snakes drain Barrigen's blood in the same manner as the first night's five guards — disproving the theory that Woble's beast was responsible. Only the user and the possessed can see the ability's marionette; if it deactivates without killing, the curse rebounds on its user.",
+      "Four snakes drain Barrigen's blood in the same manner as day one's five guards — disproving the theory that Woble's beast was responsible. Only the user and the possessed can see the ability's marionette; if it deactivates without killing, the curse rebounds on its user.",
     chapter: 370,
     day: 2,
     kind: "death",
@@ -762,12 +759,12 @@ export const events: StoryEvent[] = [
     id: "ev-371-loberry-arrested",
     title: "Loberry arrested; Queen Seiko under suspicion",
     summary:
-      "The royal army takes Loberry on suspicion of killing Barrigen, and the ship's supreme court sends an investigator to Room 1010 to probe Queen Seiko as an accomplice. The wrong people pay for the snake killings first.",
+      "Sakata and Hashito detain Loberry on suspicion of killing Barrigen, and the ship's supreme court sends an investigator to Room 1010 to probe Queen Seiko as an accomplice. The wrong people pay for the snake killings first.",
     chapter: 371,
     day: 2,
     kind: "investigation",
     locationId: "room-1014",
-    participantIds: ["loberry", "seiko"],
+    participantIds: ["loberry", "sakata", "hashito", "cleapatro"],
     storylineIds: ["silent-majority", "ship-security-crisis"],
     confidence: "canonical",
   },
@@ -798,13 +795,13 @@ export const events: StoryEvent[] = [
     knowledgeChanges: [
       {
         factId: "fact-mafia-three-families",
-        characterId: "chrollo",
+        characterId: "phinks",
         state: "knows",
       },
       {
         factId: "fact-hisoka-aboard",
         characterId: "chrollo",
-        state: "suspects",
+        state: "knows",
       },
     ],
     confidence: "canonical",
@@ -916,7 +913,7 @@ export const events: StoryEvent[] = [
     id: "ev-373-camilla-shoots-benjamin",
     title: "Camilla shoots Benjamin at Room 1001",
     summary:
-      "Killing one of Unma's reassigned guards on the way, Camilla walks into Benjamin's quarters and shoots him. He refuses to strike back — retaliation is what her ability wants — and has her arrested instead.",
+      "Killing one of Unma's reassigned guards on the way, Camilla walks into Benjamin's quarters and shoots him. He defends himself with his aura but does not retaliate, and has her arrested instead.",
     chapter: 373,
     day: 2,
     kind: "assassination-attempt",
@@ -958,7 +955,7 @@ export const events: StoryEvent[] = [
     summary:
       "Kurapika tells Vergei that Room 1013 has been 'transported somewhere else' and names Tuffdy as Momoze's murderer. Vergei, contacting them from a room that no longer physically exists, rejects every request to check outside his own door.",
     chapter: 374,
-    day: 2,
+    day: 3,
     kind: "conversation",
     locationId: "room-1014",
     participantIds: ["kurapika", "vergei", "sakata"],
@@ -971,7 +968,7 @@ export const events: StoryEvent[] = [
     summary:
       "A door appears before the Eleventh Prince, opening onto a tunnel that ends at her twin's bed. The beast that will define the twins' escape — and their tragedy — introduces itself as a childhood game made real.",
     chapter: 374,
-    day: 2,
+    day: 3,
     kind: "nen-reveal",
     locationId: "fugetsu-quarters",
     participantIds: ["fugetsu", "kacho"],
@@ -984,7 +981,7 @@ export const events: StoryEvent[] = [
     summary:
       "Benjamin's soldier Rihan reveals Predator: from deliberate ignorance, he analyzes a target ability and conjures its natural predator. He designates Salé-salé's smoke-charming Guardian Spirit Beast — the first move in a quiet beast-hunting program.",
     chapter: 374,
-    day: 2,
+    day: 3,
     kind: "nen-reveal",
     locationId: "royal-quarters",
     participantIds: ["rihan", "salele"],
@@ -997,7 +994,7 @@ export const events: StoryEvent[] = [
     summary:
       "The Third Prince's beast ejects another coin stamped '1'. Benjamin's observer Coventoba — who secretly pocketed the first — is the only person who knows there are two.",
     chapter: 374,
-    day: 2,
+    day: 3,
     kind: "discovery",
     locationId: "zhang-lei-quarters",
     participantIds: ["zhang-lei", "coventoba"],
@@ -1012,9 +1009,9 @@ export const events: StoryEvent[] = [
     id: "ev-375-beast-intel",
     title: "Beast dossiers accumulate",
     summary:
-      "Benjamin's observers file reports: Tyson's 'eye-wogs' harvest aura from readers of her book, Tubeppa's beast brews drugs with a partner, Luzurus's sets desire-shaped traps, Halkenburg's enhances a fellowship's Nen. Shikaku, assigned to Halkenburg, suspects memory revision and requests backup.",
+      "The princes' beast dossiers grow: Tyson's 'eye-wogs' harvest aura from readers of her book, Tubeppa's beast brews drugs with a partner, Luzurus's sets desire-shaped traps, Halkenburg's enhances a fellowship's Nen. Shikaku, Benjamin's observer assigned to Halkenburg, suspects memory revision and requests backup.",
     chapter: 375,
-    day: 2,
+    day: 3,
     kind: "investigation",
     locationId: "royal-quarters",
     participantIds: ["shikaku", "balsamilco", "benjamin"],
@@ -1027,7 +1024,7 @@ export const events: StoryEvent[] = [
     summary:
       "Biscuit drops her disguise to demonstrate Nen to the disbelieving Vergei, who signs on as her student. The Hunters inside Room 1013 deduce they are in a one-way Nen space copied from the real room — almost certainly the work of Marayam's beast, protecting by imprisoning.",
     chapter: 375,
-    day: 2,
+    day: 3,
     kind: "discovery",
     locationId: "marayam-quarters",
     participantIds: ["biscuit", "vergei", "marayam", "sevanti", "belerainte"],
@@ -1080,7 +1077,7 @@ export const events: StoryEvent[] = [
     day: 3,
     kind: "decision",
     locationId: "tier-1",
-    participantIds: ["halkenburg", "nasubi"],
+    participantIds: ["halkenburg"],
     storylineIds: ["halkenburg-movement"],
     confidence: "canonical",
   },
@@ -1126,7 +1123,7 @@ export const events: StoryEvent[] = [
     day: 4,
     kind: "discovery",
     locationId: "fugetsu-quarters",
-    participantIds: ["fugetsu", "kacho"],
+    participantIds: ["fugetsu"],
     storylineIds: ["kacho-fugetsu"],
     confidence: "canonical",
   },
@@ -1143,7 +1140,7 @@ export const events: StoryEvent[] = [
     day: 4,
     kind: "decision",
     locationId: "kacho-quarters",
-    participantIds: ["kacho", "fugetsu", "melody"],
+    participantIds: ["kacho", "melody", "seiko"],
     storylineIds: ["kacho-fugetsu"],
     confidence: "canonical",
   },
@@ -1186,7 +1183,7 @@ export const events: StoryEvent[] = [
     day: 4,
     kind: "discovery",
     locationId: "tier-5",
-    participantIds: ["chrollo", "ken-i"],
+    participantIds: ["chrollo"],
     storylineIds: ["mafia-war", "troupe-hisoka-hunt"],
     knowledgeChanges: [
       {
@@ -1205,9 +1202,9 @@ export const events: StoryEvent[] = [
     id: "ev-378-bosses-debut",
     title: "Three bosses, all royal blood",
     summary:
-      "Onior Longbao (Xi-Yu) and Brocco Li (Cha-R) are Nasubi's half-brothers; Morena Prudo (Heil-Ly) is his illegitimate daughter. Kakin scars its kings' bastards at birth and pays them to stay invisible — 'Second-track Fakers' propping up the monarchy from the gutter.",
+      "Onior Longbao (Xi-Yu) and Brocco Li (Cha-R) are Nasubi's half-brothers; Morena Prudo (Heil-Ly) is his illegitimate daughter. Kakin scars its kings' bastards at birth and permits them to exist only in society's shadows.",
     chapter: 378,
-    day: 4,
+    day: 5,
     kind: "discovery",
     locationId: "tier-5",
     participantIds: ["onior", "brocco", "morena"],
@@ -1220,7 +1217,7 @@ export const events: StoryEvent[] = [
     summary:
       "Morena's ability infects a community of 23 including herself: members gain power by killing — one level per civilian, ten per Nen user, fifty per prince. Level 20 grants an ability; level 100 lets a member seed their own community. Her stated aim is havoc, starting with the ship.",
     chapter: 378,
-    day: 4,
+    day: 5,
     kind: "nen-reveal",
     locationId: "heil-ly-territory",
     participantIds: ["morena"],
@@ -1240,10 +1237,10 @@ export const events: StoryEvent[] = [
     summary:
       "Onior and Brocco order their underbosses to find Hisoka before the Troupe does: Ken'i floats ten million per tip, Hinrigh plans ID checks through Queen Tang Zhao Li's influence. Everyone wants the clown found — nobody wants him fought.",
     chapter: 378,
-    day: 4,
+    day: 5,
     kind: "decision",
     locationId: "tier-5",
-    participantIds: ["ken-i", "hinrigh", "onior", "brocco", "tang-zhao-li"],
+    participantIds: ["ken-i", "hinrigh", "onior", "brocco"],
     storylineIds: ["mafia-war", "troupe-hisoka-hunt"],
     confidence: "canonical",
   },
@@ -1257,7 +1254,7 @@ export const events: StoryEvent[] = [
     summary:
       "The Heil-Ly's Luini kills three more Cha-R guards to reach level 24, using a corpse to infiltrate and mark the family's hideout for his sealed-room transportation ability. His accomplice Cashew feeds Mizaistom a testimony of curated lies to gauge the Association's investigators.",
     chapter: 379,
-    day: 4,
+    day: 5,
     kind: "death",
     locationId: "cha-r-territory",
     participantIds: ["luini", "mizaistom"],
@@ -1311,7 +1308,7 @@ export const events: StoryEvent[] = [
     id: "ev-380-fugetsu-caught",
     title: "The 'stowaway' is Prince Fugetsu",
     summary:
-      "A person with no ID turns up on Tier 3: the Eleventh Prince, off the royal deck through no corridor any camera saw. Mizaistom imposes a gag order and takes her into protective interrogation himself.",
+      "A person with no ID turns up on Tier 3: the Eleventh Prince, with no explanation of how she left the royal deck. Mizaistom imposes a gag order and takes her into protective interrogation himself.",
     chapter: 380,
     day: 5,
     kind: "discovery",
@@ -1475,7 +1472,6 @@ export const events: StoryEvent[] = [
     storylineIds: ["kacho-fugetsu", "succession-contest"],
     knowledgeChanges: [
       { factId: "fact-kacho-death", characterId: "fugetsu", state: "unaware" },
-      { factId: "fact-kacho-death", characterId: "melody", state: "suspects" },
     ],
     consequences: [
       "The twins' beasts are revealed as cooperative: Fugetsu's Magical Worm carries out, Kacho's Without You carries back",
@@ -1491,20 +1487,12 @@ export const events: StoryEvent[] = [
     id: "ev-384-mafia-war-protocol",
     title: "The rules that make the war official",
     summary:
-      "Ken'i and Vice Boss Tajao explain the custom: hits between families must be squared between bosses within 24 hours, with the boss off home turf when it happens. Over 300 workers are missing, Morena's Tier 1 room is empty, and no call has come — war with the Heil-Ly is now procedural fact.",
+      "Ken'i and Vice Boss Tajao explain the custom: hits between families must be squared between bosses within 24 hours, with the boss off home turf when it happens. Over 300 workers are missing, Morena's Tier 1 room is empty, and no call has come — war with the Heil-Ly is now all but unavoidable.",
     chapter: 384,
     day: 7,
     kind: "conversation",
     locationId: "cha-r-territory",
-    participantIds: [
-      "ken-i",
-      "nobunaga",
-      "phinks",
-      "feitan",
-      "onior",
-      "brocco",
-      "morena",
-    ],
+    participantIds: ["ken-i", "nobunaga", "phinks", "feitan"],
     storylineIds: ["mafia-war", "heil-ly-morena", "troupe-hisoka-hunt"],
     consequences: ["Nobunaga offers to kill the Heil-Ly boss personally"],
     confidence: "canonical",
@@ -1515,15 +1503,15 @@ export const events: StoryEvent[] = [
     summary:
       "On the phone, the Fourth Prince confirms his family's mafia arm has slipped his leash — Morena has been below decks since boarding — and tells the caller to do as they please. Behind him, Theta watches a second, self-made Specialist beast coalesce beside his Guardian Spirit Beast.",
     chapter: 384,
-    day: 8,
+    day: 7,
     kind: "conversation",
     locationId: "tserriednich-quarters",
-    participantIds: ["tserriednich", "theta", "morena"],
+    participantIds: ["tserriednich", "theta"],
     storylineIds: ["tserriednich-nen", "heil-ly-morena"],
     knowledgeChanges: [
       {
         factId: "fact-tserriednich-awakening",
-        characterId: "salkov",
+        characterId: "theta",
         state: "observed",
       },
     ],
@@ -1551,7 +1539,7 @@ export const events: StoryEvent[] = [
     id: "ev-385-beast-brands-theta",
     title: "The beast's warning: two lies left",
     summary:
-      "Tserriednich's Guardian Spirit Beast nicks Theta's cheek — a first warning for deception. A second lie brands her face; a third brings 'a punishment worse than death.' Salkov begs her to stop; she cannot.",
+      "Tserriednich's Guardian Spirit Beast warns Theta against deceiving its host again: the nick already on her cheek was a first warning for her lies. A second lie brands her face; a third brings 'a punishment worse than death.' Salkov begs her to stop; she cannot.",
     chapter: 385,
     day: 8,
     kind: "nen-reveal",
@@ -1609,12 +1597,12 @@ export const events: StoryEvent[] = [
     id: "ev-386-melody-held",
     title: "Melody held — and courted — at the Justice Bureau",
     summary:
-      "Keeney's suicide note claims he acted alone, but several princes, understanding now what her flute can do, 'invite' Melody to their suites with pardons as leverage. The Bureau keeps her long precisely to keep her out of their hands.",
+      "Keeney's suicide note claims he acted alone, but several princes, impressed by what they saw at the banquet, 'invite' Melody to their suites. The Bureau keeps her long precisely to keep her out of their hands.",
     chapter: 386,
     day: 9,
     kind: "investigation",
     locationId: "ministry-of-justice",
-    participantIds: ["melody"],
+    participantIds: ["melody", "kaiser"],
     storylineIds: ["kacho-fugetsu", "ship-security-crisis"],
     confidence: "canonical",
   },
@@ -1622,7 +1610,7 @@ export const events: StoryEvent[] = [
     id: "ev-386-water-divination-class",
     title: "Kurapika brings water divination to class",
     summary:
-      "Kurapika demonstrates the test — revealing himself a Specialist to every camp's observers — and singles out the servant Ladiolus's aura to prove Nen ignores rank and muscle. Type results will be taken behind closed doors, payment for the course.",
+      "Kurapika demonstrates the test — revealing himself a Specialist to every camp's observers — and singles out the servant Ladiolus's aura to prove Nen talent ignores gender and muscle. Type results will be taken behind closed doors, payment for the course.",
     chapter: 386,
     day: 9,
     kind: "other",
@@ -1636,13 +1624,6 @@ export const events: StoryEvent[] = [
       "satobi",
     ],
     storylineIds: ["nen-classes"],
-    knowledgeChanges: [
-      {
-        factId: "fact-kurapika-is-chain-user",
-        characterId: "furykov",
-        state: "suspects",
-      },
-    ],
     confidence: "canonical",
   },
 
@@ -1864,7 +1845,7 @@ export const events: StoryEvent[] = [
     knowledgeChanges: [
       {
         factId: "fact-morena-contagion",
-        characterId: "hinrigh",
+        characterId: "lynch",
         state: "knows",
       },
     ],
@@ -1904,12 +1885,12 @@ export const events: StoryEvent[] = [
     id: "ev-392-hidden-room-tip",
     title: "A corporal sells the hidden room",
     summary:
-      "For fifty million, a soldier tells Hinrigh about silenced wiring workers and a room that appears on no ship plan, behind Room 3101's missing bathroom wall. The blueprints have been lying since launch.",
+      "For fifty million, a soldier tells Hinrigh about silenced wiring workers and a room that appears on no ship plan — surely the Heil-Ly's, if the Xi-Yu has no secret hideout of its own. The blueprints have been lying since launch.",
     chapter: 392,
     day: 10,
     kind: "discovery",
     locationId: "tier-3",
-    participantIds: ["hinrigh", "ken-i"],
+    participantIds: ["hinrigh"],
     storylineIds: ["mafia-war", "heil-ly-morena"],
     knowledgeChanges: [
       {
@@ -1929,7 +1910,7 @@ export const events: StoryEvent[] = [
     day: 10,
     kind: "discovery",
     locationId: "tier-3",
-    participantIds: ["zakuro", "lynch", "bonolenov", "hisoka"],
+    participantIds: ["zakuro", "lynch", "bonolenov"],
     storylineIds: ["troupe-hisoka-hunt", "mafia-war"],
     knowledgeChanges: [
       {
@@ -1974,7 +1955,7 @@ export const events: StoryEvent[] = [
     day: 10,
     kind: "alliance",
     locationId: "tier-3",
-    participantIds: ["hinrigh", "bonolenov", "ken-i"],
+    participantIds: ["hinrigh", "bonolenov"],
     storylineIds: ["troupe-hisoka-hunt", "mafia-war"],
     confidence: "canonical",
   },
@@ -2007,7 +1988,7 @@ export const events: StoryEvent[] = [
     day: 10,
     kind: "decision",
     locationId: "hidden-passage-network",
-    participantIds: ["morena", "tserriednich"],
+    participantIds: ["morena"],
     storylineIds: ["heil-ly-morena"],
     confidence: "canonical",
   },
@@ -2032,10 +2013,27 @@ export const events: StoryEvent[] = [
     id: "ev-395-troupe-origins",
     title: "Meteor City: the Power Cleaners troupe",
     summary:
-      "A flashback opens the Troupe's origin: child Chrollo dubbing foreign videos in a church, Pakunoda, Sheila, and Sarasa voicing the heroines, Uvogin won over by a performance. A theater company forms in a city whose children are stolen for sport.",
+      "A flashback opens the Troupe's origin: child Chrollo dubbing foreign videos in a church, Pakunoda, Sheila, and Sarasa voicing the heroines, a furious Uvogin hunting him over a stolen tape. A theater company begins to form in a city whose children are stolen for sport.",
     chapter: 395,
     kind: "other",
-    locationId: "black-whale",
+    participantIds: [
+      "chrollo",
+      "nobunaga",
+      "phinks",
+      "feitan",
+      "machi",
+      "franklin",
+    ],
+    storylineIds: ["troupe-hisoka-hunt"],
+    confidence: "canonical",
+  },
+  {
+    id: "ev-396-troupe-named",
+    title: "The troupe takes its name",
+    summary:
+      "The screening's tape jams and Chrollo carries the show live, winning over even Uvogin. The children claim recurring roles, decide they are a troupe — 'each of us is worth a hundred members' — and Sarasa leaves alone for sorting duty as a van of child-snatchers, quota already met, considers one more.",
+    chapter: 396,
+    kind: "decision",
     participantIds: [
       "chrollo",
       "nobunaga",
@@ -2054,7 +2052,6 @@ export const events: StoryEvent[] = [
       "Sarasa is abducted, dismembered, and staged with a filmed message by outsiders who prey on Meteor City. Over her grave Chrollo vows to build a criminal haven that will lure her killers back, live as a villain the world shudders at, and kill — and Uvogin names him the Troupe's head.",
     chapter: 397,
     kind: "death",
-    locationId: "black-whale",
     participantIds: [
       "chrollo",
       "nobunaga",
@@ -2076,7 +2073,6 @@ export const events: StoryEvent[] = [
       "Chrollo asks Uvogin for three years to build his power and a system for Meteor City; Uvogin answers that if Chrollo is the head, he will follow him until he dies. Eight children raise their fingers, and the group that will terrify the world takes its shape.",
     chapter: 397,
     kind: "decision",
-    locationId: "black-whale",
     participantIds: [
       "chrollo",
       "nobunaga",
@@ -2114,7 +2110,7 @@ export const events: StoryEvent[] = [
     day: 10,
     kind: "battle",
     locationId: "hidden-passage-network",
-    participantIds: ["nobunaga", "hinrigh", "morena"],
+    participantIds: ["nobunaga", "hinrigh"],
     storylineIds: ["heil-ly-morena", "mafia-war"],
     consequences: [
       "The hideout's defense rewards non-aggression: the more serious the crime, the stronger the guards",
@@ -2129,7 +2125,7 @@ export const events: StoryEvent[] = [
     id: "ev-400-hideout-above",
     title: "The transmitter points upward",
     summary:
-      "Tracking the swallowed oyster, the Spiders read the Heil-Ly hideout as sitting above Tier 3 — meaning Morena has technically never been on her own turf, exploiting the very custom that legitimizes the war. Nobunaga starts to respect the enemy's architect.",
+      "Tracking the swallowed oyster, the Spiders place the Heil-Ly hideout up on Tier 2 — meaning Morena has technically never been on her own turf, exploiting the very custom that legitimizes the war. Nobunaga starts to respect the enemy's architect.",
     chapter: 400,
     day: 10,
     kind: "discovery",
@@ -2205,7 +2201,7 @@ export const events: StoryEvent[] = [
     id: "ev-400-longhi-approach",
     title: "Longhi drops the mask",
     summary:
-      "In line for the awakening, Tubeppa's guard Longhi tells Kurapika water divination is unnecessary — she already uses Nen — and asks him to hear a contract. Kurapika, gun and Dowsing Chain out, agrees to collaborate with Tubeppa.",
+      "In line for the awakening, Tubeppa's guard Longhi tells Kurapika water divination is unnecessary — she already uses Nen — and asks him to hear a contract. After hearing her out, Kurapika agrees to collaborate with Prince Tubeppa.",
     chapter: 400,
     day: 10,
     kind: "conversation",
@@ -2240,7 +2236,7 @@ export const events: StoryEvent[] = [
     day: 10,
     kind: "discovery",
     locationId: "room-1014",
-    participantIds: ["longhi", "kurapika", "bill", "oito", "beyond"],
+    participantIds: ["longhi", "kurapika", "bill", "oito"],
     storylineIds: ["beyond-netero", "kurapika-woble"],
     knowledgeChanges: [
       {
@@ -2260,7 +2256,7 @@ export const events: StoryEvent[] = [
     day: 10,
     kind: "nen-reveal",
     locationId: "room-1014",
-    participantIds: ["longhi", "kurapika", "bill", "beyond"],
+    participantIds: ["longhi", "kurapika", "bill"],
     storylineIds: ["beyond-netero", "succession-contest"],
     knowledgeChanges: [
       { factId: "fact-beyond-curse", characterId: "longhi", state: "knows" },
@@ -2311,10 +2307,10 @@ export const events: StoryEvent[] = [
     participantIds: [
       "tenftory",
       "zhang-lei",
+      "coventoba",
       "tubeppa",
       "maor",
       "longhi",
-      "kurapika",
     ],
     storylineIds: ["succession-contest", "kurapika-woble"],
     confidence: "canonical",
@@ -2323,12 +2319,12 @@ export const events: StoryEvent[] = [
     id: "ev-402-tsk17-prepared",
     title: "Balsamilco arms himself with TSK-17",
     summary:
-      "Alone, Balsamilco loads a shoe-mounted dispersal rig with TSK-17, a failed military pathogen that denatures in seconds in open air but kills by organ failure in half a day if inhaled — then erases itself from the corpse. His target: erase Halkenburg at their courthouse cross-examination.",
+      "Alone, Balsamilco loads a shoe-mounted dispersal rig with a failed military pathogen (later named TSK-17) that denatures in seconds in open air but kills by organ failure in half a day if inhaled — then erases itself from the corpse. His resolve: erase Halkenburg with it.",
     chapter: 402,
     day: 10,
     kind: "decision",
     locationId: "benjamin-quarters",
-    participantIds: ["balsamilco", "halkenburg"],
+    participantIds: ["balsamilco"],
     storylineIds: [
       "benjamin-military",
       "halkenburg-movement",
@@ -2351,10 +2347,12 @@ export const events: StoryEvent[] = [
       "kacho",
       "melody",
       "benjamin",
+      "butch",
       "tubeppa",
       "tyson",
       "luzurus",
       "basho",
+      "kanjidol",
     ],
     storylineIds: ["kacho-fugetsu", "special-martial-law"],
     consequences: [
@@ -2450,7 +2448,7 @@ export const events: StoryEvent[] = [
     id: "ev-404-coin-analysis",
     title: "Kurapika prices the coins",
     summary:
-      "Invited to Room 1003, Kurapika reads Zhang Lei's beast as a cumulative Conjurer: coins stored long enough compound toward 10^64, at which point holders' nodes open unaided — a king's mint for mass-producing Nen users after coronation. He keeps the pseudo-coercive loyalty implication, and Coventoba's theft, to himself.",
+      "Invited to Room 1003, Kurapika reads Zhang Lei's beast as a cumulative Conjurer: held coins compound tenfold every ten days, on track to open their holders' nodes within months, with 10^64 the value where abilities could manifest — a king's mint for mass-producing Nen users after coronation. He keeps the pseudo-coercive loyalty implication, and Coventoba's theft, to himself.",
     chapter: 404,
     day: 11,
     kind: "investigation",
@@ -2468,7 +2466,7 @@ export const events: StoryEvent[] = [
     day: 11,
     kind: "nen-reveal",
     locationId: "tier-3-medical",
-    participantIds: ["halkenburg", "balsamilco", "vict"],
+    participantIds: ["halkenburg", "balsamilco"],
     storylineIds: ["halkenburg-movement"],
     knowledgeChanges: [
       {
@@ -2575,7 +2573,7 @@ export const events: StoryEvent[] = [
     id: "ev-405-dogman-hunt",
     title: "Dogman hunts specialists at the funeral",
     summary:
-      "Morena greenlights her endgame's first step: Dogman, level 62, can smell Nen types at five meters and certainty at a sniff. He and Sodom — whose kidnap ability works only on non-users — will trawl the funeral crowds for the specialist Morena needs.",
+      "Morena greenlights her endgame's first step: Dogman, level 62, can smell Nen types at five meters and certainty at a sniff. He and Sodom — whose kidnap ability works only on non-users — will trawl the funeral crowds for what Morena is looking for.",
     chapter: 405,
     day: 12,
     kind: "movement",
@@ -2588,14 +2586,14 @@ export const events: StoryEvent[] = [
     id: "ev-405-keni-joker",
     title: "Ken'i answers to Morena",
     summary:
-      "After Tajao pledges the Cha-R and Xi-Yu's full support to the Troupe's Heil-Ly extermination, Ken'i privately addresses Morena — 'we have a problem' — and considers deploying their 'joker.' The Cha-R underboss has been hers all along.",
+      "After Tajao pledges the Cha-R and Xi-Yu's full support to the Troupe's Heil-Ly extermination, Ken'i privately addresses Morena in his thoughts — 'we have a problem' — and weighs deploying their 'joker,' all but confirming the Cha-R underboss is hers.",
     chapter: 405,
     day: 12,
     kind: "betrayal",
     locationId: "cha-r-territory",
-    participantIds: ["ken-i", "morena", "nobunaga", "phinks", "feitan"],
+    participantIds: ["ken-i", "nobunaga", "phinks", "feitan"],
     storylineIds: ["heil-ly-morena", "mafia-war", "troupe-hisoka-hunt"],
-    confidence: "canonical",
+    confidence: "strong-inference",
   },
 
   // -------------------------------------------------------------------------
@@ -2636,7 +2634,7 @@ export const events: StoryEvent[] = [
     day: 12,
     kind: "decision",
     locationId: "tier-3",
-    participantIds: ["chrollo", "hisoka"],
+    participantIds: ["chrollo"],
     storylineIds: ["troupe-hisoka-hunt", "succession-contest"],
     consequences: [
       "A conjured phone ability places Chrollo's quarry 'up above' — beyond his current range",
@@ -2657,7 +2655,7 @@ export const events: StoryEvent[] = [
     approxTime: "1:00 p.m.",
     kind: "movement",
     locationId: "tier-3",
-    participantIds: ["morena", "tserriednich"],
+    participantIds: ["morena"],
     storylineIds: ["heil-ly-morena"],
     confidence: "canonical",
   },
@@ -2665,7 +2663,7 @@ export const events: StoryEvent[] = [
     id: "ev-407-negotiation-game",
     title: "Morena's negotiation game",
     summary:
-      "Recruitment as ritual: seven face-up cards for the 'parent,' five face-down for the 'child,' the last card standing the answer. Yes means joining; No, death; X voids everything — even their secrets. Borksen, reading three traps deep, agrees to play.",
+      "Recruitment as ritual: seven face-up cards for the 'parent,' five face-down for the 'child,' the last card standing the answer. Yes means joining; X voids the whole negotiation; the price of No is deferred to its own explanation card. Borksen, reading three traps deep, agrees to play.",
     chapter: 407,
     day: 12,
     kind: "other",
@@ -2682,7 +2680,7 @@ export const events: StoryEvent[] = [
     id: "ev-408-morena-backstory",
     title: "The carnival orphan wearing Morena's name",
     summary:
-      "'Morena Prudo' is in a marked grave; the woman across the table is a Carne Levare orphan — child of a villager forced to 'entertain' visiting royalty to death, scarred at birth, sorted as 'flesh' by the Heil-Ly's trafficking ring, and used for twenty years before taking the family over. Her goal: Kakin's destruction, then humanity's.",
+      "'Morena Prudo' is in a marked grave; the woman across the table is a Carne Levare orphan — child of a villager forced to 'entertain' visiting royalty, scarred at birth, sorted as 'flesh' by the Heil-Ly's trafficking ring, and used for twenty years before taking the family over. Her goal: Kakin's destruction, then humanity's.",
     chapter: 408,
     day: 12,
     kind: "discovery",
@@ -2703,7 +2701,7 @@ export const events: StoryEvent[] = [
     day: 12,
     kind: "nen-reveal",
     locationId: "hidden-passage-network",
-    participantIds: ["morena", "hisoka"],
+    participantIds: ["morena"],
     storylineIds: ["heil-ly-morena"],
     knowledgeChanges: [
       {
@@ -2724,7 +2722,7 @@ export const events: StoryEvent[] = [
     approxTime: "2:15 p.m.",
     kind: "other",
     locationId: "black-whale",
-    participantIds: ["morena", "benjamin"],
+    participantIds: ["morena"],
     storylineIds: ["special-martial-law", "heil-ly-morena"],
     knowledgeChanges: [
       {
@@ -2743,7 +2741,7 @@ export const events: StoryEvent[] = [
     id: "ev-409-sml-broadcast",
     title: "Tier by tier, the ship kneels",
     summary:
-      "The broadcast walks down the ship: Tier 3 civilians kneel against walls under shoot-to-kill orders; Tier 2 returns to rooms, hands visible; Tier 1 awaits military inspection. Borksen mines the announcement order for her position — and realizes the hideout hears every tier's broadcast.",
+      "The broadcast climbs the ship tier by tier: Tier 3 civilians kneel against walls under shoot-to-kill orders; Tier 2 returns to rooms, hands visible; Tier 1 awaits military inspection. Borksen mines the announcement order for her position — and realizes the hideout hears every tier's broadcast.",
     chapter: 409,
     day: 12,
     kind: "other",
@@ -2772,7 +2770,7 @@ export const events: StoryEvent[] = [
     id: "ev-409-kiss-conditions",
     title: "The kiss and the three conditions",
     summary:
-      "Borksen buys back the X card by granting Morena's 'small request' — a kiss that is itself an infection condition. Joining requires all three: a final Yes, Morena's kiss, and witnessing a Heil-Ly murder. Two of three are now done without Borksen ever agreeing.",
+      "Borksen buys back the X card by granting Morena's 'small request' — a kiss that Morena openly declares is one of her ability's infection conditions. Joining requires all three: a final Yes, Morena's kiss, and witnessing a Heil-Ly murder. One of the three is now done without Borksen ever agreeing.",
     chapter: 409,
     day: 12,
     kind: "other",
@@ -2789,7 +2787,7 @@ export const events: StoryEvent[] = [
     id: "ev-410-borksen-forced-yes",
     title: "The cheat clause claims Borksen",
     summary:
-      "Borksen marked the Return card during the kiss — and the game itself is Morena's ability, its manipulation triggering on any cheat. Screaming inside a body that only points and says 'Yes,' Borksen joins the Heil-Ly at level 0, assumes Morena sees through her eyes, and asks for a tour of her new comrades.",
+      "Borksen marked the Return card while double-checking her face-down cards — and the game itself is Morena's ability, its manipulation triggering on any cheat. Screaming inside a body that only points and says 'Yes,' Borksen joins the Heil-Ly at level 0, assumes Morena sees through her eyes, and asks for a tour of her new comrades.",
     chapter: 410,
     day: 12,
     kind: "betrayal",
@@ -2810,7 +2808,7 @@ export const events: StoryEvent[] = [
     day: 12,
     kind: "decision",
     locationId: "ministry-of-justice",
-    participantIds: ["benjamin", "mizaistom", "kaiser", "butch", "furykov"],
+    participantIds: ["benjamin", "mizaistom", "kaiser"],
     storylineIds: [
       "special-martial-law",
       "benjamin-military",
@@ -2872,7 +2870,7 @@ export const events: StoryEvent[] = [
     day: 12,
     kind: "conversation",
     locationId: "ministry-of-justice",
-    participantIds: ["kaiser", "kacho", "melody", "fugetsu"],
+    participantIds: ["kaiser", "kacho", "melody"],
     storylineIds: ["kacho-fugetsu", "special-martial-law"],
     confidence: "canonical",
   },
@@ -2885,7 +2883,7 @@ export const events: StoryEvent[] = [
     day: 12,
     kind: "movement",
     locationId: "room-1014",
-    participantIds: ["sarahell", "fukataki", "woble", "camilla"],
+    participantIds: ["sarahell", "fukataki"],
     storylineIds: ["succession-contest", "nen-classes"],
     confidence: "canonical",
   },
@@ -2893,7 +2891,7 @@ export const events: StoryEvent[] = [
     id: "ev-411-second-class-opens",
     title: "Round two: eighteen students, two classes",
     summary:
-      "Kurapika opens the second round — demand doubled the roster — splitting an introductory class (Nen in two weeks) from a beginner class (one major principle per week), with aligned princes allowed one extra student each. Furykov calculates the effect: guards spread thin, military strength equalized, the contest turned defensive.",
+      "Kurapika opens the second round — eighteen students now — splitting an introductory class (Nen in two weeks) from a beginner class (one major principle per week), with aligned princes allowed one extra student each. Furykov calculates the effect: guards spread thin, military strength equalized, the contest turned defensive.",
     chapter: 411,
     day: 12,
     kind: "other",
@@ -2945,10 +2943,6 @@ export const events: StoryEvent[] = [
     locationId: "room-1014",
     participantIds: ["kurapika", "oito", "woble"],
     storylineIds: ["kurapika-woble", "succession-contest"],
-    knowledgeChanges: [
-      { factId: "fact-woble-swap", characterId: "furykov", state: "was-told" },
-      { factId: "fact-woble-swap", characterId: "babimyna", state: "was-told" },
-    ],
     confidence: "canonical",
   },
 
@@ -3068,7 +3062,7 @@ export const events: StoryEvent[] = [
     day: 12,
     kind: "betrayal",
     locationId: "benjamin-quarters",
-    participantIds: ["benjamin", "furykov", "unma"],
+    participantIds: ["benjamin", "furykov"],
     storylineIds: ["benjamin-military", "special-martial-law"],
     confidence: "canonical",
   },
@@ -3081,7 +3075,7 @@ export const events: StoryEvent[] = [
     day: 12,
     kind: "discovery",
     locationId: "benjamin-quarters",
-    participantIds: ["furykov", "benjamin", "unma", "beyond"],
+    participantIds: ["furykov", "benjamin"],
     storylineIds: ["benjamin-military", "beyond-netero", "special-martial-law"],
     knowledgeChanges: [
       {
@@ -3136,7 +3130,7 @@ export const events: StoryEvent[] = [
     day: 12,
     kind: "death",
     locationId: "room-1007",
-    participantIds: ["kanjidol", "luzurus"],
+    participantIds: ["kanjidol"],
     storylineIds: [
       "special-martial-law",
       "benjamin-military",
@@ -3174,12 +3168,12 @@ export const events: StoryEvent[] = [
     id: "ev-414-room-1009-breach",
     title: "Yushohi and Chiyamasi set to breach Room 1009",
     summary:
-      "No answer at Halkenburg's door means treason against the Royal Army. Yushohi — an En user whose Stand By Me leaves him nearly defenseless while extended — audits his own odds of dying; Chiyamasi activates Muteking the Invincible Hero, accumulating time-limited invincibility with a hand on his partner's shoulder. Inside sits one person: the bound Balsamilco.",
+      "No answer at Halkenburg's door means treason against the Royal Army. Yushohi — an En user whose Stand By Me leaves him nearly defenseless while extended — audits his own odds of dying; Chiyamasi activates Muteking the Invincible Hero, accumulating time-limited invincibility with a hand on his partner's shoulder. Yushohi's En detects exactly one person inside.",
     chapter: 414,
     day: 12,
     kind: "movement",
     locationId: "halkenburg-quarters",
-    participantIds: ["yushohi", "chiyamasi", "halkenburg", "balsamilco"],
+    participantIds: ["yushohi", "chiyamasi"],
     storylineIds: [
       "special-martial-law",
       "halkenburg-movement",
@@ -3196,7 +3190,7 @@ export const events: StoryEvent[] = [
     day: 12,
     kind: "conversation",
     locationId: "room-1014",
-    participantIds: ["kurapika", "oito", "bill", "shimano", "woble", "beyond"],
+    participantIds: ["kurapika", "oito", "bill", "shimano", "woble"],
     storylineIds: ["kurapika-woble", "beyond-netero"],
     knowledgeChanges: [
       { factId: "fact-beyond-curse", characterId: "oito", state: "was-told" },
@@ -3216,7 +3210,7 @@ export const events: StoryEvent[] = [
     day: 12,
     kind: "betrayal",
     locationId: "room-1014",
-    participantIds: ["bill", "kurapika", "beyond", "longhi"],
+    participantIds: ["bill", "kurapika"],
     storylineIds: ["beyond-netero", "kurapika-woble"],
     confidence: "canonical",
   },

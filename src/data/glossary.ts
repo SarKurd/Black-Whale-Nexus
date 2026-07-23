@@ -105,10 +105,10 @@ export const glossary: GlossaryTerm[] = [
     id: "stealth-dolphin-term",
     term: "Stealth Dolphin",
     definition:
-      "Kurapika's Emperor Time construct for managing stolen abilities — including lending them to others, one use at a time. See the Nen Archive file.",
+      "Kurapika's Emperor Time construct for managing stolen abilities — including loaning them to others, one use at a time, after which they return to their original owner. See the Nen Archive file.",
     category: "nen",
     relatedIds: ["emperor-time-term"],
-    introducedCh: 360,
+    introducedCh: 361,
   },
 
   // ── Kakin ────────────────────────────────────────────────────────────
@@ -163,7 +163,7 @@ export const glossary: GlossaryTerm[] = [
       "A failed Kakin military bioweapon repurposed as the succession war's perfect silent killer: its proteins denature in under thirty seconds in open air, but inhaled in time it mimics stomach flu, kills by multiple organ failure within half a day, and accelerates decomposition until no autopsy can find it. It ended Halkenburg's body — administered by the prince himself from inside Balsamilco — and, via Furykov, is now killing Benjamin.",
     category: "kakin",
     relatedIds: ["special-martial-law"],
-    introducedCh: 402,
+    introducedCh: 403,
   },
   {
     id: "special-martial-law",
@@ -191,6 +191,15 @@ export const glossary: GlossaryTerm[] = [
     category: "ship",
     relatedIds: ["flame-of-life", "seed-urn-ceremony"],
     introducedCh: 413,
+  },
+  {
+    id: "have-nots-term",
+    term: "Have-Nots",
+    definition:
+      "Kakin's lowest caste — historically barred from office and military rank, and once the exclusive source of 'afterlife companions' buried with failed princes. Camilla armed them with status, a ward of their own, and a shared suicide-curse ability (Yomotsu Hegui): carry a token of the target, hate daily, then burn it, drink the ashes, and die — the curse strips the target's aura and, at full strength, kills. Most of her fifteen aboard are Have-Not curse assassins, one an exorcist.",
+    category: "kakin",
+    relatedIds: ["kakin-empire", "succession-war"],
+    introducedCh: 389,
   },
   {
     id: "beyond-curse-term",
@@ -234,10 +243,10 @@ export const glossary: GlossaryTerm[] = [
     id: "hidden-passages-term",
     term: "Hidden passages",
     definition:
-      "Concealed structural spaces threading the royal deck (and, per later incidents, beyond). Mapped fragmentarily by Oito's rat; used by things that kill people.",
+      "Concealed structural spaces threading the ship: the gaps Oito's cockroach slipped through between royal suites, the lifeboat tunnels under Tier 1, the Cha-R's unlisted doors between tiers, and the voids where Luini hunts.",
     category: "ship",
     relatedIds: ["room-1014-term"],
-    introducedCh: 361,
+    introducedCh: 368,
   },
   {
     id: "dark-continent",
@@ -289,10 +298,10 @@ export const glossary: GlossaryTerm[] = [
     id: "silent-majority-term",
     term: "Silent Majority",
     definition:
-      "The codename attached to the puppet-assassin phenomenon that hunted Room 1014: needle-marked intermediaries, self-destructing killers, and a user who has never appeared on-page.",
+      "The puppet-assassin ability that hunted Room 1014: a marionette visible only to its user and its current host possesses one of ten people in range, then conjures four many-mouthed snakes that drain a body of blood in eleven seconds. The user's face has never been shown.",
     category: "arc",
-    relatedIds: ["room-1014-term", "hidden-passages-term"],
-    introducedCh: 362,
+    relatedIds: ["room-1014-term"],
+    introducedCh: 369,
   },
 
   // ── Hunter ───────────────────────────────────────────────────────────

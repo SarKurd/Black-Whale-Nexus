@@ -59,7 +59,10 @@ export const factions: Faction[] = [
     parentFactionId: "royal-family",
     objectives: [
       { text: "Take the throne by strength and attrition.", revealCh: 358 },
-      { text: "Identify and neutralize the chain user.", revealCh: 361 },
+      {
+        text: "Map the rival Hunters' and beasts' abilities through embedded observers.",
+        revealCh: 363,
+      },
     ],
     territoryNote: "Benjamin's suite plus the army command post.",
     controlledLocationIds: ["benjamin-quarters", "military-hq"],
@@ -69,12 +72,18 @@ export const factions: Faction[] = [
       "Embedded observer network",
     ],
     operations: [
-      { text: "Guard-exchange espionage placement.", ch: 361 },
+      {
+        text: "Fourteen soldiers placed as rival princes' 'royal guards' — the guard-exchange espionage gambit.",
+        ch: 363,
+      },
       {
         text: "Yushohi's assassination of Salé-salé under the illness cover story.",
         ch: 382,
       },
-      { text: "Probe of Halkenburg's household.", ch: 385 },
+      {
+        text: "Kill order against Halkenburg via the embedded Shikaku — answered by the first arrow.",
+        ch: 382,
+      },
       {
         text: "Balsamilco's TSK-17 courthouse mission against Halkenburg — intercepted by the arrow.",
         ch: 403,
@@ -89,7 +98,7 @@ export const factions: Faction[] = [
       },
     ],
     statusByChapter: [
-      { ch: 361, value: "Observer network operational in most rival suites." },
+      { ch: 366, value: "Observer network operational in most rival suites." },
       {
         ch: 389,
         value: "Inheritance mechanism compounding the prince's strength.",
@@ -119,7 +128,7 @@ export const factions: Faction[] = [
     objectives: [
       {
         text: "Put Camilla on the throne over her siblings' bodies.",
-        revealCh: 360,
+        revealCh: 363,
       },
     ],
     controlledLocationIds: ["camilla-quarters"],
@@ -129,7 +138,7 @@ export const factions: Faction[] = [
       "A standby Nen exorcist",
     ],
     operations: [
-      { text: "Direct strike toward Benjamin's household.", ch: 364 },
+      { text: "Direct strike toward Benjamin's household.", ch: 373 },
       {
         text: "Have-Not curse-assassin program: one assassin per rival prince.",
         ch: 389,
@@ -184,14 +193,17 @@ export const factions: Faction[] = [
       "Xi-Yu family patronage",
     ],
     operations: [
-      { text: "Patron-level meeting with mafia leadership.", ch: 388 },
+      {
+        text: "Patron-level visit to Onior's Tier 1 residence for Nen intelligence.",
+        ch: 390,
+      },
       {
         text: "Coin-economy analysis with Kurapika; alliance channel through Tenftory.",
         ch: 404,
       },
     ],
     statusByChapter: [
-      { ch: 377, value: "Xi-Yu proxy engaged in the lower-tier war." },
+      { ch: 380, value: "Xi-Yu proxy engaged in the lower-tier war." },
       {
         ch: 402,
         value:
@@ -218,7 +230,7 @@ export const factions: Faction[] = [
       { text: "Deliver the prince to the throne.", revealCh: 358 },
       {
         text: "(Theta's counter-objective) Kill him before he finishes learning.",
-        revealCh: 375,
+        revealCh: 385,
       },
     ],
     controlledLocationIds: ["tserriednich-quarters"],
@@ -230,24 +242,25 @@ export const factions: Faction[] = [
     internalConflicts: [
       {
         text: "Theta and Salkov's secret plan against their own principal.",
-        revealCh: 375,
+        revealCh: 385,
       },
     ],
-    operations: [{ text: "Forced-march Nen instruction begins.", ch: 372 }],
+    operations: [{ text: "Forced-march Nen instruction begins.", ch: 366 }],
     statusByChapter: [
       {
-        ch: 375,
-        value: "Prince's progress outpacing his instructors' containment plan.",
+        ch: 376,
+        value:
+          "Water Divination confirms a Specialist whose progress is outpacing his instructors' containment plan.",
       },
       {
         ch: 385,
         value:
-          "Theta's killshot fails against the prince's future sight; the beast brands her face as a first warning.",
+          "Theta's killshot fails against the prince's future sight; the beast nicks her cheek as a first warning.",
       },
       {
         ch: 394,
         value:
-          "Ties with the Heil-Ly proxy cut; his soldier friends on Tier 3 organize against Morena while Borksen goes missing.",
+          "Ties with the Heil-Ly proxy cut; loyal soldiers on Tier 3 organize against Morena and requisition Borksen as their Nen adviser.",
       },
       {
         ch: 404,
@@ -385,7 +398,10 @@ export const factions: Faction[] = [
       },
     ],
     operations: [
-      { text: "The arrow incident against Benjamin's probing force.", ch: 385 },
+      {
+        text: "The first arrow: Benjamin's embedded assassin Shikaku struck down at the cost of Sumidori's body.",
+        ch: 382,
+      },
       {
         text: "The courthouse counter-ambush: Balsamilco struck by the arrow, the prince's soul installed in the enemy's strategist.",
         ch: 403,
@@ -434,7 +450,10 @@ export const factions: Faction[] = [
     ],
     controlledLocationIds: ["kacho-quarters"],
     operations: [
-      { text: "The twins' escape attempt.", ch: 381 },
+      {
+        text: "The twins' escape attempt under cover of the banquet.",
+        ch: 383,
+      },
       {
         text: "Posthumous letter campaign against the higher princes, run by the beast-'Kacho' with Kaiser's leaked intelligence.",
         ch: 402,
@@ -442,7 +461,7 @@ export const factions: Faction[] = [
     ],
     statusByChapter: [
       {
-        ch: 382,
+        ch: 383,
         value: "Principal dead; household absorbed into Fugetsu's protection.",
       },
       {
@@ -513,6 +532,12 @@ export const factions: Faction[] = [
     ],
     controlledLocationIds: ["marayam-quarters"],
     resources: ["Momoze's reassigned guards", "Hanzo and Biscuit"],
+    internalConflicts: [
+      {
+        text: "Vergei's Nen denial obstructs every countermeasure — until Biscuit transforms in front of him.",
+        revealCh: 375,
+      },
+    ],
     introducedCh: 358,
   },
   {
@@ -539,18 +564,14 @@ export const factions: Faction[] = [
     ],
     internalConflicts: [
       {
-        text: "Vergei's Nen denial obstructs every countermeasure.",
-        revealCh: 362,
-      },
-      {
         text: "Embedded Benjamin observers inside the suite itself.",
-        revealCh: 361,
+        revealCh: 364,
       },
     ],
     operations: [
       {
-        text: "Little Eye rat reconnaissance of the hidden passages.",
-        ch: 361,
+        text: "Little Eye insect reconnaissance across the royal deck (fly, then cockroach) — the lend that made Oito the murder's only witness.",
+        ch: 364,
       },
       { text: "Nen class opens to rival households.", ch: 368 },
     ],
@@ -630,7 +651,7 @@ export const factions: Faction[] = [
     ],
     controlledLocationIds: ["justice-bureau-hq"],
     operations: [
-      { text: "Camilla's detention.", ch: 364 },
+      { text: "Camilla's detention after the Musse shooting.", ch: 373 },
       { text: "Momoze death investigation (inconclusive).", ch: 368 },
       {
         text: "Witness protection of Fugetsu, Melody, and the beast-'Kacho' on Tier 2 — cover for Kaiser's private conspiracy.",
@@ -755,7 +776,7 @@ export const factions: Faction[] = [
       },
     ],
     territoryNote:
-      "Nominal Tier 4–5 holdings; real presence is wherever her infected walk.",
+      "Nominal Tier 3 holdings; real presence is wherever her infected walk.",
     controlledLocationIds: ["heil-ly-territory"],
     resources: ["Morena's contagion ability", "Expendable empowered killers"],
     operations: [
@@ -763,7 +784,7 @@ export const factions: Faction[] = [
         text: "Seeded killers begin operating outside family territory.",
         ch: 378,
       },
-      { text: "Luini's structural infiltrations.", ch: 390 },
+      { text: "Luini's structural infiltrations.", ch: 392 },
       {
         text: "Dogman's ability-sniffing sweep of Halkenburg's funeral crowd; Borksen abducted as the Specialist candidate.",
         ch: 405,
@@ -845,6 +866,12 @@ export const factions: Faction[] = [
       "Luzurus's patronage",
       "Smuggling channels",
     ],
+    internalConflicts: [
+      {
+        text: "Underboss Ken'i secretly answers to Morena, feeding her the coalition's progress.",
+        revealCh: 405,
+      },
+    ],
     operations: [
       { text: "Contraband channel to Luzurus's household.", ch: 378 },
       {
@@ -856,7 +883,7 @@ export const factions: Faction[] = [
       {
         ch: 405,
         value:
-          "Committed against the Heil-Ly alongside Xi-Yu and the Troupe — while Ken'i privately keeps Hisoka in reserve as a card against the Troupe itself.",
+          "Committed against the Heil-Ly alongside Xi-Yu and the Troupe — while underboss Ken'i, secretly Morena's man, warns her the Troupe is ahead of schedule and weighs playing 'their joker': the Hisoka the family has stashed away.",
       },
     ],
     introducedCh: 371,
@@ -881,7 +908,7 @@ export const factions: Faction[] = [
       "Specialist roster",
       "Beyond's charisma and preparation",
       "Cursed children embedded in prince details (Longhi, Furykov, Makaha, others unnamed)",
-      "Cleapatro's 1,047-lawsuit legal siege",
+      "A 1,047-lawsuit legal siege (Beyond as plaintiff — every case dismissed by Supreme Magistrate Cleapatro)",
     ],
     internalConflicts: [
       { text: "Ging vs. Pariston, permanently.", revealCh: 0 },
