@@ -112,6 +112,7 @@ export default function CommandCenter() {
       .filter((c) => c.number <= ch && c.day)
       .at(-1)?.day;
 
+    const RISK_ORDER: Record<string, number> = { critical: 0, high: 1 };
     const highRisk = princes
       .map((p) => {
         const risk = [...p.riskHistory]
@@ -120,7 +121,11 @@ export default function CommandCenter() {
           .at(-1);
         return { p, risk };
       })
-      .filter((x) => x.risk && ["high", "critical"].includes(x.risk.risk));
+      .filter((x) => x.risk && ["high", "critical"].includes(x.risk.risk))
+      .sort(
+        (a, b) =>
+          RISK_ORDER[a.risk?.risk ?? ""] - RISK_ORDER[b.risk?.risk ?? ""],
+      );
 
     return {
       visible,
@@ -328,20 +333,31 @@ export default function CommandCenter() {
             </div>
           )}
           {intel.highRisk.length > 0 && (
-            <div className="mt-3 border-t border-line pt-2">
-              <span
-                className="intel-label"
+            <div className="mt-3 border-t border-line pt-3">
+              <div
+                className="intel-label mb-2"
                 style={{ color: "var(--blood-bright)" }}
               >
-                Elevated threat:{" "}
-              </span>
-              {intel.highRisk.map(({ p, risk }, i) => (
-                <span key={p.id} className="text-sm">
-                  {i > 0 && <span className="text-faint"> · </span>}
-                  <EntityLink id={p.characterId} />{" "}
-                  <span className="text-xs text-muted">({risk?.why})</span>
-                </span>
-              ))}
+                Elevated threat · {intel.highRisk.length}
+              </div>
+              <ul className="space-y-1.5">
+                {intel.highRisk.map(({ p, risk }) => (
+                  <li key={p.id} className="flex items-baseline gap-2">
+                    <span
+                      className="mt-px w-14 shrink-0 font-mono text-[9px] uppercase tracking-widest"
+                      style={{ color: RISK_COLOR[risk?.risk ?? "high"] }}
+                    >
+                      {risk?.risk}
+                    </span>
+                    <span className="min-w-0">
+                      <EntityLink id={p.characterId} className="text-sm" />
+                      <span className="ml-1.5 text-xs leading-snug text-muted">
+                        {risk?.why}
+                      </span>
+                    </span>
+                  </li>
+                ))}
+              </ul>
             </div>
           )}
         </Panel>
