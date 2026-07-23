@@ -2,7 +2,7 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import {
   type CSSProperties,
   Suspense,
@@ -10,6 +10,7 @@ import {
   useMemo,
   useState,
 } from "react";
+import { EventRail, LANDMARK_KINDS } from "@/components/story/EventRail";
 import {
   EVENT_KIND_META,
   EventEntry,
@@ -42,6 +43,7 @@ import type {
 } from "@/lib/types";
 
 const MODES = [
+  ["landmarks", "Landmarks"],
   ["chapter", "Chapter"],
   ["day", "Voyage day"],
   ["storyline", "By storyline"],
@@ -83,9 +85,10 @@ export default function TimelinePage() {
 function TimelineInner() {
   const ch = useEffectiveChapter();
   const params = useSearchParams();
+  const router = useRouter();
   const highlightId = params.get("event") ?? undefined;
 
-  const [mode, setMode] = useState<Mode>("chapter");
+  const [mode, setMode] = useState<Mode>("landmarks");
   const [kindFilter, setKindFilter] = useState<EventKind[]>([]);
   const [princeFilter, setPrinceFilter] = useState("");
   const [factionFilter, setFactionFilter] = useState("");
@@ -354,6 +357,40 @@ function TimelineInner() {
           exit={{ opacity: 0, y: -6 }}
           transition={{ duration: 0.15 }}
         >
+          {mode === "landmarks" && (
+            <>
+              {/* Horizontal rail on wider screens */}
+              <div className="hidden sm:block">
+                <EventRail
+                  events={filtered}
+                  chapter={ch}
+                  highlightId={highlightId}
+                  onSelect={(id) => router.push(`/timeline?event=${id}`)}
+                />
+                <p className="mt-2 font-mono text-[10px] tracking-wider text-faint">
+                  Major turning points only — battles, deaths, betrayals,
+                  alliances, Nen reveals, and ceremonies. Scroll sideways; the
+                  gold cursor marks your clearance. Tap a card to open it.
+                </p>
+              </div>
+              {/* Compact chronological list on small screens */}
+              <div className="sm:hidden">
+                <RecorderList>
+                  {filtered
+                    .filter((e) => LANDMARK_KINDS.includes(e.kind))
+                    .sort((a, b) => a.chapter - b.chapter)
+                    .map((e) => (
+                      <EventEntry
+                        key={e.id}
+                        event={e}
+                        highlighted={e.id === highlightId}
+                      />
+                    ))}
+                </RecorderList>
+              </div>
+            </>
+          )}
+
           {mode === "chapter" && (
             <ChapterModeView groups={chapterGroups} highlightId={highlightId} />
           )}
