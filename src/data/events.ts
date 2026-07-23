@@ -607,6 +607,21 @@ export const events: StoryEvent[] = [
     confidence: "canonical",
   },
   {
+    id: "ev-352-convert-hands",
+    title: "The last borrowed ability: Convert Hands",
+    summary:
+      "Chrollo shows the fifth stolen tool — Convert Hands, an arrow on each palm: touch a target with the right to reshape their appearance, the left to change their behavior. With Black Voice, Order Stamp, Gallery Fake, The Sun and Moon, and Convert Hands all live through the Double Face bookmark, Hisoka faces a five-ability engine he must reverse-engineer under fire.",
+    chapter: 352,
+    kind: "nen-reveal",
+    locationId: "heavens-arena",
+    participantIds: ["hisoka", "chrollo"],
+    storylineIds: ["heavens-arena-duel"],
+    consequences: [
+      "Hisoka can no longer trust that any face in the arena is really Chrollo's",
+    ],
+    confidence: "canonical",
+  },
+  {
     id: "ev-353-audience-weaponized",
     title: "The audience becomes the weapon",
     summary:
@@ -618,6 +633,21 @@ export const events: StoryEvent[] = [
     storylineIds: ["heavens-arena-duel"],
     consequences: [
       "The deathmatch stops being a duel: Hisoka now fights the venue itself",
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "ev-353-puppet-swarm",
+    title: "Thirty puppets and a hidden striker",
+    summary:
+      "Chrollo's sequence resolves for Hisoka: bookmark Gallery Fake, copy a crowd, stamp them with Order Stamp, command 'break Hisoka.' Roughly thirty marked audience-copies swarm him while the disguised Chrollo strikes from behind between waves. Hisoka bungees to the ceiling, beheads puppets to buy seconds, and starts hunting the one real body in the crowd.",
+    chapter: 353,
+    kind: "battle",
+    locationId: "heavens-arena",
+    participantIds: ["hisoka", "chrollo"],
+    storylineIds: ["heavens-arena-duel"],
+    consequences: [
+      "Hisoka must find Chrollo before the ten-minute paramedic window closes",
     ],
     confidence: "canonical",
   },
@@ -650,6 +680,21 @@ export const events: StoryEvent[] = [
     confidence: "canonical",
   },
   {
+    id: "ev-355-sun-moon-trap",
+    title: "The Sun and Moon deduction",
+    summary:
+      "Hisoka corrects his own model: The Sun and Moon needs only the left hand, so it runs while another ability is bookmarked — and copies marked by it survive because the dead owner's intensified Nen shields them. Chrollo can charge a body into a full-power bomb after landing the mark, then trigger it through a Black-Voice puppet. Every 'corpse' Hisoka has been swinging is a delayed detonation.",
+    chapter: 355,
+    kind: "nen-reveal",
+    locationId: "heavens-arena",
+    participantIds: ["hisoka", "chrollo"],
+    storylineIds: ["heavens-arena-duel"],
+    consequences: [
+      "The severed heads Hisoka fights with are Chrollo's planted ordnance",
+    ],
+    confidence: "canonical",
+  },
+  {
     id: "ev-356-hisoka-death",
     title: "Hisoka dies",
     summary:
@@ -663,6 +708,21 @@ export const events: StoryEvent[] = [
     consequences: [
       "Chrollo wins the deathmatch outright, with massive civilian collateral",
       "News reports list Hisoka among the casualties",
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "ev-356-suicide-barrage",
+    title: "The suicide-bomb barrage buries Hisoka",
+    summary:
+      "Chrollo chains the traps: a first sun-marked body detonates, then he orders puppets to the second floor to self-destruct against Hisoka. A leaping cluster blows off Hisoka's lower right leg; Chrollo hurls audience members to pin him as he reaches for Bungee Gum, and the swarm closes over him under one final blast — the sequence that leaves him dead beneath the pile.",
+    chapter: 356,
+    kind: "battle",
+    locationId: "heavens-arena",
+    participantIds: ["hisoka", "chrollo"],
+    storylineIds: ["heavens-arena-duel"],
+    consequences: [
+      "Chrollo walks away the winner; the arena is left a crater of bodies",
     ],
     confidence: "canonical",
   },

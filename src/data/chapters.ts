@@ -539,7 +539,7 @@ export const chapters: ChapterInfo[] = [
     title: "Troublesome",
     summary:
       "Chrollo finishes the syllabus: Order Stamp drives beheading puppets on simple commands, Gallery Fake — Kortopi's page — copies bodies to feed it, and Convert Hands swaps faces. Then the fine print: The Sun and Moon belonged to a man now dead, so its Nen has intensified past removal; the marks persist until they explode. Chrollo asks if Hisoka still wants to continue. He does, happily, and the fight moves into the stands.",
-    eventIds: ["ev-352-puppet-system"],
+    eventIds: ["ev-352-puppet-system", "ev-352-convert-hands"],
     appearingCharacterIds: ["hisoka", "chrollo"],
     locationIds: ["heavens-arena"],
     storylineIds: ["heavens-arena-duel"],
@@ -562,7 +562,7 @@ export const chapters: ChapterInfo[] = [
     title: "Cold-Blooded",
     summary:
       "Chrollo vanishes into the fleeing crowd and sends back a horde: some thirty stamped copies of spectators, all ordered to 'break Hisoka' — take the head. Whenever the puppets fix Hisoka's attention, Chrollo himself materializes in a stranger's clothes and kicks him across the arena. Hisoka finally lands a hit by bungeeing a severed puppet head into Chrollo's face — his first point in a fight he is losing.",
-    eventIds: ["ev-353-audience-weaponized"],
+    eventIds: ["ev-353-audience-weaponized", "ev-353-puppet-swarm"],
     appearingCharacterIds: ["hisoka", "chrollo"],
     locationIds: ["heavens-arena"],
     storylineIds: ["heavens-arena-duel"],
@@ -601,7 +601,7 @@ export const chapters: ChapterInfo[] = [
     title: "Detonation",
     summary:
       "Hisoka reruns Chrollo's sequence and sees the extra steps: mark the copies with the sun before stamping them, and they become permanent explosive puppets. A puppet grabs the announcer's headset and broadcasts 'break Hisoka'; hundreds swarm. Hisoka whirls five puppets on Bungee Gum strands as a human hammer — and then Chrollo, through one squatting stranger, touches moon to sun. The severed head in Hisoka's left hand detonates and takes four of his fingers.",
-    eventIds: ["ev-355-hand-destroyed"],
+    eventIds: ["ev-355-hand-destroyed", "ev-355-sun-moon-trap"],
     appearingCharacterIds: ["chrollo", "hisoka"],
     locationIds: ["heavens-arena"],
     storylineIds: ["heavens-arena-duel"],
@@ -625,7 +625,7 @@ export const chapters: ChapterInfo[] = [
     title: "Unfortunate: Part 1",
     summary:
       "Chrollo explains nothing this time; the arena does. The body of the severed head — tracked all fight and marked at maximum power — has already gone off behind Hisoka. Bomb puppets vault the balconies and detonate on contact, blowing off Hisoka's right lower leg; Chrollo hurls spectators to foul his Bungee Gum lines. Grounded and encircled, Hisoka pulls his arms to his chest as the horde self-destructs around him.",
-    eventIds: ["ev-356-hisoka-death"],
+    eventIds: ["ev-356-hisoka-death", "ev-356-suicide-barrage"],
     appearingCharacterIds: ["chrollo", "hisoka"],
     locationIds: ["heavens-arena"],
     storylineIds: ["heavens-arena-duel"],
