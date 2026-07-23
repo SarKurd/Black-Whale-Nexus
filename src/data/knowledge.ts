@@ -1,0 +1,1136 @@
+import type { CharacterKnowledge, KnowledgeFact } from "@/lib/types";
+
+/**
+ * The knowledge network: who knows what, since when, and in what state.
+ * readerRevealCh gates the fact itself; per-row revealCh gates the row.
+ */
+export const knowledgeFacts: KnowledgeFact[] = [
+  {
+    id: "fact-kurapika-is-chain-user",
+    label: "Kurapika is the chain user",
+    description:
+      "The bodyguard running Room 1014 is the chain-wielding Nen user who crippled the Phantom Troupe in Yorknew — and a Kurta survivor.",
+    kind: "identity",
+    readerRevealCh: 0,
+    relatedCharacterIds: ["kurapika", "chrollo", "balsamilco", "babimyna"],
+    relatedAbilityIds: ["chain-jail", "emperor-time"],
+  },
+  {
+    id: "fact-emperor-time-cost",
+    label: "Emperor Time costs one hour of life per second",
+    description:
+      "Kurapika's full-category mastery drains his lifespan at a rate that turns every activation into a controlled amputation.",
+    kind: "nen-ability",
+    readerRevealCh: 370,
+    relatedCharacterIds: ["kurapika", "bill"],
+    relatedAbilityIds: ["emperor-time"],
+  },
+  {
+    id: "fact-silent-majority-exists",
+    label: "A puppet-assassin ability is hunting Room 1014",
+    description:
+      "The guard deaths in Woble's suite are the work of a Nen ability operating through needle-marked intermediaries who self-destruct on exposure.",
+    kind: "nen-ability",
+    readerRevealCh: 362,
+    relatedCharacterIds: ["kurapika", "oito", "bill", "vergei"],
+    relatedAbilityIds: ["silent-majority"],
+  },
+  {
+    id: "fact-hidden-passages",
+    label: "Hidden passages riddle the royal deck",
+    description:
+      "Concealed service spaces connect the royal quarters — the assassination routes of the succession war, mapped only by Oito's rat.",
+    kind: "passage",
+    readerRevealCh: 361,
+    relatedCharacterIds: ["oito", "kurapika", "luini"],
+  },
+  {
+    id: "fact-hisoka-aboard",
+    label: "Hisoka is aboard the Black Whale",
+    description:
+      "The magician boarded to continue his extermination of the Troupe. No faction has produced a confirmed sighting.",
+    kind: "location",
+    readerRevealCh: 359,
+    relatedCharacterIds: ["hisoka", "chrollo", "machi"],
+  },
+  {
+    id: "fact-momoze-death",
+    label: "Prince Momoze was murdered",
+    description:
+      "The Twelfth Prince was strangled in her quarters — the war's first royal casualty, unsolved in-world.",
+    kind: "murder",
+    readerRevealCh: 368,
+    relatedCharacterIds: ["momoze", "slakka", "nipaper", "sevanti"],
+  },
+  {
+    id: "fact-kacho-death",
+    label: "Prince Kacho died in the escape",
+    description:
+      "The Tenth Prince died covering Fugetsu's passage off-plan; officially her status is murky, and something wearing her shape walks beside her twin.",
+    kind: "murder",
+    readerRevealCh: 382,
+    relatedCharacterIds: ["kacho", "fugetsu", "melody"],
+  },
+  {
+    id: "fact-morena-contagion",
+    label: "Heil-Ly's killers are Nen-infected",
+    description:
+      "Morena mass-produces empowered murderers through a contagion ability whose recipients level up by killing.",
+    kind: "nen-ability",
+    readerRevealCh: 377,
+    relatedCharacterIds: ["morena", "hinrigh", "luini"],
+    relatedAbilityIds: ["morena-contagion"],
+  },
+  {
+    id: "fact-halkenburg-ability",
+    label: "Halkenburg's beast spends his followers' lives",
+    description:
+      "The Ninth Prince's marked guards are ammunition: his arrow works through them, consuming a life per shot.",
+    kind: "beast-effect",
+    readerRevealCh: 386,
+    relatedCharacterIds: ["halkenburg", "ladiolus", "sumidori", "yuhirai"],
+    relatedAbilityIds: ["ab-beast-halkenburg"],
+  },
+  {
+    id: "fact-beast-parasitic-nature",
+    label: "Guardian beasts are parasitic Nen",
+    description:
+      "The rite's 'blessings' are parasitic-type constructs: princes cannot perceive their own, and the beasts follow rules nobody explained.",
+    kind: "beast-effect",
+    readerRevealCh: 361,
+    relatedCharacterIds: ["kurapika", "nasubi"],
+  },
+  {
+    id: "fact-tserriednich-awakening",
+    label: "Tserriednich has awakened Nen",
+    description:
+      "The Fourth Prince went from zero to working aura control in days, and his emerging ability bends his perception of time.",
+    kind: "nen-ability",
+    readerRevealCh: 375,
+    relatedCharacterIds: ["tserriednich", "theta", "salkov"],
+  },
+  {
+    id: "fact-little-eye",
+    label: "Kurapika holds Sayird's Little Eye",
+    description:
+      "The confiscated beetle-drone ability, lendable through Stealth Dolphin — Room 1014's reconnaissance arm.",
+    kind: "nen-ability",
+    readerRevealCh: 360,
+    relatedCharacterIds: ["kurapika", "sayird", "oito"],
+    relatedAbilityIds: ["little-eye", "stealth-dolphin"],
+  },
+  {
+    id: "fact-woble-beast",
+    label: "Woble's beast tolerates Oito",
+    description:
+      "The infant's amorphous guardian has never acted against her mother — behavior that contradicts several assumptions about beast rules.",
+    kind: "beast-effect",
+    readerRevealCh: 359,
+    relatedCharacterIds: ["woble", "oito"],
+    relatedAbilityIds: ["ab-beast-woble"],
+  },
+  {
+    id: "fact-camilla-ability",
+    label: "Camilla's death is a weapon",
+    description:
+      "Killing the Second Prince triggers Cat's Name: a revival that spends the killer's life. Musse proved it the hard way — assassination attempts on her are suicide.",
+    kind: "nen-ability",
+    readerRevealCh: 373,
+    relatedCharacterIds: ["camilla", "musse", "benjamin"],
+    relatedAbilityIds: ["camilla-cat", "secret-window"],
+  },
+  {
+    id: "fact-benjamin-inheritance",
+    label: "Benjamin inherits dead soldiers' abilities",
+    description:
+      "Each pledged subordinate's death passes their Nen ability to the First Prince — his army is also his arsenal.",
+    kind: "nen-ability",
+    readerRevealCh: 373,
+    relatedCharacterIds: ["benjamin", "balsamilco"],
+    relatedAbilityIds: ["benjamin-baton"],
+  },
+  {
+    id: "fact-mafia-three-families",
+    label: "Three mafia families serve three princes",
+    description:
+      "Xi-Yu answers to Zhang Lei, Cha-R to Luzurus, and Heil-Ly nominally to Tserriednich — the lower-tier war is a royal proxy war.",
+    kind: "alliance",
+    readerRevealCh: 377,
+    relatedCharacterIds: [
+      "onior",
+      "brocco",
+      "morena",
+      "zhang-lei",
+      "luzurus",
+      "tserriednich",
+    ],
+  },
+  {
+    id: "fact-woble-swap",
+    label: "The Woble aboard is a boy — Oito's nephew",
+    description:
+      "The infant in Room 1014 is Oito's younger sister's son. The real Woble — the girl who fed the Seed Urn — is off-ship with Oito's sister, location unknown even to Oito. She swapped babies before departure and dodged Kurapika's chain by alternating masculine and feminine pronunciations of the name.",
+    kind: "identity",
+    readerRevealCh: 412,
+    relatedCharacterIds: ["oito", "woble", "kurapika", "bill", "shimano"],
+  },
+  {
+    id: "fact-beyond-curse",
+    label: "Beyond seeded curse sacrifices into Kakin",
+    description:
+      "Beyond fathered children through sham officer marriages and marked them at birth as curse sacrifices: eye-shaped seals, Nen awakened from the cradle, and a death-curse that fires at a preset target when the bearer dies. Ten 'strong' sacrifices are known; the activation condition and targets remain unconfirmed.",
+    kind: "nen-ability",
+    readerRevealCh: 401,
+    relatedCharacterIds: ["beyond", "longhi", "furykov", "kurapika", "unma"],
+    relatedAbilityIds: ["beyond-curse"],
+  },
+  {
+    id: "fact-furykov-beyond-son",
+    label: "Furykov is Beyond's son — and cursed",
+    description:
+      "Benjamin's ability-analyst is one of Beyond's curse sacrifices, bearing the eye-mark under his tongue. Unma threatened to have Beyond activate it unless he poisoned Benjamin with TSK-17 within 48 hours; Furykov complied while plotting to reflect the curse off Benjamin's death and back onto himself.",
+    kind: "identity",
+    readerRevealCh: 413,
+    relatedCharacterIds: ["furykov", "beyond", "benjamin", "unma", "longhi"],
+    relatedAbilityIds: ["beyond-curse", "combo-master"],
+  },
+  {
+    id: "fact-halkenburg-possession",
+    label: "Halkenburg's soul lives in Balsamilco",
+    description:
+      "The Ninth Prince's body is dead, but his mind swapped into Balsamilco via his own arrow before the TSK-17 took hold. He has been running his side — and reporting to Benjamin as 'Balsamilco' — from inside the enemy's chief strategist, with roughly ten hours of control banked past his body's death.",
+    kind: "identity",
+    readerRevealCh: 403,
+    relatedCharacterIds: [
+      "halkenburg",
+      "balsamilco",
+      "benjamin",
+      "nasubi",
+      "nugui",
+    ],
+    relatedAbilityIds: ["ab-beast-halkenburg"],
+  },
+  {
+    id: "fact-special-martial-law",
+    label: "Benjamin's Special Martial Law takeover",
+    description:
+      "Dying of TSK-17, Benjamin declared Special Martial Law at 2:15 p.m. on Day 12 — citing a fabricated bio-terror conspiracy by Tserriednich and Halkenburg — to consolidate all three branches of government by force, execute rival princes' guards on sight, assemble the princes in Grand Hall 1001, and be anointed successor before he dies.",
+    kind: "plan",
+    readerRevealCh: 413,
+    relatedCharacterIds: [
+      "benjamin",
+      "butch",
+      "furykov",
+      "mizaistom",
+      "kaiser",
+      "kurapika",
+    ],
+  },
+];
+
+export const characterKnowledge: CharacterKnowledge[] = [
+  // fact-kurapika-is-chain-user
+  {
+    factId: "fact-kurapika-is-chain-user",
+    characterId: "chrollo",
+    state: "knows",
+    sinceCh: 0,
+    note: "Personal experience: Chain Jail around his heart in Yorknew.",
+  },
+  {
+    factId: "fact-kurapika-is-chain-user",
+    characterId: "hisoka",
+    state: "knows",
+    sinceCh: 0,
+  },
+  {
+    factId: "fact-kurapika-is-chain-user",
+    characterId: "illumi",
+    state: "knows",
+    sinceCh: 0,
+  },
+  {
+    factId: "fact-kurapika-is-chain-user",
+    characterId: "machi",
+    state: "knows",
+    sinceCh: 0,
+  },
+  {
+    factId: "fact-kurapika-is-chain-user",
+    characterId: "melody",
+    state: "knows",
+    sinceCh: 0,
+  },
+  {
+    factId: "fact-kurapika-is-chain-user",
+    characterId: "bill",
+    state: "was-told",
+    sinceCh: 360,
+    note: "Briefed as far as operationally necessary.",
+  },
+  {
+    factId: "fact-kurapika-is-chain-user",
+    characterId: "kurapika",
+    state: "hiding",
+    sinceCh: 358,
+    note: "Conceals it from every Kakin faction.",
+  },
+  {
+    factId: "fact-kurapika-is-chain-user",
+    characterId: "balsamilco",
+    state: "suspects",
+    sinceCh: 363,
+    revealCh: 363,
+    note: "Assembled from Babimyna's reports and Yorknew patterns.",
+  },
+  {
+    factId: "fact-kurapika-is-chain-user",
+    characterId: "babimyna",
+    state: "suspects",
+    sinceCh: 362,
+  },
+  {
+    factId: "fact-kurapika-is-chain-user",
+    characterId: "vergei",
+    state: "unaware",
+    sinceCh: 358,
+  },
+
+  // fact-emperor-time-cost
+  {
+    factId: "fact-emperor-time-cost",
+    characterId: "kurapika",
+    state: "knows",
+    sinceCh: 0,
+    revealCh: 370,
+    note: "Has known since the Vow was made; the reader learns the price here.",
+  },
+  {
+    factId: "fact-emperor-time-cost",
+    characterId: "bill",
+    state: "was-told",
+    sinceCh: 370,
+  },
+  {
+    factId: "fact-emperor-time-cost",
+    characterId: "oito",
+    state: "unaware",
+    sinceCh: 361,
+    note: "Knows the state exists; not its price.",
+  },
+  {
+    factId: "fact-emperor-time-cost",
+    characterId: "babimyna",
+    state: "misunderstands",
+    sinceCh: 362,
+    note: "Read the exhaustion as ordinary aura depletion.",
+  },
+  {
+    factId: "fact-emperor-time-cost",
+    characterId: "melody",
+    state: "suspects",
+    sinceCh: 370,
+    note: "His heartbeat sounds shorter.",
+  },
+
+  // fact-silent-majority-exists
+  {
+    factId: "fact-silent-majority-exists",
+    characterId: "kurapika",
+    state: "knows",
+    sinceCh: 362,
+    note: "Deduced from puppet remains and attack patterns.",
+  },
+  {
+    factId: "fact-silent-majority-exists",
+    characterId: "oito",
+    state: "observed",
+    sinceCh: 361,
+    note: "Saw the killers through the rat's eyes.",
+  },
+  {
+    factId: "fact-silent-majority-exists",
+    characterId: "bill",
+    state: "knows",
+    sinceCh: 362,
+  },
+  {
+    factId: "fact-silent-majority-exists",
+    characterId: "vergei",
+    state: "believes-false",
+    sinceCh: 362,
+    note: "Files the deaths as mundane murder; Nen is a hoax.",
+  },
+  {
+    factId: "fact-silent-majority-exists",
+    characterId: "babimyna",
+    state: "observed",
+    sinceCh: 362,
+  },
+  {
+    factId: "fact-silent-majority-exists",
+    characterId: "balsamilco",
+    state: "was-told",
+    sinceCh: 363,
+  },
+
+  // fact-hidden-passages
+  {
+    factId: "fact-hidden-passages",
+    characterId: "oito",
+    state: "knows",
+    sinceCh: 361,
+    note: "Mapped them personally through the rat.",
+  },
+  {
+    factId: "fact-hidden-passages",
+    characterId: "kurapika",
+    state: "knows",
+    sinceCh: 361,
+  },
+  {
+    factId: "fact-hidden-passages",
+    characterId: "luini",
+    state: "knows",
+    sinceCh: 390,
+    note: "Uses structural spaces as his hunting ground.",
+  },
+  {
+    factId: "fact-hidden-passages",
+    characterId: "bill",
+    state: "was-told",
+    sinceCh: 361,
+  },
+  {
+    factId: "fact-hidden-passages",
+    characterId: "vergei",
+    state: "unaware",
+    sinceCh: 361,
+  },
+  {
+    factId: "fact-hidden-passages",
+    characterId: "balsamilco",
+    state: "suspects",
+    sinceCh: 368,
+    note: "Infers access routes must exist from the attack geometry.",
+  },
+
+  // fact-hisoka-aboard
+  {
+    factId: "fact-hisoka-aboard",
+    characterId: "chrollo",
+    state: "believes-false",
+    sinceCh: 359,
+    note: "Certain Hisoka is aboard — a belief the record has yet to confirm or refute; filed as conviction, not knowledge.",
+  },
+  {
+    factId: "fact-hisoka-aboard",
+    characterId: "machi",
+    state: "suspects",
+    sinceCh: 359,
+  },
+  {
+    factId: "fact-hisoka-aboard",
+    characterId: "nobunaga",
+    state: "suspects",
+    sinceCh: 359,
+  },
+  {
+    factId: "fact-hisoka-aboard",
+    characterId: "illumi",
+    state: "suspects",
+    sinceCh: 377,
+    note: "Contracted on the assumption.",
+  },
+  {
+    factId: "fact-hisoka-aboard",
+    characterId: "hinrigh",
+    state: "was-told",
+    sinceCh: 378,
+    note: "The Troupe's search told the mafia who they're looking for.",
+  },
+  {
+    factId: "fact-hisoka-aboard",
+    characterId: "kurapika",
+    state: "unaware",
+    sinceCh: 358,
+    note: "Has larger problems than the magician's itinerary.",
+  },
+
+  // fact-momoze-death
+  {
+    factId: "fact-momoze-death",
+    characterId: "sevanti",
+    state: "knows",
+    sinceCh: 368,
+  },
+  {
+    factId: "fact-momoze-death",
+    characterId: "slakka",
+    state: "observed",
+    sinceCh: 368,
+    note: "Woke to the body; testimony under review.",
+  },
+  {
+    factId: "fact-momoze-death",
+    characterId: "nipaper",
+    state: "knows",
+    sinceCh: 368,
+  },
+  {
+    factId: "fact-momoze-death",
+    characterId: "hanzo",
+    state: "knows",
+    sinceCh: 368,
+  },
+  {
+    factId: "fact-momoze-death",
+    characterId: "kurapika",
+    state: "was-told",
+    sinceCh: 368,
+    note: "Via the household grapevine and Bureau notices.",
+  },
+  {
+    factId: "fact-momoze-death",
+    characterId: "benjamin",
+    state: "knows",
+    sinceCh: 368,
+  },
+
+  // fact-kacho-death
+  {
+    factId: "fact-kacho-death",
+    characterId: "fugetsu",
+    state: "observed",
+    sinceCh: 382,
+    note: "Watched it happen; her account is fragmentary.",
+  },
+  {
+    factId: "fact-kacho-death",
+    characterId: "melody",
+    state: "knows",
+    sinceCh: 400,
+    note: "Suspected from 383 ('Kacho's return does not sound like Kacho'); the post-mortem beast confirmed it to her face.",
+  },
+  {
+    factId: "fact-kacho-death",
+    characterId: "kaiser",
+    state: "knows",
+    sinceCh: 400,
+    note: "Read into the secret at the Justice Bureau; built the letters operation on it.",
+  },
+  {
+    factId: "fact-kacho-death",
+    characterId: "seiko",
+    state: "knows",
+    sinceCh: 400,
+    note: "Plays up the fiction that Kacho lives for as long as it's useful.",
+  },
+  {
+    factId: "fact-kacho-death",
+    characterId: "basho",
+    state: "suspects",
+    sinceCh: 388,
+  },
+  {
+    factId: "fact-kacho-death",
+    characterId: "sevanti",
+    state: "unaware",
+    sinceCh: 382,
+  },
+  {
+    factId: "fact-kacho-death",
+    characterId: "kurapika",
+    state: "was-told",
+    sinceCh: 402,
+    note: "Melody had Kaiser 'tell him everything'; her letter reached Room 1014, and by ch 412 he counts 'Kacho's letter' among his assets.",
+  },
+
+  // fact-morena-contagion
+  {
+    factId: "fact-morena-contagion",
+    characterId: "morena",
+    state: "knows",
+    sinceCh: 377,
+  },
+  {
+    factId: "fact-morena-contagion",
+    characterId: "luini",
+    state: "knows",
+    sinceCh: 390,
+    note: "A recipient himself.",
+  },
+  {
+    factId: "fact-morena-contagion",
+    characterId: "hinrigh",
+    state: "suspects",
+    sinceCh: 379,
+    note: "The dead don't fight like amateurs anymore.",
+  },
+  {
+    factId: "fact-morena-contagion",
+    characterId: "onior",
+    state: "was-told",
+    sinceCh: 380,
+  },
+  {
+    factId: "fact-morena-contagion",
+    characterId: "zakuro",
+    state: "observed",
+    sinceCh: 379,
+  },
+  {
+    factId: "fact-morena-contagion",
+    characterId: "lynch",
+    state: "observed",
+    sinceCh: 379,
+  },
+
+  // fact-halkenburg-ability
+  {
+    factId: "fact-halkenburg-ability",
+    characterId: "halkenburg",
+    state: "knows",
+    sinceCh: 386,
+    note: "Understood the price after the first shot.",
+  },
+  {
+    factId: "fact-halkenburg-ability",
+    characterId: "ladiolus",
+    state: "misunderstands",
+    sinceCh: 375,
+    note: "Knows he is marked; not what the mark spends.",
+  },
+  {
+    factId: "fact-halkenburg-ability",
+    characterId: "sumidori",
+    state: "misunderstands",
+    sinceCh: 375,
+  },
+  {
+    factId: "fact-halkenburg-ability",
+    characterId: "benjamin",
+    state: "suspects",
+    sinceCh: 386,
+    note: "Reconstructing the arrow incident from his soldiers' fate.",
+  },
+  {
+    factId: "fact-halkenburg-ability",
+    characterId: "balsamilco",
+    state: "suspects",
+    sinceCh: 386,
+  },
+
+  // fact-beast-parasitic-nature
+  {
+    factId: "fact-beast-parasitic-nature",
+    characterId: "kurapika",
+    state: "knows",
+    sinceCh: 361,
+    note: "Classified the manifestations as parasitic-type on observation.",
+  },
+  {
+    factId: "fact-beast-parasitic-nature",
+    characterId: "nasubi",
+    state: "knows",
+    sinceCh: 359,
+    note: "He administered the rite; the depth of his understanding is its own mystery.",
+  },
+  {
+    factId: "fact-beast-parasitic-nature",
+    characterId: "oito",
+    state: "was-told",
+    sinceCh: 361,
+  },
+  {
+    factId: "fact-beast-parasitic-nature",
+    characterId: "bill",
+    state: "knows",
+    sinceCh: 361,
+  },
+  {
+    factId: "fact-beast-parasitic-nature",
+    characterId: "theta",
+    state: "knows",
+    sinceCh: 372,
+  },
+  {
+    factId: "fact-beast-parasitic-nature",
+    characterId: "tserriednich",
+    state: "was-told",
+    sinceCh: 375,
+    note: "Cannot perceive his own beast; knows the theory.",
+  },
+  {
+    factId: "fact-beast-parasitic-nature",
+    characterId: "vergei",
+    state: "believes-false",
+    sinceCh: 362,
+    note: "Denies the entire category.",
+  },
+
+  // fact-tserriednich-awakening
+  {
+    factId: "fact-tserriednich-awakening",
+    characterId: "theta",
+    state: "knows",
+    sinceCh: 375,
+    note: "Watched it happen and recalibrated her kill plan around it.",
+  },
+  {
+    factId: "fact-tserriednich-awakening",
+    characterId: "salkov",
+    state: "knows",
+    sinceCh: 375,
+  },
+  {
+    factId: "fact-tserriednich-awakening",
+    characterId: "tserriednich",
+    state: "knows",
+    sinceCh: 375,
+  },
+  {
+    factId: "fact-tserriednich-awakening",
+    characterId: "kurapika",
+    state: "unaware",
+    sinceCh: 375,
+    note: "The class network has no source inside the Fourth Prince's suite.",
+  },
+  {
+    factId: "fact-tserriednich-awakening",
+    characterId: "benjamin",
+    state: "unaware",
+    sinceCh: 375,
+  },
+
+  // fact-little-eye
+  {
+    factId: "fact-little-eye",
+    characterId: "kurapika",
+    state: "knows",
+    sinceCh: 360,
+  },
+  {
+    factId: "fact-little-eye",
+    characterId: "oito",
+    state: "knows",
+    sinceCh: 361,
+    note: "Used it herself.",
+  },
+  {
+    factId: "fact-little-eye",
+    characterId: "bill",
+    state: "knows",
+    sinceCh: 360,
+  },
+  {
+    factId: "fact-little-eye",
+    characterId: "sayird",
+    state: "knows",
+    sinceCh: 360,
+    note: "Knows exactly what was taken from him.",
+  },
+  {
+    factId: "fact-little-eye",
+    characterId: "babimyna",
+    state: "suspects",
+    sinceCh: 362,
+    note: "Saw the aftermath, not the extraction.",
+  },
+
+  // fact-woble-beast
+  {
+    factId: "fact-woble-beast",
+    characterId: "oito",
+    state: "observed",
+    sinceCh: 359,
+    note: "Lives under its gaze daily.",
+  },
+  {
+    factId: "fact-woble-beast",
+    characterId: "kurapika",
+    state: "observed",
+    sinceCh: 359,
+  },
+  {
+    factId: "fact-woble-beast",
+    characterId: "bill",
+    state: "observed",
+    sinceCh: 359,
+  },
+  {
+    factId: "fact-woble-beast",
+    characterId: "vergei",
+    state: "unaware",
+    sinceCh: 359,
+    note: "Cannot see beasts; wouldn't believe testimony.",
+  },
+
+  // fact-camilla-ability — the reader sees it kill Musse in 373;
+  // Benjamin's camp pieces it together across 373 → 413.
+  {
+    factId: "fact-camilla-ability",
+    characterId: "camilla",
+    state: "knows",
+    sinceCh: 358,
+    revealCh: 373,
+    note: "Walked into Musse's gunfire on purpose — dying is her opening move.",
+  },
+  {
+    factId: "fact-camilla-ability",
+    characterId: "benjamin",
+    state: "knows",
+    sinceCh: 413,
+    note: "The leveled-up Secret Window replayed Musse's death: she is a counteractive type. He plans his approach around it.",
+  },
+  {
+    factId: "fact-camilla-ability",
+    characterId: "balsamilco",
+    state: "suspects",
+    sinceCh: 389,
+    note: "Advised keeping Musse's owl on Camilla precisely because her ability killed him so fast.",
+  },
+  {
+    factId: "fact-camilla-ability",
+    characterId: "furykov",
+    state: "suspects",
+    sinceCh: 373,
+    note: "Arrested her fresh from a revival; has had years of Combo Master exposure since.",
+  },
+  {
+    factId: "fact-camilla-ability",
+    characterId: "nasubi",
+    state: "unaware",
+    sinceCh: 358,
+  },
+
+  // fact-benjamin-inheritance
+  {
+    factId: "fact-benjamin-inheritance",
+    characterId: "benjamin",
+    state: "knows",
+    sinceCh: 358,
+    revealCh: 373,
+  },
+  {
+    factId: "fact-benjamin-inheritance",
+    characterId: "balsamilco",
+    state: "knows",
+    sinceCh: 358,
+    revealCh: 373,
+  },
+  {
+    factId: "fact-benjamin-inheritance",
+    characterId: "babimyna",
+    state: "knows",
+    sinceCh: 361,
+    revealCh: 389,
+    note: "Pledged; his death would feed the baton.",
+  },
+  {
+    factId: "fact-benjamin-inheritance",
+    characterId: "kurapika",
+    state: "unaware",
+    sinceCh: 358,
+  },
+
+  // fact-mafia-three-families
+  {
+    factId: "fact-mafia-three-families",
+    characterId: "onior",
+    state: "knows",
+    sinceCh: 371,
+  },
+  {
+    factId: "fact-mafia-three-families",
+    characterId: "brocco",
+    state: "knows",
+    sinceCh: 371,
+  },
+  {
+    factId: "fact-mafia-three-families",
+    characterId: "morena",
+    state: "knows",
+    sinceCh: 377,
+    note: "Nominal vassalage she has no intention of honoring.",
+  },
+  {
+    factId: "fact-mafia-three-families",
+    characterId: "zhang-lei",
+    state: "knows",
+    sinceCh: 371,
+  },
+  {
+    factId: "fact-mafia-three-families",
+    characterId: "hinrigh",
+    state: "knows",
+    sinceCh: 371,
+  },
+  {
+    factId: "fact-mafia-three-families",
+    characterId: "kurapika",
+    state: "was-told",
+    sinceCh: 377,
+    note: "Via Zodiac channels and class-network chatter.",
+  },
+  {
+    factId: "fact-mafia-three-families",
+    characterId: "tserriednich",
+    state: "unaware",
+    sinceCh: 377,
+    note: "Has never acknowledged his family's nominal vassal; reader-only irony.",
+  },
+
+  // fact-woble-swap
+  {
+    factId: "fact-woble-swap",
+    characterId: "oito",
+    state: "knows",
+    sinceCh: 358,
+    revealCh: 412,
+    note: "Arranged the swap before departure, fearing for her daughter's life; does not know where her sister took Woble.",
+  },
+  {
+    factId: "fact-woble-swap",
+    characterId: "shimano",
+    state: "knows",
+    sinceCh: 360,
+    revealCh: 414,
+    note: "Discovered it at the first diaper change — while Oito and Kurapika lay fainted from Emperor Time — and quietly kept serving (ch 412 flashback, elaborated ch 414).",
+  },
+  {
+    factId: "fact-woble-swap",
+    characterId: "kurapika",
+    state: "knows",
+    sinceCh: 412,
+    note: "Bill's pronunciation catch plus the Dowsing Chain interrogation; publicly declared Woble ineligible in ch 411's class.",
+  },
+  {
+    factId: "fact-woble-swap",
+    characterId: "bill",
+    state: "knows",
+    sinceCh: 412,
+    note: "Noticed Oito toggling masculine/feminine name tones after the chain first came out.",
+  },
+  {
+    factId: "fact-woble-swap",
+    characterId: "sakata",
+    state: "observed",
+    sinceCh: 412,
+    note: "Invited in to witness the chain interrogation.",
+  },
+  {
+    factId: "fact-woble-swap",
+    characterId: "babimyna",
+    state: "observed",
+    sinceCh: 412,
+    note: "Watched the interrogation wordlessly; what he reports upward is its own question.",
+  },
+  {
+    factId: "fact-woble-swap",
+    characterId: "benjamin",
+    state: "suspects",
+    sinceCh: 413,
+    note: "His camp treats the swap as a possible ploy: the real Woble may still be aboard and eligible.",
+  },
+
+  // fact-beyond-curse
+  {
+    factId: "fact-beyond-curse",
+    characterId: "beyond",
+    state: "knows",
+    sinceCh: 358,
+    revealCh: 401,
+    note: "The author of the whole scheme; only he knows the targets and the trigger.",
+  },
+  {
+    factId: "fact-beyond-curse",
+    characterId: "longhi",
+    state: "knows",
+    sinceCh: 358,
+    revealCh: 401,
+    note: "A strong curse sacrifice herself; discovered the truth with Makaha and defected from the plan.",
+  },
+  {
+    factId: "fact-beyond-curse",
+    characterId: "kurapika",
+    state: "was-told",
+    sinceCh: 401,
+    note: "Longhi's vow-backed disclosure; his Dowsing Chain never moved.",
+  },
+  {
+    factId: "fact-beyond-curse",
+    characterId: "bill",
+    state: "was-told",
+    sinceCh: 401,
+  },
+  {
+    factId: "fact-beyond-curse",
+    characterId: "oito",
+    state: "was-told",
+    sinceCh: 401,
+    note: "Confirmed the loophole: eligibility is limited to children of Nasubi's legal wives.",
+  },
+  {
+    factId: "fact-beyond-curse",
+    characterId: "furykov",
+    state: "knows",
+    sinceCh: 413,
+    revealCh: 413,
+    note: "Learned he is cursed when Unma weaponized the mark against him.",
+  },
+  {
+    factId: "fact-beyond-curse",
+    characterId: "unma",
+    state: "knows",
+    sinceCh: 413,
+    note: "Knows enough to threaten activation through Beyond — the depth of her arrangement with him is unclear.",
+  },
+  {
+    factId: "fact-beyond-curse",
+    characterId: "benjamin",
+    state: "was-told",
+    sinceCh: 413,
+    note: "Furykov's confession, delivered with the poison already in his veins.",
+  },
+
+  // fact-furykov-beyond-son
+  {
+    factId: "fact-furykov-beyond-son",
+    characterId: "furykov",
+    state: "knows",
+    sinceCh: 413,
+    revealCh: 413,
+    note: "His parentage per Unma's leverage; his loyalty, he insists, never moved.",
+  },
+  {
+    factId: "fact-furykov-beyond-son",
+    characterId: "benjamin",
+    state: "knows",
+    sinceCh: 413,
+    note: "Accepted the confession and kept Furykov at his side for his final hours.",
+  },
+  {
+    factId: "fact-furykov-beyond-son",
+    characterId: "unma",
+    state: "knows",
+    sinceCh: 413,
+    note: "Used it as the lever of the whole TSK-17 scheme.",
+  },
+  {
+    factId: "fact-furykov-beyond-son",
+    characterId: "beyond",
+    state: "knows",
+    sinceCh: 358,
+    revealCh: 413,
+  },
+  {
+    factId: "fact-furykov-beyond-son",
+    characterId: "longhi",
+    state: "unaware",
+    sinceCh: 401,
+    note: "Knows half-siblings exist among the guards; has not identified Furykov as one.",
+  },
+  {
+    factId: "fact-furykov-beyond-son",
+    characterId: "kurapika",
+    state: "unaware",
+    sinceCh: 401,
+    note: "Hunting Beyond's children without knowing one audits his Nen classes.",
+  },
+
+  // fact-halkenburg-possession
+  {
+    factId: "fact-halkenburg-possession",
+    characterId: "halkenburg",
+    state: "knows",
+    sinceCh: 403,
+    note: "Living it — and running experiments on his own condition.",
+  },
+  {
+    factId: "fact-halkenburg-possession",
+    characterId: "benjamin",
+    state: "knows",
+    sinceCh: 413,
+    note: "Deduced it from the post-mortem rumbling: 'only his body died'. It also solved Shikaku and Vict for him.",
+  },
+  {
+    factId: "fact-halkenburg-possession",
+    characterId: "nasubi",
+    state: "knows",
+    sinceCh: 413,
+    note: "Read the unlit Flame of Life in the burial chamber: 'Halkenburg is still fighting.'",
+  },
+  {
+    factId: "fact-halkenburg-possession",
+    characterId: "nugui",
+    state: "observed",
+    sinceCh: 413,
+    note: "Noted the Ninth Prince's flame never ignited, unlike the Eighth, Tenth, and Twelfth.",
+  },
+  {
+    factId: "fact-halkenburg-possession",
+    characterId: "balsamilco",
+    state: "unaware",
+    sinceCh: 403,
+    note: "His own mind sleeps while the prince drives; sedatives keep it that way.",
+  },
+  {
+    factId: "fact-halkenburg-possession",
+    characterId: "kurapika",
+    state: "misunderstands",
+    sinceCh: 411,
+    note: "Correctly concluded assassination, not illness — but believes Halkenburg simply dead.",
+  },
+
+  // fact-special-martial-law
+  {
+    factId: "fact-special-martial-law",
+    characterId: "benjamin",
+    state: "knows",
+    sinceCh: 410,
+    revealCh: 413,
+    note: "Planned it as his ace long before dying gave it a deadline (Kaiser read the intent as early as ch 403).",
+  },
+  {
+    factId: "fact-special-martial-law",
+    characterId: "butch",
+    state: "knows",
+    sinceCh: 413,
+    note: "Received the declaration order and the guard-execution rules of engagement.",
+  },
+  {
+    factId: "fact-special-martial-law",
+    characterId: "furykov",
+    state: "knows",
+    sinceCh: 413,
+  },
+  {
+    factId: "fact-special-martial-law",
+    characterId: "kaiser",
+    state: "suspects",
+    sinceCh: 403,
+    note: "Concluded from Benjamin's slip that a declaration was coming; pre-positioned Steiner's dead-man switch.",
+  },
+  {
+    factId: "fact-special-martial-law",
+    characterId: "mizaistom",
+    state: "knows",
+    sinceCh: 410,
+    note: "Received Benjamin's takeover terms at the Justice Bureau and read them as hostage-taking by decree.",
+  },
+  {
+    factId: "fact-special-martial-law",
+    characterId: "luzurus",
+    state: "knows",
+    sinceCh: 414,
+    note: "Read the pre-positioning outside Room 1009 correctly and ordered total non-resistance.",
+  },
+  {
+    factId: "fact-special-martial-law",
+    characterId: "kurapika",
+    state: "unaware",
+    sinceCh: 413,
+    note: "Room 1014 hears the announcement like everyone else; the plan behind it is invisible to him.",
+  },
+];

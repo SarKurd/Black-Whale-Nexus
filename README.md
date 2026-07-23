@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Black Whale Nexus
 
-## Getting Started
+An interactive intelligence archive for the Hunter × Hunter **Succession War arc** —
+the fourteen princes, their guards, the mafia families, the Phantom Troupe, Nen
+abilities, assassinations, hidden alliances, and simultaneous storylines aboard
+Black Whale No. 1.
 
-First, run the development server:
+Not a wiki: a story-intelligence system. Every record is **chapter-aware** — a
+global clearance control (Anime-only / Manga up to chapter N / Full spoilers)
+reconstructs what is *known* at that point in the story, not just hides text.
+
+## Sections
+
+| Route | Metaphor |
+| --- | --- |
+| `/` | Command Center — layered strategic situation board |
+| `/characters` | Classified personnel dossiers (9-tab files) |
+| `/web` | Conspiracy investigation board (force-directed network, 19 presets, chapter evolution) |
+| `/princes` | Royal war council (cards, table, succession ring, risk evolution) |
+| `/factions` | Group intelligence files |
+| `/storylines` | Branching mission map (railway/git-graph) |
+| `/timeline` | Ship voyage recorder with parallel-thread columns |
+| `/chapters` | Incident reports with "What changed" diffs |
+| `/map` | Naval tactical blueprint with occupancy scrubbing |
+| `/nen` | Technical research archive with mechanics diagrams |
+| `/knowledge` | Intelligence-clearance network (who knows what, since when) |
+| `/deaths` | Death & status ledger |
+| `/mysteries` | Analyst case board |
+| `/compare` | Side-by-side analysis desk |
+| `/theories` | Hypothesis room (never presented as canon; can be hidden globally) |
+| `/glossary` | Reference codex |
+
+`⌘K` / `Ctrl+K` opens the archive-wide command search.
+
+## Stack
+
+Next.js (App Router) · React · TypeScript · Tailwind CSS v4 · Framer Motion ·
+d3-force · Zustand. Client-only; all content lives in typed local data under
+[`src/data/`](src/data/). No backend, no CMS.
+
+## Development
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run dev        # dev server
+npm run build      # production build
+npm run lint       # biome check
+npx tsx scripts/validate-content.ts   # referential-integrity check for the dataset
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Content model
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Defined in [`src/lib/types.ts`](src/lib/types.ts). Key conventions:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `revealCh` = the chapter the **reader** learns something; `ch` on history
+  entries = when it becomes true in-universe. `0` means "known pre-arc"
+  (visible even at Anime-only clearance).
+- History is preserved (status, location, relationships, knowledge, risk),
+  never overwritten — the spoiler engine (`src/lib/spoiler.ts`) replays it.
+- Every load-bearing claim carries evidence with a confidence class:
+  canonical / strong-inference / weak-inference / theory / unknown, surfaced
+  in the UI. Uncertain records are hedged, marked `incomplete`, or omitted —
+  never invented.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Unofficial fan project. Hunter × Hunter © Yoshihiro Togashi.
