@@ -913,7 +913,7 @@ export const factions: Faction[] = [
       },
     ],
     territoryNote: "Tier 5 holdings.",
-    controlledLocationIds: ["cha-r-territory"],
+    controlledLocationIds: ["cha-r-territory", "tier-5-market"],
     resources: [
       "Entrenched positions",
       "Luzurus's patronage",

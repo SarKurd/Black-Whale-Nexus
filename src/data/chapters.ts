@@ -61,6 +61,7 @@ export const chapters: ChapterInfo[] = [
         "Kakin, 'technically' a new nation for thirty years, never signed the treaty",
         "Isaac Netero had a son — Beyond — now hired by Kakin to lead the expedition",
       ],
+      mysteriesIntroduced: ["my-beyond-endgame"],
       newThreats: [
         "Beyond invites the entire world to Kakin, outside all V5 supervision",
       ],
@@ -2577,7 +2578,11 @@ export const chapters: ChapterInfo[] = [
       newThreats: [
         "Ten or more walking curses stand among the princes' guards",
       ],
-      mysteriesAdvanced: ["my-beyond-curse-targets", "my-nasubi-intent"],
+      mysteriesAdvanced: [
+        "my-beyond-curse-targets",
+        "my-nasubi-intent",
+        "my-beyond-endgame",
+      ],
     },
   },
   {
@@ -3070,7 +3075,11 @@ export const chapters: ChapterInfo[] = [
         "Kurapika weighs negotiating with Beyond as the fastest route to the curse",
       ],
       mysteriesIntroduced: [],
-      mysteriesAdvanced: ["my-woble-location", "my-woble-beast-ability"],
+      mysteriesAdvanced: [
+        "my-woble-location",
+        "my-woble-beast-ability",
+        "my-beyond-endgame",
+      ],
     },
   },
   {

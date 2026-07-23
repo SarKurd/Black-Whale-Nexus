@@ -1844,13 +1844,12 @@ export const nenAbilities: NenAbility[] = [
     nenType: "conjurer",
     description:
       "Mizaistom's card ability. He first shows a warning card — a declaration that violence is forbidden here — and against anyone who attacks anyway he uses the cards to restrain their movement, pinning them in place while he conducts his business unmolested.",
-    activation: "Present the warning card; on a violent response, restrain with the cards.",
+    activation:
+      "Present the warning card; on a violent response, restrain with the cards.",
     conditions: [
       "The target must have chosen violence after the warning — a self-imposed 'foul' condition consistent with Mizaistom's lawman ethos.",
     ],
-    effects: [
-      "Immobilizes those who break the no-violence rule.",
-    ],
+    effects: ["Immobilizes those who break the no-violence rule."],
     firstSeenCh: 343,
     revealCh: 343,
     uses: [
@@ -1878,9 +1877,7 @@ export const nenAbilities: NenAbility[] = [
     nenType: "unknown",
     description:
       "Saiyu's ability, named for the three wise monkeys: it robs a target of sight, hearing, and speech — see-no, hear-no, speak-no. The reason Kurapika expects Saiyu to be Pariston's chosen instrument for freeing Beyond at landfall, and plans to restrain him only at the last moment.",
-    effects: [
-      "Deprives the target of vision, hearing, and speech.",
-    ],
+    effects: ["Deprives the target of vision, hearing, and speech."],
     firstSeenCh: 0,
     revealCh: 349,
     uses: [
@@ -1903,6 +1900,355 @@ export const nenAbilities: NenAbility[] = [
       },
     ],
     confidence: "canonical",
+  },
+  {
+    id: "convert-hands",
+    name: "Convert Hands",
+    userCharacterId: "chrollo",
+    kind: "borrowed",
+    nenType: "conjurer",
+    description:
+      "The fourth ability Chrollo borrowed for the Heavens Arena duel: two marks appear on his palms. Touching a person with the right-hand mark reshapes them into Chrollo's appearance; touching with both marks at once swaps his appearance with theirs. The engine behind his crowd of decoys and his own disappearances during the fight.",
+    activation:
+      "Touch a target with the right-hand mark (copy his look onto them) or both marks (swap looks).",
+    effects: [
+      "Disguises a target as Chrollo — or Chrollo as the target.",
+      "Combined with Black Voice, produces puppeted Chrollo-lookalikes as bait.",
+    ],
+    firstSeenCh: 352,
+    revealCh: 352,
+    uses: [
+      {
+        ch: 354,
+        note: "A converted spectator, puppeted, is the 'Chrollo' Hisoka kills — a decoy.",
+      },
+    ],
+    status: "active",
+    awareCharacterIds: [
+      { characterId: "chrollo", sinceCh: 0 },
+      { characterId: "hisoka", sinceCh: 352 },
+    ],
+    evidence: [
+      {
+        chapter: 352,
+        note: "Named and its two-mark mechanic explained on-page during the duel.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "predator",
+    name: "Predator",
+    userCharacterId: "rihan",
+    kind: "personal",
+    nenType: "unknown",
+    description:
+      "Rihan analyzes a target and conjures its 'natural predator' — a creature whose strength scales with how accurate his analysis was. Turned on Salé-salé's Guardian Spirit Beast, the summoned predator ate the beast whole, clearing the way for the prince's assassination.",
+    activation:
+      "Analyze the target, then summon the tailored predator creature.",
+    conditions: [
+      "Effectiveness depends on the accuracy of Rihan's analysis.",
+      "A roughly 48-hour cooldown between summons.",
+    ],
+    effects: [
+      "Conjures a creature that preys on the analyzed target — capable of devouring a Guardian Spirit Beast (ch 381).",
+    ],
+    weaknesses: [
+      "Poor against simple, direct Enhancer/Emitter attacks that give little to analyze.",
+      "The long cooldown leaves Rihan exposed between uses.",
+    ],
+    firstSeenCh: 374,
+    revealCh: 374,
+    uses: [
+      {
+        ch: 381,
+        note: "Devours Salé-salé's devotion-smoke beast in one bite, the day before Yushohi assassinates the prince.",
+      },
+    ],
+    status: "active",
+    awareCharacterIds: [
+      { characterId: "rihan", sinceCh: 374 },
+      { characterId: "benjamin", sinceCh: 374 },
+    ],
+    evidence: [
+      {
+        chapter: 374,
+        note: "Named and its analysis-scaling mechanic shown on-page.",
+        confidence: "canonical",
+      },
+      {
+        chapter: 381,
+        note: "Consumes Salé-salé's beast entirely.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "culdcept",
+    name: "Culdcept",
+    userCharacterId: "shikaku",
+    kind: "personal",
+    nenType: "manipulator",
+    description:
+      "Shikaku's card ability — he forms cards that manifest as defensive constructs, notably a shield. Absorbed by Benjamin Baton when Shikaku's body died, making it one of the inheritance abilities feeding the First Prince.",
+    activation: "Form a card into the desired construct.",
+    effects: ["Conjured card shield and related card constructs."],
+    weaknesses: [
+      "The shield could not stop Halkenburg's mind-swap arrow, which pierced it (ch 382).",
+    ],
+    firstSeenCh: 382,
+    revealCh: 382,
+    uses: [
+      {
+        ch: 382,
+        note: "Raises a card shield against Halkenburg's first arrow; the arrow pierces it and swaps Shikaku's body with Sumidori's mind.",
+      },
+    ],
+    status: "inactive",
+    awareCharacterIds: [{ characterId: "benjamin", sinceCh: 389 }],
+    evidence: [
+      {
+        chapter: 382,
+        note: "Named and its shield shown against the arrow on-page.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "metamorphosen",
+    name: "Battle Cantabile: Metamorphosen",
+    userCharacterId: "bonolenov",
+    kind: "personal",
+    nenType: "transmuter",
+    description:
+      "Bonolenov transforms into someone he has spoken with in person. The duration equals the time he spent with them, and the smaller that person's body is relative to his own, the shorter he can hold the form. The disguise engine behind the Troupe's fake-Hisoka operation.",
+    activation:
+      "Transform into a person Bonolenov has met, for time proportional to their time together.",
+    conditions: [
+      "Must have spoken with the target in person.",
+      "Hold-time equals time spent together; shrinking to a smaller body shortens it further.",
+    ],
+    effects: ["Full-appearance impersonation of a met person."],
+    firstSeenCh: 377,
+    revealCh: 405,
+    uses: [
+      {
+        ch: 405,
+        note: "Kills Lynch, then wears her shape to dismiss Zakuro and cover Chrollo's fake-Hisoka decoy.",
+      },
+    ],
+    status: "active",
+    awareCharacterIds: [{ characterId: "chrollo", sinceCh: 377 }],
+    evidence: [
+      {
+        chapter: 377,
+        note: "Revealed as a transformation ability.",
+        confidence: "canonical",
+      },
+      {
+        chapter: 405,
+        note: "Duration/size rules stated during the Lynch impersonation.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "hanzo-skill",
+    name: "Hanzo Skill 4",
+    userCharacterId: "hanzo",
+    kind: "personal",
+    nenType: "transmuter",
+    description:
+      "One of Hanzo's numbered shinobi techniques: a Nen double of himself. He used it to bluff a confession out of Momoze's killer Tuffdy in the holding cell and then execute him, staging it as a suicide.",
+    activation: "Produce the Nen double (technique #4 of a numbered set).",
+    effects: [
+      "A convincing double of Hanzo used for infiltration and misdirection.",
+    ],
+    firstSeenCh: 372,
+    revealCh: 372,
+    uses: [
+      {
+        ch: 372,
+        note: "The double bluffs Tuffdy into confessing to Momoze's murder, then kills him; filed as a suicide.",
+      },
+    ],
+    status: "active",
+    awareCharacterIds: [{ characterId: "hanzo", sinceCh: 372 }],
+    evidence: [
+      {
+        chapter: 372,
+        note: "Named 'Hanzo Skill 4' on-page.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "body-and-soul",
+    name: "Body and Soul",
+    userCharacterId: "lynch",
+    kind: "personal",
+    nenType: "emitter",
+    description:
+      "The Xi-Yu enforcer's interrogation punch: striking a target forces their 'inner soul' to speak the truth. It is how she learned Heil-Ly's basics — and how she exposed the fake Hisoka, the discovery that got her killed.",
+    activation: "Punch the target; their inner voice answers truthfully.",
+    effects: ["Compels truthful answers from a struck target."],
+    firstSeenCh: 390,
+    revealCh: 390,
+    uses: [
+      {
+        ch: 390,
+        note: "Extracts the basics of Heil-Ly's goal from a captured member.",
+      },
+      {
+        ch: 392,
+        note: "Her punch makes the disguised Bonolenov's inner soul admit he is not Hisoka — the truth she died for.",
+      },
+    ],
+    status: "inactive",
+    awareCharacterIds: [
+      { characterId: "hinrigh", sinceCh: 390 },
+      { characterId: "zakuro", sinceCh: 390 },
+    ],
+    evidence: [
+      {
+        chapter: 390,
+        note: "Named and used to interrogate on-page.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "bloody-mary",
+    name: "Bloody Mary",
+    userCharacterId: "zakuro",
+    kind: "personal",
+    nenType: "manipulator",
+    description:
+      "Zakuro's blood ability: drops of his blood become search 'drones' that scout and subdue. The drones run out of Nen after roughly 30–40 minutes, capping how long a search can run.",
+    activation: "Shed blood drops and direct them as autonomous search units.",
+    conditions: [
+      "Each blood drone lasts only ~30–40 minutes before its Nen runs out.",
+    ],
+    effects: [
+      "Blood-drop reconnaissance drones.",
+      "Subdues targets directly (ch 390).",
+    ],
+    firstSeenCh: 390,
+    revealCh: 390,
+    uses: [
+      {
+        ch: 390,
+        note: "Subdues a Heil-Ly opponent; ch 391 the blood drones search the tiers on a time limit.",
+      },
+    ],
+    status: "active",
+    awareCharacterIds: [{ characterId: "hinrigh", sinceCh: 390 }],
+    evidence: [
+      {
+        chapter: 390,
+        note: "Named and demonstrated on-page.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "biohazard",
+    name: "Biohazard",
+    userCharacterId: "hinrigh",
+    kind: "personal",
+    nenType: "conjurer",
+    description:
+      "The Xi-Yu underboss turns tools and machinery into living things: a camcorder into a surveillance cat, handcuffs into pigeons, a transmitter into an oyster. His conversions run the entire hideout-infiltration hunt for the Heil-Ly.",
+    activation:
+      "Apply the ability to an object to convert it into a living creature.",
+    effects: [
+      "Transforms tools/machinery into animals that serve as surveillance and tracking assets.",
+    ],
+    firstSeenCh: 391,
+    revealCh: 391,
+    uses: [
+      {
+        ch: 391,
+        note: "Turns a camcorder into a small cat for covert surveillance.",
+      },
+      {
+        ch: 398,
+        note: "Explains the tool-to-creature conversions while offering to locate the Heil-Ly hideout for the Troupe.",
+      },
+    ],
+    status: "active",
+    awareCharacterIds: [
+      { characterId: "hinrigh", sinceCh: 391 },
+      { characterId: "nobunaga", sinceCh: 398 },
+    ],
+    evidence: [
+      {
+        chapter: 391,
+        note: "Named and shown converting a camcorder into a cat.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "tackle-shield",
+    name: "Tackle Shield",
+    userCharacterId: "vict",
+    kind: "personal",
+    nenType: "unknown",
+    description:
+      "Vict's defensive ability, which Benjamin counted on to keep Halkenburg in check. It did not matter: Halkenburg's arrow struck Vict before the defense could decide anything, displacing his mind and leaving his body a possessed vessel.",
+    effects: ["A defensive construct (mechanics never detailed on-page)."],
+    firstSeenCh: 389,
+    revealCh: 389,
+    status: "unknown",
+    awareCharacterIds: [{ characterId: "benjamin", sinceCh: 389 }],
+    evidence: [
+      {
+        chapter: 389,
+        note: "Named as the defense Benjamin hoped would check Halkenburg; never demonstrated in detail.",
+        confidence: "strong-inference",
+      },
+    ],
+    confidence: "strong-inference",
+  },
+  {
+    id: "great-haiku",
+    name: "Great Haiku",
+    userCharacterId: "basho",
+    kind: "personal",
+    nenType: "emitter",
+    description:
+      "Basho writes a haiku and makes its content literally happen. Aboard, its documented use is a protective talisman — verse warding the evil-spirit presence away from the grieving Fugetsu.",
+    activation: "Compose a haiku; its meaning manifests as a real effect.",
+    effects: [
+      "Turns written verse into a physical effect — including wards/talismans.",
+    ],
+    firstSeenCh: 0,
+    revealCh: 402,
+    uses: [
+      {
+        ch: 402,
+        note: "A talisman keeps the evil-spirit presence off Fugetsu while she sleeps.",
+      },
+    ],
+    status: "active",
+    awareCharacterIds: [{ characterId: "basho", sinceCh: 0 }],
+    evidence: [
+      {
+        chapter: 402,
+        note: "Its warding use for Fugetsu shown on-page.",
+        confidence: "strong-inference",
+      },
+    ],
+    confidence: "strong-inference",
   },
 ];
 
@@ -2012,7 +2358,7 @@ export const beasts: GuardianBeast[] = [
       "A feathered, apish, one-eyed ogre with horns, perched on Halkenburg's shoulders.",
     behaviorNote:
       "Marks followers' left hands with conjured pinion feathers and powers the mind-swap arrow; it kept operating after the prince's body died, because his soul did too.",
-    firstSeenCh: 375,
+    firstSeenCh: 361,
     status: "active",
     statusNote:
       "Halkenburg's body is dead (ch 404) but his Flame of Life is unlit — soul and ability remain in play (ch 413).",

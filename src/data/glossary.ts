@@ -359,4 +359,31 @@ export const glossary: GlossaryTerm[] = [
     relatedIds: ["hunter-association-term"],
     introducedCh: 358,
   },
+  {
+    id: "three-sacred-treasures",
+    term: "The Three Sacred Treasures",
+    definition:
+      "Kakin's succession regalia, and Chrollo's real prize aboard: the Seed Urn (the ceremonial urn of the contest), the Lotus Anchorite (a divine mummy that oversees it), and the Sword of Good Omens (passed to the next king). Chrollo believes stealing something of this national-treasure grade would satisfy the condition to evolve Skill Hunter.",
+    category: "kakin",
+    relatedIds: ["seed-urn-ceremony", "lotus-anchorite", "sword-of-good-omens"],
+    introducedCh: 406,
+  },
+  {
+    id: "lotus-anchorite",
+    term: "Lotus Anchorite",
+    definition:
+      "One of Kakin's three sacred treasures: a divine mummy said to oversee the succession contest. Named among Chrollo's target regalia (ch 406).",
+    category: "kakin",
+    relatedIds: ["three-sacred-treasures", "succession-war"],
+    introducedCh: 406,
+  },
+  {
+    id: "sword-of-good-omens",
+    term: "Sword of Good Omens",
+    definition:
+      "One of Kakin's three sacred treasures: the sword of succession, passed on to the next king. Named among Chrollo's target regalia (ch 406).",
+    category: "kakin",
+    relatedIds: ["three-sacred-treasures", "succession-war"],
+    introducedCh: 406,
+  },
 ];

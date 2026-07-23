@@ -1877,7 +1877,12 @@ export const characters: Character[] = [
       {
         ch: 385,
         status: "incapacitated",
-        note: "Collapsed after the failed killshot; her face carries the beast's first warning brand. Salkov takes over instruction while she recovers. Alive per later mentions through 413.",
+        note: "Collapsed after the failed killshot; her face carries the beast's first warning brand. Salkov takes over instruction while she recovers.",
+      },
+      {
+        ch: 402,
+        status: "alive",
+        note: "Recovered enough that Salkov drills solo while she is referenced as active again; alive through 413.",
       },
     ],
     locationHistory: [{ ch: 362, locationId: "tserriednich-quarters" }],

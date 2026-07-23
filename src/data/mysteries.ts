@@ -91,8 +91,8 @@ export const mysteries: Mystery[] = [
       },
       {
         ch: 405,
-        value: "resolved",
-        note: "The reader sees him at the Tier 1 VIP casino. Who sponsors him remains unknown, and the hunters below are chasing a Troupe decoy.",
+        value: "likely-answered",
+        note: "The reader sees him at the Tier 1 VIP casino — but who sponsored a wanted man into VIP quarters is unexplained, and every hunter below is chasing a Troupe decoy. His position is known; the how is not.",
       },
     ],
     relatedCharacterIds: [

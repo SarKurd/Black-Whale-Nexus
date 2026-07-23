@@ -160,7 +160,7 @@ export const theories: Theory[] = [
     relatedCharacterIds: ["fugetsu", "kacho"],
     chapters: [374, 383, 402],
     confidence: "theory",
-    lastUpdatedCh: 411,
+    lastUpdatedCh: 402,
   },
   {
     id: "th-tserriednich-time-beast",
