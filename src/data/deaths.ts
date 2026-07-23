@@ -280,4 +280,27 @@ export const deaths: DeathRecord[] = [
     confidence: "canonical",
     factionId: "phantom-troupe",
   },
+  {
+    id: "death-luini",
+    victimId: "luini",
+    killerId: "nobunaga",
+    suspectedKillerIds: [],
+    method:
+      "Katana through the head mid-monologue, then decapitated and bisected. Luini had walked into the Cha-R office to pitch the three Troupe members on an alliance — destroy the mafia families and the royal line, seize the Black Whale, sail back and end the old world — and Nobunaga answered the world-ending sales pitch by killing him on the spot.",
+    locationId: "cha-r-territory",
+    chapter: 393,
+    revealCh: 393,
+    witnessIds: ["nobunaga", "feitan", "phinks"],
+    awareCharacterIds: ["nobunaga", "feitan", "phinks", "morena"],
+    investigation:
+      "No inquest — the Troupe displayed the corpse to the Cha-R as proof they had found the warehouse hitman, and declared they would destroy the Heil-Ly. Morena's people found the lower half against a wall and moved to recreate his ability.",
+    consequences: [
+      "Heil-Ly lost the infiltrator whose 'door' let them hunt prey from the hideout.",
+      "The Phantom Troupe turned its attention to hunting Morena and the Heil-Ly.",
+      "Morena's cell began engineering a replacement Emitter to rebuild the trap.",
+    ],
+    mysteryIds: ["my-morena-endgame"],
+    confidence: "canonical",
+    factionId: "heil-ly",
+  },
 ];
