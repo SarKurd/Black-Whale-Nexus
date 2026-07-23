@@ -1,0 +1,190 @@
+# Black Whale Nexus — Data & Canon Guide
+
+Context for anyone (human or agent) continuing this project. Read this before
+touching `src/data/`. It records how the dataset is built, the canon decisions
+already made, and the gotchas that have bitten us.
+
+## What this project is
+
+A client-only Next.js intelligence archive for the Hunter × Hunter **Succession
+War continuity, manga chapters 340–414**. Design is finished and must not be
+changed without an explicit request — work here is almost always *data*.
+
+- Arc bounds live in `src/lib/types.ts`: `ARC_START = 340`, `ARC_END = 414`,
+  `PRE_ARC = 339`.
+- The 2011 anime ends at **chapter 339**. So `introducedCh: 0` / `revealCh: 0`
+  means "known before 340" and is visible even at Anime-only clearance.
+  Anything first appearing at 340+ gets its real chapter.
+
+## Source of truth: Hunterpedia
+
+**All canon comes from Hunterpedia (hunterxhunter.fandom.com), never from
+memory.** Verify every fact against a synopsis or wiki page before writing it.
+
+Cleaned chapter synopses are cached at `/tmp/hxh/ch340.txt … ch414.txt` (75
+files). They may not survive a machine reboot — re-fetch with:
+
+```bash
+curl -s "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=content&rvslots=main&titles=Chapter%20NNN&format=json&formatversion=2"
+```
+
+Character/ability pages (for mechanics, exact names, status, debut chapter):
+
+```bash
+curl -s "https://hunterxhunter.fandom.com/api.php?action=query&prop=revisions&rvprop=content&rvslots=main&titles=PAGE%20TITLE&format=json&formatversion=2&redirects=1"
+```
+
+Key parsing notes:
+- The **`==Chapter Notes==`** section is where abilities are usually *named* —
+  scan it, not just the synopsis prose. (This is how Disgusting Telephone,
+  Cross Game, and Three Monkeys were caught after the first build.)
+- In "Characters in Order of Appearance" lists, **`{{D}}` means DEBUT, not
+  death.** Deaths are on the character page's `|status` field. `{{Co}}` =
+  corpse (appears as a body), `{{M}}`/`{{Mi}}`/`{{I}}` = mention/image-only
+  (the character did not physically appear — do NOT list them in
+  `appearingCharacterIds`), `{{V}}` = voice/vision-only (alive, not a death).
+- This wiki does NOT enable the `extracts` prop; use `revisions` (raw wikitext).
+- Ability standalone pages often don't exist — mechanics live in the
+  **character** page's ability section.
+
+## The content model (`src/lib/types.ts`)
+
+Everything is chapter-stamped so the spoiler engine can replay any point in the
+story. The distinction that governs everything:
+
+- **`ch`** on a history entry = when it becomes true *in-universe*.
+- **`revealCh`** = when the *reader* learns it. Gating is by `revealCh`.
+- Never set a `revealCh` earlier than the chapter the fact actually appears.
+
+History is preserved, never overwritten: `statusHistory`, `locationHistory`,
+relationship `startCh`/`endCh`, `statusHistory` on mysteries/theories, etc.
+Every load-bearing claim carries `evidence` + a `confidence` class:
+`canonical | strong-inference | weak-inference | theory | unknown`. Be honest —
+`canonical` only for things shown on-page.
+
+## Files (`src/data/`) and current counts
+
+| File | Holds | Count |
+|---|---|---|
+| characters.ts | dossiers | 106 |
+| princes.ts | 14 princes (war-council data) | 14 |
+| factions.ts | groups | 24 |
+| relationships.ts | graph edges | 160 |
+| events.ts | timeline events (`ev-<ch>-<slug>`) | 231 |
+| chapters.ts | chapter incident reports | 75 |
+| locations.ts | ship + off-ship places | 37 |
+| nen.ts | `nenAbilities` + `beasts` | 42 / 14 |
+| knowledge.ts | `knowledgeFacts` + `characterKnowledge` | 23 / 139 |
+| deaths.ts | death records | 12 |
+| storylines.ts | parallel threads | 17 |
+| mysteries.ts | open questions | 16 |
+| theories.ts | non-canon hypotheses | 12 |
+| glossary.ts | reference terms | 39 |
+| paths.ts | homepage "Begin Investigation" paths | — |
+| portraits.ts | id → local B/W manga JPEG (generated) | 106 |
+
+IDs are permanent — never rename. Cross-references are by id everywhere.
+
+## Mandatory workflow for every data change
+
+1. Verify the fact in `/tmp/hxh` or on the wiki. Quote the source to yourself.
+2. Edit the data file(s). Keep edits small; match the surrounding prose style.
+3. `npx tsc --noEmit` — must be clean.
+4. `npx biome check --write <files>` — format.
+5. `npx tsx scripts/validate-content.ts` — must show **0 errors**. It checks
+   every cross-reference. (There are **4 known warnings** — empty
+   `locationHistory` for off-ship/dead-ashore characters gon, killua, shalnark,
+   kortopi. These are intentional; don't "fix" them.)
+6. `npm run build` — should generate all pages (~298).
+7. Browser-verify via the prod preview (see below) if it's UI-observable.
+8. Commit only when the user asks. **No co-author trailer** (user preference).
+
+## Portraits
+
+Black-and-white **manga** artwork, one-time fetch, committed under
+`public/portraits/<id>.jpg`, manifest in `src/data/portraits.ts`. Prefer the
+wiki infobox's **Manga tab**; grayscale everything for a uniform look. To add a
+new character's portrait: fetch the manga image, `sips` it to grayscale JPEG,
+regenerate the manifest, keep it a one-time committed asset (no fetch script in
+the repo). All 106 characters currently have one.
+
+## Running / previewing
+
+`.claude/launch.json` defines `black-whale-dev` (port 3000) and
+`black-whale-prod` (port 3001, `npm run start`). The prod preview serves a
+**pre-built bundle** — source edits don't show until you rebuild AND restart the
+prod server. The user often has their own dev server on 3000; don't fight it.
+`next.config.ts` has `allowedDevOrigins: ["192.168.1.221"]` so the LAN URL works
+(Next 16 blocks cross-origin `/_next` dev requests otherwise).
+
+## Canon decisions already made (do not "correct" these)
+
+- **Queens' maternal lines** (verified against wiki): Benjamin & Tserriednich →
+  Unma (Q1); Camilla, Tubeppa, Luzurus → Duazul (Q2); Zhang Lei → Tang Zhao Li
+  (Q3); Tyson → Katrono (Q4); Salé-salé & Halkenburg → Swinko-swinko (Q5)
+  **except** Halkenburg is Duazul's *adoptive* son with **Unma his real mother**
+  (secret, revealed ch 403); Kacho & Fugetsu → Seiko (Q6); Momoze & Marayam →
+  Sevanti (Q7); Woble → Oito (Q8).
+- **Mind-swap deaths (Halkenburg's arrow, "Grimmel the Dissonance"):** the arrow
+  swaps two minds; only one is awake at a time; body-death ≠ soul-death.
+  - `death-sumidori` (ch 386): Sumidori's *soul*, awake in Shikaku's body,
+    died in the staged suicide. Shikaku's own soul sleeps on in Sumidori's
+    body → Shikaku is `presumed-dead`, deliberately has **no** death record
+    (would double-count the same event).
+  - **Vict** (ch 389): arrow displaced his mind; body lives on possessed →
+    status `possessed`, **no** death record by design.
+  - Halkenburg (ch 404): his own body poisoned with TSK-17 from inside
+    Balsamilco; body dead, soul persists in Balsamilco → still a contest
+    participant per Nasubi. `death-halkenburg` covers the body.
+- **Kacho** dies **ch 383** (lifeboat escape, killed by the ritual's horde of
+  hands), NOT 382. The "Kacho" with Fugetsu afterward is her Guardian Spirit
+  Beast **Without You** (confirmed ch 400). Fugetsu *believes* Kacho lives.
+- **Momoze**'s murder is SOLVED on-page: killer was her guard **Tuffdy**
+  (confessed ch 372, executed by Hanzo's doppelganger). Tuffdy is not in the
+  registry (named in prose only). Oito witnessed the murder via Little Eye.
+- **Hisoka**: dead ch 356 (Heavens Arena), self-revived ch 357 (Bungee Gum
+  pre-set to restart his heart), missing/aboard since. On-page ch 405 in the
+  Tier 1 casino.
+- **Little Eye reconnaissance flew on a fly then a COCKROACH** (chs 367–368),
+  NOT a rat. Stolen from Sayird ch 361, lent to Oito via Stealth Dolphin ch
+  364, returned after one use ch 369. (The "rat" phrasing was an early
+  fabrication — fully purged; don't reintroduce it.)
+- **Morena** is a **Carne Levare orphan impostor**, not the real Morena Prudo
+  (disproven ch 408). Her ability is **Contagion** ("Etude of Love").
+- **Emperor Time cost** (1 hr lifespan/sec) is revealed to the reader **ch
+  364**, not 370.
+- Camilla's ability **Cat's Name** and Benjamin Baton are revealed **ch 373**.
+- Zodiac recruitment: Kurapika recruited ch **343**, formally seated (codename
+  Rat) ch **346**. Leorio (Boar) joined ch 343, and is aboard working the
+  **Tier 3 medical clinic**. Saiyu is **Pariston's mole** among the Zodiacs
+  (secret, ch 348).
+- Nen types were reset to what the **wiki `|type` field** documents; several
+  are honestly `unknown` (Benjamin, Camilla, Halkenburg, Fugetsu, etc.). Don't
+  guess a type the wiki doesn't state.
+- Duel abilities are `revealCh: 0` when anime-known (Gallery Fake, Black Voice,
+  Texture Surprise, Bungee Gum) with the duel usage in `uses`; only genuinely
+  new ones (Sun and Moon, Order Stamp, Disgusting Telephone) use real chapters.
+
+## Known registry-boundary calls
+
+These named characters are deliberately **NOT** in the registry (referenced in
+prose only) because they're minor/one-appearance: Tuffdy, Vincent, Wolfe,
+Myuhan, Keeney, Tajao, Borksen, Cavic, Sodom, Padaille, Sandra, Saquelle, plus
+Momoze's other guards (Bladge, Laroc, Nagmum). If a future arc promotes one,
+add it then — don't add death records or edges for non-registry names.
+
+## How to hunt for missing content (the method that works)
+
+The dataset was audited once and gaps still surfaced later (the phone
+abilities). The reliable sweep:
+1. Extract every bolded `'''Name'''` and every `==Chapter Notes==` bullet from
+   all synopses; diff ability names against `nen.ts`.
+2. For each `{{Co}}` corpse marker of a registry character, confirm a death
+   record exists.
+3. Diff each chapter's real appearance list against `appearingCharacterIds`.
+4. Run the cross-cutting checks: dead-without-killer-edge, guard-roster vs
+   "serves" edges, secrets/bioReveals without a knowledge fact, stale statuses.
+
+An in-progress deep review (4 parallel agents, chapters 340–366 / 367–388 /
+389–414 / cross-cutting) was running at the last session; check
+`docs/REVIEW_FINDINGS.md` if it exists for their output.
