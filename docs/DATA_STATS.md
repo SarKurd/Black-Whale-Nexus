@@ -8,14 +8,14 @@
 
 | Collection | Count |
 | --- | --- |
-| characters | 107 |
+| characters | 112 |
 | princes | 14 |
 | factions | 24 |
-| relationships | 160 |
+| relationships | 163 |
 | events | 231 |
 | chapters | 75 |
-| locations | 37 |
-| nen abilities | 53 |
+| locations | 38 |
+| nen abilities | 58 |
 | guardian beasts | 14 |
 | knowledge facts | 23 |
 | knowledge rows | 139 |

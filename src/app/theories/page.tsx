@@ -9,7 +9,7 @@ import {
   EntityList,
 } from "@/components/ui/kit";
 import { theories } from "@/lib/db";
-import { latestStamp } from "@/lib/spoiler";
+import { currentIntelText, latestStamp } from "@/lib/spoiler";
 import { useEffectiveChapter, useNexusStore } from "@/lib/store";
 import type { Evidence, Theory, TheoryStatus } from "@/lib/types";
 
@@ -173,7 +173,8 @@ function TheoryCard({
 
       <div className="space-y-4 p-4">
         <p className="max-w-3xl text-sm leading-relaxed text-parchment">
-          {theory.summary}
+          {currentIntelText(theory.summary, clearanceChapter) ??
+            "Current-state analysis sealed; chapter-cleared evidence remains available below."}
         </p>
 
         <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-xs text-muted">

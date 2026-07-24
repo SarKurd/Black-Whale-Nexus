@@ -208,6 +208,7 @@ export const deaths: DeathRecord[] = [
       "Sumidori's soul — awake inside Shikaku's body since the arrow swapped them — walked to Luzurus's door, shouted 'Long live First Prince Benjamin!', and shot the body in the head: Halkenburg's deliberate experiment to map what body-death does to swapped souls. The soul inside died; Shikaku's own mind sleeps on in Sumidori's abandoned body.",
     locationId: "room-1007",
     chapter: 386,
+    revealCh: 404,
     witnessIds: ["basho"],
     awareCharacterIds: [
       "halkenburg",

@@ -308,6 +308,7 @@ export const princes: Prince[] = [
     motherCharacterId: "unma",
     queenRank: 1,
     beastId: "beast-tserriednich",
+    personalAbilityId: "parallel-future",
     guardsOriginal: 15,
     guardCharacterIds: ["theta", "salkov"],
     publicStrategy:
@@ -570,7 +571,7 @@ export const princes: Prince[] = [
         revealCh: 378,
       },
       {
-        text: "Benjamin's soldier Kanjidol lives inside his household — and under martial law began murdering his guards in their bunks.",
+        text: "Benjamin's soldier Kanjidol lives inside his household — and under martial law began stabbing his guards in their bunks.",
         revealCh: 414,
       },
     ],
@@ -588,7 +589,7 @@ export const princes: Prince[] = [
       {
         ch: 414,
         risk: "critical",
-        why: "Benjamin's purge is inside his walls: two guards dead in their sleep, Kanjidol active, martial-law soldiers at his door.",
+        why: "Benjamin's purge is inside his walls: two guards stabbed in their sleep with both outcomes unresolved, Kanjidol active, martial-law soldiers at his door.",
       },
     ],
     assessment: {
@@ -1161,7 +1162,10 @@ export const princes: Prince[] = [
         text: "Queen Oito hires Kurapika through the fake 'Halkenburg' listing; her real ask is getting Woble off the ship.",
       },
       { ch: 359, text: "First guard deaths inside the sealed suite." },
-      { ch: 361, text: "Little Eye rat reconnaissance maps hidden passages." },
+      {
+        ch: 368,
+        text: "Oito's Little Eye cockroach reconnaissance maps hidden passages between royal suites.",
+      },
       {
         ch: 368,
         text: "Nen class announced; rival guards enter Room 1014 as students.",

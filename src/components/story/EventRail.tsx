@@ -232,12 +232,7 @@ export function EventRail({
                 strokeWidth={1.5}
               />
               {/* callout card */}
-              <foreignObject
-                x={cardX}
-                y={cardY}
-                width={CARD_W}
-                height={CARD_H}
-              >
+              <foreignObject x={cardX} y={cardY} width={CARD_W} height={CARD_H}>
                 <div
                   className="border bg-panel/95 px-1.5 py-1"
                   style={{

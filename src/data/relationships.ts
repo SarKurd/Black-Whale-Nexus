@@ -42,7 +42,7 @@ export const relationships: Relationship[] = [
     revealCh: 358,
     mutualAwareness: true,
     description:
-      "Mother and infant child — the war's most vulnerable pair, bound tighter than any camp.",
+      "Mother and youngest daughter — the legal Fourteenth Prince and the war's most vulnerable heir.",
     history: [
       {
         ch: 412,
@@ -54,6 +54,28 @@ export const relationships: Relationship[] = [
       {
         chapter: 412,
         note: "Oito's dowsing-verified confession: the infant aboard is her nephew.",
+        confidence: "canonical",
+      },
+    ],
+  },
+  {
+    id: "rel-oito-family-woble-substitute",
+    from: "oito",
+    to: "woble-substitute",
+    kind: "family",
+    directed: false,
+    strength: "strong",
+    secret: true,
+    confirmed: true,
+    startCh: 358,
+    revealCh: 412,
+    mutualAwareness: true,
+    description:
+      "Aunt and nephew. Oito exchanged him with her daughter before departure, then guarded and raised the boy in Room 1014 as her own child.",
+    evidence: [
+      {
+        chapter: 412,
+        note: "Oito's chain-verified confession identifies the infant as her younger sister's son.",
         confidence: "canonical",
       },
     ],
@@ -504,6 +526,28 @@ export const relationships: Relationship[] = [
     ],
   },
   {
+    id: "rel-kurapika-protects-woble-substitute",
+    from: "kurapika",
+    to: "woble-substitute",
+    kind: "protects",
+    directed: true,
+    strength: "strong",
+    secret: true,
+    confirmed: true,
+    startCh: 358,
+    revealCh: 412,
+    mutualAwareness: false,
+    description:
+      "Kurapika protected the boy in Room 1014 under the name Woble before learning the substitution, then continued to defend him after Oito confessed.",
+    evidence: [
+      {
+        chapter: 412,
+        note: "The swap is revealed without changing Room 1014's protection mission.",
+        confidence: "canonical",
+      },
+    ],
+  },
+  {
     id: "rel-oito-trusts-kurapika",
     from: "oito",
     to: "kurapika",
@@ -516,8 +560,18 @@ export const relationships: Relationship[] = [
     revealCh: 361,
     mutualAwareness: true,
     description:
-      "Forged in the rat reconnaissance: she risked her mind in his hands and both came back.",
-    history: [{ ch: 361, text: "Joint Little Eye operation." }],
+      "Forged during the Sayird crisis: Oito entrusted Kurapika with her safety and then accepted a direct role in his intelligence plan.",
+    history: [
+      { ch: 361, text: "Kurapika contains Sayird and earns Oito's trust." },
+      {
+        ch: 364,
+        text: "Little Eye is loaned to Oito through Stealth Dolphin.",
+      },
+      {
+        ch: 368,
+        text: "Oito pilots the captured cockroach through the hidden passages.",
+      },
+    ],
     evidence: [
       {
         chapter: 361,
@@ -2266,6 +2320,28 @@ export const relationships: Relationship[] = [
     ],
   },
   {
+    id: "rel-borksen-member-heil-ly",
+    from: "borksen",
+    to: "heil-ly",
+    kind: "member-of",
+    directed: true,
+    strength: "weak",
+    secret: true,
+    confirmed: true,
+    startCh: 410,
+    revealCh: 410,
+    mutualAwareness: true,
+    description:
+      "Forced into a provisional level-zero membership by Morena's anti-cheating manipulation; Borksen intends to oppose the family from within.",
+    evidence: [
+      {
+        chapter: 410,
+        note: "The manipulation forces Borksen's final Yes; she immediately plans resistance from inside.",
+        confidence: "canonical",
+      },
+    ],
+  },
+  {
     id: "rel-morena-controls-luini",
     from: "luini",
     to: "morena",
@@ -3329,7 +3405,7 @@ export const relationships: Relationship[] = [
   {
     id: "rel-kurapika-knows-identity-of-woble",
     from: "kurapika",
-    to: "woble",
+    to: "woble-substitute",
     kind: "knows-identity-of",
     directed: true,
     strength: "strong",
@@ -3356,7 +3432,7 @@ export const relationships: Relationship[] = [
   {
     id: "rel-bill-knows-identity-of-woble",
     from: "bill",
-    to: "woble",
+    to: "woble-substitute",
     kind: "knows-identity-of",
     directed: true,
     strength: "strong",
@@ -3378,7 +3454,7 @@ export const relationships: Relationship[] = [
   {
     id: "rel-shimano-knows-identity-of-woble",
     from: "shimano",
-    to: "woble",
+    to: "woble-substitute",
     kind: "knows-identity-of",
     directed: true,
     strength: "moderate",
@@ -3574,7 +3650,7 @@ export const relationships: Relationship[] = [
   {
     id: "rel-sarahell-targeting-woble",
     from: "sarahell",
-    to: "woble",
+    to: "woble-substitute",
     kind: "targeting",
     directed: true,
     strength: "strong",
@@ -3726,7 +3802,7 @@ export const relationships: Relationship[] = [
       },
       {
         ch: 414,
-        text: "Murders sleeping Luzurus guards in their bunks ahead of the declaration, savoring it.",
+        text: "Stabs two sleeping Luzurus guards in their bunks ahead of the declaration; neither outcome is confirmed.",
       },
     ],
     evidence: [
@@ -3855,7 +3931,7 @@ export const relationships: Relationship[] = [
     evidence: [
       {
         chapter: 386,
-        note: "The suicide on-page; Sumidori wakes answering with Shikaku's service number.",
+        note: "The suicide and the other body's awakening are shown; the returning consciousness is not disclosed.",
         confidence: "canonical",
       },
       {

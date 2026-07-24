@@ -253,7 +253,7 @@ export const mysteries: Mystery[] = [
       },
       {
         chapter: 386,
-        note: "The Sumidori–Shikaku experiment: Sumidori's mind wakes inside Shikaku's body, marches to Room 1007, and shoots itself — then Sumidori wakes at home, confirming the swap.",
+        note: "The Sumidori–Shikaku experiment: Sumidori's mind wakes inside Shikaku's body, marches to Room 1007, and shoots it; the other body wakes, but the consciousness inside is not identified until ch 404.",
         confidence: "canonical",
       },
       {

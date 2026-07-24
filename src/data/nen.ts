@@ -1955,9 +1955,9 @@ export const nenAbilities: NenAbility[] = [
     kind: "borrowed",
     nenType: "conjurer",
     description:
-      "The fourth ability Chrollo borrowed for the Heavens Arena duel: two marks appear on his palms. Touching a person with the right-hand mark reshapes them into Chrollo's appearance; touching with both marks at once swaps his appearance with theirs. The engine behind his crowd of decoys and his own disappearances during the fight.",
+      "The fourth ability Chrollo borrowed for the Heavens Arena duel: two marks appear on his palms. His right hand makes a target look like Chrollo; his left makes Chrollo look like the target; touching with both swaps their appearances. The engine behind his crowd of decoys and his own disappearances during the fight.",
     activation:
-      "Touch a target with the right-hand mark (copy his look onto them) or both marks (swap looks).",
+      "Touch with the right-hand mark to copy Chrollo's look onto a target, the left-hand mark to copy the target's look onto Chrollo, or both to swap appearances.",
     effects: [
       "Disguises a target as Chrollo — or Chrollo as the target.",
       "Combined with Black Voice, produces puppeted Chrollo-lookalikes as bait.",
@@ -1979,6 +1979,256 @@ export const nenAbilities: NenAbility[] = [
       {
         chapter: 352,
         note: "Named and its two-mark mechanic explained on-page during the duel.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "parallel-future",
+    name: "Parallel Future",
+    userCharacterId: "tserriednich",
+    kind: "personal",
+    nenType: "specialist",
+    description:
+      "Tserriednich's Zetsu-borne future sight. Closing his eyes in Zetsu gives him an instantaneous vision of the next ten seconds; if he remains in Zetsu, real time resumes while the vision continues ten seconds ahead.",
+    activation: "Close both eyes and fully enter Zetsu.",
+    conditions: [
+      "The initial prediction always covers the next ten seconds.",
+      "Maintaining closed-eye Zetsu keeps the vision running ten seconds ahead of reality.",
+    ],
+    restrictions: [
+      "Zetsu suppresses his aura defenses while the ability activates.",
+      "Its practical speed depends on how quickly he can enter Zetsu.",
+    ],
+    effects: [
+      "Shows Tserriednich the next ten seconds instantaneously.",
+      "Everyone seen in the vision experiences the predicted sequence even when Tserriednich changes his own actions.",
+      "Lets Tserriednich move outside the perceived future while other observers register the original outcome.",
+    ],
+    weaknesses: [
+      "The activation window leaves him physically vulnerable until his Zetsu speed is sufficiently trained.",
+    ],
+    range: "Events within the vision's field of perception",
+    targets: "Tserriednich and people included in the prediction",
+    firstSeenCh: 385,
+    revealCh: 387,
+    uses: [
+      {
+        ch: 385,
+        note: "Theta's point-blank shot appears to kill him, but the body is an outcome only she perceives.",
+      },
+      {
+        ch: 387,
+        note: "Tserriednich reconstructs the two-stage, ten-second mechanism and begins training its activation speed.",
+      },
+    ],
+    status: "active",
+    awareCharacterIds: [{ characterId: "tserriednich", sinceCh: 387 }],
+    affectedCharacterIds: ["theta"],
+    evidence: [
+      {
+        chapter: 387,
+        note: "Tserriednich tests and narrates the instantaneous ten-second vision and the parallel continuation that follows it.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "luini-teleportation",
+    name: "Luini's Spatial Teleportation (unnamed)",
+    userCharacterId: "luini",
+    kind: "personal",
+    nenType: "emitter",
+    description:
+      "From a sealed room with one door and impenetrable walls, Luini opens passages through walls or floors to places he has previously visited and marked, with the sealed room serving as his return point.",
+    activation:
+      "Seal a one-door room, then open a passage through one of its walls or its floor.",
+    conditions: [
+      "The origin must be a sealed room with exactly one door and walls that cannot be breached.",
+      "Destinations must be places Luini has visited and marked.",
+    ],
+    restrictions: [
+      "If the origin door opens, the ability resets and that room can never be used again.",
+      "Travel outside the Black Whale was never safely tested.",
+    ],
+    effects: [
+      "Opens portals from the sealed origin to marked locations.",
+      "Lets Luini return to the origin from any reached location while the seal holds.",
+    ],
+    firstSeenCh: 379,
+    revealCh: 379,
+    uses: [
+      {
+        ch: 379,
+        note: "Uses a marked storeroom to infiltrate the Cha-R warehouse and explains the sealed-room conditions.",
+      },
+      {
+        ch: 393,
+        note: "Surfaces through the Cha-R office wall to pitch an alliance to the Phantom Troupe.",
+      },
+    ],
+    status: "inactive",
+    evidence: [
+      {
+        chapter: 379,
+        note: "Luini states the one-door seal, marked-destination, return, and reset conditions.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "sweet-home",
+    name: 'Damage: "Sweet Home"',
+    userCharacterId: "terebellum",
+    kind: "personal",
+    nenType: "emitter",
+    description:
+      "Terebellum displaces damage together with the attacking object. His right hand takes damage from what it touches into himself; his left hand transfers it into another touched object.",
+    activation:
+      "Touch the attacked target with the right hand at the instant of damage and a recipient with the left.",
+    conditions: [
+      "The right hand must touch the target when the damage is received.",
+      "A passive self-defense version can transfer damage Terebellum receives while his left hand touches a recipient.",
+    ],
+    restrictions: [
+      "If no recipient is touching his left hand, damage taken through the right manifests in his left hand instead.",
+    ],
+    effects: [
+      "Moves an injury and the embedded attacking object to another target.",
+      "Can protect another person by receiving and redirecting their damage.",
+    ],
+    firstSeenCh: 399,
+    revealCh: 399,
+    uses: [
+      {
+        ch: 399,
+        note: "Moves Hinrigh's knife from his own head into a drink can, then takes Nobunaga's strike away from Yokotani.",
+      },
+    ],
+    status: "active",
+    awareCharacterIds: [
+      { characterId: "terebellum", sinceCh: 399 },
+      { characterId: "hinrigh", sinceCh: 399 },
+      { characterId: "nobunaga", sinceCh: 399 },
+      { characterId: "yokotani", sinceCh: 399 },
+    ],
+    evidence: [
+      {
+        chapter: 399,
+        note: "The right-hand intake, left-hand transfer, timing condition, and fallback injury are narrated during the hideout fight.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "lsdf",
+    name: 'A Battle of Wits: "LSDF"',
+    userCharacterId: "yokotani",
+    kind: "personal",
+    nenType: "conjurer",
+    description:
+      "A hideout-only defense that conjures automated legal guards. Once Yokotani identifies himself to unlawful intruders, the guards charge them with their real offenses and expel them from Morena's base.",
+    activation:
+      "Inside the hideout with Morena present, Yokotani identifies himself to intruders who have broken the law.",
+    conditions: [
+      "Usable only in the Heil-Ly hideout while Morena is present.",
+      "Targets must be unlawful intruders whom Yokotani has identified.",
+    ],
+    restrictions: [
+      "The guards cannot injure their targets; their jurisdiction is restraint and expulsion.",
+    ],
+    effects: [
+      "Conjures autonomous guards whose level rises with the severity of the target's crimes.",
+      "Makes the guards immune to attacks from charged targets.",
+      "Restrains, disarms, and removes convicted intruders from the premises.",
+    ],
+    firstSeenCh: 399,
+    revealCh: 399,
+    uses: [
+      {
+        ch: 399,
+        note: "Charges Nobunaga and Hinrigh with trespass and attempted murder, then expels both from the hideout.",
+      },
+    ],
+    status: "active",
+    awareCharacterIds: [
+      { characterId: "yokotani", sinceCh: 399 },
+      { characterId: "terebellum", sinceCh: 399 },
+      { characterId: "hinrigh", sinceCh: 399 },
+      { characterId: "nobunaga", sinceCh: 399 },
+    ],
+    evidence: [
+      {
+        chapter: 399,
+        note: "The location condition, legal trigger, invulnerability, scaling level, and expulsion effect are stated on-page.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "voconte-door",
+    name: "Door",
+    userCharacterId: "voconte",
+    kind: "personal",
+    nenType: "emitter",
+    description:
+      "A prepared-threshold teleportation trap linking Room 3101 and doors inside the Heil-Ly hideout. Crossing an active frame moves people, but not thrown weapons or Yokotani's conjured guards.",
+    activation:
+      "Prepare a doorway as a land-mine-type teleportation trigger linked to the hideout.",
+    conditions: [
+      "The demonstrated triggers are fixed to specific doorframes.",
+      "Only people are confirmed to be transported.",
+    ],
+    effects: [
+      "Teleports entrants from Room 3101 into the hideout's processing area.",
+      "Provides a return doorway from the hideout to Room 3101.",
+      "Connects internal hideout rooms to processing.",
+    ],
+    weaknesses: [
+      "Weapons thrown through the frame are not transported.",
+      "The fixed trigger can be recognized and tested from outside.",
+    ],
+    firstSeenCh: 393,
+    revealCh: 393,
+    uses: [
+      {
+        ch: 393,
+        note: "Voconte proposes using his Door to catch victims after Luini's loss; Room 3101 then swallows Maizan.",
+      },
+      {
+        ch: 394,
+        note: "Tassi is delivered through the trap; Terebellum says Voconte linked the laundry room directly to processing.",
+      },
+      {
+        ch: 398,
+        note: "Nobunaga and Hinrigh analyze Room 3101's doorway as a fixed land-mine-type teleport.",
+      },
+      {
+        ch: 399,
+        note: "The hideout-side door returns expelled intruders to Room 3101 while weapons and LSDF dolls pass differently.",
+      },
+    ],
+    status: "active",
+    awareCharacterIds: [
+      { characterId: "voconte", sinceCh: 394 },
+      { characterId: "terebellum", sinceCh: 394 },
+      { characterId: "hinrigh", sinceCh: 398 },
+      { characterId: "nobunaga", sinceCh: 398 },
+    ],
+    evidence: [
+      {
+        chapter: 393,
+        note: "Voconte identifies Door as his replacement transport method after Luini's death.",
+        confidence: "canonical",
+      },
+      {
+        chapter: 399,
+        note: "The paired door behavior and person-only transport limits are demonstrated.",
         confidence: "canonical",
       },
     ],

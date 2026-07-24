@@ -6,7 +6,11 @@ import { useRouter } from "next/navigation";
 import { useMemo } from "react";
 import { ArchiveNote, SectionHeading } from "@/components/ui/kit";
 import { storylines } from "@/lib/db";
-import { latestStamp } from "@/lib/spoiler";
+import {
+  currentIntelText,
+  currentIntelVisible,
+  latestStamp,
+} from "@/lib/spoiler";
 import { useEffectiveChapter } from "@/lib/store";
 import { ARC_END, ARC_START, type Storyline } from "@/lib/types";
 
@@ -56,6 +60,7 @@ interface Lane {
 export default function StorylinesPage() {
   const ch = useEffectiveChapter();
   const router = useRouter();
+  const showCurrentAnalysis = currentIntelVisible(ch);
 
   const { lanes, sealedCount } = useMemo(() => {
     const visible: Storyline[] = storylines
@@ -447,7 +452,8 @@ export default function StorylinesPage() {
                     </span>
                   </div>
                   <p className="mt-1.5 line-clamp-3 flex-1 text-xs leading-relaxed text-muted">
-                    {s.summary}
+                    {currentIntelText(s.summary, ch) ??
+                      "Current-state overview sealed at this clearance."}
                   </p>
                   <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 border-t border-line/60 pt-2 font-mono text-[10px] uppercase tracking-widest text-muted">
                     <span>
@@ -457,13 +463,16 @@ export default function StorylinesPage() {
                     <span
                       style={{
                         color:
-                          s.openQuestions.length > 0
+                          showCurrentAnalysis && s.openQuestions.length > 0
                             ? "var(--gold)"
                             : "var(--faint)",
                       }}
                     >
-                      {s.openQuestions.length} open question
-                      {s.openQuestions.length === 1 ? "" : "s"}
+                      {showCurrentAnalysis ? s.openQuestions.length : 0} open
+                      question
+                      {(showCurrentAnalysis ? s.openQuestions.length : 0) === 1
+                        ? ""
+                        : "s"}
                     </span>
                     {/* Plain text ref — a nested link inside the card link is invalid HTML. */}
                     <span className="text-teal">CH.{s.introducedCh}</span>

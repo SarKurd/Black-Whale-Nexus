@@ -610,7 +610,7 @@ export const events: StoryEvent[] = [
     id: "ev-352-convert-hands",
     title: "The last borrowed ability: Convert Hands",
     summary:
-      "Chrollo shows the fifth stolen tool — Convert Hands, an arrow on each palm: touch a target with the right to reshape their appearance, the left to change their behavior. With Black Voice, Order Stamp, Gallery Fake, The Sun and Moon, and Convert Hands all live through the Double Face bookmark, Hisoka faces a five-ability engine he must reverse-engineer under fire.",
+      "Chrollo shows the fifth stolen tool — Convert Hands, an arrow on each palm: his right hand makes a target look like Chrollo, while his left makes Chrollo look like the target; touching with both swaps their appearances. Double Face lets him keep one ability active while opening another page, allowing the five-tool plan to operate as a sequence rather than all at once.",
     chapter: 352,
     kind: "nen-reveal",
     locationId: "heavens-arena",
@@ -2000,7 +2000,7 @@ export const events: StoryEvent[] = [
     day: 5,
     kind: "nen-reveal",
     locationId: "heil-ly-territory",
-    participantIds: ["morena"],
+    participantIds: ["morena", "terebellum", "yokotani", "voconte"],
     storylineIds: ["heil-ly-morena", "mafia-war"],
     knowledgeChanges: [
       {
@@ -2349,7 +2349,7 @@ export const events: StoryEvent[] = [
     id: "ev-386-shikaku-suicide",
     title: "'Long live Prince Benjamin' — Shikaku's body dies",
     summary:
-      "Sumidori-in-Shikaku rings Luzurus's doorbell, shouts loyalty to Benjamin, and shoots himself — a staged suicide at a staged address. Sumidori wakes safely in his own body; Shikaku is dead, and Benjamin now names Halkenburg his biggest threat.",
+      "Sumidori-in-Shikaku rings Luzurus's doorbell, shouts loyalty to Benjamin, and shoots the body in the head — a staged suicide at a staged address. The body left in Halkenburg's quarters then wakes, but whose mind returned is not disclosed; Benjamin names Halkenburg his biggest threat while the experiment's result remains sealed until chapter 404.",
     chapter: 386,
     day: 9,
     kind: "death",
@@ -2362,7 +2362,6 @@ export const events: StoryEvent[] = [
       "balsamilco",
       "basho",
     ],
-    casualtyIds: ["shikaku"],
     storylineIds: [
       "halkenburg-movement",
       "benjamin-military",
@@ -2781,7 +2780,7 @@ export const events: StoryEvent[] = [
     day: 10,
     kind: "conversation",
     locationId: "tier-3",
-    participantIds: ["tserriednich"],
+    participantIds: ["tserriednich", "borksen"],
     storylineIds: ["heil-ly-morena", "ship-security-crisis"],
     confidence: "canonical",
   },
@@ -2890,7 +2889,13 @@ export const events: StoryEvent[] = [
     day: 10,
     kind: "battle",
     locationId: "hidden-passage-network",
-    participantIds: ["nobunaga", "hinrigh"],
+    participantIds: [
+      "nobunaga",
+      "hinrigh",
+      "terebellum",
+      "yokotani",
+      "voconte",
+    ],
     storylineIds: ["heil-ly-morena", "mafia-war"],
     consequences: [
       "The hideout's defense rewards non-aggression: the more serious the crime, the stronger the guards",
@@ -3451,7 +3456,7 @@ export const events: StoryEvent[] = [
     approxTime: "1:00 p.m.",
     kind: "movement",
     locationId: "tier-3",
-    participantIds: ["morena"],
+    participantIds: ["morena", "borksen"],
     storylineIds: ["heil-ly-morena"],
     confidence: "canonical",
   },
@@ -3464,7 +3469,7 @@ export const events: StoryEvent[] = [
     day: 12,
     kind: "other",
     locationId: "hidden-passage-network",
-    participantIds: ["morena"],
+    participantIds: ["morena", "borksen", "yokotani", "voconte"],
     storylineIds: ["heil-ly-morena"],
     confidence: "canonical",
   },
@@ -3481,7 +3486,7 @@ export const events: StoryEvent[] = [
     day: 12,
     kind: "discovery",
     locationId: "hidden-passage-network",
-    participantIds: ["morena"],
+    participantIds: ["morena", "borksen", "yokotani", "voconte"],
     storylineIds: ["heil-ly-morena"],
     consequences: [
       "The carnival still runs: a '20-year batch of orphans arrived last year — Kakin has not changed",
@@ -3497,7 +3502,7 @@ export const events: StoryEvent[] = [
     day: 12,
     kind: "nen-reveal",
     locationId: "hidden-passage-network",
-    participantIds: ["morena"],
+    participantIds: ["morena", "borksen", "yokotani", "voconte"],
     storylineIds: ["heil-ly-morena"],
     knowledgeChanges: [
       {
@@ -3518,7 +3523,7 @@ export const events: StoryEvent[] = [
     approxTime: "2:15 p.m.",
     kind: "other",
     locationId: "black-whale",
-    participantIds: ["morena"],
+    participantIds: ["morena", "borksen", "yokotani", "voconte"],
     storylineIds: ["special-martial-law", "heil-ly-morena"],
     knowledgeChanges: [
       {
@@ -3542,7 +3547,7 @@ export const events: StoryEvent[] = [
     day: 12,
     kind: "other",
     locationId: "black-whale",
-    participantIds: ["morena"],
+    participantIds: ["morena", "borksen", "yokotani", "voconte"],
     storylineIds: ["special-martial-law", "ship-security-crisis"],
     confidence: "canonical",
   },
@@ -3555,7 +3560,7 @@ export const events: StoryEvent[] = [
     day: 12,
     kind: "discovery",
     locationId: "hidden-passage-network",
-    participantIds: ["morena"],
+    participantIds: ["morena", "borksen", "yokotani", "voconte"],
     storylineIds: ["heil-ly-morena"],
     knowledgeChanges: [
       { factId: "fact-hidden-passages", characterId: "morena", state: "knows" },
@@ -3571,7 +3576,7 @@ export const events: StoryEvent[] = [
     day: 12,
     kind: "other",
     locationId: "hidden-passage-network",
-    participantIds: ["morena"],
+    participantIds: ["morena", "borksen", "yokotani", "voconte"],
     storylineIds: ["heil-ly-morena"],
     confidence: "canonical",
   },
@@ -3588,7 +3593,7 @@ export const events: StoryEvent[] = [
     day: 12,
     kind: "betrayal",
     locationId: "hidden-passage-network",
-    participantIds: ["morena"],
+    participantIds: ["morena", "borksen", "yokotani", "voconte"],
     storylineIds: ["heil-ly-morena"],
     consequences: [
       "Morena gains her specialist — and a mole who intends to fight from inside",
@@ -3760,6 +3765,7 @@ export const events: StoryEvent[] = [
       "bill",
       "shimano",
       "woble",
+      "woble-substitute",
       "sakata",
       "babimyna",
     ],
@@ -3919,12 +3925,12 @@ export const events: StoryEvent[] = [
   // -------------------------------------------------------------------------
   {
     id: "ev-414-kanjidol-murders",
-    title: "Kanjidol kills Luzurus's sleeping guards",
+    title: "Kanjidol attacks Luzurus's sleeping guards",
     summary:
-      "Fifteen minutes before the deadline, Kanjidol knifes two of Luzurus's bodyguards in their bunks, savoring it — martial law means never having to think again. Behind him, one 'corpse' slowly raises an arm.",
+      "Fifteen minutes before the deadline, Kanjidol stabs two of Luzurus's bodyguards in their bunks, savoring it — martial law means never having to think again. Behind him, the lower-bunk victim slowly raises an arm, leaving both outcomes unresolved.",
     chapter: 414,
     day: 12,
-    kind: "death",
+    kind: "assassination-attempt",
     locationId: "room-1007",
     participantIds: ["kanjidol"],
     storylineIds: [
@@ -3949,9 +3955,9 @@ export const events: StoryEvent[] = [
   },
   {
     id: "ev-414-ridge-kanjidol",
-    title: "Ridge finds the bodies — and Kanjidol",
+    title: "Ridge finds the victims — and Kanjidol",
     summary:
-      "Ridge opens the servants' quarters on Kanjidol kneeling over a corpse. 'Self-defense,' says the man with the knife. Both flare their aura; both jump. The first Hunter-versus-soldier fight of martial law begins over two murdered sleepers.",
+      "Ridge opens the servants' quarters on Kanjidol kneeling over a bleeding guard. 'Self-defense,' says the man with the knife. Both flare their aura; both jump. The first Hunter-versus-soldier fight of martial law begins while the victims' conditions remain unknown.",
     chapter: 414,
     day: 12,
     kind: "battle",
@@ -3986,7 +3992,14 @@ export const events: StoryEvent[] = [
     day: 12,
     kind: "conversation",
     locationId: "room-1014",
-    participantIds: ["kurapika", "oito", "bill", "shimano", "woble"],
+    participantIds: [
+      "kurapika",
+      "oito",
+      "bill",
+      "shimano",
+      "woble",
+      "woble-substitute",
+    ],
     storylineIds: ["kurapika-woble", "beyond-netero"],
     knowledgeChanges: [
       { factId: "fact-beyond-curse", characterId: "oito", state: "was-told" },

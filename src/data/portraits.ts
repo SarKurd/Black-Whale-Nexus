@@ -2,6 +2,7 @@
  * Portrait manifest — one-time locally committed asset set (107 files).
  * Black-and-white manga artwork sourced from Hunterpedia (Manga tab where
  * available), converted to grayscale JPEG for this unofficial fan project.
+ * The two Woble identities share the onboard infant image.
  */
 export const portraits: Record<string, string> = {
   babimyna: "/portraits/babimyna.jpg",
@@ -106,6 +107,7 @@ export const portraits: Record<string, string> = {
   vergei: "/portraits/vergei.jpg",
   vict: "/portraits/vict.jpg",
   woble: "/portraits/woble.jpg",
+  "woble-substitute": "/portraits/woble.jpg",
   woody: "/portraits/woody.jpg",
   yuhirai: "/portraits/yuhirai.jpg",
   yushohi: "/portraits/yushohi.jpg",

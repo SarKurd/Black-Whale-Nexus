@@ -65,6 +65,13 @@ Every load-bearing claim carries `evidence` + a `confidence` class:
 `canonical | strong-inference | weak-inference | theory | unknown`. Be honest —
 `canonical` only for things shown on-page.
 
+Unstamped `bio` and faction/storyline summary fields describe the archive's
+current state and are hidden below `ARC_END`; rewound views use their stamped
+histories and addenda. Chapter `appearingCharacterIds` must reflect what the
+reader can identify at that chapter. A character dossier's
+`chapterAppearances` may point back before `introducedCh` after a retroactive
+identity reveal (the Woble substitute is the canonical example).
+
 ## Files (`src/data/`)
 
 **Live counts and chapter coverage: see [`DATA_STATS.md`](DATA_STATS.md)** —
@@ -113,7 +120,9 @@ Black-and-white **manga** artwork, one-time fetch, committed under
 wiki infobox's **Manga tab**; grayscale everything for a uniform look. To add a
 new character's portrait: fetch the manga image, `sips` it to grayscale JPEG,
 regenerate the manifest, keep it a one-time committed asset (no fetch script in
-the repo). All 106 characters currently have one.
+the repo). The committed set currently has 107 files. The two Woble identities
+share the onboard infant image; Terebellum, Yokotani, Voconte, and Borksen use
+the monogram fallback until verified manga portraits are added.
 
 ## Running / previewing
 
@@ -134,10 +143,10 @@ prod server. The user often has their own dev server on 3000; don't fight it.
   Sevanti (Q7); Woble → Oito (Q8).
 - **Mind-swap deaths (Halkenburg's arrow, "Grimmel the Dissonance"):** the arrow
   swaps two minds; only one is awake at a time; body-death ≠ soul-death.
-  - `death-sumidori` (ch 386): Sumidori's *soul*, awake in Shikaku's body,
-    died in the staged suicide. Shikaku's own soul sleeps on in Sumidori's
-    body → Shikaku is `presumed-dead`, deliberately has **no** death record
-    (would double-count the same event).
+  - `death-sumidori` occurred in ch 386 but is `revealCh: 404`: Sumidori's
+    *soul*, awake in Shikaku's body, died in the staged suicide. Shikaku's own
+    soul sleeps on in Sumidori's body → Shikaku is `presumed-dead`,
+    deliberately has **no** death record (would double-count the same event).
   - **Vict** (ch 389): arrow displaced his mind; body lives on possessed →
     status `possessed`, **no** death record by design.
   - Halkenburg (ch 404): his own body poisoned with TSK-17 from inside
@@ -155,7 +164,9 @@ prod server. The user often has their own dev server on 3000; don't fight it.
   question.
 - **Hisoka**: dead ch 356 (Heavens Arena), self-revived ch 357 (Bungee Gum
   pre-set to restart his heart), missing/aboard since. On-page ch 405 in the
-  Tier 1 casino.
+  Tier 1 casino. The death ledger tracks lasting deaths, so temporary deaths
+  followed by on-page revival (Hisoka and Camilla) stay in chapter/status
+  history rather than receiving a `DeathRecord`.
 - **Little Eye reconnaissance flew on a fly then a COCKROACH** (chs 367–368),
   NOT a rat. Stolen from Sayird ch 361, lent to Oito via Stealth Dolphin ch
   364, returned after one use ch 369. (The "rat" phrasing was an early
@@ -180,11 +191,12 @@ prod server. The user often has their own dev server on 3000; don't fight it.
 
 These named characters are deliberately **NOT** in the registry (referenced in
 prose only) because they're minor/one-appearance: Vincent, Wolfe,
-Myuhan, Keeney, Tajao, Borksen, Cavic, Sodom, Padaille, Sandra, Saquelle, plus
+Myuhan, Keeney, Tajao, Cavic, Sodom, Padaille, Sandra, Saquelle, plus
 Momoze's other guards (Bladge, Laroc, Nagmum). If a future arc promotes one,
 add it then — don't add death records or edges for non-registry names.
-(Tuffdy was promoted into the registry so `death-momoze` could name its killer;
-see the Momoze canon note above.)
+Tuffdy was promoted so `death-momoze` could name its killer. Borksen,
+Terebellum, Yokotani, and Voconte are also registry characters because their
+roles or documented Nen abilities recur across the late-arc record.
 
 For a killer/cause that is genuinely NOT a person — e.g. Kacho killed by the
 ritual's horde of hands for fleeing the ship — use the `DeathRecord.killerName`
@@ -201,7 +213,3 @@ abilities). The reliable sweep:
 3. Diff each chapter's real appearance list against `appearingCharacterIds`.
 4. Run the cross-cutting checks: dead-without-killer-edge, guard-roster vs
    "serves" edges, secrets/bioReveals without a knowledge fact, stale statuses.
-
-An in-progress deep review (4 parallel agents, chapters 340–366 / 367–388 /
-389–414 / cross-cutting) was running at the last session; check
-`docs/REVIEW_FINDINGS.md` if it exists for their output.

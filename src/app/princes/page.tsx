@@ -18,7 +18,7 @@ import {
   princes,
   sortedChapters,
 } from "@/lib/db";
-import { statusAt } from "@/lib/spoiler";
+import { currentIntelText, statusAt } from "@/lib/spoiler";
 import { useEffectiveChapter } from "@/lib/store";
 import type { Character, Prince } from "@/lib/types";
 import { ARC_START } from "@/lib/types";
@@ -325,7 +325,9 @@ function StrategicTable({ intel, ch }: { intel: PrinceIntel[]; ch: number }) {
                   )}
                 </td>
                 <td className="min-w-[220px] px-3 py-2 text-xs text-parchment">
-                  {p.publicStrategy}
+                  {currentIntelText(p.publicStrategy, ch) ?? (
+                    <span className="text-faint">Sealed</span>
+                  )}
                 </td>
                 <td className="min-w-[220px] px-3 py-2 text-xs">
                   {hiddenRevealed ? (

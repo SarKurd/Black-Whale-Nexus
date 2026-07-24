@@ -348,7 +348,7 @@ export const factions: Faction[] = [
       {
         ch: 414,
         value:
-          "Under direct assault from within: Benjamin's plant Kanjidol kills two guards in their bunks; Ridge engages him.",
+          "Under direct assault from within: Benjamin's plant Kanjidol stabs two guards in their bunks, with both outcomes unresolved; Ridge engages him.",
       },
     ],
     introducedCh: 358,

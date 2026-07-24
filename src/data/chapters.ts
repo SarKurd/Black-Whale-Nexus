@@ -131,7 +131,6 @@ export const chapters: ChapterInfo[] = [
       "cluck",
       "saiyu",
       "ginta",
-      "nasubi",
       "ging",
       "pariston",
     ],
@@ -169,10 +168,10 @@ export const chapters: ChapterInfo[] = [
       "pariston",
       "mizaistom",
       "kurapika",
-      "tserriednich",
     ],
     locationIds: [],
     storylineIds: ["expedition-prep"],
+    abilitiesUsedIds: ["cross-game"],
     changes: {
       newCharacters: ["leorio", "kurapika", "tserriednich"],
       newRelationships: [
@@ -239,7 +238,6 @@ export const chapters: ChapterInfo[] = [
       "gon",
       "pariston",
       "tserriednich",
-      "nasubi",
       "cheadle",
       "beyond",
       "saccho",
@@ -348,8 +346,6 @@ export const chapters: ChapterInfo[] = [
       "ev-348-saiyu-mole",
     ],
     appearingCharacterIds: [
-      "nasubi",
-      "beyond",
       "cheadle",
       "kurapika",
       "mizaistom",
@@ -357,11 +353,6 @@ export const chapters: ChapterInfo[] = [
       "benjamin",
       "salkov",
       "theta",
-      "tyson",
-      "luzurus",
-      "ging",
-      "pariston",
-      "leorio",
       "saccho",
       "ginta",
       "saiyu",
@@ -432,6 +423,7 @@ export const chapters: ChapterInfo[] = [
     ],
     locationIds: ["kakin-palace", "hunter-hq"],
     storylineIds: ["succession-contest", "expedition-prep", "beyond-netero"],
+    abilitiesUsedIds: ["three-monkeys"],
     changes: {
       newCharacters: [
         "camilla",
@@ -482,12 +474,6 @@ export const chapters: ChapterInfo[] = [
       "halkenburg",
       "oito",
       "woble",
-      "tyson",
-      "kacho",
-      "marayam",
-      "luzurus",
-      "momoze",
-      "nasubi",
     ],
     locationIds: ["kakin-palace"],
     storylineIds: ["expedition-prep", "succession-contest", "kurapika-woble"],
@@ -544,7 +530,13 @@ export const chapters: ChapterInfo[] = [
     appearingCharacterIds: ["hisoka", "chrollo"],
     locationIds: ["heavens-arena"],
     storylineIds: ["heavens-arena-duel"],
-    abilitiesUsedIds: ["gallery-fake", "black-voice", "bungee-gum"],
+    abilitiesUsedIds: [
+      "gallery-fake",
+      "black-voice",
+      "bungee-gum",
+      "skill-hunter",
+      "order-stamp",
+    ],
     changes: {
       newAbilities: [
         "Order Stamp: vocal-command control of 'puppets' — including Gallery Fake copies of corpses",
@@ -567,7 +559,12 @@ export const chapters: ChapterInfo[] = [
     appearingCharacterIds: ["hisoka", "chrollo"],
     locationIds: ["heavens-arena"],
     storylineIds: ["heavens-arena-duel"],
-    abilitiesUsedIds: ["gallery-fake", "bungee-gum"],
+    abilitiesUsedIds: [
+      "gallery-fake",
+      "bungee-gum",
+      "sun-and-moon",
+      "order-stamp",
+    ],
     changes: {
       newThreats: [
         "The audience is now ammunition: every spectator is a potential puppet",
@@ -586,7 +583,12 @@ export const chapters: ChapterInfo[] = [
     appearingCharacterIds: ["hisoka", "chrollo"],
     locationIds: ["heavens-arena"],
     storylineIds: ["heavens-arena-duel"],
-    abilitiesUsedIds: ["bungee-gum", "sun-and-moon"],
+    abilitiesUsedIds: [
+      "bungee-gum",
+      "sun-and-moon",
+      "black-voice",
+      "convert-hands",
+    ],
     changes: {
       newKnowledge: [
         "A copy marked by The Sun and Moon persists after Gallery Fake is released",
@@ -611,6 +613,7 @@ export const chapters: ChapterInfo[] = [
       "black-voice",
       "sun-and-moon",
       "gallery-fake",
+      "skill-hunter",
     ],
     changes: {
       newKnowledge: [
@@ -630,7 +633,12 @@ export const chapters: ChapterInfo[] = [
     appearingCharacterIds: ["chrollo", "hisoka"],
     locationIds: ["heavens-arena"],
     storylineIds: ["heavens-arena-duel"],
-    abilitiesUsedIds: ["sun-and-moon", "black-voice", "bungee-gum"],
+    abilitiesUsedIds: [
+      "sun-and-moon",
+      "black-voice",
+      "bungee-gum",
+      "order-stamp",
+    ],
     changes: {
       deaths: ["hisoka"],
       newKnowledge: [
@@ -783,6 +791,15 @@ export const chapters: ChapterInfo[] = [
       "ev-359-dowsing-standoff",
     ],
     appearingCharacterIds: [
+      "gel",
+      "pyon",
+      "ginta",
+      "cluck",
+      "saiyu",
+      "saccho",
+      "kanzai",
+      "leorio",
+      "botobai",
       "kurapika",
       "oito",
       "woble",
@@ -811,9 +828,10 @@ export const chapters: ChapterInfo[] = [
       "kacho-fugetsu",
       "beyond-netero",
     ],
-    abilitiesUsedIds: ["dowsing-chain"],
+    abilitiesUsedIds: ["dowsing-chain", "texture-surprise"],
     changes: {
       newCharacters: ["sevanti", "melody", "nugui"],
+      deaths: ["woody"],
       newThreats: [
         "An unseen killer drains guards inside a sealed, watched suite",
       ],
@@ -842,8 +860,6 @@ export const chapters: ChapterInfo[] = [
       "shimano",
       "oito",
       "woble",
-      "melody",
-      "biscuit",
     ],
     locationIds: ["room-1014"],
     storylineIds: ["kurapika-woble", "silent-majority", "succession-contest"],
@@ -875,6 +891,7 @@ export const chapters: ChapterInfo[] = [
       "sayird",
       "bill",
       "oito",
+      "woble",
       "sevanti",
       "momoze",
       "marayam",
@@ -1161,6 +1178,7 @@ export const chapters: ChapterInfo[] = [
       "maor",
       "theta",
       "loberry",
+      "tuffdy",
       "swinko-swinko",
       "duazul",
     ],
@@ -1240,6 +1258,7 @@ export const chapters: ChapterInfo[] = [
       "bill",
       "oito",
       "momoze",
+      "tuffdy",
       "sevanti",
       "vergei",
       "babimyna",
@@ -1260,7 +1279,7 @@ export const chapters: ChapterInfo[] = [
       "ship-security-crisis",
       "nen-classes",
     ],
-    abilitiesUsedIds: ["emperor-time"],
+    abilitiesUsedIds: ["emperor-time", "little-eye"],
     changes: {
       deaths: ["momoze"],
       newKnowledge: [
@@ -1349,6 +1368,7 @@ export const chapters: ChapterInfo[] = [
       "yuhirai",
       "tenftory",
       "longhi",
+      "ladiolus",
     ],
     locationIds: ["room-1014"],
     storylineIds: ["silent-majority", "nen-classes", "benjamin-military"],
@@ -1386,6 +1406,7 @@ export const chapters: ChapterInfo[] = [
       "nobunaga",
       "machi",
       "chrollo",
+      "momoze",
       "sakata",
       "hashito",
       "oito",
@@ -1458,6 +1479,7 @@ export const chapters: ChapterInfo[] = [
       "melody",
       "sevanti",
       "rihan",
+      "tuffdy",
       "babimyna",
       "satobi",
       "tenftory",
@@ -1471,6 +1493,7 @@ export const chapters: ChapterInfo[] = [
       "halkenburg-movement",
       "kurapika-woble",
     ],
+    abilitiesUsedIds: ["the-touch", "hanzo-skill"],
     changes: {
       newCharacters: ["seiko", "kaiser"],
       newKnowledge: [
@@ -1557,6 +1580,7 @@ export const chapters: ChapterInfo[] = [
       "bill",
       "woble",
       "oito",
+      "shimano",
       "yushohi",
     ],
     locationIds: [
@@ -1616,6 +1640,7 @@ export const chapters: ChapterInfo[] = [
       "halkenburg-movement",
       "kurapika-woble",
     ],
+    abilitiesUsedIds: ["ab-beast-marayam"],
     changes: {
       newKnowledge: [
         "Room 1013 is a one-way Nen space: leavers can never return",
@@ -1658,6 +1683,7 @@ export const chapters: ChapterInfo[] = [
       "bill",
       "coventoba",
       "shikaku",
+      "sumidori",
       "oito",
       "woble",
       "slakka",
@@ -1668,6 +1694,7 @@ export const chapters: ChapterInfo[] = [
       "yuhirai",
       "hashito",
       "longhi",
+      "chiyamasi",
     ],
     locationIds: [
       "tier-1",
@@ -1723,6 +1750,7 @@ export const chapters: ChapterInfo[] = [
     ],
     locationIds: ["kacho-quarters", "tier-5", "cha-r-territory"],
     storylineIds: ["kacho-fugetsu", "troupe-hisoka-hunt", "mafia-war"],
+    abilitiesUsedIds: ["skill-hunter"],
     changes: {
       newCharacters: ["illumi", "shizuku", "bonolenov", "kalluto"],
       newKnowledge: [
@@ -1755,12 +1783,25 @@ export const chapters: ChapterInfo[] = [
       "feitan",
       "mizaistom",
       "luini",
+      "terebellum",
+      "yokotani",
+      "voconte",
     ],
     locationIds: ["tier-5", "heil-ly-territory", "xi-yu-territory"],
     storylineIds: ["mafia-war", "heil-ly-morena", "troupe-hisoka-hunt"],
     abilitiesUsedIds: ["morena-contagion"],
     changes: {
-      newCharacters: ["onior", "brocco", "morena", "hinrigh", "ken-i", "luini"],
+      newCharacters: [
+        "onior",
+        "brocco",
+        "morena",
+        "hinrigh",
+        "ken-i",
+        "luini",
+        "terebellum",
+        "yokotani",
+        "voconte",
+      ],
       newAbilities: [
         "Contagion: a murder-powered leveling network of 23 'children'",
       ],
@@ -1787,6 +1828,7 @@ export const chapters: ChapterInfo[] = [
     ],
     locationIds: ["tier-3", "cha-r-territory"],
     storylineIds: ["heil-ly-morena", "mafia-war", "troupe-hisoka-hunt"],
+    abilitiesUsedIds: ["luini-teleportation"],
     changes: {
       newAbilities: [
         "Luini's transport: marked walls reachable from any sealed one-door room",
@@ -1810,9 +1852,11 @@ export const chapters: ChapterInfo[] = [
     ],
     appearingCharacterIds: [
       "mizaistom",
+      "botobai",
       "illumi",
       "kalluto",
       "fugetsu",
+      "ginta",
       "ken-i",
       "feitan",
       "phinks",
@@ -1856,7 +1900,7 @@ export const chapters: ChapterInfo[] = [
     ],
     locationIds: ["tier-3", "tier-1", "royal-quarters", "kacho-quarters"],
     storylineIds: ["kacho-fugetsu", "benjamin-military", "succession-contest"],
-    abilitiesUsedIds: ["ab-beast-salele"],
+    abilitiesUsedIds: ["ab-beast-salele", "stand-by-me", "predator"],
     changes: {
       newKnowledge: ["The Zodiacs are covertly on the twins' side"],
       newThreats: ["Salé-salé stands beastless with an assassin at his door"],
@@ -1880,6 +1924,7 @@ export const chapters: ChapterInfo[] = [
       "nasubi",
       "nugui",
       "shikaku",
+      "sumidori",
       "benjamin",
       "yushohi",
       "salele",
@@ -1907,7 +1952,7 @@ export const chapters: ChapterInfo[] = [
       "benjamin-military",
       "succession-contest",
     ],
-    abilitiesUsedIds: ["ab-beast-halkenburg", "stand-by-me"],
+    abilitiesUsedIds: ["ab-beast-halkenburg", "stand-by-me", "culdcept"],
     changes: {
       deaths: ["salele"],
       newAbilities: [
@@ -2029,7 +2074,7 @@ export const chapters: ChapterInfo[] = [
     title: "Hypothesis",
     day: "9",
     summary:
-      "Salkov's luminol finds no blood: Theta saw an illusion. Halkenburg, meanwhile, runs controlled experiments on his own ability — brain monitors, four hypotheses about where a swapped soul goes — and sends Sumidori-in-Shikaku to Luzurus's door, where the body shouts loyalty to Benjamin and shoots itself. Sumidori wakes home; Shikaku is dead; Benjamin names Halkenburg his biggest threat. Melody, held at the Bureau, realizes she is being kept there to shield her from princes who have 'invited' her to their suites.",
+      "Salkov's luminol finds no blood: Theta saw an illusion. Halkenburg, meanwhile, runs controlled experiments on his own ability — brain monitors, four hypotheses about where a swapped soul goes — and sends Sumidori-in-Shikaku to Luzurus's door, where the body shouts loyalty to Benjamin and shoots itself. The body in Halkenburg's quarters wakes, but the returning mind is not identified; Benjamin names Halkenburg his biggest threat. Melody, held at the Bureau, realizes she is being kept there to shield her from princes who have 'invited' her to their suites.",
     eventIds: [
       "ev-386-mind-swap-experiments",
       "ev-386-shikaku-suicide",
@@ -2081,7 +2126,7 @@ export const chapters: ChapterInfo[] = [
       "luzurus-investigation",
     ],
     changes: {
-      deaths: ["shikaku"],
+      deaths: [],
       newKnowledge: [
         "Sumidori's soul rode the arrow into Shikaku's body — the ability swaps souls",
         "Kurapika publicly reads as a Specialist via water divination",
@@ -2102,7 +2147,7 @@ export const chapters: ChapterInfo[] = [
     appearingCharacterIds: ["tserriednich", "theta", "salkov"],
     locationIds: ["tserriednich-quarters"],
     storylineIds: ["tserriednich-nen"],
-    abilitiesUsedIds: ["ab-beast-tserriednich"],
+    abilitiesUsedIds: ["ab-beast-tserriednich", "parallel-future"],
     changes: {
       newAbilities: [
         "Future sight: ten seconds of foresight while in total Zetsu",
@@ -2167,7 +2212,7 @@ export const chapters: ChapterInfo[] = [
     title: "Curse",
     day: "9–10",
     summary:
-      "Balsamilco dissects the Shikaku incident and states his cornerstone theory: princes — and their beasts — cannot directly kill princes, so Halkenburg's beast would never back a regicide ability. Vict's garbled scream over the radio proves him half right: Shikaku is dead, Vict alive but taken. Halkenburg is arrested to sever him from his men. And Camilla's Have-Not guards are revealed as curse assassins — one per rival prince — with Sarahell assigning herself to Woble via Kurapika's classes.",
+      "Balsamilco dissects the Shikaku incident and states his cornerstone theory: princes — and their beasts — cannot directly kill princes, so Halkenburg's beast would never back a regicide ability. Vict's garbled scream over the radio leaves Shikaku presumed dead and Vict alive but taken. Halkenburg is arrested to sever him from his men. And Camilla's Have-Not guards are revealed as curse assassins — one per rival prince — with Sarahell assigning herself to Woble via Kurapika's classes.",
     eventIds: [
       "ev-389-balsamilco-analysis",
       "ev-389-vict-taken",
@@ -2180,7 +2225,6 @@ export const chapters: ChapterInfo[] = [
       "balsamilco",
       "benjamin",
       "kanjidol",
-      "vict",
       "halkenburg",
       "camilla",
       "sarahell",
@@ -2207,6 +2251,7 @@ export const chapters: ChapterInfo[] = [
       "succession-contest",
       "luzurus-investigation",
     ],
+    abilitiesUsedIds: ["benjamin-baton"],
     changes: {
       newCharacters: ["fukataki"],
       newKnowledge: [
@@ -2243,6 +2288,7 @@ export const chapters: ChapterInfo[] = [
     ],
     locationIds: ["tier-1", "tier-4", "tier-3"],
     storylineIds: ["mafia-war", "heil-ly-morena", "succession-contest"],
+    abilitiesUsedIds: ["body-and-soul", "bloody-mary"],
     changes: {
       newCharacters: ["lynch", "zakuro"],
       newKnowledge: [
@@ -2262,6 +2308,7 @@ export const chapters: ChapterInfo[] = [
     appearingCharacterIds: ["hinrigh", "zakuro", "lynch"],
     locationIds: ["tier-3"],
     storylineIds: ["mafia-war", "heil-ly-morena"],
+    abilitiesUsedIds: ["biohazard"],
     changes: {
       newKnowledge: [
         "Morena's initiates are refined but green — veterans still out-fight them",
@@ -2293,6 +2340,7 @@ export const chapters: ChapterInfo[] = [
     ],
     locationIds: ["tier-3", "cha-r-territory"],
     storylineIds: ["mafia-war", "troupe-hisoka-hunt", "heil-ly-morena"],
+    abilitiesUsedIds: ["body-and-soul"],
     changes: {
       newKnowledge: [
         "An off-blueprint room exists behind Room 3101",
@@ -2322,11 +2370,16 @@ export const chapters: ChapterInfo[] = [
       "zakuro",
       "morena",
       "bonolenov",
+      "voconte",
     ],
     locationIds: ["cha-r-territory", "tier-3"],
     storylineIds: ["troupe-hisoka-hunt", "heil-ly-morena", "mafia-war"],
+    abilitiesUsedIds: ["luini-teleportation", "voconte-door"],
     changes: {
       deaths: ["luini"],
+      newAbilities: [
+        "Door: Voconte's prepared thresholds connect Room 3101 to the Heil-Ly hideout",
+      ],
       newRelationships: [
         "The Troupe and both mafia families align against the Heil-Ly",
       ],
@@ -2343,10 +2396,20 @@ export const chapters: ChapterInfo[] = [
     summary:
       "Morena preps her next moves: capture one of Tserriednich's personal soldiers and infect them as a tracking device, with the back-alley doctor Sodom and the wrestler Dogman assigned. Meanwhile five ordinary soldiers on Tier 3 — Tserriednich's actual friends from academy days — reason their way from barracks gossip to Nen, Morena, and a coming classified purge, and set up a transfer-request early-warning system. Borksen, transferred as 'Nen advisor,' counsels pure survival.",
     eventIds: ["ev-394-morena-next-moves", "ev-394-tserriednich-friends"],
-    appearingCharacterIds: ["morena", "tserriednich", "hinrigh", "ken-i"],
+    appearingCharacterIds: [
+      "morena",
+      "tserriednich",
+      "hinrigh",
+      "ken-i",
+      "terebellum",
+      "yokotani",
+      "borksen",
+    ],
     locationIds: ["hidden-passage-network", "tier-3"],
     storylineIds: ["heil-ly-morena", "ship-security-crisis"],
+    abilitiesUsedIds: ["voconte-door"],
     changes: {
+      newCharacters: ["borksen"],
       newKnowledge: [
         "Morena's roster: day-job civilians turned leveled killers, listed by trade",
         "Tserriednich keeps five genuine friends among common soldiers",
@@ -2373,6 +2436,7 @@ export const chapters: ChapterInfo[] = [
       "chrollo",
       "franklin",
       "machi",
+      "borksen",
     ],
     locationIds: ["tier-3"],
     storylineIds: ["troupe-hisoka-hunt", "mafia-war"],
@@ -2446,6 +2510,7 @@ export const chapters: ChapterInfo[] = [
     ],
     locationIds: ["tier-3", "hidden-passage-network"],
     storylineIds: ["mafia-war", "heil-ly-morena", "troupe-hisoka-hunt"],
+    abilitiesUsedIds: ["biohazard", "voconte-door"],
     changes: {
       newKnowledge: [
         "Trap taxonomy: barrier types cover area with objects; land-mine types guard fixed points",
@@ -2461,9 +2526,16 @@ export const chapters: ChapterInfo[] = [
     summary:
       "Nine Heil-Ly members lounge, unbothered, behind a door the intruders cannot pass. Hinrigh's knife in Terebellum's head transfers harmlessly into a drink can — damage displacement — and the lawyer Yokotani activates A Battle of Wits: 'LSDF': invincible puppet guards that charge Nobunaga with his actual crimes and carry him out. Hinrigh hides the oyster transmitter under a cabinet before his own expulsion and vows to map the hideout from outside.",
     eventIds: ["ev-399-yokotani-lsdf"],
-    appearingCharacterIds: ["hinrigh", "nobunaga"],
+    appearingCharacterIds: [
+      "hinrigh",
+      "nobunaga",
+      "terebellum",
+      "yokotani",
+      "voconte",
+    ],
     locationIds: ["hidden-passage-network", "tier-3"],
     storylineIds: ["heil-ly-morena", "mafia-war"],
+    abilitiesUsedIds: ["sweet-home", "lsdf", "voconte-door"],
     changes: {
       newAbilities: [
         "Damage displacement and crime-triggered invincible guards join the Heil-Ly arsenal",
@@ -2557,6 +2629,7 @@ export const chapters: ChapterInfo[] = [
       "yuhirai",
       "ladiolus",
       "belerainte",
+      "kanzai",
     ],
     locationIds: ["room-1014", "beyond-quarters"],
     storylineIds: [
@@ -2633,6 +2706,7 @@ export const chapters: ChapterInfo[] = [
       "special-martial-law",
       "halkenburg-movement",
     ],
+    abilitiesUsedIds: ["ab-beast-kacho", "great-haiku"],
     changes: {
       newKnowledge: [
         "A failed military pathogen that kills in half a day and erases itself is in Balsamilco's shoe",
@@ -2728,6 +2802,7 @@ export const chapters: ChapterInfo[] = [
       "halkenburg",
       "balsamilco",
       "benjamin",
+      "leorio",
       "cheadle",
       "babimyna",
       "sakata",
@@ -2803,9 +2878,11 @@ export const chapters: ChapterInfo[] = [
       "feitan",
       "ken-i",
       "morena",
+      "voconte",
     ],
     locationIds: ["tier-1", "cha-r-territory", "hidden-passage-network"],
     storylineIds: ["troupe-hisoka-hunt", "mafia-war", "heil-ly-morena"],
+    abilitiesUsedIds: ["metamorphosen"],
     changes: {
       deaths: ["lynch"],
       newKnowledge: [
@@ -2868,7 +2945,14 @@ export const chapters: ChapterInfo[] = [
     summary:
       "Borksen vanishes from the funeral crowds thirty minutes after her last check-in; her squad, bound by its own no-rescue pact, can only theorize. She wakes across a card table from Morena, who offers a 'negotiation game': seven explanation cards against five answer cards, the last one standing her binding reply. Yes joins the Heil-Ly; X voids everything; what No costs is left ominously for later. Reading the traps clearly, Borksen plays.",
     eventIds: ["ev-407-borksen-abducted", "ev-407-negotiation-game"],
-    appearingCharacterIds: ["morena", "yuhirai"],
+    appearingCharacterIds: [
+      "halkenburg",
+      "morena",
+      "yuhirai",
+      "borksen",
+      "voconte",
+      "yokotani",
+    ],
     locationIds: ["tier-3", "hidden-passage-network"],
     storylineIds: ["heil-ly-morena"],
     changes: {
@@ -2887,7 +2971,7 @@ export const chapters: ChapterInfo[] = [
       "ev-408-specialist-hunt",
       "ev-408-sml-alarm",
     ],
-    appearingCharacterIds: ["morena"],
+    appearingCharacterIds: ["morena", "borksen", "yokotani", "voconte"],
     locationIds: ["hidden-passage-network", "black-whale"],
     storylineIds: ["heil-ly-morena", "special-martial-law"],
     abilitiesUsedIds: ["morena-contagion"],
@@ -2911,13 +2995,14 @@ export const chapters: ChapterInfo[] = [
       "ev-409-kiss-conditions",
       "ev-409-hideout-between-tiers",
     ],
-    appearingCharacterIds: ["morena"],
+    appearingCharacterIds: ["morena", "borksen", "yokotani", "voconte"],
     locationIds: ["hidden-passage-network", "black-whale"],
     storylineIds: [
       "heil-ly-morena",
       "special-martial-law",
       "ship-security-crisis",
     ],
+    abilitiesUsedIds: ["morena-contagion"],
     changes: {
       newKnowledge: [
         "The Heil-Ly base occupies the space between Tiers 2 and 3 — pre-built into the ship",
@@ -2939,7 +3024,16 @@ export const chapters: ChapterInfo[] = [
       "ev-410-benjamin-takeover",
       "ev-410-benjamin-dying",
     ],
-    appearingCharacterIds: ["morena", "benjamin", "mizaistom", "kaiser"],
+    appearingCharacterIds: [
+      "morena",
+      "borksen",
+      "yokotani",
+      "voconte",
+      "benjamin",
+      "mizaistom",
+      "botobai",
+      "kaiser",
+    ],
     locationIds: ["hidden-passage-network", "ministry-of-justice"],
     storylineIds: [
       "heil-ly-morena",
@@ -2947,6 +3041,7 @@ export const chapters: ChapterInfo[] = [
       "benjamin-military",
       "ship-security-crisis",
     ],
+    abilitiesUsedIds: ["morena-contagion"],
     changes: {
       newKnowledge: [
         "Benjamin is dying of infection and racing to be anointed successor",
@@ -2996,7 +3091,6 @@ export const chapters: ChapterInfo[] = [
       "maor",
       "slakka",
       "ladiolus",
-      "zhang-lei",
     ],
     locationIds: [
       "ministry-of-justice",
@@ -3012,7 +3106,7 @@ export const chapters: ChapterInfo[] = [
       "succession-contest",
       "benjamin-military",
     ],
-    abilitiesUsedIds: ["ab-beast-halkenburg"],
+    abilitiesUsedIds: ["ab-beast-halkenburg", "ab-beast-kacho"],
     changes: {
       newKnowledge: [
         "The contest is stage two of a four-stage ritual; failure topples the Hui Guo Rou",
@@ -3043,7 +3137,7 @@ export const chapters: ChapterInfo[] = [
       "oito",
       "bill",
       "shimano",
-      "woble",
+      "woble-substitute",
       "slakka",
       "sakata",
       "babimyna",
@@ -3057,6 +3151,8 @@ export const chapters: ChapterInfo[] = [
       "belerainte",
       "maor",
       "ladiolus",
+      "kanzai",
+      "saiyu",
     ],
     locationIds: ["room-1014", "beyond-quarters"],
     storylineIds: [
@@ -3099,11 +3195,12 @@ export const chapters: ChapterInfo[] = [
       "nasubi",
       "nugui",
       "halkenburg",
+      "momoze",
+      "salele",
       "balsamilco",
       "benjamin",
       "butch",
       "furykov",
-      "camilla",
       "kanjidol",
       "coventoba",
       "yushohi",
@@ -3131,6 +3228,8 @@ export const chapters: ChapterInfo[] = [
       "combo-master",
       "beyond-curse",
       "ab-beast-benjamin",
+      "benjamin-baton",
+      "ab-beast-marayam",
     ],
     changes: {
       newKnowledge: [
@@ -3156,7 +3255,7 @@ export const chapters: ChapterInfo[] = [
     title: "Friends",
     day: "12 (≈2:00 p.m.)",
     summary:
-      "Fifteen minutes early, Kanjidol knifes two of Luzurus's sleeping guards in Room 1007 — and the Seventh Prince, far sharper than his image, orders no resistance, the drugs burned, and the Hunter Ridge sent to 'keep the soldier busy.' Ridge finds the bodies and the fight begins. At Room 1009, Yushohi and Chiyamasi prepare to breach — En against invincibility-on-a-timer. In Room 1014, Kurapika frames the decisive unknown: does Beyond's curse fire on contest participation, or on the Seed Urn ceremony the real Woble performed? Bill turns fully against Beyond and proposes trapping him with Moonlight Act; Oito reveals a covert mail channel through a relative in Yamato; and Kurapika, thinking of Gon and Killua, swears the missing prince will be protected.",
+      "Fifteen minutes early, Kanjidol stabs two of Luzurus's sleeping guards in Room 1007 — one raises an arm afterward, leaving the outcomes unresolved — and the Seventh Prince, far sharper than his image, orders no resistance, the drugs burned, and the Hunter Ridge sent to 'keep the soldier busy.' Ridge finds the scene and the fight begins. At Room 1009, Yushohi and Chiyamasi prepare to breach — En against invincibility-on-a-timer. In Room 1014, Kurapika frames the decisive unknown: does Beyond's curse fire on contest participation, or on the Seed Urn ceremony the real Woble performed? Bill turns fully against Beyond and proposes trapping him with Moonlight Act; Oito reveals a covert mail channel through a relative in Yamato; and Kurapika, thinking of Gon and Killua, swears the missing prince will be protected.",
     eventIds: [
       "ev-414-kanjidol-murders",
       "ev-414-luzurus-orders",
@@ -3177,7 +3276,7 @@ export const chapters: ChapterInfo[] = [
       "oito",
       "bill",
       "shimano",
-      "woble",
+      "woble-substitute",
       "beyond",
     ],
     locationIds: ["room-1007", "halkenburg-quarters", "room-1014"],
@@ -3196,7 +3295,7 @@ export const chapters: ChapterInfo[] = [
       "beyond-curse",
     ],
     changes: {
-      newCharacters: ["ridge", "chiyamasi"],
+      newCharacters: [],
       deaths: [],
       newAbilities: [
         "Muteking the Invincible Hero: accumulated, time-limited invincibility",

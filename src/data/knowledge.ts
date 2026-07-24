@@ -191,7 +191,14 @@ export const knowledgeFacts: KnowledgeFact[] = [
       "The infant in Room 1014 is Oito's younger sister's son. The real Woble — the girl who fed the Seed Urn — is off-ship with Oito's sister, location unknown even to Oito. She swapped babies before departure and dodged Kurapika's chain by alternating masculine and feminine pronunciations of the name.",
     kind: "identity",
     readerRevealCh: 412,
-    relatedCharacterIds: ["oito", "woble", "kurapika", "bill", "shimano"],
+    relatedCharacterIds: [
+      "oito",
+      "woble",
+      "woble-substitute",
+      "kurapika",
+      "bill",
+      "shimano",
+    ],
   },
   {
     id: "fact-beyond-curse",

@@ -12,7 +12,11 @@ import {
   Panel,
 } from "@/components/ui/kit";
 import { characterById, eventsByStoryline, storylineById } from "@/lib/db";
-import { latestStamp } from "@/lib/spoiler";
+import {
+  currentIntelText,
+  currentIntelVisible,
+  latestStamp,
+} from "@/lib/spoiler";
 import { useEffectiveChapter } from "@/lib/store";
 import type { StorylineNodeKind } from "@/lib/types";
 
@@ -78,6 +82,8 @@ export function StorylineFile({ id }: { id: string }) {
     ...(s.dependsOnIds ?? []).map((rid) => ({ rid, rel: "depends on" })),
     ...(s.relatedIds ?? []).map((rid) => ({ rid, rel: "related" })),
   ].filter(({ rid }) => (storylineById.get(rid)?.introducedCh ?? 0) <= ch);
+  const currentSummary = currentIntelText(s.summary, ch);
+  const showCurrentAnalysis = currentIntelVisible(ch);
 
   return (
     <div className="space-y-4">
@@ -112,7 +118,8 @@ export function StorylineFile({ id }: { id: string }) {
           </div>
         </div>
         <p className="mt-3 max-w-3xl border-t border-line pt-3 text-sm leading-relaxed text-parchment">
-          {s.summary}
+          {currentSummary ??
+            "Current-state overview sealed; the cleared thread trace remains available below."}
         </p>
       </div>
 
@@ -207,7 +214,7 @@ export function StorylineFile({ id }: { id: string }) {
         <div className="space-y-4">
           {/* Objectives */}
           <Panel label="Operational aims" title="Objectives">
-            {s.objectives.length === 0 ? (
+            {!showCurrentAnalysis || s.objectives.length === 0 ? (
               <ArchiveNote>No stated objectives.</ArchiveNote>
             ) : (
               <ul className="space-y-1.5">
@@ -225,7 +232,7 @@ export function StorylineFile({ id }: { id: string }) {
 
           {/* Open questions */}
           <Panel label="Analyst queries" title="Open questions" gold>
-            {s.openQuestions.length === 0 ? (
+            {!showCurrentAnalysis || s.openQuestions.length === 0 ? (
               <ArchiveNote>No outstanding queries.</ArchiveNote>
             ) : (
               <ul className="space-y-2">

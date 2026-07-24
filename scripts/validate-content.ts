@@ -33,6 +33,8 @@ const beastIds = new Set(beasts.map((b) => b.id));
 const mysteryIds = new Set(mysteries.map((m) => m.id));
 const factIds = new Set(knowledgeFacts.map((f) => f.id));
 const entityIds = new Set([...charIds, ...factionIds]);
+const characterById = new Map(characters.map((c) => [c.id, c]));
+const chapterByNumber = new Map(chapters.map((c) => [c.number, c]));
 
 let errors = 0;
 let warnings = 0;
@@ -80,6 +82,10 @@ for (const c of characters) {
   if (c.statusHistory.length === 0) err(`${c.id}: empty statusHistory`);
   if (c.locationHistory.length === 0) warn(`${c.id}: empty locationHistory`);
   if (c.monogram.length > 3) warn(`${c.id}: monogram too long`);
+  for (const ch of c.chapterAppearances ?? []) {
+    if (!chapterByNumber.has(ch))
+      err(`${c.id}.chapterAppearances: unknown chapter ${ch}`);
+  }
 }
 
 console.log("princes…");
@@ -166,6 +172,13 @@ for (const c of chapters) {
   checkRefs(o, c.abilitiesUsedIds, abilityIds, "abilitiesUsedIds");
   checkRefs(o, c.changes.newCharacters, charIds, "changes.newCharacters");
   checkRefs(o, c.changes.deaths, charIds, "changes.deaths");
+  for (const id of c.appearingCharacterIds) {
+    const character = characterById.get(id);
+    if (character && character.introducedCh > c.number)
+      err(
+        `${o}.appearingCharacterIds: ${id} precedes introducedCh ${character.introducedCh}`,
+      );
+  }
   checkRefs(
     o,
     c.changes.mysteriesIntroduced,
@@ -210,6 +223,17 @@ for (const a of nenAbilities) {
   );
   checkRefs(a.id, a.affectedCharacterIds, charIds, "affectedCharacterIds");
   checkRefs(a.id, a.mysteryIds, mysteryIds, "mysteryIds");
+  for (const use of a.uses ?? []) {
+    const chapter = chapterByNumber.get(use.ch);
+    if (!chapter) {
+      err(`${a.id}.uses: unknown chapter ${use.ch}`);
+      continue;
+    }
+    if (a.revealCh <= use.ch && !chapter.abilitiesUsedIds?.includes(a.id))
+      err(
+        `${a.id}.uses: ch${use.ch} omits revealed ability from abilitiesUsedIds`,
+      );
+  }
 }
 for (const b of beasts) {
   checkRefs(b.id, [b.princeId], princeIds, "princeId");

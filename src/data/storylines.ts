@@ -391,6 +391,7 @@ export const storylines: Storyline[] = [
       "kurapika",
       "oito",
       "woble",
+      "woble-substitute",
       "bill",
       "shimano",
       "sayird",
@@ -1014,7 +1015,7 @@ export const storylines: Storyline[] = [
     name: "Luzurus's Quiet Camp",
     color: "#9bb87f",
     summary:
-      "The Seventh Prince stocks his camp with professional Hunters, feigns stoner passivity, and waits out the mafia phase of the contest. His threshold keeps becoming other people's stage — Shikaku's suicide, Kanjidol's probing — until martial law arrives early and Luzurus reveals how sharp he actually is: no resistance, burn the drugs, and put the Hunter where the killer is.",
+      "The Seventh Prince stocks his camp with professional Hunters, feigns stoner passivity, and waits out the mafia phase of the contest. His threshold keeps becoming other people's stage — Shikaku's suicide, Kanjidol's probing — until martial law arrives early and Luzurus reveals how sharp he actually is: no resistance, burn the drugs, and put the Hunter where the attacker is.",
     status: [
       { ch: 362, value: "active" },
       {
@@ -1025,7 +1026,7 @@ export const storylines: Storyline[] = [
       {
         ch: 414,
         value: "escalating",
-        note: "Kanjidol starts killing the detail before the deadline.",
+        note: "Kanjidol starts stabbing the detail before the deadline; both outcomes remain unresolved.",
       },
     ],
     participantIds: ["luzurus", "basho", "ridge", "kanjidol", "satobi"],
@@ -1201,6 +1202,10 @@ export const storylines: Storyline[] = [
       "zakuro",
       "lynch",
       "tserriednich",
+      "terebellum",
+      "yokotani",
+      "voconte",
+      "borksen",
     ],
     factionIds: ["heil-ly", "xi-yu", "cha-r"],
     objectives: [

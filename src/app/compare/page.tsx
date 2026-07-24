@@ -28,6 +28,7 @@ import {
   storylines,
 } from "@/lib/db";
 import {
+  currentIntelText,
   latestStamp,
   locationAt,
   relationshipEnded,
@@ -691,7 +692,14 @@ function buildPrinceRows(ch: number): RowSpec[] {
     },
     {
       label: "Public strategy",
-      cell: (id) => princeById.get(id)?.publicStrategy ?? <Dash />,
+      cell: (id) => {
+        const strategy = princeById.get(id)?.publicStrategy;
+        return strategy ? (
+          (currentIntelText(strategy, ch) ?? <NotOnRecord />)
+        ) : (
+          <Dash />
+        );
+      },
     },
     {
       label: "Hidden strategy",
@@ -810,7 +818,14 @@ function buildFactionRows(ch: number): RowSpec[] {
     },
     {
       label: "Territory",
-      cell: (id) => factionById.get(id)?.territoryNote ?? <Dash />,
+      cell: (id) => {
+        const territory = factionById.get(id)?.territoryNote;
+        return territory ? (
+          (currentIntelText(territory, ch) ?? <NotOnRecord />)
+        ) : (
+          <Dash />
+        );
+      },
     },
     {
       label: "Controlled locations",

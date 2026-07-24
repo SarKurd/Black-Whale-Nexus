@@ -31,6 +31,15 @@ export const locations: ShipLocation[] = [
     introducedCh: 349,
   },
   {
+    id: "unknown-kakin-mainland",
+    name: "Unknown location — Kakin mainland",
+    kind: "other",
+    canonicity: "unknown",
+    description:
+      "An undisclosed mainland refuge used by Oito's younger sister. The real Woble has been hidden here since before the Black Whale departed; even Oito does not know the address.",
+    introducedCh: 412,
+  },
+  {
     id: "heavens-arena",
     name: "Heavens Arena",
     kind: "other",
@@ -638,7 +647,7 @@ export const locations: ShipLocation[] = [
     parentId: "royal-quarters",
     canonicity: "canonical",
     description:
-      "The Seventh Prince's suite: movie screens, legal-gray drugs, hired Hunters, and a prince far sharper than his stoner image. Shikaku's staged suicide happens at its threshold; on day twelve Kanjidol murders its sleeping guards ahead of martial law while Luzurus coolly orders no resistance and the drugs burned.",
+      "The Seventh Prince's suite: movie screens, legal-gray drugs, hired Hunters, and a prince far sharper than his stoner image. Shikaku's staged suicide happens at its threshold; on day twelve Kanjidol stabs two sleeping guards ahead of martial law, with both outcomes unresolved, while Luzurus coolly orders no resistance and the drugs burned.",
     controlHistory: [{ ch: 358, value: "luzurus-camp" }],
     threatHistory: [
       {

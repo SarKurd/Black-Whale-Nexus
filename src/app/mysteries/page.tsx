@@ -9,7 +9,7 @@ import {
   EntityList,
 } from "@/components/ui/kit";
 import { mysteries } from "@/lib/db";
-import { mysteryStatusAt } from "@/lib/spoiler";
+import { currentIntelText, mysteryStatusAt } from "@/lib/spoiler";
 import { useEffectiveChapter } from "@/lib/store";
 import type { Evidence, Mystery, MysteryStatus } from "@/lib/types";
 
@@ -198,7 +198,8 @@ function CaseFile({
 
       <div className="space-y-4 p-4">
         <p className="max-w-3xl text-sm leading-relaxed text-parchment">
-          {mystery.summary}
+          {currentIntelText(mystery.summary, clearanceChapter) ??
+            "Current-state case summary sealed; chapter-cleared evidence remains available below."}
         </p>
 
         <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-xs text-muted">

@@ -65,7 +65,7 @@ function buildIndex(): SearchItem[] {
       sub: "Faction",
       kind: "Faction",
       href: `/factions/${f.id}`,
-      hay: `${f.name} ${f.summary}`.toLowerCase(),
+      hay: f.name.toLowerCase(),
       revealCh: f.introducedCh,
     });
   }
@@ -98,7 +98,7 @@ function buildIndex(): SearchItem[] {
       sub: `Location${l.tier ? ` · Tier ${l.tier}` : ""}`,
       kind: "Location",
       href: `/map?location=${l.id}`,
-      hay: `${l.name} ${l.description}`.toLowerCase(),
+      hay: l.name.toLowerCase(),
       revealCh: l.introducedCh,
     });
   }
@@ -109,7 +109,7 @@ function buildIndex(): SearchItem[] {
       sub: "Storyline",
       kind: "Storyline",
       href: `/storylines/${s.id}`,
-      hay: `${s.name} ${s.summary}`.toLowerCase(),
+      hay: s.name.toLowerCase(),
       revealCh: s.introducedCh,
     });
   }
@@ -131,7 +131,7 @@ function buildIndex(): SearchItem[] {
       sub: "Mystery",
       kind: "Mystery",
       href: `/mysteries#${m.id}`,
-      hay: `${m.question} ${m.summary}`.toLowerCase(),
+      hay: m.question.toLowerCase(),
       revealCh: m.introducedCh,
     });
   }
@@ -142,7 +142,7 @@ function buildIndex(): SearchItem[] {
       sub: "Theory",
       kind: "Theory",
       href: `/theories#${t.id}`,
-      hay: `${t.claim} ${t.summary}`.toLowerCase(),
+      hay: t.claim.toLowerCase(),
       revealCh: Math.min(...t.chapters, ARC_END),
     });
   }

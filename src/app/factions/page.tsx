@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 import { ArchiveNote, EntityLink, SectionHeading } from "@/components/ui/kit";
 import { charactersByFaction, factions } from "@/lib/db";
+import { currentIntelText } from "@/lib/spoiler";
 import { useEffectiveChapter } from "@/lib/store";
 import type { Faction, FactionKind } from "@/lib/types";
 
@@ -164,7 +165,8 @@ function FactionCard({
           </span>
         </div>
         <p className="mt-1.5 line-clamp-3 flex-1 text-xs text-muted">
-          {faction.summary}
+          {currentIntelText(faction.summary, ch) ??
+            "Current-state overview sealed at this clearance."}
         </p>
         <div className="mt-3 space-y-1 border-t border-line/60 pt-2">
           <div className="flex items-baseline justify-between gap-2">

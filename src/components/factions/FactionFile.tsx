@@ -23,6 +23,8 @@ import {
   relationshipsFor,
 } from "@/lib/db";
 import {
+  currentIntelText,
+  currentIntelVisible,
   latestStamp,
   relationshipEnded,
   relationshipVisible,
@@ -104,6 +106,13 @@ export function FactionFile({ id }: { id: string }) {
   const controlled = (faction.controlledLocationIds ?? []).filter(
     (locId) => (locationById.get(locId)?.introducedCh ?? 0) <= ch,
   );
+  const currentSummary = currentIntelText(faction.summary, ch);
+  const currentTerritory = faction.territoryNote
+    ? currentIntelText(faction.territoryNote, ch)
+    : undefined;
+  const currentResources = currentIntelVisible(ch)
+    ? (faction.resources ?? [])
+    : [];
 
   return (
     <div>
@@ -127,7 +136,8 @@ export function FactionFile({ id }: { id: string }) {
             </div>
             <h1 className="royal-heading text-3xl">{faction.name}</h1>
             <p className="mt-1 max-w-2xl text-sm text-parchment">
-              {faction.summary}
+              {currentSummary ??
+                "Current-state overview sealed; cleared operations and status history remain available below."}
             </p>
             <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-muted">
               {faction.leaderCharacterId && (
@@ -269,7 +279,7 @@ export function FactionFile({ id }: { id: string }) {
           {/* Territory & resources */}
           <Panel label="Holdings" title="Territory & resources">
             <DataRow label="Territory">
-              {faction.territoryNote ?? (
+              {currentTerritory ?? (
                 <span className="text-faint">Not on record</span>
               )}
             </DataRow>
@@ -292,11 +302,11 @@ export function FactionFile({ id }: { id: string }) {
               )}
             </DataRow>
             <DataRow label="Resources">
-              {(faction.resources ?? []).length === 0 ? (
+              {currentResources.length === 0 ? (
                 <span className="text-faint">—</span>
               ) : (
                 <ul className="list-inside list-disc space-y-0.5">
-                  {(faction.resources ?? []).map((r) => (
+                  {currentResources.map((r) => (
                     <li key={r}>{r}</li>
                   ))}
                 </ul>

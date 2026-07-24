@@ -96,7 +96,10 @@ export interface Character {
   aliases?: string[];
   /** Short role line, e.g. "First Prince of Kakin" or "Hui Guo Rou private soldier". */
   role: string;
-  /** 1–3 sentence dossier summary. Spoiler-safe up to introducedCh. */
+  /**
+   * Current-state dossier summary. Because this prose is not chapter-stamped,
+   * readers below the archive boundary see only stamped bioReveals instead.
+   */
   bio: string;
   /** Extra dossier paragraphs gated by reveal chapter. */
   bioReveals?: { revealCh: number; text: string }[];
@@ -191,6 +194,7 @@ export interface Faction {
   kind: FactionKind;
   /** Desaturated hex used across the whole app for this faction. */
   color: string;
+  /** Current-state summary; hidden when the archive is rewound. */
   summary: string;
   leaderCharacterId?: Id;
   parentFactionId?: Id;
@@ -516,6 +520,7 @@ export interface Storyline {
   id: Id;
   name: string;
   color: string;
+  /** Current-state summary; hidden when the archive is rewound. */
   summary: string;
   status: Stamp<"active" | "paused" | "resolved" | "escalating">[];
   participantIds: Id[];

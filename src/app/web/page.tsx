@@ -19,7 +19,7 @@ import {
 } from "@/components/viz/RelationshipGraph";
 import { characterById, relationships } from "@/lib/db";
 import { graphPresets, presetById } from "@/lib/presets";
-import { statusAt } from "@/lib/spoiler";
+import { currentIntelText, statusAt } from "@/lib/spoiler";
 import { useEffectiveChapter } from "@/lib/store";
 import { ARC_END, ARC_START } from "@/lib/types";
 
@@ -51,6 +51,7 @@ function WebPageInner() {
   // When the global clearance changes, snap it back to follow — otherwise a
   // value dragged earlier would pin here and drift out of sync with clearance.
   useEffect(() => {
+    void ch;
     setViewCh(null);
   }, [ch]);
 
@@ -234,7 +235,10 @@ function NodePanel({
           {degree} edges
         </span>
       </div>
-      <p className="mt-2 line-clamp-4 text-xs text-muted">{c.bio}</p>
+      <p className="mt-2 line-clamp-4 text-xs text-muted">
+        {currentIntelText(c.bio, ch) ??
+          "Current-state assessment sealed at this clearance."}
+      </p>
       <Link
         href={`/characters/${id}`}
         className="mt-3 inline-block border border-gold-line px-2.5 py-1 font-mono text-[10px] uppercase tracking-widest text-gold hover:text-gold-bright"

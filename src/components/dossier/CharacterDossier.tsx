@@ -36,6 +36,7 @@ import {
   theories,
 } from "@/lib/db";
 import {
+  currentIntelText,
   locationAt,
   relationshipEnded,
   relationshipVisible,
@@ -265,9 +266,9 @@ export function CharacterDossier({ id }: { id: string }) {
           {tab === "Nen" && <NenTab c={c} d={d} ch={ch} />}
           {tab === "Locations" && <LocationsTab c={c} ch={ch} />}
           {tab === "Chapters" && <ChaptersTab c={c} ch={ch} />}
-          {tab === "Mysteries" && <MysteriesTab d={d} />}
+          {tab === "Mysteries" && <MysteriesTab d={d} ch={ch} />}
           {tab === "Theories" && (
-            <TheoriesTab d={d} hideTheories={hideTheories} />
+            <TheoriesTab d={d} ch={ch} hideTheories={hideTheories} />
           )}
         </motion.div>
       </AnimatePresence>
@@ -306,7 +307,16 @@ function DossierTab({ c, d, ch }: { c: Char; d: Derived; ch: number }) {
     <div className="grid gap-4 lg:grid-cols-3">
       <div className="space-y-4 lg:col-span-2">
         <Panel label="Assessment" title="Summary">
-          <p className="text-sm leading-relaxed text-parchment">{c.bio}</p>
+          {currentIntelText(c.bio, ch) ? (
+            <p className="text-sm leading-relaxed text-parchment">
+              {currentIntelText(c.bio, ch)}
+            </p>
+          ) : (
+            <ArchiveNote>
+              Current-state assessment sealed at this clearance. Cleared addenda
+              appear below.
+            </ArchiveNote>
+          )}
           {(c.bioReveals ?? [])
             .filter((b) => b.revealCh <= ch)
             .map((b) => (
@@ -831,7 +841,7 @@ function ChaptersTab({ c, ch }: { c: Char; ch: number }) {
   );
 }
 
-function MysteriesTab({ d }: { d: Derived }) {
+function MysteriesTab({ d, ch }: { d: Derived; ch: number }) {
   if (d.myMysteries.length === 0)
     return <ArchiveNote>No open questions attach to this file.</ArchiveNote>;
   return (
@@ -843,7 +853,10 @@ function MysteriesTab({ d }: { d: Derived }) {
           className="dossier block p-3 transition-colors hover:border-gold-line"
         >
           <div className="text-sm text-ivory">{m.question}</div>
-          <p className="mt-1 line-clamp-2 text-xs text-muted">{m.summary}</p>
+          <p className="mt-1 line-clamp-2 text-xs text-muted">
+            {currentIntelText(m.summary, ch) ??
+              "Current-state case summary sealed."}
+          </p>
           <div className="mt-1.5 flex items-center gap-2">
             <ChapterRef ch={m.introducedCh} />
           </div>
@@ -855,9 +868,11 @@ function MysteriesTab({ d }: { d: Derived }) {
 
 function TheoriesTab({
   d,
+  ch,
   hideTheories,
 }: {
   d: Derived;
+  ch: number;
   hideTheories: boolean;
 }) {
   if (hideTheories)
@@ -885,7 +900,10 @@ function TheoriesTab({
             </span>
             <span className="text-sm text-ivory">{t.claim}</span>
           </div>
-          <p className="mt-1 line-clamp-2 text-xs text-muted">{t.summary}</p>
+          <p className="mt-1 line-clamp-2 text-xs text-muted">
+            {currentIntelText(t.summary, ch) ??
+              "Current-state analysis sealed."}
+          </p>
         </Link>
       ))}
     </div>

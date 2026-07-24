@@ -13,11 +13,26 @@ import type {
   Relationship,
   Stamp,
 } from "@/lib/types";
+import { ARC_END } from "@/lib/types";
 
 /** Is something revealed to the reader at chapter `at`? */
 export function revealed(revealCh: number | undefined, at: number): boolean {
   if (revealCh === undefined) return true;
   return revealCh <= at;
+}
+
+/** Whether unstamped, current-state prose is safe at this clearance. */
+export function currentIntelVisible(at: number): boolean {
+  return at >= ARC_END;
+}
+
+/**
+ * Unstamped prose describes the archive's current state and is therefore only
+ * safe at the current boundary. Rewound views reconstruct themselves from
+ * chapter-stamped addenda, objectives, events, and status histories instead.
+ */
+export function currentIntelText(text: string, at: number): string | undefined {
+  return currentIntelVisible(at) ? text : undefined;
 }
 
 /** Latest stamped value whose reveal chapter has passed. */

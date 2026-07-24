@@ -25,7 +25,7 @@ import {
   princeById,
   princes,
 } from "@/lib/db";
-import { locationAt, statusAt } from "@/lib/spoiler";
+import { currentIntelText, locationAt, statusAt } from "@/lib/spoiler";
 import { useEffectiveChapter } from "@/lib/store";
 import type { Character, Mystery, Prince } from "@/lib/types";
 import { ARC_START } from "@/lib/types";
@@ -200,7 +200,13 @@ export function PrinceProfile({ id }: { id: string }) {
         {/* Main column */}
         <div className="space-y-4 lg:col-span-2">
           <Panel label="Campaign posture" title="Strategy">
-            <DataRow label="Public">{p.publicStrategy}</DataRow>
+            <DataRow label="Public">
+              {currentIntelText(p.publicStrategy, ch) ?? (
+                <span className="text-faint">
+                  Current-state analysis sealed
+                </span>
+              )}
+            </DataRow>
             {p.hiddenStrategy && p.hiddenStrategy.revealCh <= ch && (
               <DataRow label="Hidden">
                 <span className="block border-l-2 border-violet pl-2.5">
@@ -234,10 +240,18 @@ export function PrinceProfile({ id }: { id: string }) {
           </Panel>
 
           <Panel label="Analyst evaluation" title="Assessment">
-            <DataRow label="Political">{p.assessment.political}</DataRow>
-            <DataRow label="Military">{p.assessment.military}</DataRow>
-            <DataRow label="Nen">{p.assessment.nen}</DataRow>
-            <DataRow label="Intelligence">{p.assessment.intelligence}</DataRow>
+            <DataRow label="Political">
+              {currentIntelText(p.assessment.political, ch) ?? "Sealed"}
+            </DataRow>
+            <DataRow label="Military">
+              {currentIntelText(p.assessment.military, ch) ?? "Sealed"}
+            </DataRow>
+            <DataRow label="Nen">
+              {currentIntelText(p.assessment.nen, ch) ?? "Sealed"}
+            </DataRow>
+            <DataRow label="Intelligence">
+              {currentIntelText(p.assessment.intelligence, ch) ?? "Sealed"}
+            </DataRow>
           </Panel>
 
           <Panel label="Nen research file" title="Guardian spirit beast" gold>

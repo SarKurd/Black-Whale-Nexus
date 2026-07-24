@@ -34,6 +34,7 @@ function MapPageInner() {
   // back through the voyage. When the global clearance changes, snap it back
   // to follow — otherwise an earlier value pins here and drifts out of sync.
   useEffect(() => {
+    void ch;
     setViewCh(null);
   }, [ch]);
 
@@ -113,7 +114,6 @@ function MapPageInner() {
             onSelect={setSelectedId}
           />
         </div>
-
       </div>
 
       {/* Compartment file — a centered modal over the whole page. */}
