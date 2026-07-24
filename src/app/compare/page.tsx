@@ -12,6 +12,7 @@ import {
   StatusChip,
 } from "@/components/ui/kit";
 import {
+  abilitiesByUser,
   abilityById,
   beastById,
   characterById,
@@ -517,9 +518,9 @@ function buildCharacterRows(ch: number): RowSpec[] {
     {
       label: "Abilities revealed",
       cell: (id) => {
-        const revealed = (characterById.get(id)?.nenAbilityIds ?? []).filter(
-          (aid) => (abilityById.get(aid)?.revealCh ?? Infinity) <= ch,
-        );
+        const revealed = (abilitiesByUser.get(id) ?? [])
+          .filter((ability) => ability.revealCh <= ch)
+          .map((ability) => ability.id);
         return <EntityList ids={revealed} />;
       },
     },

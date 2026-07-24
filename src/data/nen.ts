@@ -814,6 +814,753 @@ export const nenAbilities: NenAbility[] = [
     confidence: "canonical",
   },
   {
+    id: "ripper-cyclotron",
+    name: "Ripper Cyclotron",
+    userCharacterId: "phinks",
+    kind: "personal",
+    nenType: "enhancer",
+    description:
+      "Phinks winds one arm clockwise, adding aura to the fist with every rotation before releasing it as a single amplified punch.",
+    activation: "Rotate one arm clockwise, then strike with the charged fist.",
+    conditions: ["Power rises with each completed arm rotation."],
+    effects: [
+      "Compounds the aura and destructive force concentrated in one punch.",
+      "Fifteen rotations produced far more force than needed to destroy a Chimera Ant.",
+    ],
+    weaknesses: [
+      "Phinks admits that he has difficulty calibrating how many rotations a target requires.",
+    ],
+    firstSeenCh: 0,
+    revealCh: 0,
+    status: "active",
+    evidence: [
+      {
+        chapter: 0,
+        note: "Established pre-arc in chapter 226; Hunterpedia documents the rotation-based power increase.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "pain-packer",
+    name: "Pain Packer",
+    userCharacterId: "feitan",
+    kind: "personal",
+    nenType: "conjurer",
+    description:
+      "Feitan's counteractive ability converts injuries and rage into power, first conjuring protective armor before unleashing one of several retaliatory forms.",
+    activation:
+      "Take damage, become enraged, and conjure the protective armor.",
+    conditions: [
+      "Requires Feitan to suffer pain and injury before the counterattack.",
+    ],
+    effects: [
+      "Conjures armor that protects Feitan from his own retaliation.",
+      "Raises his aura output in proportion to the punishment he has taken.",
+      "Supports multiple variations; Rising Sun is the only one shown.",
+    ],
+    firstSeenCh: 0,
+    revealCh: 0,
+    status: "active",
+    evidence: [
+      {
+        chapter: 0,
+        note: "Established pre-arc in chapter 229; Phinks states that the ability has multiple forms and a wide area.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "rising-sun",
+    name: "Rising Sun",
+    userCharacterId: "feitan",
+    kind: "personal",
+    nenType: "transmuter",
+    description:
+      "The demonstrated form of Pain Packer: Feitan emits a sphere that becomes a miniature sun, its heat and duration scaling with the pain and injuries inflicted on him.",
+    activation:
+      "Activate Pain Packer after taking damage, then emit the heat sphere while protected by its armor.",
+    conditions: [
+      "Power depends on how much pain and injury Feitan suffered first.",
+      "Requires Pain Packer's protective armor to survive the resulting heat.",
+    ],
+    effects: [
+      "Transmutes aura into extreme heat around an emitted miniature sun.",
+      "Burns targets across a wide area; greater prior damage makes it hotter and longer-lived.",
+    ],
+    weaknesses: [
+      "The indiscriminate heat threatens allies and bystanders within range.",
+    ],
+    firstSeenCh: 0,
+    revealCh: 0,
+    status: "active",
+    evidence: [
+      {
+        chapter: 0,
+        note: "Established pre-arc in chapter 229 as the only demonstrated Pain Packer variation.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "nen-stitches",
+    name: "Nen Stitches",
+    userCharacterId: "machi",
+    kind: "personal",
+    nenType: "transmuter",
+    description:
+      "Machi transmutes aura into threads for tracking, traps, restraint, puppeteering, cutting, strangulation, and surgical sutures capable of reconnecting severed limbs.",
+    effects: [
+      "Tracks targets and relays tactile information through attached threads.",
+      "Restrains, manipulates, strangles, or cuts targets.",
+      "Closes wounds and reconnects severed body parts with immediate function.",
+    ],
+    restrictions: [
+      "Thread strength is inversely proportional to length.",
+      "Threads become substantially weaker after leaving Machi's fingers.",
+    ],
+    firstSeenCh: 0,
+    revealCh: 0,
+    status: "active",
+    evidence: [
+      {
+        chapter: 0,
+        note: "Established pre-arc across chapters 55, 77–78, 97, 100, and 111–113.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "double-machine-gun",
+    name: "Double Machine Gun",
+    userCharacterId: "franklin",
+    kind: "personal",
+    nenType: "emitter",
+    description:
+      "Franklin fires rapid, high-powered aura bullets from the ends of his fingers, turning both hands into sustained machine guns.",
+    activation:
+      "Open the separated fingertips and emit aura bullets from every finger.",
+    conditions: [
+      "Franklin voluntarily severed his fingertips as a self-imposed limitation, although the ability did not require it.",
+    ],
+    effects: [
+      "Produces a high-rate barrage of fast, lethal emitted projectiles.",
+      "The fingertip sacrifice greatly amplifies each bullet's power.",
+    ],
+    firstSeenCh: 0,
+    revealCh: 0,
+    status: "active",
+    evidence: [
+      {
+        chapter: 0,
+        note: "Established pre-arc in chapters 73 and 76; Hunterpedia records the fingertip limitation and aura barrage.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "blinky",
+    name: "Blinky",
+    userCharacterId: "shizuku",
+    kind: "personal",
+    nenType: "conjurer",
+    description:
+      "Shizuku conjures Blinky, a vacuum cleaner that inhales unlimited nonliving matter, removes foreign substances from bodies, and doubles as a blunt weapon.",
+    activation: "Conjure Blinky and state what it should vacuum.",
+    restrictions: [
+      "Cannot inhale anything Shizuku considers alive.",
+      "Cannot inhale objects made from Nen.",
+      "Only the most recently vacuumed object can be regurgitated.",
+      "Shizuku does not know where the other contents go.",
+    ],
+    effects: [
+      "Removes corpses, blood, debris, gases, poisons, and other nonliving matter.",
+      "Can drain an opponent's blood through an open wound.",
+      "Functions as a heavy club in close combat.",
+    ],
+    firstSeenCh: 0,
+    revealCh: 0,
+    status: "active",
+    evidence: [
+      {
+        chapter: 0,
+        note: "Established pre-arc in Yorknew and the Chimera Ant conflict; Hunterpedia documents its living/Nen restrictions.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "battle-cantabile-prologue",
+    name: "Battle Cantabile: Prologue",
+    userCharacterId: "bonolenov",
+    kind: "personal",
+    nenType: "conjurer",
+    description:
+      "Bonolenov dances and plays music through the holes in his body, conjuring ceremonial warrior armor and a spear.",
+    activation:
+      "Perform the Prologue dance and produce its music through the body's holes.",
+    effects: ["Conjures warrior attire and a spear around Bonolenov."],
+    firstSeenCh: 0,
+    revealCh: 0,
+    status: "active",
+    evidence: [
+      {
+        chapter: 0,
+        note: "Established pre-arc in chapter 225 as one form of Battle Cantabile.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "battle-cantabile-jupiter",
+    name: "Battle Cantabile: Jupiter",
+    userCharacterId: "bonolenov",
+    kind: "personal",
+    nenType: "conjurer",
+    description:
+      "Bonolenov's completed dance conjures a giant sphere resembling Jupiter around him and sends it after anyone who remains within earshot of his music.",
+    activation:
+      "Complete the Jupiter dance while its music reaches the target.",
+    conditions: [
+      "The target must remain within earshot during the performance.",
+    ],
+    effects: [
+      "Conjures a massive, high-speed sphere that pursues and crushes the target.",
+    ],
+    firstSeenCh: 0,
+    revealCh: 0,
+    status: "active",
+    evidence: [
+      {
+        chapter: 0,
+        note: "Established pre-arc in chapter 227 as one form of Battle Cantabile.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "kalluto-surveillance",
+    name: "Surveillance Paper Dolls (unnamed)",
+    userCharacterId: "kalluto",
+    kind: "personal",
+    nenType: "manipulator",
+    description:
+      "Kalluto attaches confetti to a target and makes a matching paper doll, allowing him to hear conversations around that person without alerting even skilled Nen users.",
+    activation:
+      "Attach confetti to the target and create a paper doll representing them.",
+    effects: [
+      "Relays nearby conversations through the corresponding paper doll.",
+      "Operates covertly enough to escape the Phantom Troupe's notice.",
+    ],
+    firstSeenCh: 0,
+    revealCh: 0,
+    status: "active",
+    evidence: [
+      {
+        chapter: 0,
+        note: "Established pre-arc in chapter 225; Hunterpedia notes that the descriptive name is unofficial.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "dance-serpents-bite",
+    name: "Dance of the Serpent's Bite",
+    userCharacterId: "kalluto",
+    kind: "personal",
+    nenType: "manipulator",
+    description:
+      "Kalluto controls a storm of paper confetti with his fan, marks a target with one piece, then drives the rest into that point as a piercing serpentine stream.",
+    activation:
+      "Scatter paper with one hand, direct it with the fan, and stick a marking piece to the target.",
+    conditions: [
+      "A piece of confetti must first adhere to the intended impact point.",
+    ],
+    effects: [
+      "Controls repeated, multi-angle paper volleys.",
+      "Concentrates the paper into a drilling stream capable of tearing apart a Chimera Ant.",
+    ],
+    firstSeenCh: 0,
+    revealCh: 0,
+    status: "active",
+    evidence: [
+      {
+        chapter: 0,
+        note: "Established pre-arc during Kalluto's Chimera Ant battle.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "illumi-body-alteration",
+    name: "Body Alteration (unnamed)",
+    userCharacterId: "illumi",
+    kind: "personal",
+    nenType: "manipulator",
+    description:
+      "Illumi reshapes his own face and body with large needles, or briefly without them, to assume disguises; he can also painfully deform another person's face.",
+    activation:
+      "Insert large needles for a maintained disguise, or reshape without needles for a limited time.",
+    restrictions: [
+      "Needle-free disguises last about five hours and leave his eyes unchanged.",
+      "Needle-based transformations are painful and end when the needles are removed.",
+    ],
+    effects: [
+      "Changes Illumi's build, facial structure, and skin color.",
+      "Can alter another person's face while inflicting incapacitating pain.",
+    ],
+    firstSeenCh: 0,
+    revealCh: 0,
+    status: "active",
+    evidence: [
+      {
+        chapter: 0,
+        note: "Established pre-arc in chapters 36, 116, and 118; Hunterpedia's descriptive name is unofficial.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "illumi-hypnotic-needle",
+    name: "Hypnotic Needle (unnamed)",
+    userCharacterId: "illumi",
+    kind: "personal",
+    nenType: "manipulator",
+    description:
+      "A needle planted in the target's brain imposes subtle standing commands that feel like the victim's own instincts, fears, or memories.",
+    activation: "Embed a programmed needle in the target's brain.",
+    conditions: ["The effect persists while the needle remains embedded."],
+    effects: [
+      "Triggers automatic fear, paralysis, or avoidance when the target would violate its command.",
+      "Can suppress feelings or memories until the needle is removed.",
+    ],
+    weaknesses: [
+      "Resistance causes increasingly localized headaches that can expose the needle's position.",
+      "Removing the needle breaks the conditioning.",
+    ],
+    firstSeenCh: 0,
+    revealCh: 0,
+    status: "active",
+    evidence: [
+      {
+        chapter: 0,
+        note: "Established pre-arc through the needle planted in Killua; Hunterpedia's descriptive name is unofficial.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "illumi-corpse-control",
+    name: "Corpse Control (unnamed)",
+    userCharacterId: "illumi",
+    kind: "personal",
+    nenType: "manipulator",
+    description:
+      "Illumi inserts several needles into corpses and operates them as obedient agents capable of speech, driving, deception, and suicidal commands.",
+    activation: "Pierce a corpse's head with multiple control needles.",
+    restrictions: ["Targets have no will or reflexes of their own."],
+    effects: [
+      "Controls one or more corpses through complex tasks.",
+      "Can make puppets speak and behave naturally enough to deceive observers.",
+    ],
+    firstSeenCh: 0,
+    revealCh: 0,
+    status: "active",
+    evidence: [
+      {
+        chapter: 0,
+        note: "Established pre-arc in chapters 100 and 326; Hunterpedia's descriptive name is unofficial.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "needle-people",
+    name: "Needle People",
+    userCharacterId: "illumi",
+    kind: "personal",
+    nenType: "manipulator",
+    description:
+      "Illumi drives an aura-loaded needle into a living person's skull, erasing their sentience and forcing them to pursue one command until death or total collapse.",
+    activation:
+      "Load a special needle with aura, insert it into the target's skull, and issue an order.",
+    conditions: [
+      "Consumes a large amount of aura per special needle.",
+      "Control ends only when the target dies, collapses, or completes the command.",
+    ],
+    effects: [
+      "Overwrites the target's mind and body with coercive control.",
+      "Can command many Needle People simultaneously.",
+    ],
+    weaknesses: [
+      "Survivors are permanently crippled.",
+      "The crude single-needle version produces recognizable movements and expressions.",
+    ],
+    firstSeenCh: 0,
+    revealCh: 0,
+    status: "active",
+    evidence: [
+      {
+        chapter: 0,
+        note: "Established pre-arc during the Chairman Election pursuit.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "melody-enchanting-music",
+    name: "Enchanting Music (unnamed)",
+    userCharacterId: "melody",
+    kind: "personal",
+    nenType: "emitter",
+    description:
+      "Melody channels aura through her flute to relieve fatigue and illness or to calm listeners and induce vivid pastoral hallucinations.",
+    activation: "Play a chosen piece while emitting aura through the music.",
+    effects: [
+      "Alleviates fatigue and related illness.",
+      "A Field in Spring calms listeners and makes them see a flowering meadow.",
+    ],
+    firstSeenCh: 0,
+    revealCh: 0,
+    uses: [
+      {
+        ch: 383,
+        note: "Her broadcast flute performance entrances the banquet audience for three minutes, creating Kacho and Fugetsu's escape window.",
+      },
+    ],
+    status: "active",
+    evidence: [
+      {
+        chapter: 0,
+        note: "Healing and A Field in Spring established pre-arc in chapters 77 and 120–121.",
+        confidence: "canonical",
+      },
+      {
+        chapter: 383,
+        note: "The full-audience, three-minute enchantment is demonstrated over the banquet broadcast.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "magical-esthetician",
+    name: "Magical Esthetician",
+    userCharacterId: "biscuit",
+    kind: "personal",
+    nenType: "transmuter",
+    description:
+      "Biscuit summons the masseuse Cookie, whose aura-infused lotion and treatments relieve fatigue, restore vitality, burn excess fat, and treat muscular or joint ailments.",
+    activation: "Summon Cookie and select one of her massage treatments.",
+    effects: [
+      "Relieves physical fatigue and restores vitality.",
+      "Treats arthritis, muscle tension, locked joints, and excess fat.",
+      "Supports many specialized massages, including Piano Massage.",
+    ],
+    firstSeenCh: 0,
+    revealCh: 0,
+    status: "active",
+    evidence: [
+      {
+        chapter: 0,
+        note: "Established pre-arc in chapters 171 and 201; Hunterpedia lists Transmutation and Manipulation components.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "piano-massage",
+    name: "Piano Massage",
+    userCharacterId: "biscuit",
+    kind: "personal",
+    nenType: "transmuter",
+    description:
+      "Cookie's intensive recovery massage makes thirty minutes of sleep equivalent to eight hours while restoring physical condition, mental energy, and aura.",
+    activation: "Have Cookie perform the thirty-minute Piano Massage.",
+    conditions: ["Requires a complete thirty-minute massage."],
+    effects: [
+      "Compresses eight hours of restorative sleep into thirty minutes.",
+      "Accelerates recovery from fatigue and replenishes aura.",
+    ],
+    firstSeenCh: 0,
+    revealCh: 0,
+    status: "active",
+    evidence: [
+      {
+        chapter: 0,
+        note: "Established pre-arc in chapter 201 as a Magical Esthetician treatment.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "biscuit-body-transformation",
+    name: "Body Transformation (unnamed)",
+    userCharacterId: "biscuit",
+    kind: "personal",
+    nenType: "transmuter",
+    description:
+      "Biscuit changes from her true, heavily muscled adult form into the much smaller youthful body she prefers, concealing her power at the cost of sharply reducing it.",
+    activation: "Transform between the youthful disguise and her true body.",
+    effects: [
+      "Conceals Biscuit's size, age, and physical power.",
+      "Restoring her true form restores her full physical strength.",
+    ],
+    weaknesses: [
+      "The youthful form severely reduces her physical capabilities.",
+      "Biscuit herself does not understand how years of wishing produced the ability.",
+    ],
+    firstSeenCh: 0,
+    revealCh: 0,
+    status: "active",
+    evidence: [
+      {
+        chapter: 0,
+        note: "Established pre-arc in chapter 177; Hunterpedia's descriptive name is unofficial.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "leorio-remote-punch",
+    name: "Remote Punch (unnamed)",
+    userCharacterId: "leorio",
+    kind: "personal",
+    nenType: "emitter",
+    description:
+      "Leorio strikes a nearby surface and sends aura through it to a chosen point, where a portal-like opening releases a distant uppercut.",
+    activation:
+      "Punch a surface and emit the strike along it toward the target point.",
+    effects: [
+      "Projects a physical punch far beyond Leorio's normal reach.",
+      "Travels through a surface before emerging from a circular opening.",
+    ],
+    firstSeenCh: 0,
+    revealCh: 0,
+    status: "active",
+    evidence: [
+      {
+        chapter: 0,
+        note: "Established pre-arc in chapter 325; Hunterpedia's descriptive name is unofficial.",
+        confidence: "canonical",
+      },
+      {
+        chapter: 347,
+        note: "Ging reproduces the technique and explains its likely medical inspiration.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "jajanken",
+    name: "Jajanken",
+    userCharacterId: "gon",
+    kind: "personal",
+    nenType: "enhancer",
+    description:
+      "Gon's rock-paper-scissors ability shares one risky charge across three attacks: the enhanced Rock punch, transmuted Scissors blade, and emitted Paper projectile.",
+    activation:
+      "Charge Ko while chanting, then choose Rock, Scissors, or Paper before release.",
+    conditions: [
+      "The long chant and charge lower Gon's defenses and expose his intent.",
+    ],
+    effects: [
+      "Rock: a devastating Enhancement punch.",
+      "Scissors: a mid-range transmuted aura blade.",
+      "Paper: a long-range emitted aura projectile.",
+    ],
+    weaknesses: [
+      "The charge is slow and readable.",
+      "Paper is much weaker than Rock because Emission is not Gon's natural category.",
+    ],
+    firstSeenCh: 0,
+    revealCh: 0,
+    status: "inactive",
+    evidence: [
+      {
+        chapter: 0,
+        note: "Established pre-arc across Greed Island and the Chimera Ant conflict.",
+        confidence: "canonical",
+      },
+      {
+        chapter: 345,
+        note: "Gon tells Ging he can no longer produce or perceive aura after his transformation and recovery.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "gon-limitation-transformation",
+    name: "Limitation Transformation (unnamed)",
+    userCharacterId: "gon",
+    kind: "personal",
+    nenType: "enhancer",
+    description:
+      "In extreme grief, Gon forms a vow that compresses all the power he could ever attain into one transformed body, gaining enough aura and strength to overwhelm Neferpitou at the cost of his future Nen.",
+    activation:
+      "Form an absolute vow to sacrifice every future reserve of talent and power.",
+    conditions: [
+      "Requires Gon to surrender the Nen and potential he would otherwise develop over his lifetime.",
+    ],
+    effects: [
+      "Temporarily transforms Gon into a body with decades of projected growth and training.",
+      "Multiplies his aura, speed, strength, and Jajanken output to an extreme level.",
+    ],
+    weaknesses: [
+      "The backlash leaves his body dying and requires Nanika's intervention to restore his health.",
+      "The transformation is not repeatable in his present condition.",
+    ],
+    firstSeenCh: 0,
+    revealCh: 0,
+    status: "inactive",
+    evidence: [
+      {
+        chapter: 0,
+        note: "Established pre-arc in chapters 305–307 as Gon's vow against Neferpitou.",
+        confidence: "canonical",
+      },
+      {
+        chapter: 345,
+        note: "After his physical recovery, Gon confirms that he can no longer produce or perceive aura.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "lightning-palm",
+    name: "Lightning Palm",
+    userCharacterId: "killua",
+    kind: "personal",
+    nenType: "transmuter",
+    description:
+      "Killua transmutes his aura into electricity and shocks an opponent through both palms, causing pain, brief paralysis, and knockback.",
+    activation: "Touch the target with both electrified palms.",
+    effects: [
+      "Electrocutes and briefly stuns the target while pushing them away.",
+    ],
+    firstSeenCh: 0,
+    revealCh: 0,
+    status: "active",
+    evidence: [
+      {
+        chapter: 0,
+        note: "Established pre-arc in chapter 178 as Killua's first named electric ability.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "thunderbolt",
+    name: "Thunderbolt",
+    userCharacterId: "killua",
+    kind: "personal",
+    nenType: "transmuter",
+    description:
+      "Killua projects a bolt of transmuted electricity downward from his fingers, inflicting pain and briefly paralyzing a target for a follow-up attack.",
+    activation: "Leap above the target and discharge the lightning bolt.",
+    effects: [
+      "Stuns and pains the target without requiring direct contact.",
+      "Creates a brief opening for Killua or an ally to strike.",
+    ],
+    firstSeenCh: 0,
+    revealCh: 0,
+    status: "active",
+    evidence: [
+      {
+        chapter: 0,
+        note: "Established pre-arc in chapters 191 and 281.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "godspeed-whirlwind",
+    name: "Godspeed: Whirlwind",
+    userCharacterId: "killua",
+    kind: "personal",
+    nenType: "transmuter",
+    description:
+      "Killua programs his electric aura to bypass the nervous system and trigger automatic, preselected reactions to contact, hostile aura, or movement within a boundary.",
+    activation:
+      "Program a stimulus and response, then let electric aura signal the muscles directly.",
+    conditions: [
+      "The triggering stimulus and automatic response must be selected in advance.",
+      "Consumes Killua's finite stored electric charge.",
+    ],
+    effects: [
+      "Produces near-instant automatic reactions and counterattacks.",
+      "Dramatically accelerates movement while a programmed response is firing.",
+    ],
+    weaknesses: [
+      "Ends when Killua's stored electricity is depleted.",
+      "Automation is limited to the stimuli and responses he prepared.",
+    ],
+    firstSeenCh: 0,
+    revealCh: 0,
+    status: "active",
+    evidence: [
+      {
+        chapter: 0,
+        note: "Established pre-arc in chapters 240, 281, and 303 as one core function of Godspeed.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "godspeed-speed-of-lightning",
+    name: "Godspeed: Speed of Lightning",
+    userCharacterId: "killua",
+    kind: "personal",
+    nenType: "transmuter",
+    description:
+      "Killua keeps conscious control while electric aura drives his muscles at extreme speed, primarily to cross long distances or carry someone out of danger.",
+    activation:
+      "Discharge stored electricity through the muscles while retaining conscious control.",
+    conditions: ["Consumes Killua's finite stored electric charge."],
+    effects: [
+      "Greatly increases running speed, jumping ability, and sustained movement.",
+      "Can carry another person while moving at enhanced speed.",
+    ],
+    weaknesses: [
+      "Performance depends on the terrain.",
+      "Ends when Killua's stored electricity is depleted.",
+    ],
+    firstSeenCh: 0,
+    revealCh: 0,
+    status: "active",
+    evidence: [
+      {
+        chapter: 0,
+        note: "Established pre-arc in chapters 281, 305, 327, and 328 as one core function of Godspeed.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
+  {
     id: "sun-and-moon",
     name: "The Sun and Moon",
     userCharacterId: "chrollo",
@@ -2521,15 +3268,15 @@ export const nenAbilities: NenAbility[] = [
     name: "Great Haiku",
     userCharacterId: "basho",
     kind: "personal",
-    nenType: "emitter",
+    nenType: "unknown",
     description:
-      "Basho writes a haiku and makes its content literally happen. Aboard, its documented use is a protective talisman — verse warding the evil-spirit presence away from the grieving Fugetsu.",
+      "Basho writes a haiku on paper and makes its content real, with the strength of the result tied to the quality of the verse.",
     activation: "Compose a haiku; its meaning manifests as a real effect.",
     effects: [
-      "Turns written verse into a physical effect — including wards/talismans.",
+      "Turns written verse into physical effects, including flames and punishment for a liar.",
     ],
     firstSeenCh: 0,
-    revealCh: 402,
+    revealCh: 0,
     uses: [
       {
         ch: 402,
@@ -2540,12 +3287,17 @@ export const nenAbilities: NenAbility[] = [
     awareCharacterIds: [{ characterId: "basho", sinceCh: 0 }],
     evidence: [
       {
+        chapter: 0,
+        note: "Established pre-arc in chapter 68; Hunterpedia records the Nen category as unknown.",
+        confidence: "canonical",
+      },
+      {
         chapter: 402,
         note: "Its warding use for Fugetsu shown on-page.",
-        confidence: "strong-inference",
+        confidence: "canonical",
       },
     ],
-    confidence: "strong-inference",
+    confidence: "canonical",
   },
 ];
 

@@ -2000,7 +2000,11 @@ export const chapters: ChapterInfo[] = [
     ],
     locationIds: ["banquet-hall", "tier-1", "black-whale"],
     storylineIds: ["kacho-fugetsu", "succession-contest"],
-    abilitiesUsedIds: ["ab-beast-fugetsu", "ab-beast-kacho"],
+    abilitiesUsedIds: [
+      "melody-enchanting-music",
+      "ab-beast-fugetsu",
+      "ab-beast-kacho",
+    ],
     changes: {
       deaths: ["kacho"],
       newAbilities: [
