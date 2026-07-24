@@ -30,6 +30,24 @@ function MapPageInner() {
     if (locationParam) setSelectedId(locationParam);
   }, [locationParam]);
 
+  // While the compartment modal is open: Escape closes it and the page body
+  // scroll is locked so only the modal's own content scrolls.
+  useEffect(() => {
+    if (!selectedId) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setSelectedId(null);
+    };
+    window.addEventListener("keydown", onKey);
+    // The scroll container is <html>, not <body>, so lock the root element.
+    const root = document.documentElement;
+    const previousOverflow = root.style.overflow;
+    root.style.overflow = "hidden";
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      root.style.overflow = previousOverflow;
+    };
+  }, [selectedId]);
+
   // The scrubber can rewind below clearance but never above it.
   const displayCh = Math.min(viewCh ?? ch, ch);
 
@@ -89,27 +107,44 @@ function MapPageInner() {
           />
         </div>
 
-        <AnimatePresence>
-          {selectedId && (
-            <motion.aside
-              key={selectedId}
-              initial={{ opacity: 0, x: 24 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: 24 }}
-              transition={{ duration: 0.18 }}
-              className="dossier dossier-gold corner-ticks absolute right-0 top-0 max-h-full w-full overflow-y-auto p-4 sm:right-3 sm:top-3 sm:max-h-[calc(100%-24px)] sm:w-80"
-            >
-              <LocationPanel
-                id={selectedId}
-                ch={displayCh}
-                occupancy={occupancy}
-                onSelect={setSelectedId}
-                onClose={() => setSelectedId(null)}
-              />
-            </motion.aside>
-          )}
-        </AnimatePresence>
       </div>
+
+      {/* Compartment file — a centered modal over the whole page. */}
+      <AnimatePresence>
+        {selectedId && (
+          <motion.div
+            key="compartment-backdrop"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-bg-deep/80 p-4 backdrop-blur-[2px]"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.12 }}
+            onClick={() => setSelectedId(null)}
+            role="dialog"
+            aria-modal="true"
+            aria-label="Compartment file"
+          >
+            <motion.div
+              className="dossier dossier-gold corner-ticks flex max-h-[85vh] w-full max-w-lg flex-col overflow-hidden p-4"
+              initial={{ y: -8, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: -8, opacity: 0 }}
+              transition={{ duration: 0.15 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="-mr-2 overflow-y-auto pr-2">
+                <LocationPanel
+                  id={selectedId}
+                  ch={displayCh}
+                  occupancy={occupancy}
+                  onSelect={setSelectedId}
+                  onClose={() => setSelectedId(null)}
+                />
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Legend — canonicity is explicit, geometry is honest. */}
       <div className="mt-3 flex flex-wrap items-center gap-x-5 gap-y-1.5">
