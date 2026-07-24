@@ -76,9 +76,27 @@ function splitByStoryline(evts: StoryEvent[]): [string, StoryEvent[]][] {
 
 export default function TimelinePage() {
   return (
-    <Suspense>
+    <Suspense fallback={<TimelinePageFallback />}>
       <TimelineInner />
     </Suspense>
+  );
+}
+
+function TimelinePageFallback() {
+  return (
+    <div>
+      <div className="mb-4 flex flex-wrap items-end justify-between gap-3">
+        <div>
+          <div className="intel-label-gold">Voyage recorder</div>
+          <h1 className="royal-heading text-3xl">Timeline</h1>
+          <p className="mt-1 max-w-2xl text-xs text-muted">
+            Every incident on file, replayed in the order the archive holds it.
+            Parallel columns mark threads unfolding simultaneously within a
+            chapter. Nothing beyond your clearance is written here.
+          </p>
+        </div>
+      </div>
+    </div>
   );
 }
 

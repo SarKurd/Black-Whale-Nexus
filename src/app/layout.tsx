@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Cinzel, Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { SiteStructuredData } from "@/components/seo/StructuredData";
 import { AppShell } from "@/components/shell/AppShell";
+import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/seo";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,12 +22,63 @@ const cinzel = Cinzel({
 });
 
 export const metadata: Metadata = {
+  metadataBase: SITE_URL,
   title: {
-    default: "Black Whale Nexus",
-    template: "%s — Black Whale Nexus",
+    default: SITE_NAME,
+    template: `%s — ${SITE_NAME}`,
   },
-  description:
-    "Classified intelligence archive for the Hunter × Hunter Succession War: fourteen princes, their guards, the mafia families, the Phantom Troupe, and every thread connecting them aboard the Black Whale.",
+  description: SITE_DESCRIPTION,
+  applicationName: SITE_NAME,
+  keywords: [
+    "Hunter x Hunter",
+    "Hunter × Hunter",
+    "Succession War",
+    "Black Whale",
+    "Kakin princes",
+    "Kurapika",
+    "Dark Continent",
+    "Hunter x Hunter chapter 340 onward",
+  ],
+  authors: [{ name: "Sarbast", url: "https://sarbast.dev" }],
+  creator: "Sarbast",
+  publisher: "Black Whale Nexus",
+  category: "entertainment",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "/",
+    siteName: SITE_NAME,
+    title: SITE_NAME,
+    description: SITE_DESCRIPTION,
+    images: [
+      {
+        url: "/icon-512.png",
+        width: 512,
+        height: 512,
+        alt: `${SITE_NAME} emblem`,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary",
+    title: SITE_NAME,
+    description: SITE_DESCRIPTION,
+    images: ["/icon-512.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
 };
 
 export default function RootLayout({
@@ -39,6 +92,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} ${cinzel.variable} h-full antialiased`}
     >
       <body className="min-h-full">
+        <SiteStructuredData />
         <AppShell>{children}</AppShell>
       </body>
     </html>

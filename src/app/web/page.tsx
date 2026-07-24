@@ -25,9 +25,58 @@ import { ARC_END, ARC_START } from "@/lib/types";
 
 export default function WebPage() {
   return (
-    <Suspense>
+    <Suspense fallback={<WebPageFallback />}>
       <WebPageInner />
     </Suspense>
+  );
+}
+
+function WebPageFallback() {
+  return (
+    <div>
+      <div className="mb-4 flex flex-wrap items-end justify-between gap-3">
+        <div>
+          <div className="intel-label-gold">Investigation board</div>
+          <h1 className="royal-heading text-3xl">Relationship Web</h1>
+        </div>
+        <div className="flex flex-wrap items-center gap-3">
+          <select
+            value="all"
+            className="border border-line bg-panel px-2 py-1.5 text-sm text-parchment outline-none"
+            aria-label="Graph preset"
+            disabled
+          >
+            {graphPresets.map((preset) => (
+              <option key={preset.id} value={preset.id}>
+                {preset.label}
+              </option>
+            ))}
+          </select>
+          <div className="flex items-center gap-2">
+            <span className="intel-label">Evolve</span>
+            <input
+              type="range"
+              min={ARC_START}
+              max={ARC_END}
+              value={ARC_END}
+              className="w-36 accent-[var(--gold)]"
+              aria-label="Network as of chapter"
+              disabled
+              readOnly
+            />
+            <span className="w-9 font-mono text-xs text-gold-bright">
+              {ARC_END}
+            </span>
+          </div>
+        </div>
+      </div>
+      <p className="mb-3 max-w-3xl text-xs text-muted">
+        {presetById.get("all")?.description} — Solid edges are public and
+        confirmed, dashed are secret, dotted are suspected. Drag to pan, scroll
+        or pinch to zoom, click nodes or edges for the intelligence file. The
+        slider replays how the network grew, up to your clearance.
+      </p>
+    </div>
   );
 }
 

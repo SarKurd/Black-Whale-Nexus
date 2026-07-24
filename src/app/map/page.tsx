@@ -12,9 +12,45 @@ import { ARC_END, ARC_START } from "@/lib/types";
 
 export default function MapPage() {
   return (
-    <Suspense>
+    <Suspense fallback={<MapPageFallback />}>
       <MapPageInner />
     </Suspense>
+  );
+}
+
+function MapPageFallback() {
+  return (
+    <div>
+      <div className="mb-4 flex flex-wrap items-end justify-between gap-3">
+        <div>
+          <div className="intel-label-gold">Deck plans · conceptual</div>
+          <h1 className="royal-heading text-3xl">Tactical Blueprint</h1>
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="intel-label">Voyage replay</span>
+          <input
+            type="range"
+            min={ARC_START}
+            max={ARC_END}
+            value={ARC_END}
+            className="w-36 accent-[var(--gold)]"
+            aria-label="Ship state as of chapter"
+            disabled
+            readOnly
+          />
+          <span className="w-9 font-mono text-xs text-gold-bright">
+            {ARC_END}
+          </span>
+        </div>
+      </div>
+      <p className="mb-3 max-w-3xl text-xs text-muted">
+        Cross-section of Black Whale No. 1, tier by tier. Each compartment shows
+        who the record places there — dots are colored by faction, tints mark
+        threat level, and the left edge marks controlling faction. Drag the
+        replay slider to watch movement across the voyage, up to your clearance.
+        Click any compartment for its file.
+      </p>
+    </div>
   );
 }
 

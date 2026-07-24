@@ -44,6 +44,7 @@ import type {
   Prince,
   RiskLevel,
 } from "@/lib/types";
+import { ARC_END } from "@/lib/types";
 
 const COMPARE_TYPES = [
   "characters",
@@ -78,9 +79,25 @@ function isCompareType(value: string | null): value is CompareType {
 
 export default function ComparePage() {
   return (
-    <Suspense>
+    <Suspense fallback={<ComparePageFallback />}>
       <ComparePageInner />
     </Suspense>
+  );
+}
+
+function ComparePageFallback() {
+  return (
+    <div>
+      <div className="mb-4">
+        <div className="intel-label-gold">Comparative analysis desk</div>
+        <h1 className="royal-heading text-3xl">Side-by-Side Analysis</h1>
+        <p className="mt-1 max-w-3xl text-xs text-muted">
+          Put two files on the same desk. Every field is reconstructed as the
+          record stood at chapter {ARC_END} — entities not yet on record cannot
+          be selected.
+        </p>
+      </div>
+    </div>
   );
 }
 

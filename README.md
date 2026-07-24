@@ -1,7 +1,7 @@
 # Black Whale Nexus
 
 An interactive intelligence archive for the full Hunter × Hunter **Succession
-War continuity (chapters 340–414)** — from Beyond Netero's Dark Continent
+War continuity from chapter 340 onward** — from Beyond Netero's Dark Continent
 announcement and the Hisoka–Chrollo deathmatch through the voyage itself: the
 fourteen princes, their guards, the mafia families, the Phantom Troupe, Nen
 abilities, assassinations, hidden alliances, and simultaneous storylines aboard

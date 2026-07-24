@@ -89,9 +89,25 @@ function visibleRows(factId: string, ch: number): CharacterKnowledge[] {
 
 export default function KnowledgePage() {
   return (
-    <Suspense>
+    <Suspense fallback={<KnowledgePageFallback />}>
       <KnowledgePageInner />
     </Suspense>
+  );
+}
+
+function KnowledgePageFallback() {
+  return (
+    <div>
+      <div className="mb-4">
+        <div className="intel-label-gold">Intelligence-clearance network</div>
+        <h1 className="royal-heading text-3xl">Who Knows What</h1>
+        <p className="mt-2 max-w-3xl text-xs text-muted">
+          Every tracked fact aboard the ship, and every character&apos;s
+          relationship to it — knowledge, suspicion, false belief, or blissful
+          ignorance. Select a fact to open its clearance board.
+        </p>
+      </div>
+    </div>
   );
 }
 
