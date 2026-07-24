@@ -129,9 +129,30 @@ export function RelationshipGraph({
   const router = useRouter();
   const svgRef = useRef<SVGSVGElement>(null);
   const [view, setView] = useState({ x: 0, y: 0, k: 1 });
-  const drag = useRef<{ x: number; y: number; vx: number; vy: number } | null>(
-    null,
-  );
+
+  // Active touch/mouse pointers keyed by id, plus the gesture in progress.
+  // One pointer pans; two pinch-zoom (and pan by the midpoint). `moved` lets us
+  // tell a real click apart from a drag so panning doesn't clear the selection.
+  const pointers = useRef<Map<number, { x: number; y: number }>>(new Map());
+  const gesture = useRef<
+    | {
+        type: "pan";
+        startX: number;
+        startY: number;
+        vx: number;
+        vy: number;
+        moved: boolean;
+      }
+    | {
+        type: "pinch";
+        dist: number;
+        midX: number;
+        midY: number;
+      }
+    | null
+  >(null);
+  // Set after a real drag/pinch so the trailing click doesn't clear selection.
+  const suppressClick = useRef(false);
 
   const { nodes, links } = useMemo(() => {
     // Visible edges at this chapter among requested nodes.
@@ -216,16 +237,77 @@ export function RelationshipGraph({
   const size = compact ? 480 : 1200;
   const height = compact ? 300 : 720;
 
-  function toWorld(e: React.WheelEvent | React.PointerEvent) {
+  const MIN_K = 0.35;
+  const MAX_K = 4;
+  const clampK = (k: number) => Math.min(MAX_K, Math.max(MIN_K, k));
+
+  // Convert a client point into the SVG's centered viewBox coordinate space,
+  // accounting for the fact that the viewBox may be letterboxed inside the
+  // rendered element (preserveAspectRatio "meet").
+  function toWorld(clientX: number, clientY: number) {
     const rect = svgRef.current?.getBoundingClientRect();
     if (!rect) return { x: 0, y: 0 };
+    const scale = Math.min(rect.width / size, rect.height / height);
+    const drawnW = size * scale;
+    const drawnH = height * scale;
+    const offsetX = (rect.width - drawnW) / 2;
+    const offsetY = (rect.height - drawnH) / 2;
     return {
-      x: e.clientX - rect.left - rect.width / 2,
-      y: e.clientY - rect.top - rect.height / 2,
+      x: (clientX - rect.left - offsetX) / scale - size / 2,
+      y: (clientY - rect.top - offsetY) / scale - height / 2,
     };
   }
 
-  return (
+  // Zoom toward a world-space anchor point, keeping that point stationary.
+  function zoomAt(anchor: { x: number; y: number }, factor: number) {
+    setView((v) => {
+      const k = clampK(v.k * factor);
+      const scale = k / v.k;
+      return {
+        k,
+        x: anchor.x - (anchor.x - v.x) * scale,
+        y: anchor.y - (anchor.y - v.y) * scale,
+      };
+    });
+  }
+
+  // Zoom toward the viewport center — used by the on-screen +/- buttons.
+  function zoomButton(factor: number) {
+    zoomAt({ x: 0, y: 0 }, factor);
+  }
+
+  // Capture all active pointers to the given element so a gesture keeps
+  // tracking even when the finger/cursor leaves the node it started on.
+  function capturePointers(el: Element) {
+    for (const id of pointers.current.keys()) {
+      try {
+        el.setPointerCapture?.(id);
+      } catch {
+        // Non-fatal: some pointer types reject capture. Gesture still works.
+      }
+    }
+  }
+
+  function endPointer(e: React.PointerEvent) {
+    pointers.current.delete(e.pointerId);
+    if (pointers.current.size === 0) {
+      gesture.current = null;
+    } else if (pointers.current.size === 1) {
+      // Dropped from pinch to a single-finger pan: re-seat the pan origin.
+      const [only] = [...pointers.current.values()];
+      const w = toWorld(only.x, only.y);
+      gesture.current = {
+        type: "pan",
+        startX: w.x,
+        startY: w.y,
+        vx: view.x,
+        vy: view.y,
+        moved: true,
+      };
+    }
+  }
+
+  const graph = (
     <svg
       ref={svgRef}
       viewBox={`${-size / 2} ${-height / 2} ${size} ${height}`}
@@ -234,37 +316,82 @@ export function RelationshipGraph({
       aria-label="Relationship network"
       onWheel={(e) => {
         if (compact) return;
-        const p = toWorld(e);
-        const factor = e.deltaY < 0 ? 1.12 : 0.9;
-        setView((v) => {
-          const k = Math.min(4, Math.max(0.35, v.k * factor));
-          const scale = k / v.k;
-          return {
-            k,
-            x: p.x - (p.x - v.x) * scale,
-            y: p.y - (p.y - v.y) * scale,
-          };
-        });
+        const p = toWorld(e.clientX, e.clientY);
+        zoomAt(p, e.deltaY < 0 ? 1.12 : 0.9);
       }}
       onPointerDown={(e) => {
         if (compact) return;
-        const p = toWorld(e);
-        drag.current = { x: p.x, y: p.y, vx: view.x, vy: view.y };
-        (e.target as Element).setPointerCapture?.(e.pointerId);
+        pointers.current.set(e.pointerId, { x: e.clientX, y: e.clientY });
+        const pts = [...pointers.current.values()];
+        if (pts.length === 1) {
+          const w = toWorld(pts[0].x, pts[0].y);
+          gesture.current = {
+            type: "pan",
+            startX: w.x,
+            startY: w.y,
+            vx: view.x,
+            vy: view.y,
+            moved: false,
+          };
+        } else if (pts.length === 2) {
+          const dx = pts[0].x - pts[1].x;
+          const dy = pts[0].y - pts[1].y;
+          gesture.current = {
+            type: "pinch",
+            dist: Math.hypot(dx, dy) || 1,
+            midX: (pts[0].x + pts[1].x) / 2,
+            midY: (pts[0].y + pts[1].y) / 2,
+          };
+          // Capture both pointers so the pinch survives leaving the element.
+          // (Done here, not on the first press, so a plain click still lands
+          // on the node rather than being retargeted to the SVG.)
+          capturePointers(e.currentTarget as Element);
+          suppressClick.current = true;
+        }
       }}
       onPointerMove={(e) => {
-        if (!drag.current) return;
-        const p = toWorld(e);
-        setView((v) => ({
-          ...v,
-          x: (drag.current?.vx ?? 0) + (p.x - (drag.current?.x ?? 0)),
-          y: (drag.current?.vy ?? 0) + (p.y - (drag.current?.y ?? 0)),
-        }));
+        const g = gesture.current;
+        if (!g || !pointers.current.has(e.pointerId)) return;
+        pointers.current.set(e.pointerId, { x: e.clientX, y: e.clientY });
+        if (g.type === "pan") {
+          const p = toWorld(e.clientX, e.clientY);
+          const nx = g.vx + (p.x - g.startX);
+          const ny = g.vy + (p.y - g.startY);
+          if (
+            !g.moved &&
+            (Math.abs(p.x - g.startX) > 3 || Math.abs(p.y - g.startY) > 3)
+          ) {
+            // A real drag has begun: now capture so panning keeps tracking,
+            // and suppress the click that would otherwise clear the selection.
+            g.moved = true;
+            suppressClick.current = true;
+            capturePointers(e.currentTarget as Element);
+          }
+          if (g.moved) setView((v) => ({ ...v, x: nx, y: ny }));
+        } else {
+          const pts = [...pointers.current.values()];
+          if (pts.length < 2) return;
+          const dx = pts[0].x - pts[1].x;
+          const dy = pts[0].y - pts[1].y;
+          const dist = Math.hypot(dx, dy) || 1;
+          const midX = (pts[0].x + pts[1].x) / 2;
+          const midY = (pts[0].y + pts[1].y) / 2;
+          const anchor = toWorld(midX, midY);
+          zoomAt(anchor, dist / g.dist);
+          g.dist = dist;
+          g.midX = midX;
+          g.midY = midY;
+        }
       }}
-      onPointerUp={() => {
-        drag.current = null;
+      onPointerUp={endPointer}
+      onPointerCancel={endPointer}
+      onClick={() => {
+        if (suppressClick.current) {
+          suppressClick.current = false;
+          return;
+        }
+        onSelect?.(null);
       }}
-      onClick={() => onSelect?.(null)}
       onKeyDown={(e) => {
         if (e.key === "Escape") onSelect?.(null);
       }}
@@ -410,5 +537,39 @@ export function RelationshipGraph({
         })}
       </g>
     </svg>
+  );
+
+  if (compact) return graph;
+
+  return (
+    <div className="relative h-full w-full">
+      {graph}
+      <div className="absolute bottom-3 right-3 flex flex-col overflow-hidden border border-line bg-panel/90 backdrop-blur-sm">
+        <button
+          type="button"
+          onClick={() => zoomButton(1.3)}
+          aria-label="Zoom in"
+          className="flex h-8 w-8 items-center justify-center text-lg leading-none text-parchment hover:bg-gold/10 hover:text-gold-bright"
+        >
+          +
+        </button>
+        <button
+          type="button"
+          onClick={() => zoomButton(1 / 1.3)}
+          aria-label="Zoom out"
+          className="flex h-8 w-8 items-center justify-center border-t border-line text-lg leading-none text-parchment hover:bg-gold/10 hover:text-gold-bright"
+        >
+          −
+        </button>
+        <button
+          type="button"
+          onClick={() => setView({ x: 0, y: 0, k: 1 })}
+          aria-label="Reset view"
+          className="flex h-8 w-8 items-center justify-center border-t border-line font-mono text-[9px] uppercase tracking-widest text-muted hover:bg-gold/10 hover:text-gold-bright"
+        >
+          Fit
+        </button>
+      </div>
+    </div>
   );
 }

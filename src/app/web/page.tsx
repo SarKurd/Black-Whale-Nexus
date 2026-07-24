@@ -47,6 +47,17 @@ function WebPageInner() {
     if (presetParam && presetById.has(presetParam)) setPresetId(presetParam);
   }, [presetParam]);
 
+  // Escape closes the file panel. The panel is non-blocking (the graph stays
+  // interactive behind it), so page scroll is intentionally not locked.
+  useEffect(() => {
+    if (!selection) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setSelection(null);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [selection]);
+
   // Displayed chapter can rewind below clearance but never above it.
   const displayCh = Math.min(viewCh ?? ch, ch);
 
@@ -102,8 +113,8 @@ function WebPageInner() {
       <p className="mb-3 max-w-3xl text-xs text-muted">
         {presetById.get(presetId)?.description} — Solid edges are public and
         confirmed, dashed are secret, dotted are suspected. Drag to pan, scroll
-        to zoom, click nodes or edges for the intelligence file. The slider
-        replays how the network grew, up to your clearance.
+        or pinch to zoom, click nodes or edges for the intelligence file. The
+        slider replays how the network grew, up to your clearance.
       </p>
 
       <div className="relative">
@@ -117,29 +128,34 @@ function WebPageInner() {
           />
         </div>
 
+        {/* Intelligence file — a non-blocking docked panel. On desktop it
+            docks to the right of the live graph; on mobile it becomes a
+            bottom sheet. The graph stays interactive behind it either way. */}
         <AnimatePresence>
           {selection && (
             <motion.aside
               key={`${selection.kind}-${selection.id}`}
-              initial={{ opacity: 0, x: 24 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: 24 }}
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 16 }}
               transition={{ duration: 0.18 }}
-              className="dossier dossier-gold corner-ticks absolute right-3 top-3 max-h-[calc(100%-24px)] w-80 overflow-y-auto p-4"
+              className="fixed inset-x-0 bottom-0 z-40 sm:absolute sm:inset-x-auto sm:right-3 sm:top-3 sm:bottom-3 sm:w-80"
             >
-              {selection.kind === "node" ? (
-                <NodePanel
-                  id={selection.id}
-                  ch={displayCh}
-                  onClose={() => setSelection(null)}
-                />
-              ) : (
-                <EdgePanel
-                  id={selection.id}
-                  ch={displayCh}
-                  onClose={() => setSelection(null)}
-                />
-              )}
+              <div className="dossier dossier-gold corner-ticks max-h-[60vh] overflow-y-auto p-4 sm:max-h-full">
+                {selection.kind === "node" ? (
+                  <NodePanel
+                    id={selection.id}
+                    ch={displayCh}
+                    onClose={() => setSelection(null)}
+                  />
+                ) : (
+                  <EdgePanel
+                    id={selection.id}
+                    ch={displayCh}
+                    onClose={() => setSelection(null)}
+                  />
+                )}
+              </div>
             </motion.aside>
           )}
         </AnimatePresence>
