@@ -120,9 +120,11 @@ Black-and-white **manga** artwork, one-time fetch, committed under
 wiki infobox's **Manga tab**; grayscale everything for a uniform look. To add a
 new character's portrait: fetch the manga image, `sips` it to grayscale JPEG,
 regenerate the manifest, keep it a one-time committed asset (no fetch script in
-the repo). The committed set currently has 107 files. The two Woble identities
-share the onboard infant image; Terebellum, Yokotani, Voconte, and Borksen use
-the monogram fallback until verified manga portraits are added.
+the repo). The committed set currently has 108 files. The two Woble identities
+have distinct portraits: `woble.jpg` is the real prince (ch 350, pre-swap) and
+`woble-substitute.jpg` is the boy aboard (wiki page "Woble (boy)", ch 364
+panel). Terebellum, Yokotani, Voconte, and Borksen use the monogram fallback
+until verified manga portraits are added.
 
 ## Running / previewing
 
