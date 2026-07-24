@@ -952,7 +952,7 @@ export const princes: Prince[] = [
       "Elder sibling of Marayam; all but six of her guards were reassigned to him.",
     beastId: "beast-momoze",
     guardsOriginal: 6,
-    guardCharacterIds: ["nipaper", "vict"],
+    guardCharacterIds: ["nipaper", "vict", "tuffdy"],
     publicStrategy:
       "Obedience: accept her mother's decisions, including the ones that doomed her.",
     currentObjective: [

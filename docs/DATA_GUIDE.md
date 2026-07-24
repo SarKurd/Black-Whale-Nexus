@@ -147,8 +147,12 @@ prod server. The user often has their own dev server on 3000; don't fight it.
   hands), NOT 382. The "Kacho" with Fugetsu afterward is her Guardian Spirit
   Beast **Without You** (confirmed ch 400). Fugetsu *believes* Kacho lives.
 - **Momoze**'s murder is SOLVED on-page: killer was her guard **Tuffdy**
-  (confessed ch 372, executed by Hanzo's doppelganger). Tuffdy is not in the
-  registry (named in prose only). Oito witnessed the murder via Little Eye.
+  (confessed ch 372, executed by Hanzo's doppelganger). Tuffdy **is now a
+  registry character** (`tuffdy`) with ability **The Touch** (`the-touch`); he
+  is `death-momoze.killerId` and a Momoze guard. He was also a spy planted by
+  Queen Swinko-swinko. Oito witnessed the murder via Little Eye. The
+  `my-momoze-assassin` mystery stays open only on the residual "who ordered it"
+  question.
 - **Hisoka**: dead ch 356 (Heavens Arena), self-revived ch 357 (Bungee Gum
   pre-set to restart his heart), missing/aboard since. On-page ch 405 in the
   Tier 1 casino.
@@ -175,10 +179,16 @@ prod server. The user often has their own dev server on 3000; don't fight it.
 ## Known registry-boundary calls
 
 These named characters are deliberately **NOT** in the registry (referenced in
-prose only) because they're minor/one-appearance: Tuffdy, Vincent, Wolfe,
+prose only) because they're minor/one-appearance: Vincent, Wolfe,
 Myuhan, Keeney, Tajao, Borksen, Cavic, Sodom, Padaille, Sandra, Saquelle, plus
 Momoze's other guards (Bladge, Laroc, Nagmum). If a future arc promotes one,
 add it then — don't add death records or edges for non-registry names.
+(Tuffdy was promoted into the registry so `death-momoze` could name its killer;
+see the Momoze canon note above.)
+
+For a killer/cause that is genuinely NOT a person — e.g. Kacho killed by the
+ritual's horde of hands for fleeing the ship — use the `DeathRecord.killerName`
+free-text field instead of inventing a registry id. `death-kacho` uses it.
 
 ## How to hunt for missing content (the method that works)
 

@@ -1718,6 +1718,62 @@ export const characters: Character[] = [
     incomplete: true,
   },
   {
+    id: "tuffdy",
+    name: "Tuffdy",
+    role: "Momoze's royal bodyguard; Swinko-swinko's planted spy",
+    bio: "A tall, hard-faced royal bodyguard assigned to the Twelfth Prince — and secretly a spy planted by Queen Swinko-swinko. He murdered Momoze on the war's first night to curry favor with whoever would take the throne, regardless of his own queen's instructions.",
+    bioReveals: [
+      {
+        revealCh: 372,
+        text: "Hanzo, narrowing Momoze's killer to Tuffdy or Nagmum, entered his cell via a double and fed him a story that Benjamin wished to hire him. Tuffdy asked how Hanzo had found him out — an unwitting confession — and revealed his ability, The Touch, a double he sends to kill while he lies still in his own bed. Hanzo snapped his neck with a rolled blanket and staged it as suicide.",
+      },
+    ],
+    monogram: "TU",
+    factionIds: ["momoze-camp", "kakin-military"],
+    servesPrinceId: "prince-momoze",
+    introducedCh: 366,
+    nenType: "unknown",
+    nenAbilityIds: ["the-touch"],
+    statusHistory: [
+      { ch: 366, status: "alive" },
+      {
+        ch: 368,
+        status: "detained",
+        note: "Taken into Royal Army custody with Momoze's five other guards after the murder.",
+      },
+      {
+        ch: 372,
+        status: "dead",
+        note: "Confessed under Hanzo's ruse; killed by Hanzo and staged as a suicide.",
+      },
+    ],
+    locationHistory: [
+      {
+        ch: 366,
+        locationId: "momoze-quarters",
+        note: "Posted to the Twelfth Prince's guard detail.",
+      },
+      {
+        ch: 368,
+        locationId: "justice-bureau-hq",
+        note: "Court-martial custody after Momoze's murder.",
+      },
+    ],
+    secrets: [
+      {
+        text: "He was a spy planted on Momoze's detail by Queen Swinko-swinko.",
+        revealCh: 366,
+      },
+      {
+        text: "He is Momoze's murderer, killing her with The Touch from his own bed.",
+        revealCh: 372,
+        knownBy: ["hanzo", "kurapika", "vergei"],
+      },
+    ],
+    chapterAppearances: [366, 368, 372],
+    tags: ["guard", "nen-user", "spy", "assassin", "victim"],
+  },
+  {
     id: "vergei",
     name: "Vergei",
     role: "Chief of Marayam's household guards (Justice Bureau)",

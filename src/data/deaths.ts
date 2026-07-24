@@ -102,13 +102,14 @@ export const deaths: DeathRecord[] = [
   {
     id: "death-momoze",
     victimId: "momoze",
-    suspectedKillerIds: [],
+    killerId: "tuffdy",
     method:
       "Suffocated in her quarters on the voyage's first night by one of her own bodyguards — Oito, surveying through Little Eye, watched it happen in real time (ch 368), too late to stop it. Hanzo's clone-work identified the guard Tuffdy, who confessed and was executed by Hanzo's doppelganger the same night (ch 372).",
     locationId: "momoze-quarters",
     chapter: 368,
     witnessIds: ["oito"],
     awareCharacterIds: [
+      "tuffdy",
       "sevanti",
       "slakka",
       "nipaper",
@@ -136,6 +137,7 @@ export const deaths: DeathRecord[] = [
   {
     id: "death-kacho",
     victimId: "kacho",
+    killerName: "The ritual's horde of hands (for fleeing the ship)",
     method:
       "Killed during the banquet-night lifeboat escape (ch 383): as the boat neared open water, a horde of hands closed in — the ritual's answer to a fleeing prince. Kacho pushed Fugetsu back through the Magical Worm door and was shown dead on the drifting lifeboat; the 'Kacho' who walked back through the door was her Guardian Spirit Beast, Without You.",
     locationId: "hidden-passage-network",

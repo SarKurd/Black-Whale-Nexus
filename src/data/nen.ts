@@ -1586,6 +1586,53 @@ export const nenAbilities: NenAbility[] = [
     confidence: "canonical",
   },
   {
+    id: "the-touch",
+    name: "The Touch",
+    userCharacterId: "tuffdy",
+    kind: "personal",
+    nenType: "conjurer",
+    description:
+      "Tuffdy's assassination ability (lit. 'Astral Projection'). Lying down with his eyes closed, he conjures a double that moves freely within a ~20-meter radius; devoting his full concentration to it, he controls it with great precision. He used it to strangle Momoze while his own body lay in bed — an airtight alibi.",
+    activation:
+      "Lie still with eyes closed and project a controllable double within range.",
+    conditions: [
+      "Tuffdy's real body is inert and defenseless while the double is active.",
+      "The double operates within roughly 20 meters of his body.",
+    ],
+    effects: [
+      "Deniable murder-at-a-distance: the killer appears asleep in his own cell/bed (Momoze, ch 368).",
+    ],
+    weaknesses: [
+      "Tuffdy was physically unremarkable — unable to break Hanzo's hold or tear the cloth used to kill him.",
+    ],
+    firstSeenCh: 368,
+    revealCh: 372,
+    uses: [
+      {
+        ch: 368,
+        note: "Momoze strangled in her bedroom while Tuffdy lay in his own bed.",
+      },
+      {
+        ch: 372,
+        note: "Named and explained when Hanzo baits Tuffdy into confessing.",
+      },
+    ],
+    status: "inactive",
+    awareCharacterIds: [
+      { characterId: "hanzo", sinceCh: 372 },
+      { characterId: "kurapika", sinceCh: 374 },
+      { characterId: "vergei", sinceCh: 374 },
+    ],
+    evidence: [
+      {
+        chapter: 372,
+        note: "Tuffdy names The Touch and its mechanics under Hanzo's ruse; Hanzo then kills him.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
+  {
     id: "stand-by-me",
     name: "Stand by Me",
     userCharacterId: "yushohi",

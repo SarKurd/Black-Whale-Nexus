@@ -132,8 +132,11 @@ export default function DeathsPage() {
             (victim?.factionIds.includes(faction) ?? false);
           if (!inFaction) return false;
         }
-        if (killer === "known" && !d.killerId) return false;
-        if (killer === "unknown" && d.killerId) return false;
+        // A killer counts as "known" if identified either by a registry id or
+        // by a named non-registry cause (killerName).
+        const killerKnown = Boolean(d.killerId || d.killerName);
+        if (killer === "known" && !killerKnown) return false;
+        if (killer === "unknown" && killerKnown) return false;
         if (prince !== "all" && d.princeContextId !== prince) return false;
         return true;
       }),
@@ -374,6 +377,8 @@ function DeathRow({
               </span>
               <EntityList ids={record.suspectedKillerIds ?? []} />
             </span>
+          ) : record.killerName ? (
+            <span className="text-parchment">{record.killerName}</span>
           ) : (
             <span className="text-faint">Unknown</span>
           )}

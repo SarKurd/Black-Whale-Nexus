@@ -478,6 +478,9 @@ export interface DeathRecord {
   victimId: Id;
   killerId?: Id;
   suspectedKillerIds?: Id[];
+  /** Named killer/cause that is not a registry character (e.g. the contest's
+   *  horde of hands). Used when no `killerId` applies but the cause is known. */
+  killerName?: string;
   method: string;
   locationId?: Id;
   chapter: number;

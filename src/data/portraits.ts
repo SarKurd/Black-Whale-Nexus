@@ -1,5 +1,5 @@
 /**
- * Portrait manifest — one-time locally committed asset set (106 files).
+ * Portrait manifest — one-time locally committed asset set (107 files).
  * Black-and-white manga artwork sourced from Hunterpedia (Manga tab where
  * available), converted to grayscale JPEG for this unofficial fan project.
  */
@@ -100,6 +100,7 @@ export const portraits: Record<string, string> = {
   theta: "/portraits/theta.jpg",
   tserriednich: "/portraits/tserriednich.jpg",
   tubeppa: "/portraits/tubeppa.jpg",
+  tuffdy: "/portraits/tuffdy.jpg",
   tyson: "/portraits/tyson.jpg",
   unma: "/portraits/unma.jpg",
   vergei: "/portraits/vergei.jpg",
