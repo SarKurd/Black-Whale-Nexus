@@ -11,8 +11,8 @@
 | characters | 115 |
 | princes | 14 |
 | factions | 24 |
-| relationships | 170 |
-| events | 231 |
+| relationships | 173 |
+| events | 234 |
 | chapters | 75 |
 | locations | 38 |
 | nen abilities | 83 |

@@ -221,6 +221,17 @@ export const events: StoryEvent[] = [
     confidence: "canonical",
   },
   {
+    id: "ev-344-leorio-kurapika-call",
+    title: "Leorio reconnects Kurapika to the group",
+    summary:
+      "On the drive to Association headquarters, Kurapika takes Leorio's call. Leorio assures him Gon is fine, asks for an e-mail address Kurapika still refuses to give, and tells him his talents are more useful with the Zodiacs.",
+    chapter: 344,
+    kind: "conversation",
+    participantIds: ["leorio", "kurapika"],
+    storylineIds: ["expedition-prep"],
+    confidence: "canonical",
+  },
+  {
     id: "ev-344-ging-buys-team",
     title: "Ging buys the No. 2 seat",
     summary:
@@ -871,6 +882,19 @@ export const events: StoryEvent[] = [
     locationId: "black-whale",
     participantIds: ["nasubi", "beyond", "kurapika", "oito", "woble"],
     storylineIds: ["succession-contest", "beyond-netero"],
+    confidence: "canonical",
+  },
+  {
+    id: "ev-359-leorio-medical-post",
+    title: "Leorio takes his post in the Tier 3 clinic",
+    summary:
+      "As the ship departs, Leorio works under Cheadle in the central medical clinic, carrying and organizing supplies for the severely understaffed voyage.",
+    chapter: 359,
+    day: 1,
+    kind: "movement",
+    locationId: "tier-3-medical",
+    participantIds: ["leorio", "cheadle"],
+    storylineIds: ["ship-security-crisis"],
     confidence: "canonical",
   },
   {
@@ -3240,6 +3264,19 @@ export const events: StoryEvent[] = [
     locationId: "zhang-lei-quarters",
     participantIds: ["kurapika", "zhang-lei", "tenftory", "coventoba", "oito"],
     storylineIds: ["succession-contest", "kurapika-woble"],
+    confidence: "canonical",
+  },
+  {
+    id: "ev-404-halkenburg-medical-handoff",
+    title: "Cheadle's team receives Halkenburg",
+    summary:
+      "Leorio joins Cheadle and four other assistants rushing the collapsed Ninth Prince through the Tier 3 hospital. Cheadle orders bloodwork, imaging, and forensic testing, but Benjamin's royal and military medical teams force the Association staff out before the poison finishes its work.",
+    chapter: 404,
+    day: 11,
+    kind: "movement",
+    locationId: "tier-3-medical",
+    participantIds: ["halkenburg", "cheadle", "leorio"],
+    storylineIds: ["halkenburg-movement", "ship-security-crisis"],
     confidence: "canonical",
   },
   {

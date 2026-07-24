@@ -1348,6 +1348,9 @@ export const nenAbilities: NenAbility[] = [
       "Leorio strikes a nearby surface and sends aura through it to a chosen point, where a portal-like opening releases a distant uppercut.",
     activation:
       "Punch a surface and emit the strike along it toward the target point.",
+    conditions: [
+      "Leorio must strike an object or surface within reach to launch the emitted blow.",
+    ],
     effects: [
       "Projects a physical punch far beyond Leorio's normal reach.",
       "Travels through a surface before emerging from a circular opening.",

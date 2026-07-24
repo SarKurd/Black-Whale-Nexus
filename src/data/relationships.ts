@@ -3012,11 +3012,11 @@ export const relationships: Relationship[] = [
     revealCh: 346,
     mutualAwareness: true,
     description:
-      "The Boar — Ging's vacated seat, offered on the strength of the punch that made him famous. He took the call only after securing a second opening for someone he had in mind.",
+      "The Boar — Ging's vacated seat, offered on the strength of the punch that made him famous. After accepting, he immediately used the second vacancy to bring Kurapika to the table.",
     history: [
       {
         ch: 343,
-        text: "Cheadle's phone offer: a Zodiac seat plus a medical program under her own supervision. His counter-condition is a seat for Kurapika.",
+        text: "Cheadle's phone offer: a Zodiac seat plus study abroad under her supervision. He accepts, then asks whether the other vacancy can go to Kurapika.",
       },
       {
         ch: 346,
@@ -3032,6 +3032,47 @@ export const relationships: Relationship[] = [
       {
         chapter: 346,
         note: "Attends the meeting as the new Boar.",
+        confidence: "canonical",
+      },
+    ],
+  },
+  {
+    id: "rel-cheadle-mentors-leorio",
+    from: "cheadle",
+    to: "leorio",
+    kind: "mentoring",
+    directed: true,
+    strength: "strong",
+    secret: false,
+    confirmed: true,
+    startCh: 343,
+    revealCh: 343,
+    mutualAwareness: true,
+    description:
+      "Cheadle recruits Leorio with the study opportunity he cannot refuse: medical training under the Association's chairman, then a place on her Science Team and Tier 3 clinic staff.",
+    history: [
+      {
+        ch: 346,
+        text: "Leorio joins Cheadle and Gel on the Science Team.",
+      },
+      {
+        ch: 359,
+        text: "Teacher and student organize the Tier 3 clinic as the ship departs.",
+      },
+      {
+        ch: 404,
+        text: "They receive the collapsing Halkenburg together before royal doctors take over.",
+      },
+    ],
+    evidence: [
+      {
+        chapter: 343,
+        note: "Cheadle offers to supervise his medical study abroad.",
+        confidence: "canonical",
+      },
+      {
+        chapter: 346,
+        note: "Leorio is assigned to Cheadle's Science Team.",
         confidence: "canonical",
       },
     ],
@@ -3225,7 +3266,7 @@ export const relationships: Relationship[] = [
     revealCh: 0,
     mutualAwareness: true,
     description:
-      "Hunter Exam family of choice. Leorio's price for joining the Zodiacs was a seat for Kurapika; Kurapika, who answers nobody's calls, took that one.",
+      "Hunter Exam family of choice. After accepting the Boar's seat, Leorio's first move was to use the remaining vacancy for Kurapika; Kurapika, who answers nobody's calls, took that one.",
     history: [
       {
         ch: 343,
@@ -3245,6 +3286,50 @@ export const relationships: Relationship[] = [
       {
         chapter: 343,
         note: "'Is there still another room in the Zodiacs?'",
+        confidence: "canonical",
+      },
+    ],
+  },
+  {
+    id: "rel-leorio-trusts-gon",
+    from: "leorio",
+    to: "gon",
+    kind: "trusts",
+    directed: false,
+    strength: "strong",
+    secret: false,
+    confirmed: true,
+    startCh: 0,
+    revealCh: 0,
+    mutualAwareness: true,
+    description:
+      "Hunter Exam family of choice. Leorio nearly turned the chairman election into a one-man campaign to save Gon, then abandoned the race without hesitation once Gon walked in alive.",
+    evidence: [
+      {
+        chapter: 0,
+        note: "Pre-arc friendship, culminating in Leorio's election campaign to secure treatment for Gon.",
+        confidence: "canonical",
+      },
+    ],
+  },
+  {
+    id: "rel-leorio-trusts-killua",
+    from: "leorio",
+    to: "killua",
+    kind: "trusts",
+    directed: false,
+    strength: "moderate",
+    secret: false,
+    confirmed: true,
+    startCh: 0,
+    revealCh: 0,
+    mutualAwareness: true,
+    description:
+      "Old friends whose affection usually arrives disguised as an argument — Killua mangles his name, Leorio shouts back, and both still answer when the group needs them.",
+    evidence: [
+      {
+        chapter: 0,
+        note: "Pre-arc friendship across the Hunter Exam, Yorknew, and election aftermath.",
         confidence: "canonical",
       },
     ],

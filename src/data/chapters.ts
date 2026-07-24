@@ -199,6 +199,7 @@ export const chapters: ChapterInfo[] = [
       "ev-344-ging-buys-team",
       "ev-344-gon-nen-lost",
       "ev-344-five-threats-briefing",
+      "ev-344-leorio-kurapika-call",
     ],
     appearingCharacterIds: [
       "kurapika",
@@ -789,6 +790,7 @@ export const chapters: ChapterInfo[] = [
       "ev-359-five-guards-drained",
       "ev-359-twins-pact",
       "ev-359-dowsing-standoff",
+      "ev-359-leorio-medical-post",
     ],
     appearingCharacterIds: [
       "gel",
@@ -2798,6 +2800,7 @@ export const chapters: ChapterInfo[] = [
       "Kurapika audits Zhang Lei's coins — a cumulative mint compounding toward 10^64, a king's tool for mass-producing Nen users — while keeping the loyalty-manipulation reading and Coventoba's theft to himself. Halkenburg-in-Balsamilco narrates the mind swap's proven rules and his plan: kill his own body, ride Balsamilco ten hours, win as a dead man. As day twelve begins, Halkenburg's poisoned body dies; Benjamin, believing his order fulfilled, choreographs a stately funeral.",
     eventIds: [
       "ev-404-coin-analysis",
+      "ev-404-halkenburg-medical-handoff",
       "ev-404-mind-swap-doctrine",
       "ev-404-halkenburg-body-dies",
       "ev-404-second-round-set",

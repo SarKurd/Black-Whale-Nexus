@@ -1367,6 +1367,7 @@ export const storylines: Storyline[] = [
     participantIds: [
       "mizaistom",
       "cheadle",
+      "leorio",
       "vergei",
       "babimyna",
       "kurapika",
@@ -1398,6 +1399,12 @@ export const storylines: Storyline[] = [
         eventIds: ["ev-358-zodiacs-stretched"],
       },
       {
+        ch: 359,
+        kind: "advance",
+        title: "Leorio and Cheadle take the Tier 3 clinic",
+        eventIds: ["ev-359-leorio-medical-post"],
+      },
+      {
         ch: 368,
         kind: "advance",
         title: "A prince's murder forces an inquiry that can't succeed",
@@ -1415,6 +1422,12 @@ export const storylines: Storyline[] = [
         title: "The martial-law failsafe is briefed",
         linkId: "special-martial-law",
         eventIds: ["ev-400-martial-law-primer"],
+      },
+      {
+        ch: 404,
+        kind: "advance",
+        title: "Royal medicine takes Halkenburg from Association care",
+        eventIds: ["ev-404-halkenburg-medical-handoff"],
       },
       {
         ch: 409,

@@ -1272,21 +1272,25 @@ export const characters: Character[] = [
   {
     id: "leorio",
     name: "Leorio Paradinight",
-    aliases: ["Boar (Zodiacs)"],
-    role: "Zodiac; medical student",
-    bio: "Medical student, Hunter, and Kurapika's oldest friend — famous across the Association since the election for punching Ging on live broadcast. Loud, decent, and stubbornly practical about the one thing he wants: to be a doctor for people who cannot afford one.",
+    aliases: ["Boar (Zodiacs)", "Rioleo (Kurapika)", "Loradio (Killua)"],
+    role: "Zodiac (Boar); Rookie Hunter; medical student",
+    bio: "Medical student, Rookie Hunter, and one of Kurapika's oldest friends — famous across the Association since the election for punching Ging on live broadcast. Loud, decent, and stubbornly practical about the one thing he wants: to be a doctor for people who cannot afford one.",
     bioReveals: [
       {
         revealCh: 343,
-        text: "Accepted Cheadle's invitation to fill a Zodiac vacancy as the second Boar — on the condition that the other empty seat go to his pick. He recommended Kurapika for the Rat.",
+        text: "Accepted Cheadle's invitation to fill Ging's Zodiac vacancy as the new Boar after she secured him a study-abroad place under her supervision. He then asked about the other empty seat and recommended Kurapika for the Rat.",
       },
       {
-        revealCh: 347,
-        text: "Assigned to the Science Team supporting Cheadle's medical corps (ch. 346). His Nen ability transmits an aura impact through remote surfaces — a 'remote punch' Ging copied and named on-panel, deducing Leorio built it from medical ultrasound thinking: reaching what a scalpel cannot.",
+        revealCh: 346,
+        text: "Assigned to the Science Team supporting Cheadle's medical corps. His Nen ability transmits an aura impact through remote surfaces — a 'remote punch' Ging later copies, deducing that Leorio developed it from medical ultrasound thinking: reaching what a scalpel cannot.",
       },
       {
         revealCh: 359,
-        text: "Aboard the Black Whale he works the central medical clinic on Tier 3 with Cheadle, triaging a voyage that shipped one-fifteenth of the doctors it needed.",
+        text: "Aboard the Black Whale he works under Cheadle in the central medical clinic on Tier 3, organizing supplies for a voyage that shipped one-fifteenth of the doctors it needed.",
+      },
+      {
+        revealCh: 404,
+        text: "Joined Cheadle's emergency team when Halkenburg collapsed from covert TSK-17 poisoning. They ordered bloodwork, imaging, and forensic testing before Benjamin's royal and military doctors forced the Association team out.",
       },
     ],
     monogram: "LE",
@@ -1303,12 +1307,22 @@ export const characters: Character[] = [
         note: "Central medical clinic, organizing supplies with Cheadle.",
       },
       {
+        ch: 380,
+        locationId: "tier-3-medical",
+        note: "The voyage's location chart confirms him in the medical ward with Cheadle and Gel.",
+      },
+      {
         ch: 404,
         locationId: "tier-3-medical",
-        note: "On Cheadle's emergency team when Halkenburg's failing body is rushed in.",
+        note: "On Cheadle's emergency team when Halkenburg's failing body is rushed in; displaced by Benjamin's royal and military doctors.",
       },
     ],
     objectives: [
+      {
+        text: "Become a doctor who treats patients regardless of whether they can afford care.",
+        kind: "known",
+        revealCh: 0,
+      },
       {
         text: "Keep the ship's undersupplied lower-tier medicine functioning; continue his studies under Cheadle.",
         kind: "known",
