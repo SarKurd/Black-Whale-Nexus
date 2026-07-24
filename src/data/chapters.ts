@@ -200,6 +200,7 @@ export const chapters: ChapterInfo[] = [
       "ev-344-gon-nen-lost",
       "ev-344-five-threats-briefing",
       "ev-344-leorio-kurapika-call",
+      "ev-344-kurapika-last-eyes",
     ],
     appearingCharacterIds: [
       "kurapika",
@@ -233,6 +234,7 @@ export const chapters: ChapterInfo[] = [
       "ev-345-gon-whale-island",
       "ev-345-tserriednich-murders",
       "ev-345-beyond-contract",
+      "ev-345-kurapika-draws-the-line",
     ],
     appearingCharacterIds: [
       "ging",
@@ -365,6 +367,7 @@ export const chapters: ChapterInfo[] = [
     ],
     locationIds: ["hunter-hq"],
     storylineIds: ["expedition-prep", "beyond-netero", "succession-contest"],
+    abilitiesUsedIds: ["dowsing-chain", "emperor-time"],
     changes: {
       newCharacters: ["benjamin", "theta", "salkov"],
       newKnowledge: [
@@ -865,6 +868,7 @@ export const chapters: ChapterInfo[] = [
     ],
     locationIds: ["room-1014"],
     storylineIds: ["kurapika-woble", "silent-majority", "succession-contest"],
+    abilitiesUsedIds: ["dowsing-chain"],
     changes: {
       newCharacters: ["shimano"],
       newKnowledge: [
@@ -1081,9 +1085,11 @@ export const chapters: ChapterInfo[] = [
       "stealth-dolphin",
       "little-eye",
       "emperor-time",
+      "air-blow",
     ],
     changes: {
       newAbilities: [
+        "Air Blow: Vincent's palm-fired ability, stolen before activation",
         "Stealth Dolphin can lend stolen abilities to another mind",
         "Emperor Time's cost quantified: one hour of life per second",
       ],
@@ -2169,7 +2175,7 @@ export const chapters: ChapterInfo[] = [
     title: "Reflection",
     day: "10",
     summary:
-      "Kurapika's awakening assembly line runs behind closed doors: borrowing Bill's enhancement through Stealth Dolphin, he semi-coercively opens students' nodes — Ladiolus, Maor, Yuri, Satobi. Furykov confirms no manipulation; Babimyna inventories the right hand's growing résumé. Bill explains why he stays despite being Beyond's plant, and Tubeppa correctly deduces Salé-salé was murdered and that she is next. A fourth aura rumbling shakes the block.",
+      "Kurapika's awakening assembly line runs behind closed doors: borrowing Bill's Erigeron through Stealth Dolphin, he semi-coercively opens students' nodes — Ladiolus, Maor, Yuri, Satobi. Furykov confirms no manipulation; Babimyna inventories the right hand's growing résumé. Bill explains why he stays despite being Beyond's plant, and Tubeppa correctly deduces Salé-salé was murdered and that she is next. A fourth aura rumbling shakes the block.",
     eventIds: [
       "ev-388-forced-awakening",
       "ev-388-bill-confession",
@@ -2203,8 +2209,9 @@ export const chapters: ChapterInfo[] = [
       "benjamin-military",
       "beyond-netero",
     ],
-    abilitiesUsedIds: ["stealth-dolphin", "emperor-time"],
+    abilitiesUsedIds: ["stealth-dolphin", "emperor-time", "erigeron"],
     changes: {
+      newAbilities: ["Erigeron — Bill's growth-enhancement ability"],
       newKnowledge: [
         "Kurapika can force-awaken Nen in ordinary guards",
         "Bill boarded as Beyond's man but has chosen the room",
@@ -2739,6 +2746,7 @@ export const chapters: ChapterInfo[] = [
     summary:
       "Balsamilco walks into the Ministry of Justice certain Halkenburg is isolated — and finds Vict signing to him, strangers at the corridor's ends, and twelve devoted civilians powering the bow. The arrow takes him through the wall: Halkenburg now wears Benjamin's strategist. Suspicious but unprovable, Benjamin demands 'results'; Unma tells her real son she is proud of him; Kacho's letter spells out that Benjamin's own mother bore Halkenburg; and a marked Bureau staffer delivers Kaiser a message — Halkenburg is going to die soon.",
     eventIds: [
+      "ev-403-kacho-letter-plan",
       "ev-403-courthouse-ambush",
       "ev-403-balsamilco-possessed",
       "ev-403-unma-call",

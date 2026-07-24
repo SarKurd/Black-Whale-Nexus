@@ -44,7 +44,11 @@ export const nenAbilities: NenAbility[] = [
       },
       {
         ch: 368,
-        note: "Twelve continuous hours covering the insect reconnaissance — ends in a nine-hour blackout for both Kurapika and Oito (ch 369).",
+        note: "Approaches three continuous hours during Oito's reconnaissance and knocks both of them unconscious.",
+      },
+      {
+        ch: 369,
+        note: "The blackout fails to dismiss Stealth Dolphin, leaving Emperor Time active for twelve hours total and costing Kurapika roughly five years of life.",
       },
     ],
     status: "active",
@@ -75,15 +79,39 @@ export const nenAbilities: NenAbility[] = [
     kind: "personal",
     nenType: "conjurer",
     description:
-      "The pendulum chain on Kurapika's ring finger: a lie detector and locator that swings toward truth's absence.",
-    activation: "Conjure the chain; pose questions or scan.",
+      "The ball-ended chain on Kurapika's ring finger: a combat tool and dowsing pendulum that can locate missing people or objects and react when a subject lies.",
+    activation:
+      "Conjure the chain and set a dowsing objective; for lie detection, question subjects one at a time.",
+    conditions: [
+      "Ordinary lie detection requires Kurapika to face the subject directly.",
+      "With Emperor Time active, it can test a recording only if Kurapika has previously met the subject.",
+      "It detects what the subject believes to be a lie, so erased or altered memories can defeat it.",
+    ],
     effects: [
-      "Detects lies via involuntary aura response.",
-      "Locates hidden objects and people.",
+      "Swings when a questioned subject knowingly lies.",
+      "Points toward missing objects and people.",
+      "Serves as an offensive and defensive chain in combat.",
     ],
     firstSeenCh: 0,
     revealCh: 0,
-    uses: [{ ch: 371, note: "Screens Room 1014's guards for hostile intent." }],
+    uses: [
+      {
+        ch: 348,
+        note: "Screens Hunter Exam recordings under Emperor Time and identifies Saiyu as Beyond's mole.",
+      },
+      {
+        ch: 360,
+        note: "Tests Room 1014's guards and servants during the day-one standoff.",
+      },
+      {
+        ch: 371,
+        note: "Clears Bill and Shimanu of knowingly hiding an attack on Woble.",
+      },
+      {
+        ch: 412,
+        note: "Verifies Oito's confession about the Woble substitution in front of rival guards.",
+      },
+    ],
     status: "active",
     evidence: [
       {
@@ -194,7 +222,10 @@ export const nenAbilities: NenAbility[] = [
       "The little-finger blade: it drives a condition into the target's heart; violation means death.",
     activation:
       "Pierce the target's heart with the chain blade; state the rule.",
-    conditions: ["Stated rule must be violated for the blade to kill."],
+    conditions: [
+      "Emperor Time must be active.",
+      "Stated rule must be violated for the blade to kill.",
+    ],
     effects: ["Enforceable contract under pain of death."],
     firstSeenCh: 0,
     revealCh: 0,
@@ -248,6 +279,91 @@ export const nenAbilities: NenAbility[] = [
       {
         chapter: 364,
         note: "Loan mechanics shown during the transfer to Oito.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "air-blow",
+    name: "Air Blow",
+    kind: "personal",
+    nenType: "unknown",
+    description:
+      "Vincent's palm-fired ability, stolen by Kurapika before it could strike Bill. Its exact mechanism is unknown; Vincent expected it to break through the guard of a Nen user who could stop bullets.",
+    activation:
+      "Gather aura in the left palm and release it toward the target.",
+    effects: [
+      "Produces an apparently non-contact attack powerful enough that Vincent expected it to penetrate Bill's guard.",
+      "Can be removed mid-activation by Steal Chain.",
+    ],
+    firstSeenCh: 364,
+    revealCh: 364,
+    uses: [
+      {
+        ch: 364,
+        note: "Vincent begins activating it against Bill; Kurapika pierces him with Steal Chain and takes the ability first.",
+      },
+    ],
+    status: "active",
+    awareCharacterIds: [
+      { characterId: "kurapika", sinceCh: 364 },
+      { characterId: "bill", sinceCh: 364 },
+      { characterId: "benjamin", sinceCh: 373 },
+      { characterId: "balsamilco", sinceCh: 373 },
+    ],
+    evidence: [
+      {
+        chapter: 364,
+        note: "Activation attempt and theft shown on-page.",
+        confidence: "canonical",
+      },
+      {
+        chapter: 373,
+        note: "Named among the abilities inherited by Benjamin Baton.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "erigeron",
+    name: "Erigeron",
+    userCharacterId: "bill",
+    kind: "personal",
+    nenType: "enhancer",
+    description:
+      "Bill's growth-acceleration ability. Kurapika repeatedly borrows it with permission, loads it into Stealth Dolphin, and transfers its aura to students during water divination to force their Aura Nodes open.",
+    activation:
+      "Bring both palms close to a living target; Kurapika can instead transfer the stolen ability through Stealth Dolphin.",
+    conditions: [
+      "Its effect on an untrained person is weak without Kurapika's Stealth Dolphin awakening method.",
+    ],
+    effects: [
+      "Dramatically accelerates the growth of living organisms.",
+      "Improves a person's Nen development.",
+      "When transferred through Stealth Dolphin, semi-forcibly awakens a non-user's Aura Nodes.",
+    ],
+    firstSeenCh: 388,
+    revealCh: 388,
+    uses: [
+      {
+        ch: 388,
+        note: "Bill sprouts a seed during water divination; Kurapika uses the borrowed ability to awaken Ladiolus, Maor, Yuri, and Satobi.",
+      },
+    ],
+    status: "active",
+    awareCharacterIds: [
+      { characterId: "bill", sinceCh: 0 },
+      { characterId: "kurapika", sinceCh: 388 },
+      { characterId: "furykov", sinceCh: 388 },
+      { characterId: "babimyna", sinceCh: 388 },
+      { characterId: "maor", sinceCh: 388 },
+    ],
+    evidence: [
+      {
+        chapter: 388,
+        note: "Bill demonstrates the seed-growth effect and explains its use on people.",
         confidence: "canonical",
       },
     ],

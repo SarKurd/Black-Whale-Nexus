@@ -11,14 +11,14 @@
 | characters | 115 |
 | princes | 14 |
 | factions | 24 |
-| relationships | 173 |
-| events | 234 |
+| relationships | 178 |
+| events | 237 |
 | chapters | 75 |
 | locations | 38 |
-| nen abilities | 83 |
+| nen abilities | 85 |
 | guardian beasts | 14 |
 | knowledge facts | 23 |
-| knowledge rows | 139 |
+| knowledge rows | 146 |
 | deaths | 12 |
 | storylines | 17 |
 | mysteries | 16 |

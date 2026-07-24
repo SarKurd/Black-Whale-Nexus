@@ -97,10 +97,16 @@ export const storylines: Storyline[] = [
         ],
       },
       {
+        ch: 344,
+        kind: "advance",
+        title: "Kurapika identifies the last collector",
+        eventIds: ["ev-344-kurapika-last-eyes"],
+      },
+      {
         ch: 345,
         kind: "advance",
-        title: "Beyond signs the six-clause contract",
-        eventIds: ["ev-345-beyond-contract"],
+        title: "Beyond signs; Kurapika draws his line",
+        eventIds: ["ev-345-beyond-contract", "ev-345-kurapika-draws-the-line"],
       },
       {
         ch: 346,
@@ -450,6 +456,13 @@ export const storylines: Storyline[] = [
         title: "Longhi's contract drags Beyond's shadow into the room",
         linkId: "beyond-netero",
         eventIds: ["ev-401-moonlight-act", "ev-401-curse-sacrifices"],
+      },
+      {
+        ch: 403,
+        kind: "advance",
+        title: "Kacho's letter becomes Room 1014's leverage",
+        linkId: "kacho-fugetsu",
+        eventIds: ["ev-403-kacho-letter-plan"],
       },
       {
         ch: 411,

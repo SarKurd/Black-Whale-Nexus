@@ -232,6 +232,20 @@ export const events: StoryEvent[] = [
     confidence: "canonical",
   },
   {
+    id: "ev-344-kurapika-last-eyes",
+    title: "Kurapika faces the last collector",
+    summary:
+      "At the memorial holding the Scarlet Eyes he has recovered, Kurapika studies Tserriednich's photograph and counts the cost of every retrieval. The Fourth Prince is the last collector with the last group of eyes — including Pairo's — leaving Kurapika to wonder what remains when the journey ends and there is no home to return to.",
+    chapter: 344,
+    kind: "discovery",
+    participantIds: ["kurapika", "tserriednich"],
+    storylineIds: ["expedition-prep"],
+    consequences: [
+      "Tserriednich becomes the final target of Kurapika's recovery mission",
+    ],
+    confidence: "canonical",
+  },
+  {
     id: "ev-344-ging-buys-team",
     title: "Ging buys the No. 2 seat",
     summary:
@@ -314,6 +328,17 @@ export const events: StoryEvent[] = [
     consequences: [
       "Beyond's custody is formalized on paper he clearly plans around",
     ],
+    confidence: "canonical",
+  },
+  {
+    id: "ev-345-kurapika-draws-the-line",
+    title: "Kurapika names his limit with Tserriednich",
+    summary:
+      "Mizaistom asks what happens after the Scarlet Eyes are recovered. Kurapika says he wants nothing else from Tserriednich and will yield to almost any demand, but adds that two collectors who once preferred death both surrendered the eyes without dying. He expects the Fourth Prince to do the same.",
+    chapter: 345,
+    kind: "conversation",
+    participantIds: ["kurapika", "mizaistom", "tserriednich"],
+    storylineIds: ["expedition-prep"],
     confidence: "canonical",
   },
   // -------------------------------------------------------------------------
@@ -1288,7 +1313,14 @@ export const events: StoryEvent[] = [
     day: 1,
     kind: "movement",
     locationId: "room-1014",
-    participantIds: ["sakata", "hashito", "slakka", "zhang-lei", "coventoba"],
+    participantIds: [
+      "sakata",
+      "hashito",
+      "slakka",
+      "zhang-lei",
+      "coventoba",
+      "kurapika",
+    ],
     storylineIds: ["kurapika-woble", "succession-contest"],
     confidence: "canonical",
   },
@@ -1476,7 +1508,7 @@ export const events: StoryEvent[] = [
     day: 2,
     kind: "decision",
     locationId: "tserriednich-quarters",
-    participantIds: ["tserriednich"],
+    participantIds: ["tserriednich", "kurapika", "belerainte"],
     storylineIds: ["tserriednich-nen", "nen-classes"],
     confidence: "canonical",
   },
@@ -2461,7 +2493,7 @@ export const events: StoryEvent[] = [
     id: "ev-388-forced-awakening",
     title: "The awakening assembly line",
     summary:
-      "Behind closed doors, Kurapika borrows Bill's growth-enhancement ability through Stealth Dolphin and 'attacks' students with it, semi-coercively opening their nodes: Ladiolus, Maor, Yuri, and Satobi emerge visibly changed. Furykov confirms no manipulation; Babimyna quietly catalogues what Kurapika's right hand can do.",
+      "Behind closed doors, Kurapika borrows Bill's Erigeron through Stealth Dolphin and 'attacks' students with it, semi-coercively opening their nodes: Ladiolus, Maor, Yuri, and Satobi emerge visibly changed. Furykov confirms no manipulation; Babimyna quietly catalogues what Kurapika's right hand can do.",
     chapter: 388,
     day: 10,
     kind: "nen-reveal",
@@ -3120,6 +3152,9 @@ export const events: StoryEvent[] = [
       "tubeppa",
       "maor",
       "longhi",
+      "kurapika",
+      "oito",
+      "woble",
     ],
     storylineIds: ["succession-contest", "kurapika-woble"],
     confidence: "canonical",
@@ -3174,6 +3209,19 @@ export const events: StoryEvent[] = [
   // -------------------------------------------------------------------------
   // Ch 403 — "Results", day 11
   // -------------------------------------------------------------------------
+  {
+    id: "ev-403-kacho-letter-plan",
+    title: "Kurapika turns Kacho's letter into leverage",
+    summary:
+      "Kurapika tells Oito that escape from the ship is impossible but the ritual still contains an opening. With her permission, he schedules Kacho's letter for publication during the second Nen class — hoping to calm the lower princes, prevent the higher camps from panicking over exposed secrets, and draw them into negotiations.",
+    chapter: 403,
+    day: 11,
+    kind: "decision",
+    locationId: "room-1014",
+    participantIds: ["kurapika", "oito", "kacho"],
+    storylineIds: ["kurapika-woble", "nen-classes", "kacho-fugetsu"],
+    confidence: "canonical",
+  },
   {
     id: "ev-403-courthouse-ambush",
     title: "The courthouse ambush",

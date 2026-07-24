@@ -912,29 +912,53 @@ export const characters: Character[] = [
   {
     id: "kurapika",
     name: "Kurapika",
-    aliases: ["The Chain User", "Rat (Zodiacs)"],
-    role: "Bodyguard to Prince Woble; Zodiac",
-    bio: "Last survivor of the Kurta clan, aboard as Queen Oito's bodyguard and secretly as the Zodiacs' agent. Runs the defense of Room 1014 while hunting the scarlet eyes Tserriednich holds — and burning his own lifespan to do it.",
+    aliases: ["Chain Bastard (Phantom Troupe)", "Rat (Zodiacs)"],
+    role: "Blacklist Hunter; Nostrade underboss; Zodiac (Rat); royal bodyguard",
+    bio: "Last survivor of the Kurta Clan and the central strategist of Room 1014. Kurapika serves Queen Oito as a royal bodyguard, teaches Nen to the rival camps, works covertly for the Zodiacs, and hunts the last Scarlet Eyes held by Tserriednich — spending his own lifespan to keep the weakest household alive.",
     bioReveals: [
       {
+        revealCh: 343,
+        text: "Accepted Leorio's nomination to the Zodiacs after Mizaistom identified the collector holding the last large group of Kurta Scarlet Eyes: Fourth Prince Tserriednich.",
+      },
+      {
         revealCh: 346,
-        text: "Joined the Zodiacs as the second Rat on Leorio's recommendation. Mizaistom's price for his cooperation was the intelligence he could not refuse: the buyer holding the bulk of the Kurta scarlet eyes is Fourth Prince Tserriednich (ch. 343). Assigned to the Intelligence Team.",
+        text: "Formally took Pariston's former Zodiac seat as the Rat and joined the Intelligence Team with Mizaistom, Pyon, and Saccho. His first question exposed the likelihood that Beyond had allies inside the Association.",
       },
       {
         revealCh: 350,
         text: "Ran the 289th Hunter Exam's lie-detection screen, failing every one of Beyond's plants, and with Mizaistom secretly identified Saiyu as the Zodiacs' mole (ch. 348). Then planted five trusted Hunters — Izunavi, Biscuit, Basho, Melody, Hanzo — across the princes' bodyguard listings and took the Woble posting himself when the 'Halkenburg' ad turned out to be Queen Oito's trap for people exactly like him.",
       },
       {
-        revealCh: 370,
-        text: "Announced a Nen class for rival guards as an intelligence trap, trading his knowledge for a window into every household. Emperor Time's true cost — one hour of life per second — makes each activation a controlled amputation.",
+        revealCh: 364,
+        text: "Revealed Stealth Dolphin, which can analyze and loan abilities stolen by his index-finger chain. Emperor Time's true cost — one hour of life per second — makes every activation a controlled amputation.",
+      },
+      {
+        revealCh: 367,
+        text: "Announced a Nen class for rival guards as both a defensive stalemate and an intelligence trap, trading his knowledge for witnesses inside Room 1014 and a window into every household.",
       },
       {
         revealCh: 401,
-        text: "Signed Longhi's Moonlight Act contract: a Nen-enforced truce and alliance with Tubeppa, layered on top of his coin-brokered understanding with Zhang Lei and the intelligence in Kacho's letter. Room 1014 is now the hinge of a three-camp bloc.",
+        text: "Signed Longhi's Moonlight Act contract, creating a Nen-enforced truce with Tubeppa and accepting a second clause that trades one future use of the ability for identifying Beyond's child among the princes.",
+      },
+      {
+        revealCh: 403,
+        text: "Secured Oito's permission to publish Kacho's letter during the second Nen class and joined the Woble–Tubeppa pact offering Zhang Lei a joint surrender if the three camps are the final survivors.",
+      },
+      {
+        revealCh: 404,
+        text: "Decoded Zhang Lei's coins as a cumulative Conjuration ability built to awaken future holders and possibly bind their loyalty. He accepted a new coin while concealing both the coercion risk and Coventoba's apparent theft.",
+      },
+      {
+        revealCh: 411,
+        text: "Opened the second Nen class with eighteen students, explained the succession contest as stage two of a four-part national ritual, and declared that Woble was ineligible to participate.",
       },
       {
         revealCh: 412,
-        text: "Opened the second round of Nen classes by dropping two bombs: his deduction that the succession ritual breaks (and the dynasty falls) if more than one prince survives the voyage — and the declaration that Woble is ineligible to participate at all.",
+        text: "Verified Oito's confession with Dowsing Chain: the infant aboard is her sister's son, while the real Woble — the girl who underwent the Seed Urn ceremony — is hidden off-ship at an address even Oito does not know.",
+      },
+      {
+        revealCh: 414,
+        text: "Made unraveling Beyond's curse and finding the real Woble the room's priorities. When Oito doubted the Association, he staked his life on Gon and Killua — friends he trusts more than himself — to protect the prince ashore.",
       },
     ],
     monogram: "KU",
@@ -945,7 +969,18 @@ export const characters: Character[] = [
     nenType: "conjurer",
     nenTypeRevealCh: 0,
     statusHistory: [{ ch: 0, status: "alive" }],
-    locationHistory: [{ ch: 359, locationId: "room-1014" }],
+    locationHistory: [
+      {
+        ch: 346,
+        locationId: "hunter-hq",
+        note: "Formally seated as the Rat and assigned to the Intelligence Team.",
+      },
+      {
+        ch: 358,
+        locationId: "room-1014",
+        note: "Takes command of Queen Oito and Prince Woble's protection detail.",
+      },
+    ],
     objectives: [
       { text: "Protect Woble and Oito.", kind: "known", revealCh: 350 },
       {
@@ -958,6 +993,16 @@ export const characters: Character[] = [
         kind: "hidden",
         revealCh: 346,
       },
+      {
+        text: "Protect the substitute infant aboard while locating and protecting the real Woble off-ship.",
+        kind: "hidden",
+        revealCh: 412,
+      },
+      {
+        text: "Determine whether Beyond's curse targets the real Woble and lift it through either the source or the target.",
+        kind: "known",
+        revealCh: 414,
+      },
     ],
     secrets: [
       {
@@ -968,7 +1013,20 @@ export const characters: Character[] = [
       {
         text: "He is the chain user who destroyed the Phantom Troupe's Yorknew operation.",
         revealCh: 0,
-        knownBy: ["chrollo", "hisoka", "illumi", "melody", "bill", "mizaistom"],
+        knownBy: [
+          "chrollo",
+          "hisoka",
+          "nobunaga",
+          "feitan",
+          "phinks",
+          "machi",
+          "franklin",
+          "shalnark",
+          "melody",
+          "gon",
+          "killua",
+          "leorio",
+        ],
       },
       {
         text: "He is a Kurta; his eyes turn scarlet under emotion.",
@@ -977,19 +1035,24 @@ export const characters: Character[] = [
       },
       {
         text: "Emperor Time consumes one hour of his lifespan per second of use.",
-        revealCh: 370,
+        revealCh: 364,
         knownBy: ["bill"],
       },
     ],
     possessions: [
       {
-        text: "Little Eye — Sayird's small-animal reconnaissance ability, stolen via Stealth Dolphin.",
-        revealCh: 361,
+        text: "Black handgun carried for protection and intimidation.",
+        revealCh: 358,
+      },
+      {
+        text: "A value-1 coin produced by Zhang Lei's Guardian Spirit Beast.",
+        revealCh: 404,
       },
     ],
     chapterAppearances: [
-      343, 344, 345, 346, 348, 349, 350, 358, 359, 360, 361, 362, 363, 367, 368,
-      370, 371, 373, 375, 377, 385, 390, 394, 400, 401, 403, 404, 411, 412, 414,
+      343, 344, 345, 346, 348, 349, 350, 358, 359, 360, 361, 362, 363, 364, 365,
+      366, 367, 368, 369, 370, 371, 372, 373, 374, 376, 382, 386, 388, 400, 401,
+      402, 403, 404, 411, 412, 414,
     ],
     tags: ["hunter", "nen-user", "zodiac", "protagonist"],
   },

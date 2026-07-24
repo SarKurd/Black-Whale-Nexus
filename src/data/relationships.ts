@@ -490,15 +490,15 @@ export const relationships: Relationship[] = [
     strength: "strong",
     secret: false,
     confirmed: true,
-    startCh: 358,
-    revealCh: 358,
+    startCh: 350,
+    revealCh: 350,
     mutualAwareness: true,
     description:
       "Formally hired as Woble's bodyguard; in practice Oito is the client and the partner both.",
     evidence: [
       {
-        chapter: 358,
-        note: "Engagement shown pre-departure.",
+        chapter: 350,
+        note: "Oito exposes the false bodyguard listing and offers Kurapika ten times the fee to get her and Woble off the ship.",
         confidence: "canonical",
       },
     ],
@@ -793,6 +793,69 @@ export const relationships: Relationship[] = [
     ],
   },
   {
+    id: "rel-kurapika-targets-tserriednich",
+    from: "kurapika",
+    to: "tserriednich",
+    kind: "targeting",
+    directed: true,
+    strength: "strong",
+    secret: true,
+    confirmed: true,
+    startCh: 343,
+    revealCh: 343,
+    mutualAwareness: false,
+    description:
+      "Tserriednich is the last collector in Kurapika's recovery mission, holding the final large group of Kurta Scarlet Eyes. Kurapika wants only their return, but has built his entire royal-bodyguard network around securing the physical contact needed to compel it.",
+    history: [
+      {
+        ch: 344,
+        text: "Kurapika studies the Fourth Prince's photograph at the memorial holding the eyes he has already recovered.",
+      },
+      {
+        ch: 345,
+        text: "He tells Mizaistom he will yield to almost any demand for the eyes — and has changed the minds of two collectors who once preferred death.",
+      },
+      {
+        ch: 350,
+        text: "Five trusted Hunters enter the princes' bodyguard listings to create a route to physical contact with Tserriednich.",
+      },
+    ],
+    evidence: [
+      {
+        chapter: 343,
+        note: "Mizaistom identifies Tserriednich as the collector and Kurapika accepts the Zodiac seat.",
+        confidence: "canonical",
+      },
+      {
+        chapter: 350,
+        note: "Kurapika states that physical contact with Tserriednich is the infiltration team's objective.",
+        confidence: "canonical",
+      },
+    ],
+  },
+  {
+    id: "rel-kurapika-targets-phantom-troupe",
+    from: "kurapika",
+    to: "phantom-troupe",
+    kind: "targeting",
+    directed: true,
+    strength: "strong",
+    secret: false,
+    confirmed: true,
+    startCh: 0,
+    revealCh: 0,
+    mutualAwareness: true,
+    description:
+      "The Kurta massacre made the Troupe Kurapika's original quarry. He killed Uvogin, captured and Nen-sealed Chrollo, and recovered many of his clan's eyes, but the vendetta remains unresolved — while he is still unaware that the surviving Spiders share the Black Whale.",
+    evidence: [
+      {
+        chapter: 0,
+        note: "Pre-arc Hunter Exam vow and Yorknew campaign.",
+        confidence: "canonical",
+      },
+    ],
+  },
+  {
     id: "rel-mizaistom-commands-kurapika",
     from: "mizaistom",
     to: "kurapika",
@@ -839,7 +902,7 @@ export const relationships: Relationship[] = [
     secret: false,
     confirmed: true,
     startCh: 0,
-    revealCh: 359,
+    revealCh: 0,
     mutualAwareness: true,
     description:
       "Nostrade comrades; she has heard his heart at its worst and stayed.",
@@ -869,6 +932,72 @@ export const relationships: Relationship[] = [
       {
         chapter: 0,
         note: "Pre-arc training history.",
+        confidence: "canonical",
+      },
+    ],
+  },
+  {
+    id: "rel-kurapika-hires-biscuit",
+    from: "kurapika",
+    to: "biscuit",
+    kind: "hired",
+    directed: true,
+    strength: "moderate",
+    secret: true,
+    confirmed: true,
+    startCh: 350,
+    revealCh: 350,
+    mutualAwareness: true,
+    description:
+      "Recruited on Killua's recommendation to penetrate the six royal bodyguard listings. Biscuit took Marayam's contract and became Kurapika's eyes inside Room 1013.",
+    evidence: [
+      {
+        chapter: 350,
+        note: "Kurapika briefs and hires the five-Hunter infiltration team.",
+        confidence: "canonical",
+      },
+    ],
+  },
+  {
+    id: "rel-kurapika-hires-basho",
+    from: "kurapika",
+    to: "basho",
+    kind: "hired",
+    directed: true,
+    strength: "moderate",
+    secret: true,
+    confirmed: true,
+    startCh: 350,
+    revealCh: 350,
+    mutualAwareness: true,
+    description:
+      "A former Nostrade colleague hired into the royal infiltration team. Basho took Luzurus's posting and reports from Room 1007 while protecting Fugetsu through his haiku.",
+    evidence: [
+      {
+        chapter: 350,
+        note: "Kurapika briefs and hires the five-Hunter infiltration team.",
+        confidence: "canonical",
+      },
+    ],
+  },
+  {
+    id: "rel-kurapika-hires-hanzo",
+    from: "kurapika",
+    to: "hanzo",
+    kind: "hired",
+    directed: true,
+    strength: "moderate",
+    secret: true,
+    confirmed: true,
+    startCh: 350,
+    revealCh: 350,
+    mutualAwareness: true,
+    description:
+      "An old Hunter Exam ally hired into Momoze's detail. After her murder, Hanzo remains part of Kurapika's cross-household network through Marayam's sealed Room 1013.",
+    evidence: [
+      {
+        chapter: 350,
+        note: "Kurapika briefs and hires the five-Hunter infiltration team.",
         confidence: "canonical",
       },
     ],
@@ -3361,16 +3490,27 @@ export const relationships: Relationship[] = [
     from: "kurapika",
     to: "gon",
     kind: "trusts",
-    directed: true,
+    directed: false,
     strength: "strong",
     secret: false,
     confirmed: true,
     startCh: 0,
-    revealCh: 414,
-    mutualAwareness: false,
+    revealCh: 0,
+    mutualAwareness: true,
     description:
-      "The face behind the oath: promising Oito mainland guardians for the real Woble, Kurapika swears on his life that he has 'friends he trusts more than himself' — and pictures Gon. The trust is older than the war; chapter 414 is just the first time it's said out loud.",
+      "Hunter Exam family of choice. Kurapika once made rescuing Gon and Killua his highest priority; aboard the Black Whale, Gon becomes one of the two friends he trusts more than himself to protect the real Woble ashore.",
+    history: [
+      {
+        ch: 414,
+        text: "Kurapika stakes his life on friends who will protect the hidden prince and pictures Gon and Killua.",
+      },
+    ],
     evidence: [
+      {
+        chapter: 0,
+        note: "Pre-arc friendship across the Hunter Exam and Yorknew hostage exchange.",
+        confidence: "canonical",
+      },
       {
         chapter: 414,
         note: "The life-sworn promise, with Gon pictured on-page.",
@@ -3383,16 +3523,31 @@ export const relationships: Relationship[] = [
     from: "kurapika",
     to: "killua",
     kind: "trusts",
-    directed: true,
+    directed: false,
     strength: "strong",
     secret: false,
     confirmed: true,
     startCh: 0,
-    revealCh: 414,
-    mutualAwareness: false,
+    revealCh: 0,
+    mutualAwareness: true,
     description:
-      "The second face behind the oath: the friends Kurapika trusts 'more than himself' to protect the Prince ashore are Gon and Killua. An assassin's son, silently nominated guardian of a hidden princess.",
+      "Hunter Exam family of choice. Killua recommended Biscuit for Kurapika's royal infiltration team; aboard the Black Whale, Kurapika silently nominates him with Gon as a guardian for the real Woble ashore.",
+    history: [
+      {
+        ch: 350,
+        text: "Kurapika recruits Biscuit on Killua's recommendation.",
+      },
+      {
+        ch: 414,
+        text: "Kurapika stakes his life on friends who will protect the hidden prince and pictures Gon and Killua.",
+      },
+    ],
     evidence: [
+      {
+        chapter: 0,
+        note: "Pre-arc friendship across the Hunter Exam and Yorknew hostage exchange.",
+        confidence: "canonical",
+      },
       {
         chapter: 414,
         note: "The life-sworn promise, with Killua pictured on-page.",
@@ -3548,7 +3703,7 @@ export const relationships: Relationship[] = [
     secret: true,
     confirmed: true,
     startCh: 0,
-    revealCh: 359,
+    revealCh: 0,
     mutualAwareness: true,
     description:
       "From the Nostrade days: chains, scarlet eyes, and the heartbeat underneath all of it.",
