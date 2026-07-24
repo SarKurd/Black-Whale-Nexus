@@ -265,14 +265,17 @@ function AbilityCard({ ability }: { ability: NenAbility }) {
       ? ability.description
       : ability.description.slice(0, periodIdx + 1);
   return (
-    <Link
-      href={`/nen/${ability.id}`}
-      className="dossier group block p-3 transition-colors hover:border-gold-line"
-    >
+    <article className="dossier group block p-3 transition-colors hover:border-gold-line">
       <div className="flex items-baseline justify-between gap-2">
-        <span className="min-w-0 truncate text-sm text-ivory group-hover:text-gold-bright">
+        <Link
+          href={`/nen/${ability.id}`}
+          className="min-w-0 truncate text-sm text-ivory transition-colors hover:text-gold-bright"
+        >
           {ability.name}
-        </span>
+          <span className="ml-1.5 text-teal" aria-hidden>
+            →
+          </span>
+        </Link>
         <span
           className="shrink-0 font-mono text-[9px] uppercase tracking-widest"
           style={{ color: ABILITY_STATUS_COLOR[status] }}
@@ -280,21 +283,23 @@ function AbilityCard({ ability }: { ability: NenAbility }) {
           {status}
         </span>
       </div>
-      <div className="mt-1 flex flex-wrap items-center gap-2 text-xs">
-        {ability.userCharacterId ? (
-          <EntityLink id={ability.userCharacterId} />
-        ) : (
-          <span className="font-mono text-[10px] uppercase tracking-widest text-warn">
-            user unknown
-          </span>
-        )}
-        <Tag>{ability.nenType}</Tag>
-      </div>
       <p className="mt-1.5 line-clamp-2 text-xs text-muted">{firstSentence}</p>
-      <div className="mt-2 flex items-center gap-2">
-        <ConfidenceBadge level={ability.confidence} />
-        <ChapterRef ch={ability.revealCh} />
+      <div className="mt-3 flex flex-wrap items-center justify-between gap-x-3 gap-y-2 border-t border-line/60 pt-2">
+        <div className="flex flex-wrap items-center gap-2 text-xs">
+          {ability.userCharacterId ? (
+            <EntityLink id={ability.userCharacterId} />
+          ) : (
+            <span className="font-mono text-[10px] uppercase tracking-widest text-warn">
+              user unknown
+            </span>
+          )}
+          <Tag>{ability.nenType}</Tag>
+        </div>
+        <div className="flex items-center gap-2">
+          <ConfidenceBadge level={ability.confidence} />
+          <ChapterRef ch={ability.revealCh} />
+        </div>
       </div>
-    </Link>
+    </article>
   );
 }
