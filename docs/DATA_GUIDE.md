@@ -120,11 +120,10 @@ Black-and-white **manga** artwork, one-time fetch, committed under
 wiki infobox's **Manga tab**; grayscale everything for a uniform look. To add a
 new character's portrait: fetch the manga image, `sips` it to grayscale JPEG,
 regenerate the manifest, keep it a one-time committed asset (no fetch script in
-the repo). The committed set currently has 108 files. The two Woble identities
+the repo). The committed set currently has 115 files. The two Woble identities
 have distinct portraits: `woble.jpg` is the real prince (ch 350, pre-swap) and
 `woble-substitute.jpg` is the boy aboard (wiki page "Woble (boy)", ch 364
-panel). Terebellum, Yokotani, Voconte, and Borksen use the monogram fallback
-until verified manga portraits are added.
+panel). Every registered character has a verified local portrait.
 
 ## Running / previewing
 
@@ -198,7 +197,9 @@ Momoze's other guards (Bladge, Laroc, Nagmum). If a future arc promotes one,
 add it then — don't add death records or edges for non-registry names.
 Tuffdy was promoted so `death-momoze` could name its killer. Borksen,
 Terebellum, Yokotani, and Voconte are also registry characters because their
-roles or documented Nen abilities recur across the late-arc record.
+roles or documented Nen abilities recur across the late-arc record. Otocin,
+Momolly, and Gipper are registered because they recur around Borksen's Tier 3
+cell and form the named structure of her otherwise-anonymous academy circle.
 
 For a killer/cause that is genuinely NOT a person — e.g. Kacho killed by the
 ritual's horde of hands for fleeing the ship — use the `DeathRecord.killerName`

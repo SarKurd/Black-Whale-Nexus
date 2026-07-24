@@ -1,5 +1,5 @@
 /**
- * Portrait manifest — one-time locally committed asset set (108 files).
+ * Portrait manifest — one-time locally committed asset set (115 files).
  * Black-and-white manga artwork sourced from Hunterpedia (Manga tab where
  * available), converted to grayscale JPEG for this unofficial fan project.
  */
@@ -14,6 +14,7 @@ export const portraits: Record<string, string> = {
   bill: "/portraits/bill.jpg",
   biscuit: "/portraits/biscuit.jpg",
   bonolenov: "/portraits/bonolenov.jpg",
+  borksen: "/portraits/borksen.jpg",
   botobai: "/portraits/botobai.jpg",
   brocco: "/portraits/brocco.jpg",
   butch: "/portraits/butch.jpg",
@@ -33,6 +34,7 @@ export const portraits: Record<string, string> = {
   gel: "/portraits/gel.jpg",
   ging: "/portraits/ging.jpg",
   ginta: "/portraits/ginta.jpg",
+  gipper: "/portraits/gipper.jpg",
   gon: "/portraits/gon.jpg",
   halkenburg: "/portraits/halkenburg.jpg",
   hanzo: "/portraits/hanzo.jpg",
@@ -65,6 +67,7 @@ export const portraits: Record<string, string> = {
   melody: "/portraits/melody.jpg",
   mizaistom: "/portraits/mizaistom.jpg",
   momoze: "/portraits/momoze.jpg",
+  momolly: "/portraits/momolly.jpg",
   morena: "/portraits/morena.jpg",
   musse: "/portraits/musse.jpg",
   nasubi: "/portraits/nasubi.jpg",
@@ -73,6 +76,7 @@ export const portraits: Record<string, string> = {
   nugui: "/portraits/nugui.jpg",
   oito: "/portraits/oito.jpg",
   onior: "/portraits/onior.jpg",
+  otocin: "/portraits/otocin.jpg",
   pariston: "/portraits/pariston.jpg",
   phinks: "/portraits/phinks.jpg",
   pyon: "/portraits/pyon.jpg",
@@ -97,6 +101,7 @@ export const portraits: Record<string, string> = {
   "swinko-swinko": "/portraits/swinko-swinko.jpg",
   "tang-zhao-li": "/portraits/tang-zhao-li.jpg",
   tenftory: "/portraits/tenftory.jpg",
+  terebellum: "/portraits/terebellum.jpg",
   theta: "/portraits/theta.jpg",
   tserriednich: "/portraits/tserriednich.jpg",
   tubeppa: "/portraits/tubeppa.jpg",
@@ -105,9 +110,11 @@ export const portraits: Record<string, string> = {
   unma: "/portraits/unma.jpg",
   vergei: "/portraits/vergei.jpg",
   vict: "/portraits/vict.jpg",
+  voconte: "/portraits/voconte.jpg",
   woble: "/portraits/woble.jpg",
   "woble-substitute": "/portraits/woble-substitute.jpg",
   woody: "/portraits/woody.jpg",
+  yokotani: "/portraits/yokotani.jpg",
   yuhirai: "/portraits/yuhirai.jpg",
   yushohi: "/portraits/yushohi.jpg",
   zakuro: "/portraits/zakuro.jpg",

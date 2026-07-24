@@ -8,10 +8,10 @@
 
 | Collection | Count |
 | --- | --- |
-| characters | 112 |
+| characters | 115 |
 | princes | 14 |
 | factions | 24 |
-| relationships | 163 |
+| relationships | 170 |
 | events | 231 |
 | chapters | 75 |
 | locations | 38 |
