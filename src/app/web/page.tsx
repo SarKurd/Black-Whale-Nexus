@@ -21,7 +21,7 @@ import { characterById, relationships } from "@/lib/db";
 import { graphPresets, presetById } from "@/lib/presets";
 import { statusAt } from "@/lib/spoiler";
 import { useEffectiveChapter } from "@/lib/store";
-import { ARC_START } from "@/lib/types";
+import { ARC_END, ARC_START } from "@/lib/types";
 
 export default function WebPage() {
   return (
@@ -46,6 +46,13 @@ function WebPageInner() {
   useEffect(() => {
     if (presetParam && presetById.has(presetParam)) setPresetId(presetParam);
   }, [presetParam]);
+
+  // The Evolve slider is a local rewind for replaying the network's growth.
+  // When the global clearance changes, snap it back to follow — otherwise a
+  // value dragged earlier would pin here and drift out of sync with clearance.
+  useEffect(() => {
+    setViewCh(null);
+  }, [ch]);
 
   // Escape closes the file panel. The panel is non-blocking (the graph stays
   // interactive behind it), so page scroll is intentionally not locked.
@@ -96,9 +103,9 @@ function WebPageInner() {
             <input
               type="range"
               min={ARC_START}
-              max={ch}
+              max={ARC_END}
               value={displayCh}
-              onChange={(e) => setViewCh(Number(e.target.value))}
+              onChange={(e) => setViewCh(Math.min(Number(e.target.value), ch))}
               className="w-36 accent-[var(--gold)]"
               aria-label="Network as of chapter"
               disabled={ch <= ARC_START}

@@ -8,7 +8,7 @@ import { computeOccupancy } from "@/components/map/occupancy";
 import { ShipBlueprint } from "@/components/map/ShipBlueprint";
 import { TierAccordion } from "@/components/map/TierAccordion";
 import { useEffectiveChapter } from "@/lib/store";
-import { ARC_START } from "@/lib/types";
+import { ARC_END, ARC_START } from "@/lib/types";
 
 export default function MapPage() {
   return (
@@ -29,6 +29,13 @@ function MapPageInner() {
   useEffect(() => {
     if (locationParam) setSelectedId(locationParam);
   }, [locationParam]);
+
+  // The Voyage replay slider is a local rewind for stepping the ship state
+  // back through the voyage. When the global clearance changes, snap it back
+  // to follow — otherwise an earlier value pins here and drifts out of sync.
+  useEffect(() => {
+    setViewCh(null);
+  }, [ch]);
 
   // While the compartment modal is open: Escape closes it and the page body
   // scroll is locked so only the modal's own content scrolls.
@@ -65,9 +72,9 @@ function MapPageInner() {
           <input
             type="range"
             min={ARC_START}
-            max={ch}
+            max={ARC_END}
             value={displayCh}
-            onChange={(e) => setViewCh(Number(e.target.value))}
+            onChange={(e) => setViewCh(Math.min(Number(e.target.value), ch))}
             className="w-36 accent-[var(--gold)]"
             aria-label="Ship state as of chapter"
             disabled={ch <= ARC_START}
