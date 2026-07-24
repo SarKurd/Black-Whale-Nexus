@@ -23,9 +23,16 @@ export function ChapterControl({ large = false }: { large?: boolean }) {
   const effMode = mounted ? mode : "full";
   const effChapter = mounted ? chapter : ARC_END;
 
+  // Compact (header) variant uses `display: contents` so the toggle and slider
+  // become direct flex children of the header. That lets the slider drop onto
+  // its own full-width second row on mobile (`basis-full order-last`) while the
+  // toggle stays inline with Menu/Search — instead of the whole control
+  // overflowing and forcing horizontal scroll.
   return (
     <fieldset
-      className={`flex items-center gap-3 border-0 p-0 ${large ? "flex-wrap" : ""}`}
+      className={
+        large ? "flex flex-wrap items-center gap-3 border-0 p-0" : "contents"
+      }
       aria-label="Spoiler scope"
     >
       <div className="flex border border-line">
@@ -46,7 +53,11 @@ export function ChapterControl({ large = false }: { large?: boolean }) {
       </div>
       {effMode === "chapter" && (
         <div
-          className={`flex items-center gap-2 ${large ? "min-w-64 flex-1" : ""}`}
+          className={`flex items-center gap-2 ${
+            large
+              ? "min-w-64 flex-1"
+              : "order-last basis-full sm:order-none sm:basis-auto"
+          }`}
         >
           <input
             type="range"
@@ -54,7 +65,9 @@ export function ChapterControl({ large = false }: { large?: boolean }) {
             max={ARC_END}
             value={effChapter}
             onChange={(e) => setChapter(Number(e.target.value))}
-            className={`accent-[var(--gold)] ${large ? "w-full" : "w-24 lg:w-36"}`}
+            className={`accent-[var(--gold)] ${
+              large ? "w-full" : "w-full sm:w-24 lg:w-36"
+            }`}
             aria-label="Spoiler chapter"
           />
           <span className="font-mono text-xs tracking-wider text-gold-bright">

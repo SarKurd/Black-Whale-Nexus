@@ -63,7 +63,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
 
       <div className="lg:pl-56">
         {/* Top intel bar */}
-        <header className="sticky top-0 z-30 flex items-center gap-3 border-b border-line bg-bg-deep/90 px-4 py-2 backdrop-blur">
+        <header className="sticky top-0 z-30 flex flex-wrap items-center gap-x-3 gap-y-2 border-b border-line bg-bg-deep/90 px-4 py-2 backdrop-blur">
           <button
             type="button"
             className="border border-line px-2 py-1 font-mono text-[10px] uppercase tracking-widest text-muted hover:text-parchment lg:hidden"
