@@ -53,20 +53,11 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     title: SITE_NAME,
     description: SITE_DESCRIPTION,
-    images: [
-      {
-        url: "/og/og-home.png",
-        width: 1202,
-        height: 632,
-        alt: `${SITE_NAME} — Succession War intelligence archive`,
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: SITE_NAME,
     description: SITE_DESCRIPTION,
-    images: ["/og/og-home.png"],
   },
   robots: {
     index: true,

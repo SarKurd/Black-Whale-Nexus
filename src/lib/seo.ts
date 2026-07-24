@@ -27,28 +27,7 @@ export interface SeoPage {
     name: string;
     path: `/${string}`;
   };
-  image?: `/${string}`;
-  imageAlt?: string;
 }
-
-const SECTION_OG_IMAGES = {
-  "/": "/og/og-home.png",
-  "/characters": "/og/og-characters.png",
-  "/princes": "/og/og-princes.png",
-  "/factions": "/og/og-factions.png",
-  "/nen": "/og/og-nen.png",
-  "/glossary": "/og/og-glossary.png",
-  "/web": "/og/og-web.png",
-  "/storylines": "/og/og-storylines.png",
-  "/timeline": "/og/og-timeline.png",
-  "/chapters": "/og/og-chapters.png",
-  "/map": "/og/og-map.png",
-  "/knowledge": "/og/og-knowledge.png",
-  "/deaths": "/og/og-deaths.png",
-  "/mysteries": "/og/og-mysteries.png",
-  "/compare": "/og/og-compare.png",
-  "/theories": "/og/og-theories.png",
-} as const satisfies Record<string, `/${string}`>;
 
 function normalizeDescription(value: string): string {
   return value.replace(/\s+/g, " ").trim();
@@ -71,15 +50,12 @@ export function absoluteUrl(path: string): string {
   return new URL(path, SITE_URL).toString();
 }
 
+// og:image / twitter:image come from the opengraph-image.tsx file convention
+// in each route segment, which overrides any config-based images and stays in
+// sync with the generated build-time cards.
 export function createPageMetadata(page: SeoPage): Metadata {
   const description = toMetaDescription(page.description);
   const brandedTitle = `${page.title} — ${SITE_NAME}`;
-  const sectionPath = page.section?.path ?? page.path;
-  const image =
-    page.image ??
-    SECTION_OG_IMAGES[sectionPath as keyof typeof SECTION_OG_IMAGES] ??
-    SECTION_OG_IMAGES["/"];
-  const imageAlt = page.imageAlt ?? `${page.heading} — ${SITE_NAME}`;
 
   return {
     title: page.title,
@@ -94,20 +70,11 @@ export function createPageMetadata(page: SeoPage): Metadata {
       siteName: SITE_NAME,
       title: brandedTitle,
       description,
-      images: [
-        {
-          url: image,
-          width: 1202,
-          height: 632,
-          alt: imageAlt,
-        },
-      ],
     },
     twitter: {
       card: "summary_large_image",
       title: brandedTitle,
       description,
-      images: [image],
     },
   };
 }

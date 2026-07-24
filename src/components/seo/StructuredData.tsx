@@ -56,14 +56,6 @@ export function PageStructuredData({ page }: { page: SeoPage }) {
             isPartOf: {
               "@id": `${absoluteUrl("/")}#website`,
             },
-            ...(page.image
-              ? {
-                  primaryImageOfPage: {
-                    "@type": "ImageObject",
-                    url: absoluteUrl(page.image),
-                  },
-                }
-              : {}),
           },
           {
             "@type": "BreadcrumbList",
