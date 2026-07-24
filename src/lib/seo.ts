@@ -13,7 +13,7 @@ export const SITE_NAME = "Black Whale Nexus";
 export const SITE_DESCRIPTION =
   "A chapter-aware intelligence archive for the Hunter × Hunter Succession War from chapter 340 onward, covering the fourteen princes, their guards, the mafia families, the Phantom Troupe, and every thread aboard the Black Whale.";
 
-const DEFAULT_SITE_URL = "https://black-whale-nexus.pages.dev";
+const DEFAULT_SITE_URL = "https://black-whale-nexus.sarbast.dev";
 
 export const SITE_URL = new URL(
   process.env.SITE_URL ?? process.env.NEXT_PUBLIC_SITE_URL ?? DEFAULT_SITE_URL,
