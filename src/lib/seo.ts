@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { portraits } from "@/data/portraits";
 import type {
   ChapterInfo,
   Character,
@@ -32,6 +31,25 @@ export interface SeoPage {
   imageAlt?: string;
 }
 
+const SECTION_OG_IMAGES = {
+  "/": "/og/og-home.png",
+  "/characters": "/og/og-characters.png",
+  "/princes": "/og/og-princes.png",
+  "/factions": "/og/og-factions.png",
+  "/nen": "/og/og-nen.png",
+  "/glossary": "/og/og-glossary.png",
+  "/web": "/og/og-web.png",
+  "/storylines": "/og/og-storylines.png",
+  "/timeline": "/og/og-timeline.png",
+  "/chapters": "/og/og-chapters.png",
+  "/map": "/og/og-map.png",
+  "/knowledge": "/og/og-knowledge.png",
+  "/deaths": "/og/og-deaths.png",
+  "/mysteries": "/og/og-mysteries.png",
+  "/compare": "/og/og-compare.png",
+  "/theories": "/og/og-theories.png",
+} as const satisfies Record<string, `/${string}`>;
+
 function normalizeDescription(value: string): string {
   return value.replace(/\s+/g, " ").trim();
 }
@@ -56,8 +74,12 @@ export function absoluteUrl(path: string): string {
 export function createPageMetadata(page: SeoPage): Metadata {
   const description = toMetaDescription(page.description);
   const brandedTitle = `${page.title} — ${SITE_NAME}`;
-  const image = page.image ?? "/icon-512.png";
-  const imageAlt = page.imageAlt ?? `${SITE_NAME} emblem`;
+  const sectionPath = page.section?.path ?? page.path;
+  const image =
+    page.image ??
+    SECTION_OG_IMAGES[sectionPath as keyof typeof SECTION_OG_IMAGES] ??
+    SECTION_OG_IMAGES["/"];
+  const imageAlt = page.imageAlt ?? `${page.heading} — ${SITE_NAME}`;
 
   return {
     title: page.title,
@@ -73,18 +95,16 @@ export function createPageMetadata(page: SeoPage): Metadata {
       title: brandedTitle,
       description,
       images: [
-        page.image
-          ? { url: image, alt: imageAlt }
-          : {
-              url: image,
-              width: 512,
-              height: 512,
-              alt: imageAlt,
-            },
+        {
+          url: image,
+          width: 1202,
+          height: 632,
+          alt: imageAlt,
+        },
       ],
     },
     twitter: {
-      card: "summary",
+      card: "summary_large_image",
       title: brandedTitle,
       description,
       images: [image],
@@ -215,20 +235,12 @@ export const STATIC_PAGE_SEO = {
 } as const satisfies Record<string, SeoPage>;
 
 export function characterSeo(character: Character): SeoPage {
-  const image = portraits[character.id] as `/${string}` | undefined;
-
   return {
     title: `${character.name} Dossier`,
     heading: character.name,
     description: `${character.role}. ${character.bio}`,
     path: `/characters/${character.id}`,
     section: { name: "Characters", path: "/characters" },
-    ...(image
-      ? {
-          image,
-          imageAlt: `${character.name} manga portrait`,
-        }
-      : {}),
   };
 }
 
@@ -243,20 +255,12 @@ export function chapterSeo(chapter: ChapterInfo): SeoPage {
 }
 
 export function princeSeo(prince: Prince, character: Character): SeoPage {
-  const image = portraits[character.id] as `/${string}` | undefined;
-
   return {
     title: `Prince ${character.name} — Rank ${prince.rank}`,
     heading: character.name,
     description: `${character.role}. ${prince.publicStrategy}`,
     path: `/princes/${prince.id}`,
     section: { name: "The Fourteen Princes", path: "/princes" },
-    ...(image
-      ? {
-          image,
-          imageAlt: `${character.name} manga portrait`,
-        }
-      : {}),
   };
 }
 

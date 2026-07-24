@@ -55,18 +55,18 @@ export const metadata: Metadata = {
     description: SITE_DESCRIPTION,
     images: [
       {
-        url: "/icon-512.png",
-        width: 512,
-        height: 512,
-        alt: `${SITE_NAME} emblem`,
+        url: "/og/og-home.png",
+        width: 1202,
+        height: 632,
+        alt: `${SITE_NAME} — Succession War intelligence archive`,
       },
     ],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: SITE_NAME,
     description: SITE_DESCRIPTION,
-    images: ["/icon-512.png"],
+    images: ["/og/og-home.png"],
   },
   robots: {
     index: true,
