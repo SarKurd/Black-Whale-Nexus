@@ -615,6 +615,7 @@ export const storylines: Storyline[] = [
     participantIds: [
       "benjamin",
       "balsamilco",
+      "vincent",
       "babimyna",
       "coventoba",
       "musse",

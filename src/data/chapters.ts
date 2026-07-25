@@ -364,6 +364,8 @@ export const chapters: ChapterInfo[] = [
       "pyon",
       "botobai",
       "gel",
+
+      "myuhan",
     ],
     locationIds: ["hunter-hq"],
     storylineIds: ["expedition-prep", "beyond-netero", "succession-contest"],
@@ -730,11 +732,15 @@ export const chapters: ChapterInfo[] = [
       "tubeppa",
       "marayam",
       "coventoba",
+      "vincent",
       "vict",
       "yushohi",
       "chiyamasi",
       "rihan",
       "butch",
+
+      "sandra",
+      "saquelle",
     ],
     locationIds: ["black-whale", "tier-1", "room-1014"],
     storylineIds: [
@@ -769,6 +775,7 @@ export const chapters: ChapterInfo[] = [
         "tubeppa",
         "marayam",
         "coventoba",
+        "vincent",
         "vict",
         "yushohi",
         "chiyamasi",
@@ -824,6 +831,8 @@ export const chapters: ChapterInfo[] = [
       "melody",
       "nugui",
       "woody",
+
+      "sandra",
     ],
     locationIds: ["black-whale", "room-1014", "tier-1", "beyond-quarters"],
     storylineIds: [
@@ -865,6 +874,8 @@ export const chapters: ChapterInfo[] = [
       "shimano",
       "oito",
       "woble",
+
+      "sandra",
     ],
     locationIds: ["room-1014"],
     storylineIds: ["kurapika-woble", "silent-majority", "succession-contest"],
@@ -909,6 +920,9 @@ export const chapters: ChapterInfo[] = [
       "shimano",
       "izunavi",
       "nugui",
+
+      "sandra",
+      "bladge",
     ],
     locationIds: ["room-1014", "marayam-quarters", "momoze-quarters", "tier-1"],
     storylineIds: [
@@ -1022,6 +1036,7 @@ export const chapters: ChapterInfo[] = [
       "shimano",
       "rihan",
       "coventoba",
+      "vincent",
       "vict",
       "butch",
       "yushohi",
@@ -1034,6 +1049,9 @@ export const chapters: ChapterInfo[] = [
       "tenftory",
       "sarahell",
       "maor",
+
+      "sandra",
+      "saquelle",
     ],
     locationIds: ["benjamin-quarters", "zhang-lei-quarters", "room-1014"],
     storylineIds: ["benjamin-military", "succession-contest", "kurapika-woble"],
@@ -1074,9 +1092,12 @@ export const chapters: ChapterInfo[] = [
       "oito",
       "benjamin",
       "balsamilco",
+      "vincent",
       "babimyna",
       "woble",
       "shimano",
+
+      "sandra",
     ],
     locationIds: ["room-1014", "benjamin-quarters"],
     storylineIds: ["kurapika-woble", "benjamin-military"],
@@ -1189,6 +1210,10 @@ export const chapters: ChapterInfo[] = [
       "tuffdy",
       "swinko-swinko",
       "duazul",
+
+      "bladge",
+      "laroc",
+      "nagmum",
     ],
     locationIds: ["room-1014", "camilla-quarters", "tier-5"],
     storylineIds: [
@@ -1279,6 +1304,8 @@ export const chapters: ChapterInfo[] = [
       "theta",
       "vict",
       "nipaper",
+
+      "laroc",
     ],
     locationIds: ["room-1014", "momoze-quarters"],
     storylineIds: [
@@ -1332,6 +1359,8 @@ export const chapters: ChapterInfo[] = [
       "barrigen",
       "satobi",
       "longhi",
+
+      "myuhan",
     ],
     locationIds: ["room-1014", "tserriednich-quarters"],
     storylineIds: [
@@ -1377,6 +1406,8 @@ export const chapters: ChapterInfo[] = [
       "tenftory",
       "longhi",
       "ladiolus",
+
+      "myuhan",
     ],
     locationIds: ["room-1014"],
     storylineIds: ["silent-majority", "nen-classes", "benjamin-military"],
@@ -1430,6 +1461,8 @@ export const chapters: ChapterInfo[] = [
       "nasubi",
       "nugui",
       "cleapatro",
+
+      "myuhan",
     ],
     locationIds: ["room-1014", "tier-5"],
     storylineIds: [
@@ -1493,6 +1526,9 @@ export const chapters: ChapterInfo[] = [
       "tenftory",
       "hashito",
       "ladiolus",
+
+      "myuhan",
+      "saquelle",
     ],
     locationIds: ["room-1014", "marayam-quarters", "camilla-quarters"],
     storylineIds: [
@@ -1541,6 +1577,8 @@ export const chapters: ChapterInfo[] = [
       "sevanti",
       "sarahell",
       "duazul",
+
+      "wolfe",
     ],
     locationIds: ["camilla-quarters", "benjamin-quarters", "royal-quarters"],
     storylineIds: ["succession-contest", "benjamin-military"],
@@ -1590,6 +1628,9 @@ export const chapters: ChapterInfo[] = [
       "oito",
       "shimano",
       "yushohi",
+
+      "keeney",
+      "saquelle",
     ],
     locationIds: [
       "room-1014",
@@ -1703,6 +1744,8 @@ export const chapters: ChapterInfo[] = [
       "hashito",
       "longhi",
       "chiyamasi",
+
+      "myuhan",
     ],
     locationIds: [
       "tier-1",
@@ -1755,6 +1798,8 @@ export const chapters: ChapterInfo[] = [
       "illumi",
       "seiko",
       "kaiser",
+
+      "keeney",
     ],
     locationIds: ["kacho-quarters", "tier-5", "cha-r-territory"],
     storylineIds: ["kacho-fugetsu", "troupe-hisoka-hunt", "mafia-war"],
@@ -1794,6 +1839,9 @@ export const chapters: ChapterInfo[] = [
       "terebellum",
       "yokotani",
       "voconte",
+
+      "sodom",
+      "padaille",
     ],
     locationIds: ["tier-5", "heil-ly-territory", "xi-yu-territory"],
     storylineIds: ["mafia-war", "heil-ly-morena", "troupe-hisoka-hunt"],
@@ -1905,6 +1953,8 @@ export const chapters: ChapterInfo[] = [
       "yushohi",
       "salele",
       "kaiser",
+
+      "keeney",
     ],
     locationIds: ["tier-3", "tier-1", "royal-quarters", "kacho-quarters"],
     storylineIds: ["kacho-fugetsu", "benjamin-military", "succession-contest"],
@@ -2005,6 +2055,8 @@ export const chapters: ChapterInfo[] = [
       "tubeppa",
       "luzurus",
       "halkenburg",
+
+      "keeney",
     ],
     locationIds: ["banquet-hall", "tier-1", "black-whale"],
     storylineIds: ["kacho-fugetsu", "succession-contest"],
@@ -2043,6 +2095,8 @@ export const chapters: ChapterInfo[] = [
       "brocco",
       "tserriednich",
       "theta",
+
+      "tajao",
     ],
     locationIds: ["cha-r-territory", "tier-5", "tserriednich-quarters"],
     storylineIds: [
@@ -2250,6 +2304,8 @@ export const chapters: ChapterInfo[] = [
       "zhang-lei",
       "tenftory",
       "ridge",
+
+      "cavic",
     ],
     locationIds: [
       "benjamin-quarters",
@@ -2264,7 +2320,7 @@ export const chapters: ChapterInfo[] = [
       "succession-contest",
       "luzurus-investigation",
     ],
-    abilitiesUsedIds: ["benjamin-baton"],
+    abilitiesUsedIds: ["benjamin-baton", "yomotsu-hegui"],
     changes: {
       newCharacters: ["fukataki"],
       newKnowledge: [
@@ -2318,10 +2374,10 @@ export const chapters: ChapterInfo[] = [
     summary:
       "Three leveled Heil-Ly members stalk Hinrigh through the crowds, negotiating the split of his ten levels before they have him. His handcuff-pigeons shrug off their bullets, shackle the weapon-limbed Padaille, and Hinrigh pushes the man's own conjured axe into his skull. The survivors run to ask Morena for instructions.",
     eventIds: ["ev-391-padaille-killed"],
-    appearingCharacterIds: ["hinrigh", "zakuro", "lynch"],
+    appearingCharacterIds: ["hinrigh", "zakuro", "lynch", "padaille"],
     locationIds: ["tier-3"],
     storylineIds: ["mafia-war", "heil-ly-morena"],
-    abilitiesUsedIds: ["biohazard"],
+    abilitiesUsedIds: ["biohazard", "im-coming-to-get-you"],
     changes: {
       newKnowledge: [
         "Morena's initiates are refined but green — veterans still out-fight them",
@@ -2350,6 +2406,8 @@ export const chapters: ChapterInfo[] = [
       "phinks",
       "feitan",
       "luini",
+
+      "padaille",
     ],
     locationIds: ["tier-3", "cha-r-territory"],
     storylineIds: ["mafia-war", "troupe-hisoka-hunt", "heil-ly-morena"],
@@ -2420,6 +2478,8 @@ export const chapters: ChapterInfo[] = [
       "otocin",
       "momolly",
       "borksen",
+
+      "sodom",
     ],
     locationIds: ["hidden-passage-network", "tier-3"],
     storylineIds: ["heil-ly-morena", "ship-security-crisis"],
@@ -2899,6 +2959,9 @@ export const chapters: ChapterInfo[] = [
       "ken-i",
       "morena",
       "voconte",
+
+      "tajao",
+      "sodom",
     ],
     locationIds: ["tier-1", "cha-r-territory", "hidden-passage-network"],
     storylineIds: ["troupe-hisoka-hunt", "mafia-war", "heil-ly-morena"],
@@ -2938,6 +3001,8 @@ export const chapters: ChapterInfo[] = [
       "lynch",
       "chrollo",
       "yuhirai",
+
+      "tajao",
     ],
     locationIds: ["hidden-passage-network", "tier-3", "tier-5"],
     storylineIds: [
@@ -3231,6 +3296,8 @@ export const chapters: ChapterInfo[] = [
       "babimyna",
       "rihan",
       "kacho",
+
+      "saquelle",
     ],
     locationIds: [
       "burial-chamber",

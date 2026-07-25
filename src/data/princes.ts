@@ -801,8 +801,8 @@ export const princes: Prince[] = [
     siblingNote: "Twin of Fugetsu.",
     beastId: "beast-kacho",
     guardsOriginal: 9,
-    guardCharacterIds: ["melody", "loberry"],
-    hunterCharacterIds: ["melody"],
+    guardCharacterIds: ["melody", "loberry", "keeney"],
+    hunterCharacterIds: ["melody", "keeney"],
     publicStrategy:
       "Perform contempt for everyone, especially her twin, so the pair never looks like a joint target.",
     hiddenStrategy: {
@@ -953,7 +953,14 @@ export const princes: Prince[] = [
       "Elder sibling of Marayam; all but six of her guards were reassigned to him.",
     beastId: "beast-momoze",
     guardsOriginal: 6,
-    guardCharacterIds: ["nipaper", "vict", "tuffdy"],
+    guardCharacterIds: [
+      "nipaper",
+      "vict",
+      "tuffdy",
+      "bladge",
+      "laroc",
+      "nagmum",
+    ],
     publicStrategy:
       "Obedience: accept her mother's decisions, including the ones that doomed her.",
     currentObjective: [

@@ -120,7 +120,7 @@ Black-and-white **manga** artwork, one-time fetch, committed under
 wiki infobox's **Manga tab**; grayscale everything for a uniform look. To add a
 new character's portrait: fetch the manga image, `sips` it to grayscale JPEG,
 regenerate the manifest, keep it a one-time committed asset (no fetch script in
-the repo). The committed set currently has 115 files. The two Woble identities
+the repo). The committed set currently has 128 files. The two Woble identities
 have distinct portraits: `woble.jpg` is the real prince (ch 350, pre-swap) and
 `woble-substitute.jpg` is the boy aboard (wiki page "Woble (boy)", ch 364
 panel). Every registered character has a verified local portrait.
@@ -188,18 +188,13 @@ prod server. The user often has their own dev server on 3000; don't fight it.
   Texture Surprise, Bungee Gum) with the duel usage in `uses`; only genuinely
   new ones (Sun and Moon, Order Stamp, Disgusting Telephone) use real chapters.
 
-## Known registry-boundary calls
+## Registry completeness
 
-These named characters are deliberately **NOT** in the registry (referenced in
-prose only) because they're minor/one-appearance: Vincent, Wolfe,
-Myuhan, Keeney, Tajao, Cavic, Sodom, Padaille, Sandra, Saquelle, plus
-Momoze's other guards (Bladge, Laroc, Nagmum). If a future arc promotes one,
-add it then — don't add death records or edges for non-registry names.
-Tuffdy was promoted so `death-momoze` could name its killer. Borksen,
-Terebellum, Yokotani, and Voconte are also registry characters because their
-roles or documented Nen abilities recur across the late-arc record. Otocin,
-Momolly, and Gipper are registered because they recur around Borksen's Tier 3
-cell and form the named structure of her otherwise-anonymous academy circle.
+Every named character within the dataset's chapter coverage belongs in the
+character registry, even if they appear only once or have a minor role. Verify
+their canonical data and chapter appearances through Hunterpedia, then give
+them the same first-class links and local portrait treatment as the rest of the
+registry. Do not leave named people as prose-only references.
 
 For a killer/cause that is genuinely NOT a person — e.g. Kacho killed by the
 ritual's horde of hands for fleeing the ship — use the `DeathRecord.killerName`

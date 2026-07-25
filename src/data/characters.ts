@@ -78,7 +78,14 @@ export const characters: Character[] = [
       {
         text: "His 'bodyguards' assigned to other princes are intelligence assets reporting to Balsamilco.",
         revealCh: 361,
-        knownBy: ["balsamilco", "babimyna", "musse", "coventoba", "vict"],
+        knownBy: [
+          "balsamilco",
+          "vincent",
+          "babimyna",
+          "musse",
+          "coventoba",
+          "vict",
+        ],
       },
       {
         text: "Through the leveled-up Secret Window inherited from Musse, he can review what Musse saw before dying — including that Camilla is a counteractive-type Nen user.",
@@ -1115,6 +1122,71 @@ export const characters: Character[] = [
     tags: ["staff"],
   },
   {
+    id: "sandra",
+    name: "Sandra",
+    role: "Queen Oito's maid",
+    bio: "One of the two maids who chose to stay with Queen Oito after the first night's massacre gutted Room 1014's staff. She kept working through everything she had witnessed — until she opened the door to the bodyguard Vincent, who killed her on entry and claimed self-defense.",
+    monogram: "SA",
+    factionIds: ["woble-camp"],
+    introducedCh: 358,
+    statusHistory: [
+      { ch: 358, status: "alive" },
+      {
+        ch: 363,
+        status: "dead",
+        note: "Killed by Vincent the moment she opened Room 1014's door — the knife left in her chest, with a claim she had attacked him and carried poison.",
+      },
+    ],
+    locationHistory: [
+      {
+        ch: 358,
+        locationId: "room-1014",
+        note: "Unpacking and furnishing the Fourteenth Prince's suite.",
+      },
+    ],
+    chapterAppearances: [358, 359, 360, 361, 363, 364],
+    tags: ["staff", "victim"],
+  },
+  {
+    id: "keeney",
+    name: "Keeney",
+    role: "Kacho's bodyguard; professional Hunter",
+    bio: "A petite pro-Hunter on the Tenth Prince's detail who could hold a dozen-meter En for hours at a stretch — it was his En that first caught Fugetsu appearing in Kacho's bed 'like popping out of a manhole cover'. He lost his wife and daughter two years before boarding, and had been looking for a place to die since.",
+    bioReveals: [
+      {
+        revealCh: 383,
+        text: "Mizaistom's coded order put him in charge of stopping any escape by the twins — instead he engineered one. During the banquet's hypnotic performance he plugged his ears, walked Kacho and Fugetsu to the lifeboats, waved them off, and shot himself so the plot would trace to no living accomplice and never touch the Hunter Association.",
+      },
+    ],
+    monogram: "KE",
+    factionIds: ["kacho-camp", "hunter-association"],
+    servesPrinceId: "prince-kacho",
+    introducedCh: 374,
+    nenType: "unknown",
+    statusHistory: [
+      { ch: 374, status: "alive" },
+      {
+        ch: 383,
+        status: "dead",
+        note: "Suicide by gunshot at the lifeboat tunnel after seeing the twins off; his will took sole blame for the escape.",
+      },
+    ],
+    locationHistory: [
+      {
+        ch: 374,
+        locationId: "kacho-quarters",
+        note: "On the Tenth Prince's guard detail with Melody.",
+      },
+      {
+        ch: 383,
+        locationId: "hidden-passage-network",
+        note: "The lifeboat tunnel, where he died covering the twins' escape.",
+      },
+    ],
+    chapterAppearances: [374, 377, 381, 383],
+    tags: ["guard", "hunter", "nen-user", "victim"],
+  },
+  {
     id: "melody",
     name: "Melody",
     aliases: ["Senritsu"],
@@ -1686,6 +1758,71 @@ export const characters: Character[] = [
     tags: ["guard", "strategist", "military", "possessed"],
   },
   {
+    id: "vincent",
+    name: "Vincent",
+    role: "Benjamin's soldier, briefly posted to Room 1014",
+    bio: "A high-ranking Royal Army soldier in Benjamin's private force. He entered Woble's quarters under the guard-exchange system, killed the servant Sandra, and tried to use Air Blow against Bill before Kurapika stole it. Restrained and faced with a bluff about forced confession, Vincent swallowed poison hidden in a molar rather than reveal Benjamin's operation.",
+    bioReveals: [
+      {
+        revealCh: 363,
+        text: "His placement was an attack, not observation: he forced his way into Room 1014, murdered Sandra with a knife, and invoked self-defense as cover.",
+      },
+      {
+        revealCh: 364,
+        text: "Kurapika drained his aura and stole Air Blow before it fired. Vincent then killed himself with a concealed poison capsule; Benjamin inherited the ability through Benjamin Baton.",
+      },
+    ],
+    monogram: "VN",
+    factionIds: ["benjamin-camp", "kakin-military"],
+    servesPrinceId: "prince-benjamin",
+    superiorId: "balsamilco",
+    introducedCh: 358,
+    nenType: "unknown",
+    nenAbilityIds: ["air-blow"],
+    statusHistory: [
+      { ch: 358, status: "alive" },
+      {
+        ch: 364,
+        status: "dead",
+        note: "Swallowed a poison capsule hidden in a molar after Kurapika and Bill restrained him.",
+      },
+    ],
+    locationHistory: [
+      {
+        ch: 358,
+        locationId: "military-hq",
+        note: "Briefed with Benjamin's private soldiers before departure.",
+      },
+      {
+        ch: 363,
+        locationId: "room-1014",
+        note: "Entered Woble's suite as its assigned guard and attacked the household.",
+      },
+    ],
+    objectives: [
+      {
+        text: "Carry out Benjamin's infiltration of Woble's household under the guard-exchange system.",
+        kind: "known",
+        revealCh: 363,
+        status: "failed",
+      },
+      {
+        text: "Prevent Benjamin's operation from being exposed, even at the cost of his own life.",
+        kind: "hidden",
+        revealCh: 364,
+        status: "completed",
+      },
+    ],
+    possessions: [
+      {
+        text: "Poison capsule concealed in a molar",
+        revealCh: 364,
+      },
+    ],
+    chapterAppearances: [358, 363, 364],
+    tags: ["guard", "spy", "nen-user", "military", "victim"],
+  },
+  {
     id: "babimyna",
     name: "Babimyna",
     role: "Benjamin's soldier, posted to Room 1014",
@@ -2083,6 +2220,40 @@ export const characters: Character[] = [
     tags: ["guard", "nen-user", "double-agent"],
   },
   {
+    id: "myuhan",
+    name: "Myuhan",
+    role: "Tserriednich's bodyguard; provisional Hunter",
+    bio: "One of the five personal guards Tserriednich pushed through the 289th Hunter Exam to stretch his Dark Continent employee quota. Sent with Danjin to represent the Fourth Prince at Kurapika's Nen classes, where he needled the instructor with cold-blooded relish — and was despised by the rest of the room for it.",
+    bioReveals: [
+      {
+        revealCh: 376,
+        text: "Found exsanguinated in Room 1014's toilet at 10:05 a.m. on the second day of lessons — drained through holes in the body, the same silent method that took Barrigen in front of the whole class the day before.",
+      },
+    ],
+    monogram: "MY",
+    factionIds: ["tserriednich-camp"],
+    servesPrinceId: "prince-tserriednich",
+    introducedCh: 348,
+    nenType: "unknown",
+    statusHistory: [
+      { ch: 348, status: "alive" },
+      {
+        ch: 376,
+        status: "dead",
+        note: "Exsanguinated in Room 1014's toilet by the Silent Majority method; the user was never identified.",
+      },
+    ],
+    locationHistory: [
+      {
+        ch: 369,
+        locationId: "room-1014",
+        note: "Attending Kurapika's Nen classes as one of Tserriednich's two representatives.",
+      },
+    ],
+    chapterAppearances: [348, 369, 370, 371, 372, 376],
+    tags: ["guard", "nen-student", "victim"],
+  },
+  {
     id: "salkov",
     name: "Salkov",
     role: "Tserriednich's guard; Nen instructor",
@@ -2218,6 +2389,129 @@ export const characters: Character[] = [
       },
     ],
     chapterAppearances: [365, 366, 367, 370, 371, 376, 388, 411, 412],
+    tags: ["guard", "spy"],
+    incomplete: true,
+  },
+  {
+    id: "bladge",
+    name: "Bladge",
+    role: "Momoze's royal bodyguard; Queen Tang Zhao Li's spy",
+    bio: "A freckled royal bodyguard on the Twelfth Prince's doomed detail — and a licensed chef. When Sevanti stripped Momoze's household for Marayam, he and Nipaper insisted on staying with her, and with no staff left he cooked the prince her supper himself.",
+    monogram: "BL",
+    factionIds: ["momoze-camp", "kakin-military"],
+    servesPrinceId: "prince-momoze",
+    introducedCh: 361,
+    statusHistory: [
+      { ch: 361, status: "alive" },
+      {
+        ch: 368,
+        status: "detained",
+        note: "Taken into Royal Army custody with Momoze's five other guards after her murder; Sevanti demanded all six be executed.",
+      },
+    ],
+    locationHistory: [
+      {
+        ch: 361,
+        locationId: "momoze-quarters",
+        note: "Stayed on the Twelfth Prince's detail after the household transfer.",
+      },
+      {
+        ch: 368,
+        locationId: "justice-bureau-hq",
+        note: "Court-martial custody after Momoze's murder.",
+      },
+    ],
+    secrets: [
+      {
+        text: "His loyalty display doubled as cover: he was a spy planted on Momoze's detail by Queen Tang Zhao Li.",
+        revealCh: 366,
+      },
+    ],
+    chapterAppearances: [361, 366],
+    tags: ["guard", "spy"],
+  },
+  {
+    id: "laroc",
+    name: "Laroc",
+    role: "Momoze's royal bodyguard; Queen Katrono's spy",
+    bio: "A spiky-haired royal bodyguard standing watch outside Momoze's bedroom on the night Tuffdy's double slipped past all of them. Like the rest of her detail he answered to a higher queen — in his case Katrono, the Fourth.",
+    monogram: "LA",
+    factionIds: ["momoze-camp", "kakin-military"],
+    servesPrinceId: "prince-momoze",
+    introducedCh: 366,
+    statusHistory: [
+      { ch: 366, status: "alive" },
+      {
+        ch: 368,
+        status: "detained",
+        note: "Taken into Royal Army custody with Momoze's five other guards after her murder.",
+      },
+    ],
+    locationHistory: [
+      {
+        ch: 366,
+        locationId: "momoze-quarters",
+        note: "On the Twelfth Prince's watch rotation.",
+      },
+      {
+        ch: 368,
+        locationId: "justice-bureau-hq",
+        note: "Court-martial custody after Momoze's murder.",
+      },
+    ],
+    secrets: [
+      {
+        text: "He was a spy planted on Momoze's detail by Queen Katrono.",
+        revealCh: 366,
+      },
+    ],
+    chapterAppearances: [366, 368],
+    tags: ["guard", "spy"],
+    incomplete: true,
+  },
+  {
+    id: "nagmum",
+    name: "Nagmum",
+    aliases: ["Nagomam"],
+    role: "Momoze's royal bodyguard; Queen Seiko's spy",
+    bio: "A plump, round-faced royal bodyguard who lay in his bed in the guards' room while Tuffdy, in the next bed over, sent his double to kill their prince. Being off-duty at the hour of the murder made him one of Hanzo's two final suspects.",
+    bioReveals: [
+      {
+        revealCh: 372,
+        text: "Hanzo's cell-block ruse leaned on him without his knowledge: Tuffdy was told Nagmum lay drugged unconscious, ready to be framed by a forged suicide note — bait that drew Tuffdy's confession before Hanzo staged Tuffdy's own suicide instead.",
+      },
+    ],
+    monogram: "NA",
+    factionIds: ["momoze-camp", "kakin-military"],
+    servesPrinceId: "prince-momoze",
+    introducedCh: 366,
+    statusHistory: [
+      { ch: 366, status: "alive" },
+      {
+        ch: 368,
+        status: "detained",
+        note: "Taken into Royal Army custody with Momoze's five other guards after her murder; Hanzo narrowed the suspects to him and Tuffdy.",
+      },
+    ],
+    locationHistory: [
+      {
+        ch: 366,
+        locationId: "momoze-quarters",
+        note: "Off-duty in the guards' room the night of the murder.",
+      },
+      {
+        ch: 368,
+        locationId: "justice-bureau-hq",
+        note: "Court-martial custody after Momoze's murder.",
+      },
+    ],
+    secrets: [
+      {
+        text: "He was a spy planted on Momoze's detail by Queen Seiko.",
+        revealCh: 366,
+      },
+    ],
+    chapterAppearances: [366],
     tags: ["guard", "spy"],
     incomplete: true,
   },
@@ -2965,6 +3259,64 @@ export const characters: Character[] = [
     tags: ["mafia", "nen-user", "infiltrator", "victim"],
   },
   {
+    id: "sodom",
+    name: "Sodom",
+    role: "Heil-Ly member; back-alley doctor and hitman",
+    bio: "A tall, wide-eyed Heil-Ly soldier under Morena's Contagion — a back-alley doctor, hitman, and level-31 Manipulator, among the strongest of her converts. He volunteered to go with Dogman on the mission to capture one of Tserriednich's personal soldiers and drag him back to the hideout for conversion.",
+    monogram: "SO",
+    factionIds: ["heil-ly"],
+    superiorId: "morena",
+    introducedCh: 378,
+    nenType: "manipulator",
+    nenTypeRevealCh: 394,
+    statusHistory: [{ ch: 378, status: "alive" }],
+    locationHistory: [
+      {
+        ch: 378,
+        locationId: "heil-ly-territory",
+        note: "Among the members initiated into Contagion at the hideout.",
+      },
+    ],
+    chapterAppearances: [378, 394, 405],
+    tags: ["mafia", "nen-user", "assassin"],
+    incomplete: true,
+  },
+  {
+    id: "padaille",
+    name: "Padaille",
+    role: "Heil-Ly member; former demolition worker",
+    bio: "A sunken-cheeked former demolition worker and level-29 Conjurer who lived only to kill — Morena's Contagion gave his urges a license. His ability, I'm Coming to Get You, turned his right hand into the tools of his old trade repurposed as murder weapons.",
+    monogram: "PA",
+    factionIds: ["heil-ly"],
+    superiorId: "morena",
+    introducedCh: 378,
+    nenType: "conjurer",
+    nenTypeRevealCh: 391,
+    nenAbilityIds: ["im-coming-to-get-you"],
+    statusHistory: [
+      { ch: 378, status: "alive" },
+      {
+        ch: 391,
+        status: "dead",
+        note: "Killed by Hinrigh on Tier 3 with his own conjured weapon after the handcuff-pigeons kept re-shackling him; his partners abandoned him.",
+      },
+    ],
+    locationHistory: [
+      {
+        ch: 378,
+        locationId: "heil-ly-territory",
+        note: "Among the members initiated into Contagion at the hideout.",
+      },
+      {
+        ch: 391,
+        locationId: "tier-3",
+        note: "Ambushed Hinrigh with Tevelares and Quorolle; died there.",
+      },
+    ],
+    chapterAppearances: [378, 391, 392],
+    tags: ["mafia", "nen-user", "victim"],
+  },
+  {
     id: "terebellum",
     name: "Terebellum",
     role: "Heil-Ly member; transporter and hitman",
@@ -3178,6 +3530,26 @@ export const characters: Character[] = [
     chapterAppearances: [378, 384, 405],
     tags: ["mafia", "boss"],
     incomplete: true,
+  },
+  {
+    id: "tajao",
+    name: "Tajao",
+    role: "Vice boss of the Cha-R family; Luzurus's military advisor",
+    bio: "The Cha-R family's calm, chain-smoking second-in-command, doubling as military advisor to the Seventh Prince's army. He heard out the Troupe's account of the teleporting assassin in the family office, agreed to countermeasures, and warned the Spiders that depending on where Morena surfaced, the three-family code of conduct could force a war none of them could escape.",
+    monogram: "TJ",
+    factionIds: ["cha-r", "luzurus-camp"],
+    superiorId: "brocco",
+    introducedCh: 384,
+    statusHistory: [{ ch: 384, status: "alive" }],
+    locationHistory: [
+      {
+        ch: 384,
+        locationId: "cha-r-territory",
+        note: "Receiving Phinks, Nobunaga, and Feitan in the family office with Ken'i.",
+      },
+    ],
+    chapterAppearances: [384, 405, 406],
+    tags: ["mafia", "advisor"],
   },
   {
     id: "ken-i",
@@ -3450,6 +3822,30 @@ export const characters: Character[] = [
     tags: ["guard", "nen-user", "assassin", "infiltrator"],
   },
   {
+    id: "cavic",
+    name: "Cavic",
+    role: "Camilla's Have-Not guard; curse assassin",
+    bio: "One of the Second Prince's devoted Have-Not guards, formerly assigned to kill the Twelfth Prince Momoze through the sect's suicide curse, Yomotsu Hegui — years of devotion primed to be spent in a single casting. Tuffdy's mundane murder beat the curse to its target, and Sarahell redeployed them to spy on rival camps for signs of exorcists.",
+    monogram: "CV",
+    factionIds: ["camilla-camp"],
+    servesPrinceId: "prince-camilla",
+    superiorId: "sarahell",
+    introducedCh: 389,
+    nenType: "unknown",
+    nenAbilityIds: ["yomotsu-hegui"],
+    statusHistory: [{ ch: 389, status: "alive" }],
+    locationHistory: [
+      {
+        ch: 389,
+        locationId: "camilla-quarters",
+        note: "At Sarahell's briefing on Shikaku's suicide and the curse program.",
+      },
+    ],
+    chapterAppearances: [389],
+    tags: ["guard", "nen-user", "assassin"],
+    incomplete: true,
+  },
+  {
     id: "fukataki",
     name: "Fukataki",
     role: "Camilla's guard; household majordomo",
@@ -3581,6 +3977,62 @@ export const characters: Character[] = [
     locationHistory: [{ ch: 402, locationId: "benjamin-quarters" }],
     chapterAppearances: [402, 403, 413],
     tags: ["guard", "military"],
+    incomplete: true,
+  },
+  {
+    id: "wolfe",
+    name: "Wolfe",
+    role: "Benjamin's exchanged bodyguard; Queen Unma's spy",
+    bio: "A round-faced royal bodyguard with tear-shaped makeup under his eyes, originally one of Queen Unma's guards spying on another prince on her account. The guard-exchange shifts pulled him back to Benjamin's own door, where he stood post beside Furykov — and where Camilla, exploiting Benjamin's order not to fire on a prince, shot him through the head.",
+    monogram: "WO",
+    factionIds: ["benjamin-camp", "kakin-military"],
+    servesPrinceId: "prince-benjamin",
+    introducedCh: 373,
+    statusHistory: [
+      { ch: 373, status: "alive" },
+      {
+        ch: 373,
+        status: "dead",
+        note: "Shot in the head by Camilla at the entrance to Benjamin's quarters; Furykov, beside him, survived on his Nen.",
+      },
+    ],
+    locationHistory: [
+      {
+        ch: 373,
+        locationId: "benjamin-quarters",
+        note: "Posted at the First Prince's door under the guard-exchange shifts.",
+      },
+    ],
+    secrets: [
+      {
+        text: "Before the reassignment he spied on an unnamed prince for Queen Unma.",
+        revealCh: 373,
+      },
+    ],
+    chapterAppearances: [373],
+    tags: ["guard", "spy", "victim"],
+    incomplete: true,
+  },
+  {
+    id: "saquelle",
+    name: "Saquelle",
+    role: "Benjamin's soldier, embedded with Marayam's household",
+    bio: "A high-ranking Royal Army soldier among Benjamin's fourteen, posted into the Thirteenth Prince's household under the guard-exchange system as bodyguard and observer. He watched Marayam's camp for eleven days before the record even gave him a name — a soldier so unremarkable he was identified only in Benjamin's martial-law dispositions.",
+    monogram: "SQ",
+    factionIds: ["benjamin-camp", "kakin-military"],
+    servesPrinceId: "prince-benjamin",
+    superiorId: "balsamilco",
+    introducedCh: 358,
+    statusHistory: [{ ch: 358, status: "alive" }],
+    locationHistory: [
+      {
+        ch: 363,
+        locationId: "marayam-quarters",
+        note: "Assigned to the Thirteenth Prince under Benjamin's observer program.",
+      },
+    ],
+    chapterAppearances: [358, 363, 372, 374, 413],
+    tags: ["guard", "military", "spy"],
     incomplete: true,
   },
   {

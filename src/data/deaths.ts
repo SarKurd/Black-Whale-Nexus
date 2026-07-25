@@ -6,6 +6,55 @@ import type { DeathRecord } from "@/lib/types";
  */
 export const deaths: DeathRecord[] = [
   {
+    id: "death-sandra",
+    victimId: "sandra",
+    killerId: "vincent",
+    method:
+      "Killed the moment she let him into Room 1014 — Vincent left the knife in her chest and claimed she had come at him with it, adding that she carried a vial of poison. 'Self-defense', by a soldier who had invited himself in on Benjamin's orders.",
+    locationId: "room-1014",
+    chapter: 363,
+    witnessIds: ["kurapika", "bill", "oito"],
+    awareCharacterIds: ["kurapika", "bill", "oito", "benjamin", "balsamilco"],
+    investigation:
+      "None beyond the room: Vincent's self-defense story died with him minutes later, and the household had no standing to prosecute a First Prince soldier anyway.",
+    consequences: [
+      "Opened the Room 1014 standoff that ended in Vincent's suicide.",
+      "Oito's staff — already gutted by the first night — lost one of its two remaining maids.",
+    ],
+    confidence: "canonical",
+    factionId: "woble-camp",
+    princeContextId: "prince-woble",
+  },
+  {
+    id: "death-vincent",
+    victimId: "vincent",
+    killerName: "Self-inflicted — poison capsule under interrogation",
+    method:
+      "Swallowed a poison capsule hidden in a molar after Kurapika and Bill restrained him and Kurapika bluffed that his chain could force a confession.",
+    locationId: "room-1014",
+    chapter: 364,
+    witnessIds: ["kurapika", "bill", "oito"],
+    awareCharacterIds: [
+      "vincent",
+      "kurapika",
+      "bill",
+      "oito",
+      "benjamin",
+      "balsamilco",
+      "babimyna",
+    ],
+    investigation:
+      "Kurapika delayed reporting the death while Room 1014 stabilized. Benjamin's command had followed the confrontation through Vincent's earpiece and sent Babimyna to replace him.",
+    consequences: [
+      "Babimyna replaced Vincent as Benjamin's observer inside Room 1014.",
+      "Kurapika retained the stolen Air Blow in Stealth Dolphin.",
+      "Benjamin also inherited Air Blow through Benjamin Baton after Vincent's death.",
+    ],
+    confidence: "canonical",
+    factionId: "benjamin-camp",
+    princeContextId: "prince-woble",
+  },
+  {
     id: "death-kortopi",
     victimId: "kortopi",
     killerId: "hisoka",
@@ -100,6 +149,27 @@ export const deaths: DeathRecord[] = [
     princeContextId: "prince-woble",
   },
   {
+    id: "death-myuhan",
+    victimId: "myuhan",
+    suspectedKillerIds: [],
+    method:
+      "Found exsanguinated in Room 1014's toilet at 10:05 a.m. on the second day of Nen lessons — drained through holes in the body, the same silent method that killed Barrigen in front of the whole class the day before.",
+    locationId: "room-1014",
+    chapter: 376,
+    revealCh: 376,
+    awareCharacterIds: ["kurapika", "bill", "oito", "tserriednich", "theta"],
+    investigation:
+      "Filed with the classroom killings; Loberry was already detained when it happened, underscoring that the visible suspect was only a puppet. The operating user was never identified.",
+    consequences: [
+      "Proved the Silent Majority user kept operating inside Room 1014 despite the detention.",
+      "Tserriednich's camp lost one of its two class representatives; Danjin carried on alone.",
+    ],
+    mysteryIds: ["my-silent-majority-user"],
+    confidence: "canonical",
+    factionId: "tserriednich-camp",
+    princeContextId: "prince-tserriednich",
+  },
+  {
     id: "death-momoze",
     victimId: "momoze",
     killerId: "tuffdy",
@@ -155,6 +225,46 @@ export const deaths: DeathRecord[] = [
     confidence: "canonical",
     factionId: "kacho-camp",
     princeContextId: "prince-kacho",
+  },
+  {
+    id: "death-keeney",
+    victimId: "keeney",
+    killerName: "Self-inflicted — a planned suicide covering the escape",
+    method:
+      "During the banquet's hypnotic performance he plugged his ears, walked Kacho and Fugetsu through the entranced hall to the lifeboats, waved them off, and shot himself — dying as the escape's sole 'coercer' so no living accomplice could be traced to the Hunter Association.",
+    locationId: "hidden-passage-network",
+    chapter: 383,
+    witnessIds: [],
+    awareCharacterIds: ["melody", "kaiser"],
+    investigation:
+      "The Justice Bureau retrieved his will the next day (ch 386): it framed the escape as his coercion, clearing Melody and corroborating the twins' account. Three princes moved to issue pardons and request an encore (ch 400); Melody kept his death from the beast wearing Kacho's shape.",
+    consequences: [
+      "The twins reached the lifeboat — Kacho died to the ritual at sea; Fugetsu returned believing they had both been coerced.",
+      "Melody was exonerated and the Hunter Association's hand in the escape stayed invisible.",
+    ],
+    confidence: "canonical",
+    factionId: "kacho-camp",
+    princeContextId: "prince-kacho",
+  },
+  {
+    id: "death-wolfe",
+    victimId: "wolfe",
+    killerId: "camilla",
+    method:
+      "Shot through the head at the entrance to Benjamin's quarters. Wolfe had his weapon on the approaching Camilla, but Benjamin's standing order not to fire on a prince held his trigger — and she exploited the hesitation. Her follow-up shots at Furykov failed against his Nen.",
+    locationId: "benjamin-quarters",
+    chapter: 373,
+    witnessIds: ["furykov"],
+    awareCharacterIds: ["camilla", "benjamin", "balsamilco", "furykov"],
+    investigation:
+      "Raised at the joint trial (ch 376): Camilla's captain argued self-defense across the whole incident, and the proceedings dissolved into the unwinnable search for Musse's body.",
+    consequences: [
+      "Proved Camilla would kill straight through Benjamin's no-fire order.",
+      "The First and Second Princes both ended up confined under VVIP-area surveillance.",
+    ],
+    confidence: "canonical",
+    factionId: "benjamin-camp",
+    princeContextId: "prince-benjamin",
   },
   {
     id: "death-musse",
@@ -282,6 +392,26 @@ export const deaths: DeathRecord[] = [
     ],
     confidence: "canonical",
     factionId: "phantom-troupe",
+  },
+  {
+    id: "death-padaille",
+    victimId: "padaille",
+    killerId: "hinrigh",
+    method:
+      "Cut down on Tier 3 with his own conjured weapon. His three-man ambush on the Xi-Yu underboss collapsed when Hinrigh's aura-reinforced handcuff-pigeons kept re-shackling him; each escape — drill, then axe — only handed Hinrigh the finishing tool, while Tevelares and Quorolle abandoned him to his fate.",
+    locationId: "tier-3",
+    chapter: 391,
+    revealCh: 391,
+    witnessIds: ["hinrigh"],
+    awareCharacterIds: ["hinrigh", "morena"],
+    investigation:
+      "None — a mafia clash in a shadow war. His corpse marked the spot where the Heil-Ly's level-grown soldiers first met a professional and lost.",
+    consequences: [
+      "First Heil-Ly combatant lost to the Xi-Yu counterattack.",
+      "Showed that Contagion's stolen levels don't buy technique — reinforced conjured restraints beat a level-29 head-on.",
+    ],
+    confidence: "canonical",
+    factionId: "heil-ly",
   },
   {
     id: "death-luini",

@@ -287,6 +287,7 @@ export const nenAbilities: NenAbility[] = [
   {
     id: "air-blow",
     name: "Air Blow",
+    userCharacterId: "vincent",
     kind: "personal",
     nenType: "unknown",
     description:
@@ -2446,6 +2447,82 @@ export const nenAbilities: NenAbility[] = [
       {
         chapter: 413,
         note: "Named and explained on-page. How the pre-413 'telltale signs' skill maps onto Combo Master is partly interpretive.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "yomotsu-hegui",
+    name: "Yomotsu Hegui",
+    userCharacterId: "cavic",
+    kind: "curse",
+    nenType: "unknown",
+    description:
+      "The haunting-type suicide curse unique to Kakin's Have-Nots (lit. 'We Who Were Born Out of Convenience'), carried by Camilla's guard Cavic against the Twelfth Prince Momoze. The caster nurses the curse for months or years by carrying an object tied to the target and a dagger, thinking of the target every day; casting it costs the caster's life.",
+    activation:
+      "On the chosen day, burn the target-linked object, drink an infusion of its ashes, and commit suicide with the dagger.",
+    conditions: [
+      "Months, if not years, of daily devotion are needed for the curse to grow strong enough to kill.",
+      "Casting is fatal to the user by definition — one life for one curse.",
+      "Even a fully-grown curse can be blunted by a few meters of distance from the target.",
+    ],
+    effects: [
+      "Strips the target of their aura; the most powerful castings kill within hours.",
+    ],
+    weaknesses: [
+      "Years of preparation are wasted if the target dies by another hand first — Tuffdy's mundane murder of Momoze voided Cavic's entire investment (ch 389).",
+    ],
+    firstSeenCh: 389,
+    revealCh: 389,
+    uses: [
+      {
+        ch: 389,
+        note: "Explained at Sarahell's briefing after Shikaku's suicide raised the specter of a rival camp running the same curse.",
+      },
+    ],
+    awareCharacterIds: [
+      { characterId: "sarahell", sinceCh: 389 },
+      { characterId: "camilla", sinceCh: 389 },
+    ],
+    evidence: [
+      {
+        chapter: 389,
+        note: "Mechanics, cost, and the Momoze assignment laid out in Sarahell's meeting with the Have-Not guards.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "im-coming-to-get-you",
+    name: "I'm Coming to Get You",
+    userCharacterId: "padaille",
+    kind: "personal",
+    nenType: "conjurer",
+    description:
+      "Padaille's conjuration (lit. 'Fistful of Weapons'): he transforms his right hand into the tools of his old demolition trade — a hammer, a drill, an axe — swapping forms mid-fight as each is countered.",
+    activation: "Transform the right hand into a chosen tool or weapon.",
+    effects: [
+      "On-demand melee arsenal: hammer for striking, drill to bore out of restraints, axe to cut himself free (ch 391).",
+    ],
+    weaknesses: [
+      "Only the right hand transforms, so a restrained arm bottlenecks everything — Hinrigh's aura-reinforced handcuff-pigeons kept re-shackling him until the axe swing was turned back on him.",
+    ],
+    firstSeenCh: 391,
+    revealCh: 391,
+    uses: [
+      {
+        ch: 391,
+        note: "Hammer, drill, and axe cycled against Hinrigh on Tier 3; the fight ended with the weapon in Hinrigh's control.",
+      },
+    ],
+    status: "inactive",
+    awareCharacterIds: [{ characterId: "hinrigh", sinceCh: 391 }],
+    evidence: [
+      {
+        chapter: 391,
+        note: "Ability named and all three forms shown during the Tier 3 ambush on Hinrigh.",
         confidence: "canonical",
       },
     ],
