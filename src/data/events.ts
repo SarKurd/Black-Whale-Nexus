@@ -3035,12 +3035,17 @@ export const events: StoryEvent[] = [
     day: 10,
     kind: "conversation",
     locationId: "ministry-of-justice",
-    participantIds: ["kaiser"],
+    participantIds: ["kaiser", "steiner"],
     storylineIds: ["special-martial-law", "ship-security-crisis"],
     knowledgeChanges: [
       {
         factId: "fact-special-martial-law",
         characterId: "kaiser",
+        state: "suspects",
+      },
+      {
+        factId: "fact-special-martial-law",
+        characterId: "steiner",
         state: "suspects",
       },
     ],
@@ -3218,6 +3223,7 @@ export const events: StoryEvent[] = [
       "luzurus",
       "basho",
       "kanjidol",
+      "steiner",
     ],
     storylineIds: ["kacho-fugetsu", "special-martial-law"],
     consequences: [
@@ -3314,7 +3320,7 @@ export const events: StoryEvent[] = [
     day: 11,
     kind: "discovery",
     locationId: "ministry-of-justice",
-    participantIds: ["kaiser", "halkenburg"],
+    participantIds: ["kaiser", "steiner", "halkenburg"],
     storylineIds: ["halkenburg-movement", "special-martial-law"],
     confidence: "canonical",
   },

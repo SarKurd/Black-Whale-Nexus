@@ -1,5 +1,5 @@
 /**
- * Portrait manifest — one-time locally committed asset set (128 files).
+ * Portrait manifest — one-time locally committed asset set (129 files).
  * Black-and-white manga artwork sourced from Hunterpedia (Manga tab where
  * available), converted to grayscale JPEG for this unofficial fan project.
  */
@@ -107,6 +107,7 @@ export const portraits: Record<string, string> = {
   shizuku: "/portraits/shizuku.jpg",
   slakka: "/portraits/slakka.jpg",
   sodom: "/portraits/sodom.jpg",
+  steiner: "/portraits/steiner.jpg",
   sumidori: "/portraits/sumidori.jpg",
   "swinko-swinko": "/portraits/swinko-swinko.jpg",
   tajao: "/portraits/tajao.jpg",

@@ -78,6 +78,7 @@ export const chapters: ChapterInfo[] = [
       "In the International Permit Agency's basement, a new deputy secretary is shown what the Dark Continent sends home: wrung-out corpses found in the known world and a Hunter kept alive fifty years by the Zobae immortality disease. The Zodiacs watch Netero's second DVD — Beyond once defied him, took an unexplored route, and brought back new threats, so Netero asks the Association to reach the Continent before his son. Then Beyond himself walks in and tells them to inform the V5 they have 'captured' him.",
     eventIds: ["ev-341-netero-dvd", "ev-341-beyond-surrenders"],
     appearingCharacterIds: [
+      "steiner",
       "saiyu",
       "cluck",
       "cheadle",
@@ -94,6 +95,7 @@ export const chapters: ChapterInfo[] = [
     locationIds: ["hunter-hq"],
     storylineIds: ["expedition-prep", "beyond-netero"],
     changes: {
+      newCharacters: ["steiner"],
       newKnowledge: [
         "Five Threats came back from past expeditions: Brion, Ai, Hellbell, Pap, and Zobae",
         "Netero's dying request: the Association must precede Beyond to the Dark Continent",
@@ -131,6 +133,7 @@ export const chapters: ChapterInfo[] = [
       "cluck",
       "saiyu",
       "ginta",
+      "steiner",
       "ging",
       "pariston",
     ],
@@ -810,6 +813,7 @@ export const chapters: ChapterInfo[] = [
       "saiyu",
       "saccho",
       "kanzai",
+      "steiner",
       "leorio",
       "botobai",
       "kurapika",
@@ -2324,6 +2328,7 @@ export const chapters: ChapterInfo[] = [
       "balsamilco",
       "benjamin",
       "kanjidol",
+      "steiner",
       "halkenburg",
       "camilla",
       "sarahell",
@@ -2681,6 +2686,7 @@ export const chapters: ChapterInfo[] = [
       "kacho",
       "melody",
       "kaiser",
+      "steiner",
       "fugetsu",
       "seiko",
       "tyson",
@@ -2794,6 +2800,7 @@ export const chapters: ChapterInfo[] = [
       "balsamilco",
       "kaiser",
       "fugetsu",
+      "steiner",
       "kacho",
       "melody",
       "benjamin",
@@ -2868,6 +2875,7 @@ export const chapters: ChapterInfo[] = [
       "tubeppa",
       "tyson",
       "woble",
+      "steiner",
     ],
     locationIds: [
       "ministry-of-justice",

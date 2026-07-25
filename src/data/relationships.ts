@@ -1539,6 +1539,42 @@ export const relationships: Relationship[] = [
     ],
   },
   {
+    id: "rel-kaiser-entrusts-steiner",
+    from: "kaiser",
+    to: "steiner",
+    kind: "trusts",
+    directed: true,
+    strength: "moderate",
+    secret: true,
+    confirmed: true,
+    startCh: 400,
+    revealCh: 400,
+    mutualAwareness: true,
+    description:
+      "Kaiser made the loaned IPA man his failsafe: Steiner's status as a witness guaranteed to return alive is exactly why he holds the Bureau's panic device against a martial-law takeover.",
+    history: [
+      {
+        ch: 400,
+        text: "Hands Steiner the panic device with instructions to press it if Benjamin's men or the Royal Army arrive.",
+      },
+      {
+        ch: 402,
+        text: "Steiner joins Kaiser's escort for Fugetsu's letter rounds on Tier 1.",
+      },
+      {
+        ch: 403,
+        text: "Steiner brings Kaiser the anomaly that cracks Halkenburg's plan open: Worio Bay's off-schedule fainting.",
+      },
+    ],
+    evidence: [
+      {
+        chapter: 400,
+        note: "The lowered-voice briefing and the device handoff.",
+        confidence: "canonical",
+      },
+    ],
+  },
+  {
     id: "rel-basho-serves-luzurus",
     from: "basho",
     to: "luzurus",
