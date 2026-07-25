@@ -498,7 +498,9 @@ function TimelineInner() {
                   chapter={ch}
                   kinds={activeKinds}
                   highlightId={highlightId}
-                  onSelect={(id) => router.push(`/timeline?event=${id}`)}
+                  onSelect={(id) =>
+                    router.push(`/timeline?event=${id}`, { scroll: false })
+                  }
                   onOverflow={jumpToChapter}
                   onMissingHighlight={() => setMode("chapter")}
                 />

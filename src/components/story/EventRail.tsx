@@ -170,6 +170,12 @@ export function EventRail({
     // not discard the reader's manual scroll position.
     if (lastFocusX.current === focusX) return;
     lastFocusX.current = focusX;
+    // A target already on screen (e.g. a card the reader just clicked) stays
+    // where it is instead of jumping to the anchor position.
+    const inView =
+      focusX >= scroller.scrollLeft + 40 &&
+      focusX <= scroller.scrollLeft + scroller.clientWidth - 40;
+    if (inView) return;
     scroller.scrollLeft = Math.max(0, focusX - scroller.clientWidth * 0.6);
   }, [highlightId, placed, cursorX, events, kinds, onMissingHighlight]);
 
