@@ -4030,9 +4030,7 @@ export const events: StoryEvent[] = [
     day: 12,
     approxTime: "2:30 p.m.",
     kind: "decision",
-    // The order is issued from Benjamin's VVIP room; nothing is staged inside
-    // the Grand Hall itself in ch 413. Saquelle and Rihan receive it at their
-    // own posts.
+    // Ch 413 stages the order in Benjamin's VVIP room, not the Grand Hall.
     locationId: "vvip-area",
     participantIds: ["benjamin", "butch", "furykov"],
     storylineIds: [

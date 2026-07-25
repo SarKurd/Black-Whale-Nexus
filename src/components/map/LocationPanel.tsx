@@ -35,10 +35,7 @@ function kindLabel(kind: string): string {
   return kind.replace(/-/g, " ");
 }
 
-/**
- * Pin the voyage replay to a chapter without leaving the compartment file —
- * the dots spring to their positions at that moment behind the modal.
- */
+/** Pin the voyage replay to a chapter without closing the compartment file. */
 function ReplayAt({
   ch,
   onViewChapter,
@@ -205,9 +202,6 @@ export function LocationPanel({
         )}
       </div>
 
-      {/* Descriptions are unstamped current-state prose — like character
-          bios, they only unseal at the full-clearance boundary. Rewound and
-          low-clearance views rely on the stamped facts below instead. */}
       <p className="mt-2 text-xs leading-relaxed text-muted">
         {currentIntelText(loc.description, ch) ?? (
           <span className="text-faint">

@@ -58,7 +58,6 @@ export function SubjectTracker({
       .sort((a, b) => a.ch - b.ch);
   }, [tracked, ch]);
 
-  // The log entry currently in force at the replayed chapter.
   const activeLogCh = useMemo(() => {
     let best = -1;
     for (const entry of log) {

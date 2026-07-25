@@ -82,7 +82,6 @@ function computeLayout(displayCh: number): {
   bottomY: number;
   passage?: BoxLayout;
 } {
-  // Off-ship records berth in a strip above the waterline.
   const shoreLocs = locations.filter(
     (l) =>
       l.id !== "black-whale" &&
@@ -252,9 +251,6 @@ export function ShipBlueprint({
       for (const box of shore) boxes.set(box.loc.id, box);
       if (passage) boxes.set(passage.loc.id, passage);
       const bandsById = new Map(bands.map((b) => [b.loc.id, b]));
-      // The ship root is a container too: people the record can only place
-      // "somewhere aboard" assign to it and are reported as a count on the
-      // hull header — drawing a dot at an invented spot would fake precision.
       const drawnIds = new Set([
         "black-whale",
         ...boxes.keys(),
@@ -288,7 +284,7 @@ export function ShipBlueprint({
     >
       <title>Black Whale No. 1 — conceptual cross-section</title>
 
-      {/* Shore strip — off-ship records berth above the waterline. */}
+      {/* Shore strip */}
       {shore.length > 0 && (
         <g>
           <text
@@ -515,9 +511,7 @@ export function ShipBlueprint({
         </g>
       )}
 
-      {/* Occupancy dots — one per tracked character, keyed for movement.
-          Clicking a dot opens its compartment; a tracked subject reads
-          ringed while the rest of the crowd dims. */}
+      {/* Occupancy dots — one per tracked character, keyed for movement */}
       {dots.map((dot) => {
         const tracked = trackedId === dot.characterId;
         return (
@@ -545,7 +539,6 @@ export function ShipBlueprint({
         );
       })}
 
-      {/* Dot overflow — the crowd the cap hides is still owed a number. */}
       {overflows.map((o) => (
         <text
           key={o.targetId}
@@ -644,8 +637,6 @@ function LocationBox({
         </text>
       )}
       {remains > 0 && (
-        // Middle-right row: clear of the title baseline (14) and the dot
-        // row + overflow marker along the bottom edge.
         <text
           x={box.w - 7}
           y={26}

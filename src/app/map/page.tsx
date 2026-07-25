@@ -64,8 +64,6 @@ function MapPageInner() {
   const chParam = params.get("ch");
 
   const [selectedId, setSelectedId] = useState<string | null>(locationParam);
-  // Incoming ?ch= pins the replay to a chapter; the displayCh clamp below
-  // keeps a shared link from ever raising someone past their own clearance.
   const [viewCh, setViewCh] = useState<number | null>(() => {
     const n = Number(chParam);
     return chParam !== null && Number.isFinite(n)
@@ -115,7 +113,6 @@ function MapPageInner() {
   // The scrubber can rewind below clearance but never above it.
   const displayCh = Math.min(viewCh ?? ch, ch);
 
-  // Autoplay: one chapter per beat, pausing at the clearance boundary.
   useEffect(() => {
     if (!playing) return;
     const timer = setInterval(() => {
@@ -133,8 +130,7 @@ function MapPageInner() {
 
   const occupancy = useMemo(() => computeOccupancy(displayCh), [displayCh]);
 
-  // Faction key derived from what is actually rendered at this chapter —
-  // spoiler-safe by construction, and the fallback color is named honestly.
+  // Derived from what is rendered at displayCh so it can never outrun clearance.
   const factionKey = useMemo(() => {
     const ids = new Set<string>();
     let unaffiliated = false;
@@ -305,8 +301,7 @@ function MapPageInner() {
         )}
       </AnimatePresence>
 
-      {/* Faction key — derived from the dots and stripes on screen right now,
-          so it can never name a faction ahead of the reader's clearance. */}
+      {/* Faction key */}
       {(factionKey.entries.length > 0 || factionKey.unaffiliated) && (
         <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1.5">
           <span className="intel-label">Faction key</span>

@@ -207,10 +207,8 @@ for (const l of locations) {
     checkRefs(l.id, [s.value], factionIds, "controlHistory.value");
 }
 
-// The compartment graph must be a clean undirected graph: no self-loops, no
-// duplicate edges, and every A→B link reciprocated by B→A — LocationPanel
-// renders "connected compartments" from each record's own list, so a one-way
-// link means one-way navigation.
+// LocationPanel navigates from each record's own connectedIds list, so the
+// graph must be undirected: no self-loops, no duplicates, every link mutual.
 {
   const connectedByLoc = new Map(
     locations.map((l) => [l.id, new Set(l.connectedIds ?? [])]),
@@ -227,9 +225,8 @@ for (const l of locations) {
   }
 }
 
-// Chapter-stamp ordering: nothing may become reader-visible inside a location
-// before the location itself enters the record — the map draws boxes gated by
-// introducedCh, so earlier occupants/incidents point at a box that isn't there.
+// Nothing may become reader-visible inside a location before the location
+// itself enters the record at its introducedCh.
 {
   const introByLoc = new Map(locations.map((l) => [l.id, l.introducedCh]));
   for (const e of events) {

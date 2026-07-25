@@ -1309,8 +1309,8 @@ export const locations: ShipLocation[] = [
       },
     ],
     connectedIds: ["tier-2", "tier-3", "room-3101", "hidden-passage-network"],
-    // Ch 384 only tells the reader an unlocated hideout exists; the interior
-    // first appears on-page in ch 394, so the compartment unseals there.
+    // Ch 384 only reveals an unlocated hideout exists; the interior is first
+    // on-page in ch 394.
     introducedCh: 394,
   },
   {

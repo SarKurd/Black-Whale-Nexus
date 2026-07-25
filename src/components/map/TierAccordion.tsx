@@ -46,8 +46,6 @@ export function TierAccordion({
       l.introducedCh <= displayCh,
   );
 
-  // The same honest per-container tally the blueprint uses: each person is
-  // counted at the deepest row that is actually drawn, never twice.
   const { livingByRow, remainsByRow } = useMemo(() => {
     const drawn = new Set<string>(["black-whale"]);
     for (const l of locations) {
@@ -211,7 +209,6 @@ function LocationRow({
   displayCh: number;
   occupants: Occupant[];
   remains: number;
-  /** Container rows (the ship root) report their full rollup, not the direct tally. */
   countOverride?: number;
   selectedId: string | null;
   onSelect: (locationId: string) => void;
