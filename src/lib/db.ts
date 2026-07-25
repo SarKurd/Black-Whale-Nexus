@@ -59,6 +59,20 @@ export const characterById: Map<string, Character> = indexBy(characters, "id");
 export const princeById: Map<string, Prince> = indexBy(princes, "id");
 export const factionById: Map<string, Faction> = indexBy(factions, "id");
 export const locationById: Map<string, ShipLocation> = indexBy(locations, "id");
+
+/** Location id chain from `locationId` up through every parent to the root. */
+export function ancestorChain(locationId: string): string[] {
+  const chain: string[] = [];
+  let currentId: string | undefined = locationId;
+  // Guard against accidental parentId cycles in the dataset.
+  let guard = 0;
+  while (currentId && guard < 16) {
+    chain.push(currentId);
+    currentId = locationById.get(currentId)?.parentId;
+    guard += 1;
+  }
+  return chain;
+}
 export const eventById: Map<string, StoryEvent> = indexBy(events, "id");
 export const storylineById: Map<string, Storyline> = indexBy(storylines, "id");
 export const abilityById: Map<string, NenAbility> = indexBy(nenAbilities, "id");

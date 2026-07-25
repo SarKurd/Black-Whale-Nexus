@@ -8,7 +8,7 @@ import {
   EntityLink,
   EntityList,
 } from "@/components/ui/kit";
-import { locationById } from "@/lib/db";
+import { deathByVictim, locationById } from "@/lib/db";
 import type { EventKind, StoryEvent } from "@/lib/types";
 
 /**
@@ -122,6 +122,12 @@ export function EventEntry({
               <EntityList ids={event.participantIds} />
             </div>
           )}
+          {event.witnessIds && event.witnessIds.length > 0 && (
+            <div className="flex flex-wrap items-baseline gap-x-2 text-xs">
+              <span className="intel-label">Witnessed by</span>
+              <EntityList ids={event.witnessIds} />
+            </div>
+          )}
           {location && (
             <div className="flex flex-wrap items-baseline gap-x-2 text-xs">
               <span className="intel-label">Location</span>
@@ -148,6 +154,14 @@ export function EventEntry({
                     <span className="line-through decoration-[var(--blood)] decoration-1">
                       <EntityLink id={id} />
                     </span>
+                    {deathByVictim.has(id) && (
+                      <Link
+                        href={`/deaths#${id}`}
+                        className="ml-1 font-mono text-[9px] uppercase tracking-wider text-blood-bright hover:text-gold-bright"
+                      >
+                        record ▸
+                      </Link>
+                    )}
                   </span>
                 ))}
               </span>

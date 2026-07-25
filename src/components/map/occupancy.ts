@@ -6,22 +6,13 @@
  * tier while a room reports only the people actually inside it.
  */
 
-import { characterById, characters, factionById, locationById } from "@/lib/db";
+import {
+  ancestorChain,
+  characterById,
+  characters,
+  factionById,
+} from "@/lib/db";
 import { locationAt, statusAt } from "@/lib/spoiler";
-
-/** Location id chain from `locationId` up through every parent to the root. */
-export function ancestorChain(locationId: string): string[] {
-  const chain: string[] = [];
-  let currentId: string | undefined = locationId;
-  // Guard against accidental parentId cycles in the dataset.
-  let guard = 0;
-  while (currentId && guard < 16) {
-    chain.push(currentId);
-    currentId = locationById.get(currentId)?.parentId;
-    guard += 1;
-  }
-  return chain;
-}
 
 export interface Occupant {
   characterId: string;

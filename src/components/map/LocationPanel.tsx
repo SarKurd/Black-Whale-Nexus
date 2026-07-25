@@ -8,6 +8,7 @@ import {
   Tag,
 } from "@/components/ui/kit";
 import {
+  ancestorChain,
   characterById,
   characters,
   deaths,
@@ -18,7 +19,6 @@ import {
 import { currentIntelText, latestStamp, statusAt } from "@/lib/spoiler";
 import type { Character, DeathRecord, StoryEvent } from "@/lib/types";
 import {
-  ancestorChain,
   CANONICITY_COLOR,
   type Occupancy,
   THREAT_COLOR,

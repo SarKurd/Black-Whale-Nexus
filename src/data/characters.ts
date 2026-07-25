@@ -4099,7 +4099,7 @@ export const characters: Character[] = [
       {
         ch: 363,
         locationId: "room-1007",
-        note: "Posted into the Seventh Prince's household under the day-one guard exchange; Benjamin summons him for a debrief after the Shikaku incident at Luzurus's door.",
+        note: "Posted into the Seventh Prince's household under the day-one guard exchange.",
       },
     ],
     chapterAppearances: [363, 386, 389, 402, 413, 414],
@@ -4267,7 +4267,13 @@ export const characters: Character[] = [
       {
         ch: 363,
         locationId: "royal-quarters",
-        note: "Tubeppa's household; Room 1005. Destroyed Salé-salé's Guardian Spirit Beast with Predator along the way.",
+        note: "Embedded in Tubeppa's household under Benjamin's observer program.",
+      },
+      {
+        ch: 363,
+        revealCh: 402,
+        locationId: "room-1005",
+        note: "Benjamin's observer inside Tubeppa's suite, first drawn under its number in the truce-report scene.",
       },
     ],
     chapterAppearances: [386, 388, 402, 413],
@@ -4293,7 +4299,13 @@ export const characters: Character[] = [
       {
         ch: 359,
         locationId: "royal-quarters",
-        note: "Serves within Nasubi's quarters; opens the hidden burial chamber for Halkenburg's interment ch. 413.",
+        note: "Serves within Nasubi's quarters.",
+      },
+      {
+        ch: 413,
+        revealCh: 413,
+        locationId: "nasubi-quarters",
+        note: "Opens the hidden burial chamber for Halkenburg's interment.",
       },
     ],
     chapterAppearances: [349, 359, 382, 383, 413],

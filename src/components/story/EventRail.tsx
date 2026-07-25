@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useMemo } from "react";
+import { useEffect, useMemo, useRef } from "react";
 import { ArchiveNote } from "@/components/ui/kit";
 import {
   ARC_END,
@@ -34,6 +34,7 @@ const CARD_W = 160;
 const CARD_H = 62; // fits the chapter row + two title lines with padding
 const STEM_0 = 30; // first-tier stem length from the rail
 const TIER_STEP = CARD_H + 34; // stem per tier: card height plus a clear gap
+const MAX_TIER = 2; // deeper stacks collapse into per-chapter "+N" pills
 const TOP_PAD = 34; // room for the clearance label + ruler ticks
 const BOTTOM_PAD = 48; // chapter numbers + breathing room to the panel edge
 const RAIL_W = PAD_L + (ARC_END - ARC_START) * PX_PER_CH + PAD_R;
@@ -45,72 +46,134 @@ function chX(chapter: number): number {
 
 interface Placed {
   event: StoryEvent;
+  /** marker position: the event's true chapter x. */
   x: number;
+  /** card center: `x` nudged inward so edge cards stay on the canvas. */
+  cx: number;
   above: boolean;
   /** callout vertical offset from the rail, grows when neighbors crowd. */
   tier: number;
 }
 
 /**
- * Horizontal landmark timeline: every major event plotted on a chapter-scaled
- * rail, callouts alternating above/below with simple anti-overlap stacking.
+ * Callout placement: each card takes the emptier side's lowest free tier;
+ * ties alternate. Cards that would stack past MAX_TIER collapse into a
+ * per-chapter overflow pill instead of growing the rail without bound.
+ * Collision math runs on the card centers as drawn, edge clamp included.
+ */
+function placeCallouts(landmarks: StoryEvent[]): {
+  placed: Placed[];
+  overflow: Map<number, number>;
+} {
+  const tiersBySide: Record<"above" | "below", number[]> = {
+    above: [],
+    below: [],
+  };
+  const lowestFreeTier = (side: "above" | "below", cx: number) => {
+    const tiers = tiersBySide[side];
+    let tier = 0;
+    while (tier < tiers.length && cx - tiers[tier] < CARD_W + 8) tier += 1;
+    return tier;
+  };
+  const placed: Placed[] = [];
+  const overflow = new Map<number, number>();
+  let flip = true;
+  for (const event of landmarks) {
+    const x = chX(event.chapter);
+    const cx = Math.min(Math.max(x, 2 + CARD_W / 2), RAIL_W - CARD_W / 2 - 2);
+    const aboveTier = lowestFreeTier("above", cx);
+    const belowTier = lowestFreeTier("below", cx);
+    if (Math.min(aboveTier, belowTier) > MAX_TIER) {
+      overflow.set(event.chapter, (overflow.get(event.chapter) ?? 0) + 1);
+      continue;
+    }
+    let above: boolean;
+    if (aboveTier !== belowTier) above = aboveTier < belowTier;
+    else {
+      above = flip;
+      flip = !flip;
+    }
+    const tier = above ? aboveTier : belowTier;
+    tiersBySide[above ? "above" : "below"][tier] = cx;
+    placed.push({ event, x, cx, above, tier });
+  }
+  return { placed, overflow };
+}
+
+/**
+ * Horizontal landmark timeline: major events plotted on a chapter-scaled
+ * rail. Scrolls itself to the highlighted event or the clearance cursor.
  */
 export function EventRail({
   events,
   chapter,
+  kinds = LANDMARK_KINDS,
   highlightId,
   onSelect,
+  onOverflow,
+  onMissingHighlight,
 }: {
   events: StoryEvent[];
   chapter: number;
+  kinds?: EventKind[];
   highlightId?: string;
   onSelect?: (id: string) => void;
+  onOverflow?: (chapter: number) => void;
+  /** The highlighted event is in the data but fell into an overflow pill. */
+  onMissingHighlight?: () => void;
 }) {
-  const { placed, railY, railH } = useMemo(() => {
-    const landmarks = events
-      .filter((e) => LANDMARK_KINDS.includes(e.kind))
-      .sort((a, b) => a.chapter - b.chapter || a.id.localeCompare(b.id));
+  const scrollerRef = useRef<HTMLDivElement>(null);
 
-    // Alternate above/below; within a side, bump to a higher tier when the
-    // previous same-side callout is closer than a card width.
-    const lastXBySide: Record<"above" | "below", number[]> = {
-      above: [],
-      below: [],
-    };
+  const { placed, overflow, railY, railH } = useMemo(() => {
+    const landmarks = events
+      .filter((e) => kinds.includes(e.kind))
+      .sort((a, b) => a.chapter - b.chapter || a.id.localeCompare(b.id));
+    const { placed, overflow } = placeCallouts(landmarks);
+
     let maxAbove = 0;
     let maxBelow = 0;
-    const items: Placed[] = landmarks.map((event, i) => {
-      const x = chX(event.chapter);
-      const above = i % 2 === 0;
-      const side = above ? "above" : "below";
-      // Find the lowest tier whose last x is far enough left.
-      const tiers = lastXBySide[side];
-      let tier = 0;
-      while (tier < tiers.length && x - tiers[tier] < CARD_W + 8) tier += 1;
-      tiers[tier] = x;
-      if (above) maxAbove = Math.max(maxAbove, tier);
-      else maxBelow = Math.max(maxBelow, tier);
-      return { event, x, above, tier };
-    });
-
+    for (const p of placed) {
+      if (p.above) maxAbove = Math.max(maxAbove, p.tier);
+      else maxBelow = Math.max(maxBelow, p.tier);
+    }
     // A stacked callout reaches STEM_0 + tier*TIER_STEP from the rail, plus a
     // card. Size the rail so the deepest stack on each side clears the padding.
     const reach = (maxTier: number) => STEM_0 + maxTier * TIER_STEP + CARD_H;
     const above = reach(maxAbove);
     const below = reach(maxBelow);
     return {
-      placed: items,
+      placed,
+      overflow,
       railY: TOP_PAD + above,
       railH: TOP_PAD + above + below + BOTTOM_PAD,
     };
-  }, [events]);
+  }, [events, kinds]);
 
   const ticks: number[] = [];
   for (let t = ARC_START; t <= ARC_END; t += 5) ticks.push(t);
   const cursorX =
     chapter >= ARC_START ? chX(Math.min(chapter, ARC_END)) : PAD_L;
 
-  if (placed.length === 0) {
+  const lastFocusX = useRef<number | null>(null);
+  useEffect(() => {
+    const scroller = scrollerRef.current;
+    if (!scroller) return;
+    const highlightX = highlightId
+      ? placed.find((p) => p.event.id === highlightId)?.x
+      : undefined;
+    if (highlightId && highlightX === undefined) {
+      const target = events.find((e) => e.id === highlightId);
+      if (target && kinds.includes(target.kind)) onMissingHighlight?.();
+    }
+    const focusX = highlightX ?? cursorX;
+    // Only move when the focus target itself moved — filter recomputes must
+    // not discard the reader's manual scroll position.
+    if (lastFocusX.current === focusX) return;
+    lastFocusX.current = focusX;
+    scroller.scrollLeft = Math.max(0, focusX - scroller.clientWidth * 0.6);
+  }, [highlightId, placed, cursorX, events, kinds, onMissingHighlight]);
+
+  if (placed.length === 0 && overflow.size === 0) {
     return (
       <ArchiveNote>
         No landmark events on record at this clearance and filter set.
@@ -119,7 +182,10 @@ export function EventRail({
   }
 
   return (
-    <div className="dossier corner-ticks overflow-x-auto bg-bg-deep/50">
+    <div
+      ref={scrollerRef}
+      className="dossier corner-ticks overflow-x-auto bg-bg-deep/50"
+    >
       <svg
         width={RAIL_W}
         height={railH}
@@ -193,15 +259,12 @@ export function EventRail({
         </text>
 
         {/* Landmarks */}
-        {placed.map(({ event, x, above, tier }, i) => {
+        {placed.map(({ event, x, cx, above, tier }, i) => {
           const meta = EVENT_KIND_META[event.kind];
           const highlighted = event.id === highlightId;
           const stem = STEM_0 + tier * TIER_STEP;
           const cardY = above ? railY - stem - CARD_H : railY + stem;
-          const cardX = Math.max(
-            2,
-            Math.min(x - CARD_W / 2, RAIL_W - CARD_W - 2),
-          );
+          const cardX = cx - CARD_W / 2;
           const connectorY = above ? railY - stem : railY + stem;
           return (
             <motion.g
@@ -260,6 +323,40 @@ export function EventRail({
             </motion.g>
           );
         })}
+
+        {/* Per-chapter overflow pills — stacks past MAX_TIER live in the
+            chapter view instead of growing the rail without bound. */}
+        {[...overflow.entries()].map(([num, count]) => (
+          <g
+            key={num}
+            className={onOverflow ? "cursor-pointer" : undefined}
+            onClick={() => onOverflow?.(num)}
+          >
+            <rect
+              x={chX(num) + 7}
+              y={railY - 8}
+              width={30}
+              height={16}
+              rx={2}
+              fill="var(--panel)"
+              stroke="var(--gold-line)"
+            />
+            <text
+              x={chX(num) + 22}
+              y={railY + 3.5}
+              textAnchor="middle"
+              fill="var(--gold-bright)"
+              fontSize={9}
+              fontFamily="var(--font-geist-mono), monospace"
+            >
+              +{count}
+            </text>
+            <title>
+              {count} more landmark{count === 1 ? "" : "s"} in chapter {num} —
+              open the chapter view
+            </title>
+          </g>
+        ))}
       </svg>
     </div>
   );

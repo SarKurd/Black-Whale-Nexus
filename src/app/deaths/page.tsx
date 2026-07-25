@@ -324,10 +324,11 @@ function DeathRow({
 
   return (
     <motion.div
+      id={record.victimId}
       initial={{ opacity: 0, y: 8 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.25, delay: Math.min(index, 8) * 0.04 }}
-      className="dossier corner-ticks border-l-2 p-4"
+      className="dossier corner-ticks scroll-mt-16 border-l-2 p-4"
       style={{ borderLeftColor: "var(--blood)" }}
     >
       <div className="flex flex-wrap items-center gap-3">
