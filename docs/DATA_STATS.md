@@ -12,9 +12,9 @@
 | princes | 14 |
 | factions | 24 |
 | relationships | 198 |
-| events | 237 |
+| events | 238 |
 | chapters | 75 |
-| locations | 38 |
+| locations | 60 |
 | nen abilities | 87 |
 | guardian beasts | 14 |
 | knowledge facts | 23 |

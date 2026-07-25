@@ -45,6 +45,12 @@ export const characters: Character[] = [
         note: "Operates from the army command post on Tier 1.",
       },
       {
+        ch: 376,
+        revealCh: 376,
+        locationId: "vvip-area",
+        note: "Confined to the VVIP area by Cleapatro's ruling after the Musse affair; runs the war from his room there through day twelve.",
+      },
+      {
         ch: 410,
         locationId: "ministry-of-justice",
         note: "Takes the Justice Bureau as his joint-force command center under Special Martial Law.",
@@ -174,6 +180,16 @@ export const characters: Character[] = [
     locationHistory: [
       { ch: 359, locationId: "zhang-lei-quarters" },
       {
+        ch: 390,
+        locationId: "onior-residence",
+        note: "Calls on Onior to ask what the mafia knows of Guardian Spirit Beasts and Nen; leaves the same day.",
+      },
+      {
+        ch: 391,
+        locationId: "zhang-lei-quarters",
+        note: "Back in Room 1003 after the Onior visit.",
+      },
+      {
         ch: 410,
         locationId: "tier-2",
         note: "Slipped to Tier 2 through Onior's residence minutes before martial law; Benjamin guesses the Justice Bureau or a mafia rendezvous, but his refuge is unconfirmed.",
@@ -271,6 +287,12 @@ export const characters: Character[] = [
         locationId: "royal-quarters",
         note: "Quarters not individually depicted; placed in the royal block.",
       },
+      {
+        ch: 359,
+        revealCh: 402,
+        locationId: "room-1005",
+        note: "Her suite, first drawn under its number in the truce-report scene.",
+      },
     ],
     objectives: [
       {
@@ -298,6 +320,12 @@ export const characters: Character[] = [
         locationId: "royal-quarters",
         note: "Quarters not individually depicted; placed in the royal block.",
       },
+      {
+        ch: 359,
+        revealCh: 400,
+        locationId: "room-1006",
+        note: "Her suite, first drawn under its number during the retinue roll-call.",
+      },
     ],
     chapterAppearances: [349, 358, 366, 370],
     tags: ["prince"],
@@ -315,8 +343,8 @@ export const characters: Character[] = [
     locationHistory: [
       {
         ch: 359,
-        locationId: "royal-quarters",
-        note: "Quarters not individually depicted; placed in the royal block.",
+        locationId: "room-1007",
+        note: "Settled into his own suite from the war's first day; the room is drawn on-page from ch. 386 onward.",
       },
     ],
     objectives: [
@@ -358,6 +386,12 @@ export const characters: Character[] = [
         ch: 359,
         locationId: "royal-quarters",
         note: "Quarters not individually depicted; placed in the royal block.",
+      },
+      {
+        ch: 359,
+        revealCh: 382,
+        locationId: "room-1008",
+        note: "Staged on-page only as 'Salé-salé's quarters' when Yushohi's kill lands; the number follows the block's scheme.",
       },
       {
         ch: 413,
@@ -429,9 +463,9 @@ export const characters: Character[] = [
       },
       {
         ch: 413,
-        locationId: "halkenburg-quarters",
+        locationId: "burial-chamber",
         revealCh: 413,
-        note: "As Balsamilco: bound to a chair in Room 1009 with his twelve civilian supporters, firing an arrow at Benjamin.",
+        note: "His corpse is interred beside Salé-salé and Kacho, Flame of Life unlit; his soul fights on from Room 1009 in Balsamilco's body.",
       },
     ],
     objectives: [
@@ -495,14 +529,8 @@ export const characters: Character[] = [
       { ch: 359, locationId: "kacho-quarters" },
       {
         ch: 383,
-        locationId: "hidden-passage-network",
-        note: "Escape attempt: banquet stage to lifeboat via Fugetsu's door; killed off-ship when the route turned predatory. Position approximate.",
-      },
-      {
-        ch: 400,
-        locationId: "justice-bureau-hq",
-        revealCh: 400,
-        note: "As the beast-'Kacho': with Fugetsu and Melody under witness protection on Tier 2, later sheltering under Kaiser's office.",
+        locationId: "lifeboat-area",
+        note: "Escape attempt: banquet stage to lifeboat via Fugetsu's door; killed off-ship when the route turned predatory.",
       },
       {
         ch: 413,
@@ -559,12 +587,12 @@ export const characters: Character[] = [
       { ch: 359, locationId: "fugetsu-quarters" },
       {
         ch: 383,
-        locationId: "hidden-passage-network",
+        locationId: "lifeboat-area",
         note: "Lifeboat escape attempt with Kacho during the Sunday banquet; returned alone through her own door.",
       },
       {
         ch: 383,
-        locationId: "justice-bureau-hq",
+        locationId: "ministry-of-justice",
         note: "Held on Tier 2 as a key witness after the failed escape, together with the 'Kacho' presence and Melody — under Deputy Chief Prosecutor Kaiser's protection.",
       },
     ],
@@ -732,8 +760,14 @@ export const characters: Character[] = [
         locationId: "tier-1",
         note: "Royal apartments; exact quarters not depicted.",
       },
+      {
+        ch: 359,
+        revealCh: 382,
+        locationId: "nasubi-quarters",
+        note: "His chambers are first staged when Halkenburg forces his way past the gate at gunpoint; the burial chamber opens off them on day twelve.",
+      },
     ],
-    chapterAppearances: [340, 349, 358, 359, 365, 366],
+    chapterAppearances: [340, 349, 358, 359, 365, 366, 382, 413],
     tags: ["royal"],
   },
   {
@@ -744,7 +778,7 @@ export const characters: Character[] = [
     bioReveals: [
       {
         revealCh: 403,
-        text: "Per Kacho's letter, she is also Halkenburg's real mother — hidden under Duazul's line to shield him from his elder siblings. She takes a call and tells Halkenburg she is proud of him.",
+        text: "Per Kacho's letter, she is also Halkenburg's real mother — hidden under Duazul's line to shield him from his elder siblings. From Room 01 on Tier 1, she takes a call and tells Halkenburg she is proud of him.",
       },
       {
         revealCh: 413,
@@ -831,7 +865,15 @@ export const characters: Character[] = [
     factionIds: ["royal-family"],
     introducedCh: 349,
     statusHistory: [{ ch: 349, status: "alive" }],
-    locationHistory: [{ ch: 359, locationId: "tier-1" }],
+    locationHistory: [
+      { ch: 359, locationId: "tier-1" },
+      {
+        ch: 359,
+        revealCh: 371,
+        locationId: "kacho-quarters",
+        note: "Shares Room 1010 with Kacho; the court's investigator is dispatched to Room 1010 because she is under suspicion.",
+      },
+    ],
     chapterAppearances: [349, 358],
     tags: ["royal", "queen"],
     incomplete: true,
@@ -1179,7 +1221,7 @@ export const characters: Character[] = [
       },
       {
         ch: 383,
-        locationId: "hidden-passage-network",
+        locationId: "lifeboat-area",
         note: "The lifeboat tunnel, where he died covering the twins' escape.",
       },
     ],
@@ -1216,7 +1258,7 @@ export const characters: Character[] = [
       { ch: 359, locationId: "kacho-quarters" },
       {
         ch: 383,
-        locationId: "justice-bureau-hq",
+        locationId: "ministry-of-justice",
         note: "Tier 2 custody, later Kaiser's protection alongside Fugetsu and the beast-'Kacho'.",
       },
     ],
@@ -1320,7 +1362,13 @@ export const characters: Character[] = [
       {
         ch: 359,
         locationId: "royal-quarters",
-        note: "Tyson household (Room 1006); suite not individually depicted.",
+        note: "Tyson household; suite not individually depicted.",
+      },
+      {
+        ch: 359,
+        revealCh: 400,
+        locationId: "room-1006",
+        note: "Stationed with Tyson's household; the suite is first drawn under its number during the retinue's role-play roll-call.",
       },
     ],
     chapterAppearances: [359, 366, 389, 400, 413],
@@ -1376,11 +1424,24 @@ export const characters: Character[] = [
     locationHistory: [
       {
         ch: 359,
-        locationId: "beyond-quarters",
-        note: "Oversees Beyond's confinement detail.",
+        locationId: "tier-4-conference-room",
+        note: "In conference with a group of Kakin Royal Army officials on Tier 4.",
+      },
+      {
+        ch: 378,
+        locationId: "tier-3",
+        note: "Working the twenty-victim murder investigation from Tier 3 — the general-passenger crime scene, then the Central Police Station where he questions the ID-less Fugetsu.",
+      },
+      {
+        ch: 410,
+        locationId: "ministry-of-justice",
+        note: "Receives Benjamin at the Justice Bureau with Botobai and Kaiser under Special Martial Law.",
       },
     ],
-    chapterAppearances: [359, 360, 365, 385],
+    chapterAppearances: [
+      340, 341, 342, 343, 344, 345, 346, 348, 349, 358, 359, 378, 379, 380, 381,
+      410,
+    ],
     tags: ["hunter", "zodiac"],
   },
   {
@@ -1397,11 +1458,16 @@ export const characters: Character[] = [
     locationHistory: [
       {
         ch: 359,
-        locationId: "tier-1",
-        note: "Association command area; exact rooms not depicted.",
+        locationId: "tier-3-medical",
+        note: "Reorganizing the central medical clinic on Tier 3 with Leorio — five clinics for the bottom three decks.",
+      },
+      {
+        ch: 404,
+        locationId: "tier-3-medical",
+        note: "Heads the emergency team when Halkenburg's failing body is brought in; forced off the case by the royal and military medical teams.",
       },
     ],
-    chapterAppearances: [359, 365, 385],
+    chapterAppearances: [359, 365, 385, 404],
     tags: ["hunter", "zodiac"],
   },
   {
@@ -1488,8 +1554,13 @@ export const characters: Character[] = [
     locationHistory: [
       {
         ch: 359,
+        locationId: "tier-3-courthouse",
+        note: "Sits in the central courthouse on Tier 3.",
+      },
+      {
+        ch: 380,
         locationId: "tier-3",
-        note: "Sits the central courthouse on Tier 3.",
+        note: "Enforcing the lower-tier curfew sweep with Mizaistom; put in charge of the Zoldycks alongside Ginta.",
       },
       {
         ch: 410,
@@ -2289,7 +2360,13 @@ export const characters: Character[] = [
       {
         ch: 363,
         locationId: "royal-quarters",
-        note: "Tubeppa household (Room 1005).",
+        note: "Tubeppa household; suite not individually depicted.",
+      },
+      {
+        ch: 363,
+        revealCh: 402,
+        locationId: "room-1005",
+        note: "Captain of Tubeppa's household; the suite is first drawn under its number when he and Longhi report the Kurapika truce.",
       },
     ],
     chapterAppearances: [363, 370, 371, 388, 401, 411],
@@ -2740,9 +2817,29 @@ export const characters: Character[] = [
     locationHistory: [
       { ch: 359, revealCh: 371, locationId: "tier-5" },
       {
+        ch: 366,
+        locationId: "hall-37564",
+        note: "Accosted by a passenger in the numbered hall; answers that ties are severed, not forgotten.",
+      },
+      {
+        ch: 371,
+        locationId: "tier-5",
+        note: "Meets Machi in a crowded area; rules that Hisoka belongs to whichever member reaches him first, himself included.",
+      },
+      {
         ch: 377,
+        locationId: "tier-5-dining-hall",
+        note: "Convenes the full Troupe — Illumi introduced — then sends the members out for Hisoka's head.",
+      },
+      {
+        ch: 378,
+        locationId: "tier-5",
+        note: "Working the disguise hunt with Shizuku and Bonolenov; position approximate.",
+      },
+      {
+        ch: 406,
         locationId: "tier-3",
-        note: "Moving with the search sweep; positions approximate.",
+        note: "In Halkenburg's funeral-procession crowd, burning conjured-phone calls to place Hisoka 'up above'.",
       },
     ],
     objectives: [
@@ -2818,7 +2915,7 @@ export const characters: Character[] = [
       },
       {
         ch: 405,
-        locationId: "tier-1",
+        locationId: "tier-1-casino",
         note: "VIP casino; how he obtained Tier 1 access is unconfirmed — Chrollo guesses a prince's invitation.",
       },
     ],
@@ -2915,7 +3012,19 @@ export const characters: Character[] = [
     nenType: "transmuter",
     nenTypeRevealCh: 0,
     statusHistory: [{ ch: 0, status: "alive" }],
-    locationHistory: [{ ch: 359, revealCh: 371, locationId: "tier-5" }],
+    locationHistory: [
+      { ch: 359, revealCh: 371, locationId: "tier-5" },
+      {
+        ch: 377,
+        locationId: "tier-5-dining-hall",
+        note: "At the full-Troupe dining-hall assembly.",
+      },
+      {
+        ch: 378,
+        locationId: "tier-5",
+        note: "Scatters with the rest of the Troupe on Chrollo's order; position approximate.",
+      },
+    ],
     chapterAppearances: [357, 371, 377, 380, 395, 398, 405],
     tags: ["troupe", "nen-user"],
   },
@@ -2930,7 +3039,24 @@ export const characters: Character[] = [
     nenType: "emitter",
     nenTypeRevealCh: 0,
     statusHistory: [{ ch: 0, status: "alive" }],
-    locationHistory: [{ ch: 359, revealCh: 371, locationId: "tier-5" }],
+    locationHistory: [
+      { ch: 359, revealCh: 371, locationId: "tier-5" },
+      {
+        ch: 377,
+        locationId: "tier-5-dining-hall",
+        note: "At the full-Troupe dining-hall assembly.",
+      },
+      {
+        ch: 379,
+        locationId: "tier-5-dining-hall",
+        note: "Eats alone and receives Cha-R consigliere Ittoku: he will wait in Tier 5 and let Hisoka come to him.",
+      },
+      {
+        ch: 380,
+        locationId: "tier-5",
+        note: "Waits somewhere on Tier 5 for Hisoka to come to him; exact position unknown.",
+      },
+    ],
     chapterAppearances: [371, 377, 379, 380, 392, 395, 400],
     tags: ["troupe", "nen-user"],
   },
@@ -2945,7 +3071,19 @@ export const characters: Character[] = [
     nenType: "conjurer",
     nenTypeRevealCh: 0,
     statusHistory: [{ ch: 0, status: "alive" }],
-    locationHistory: [{ ch: 359, revealCh: 377, locationId: "tier-5" }],
+    locationHistory: [
+      { ch: 359, revealCh: 377, locationId: "tier-5" },
+      {
+        ch: 377,
+        locationId: "tier-5-dining-hall",
+        note: "At the assembly; afterwards teams with Chrollo and Bonolenov to search in disguise.",
+      },
+      {
+        ch: 378,
+        locationId: "tier-5",
+        note: "Hunting Hisoka in disguise; position approximate.",
+      },
+    ],
     chapterAppearances: [377, 380],
     tags: ["troupe", "nen-user"],
   },
@@ -2968,9 +3106,37 @@ export const characters: Character[] = [
     locationHistory: [
       { ch: 359, revealCh: 377, locationId: "tier-5" },
       {
-        ch: 405,
+        ch: 377,
+        locationId: "tier-5-dining-hall",
+        note: "At the assembly; teams with Chrollo and Shizuku, unveiling a new transformation ability.",
+      },
+      {
+        ch: 378,
+        locationId: "tier-5",
+        note: "Preparing the disguise hunt with Chrollo; position approximate.",
+      },
+      {
+        ch: 392,
+        revealCh: 405,
+        locationId: "tier-3",
+        note: "Walking Tier 3 disguised as Hisoka on Chrollo's orders — the 'Hisoka' Lynch and Zakuro corner is him.",
+      },
+      {
+        ch: 393,
+        revealCh: 405,
+        locationId: "tier-3-cinema",
+        note: "As 'Hisoka' in auditorium #8, takes Hinrigh's VVIP-pass deal to sit out the mafia war upstairs.",
+      },
+      {
+        ch: 394,
+        revealCh: 405,
         locationId: "tier-1",
-        note: "In mafia hands as the fake 'Hisoka'; at large again after killing Lynch. Position approximate.",
+        note: "Escorted upstairs under the Xi-Yu's VVIP arrangement; exact lodgings not shown.",
+      },
+      {
+        ch: 405,
+        locationId: "tier-1-casino",
+        note: "Shadowing the casino floor as the decoy 'Hisoka' — having killed Lynch to stay covered — when the real one sits down at the tables; slips out as 'Owl'.",
       },
     ],
     chapterAppearances: [377, 380, 392, 393, 405, 406],
@@ -2987,7 +3153,19 @@ export const characters: Character[] = [
     nenType: "manipulator",
     nenTypeRevealCh: 0,
     statusHistory: [{ ch: 0, status: "alive" }],
-    locationHistory: [{ ch: 359, revealCh: 377, locationId: "tier-5" }],
+    locationHistory: [
+      { ch: 359, revealCh: 377, locationId: "tier-5" },
+      {
+        ch: 377,
+        locationId: "tier-5-dining-hall",
+        note: "At the full-Troupe dining-hall assembly.",
+      },
+      {
+        ch: 380,
+        locationId: "tier-3",
+        note: "Stopped with Illumi by Corporal Mizuri during the lower-tier curfew; Botobai and Mizaistom vouch for them and offer lodging.",
+      },
+    ],
     chapterAppearances: [377, 380],
     tags: ["troupe", "nen-user", "zoldyck"],
   },
@@ -3003,7 +3181,16 @@ export const characters: Character[] = [
     nenTypeRevealCh: 0,
     statusHistory: [{ ch: 0, status: "alive" }],
     locationHistory: [
-      { ch: 377, locationId: "tier-5", note: "Joins the sweep; approximate." },
+      {
+        ch: 377,
+        locationId: "tier-5-dining-hall",
+        note: "Introduced to the assembled Troupe as its newest member — and Hisoka's contracted killer.",
+      },
+      {
+        ch: 380,
+        locationId: "tier-3",
+        note: "Stopped with Kalluto by Corporal Mizuri during the lower-tier curfew; Botobai and Mizaistom vouch for them and offer lodging.",
+      },
     ],
     chapterAppearances: [377, 380],
     tags: ["troupe", "nen-user", "zoldyck", "assassin"],
@@ -3098,7 +3285,7 @@ export const characters: Character[] = [
       {
         ch: 394,
         revealCh: 409,
-        locationId: "hidden-passage-network",
+        locationId: "heil-ly-hideout",
         note: "Nen-built hideout wedged between Tiers 2 and 3, reachable only through teleport doors; position extracted by Borksen's questioning.",
       },
     ],
@@ -3149,9 +3336,29 @@ export const characters: Character[] = [
     locationHistory: [
       { ch: 378, locationId: "xi-yu-territory" },
       {
+        ch: 390,
+        locationId: "xi-yu-base",
+        note: "Takes Onior's find-Hisoka, kill-Morena orders by phone on the walk back to the Tier 4 base, then deploys to Tier 3 with Lynch and Zakuro.",
+      },
+      {
         ch: 391,
         locationId: "tier-3",
         note: "Running the anti-Heil-Ly manhunt through Tier 3.",
+      },
+      {
+        ch: 393,
+        locationId: "tier-3-cinema",
+        note: "Has the complex cleared auditorium by auditorium, then buys 'Hisoka' out of the mafia war in auditorium #8 with a VVIP pass.",
+      },
+      {
+        ch: 394,
+        locationId: "tier-3",
+        note: "Springs Luini's Room 3101 trap with Ken'i, then falls back to the fountain camcorder stakeout.",
+      },
+      {
+        ch: 406,
+        locationId: "tier-3",
+        note: "Working Halkenburg's funeral-procession crowd with Zakuro; recovers Lynch's body and deduces a fake Hisoka.",
       },
     ],
     chapterAppearances: [
@@ -3180,6 +3387,11 @@ export const characters: Character[] = [
     locationHistory: [
       { ch: 390, locationId: "xi-yu-territory" },
       { ch: 391, locationId: "tier-3", note: "Hisoka manhunt with Lynch." },
+      {
+        ch: 406,
+        locationId: "tier-3",
+        note: "In the funeral-procession crowd with Hinrigh; identifies Lynch's body and swears revenge on her killer.",
+      },
     ],
     chapterAppearances: [390, 391, 392, 393, 406],
     tags: ["mafia", "nen-user"],
@@ -3250,7 +3462,7 @@ export const characters: Character[] = [
       },
       {
         ch: 392,
-        locationId: "cha-r-territory",
+        locationId: "cha-r-office",
         note: "Final infiltration of the Cha-R office.",
       },
     ],
@@ -3332,7 +3544,7 @@ export const characters: Character[] = [
     locationHistory: [
       {
         ch: 394,
-        locationId: "hidden-passage-network",
+        locationId: "heil-ly-hideout",
         note: "Operating inside the Heil-Ly hideout between Tiers 2 and 3.",
       },
     ],
@@ -3356,7 +3568,7 @@ export const characters: Character[] = [
     locationHistory: [
       {
         ch: 394,
-        locationId: "hidden-passage-network",
+        locationId: "heil-ly-hideout",
         note: "Guards the Heil-Ly hideout while Morena is present.",
       },
     ],
@@ -3380,7 +3592,7 @@ export const characters: Character[] = [
     locationHistory: [
       {
         ch: 394,
-        locationId: "hidden-passage-network",
+        locationId: "heil-ly-hideout",
         note: "Maintains the hideout's prepared teleportation doors.",
       },
     ],
@@ -3462,7 +3674,7 @@ export const characters: Character[] = [
       },
       {
         ch: 407,
-        locationId: "hidden-passage-network",
+        locationId: "heil-ly-hideout",
         note: "Abducted into Morena's between-tiers hideout.",
       },
     ],
@@ -3498,12 +3710,10 @@ export const characters: Character[] = [
     introducedCh: 378,
     statusHistory: [{ ch: 378, status: "alive" }],
     locationHistory: [
-      { ch: 378, locationId: "xi-yu-territory" },
       {
-        ch: 384,
-        revealCh: 384,
-        locationId: "tier-1",
-        note: "Keeps a room on Tier 1: the bosses are 'second-track' royal descendants housed near the court. Zhang Lei visits ch. 390; his residence is Zhang Lei's escape hatch to Tier 2 ch. 410.",
+        ch: 378,
+        locationId: "onior-residence",
+        note: "Dining in his residence while he orders Hinrigh by phone to find Hisoka before the Spiders do; the 'second-track' bosses keep rooms near the court.",
       },
     ],
     chapterAppearances: [378, 384, 390, 410],
@@ -3544,7 +3754,7 @@ export const characters: Character[] = [
     locationHistory: [
       {
         ch: 384,
-        locationId: "cha-r-territory",
+        locationId: "cha-r-office",
         note: "Receiving Phinks, Nobunaga, and Feitan in the family office with Ken'i.",
       },
     ],
@@ -4138,12 +4348,17 @@ export const characters: Character[] = [
       {
         ch: 369,
         locationId: "royal-quarters",
-        note: "Tubeppa's household; Room 1005.",
+        note: "Tubeppa's household.",
       },
       {
         ch: 400,
         locationId: "room-1014",
         note: "Contract negotiation and class attendance.",
+      },
+      {
+        ch: 402,
+        locationId: "room-1005",
+        note: "Back at Tubeppa's side in Room 1005, reporting the sealed Kurapika truce.",
       },
     ],
     objectives: [
@@ -4283,7 +4498,8 @@ export const characters: Character[] = [
     locationHistory: [
       {
         ch: 372,
-        locationId: "justice-bureau-hq",
+        revealCh: 402,
+        locationId: "ministry-of-justice",
         note: "Tier 2 Justice Bureau; his office shelters the Fugetsu conspiracy.",
       },
     ],

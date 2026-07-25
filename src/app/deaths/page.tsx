@@ -358,7 +358,7 @@ function DeathRow({
         <DataRow label="Location">
           {record.locationId ? (
             <Link
-              href={`/map?location=${record.locationId}`}
+              href={`/map?location=${record.locationId}&ch=${record.revealCh ?? record.chapter}`}
               className="text-teal hover:text-gold-bright"
             >
               {locationById.get(record.locationId)?.name ?? record.locationId}

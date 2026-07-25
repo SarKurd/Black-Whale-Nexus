@@ -2,11 +2,14 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import { useSearchParams } from "next/navigation";
-import { Suspense, useEffect, useMemo, useState } from "react";
+import { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import { LocationPanel } from "@/components/map/LocationPanel";
 import { computeOccupancy } from "@/components/map/occupancy";
 import { ShipBlueprint } from "@/components/map/ShipBlueprint";
+import { SubjectTracker } from "@/components/map/SubjectTracker";
 import { TierAccordion } from "@/components/map/TierAccordion";
+import { characterById, factionById, locations } from "@/lib/db";
+import { latestStamp } from "@/lib/spoiler";
 import { useEffectiveChapter } from "@/lib/store";
 import { ARC_END, ARC_START } from "@/lib/types";
 
@@ -58,9 +61,19 @@ function MapPageInner() {
   const ch = useEffectiveChapter();
   const params = useSearchParams();
   const locationParam = params.get("location");
+  const chParam = params.get("ch");
 
   const [selectedId, setSelectedId] = useState<string | null>(locationParam);
-  const [viewCh, setViewCh] = useState<number | null>(null);
+  // Incoming ?ch= pins the replay to a chapter; the displayCh clamp below
+  // keeps a shared link from ever raising someone past their own clearance.
+  const [viewCh, setViewCh] = useState<number | null>(() => {
+    const n = Number(chParam);
+    return chParam !== null && Number.isFinite(n)
+      ? Math.max(ARC_START, Math.round(n))
+      : null;
+  });
+  const [trackedId, setTrackedId] = useState<string | null>(null);
+  const [playing, setPlaying] = useState(false);
 
   useEffect(() => {
     if (locationParam) setSelectedId(locationParam);
@@ -69,9 +82,16 @@ function MapPageInner() {
   // The Voyage replay slider is a local rewind for stepping the ship state
   // back through the voyage. When the global clearance changes, snap it back
   // to follow — otherwise an earlier value pins here and drifts out of sync.
+  // Skipped on mount so an incoming ?ch= deep link survives.
+  const mounted = useRef(false);
   useEffect(() => {
+    if (!mounted.current) {
+      mounted.current = true;
+      return;
+    }
     void ch;
     setViewCh(null);
+    setPlaying(false);
   }, [ch]);
 
   // While the compartment modal is open: Escape closes it and the page body
@@ -95,7 +115,63 @@ function MapPageInner() {
   // The scrubber can rewind below clearance but never above it.
   const displayCh = Math.min(viewCh ?? ch, ch);
 
+  // Autoplay: one chapter per beat, pausing at the clearance boundary.
+  useEffect(() => {
+    if (!playing) return;
+    const timer = setInterval(() => {
+      setViewCh((prev) => {
+        const current = Math.min(prev ?? ch, ch);
+        return current >= ch ? current : current + 1;
+      });
+    }, 700);
+    return () => clearInterval(timer);
+  }, [playing, ch]);
+
+  useEffect(() => {
+    if (playing && displayCh >= ch) setPlaying(false);
+  }, [playing, displayCh, ch]);
+
   const occupancy = useMemo(() => computeOccupancy(displayCh), [displayCh]);
+
+  // Faction key derived from what is actually rendered at this chapter —
+  // spoiler-safe by construction, and the fallback color is named honestly.
+  const factionKey = useMemo(() => {
+    const ids = new Set<string>();
+    let unaffiliated = false;
+    for (const occupant of occupancy.occupants) {
+      const factionId = characterById.get(occupant.characterId)?.factionIds[0];
+      if (factionId && factionById.has(factionId)) ids.add(factionId);
+      else unaffiliated = true;
+    }
+    for (const loc of locations) {
+      if (loc.introducedCh > displayCh) continue;
+      const controlId = latestStamp(loc.controlHistory, displayCh)?.value;
+      if (controlId && factionById.has(controlId)) ids.add(controlId);
+    }
+    const entries = [...ids]
+      .map((id) => factionById.get(id))
+      .filter((f): f is NonNullable<typeof f> => f !== undefined)
+      .sort((a, b) => a.name.localeCompare(b.name));
+    return { entries, unaffiliated };
+  }, [occupancy, displayCh]);
+
+  function pinChapter(n: number) {
+    setPlaying(false);
+    setViewCh(Math.min(Math.max(n, ARC_START), ch));
+  }
+
+  function togglePlay() {
+    if (playing) {
+      setPlaying(false);
+      return;
+    }
+    if (displayCh >= ch) setViewCh(ARC_START);
+    setPlaying(true);
+  }
+
+  const transportDisabled = ch <= ARC_START;
+  const transportButton =
+    "border border-line px-1.5 py-0.5 font-mono text-[10px] text-muted transition-colors hover:border-gold-line hover:text-gold-bright disabled:pointer-events-none disabled:opacity-40";
 
   return (
     <div>
@@ -106,18 +182,48 @@ function MapPageInner() {
         </div>
         <div className="flex items-center gap-2">
           <span className="intel-label">Voyage replay</span>
+          <button
+            type="button"
+            className={transportButton}
+            onClick={() => pinChapter(displayCh - 1)}
+            disabled={transportDisabled || displayCh <= ARC_START}
+            aria-label="Step back one chapter"
+          >
+            ‹
+          </button>
+          <button
+            type="button"
+            className={transportButton}
+            onClick={togglePlay}
+            disabled={transportDisabled}
+            aria-label={playing ? "Pause replay" : "Play replay"}
+          >
+            {playing ? "❚❚" : "▸"}
+          </button>
+          <button
+            type="button"
+            className={transportButton}
+            onClick={() => pinChapter(displayCh + 1)}
+            disabled={transportDisabled || displayCh >= ch}
+            aria-label="Step forward one chapter"
+          >
+            ›
+          </button>
           <input
             type="range"
             min={ARC_START}
             max={ARC_END}
             value={displayCh}
-            onChange={(e) => setViewCh(Math.min(Number(e.target.value), ch))}
+            onChange={(e) => {
+              setPlaying(false);
+              setViewCh(Math.min(Number(e.target.value), ch));
+            }}
             className="w-36 accent-[var(--gold)]"
             aria-label="Ship state as of chapter"
-            disabled={ch <= ARC_START}
+            disabled={transportDisabled}
           />
           <span className="w-9 font-mono text-xs text-gold-bright">
-            {displayCh > ARC_START ? displayCh : "pre"}
+            {displayCh}
           </span>
         </div>
       </div>
@@ -130,6 +236,14 @@ function MapPageInner() {
         Click any compartment for its file.
       </p>
 
+      <SubjectTracker
+        ch={ch}
+        displayCh={displayCh}
+        trackedId={trackedId}
+        onTrack={setTrackedId}
+        onViewChapter={pinChapter}
+      />
+
       <div className="relative">
         {/* Desktop: the SVG blueprint */}
         <div className="dossier corner-ticks hidden bg-bg-deep/60 p-4 lg:block">
@@ -137,6 +251,7 @@ function MapPageInner() {
             displayCh={displayCh}
             occupancy={occupancy}
             selectedId={selectedId}
+            trackedId={trackedId}
             onSelect={setSelectedId}
           />
         </div>
@@ -181,6 +296,7 @@ function MapPageInner() {
                   ch={displayCh}
                   occupancy={occupancy}
                   onSelect={setSelectedId}
+                  onViewChapter={pinChapter}
                   onClose={() => setSelectedId(null)}
                 />
               </div>
@@ -188,6 +304,35 @@ function MapPageInner() {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Faction key — derived from the dots and stripes on screen right now,
+          so it can never name a faction ahead of the reader's clearance. */}
+      {(factionKey.entries.length > 0 || factionKey.unaffiliated) && (
+        <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1.5">
+          <span className="intel-label">Faction key</span>
+          {factionKey.entries.map((f) => (
+            <span
+              key={f.id}
+              className="flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-widest text-muted"
+            >
+              <span
+                className="inline-block h-2.5 w-2.5 rounded-full border border-bg-deep"
+                style={{ background: f.color }}
+              />
+              {f.name}
+            </span>
+          ))}
+          {factionKey.unaffiliated && (
+            <span className="flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-widest text-muted">
+              <span
+                className="inline-block h-2.5 w-2.5 rounded-full border border-bg-deep"
+                style={{ background: "var(--gold-dim)" }}
+              />
+              Unaffiliated
+            </span>
+          )}
+        </div>
+      )}
 
       {/* Legend — canonicity is explicit, geometry is honest. */}
       <div className="mt-3 flex flex-wrap items-center gap-x-5 gap-y-1.5">
@@ -235,6 +380,10 @@ function MapPageInner() {
             {label}
           </span>
         ))}
+        <span className="flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-widest text-muted">
+          <span className="font-mono text-[10px] text-blood">†</span>
+          Remains interred
+        </span>
       </div>
       <p className="mt-2 font-mono text-[10px] tracking-wide text-faint">
         Geometry is conceptual — the manga does not provide precise deck plans.

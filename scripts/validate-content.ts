@@ -207,6 +207,56 @@ for (const l of locations) {
     checkRefs(l.id, [s.value], factionIds, "controlHistory.value");
 }
 
+// The compartment graph must be a clean undirected graph: no self-loops, no
+// duplicate edges, and every A→B link reciprocated by B→A — LocationPanel
+// renders "connected compartments" from each record's own list, so a one-way
+// link means one-way navigation.
+{
+  const connectedByLoc = new Map(
+    locations.map((l) => [l.id, new Set(l.connectedIds ?? [])]),
+  );
+  for (const l of locations) {
+    const seen = new Set<string>();
+    for (const cid of l.connectedIds ?? []) {
+      if (cid === l.id) err(`${l.id}.connectedIds: self-loop`);
+      if (seen.has(cid)) err(`${l.id}.connectedIds: duplicate ${cid}`);
+      seen.add(cid);
+      if (connectedByLoc.has(cid) && !connectedByLoc.get(cid)?.has(l.id))
+        err(`${l.id}.connectedIds: ${cid} does not link back`);
+    }
+  }
+}
+
+// Chapter-stamp ordering: nothing may become reader-visible inside a location
+// before the location itself enters the record — the map draws boxes gated by
+// introducedCh, so earlier occupants/incidents point at a box that isn't there.
+{
+  const introByLoc = new Map(locations.map((l) => [l.id, l.introducedCh]));
+  for (const e of events) {
+    const intro = e.locationId ? introByLoc.get(e.locationId) : undefined;
+    if (intro !== undefined && e.chapter < intro)
+      err(
+        `${e.id}: chapter ${e.chapter} precedes ${e.locationId} introducedCh ${intro}`,
+      );
+  }
+  for (const d of deaths) {
+    const intro = d.locationId ? introByLoc.get(d.locationId) : undefined;
+    if (intro !== undefined && (d.revealCh ?? d.chapter) < intro)
+      err(
+        `${d.id}: visible ch${d.revealCh ?? d.chapter} precedes ${d.locationId} introducedCh ${intro}`,
+      );
+  }
+  for (const c of characters) {
+    for (const entry of c.locationHistory) {
+      const intro = introByLoc.get(entry.locationId);
+      if (intro !== undefined && (entry.revealCh ?? entry.ch) < intro)
+        err(
+          `${c.id}.locationHistory: ch${entry.ch} at ${entry.locationId} visible before its introducedCh ${intro}`,
+        );
+    }
+  }
+}
+
 console.log("nen…");
 for (const a of nenAbilities) {
   checkRefs(

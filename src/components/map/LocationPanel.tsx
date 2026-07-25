@@ -15,7 +15,7 @@ import {
   factionById,
   locationById,
 } from "@/lib/db";
-import { latestStamp, statusAt } from "@/lib/spoiler";
+import { currentIntelText, latestStamp, statusAt } from "@/lib/spoiler";
 import type { Character, DeathRecord, StoryEvent } from "@/lib/types";
 import {
   ancestorChain,
@@ -35,17 +35,42 @@ function kindLabel(kind: string): string {
   return kind.replace(/-/g, " ");
 }
 
+/**
+ * Pin the voyage replay to a chapter without leaving the compartment file —
+ * the dots spring to their positions at that moment behind the modal.
+ */
+function ReplayAt({
+  ch,
+  onViewChapter,
+}: {
+  ch: number;
+  onViewChapter: (ch: number) => void;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={() => onViewChapter(ch)}
+      title={`Replay the map at chapter ${ch}`}
+      className="ml-1.5 border border-line px-1 font-mono text-[9px] uppercase tracking-wider text-gold transition-colors hover:border-gold-line hover:text-gold-bright"
+    >
+      replay ▸
+    </button>
+  );
+}
+
 export function LocationPanel({
   id,
   ch,
   occupancy,
   onSelect,
+  onViewChapter,
   onClose,
 }: {
   id: string;
   ch: number;
   occupancy: Occupancy;
   onSelect: (locationId: string) => void;
+  onViewChapter: (ch: number) => void;
   onClose: () => void;
 }) {
   const loc = locationById.get(id);
@@ -180,8 +205,16 @@ export function LocationPanel({
         )}
       </div>
 
+      {/* Descriptions are unstamped current-state prose — like character
+          bios, they only unseal at the full-clearance boundary. Rewound and
+          low-clearance views rely on the stamped facts below instead. */}
       <p className="mt-2 text-xs leading-relaxed text-muted">
-        {loc.description}
+        {currentIntelText(loc.description, ch) ?? (
+          <span className="text-faint">
+            Full compartment survey sealed until voyage records are complete —
+            see the stamped record below.
+          </span>
+        )}
       </p>
 
       {controlFaction && (
@@ -288,6 +321,7 @@ export function LocationPanel({
                   <ChapterRef ch={e.chapter} />
                 </span>
                 <span className="text-parchment">{e.title}</span>
+                <ReplayAt ch={e.chapter} onViewChapter={onViewChapter} />
               </li>
             ))}
           </ol>
@@ -308,6 +342,7 @@ export function LocationPanel({
                 <EntityLink id={d.victimId} className="text-blood-bright" />{" "}
                 <span className="mr-1">— {d.method}</span>
                 <ChapterRef ch={d.chapter} />
+                <ReplayAt ch={d.chapter} onViewChapter={onViewChapter} />
               </li>
             ))}
           </ul>

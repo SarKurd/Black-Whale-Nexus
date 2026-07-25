@@ -67,7 +67,10 @@ Every load-bearing claim carries `evidence` + a `confidence` class:
 
 Unstamped `bio` and faction/storyline summary fields describe the archive's
 current state and are hidden below `ARC_END`; rewound views use their stamped
-histories and addenda. Chapter `appearingCharacterIds` must reflect what the
+histories and addenda. **Location `description`s follow the same rule** — the
+map's compartment file seals them below `ARC_END`, so write them as
+current-state summaries and put anything chapter-specific into stamped
+`controlHistory`/`threatHistory` notes or events instead. Chapter `appearingCharacterIds` must reflect what the
 reader can identify at that chapter. A character dossier's
 `chapterAppearances` may point back before `introducedCh` after a retroactive
 identity reveal (the Woble substitute is the canonical example).
@@ -106,10 +109,13 @@ IDs are permanent — never rename. Cross-references are by id everywhere.
 3. `npx tsc --noEmit` — must be clean.
 4. `npx biome check --write <files>` — format.
 5. `npx tsx scripts/validate-content.ts` — must show **0 errors**. It checks
-   every cross-reference. (There are **4 known warnings** — empty
+   every cross-reference, that `connectedIds` form a clean undirected graph
+   (no self-loops/duplicates, every link reciprocated), and that no event,
+   death, or locationHistory entry becomes reader-visible before its
+   location's `introducedCh`. (There are **4 known warnings** — empty
    `locationHistory` for off-ship/dead-ashore characters gon, killua, shalnark,
    kortopi. These are intentional; don't "fix" them.)
-6. `npm run build` — should generate all pages (~298).
+6. `npm run build` — should generate all pages (~730).
 7. Browser-verify via the prod preview (see below) if it's UI-observable.
 8. Commit only when the user asks. **No co-author trailer** (user preference).
 

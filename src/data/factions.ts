@@ -830,7 +830,11 @@ export const factions: Faction[] = [
     ],
     territoryNote:
       "Nominal Tier 3 holdings; real presence is wherever her infected walk.",
-    controlledLocationIds: ["heil-ly-territory"],
+    controlledLocationIds: [
+      "heil-ly-territory",
+      "heil-ly-office",
+      "heil-ly-hideout",
+    ],
     resources: ["Morena's contagion ability", "Expendable empowered killers"],
     operations: [
       {
@@ -879,7 +883,7 @@ export const factions: Faction[] = [
       },
     ],
     territoryNote: "Tier 4 holdings.",
-    controlledLocationIds: ["xi-yu-territory"],
+    controlledLocationIds: ["xi-yu-territory", "xi-yu-base"],
     resources: ["Hinrigh's field organization", "Zhang Lei's patronage"],
     operations: [
       { text: "Anti-Heil-Ly sweeps under Hinrigh.", ch: 378 },
@@ -913,7 +917,12 @@ export const factions: Faction[] = [
       },
     ],
     territoryNote: "Tier 5 holdings.",
-    controlledLocationIds: ["cha-r-territory", "tier-5-market"],
+    controlledLocationIds: [
+      "cha-r-territory",
+      "tier-5-market",
+      "cha-r-office",
+      "cha-r-warehouse",
+    ],
     resources: [
       "Entrenched positions",
       "Luzurus's patronage",

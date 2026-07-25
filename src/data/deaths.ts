@@ -210,7 +210,7 @@ export const deaths: DeathRecord[] = [
     killerName: "The ritual's horde of hands (for fleeing the ship)",
     method:
       "Killed during the banquet-night lifeboat escape (ch 383): as the boat neared open water, a horde of hands closed in — the ritual's answer to a fleeing prince. Kacho pushed Fugetsu back through the Magical Worm door and was shown dead on the drifting lifeboat; the 'Kacho' who walked back through the door was her Guardian Spirit Beast, Without You.",
-    locationId: "hidden-passage-network",
+    locationId: "lifeboat-area",
     chapter: 383,
     witnessIds: [],
     awareCharacterIds: ["melody", "kaiser"],
@@ -232,7 +232,7 @@ export const deaths: DeathRecord[] = [
     killerName: "Self-inflicted — a planned suicide covering the escape",
     method:
       "During the banquet's hypnotic performance he plugged his ears, walked Kacho and Fugetsu through the entranced hall to the lifeboats, waved them off, and shot himself — dying as the escape's sole 'coercer' so no living accomplice could be traced to the Hunter Association.",
-    locationId: "hidden-passage-network",
+    locationId: "lifeboat-area",
     chapter: 383,
     witnessIds: [],
     awareCharacterIds: ["melody", "kaiser"],
@@ -294,7 +294,7 @@ export const deaths: DeathRecord[] = [
     suspectedKillerIds: [],
     method:
       "Assassinated in his bed by Yushohi's Stand by Me stinger ball, days after Rihan's Predator devoured his devotion-smoke beast (ch 381, Day 5) and left him unguarded; found not breathing on Day 8, hours before the banquet. Publicly his absence was 'illness'.",
-    locationId: "royal-quarters",
+    locationId: "room-1008",
     chapter: 382,
     witnessIds: ["yushohi"],
     awareCharacterIds: ["yushohi", "benjamin", "balsamilco", "rihan"],
@@ -420,7 +420,7 @@ export const deaths: DeathRecord[] = [
     suspectedKillerIds: [],
     method:
       "Katana through the head mid-monologue, then decapitated and bisected. Luini had walked into the Cha-R office to pitch the three Troupe members on an alliance — destroy the mafia families and the royal line, seize the Black Whale, sail back and end the old world — and Nobunaga answered the world-ending sales pitch by killing him on the spot.",
-    locationId: "cha-r-territory",
+    locationId: "cha-r-office",
     chapter: 393,
     revealCh: 393,
     witnessIds: ["nobunaga", "feitan", "phinks"],

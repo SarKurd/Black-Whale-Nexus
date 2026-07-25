@@ -34,6 +34,12 @@ export interface Occupant {
 export interface Occupancy {
   /** Every placed LIVING character, in stable dataset order. */
   occupants: Occupant[];
+  /** The dead whose bodies rest somewhere, one entry each (deepest location). */
+  remains: Occupant[];
+  /** Living occupants whose location chain reaches the ship root. */
+  aboardCount: number;
+  /** Living occupants resolved to an off-ship location. */
+  ashoreCount: number;
   /** Rollup: location id → living occupants at it or at any descendant. */
   byLocation: Map<string, Occupant[]>;
   /**
@@ -44,9 +50,17 @@ export interface Occupancy {
   remainsByLocation: Map<string, Occupant[]>;
 }
 
+/** Whether a location sits on the ship (its parent chain reaches the root). */
+export function isAboard(locationId: string): boolean {
+  return ancestorChain(locationId).includes("black-whale");
+}
+
 /** Reader-visible occupancy of every location at chapter `ch`. */
 export function computeOccupancy(ch: number): Occupancy {
   const occupants: Occupant[] = [];
+  const remains: Occupant[] = [];
+  let aboardCount = 0;
+  let ashoreCount = 0;
   const byLocation = new Map<string, Occupant[]>();
   const remainsByLocation = new Map<string, Occupant[]>();
   for (const character of characters) {
@@ -60,6 +74,7 @@ export function computeOccupancy(ch: number): Occupancy {
     };
     const status = statusAt(character, ch)?.status;
     if (status === "dead" || status === "presumed-dead") {
+      remains.push(occupant);
       for (const id of ancestorChain(resolved.locationId)) {
         const list = remainsByLocation.get(id) ?? [];
         list.push(occupant);
@@ -68,13 +83,45 @@ export function computeOccupancy(ch: number): Occupancy {
       continue;
     }
     occupants.push(occupant);
+    if (isAboard(resolved.locationId)) aboardCount += 1;
+    else ashoreCount += 1;
     for (const id of ancestorChain(resolved.locationId)) {
       const list = byLocation.get(id) ?? [];
       list.push(occupant);
       byLocation.set(id, list);
     }
   }
-  return { occupants, byLocation, remainsByLocation };
+  return {
+    occupants,
+    remains,
+    aboardCount,
+    ashoreCount,
+    byLocation,
+    remainsByLocation,
+  };
+}
+
+/**
+ * Assign each occupant to the deepest DRAWN container on their location
+ * chain. This is the honest per-container tally: a person inside a drawn
+ * child room is counted at the room, not again at the drawn parent block —
+ * so summing the visible containers never exceeds the people present.
+ */
+export function assignToContainers(
+  list: Occupant[],
+  drawnIds: ReadonlySet<string>,
+): Map<string, Occupant[]> {
+  const byContainer = new Map<string, Occupant[]>();
+  for (const occupant of list) {
+    const targetId = ancestorChain(occupant.locationId).find((id) =>
+      drawnIds.has(id),
+    );
+    if (!targetId) continue;
+    const bucket = byContainer.get(targetId) ?? [];
+    bucket.push(occupant);
+    byContainer.set(targetId, bucket);
+  }
+  return byContainer;
 }
 
 /** Primary-faction color used for a character's occupancy dot. */

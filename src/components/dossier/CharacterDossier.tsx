@@ -785,7 +785,7 @@ function LocationsTab({ c, ch }: { c: Char; ch: number }) {
             <div className="flex flex-wrap items-baseline gap-2">
               <ChapterRef ch={l.ch} />
               <Link
-                href={`/map?location=${l.locationId}`}
+                href={`/map?location=${l.locationId}&ch=${l.revealCh ?? l.ch}`}
                 className="text-sm text-teal hover:text-gold-bright"
               >
                 {loc?.name ?? l.locationId}

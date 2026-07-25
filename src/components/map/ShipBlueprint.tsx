@@ -6,10 +6,12 @@ import { characterById, factionById, locationById, locations } from "@/lib/db";
 import { latestStamp } from "@/lib/spoiler";
 import type { ShipLocation } from "@/lib/types";
 import {
-  ancestorChain,
+  assignToContainers,
   CANONICITY_DASH,
   CANONICITY_MARK,
+  isAboard,
   type Occupancy,
+  type Occupant,
   occupantColor,
   THREAT_TINT,
   type ThreatLevel,
@@ -17,7 +19,7 @@ import {
 
 /* Blueprint drawing constants (SVG user units). */
 const VIEW_W = 1000;
-const TOP_Y = 72;
+const SHORE_TOP = 24;
 const BOX_W = 118;
 const BOX_H = 44;
 const GAP = 8;
@@ -54,9 +56,17 @@ interface BandLayout {
 
 interface DotLayout {
   characterId: string;
+  targetId: string;
   cx: number;
   cy: number;
   color: string;
+}
+
+interface OverflowLayout {
+  targetId: string;
+  x: number;
+  y: number;
+  count: number;
 }
 
 function shortName(name: string): string {
@@ -64,14 +74,42 @@ function shortName(name: string): string {
   return cleaned.length > 16 ? `${cleaned.slice(0, 15)}…` : cleaned;
 }
 
-/** Flow-layout of tier bands and their location boxes at a chapter. */
+/** Flow-layout of shore strip, tier bands, and location boxes at a chapter. */
 function computeLayout(displayCh: number): {
+  shore: BoxLayout[];
+  topY: number;
   bands: BandLayout[];
   bottomY: number;
   passage?: BoxLayout;
 } {
+  // Off-ship records berth in a strip above the waterline.
+  const shoreLocs = locations.filter(
+    (l) =>
+      l.id !== "black-whale" &&
+      !isAboard(l.id) &&
+      l.id !== PASSAGE_ID &&
+      l.introducedCh <= displayCh,
+  );
+  const shoreX0 = 150;
+  const shorePerRow = Math.max(
+    1,
+    Math.floor((900 - shoreX0 + GAP) / (BOX_W + GAP)),
+  );
+  const shore: BoxLayout[] = shoreLocs.map((loc, i) => ({
+    loc,
+    x: shoreX0 + (i % shorePerRow) * (BOX_W + GAP),
+    y: SHORE_TOP + Math.floor(i / shorePerRow) * (BOX_H + GAP),
+    w: BOX_W,
+    h: BOX_H,
+  }));
+  const shoreH =
+    shore.length > 0
+      ? Math.ceil(shore.length / shorePerRow) * (BOX_H + GAP)
+      : 0;
+  const topY = SHORE_TOP + shoreH + 58;
+
   const bands: BandLayout[] = [];
-  let y = TOP_Y;
+  let y = topY;
   for (let tier = 1; tier <= 5; tier += 1) {
     const tierLoc = locations.find((l) => l.kind === "tier" && l.tier === tier);
     if (!tierLoc) continue;
@@ -101,71 +139,73 @@ function computeLayout(displayCh: number): {
     passageLoc && passageLoc.introducedCh <= displayCh
       ? { loc: passageLoc, x: 184, y: y + 34, w: 660, h: 42 }
       : undefined;
-  return { bands, bottomY: y, passage };
+  return { shore, topY, bands, bottomY: y, passage };
 }
 
 /**
- * Place occupancy dots: each character lands in the deepest drawn container
- * on their location chain (room box → tier band → skipped at ship root).
+ * Place occupancy dots from the per-container assignment. A tracked subject
+ * always claims the first slot of their container, bypassing the cap; every
+ * container that overflows gets a "+N" marker instead of silently dropping.
  */
 function computeDots(
-  occupancy: Occupancy,
-  bands: BandLayout[],
-  passage?: BoxLayout,
-): DotLayout[] {
-  const boxByLoc = new Map<string, BoxLayout>();
-  for (const band of bands) {
-    for (const box of band.boxes) boxByLoc.set(box.loc.id, box);
-  }
-  if (passage) boxByLoc.set(passage.loc.id, passage);
-  const bandByLoc = new Map(bands.map((b) => [b.loc.id, b]));
-
+  byContainer: Map<string, Occupant[]>,
+  boxByLoc: Map<string, BoxLayout>,
+  bandByLoc: Map<string, BandLayout>,
+  trackedId: string | null,
+): { dots: DotLayout[]; overflows: OverflowLayout[] } {
   const dots: DotLayout[] = [];
-  const slotCounter = new Map<string, number>();
-  for (const occupant of occupancy.occupants) {
-    const chain = ancestorChain(occupant.locationId);
-    const targetId = chain.find((id) => boxByLoc.has(id) || bandByLoc.has(id));
-    if (!targetId) continue;
-    const slot = slotCounter.get(targetId) ?? 0;
-    if (slot >= MAX_DOTS) continue;
-    slotCounter.set(targetId, slot + 1);
-    const color = occupantColor(occupant.characterId);
+  const overflows: OverflowLayout[] = [];
+  for (const [targetId, bucket] of byContainer) {
+    const ordered = trackedId
+      ? [
+          ...bucket.filter((o) => o.characterId === trackedId),
+          ...bucket.filter((o) => o.characterId !== trackedId),
+        ]
+      : bucket;
+    const shown = ordered.slice(0, MAX_DOTS);
+    const hidden = ordered.length - shown.length;
     const box = boxByLoc.get(targetId);
-    if (box) {
+    const band = box ? undefined : bandByLoc.get(targetId);
+    if (!box && !band) continue;
+    const baseX = box ? box.x + 9 : (band as BandLayout).x0 + PAD + 4;
+    const cy = box
+      ? box.y + box.h - 9
+      : (band as BandLayout).y + (band as BandLayout).h - 10;
+    shown.forEach((occupant, slot) => {
       dots.push({
         characterId: occupant.characterId,
-        cx: box.x + 9 + slot * 11,
-        cy: box.y + box.h - 9,
-        color,
+        targetId,
+        cx: baseX + slot * 11,
+        cy,
+        color: occupantColor(occupant.characterId),
       });
-    } else {
-      const band = bandByLoc.get(targetId);
-      if (!band) continue;
-      dots.push({
-        characterId: occupant.characterId,
-        cx: band.x0 + PAD + 4 + slot * 11,
-        cy: band.y + band.h - 10,
-        color,
+    });
+    if (hidden > 0) {
+      overflows.push({
+        targetId,
+        x: baseX + shown.length * 11 - 3,
+        y: cy + 3,
+        count: hidden,
       });
     }
   }
-  return dots;
+  return { dots, overflows };
 }
 
 /** Whale silhouette wrapped around the stacked tier bands. */
-function hullPath(bottomY: number): string {
-  const midY = (TOP_Y + bottomY) / 2;
+function hullPath(topY: number, bottomY: number): string {
+  const midY = (topY + bottomY) / 2;
   const [t1x0, t1x1] = BAND_X[1];
   const [t5x0, t5x1] = BAND_X[5];
   return [
-    `M ${t1x0} ${TOP_Y}`,
+    `M ${t1x0} ${topY}`,
     // Bow (whale head) sweeping down the left side.
-    `C ${t1x0 - 100} ${TOP_Y + 6} 34 ${midY - 70} 34 ${midY}`,
+    `C ${t1x0 - 100} ${topY + 6} 34 ${midY - 70} 34 ${midY}`,
     `C 34 ${midY + 70} ${t5x0 - 110} ${bottomY - 6} ${t5x0} ${bottomY}`,
     `L ${t5x1} ${bottomY}`,
     // Tapering stern toward the tail.
     `C ${t5x1 + 56} ${bottomY - 10} 946 ${midY + 34} 956 ${midY}`,
-    `C 946 ${midY - 34} ${t1x1 + 44} ${TOP_Y + 10} ${t1x1} ${TOP_Y}`,
+    `C 946 ${midY - 34} ${t1x1 + 44} ${topY + 10} ${t1x1} ${topY}`,
     "Z",
   ].join(" ");
 }
@@ -189,23 +229,56 @@ export function ShipBlueprint({
   displayCh,
   occupancy,
   selectedId,
+  trackedId,
   onSelect,
 }: {
   displayCh: number;
   occupancy: Occupancy;
   selectedId: string | null;
+  trackedId: string | null;
   onSelect: (locationId: string) => void;
 }) {
-  const { bands, bottomY, passage } = useMemo(
+  const { shore, topY, bands, bottomY, passage } = useMemo(
     () => computeLayout(displayCh),
     [displayCh],
   );
-  const dots = useMemo(
-    () => computeDots(occupancy, bands, passage),
-    [occupancy, bands, passage],
+
+  const { boxByLoc, bandByLoc, livingByContainer, remainsByContainer } =
+    useMemo(() => {
+      const boxes = new Map<string, BoxLayout>();
+      for (const band of bands) {
+        for (const box of band.boxes) boxes.set(box.loc.id, box);
+      }
+      for (const box of shore) boxes.set(box.loc.id, box);
+      if (passage) boxes.set(passage.loc.id, passage);
+      const bandsById = new Map(bands.map((b) => [b.loc.id, b]));
+      // The ship root is a container too: people the record can only place
+      // "somewhere aboard" assign to it and are reported as a count on the
+      // hull header — drawing a dot at an invented spot would fake precision.
+      const drawnIds = new Set([
+        "black-whale",
+        ...boxes.keys(),
+        ...bandsById.keys(),
+      ]);
+      return {
+        boxByLoc: boxes,
+        bandByLoc: bandsById,
+        livingByContainer: assignToContainers(occupancy.occupants, drawnIds),
+        remainsByContainer: assignToContainers(occupancy.remains, drawnIds),
+      };
+    }, [bands, shore, passage, occupancy]);
+
+  const { dots, overflows } = useMemo(
+    () => computeDots(livingByContainer, boxByLoc, bandByLoc, trackedId),
+    [livingByContainer, boxByLoc, bandByLoc, trackedId],
   );
-  const midY = (TOP_Y + bottomY) / 2;
+
+  const midY = (topY + bottomY) / 2;
   const viewH = (passage ? passage.y + passage.h : bottomY) + 26;
+  const waterlineY = topY - 22;
+
+  const directCount = (id: string) => livingByContainer.get(id)?.length ?? 0;
+  const remainsCount = (id: string) => remainsByContainer.get(id)?.length ?? 0;
 
   return (
     <svg
@@ -215,18 +288,46 @@ export function ShipBlueprint({
     >
       <title>Black Whale No. 1 — conceptual cross-section</title>
 
+      {/* Shore strip — off-ship records berth above the waterline. */}
+      {shore.length > 0 && (
+        <g>
+          <text
+            x={12}
+            y={SHORE_TOP - 8}
+            fill="var(--faint)"
+            style={{
+              font: "9px var(--font-geist-mono), monospace",
+              letterSpacing: "0.22em",
+            }}
+          >
+            SHORE RECORDS — OFF-SHIP FILES
+          </text>
+          {shore.map((box) => (
+            <LocationBox
+              key={box.loc.id}
+              box={box}
+              displayCh={displayCh}
+              selected={selectedId === box.loc.id}
+              count={directCount(box.loc.id)}
+              remains={remainsCount(box.loc.id)}
+              onSelect={onSelect}
+            />
+          ))}
+        </g>
+      )}
+
       {/* Waterline */}
       <line
         x1={8}
-        y1={TOP_Y - 22}
+        y1={waterlineY}
         x2={VIEW_W - 8}
-        y2={TOP_Y - 22}
+        y2={waterlineY}
         stroke="var(--line)"
         strokeDasharray="8 5"
       />
       <text
         x={12}
-        y={TOP_Y - 28}
+        y={waterlineY - 6}
         fill="var(--faint)"
         style={{
           font: "9px var(--font-geist-mono), monospace",
@@ -239,7 +340,7 @@ export function ShipBlueprint({
       {/* Ship root — the hull itself is the black-whale record. */}
       <g {...interactiveProps(() => onSelect("black-whale"))}>
         <path
-          d={hullPath(bottomY)}
+          d={hullPath(topY, bottomY)}
           fill="var(--bg-deep)"
           fillOpacity={0.5}
           stroke={
@@ -258,22 +359,28 @@ export function ShipBlueprint({
         />
         {/* Dorsal fin */}
         <path
-          d={`M 460 ${TOP_Y} C 480 ${TOP_Y - 26} 540 ${TOP_Y - 26} 560 ${TOP_Y} Z`}
+          d={`M 460 ${topY} C 480 ${topY - 26} 540 ${topY - 26} 560 ${topY} Z`}
           fill="none"
           stroke="var(--line-strong)"
           strokeWidth={1.1}
         />
         <text
           x={BAND_X[1][0]}
-          y={TOP_Y - 34}
+          y={topY - 8}
           fill="var(--gold)"
           style={{
             font: "10px var(--font-geist-mono), monospace",
             letterSpacing: "0.22em",
           }}
         >
-          BLACK WHALE NO. 1 — CROSS-SECTION · {occupancy.occupants.length}{" "}
-          TRACKED ABOARD
+          BLACK WHALE NO. 1 — CROSS-SECTION · {occupancy.aboardCount} TRACKED
+          ABOARD
+          {occupancy.ashoreCount > 0
+            ? ` · ${occupancy.ashoreCount} ASHORE`
+            : ""}
+          {(livingByContainer.get("black-whale")?.length ?? 0) > 0
+            ? ` · ${livingByContainer.get("black-whale")?.length} POSITION UNKNOWN`
+            : ""}
         </text>
       </g>
 
@@ -292,6 +399,7 @@ export function ShipBlueprint({
         const isTier1 = band.loc.tier === 1;
         const selected = selectedId === band.loc.id;
         const count = occupancy.byLocation.get(band.loc.id)?.length ?? 0;
+        const bandRemains = remainsCount(band.loc.id);
         const [name, subName] = band.loc.name.split(" — ");
         return (
           <g
@@ -354,6 +462,17 @@ export function ShipBlueprint({
             >
               {count} aboard
             </text>
+            {bandRemains > 0 && (
+              <text
+                x={band.x1 - PAD}
+                y={band.y + band.h - 6}
+                textAnchor="end"
+                fill="var(--blood)"
+                style={{ font: "9px var(--font-geist-mono), monospace" }}
+              >
+                † {bandRemains}
+              </text>
+            )}
           </g>
         );
       })}
@@ -366,7 +485,8 @@ export function ShipBlueprint({
             box={box}
             displayCh={displayCh}
             selected={selectedId === box.loc.id}
-            count={occupancy.byLocation.get(box.loc.id)?.length ?? 0}
+            count={directCount(box.loc.id)}
+            remains={remainsCount(box.loc.id)}
             onSelect={onSelect}
           />
         )),
@@ -387,29 +507,55 @@ export function ShipBlueprint({
             box={passage}
             displayCh={displayCh}
             selected={selectedId === passage.loc.id}
-            count={occupancy.byLocation.get(passage.loc.id)?.length ?? 0}
+            count={directCount(passage.loc.id)}
+            remains={remainsCount(passage.loc.id)}
             onSelect={onSelect}
             wide
           />
         </g>
       )}
 
-      {/* Occupancy dots — one per tracked character, keyed for movement */}
-      {dots.map((dot) => (
-        <motion.circle
-          key={dot.characterId}
-          initial={false}
-          animate={{ cx: dot.cx, cy: dot.cy }}
-          transition={{ type: "spring", stiffness: 190, damping: 24 }}
-          r={3.2}
-          fill={dot.color}
-          stroke="var(--bg-deep)"
-          strokeWidth={0.8}
+      {/* Occupancy dots — one per tracked character, keyed for movement.
+          Clicking a dot opens its compartment; a tracked subject reads
+          ringed while the rest of the crowd dims. */}
+      {dots.map((dot) => {
+        const tracked = trackedId === dot.characterId;
+        return (
+          <motion.circle
+            key={dot.characterId}
+            initial={false}
+            animate={{
+              cx: dot.cx,
+              cy: dot.cy,
+              opacity: trackedId && !tracked ? 0.35 : 1,
+            }}
+            transition={{ type: "spring", stiffness: 190, damping: 24 }}
+            r={tracked ? 4.6 : 3.2}
+            fill={dot.color}
+            stroke={tracked ? "var(--gold-bright)" : "var(--bg-deep)"}
+            strokeWidth={tracked ? 1.2 : 0.8}
+            onClick={() => onSelect(dot.targetId)}
+            style={{ cursor: "pointer" }}
+            aria-hidden="true"
+          >
+            <title>
+              {characterById.get(dot.characterId)?.name ?? dot.characterId}
+            </title>
+          </motion.circle>
+        );
+      })}
+
+      {/* Dot overflow — the crowd the cap hides is still owed a number. */}
+      {overflows.map((o) => (
+        <text
+          key={o.targetId}
+          x={o.x}
+          y={o.y}
+          fill="var(--faint)"
+          style={{ font: "8px var(--font-geist-mono), monospace" }}
         >
-          <title>
-            {characterById.get(dot.characterId)?.name ?? dot.characterId}
-          </title>
-        </motion.circle>
+          +{o.count}
+        </text>
       ))}
     </svg>
   );
@@ -420,6 +566,7 @@ function LocationBox({
   displayCh,
   selected,
   count,
+  remains,
   onSelect,
   wide,
 }: {
@@ -427,6 +574,7 @@ function LocationBox({
   displayCh: number;
   selected: boolean;
   count: number;
+  remains: number;
   onSelect: (locationId: string) => void;
   wide?: boolean;
 }) {
@@ -493,6 +641,19 @@ function LocationBox({
           style={{ font: "9px var(--font-geist-mono), monospace" }}
         >
           {count}
+        </text>
+      )}
+      {remains > 0 && (
+        // Middle-right row: clear of the title baseline (14) and the dot
+        // row + overflow marker along the bottom edge.
+        <text
+          x={box.w - 7}
+          y={26}
+          textAnchor="end"
+          fill="var(--blood)"
+          style={{ font: "8px var(--font-geist-mono), monospace" }}
+        >
+          † {remains}
         </text>
       )}
     </motion.g>

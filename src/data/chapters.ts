@@ -254,7 +254,7 @@ export const chapters: ChapterInfo[] = [
       "kurapika",
       "mizaistom",
     ],
-    locationIds: ["hunter-hq"],
+    locationIds: ["hunter-hq", "whale-island", "tserriednich-estate"],
     storylineIds: ["expedition-prep", "beyond-netero"],
     changes: {
       newKnowledge: [
@@ -834,7 +834,14 @@ export const chapters: ChapterInfo[] = [
 
       "sandra",
     ],
-    locationIds: ["black-whale", "room-1014", "tier-1", "beyond-quarters"],
+    locationIds: [
+      "black-whale",
+      "room-1014",
+      "tier-1",
+      "beyond-quarters",
+      "tier-3-medical",
+      "banquet-hall",
+    ],
     storylineIds: [
       "succession-contest",
       "kurapika-woble",
@@ -924,7 +931,13 @@ export const chapters: ChapterInfo[] = [
       "sandra",
       "bladge",
     ],
-    locationIds: ["room-1014", "marayam-quarters", "momoze-quarters", "tier-1"],
+    locationIds: [
+      "room-1014",
+      "marayam-quarters",
+      "momoze-quarters",
+      "tier-1",
+      "banquet-hall",
+    ],
     storylineIds: [
       "kurapika-woble",
       "succession-contest",
@@ -1215,7 +1228,7 @@ export const chapters: ChapterInfo[] = [
       "laroc",
       "nagmum",
     ],
-    locationIds: ["room-1014", "camilla-quarters", "tier-5"],
+    locationIds: ["room-1014", "camilla-quarters", "tier-5", "hall-37564"],
     storylineIds: [
       "kurapika-woble",
       "succession-contest",
@@ -1530,7 +1543,12 @@ export const chapters: ChapterInfo[] = [
       "myuhan",
       "saquelle",
     ],
-    locationIds: ["room-1014", "marayam-quarters", "camilla-quarters"],
+    locationIds: [
+      "room-1014",
+      "marayam-quarters",
+      "camilla-quarters",
+      "royal-quarters",
+    ],
     storylineIds: [
       "silent-majority",
       "succession-contest",
@@ -1637,6 +1655,7 @@ export const chapters: ChapterInfo[] = [
       "marayam-quarters",
       "fugetsu-quarters",
       "zhang-lei-quarters",
+      "royal-quarters",
     ],
     storylineIds: [
       "kurapika-woble",
@@ -1752,6 +1771,8 @@ export const chapters: ChapterInfo[] = [
       "camilla-confinement",
       "tserriednich-quarters",
       "fugetsu-quarters",
+      "vvip-area",
+      "room-1014",
     ],
     storylineIds: [
       "halkenburg-movement",
@@ -1801,7 +1822,12 @@ export const chapters: ChapterInfo[] = [
 
       "keeney",
     ],
-    locationIds: ["kacho-quarters", "tier-5", "cha-r-territory"],
+    locationIds: [
+      "kacho-quarters",
+      "tier-5",
+      "cha-r-territory",
+      "tier-5-dining-hall",
+    ],
     storylineIds: ["kacho-fugetsu", "troupe-hisoka-hunt", "mafia-war"],
     abilitiesUsedIds: ["skill-hunter"],
     changes: {
@@ -1882,7 +1908,7 @@ export const chapters: ChapterInfo[] = [
       "feitan",
       "franklin",
     ],
-    locationIds: ["tier-3", "cha-r-territory"],
+    locationIds: ["tier-3", "cha-r-territory", "cha-r-warehouse"],
     storylineIds: ["heil-ly-morena", "mafia-war", "troupe-hisoka-hunt"],
     abilitiesUsedIds: ["luini-teleportation"],
     changes: {
@@ -2004,6 +2030,7 @@ export const chapters: ChapterInfo[] = [
       "halkenburg-quarters",
       "royal-quarters",
       "banquet-hall",
+      "nasubi-quarters",
     ],
     storylineIds: [
       "halkenburg-movement",
@@ -2058,7 +2085,7 @@ export const chapters: ChapterInfo[] = [
 
       "keeney",
     ],
-    locationIds: ["banquet-hall", "tier-1", "black-whale"],
+    locationIds: ["banquet-hall", "tier-1", "black-whale", "lifeboat-area"],
     storylineIds: ["kacho-fugetsu", "succession-contest"],
     abilitiesUsedIds: [
       "melody-enchanting-music",
@@ -2098,7 +2125,12 @@ export const chapters: ChapterInfo[] = [
 
       "tajao",
     ],
-    locationIds: ["cha-r-territory", "tier-5", "tserriednich-quarters"],
+    locationIds: [
+      "cha-r-territory",
+      "tier-5",
+      "tserriednich-quarters",
+      "cha-r-office",
+    ],
     storylineIds: [
       "mafia-war",
       "heil-ly-morena",
@@ -2256,7 +2288,7 @@ export const chapters: ChapterInfo[] = [
       "oito",
       "woble",
     ],
-    locationIds: ["room-1014", "royal-quarters"],
+    locationIds: ["room-1014", "royal-quarters", "room-1005"],
     storylineIds: [
       "nen-classes",
       "kurapika-woble",
@@ -2355,7 +2387,7 @@ export const chapters: ChapterInfo[] = [
       "lynch",
       "zakuro",
     ],
-    locationIds: ["tier-1", "tier-4", "tier-3"],
+    locationIds: ["tier-1", "tier-4", "tier-3", "onior-residence"],
     storylineIds: ["mafia-war", "heil-ly-morena", "succession-contest"],
     abilitiesUsedIds: ["body-and-soul", "bloody-mary"],
     changes: {
@@ -2443,7 +2475,13 @@ export const chapters: ChapterInfo[] = [
       "bonolenov",
       "voconte",
     ],
-    locationIds: ["cha-r-territory", "tier-3"],
+    locationIds: [
+      "cha-r-territory",
+      "tier-3",
+      "cha-r-office",
+      "tier-3-cinema",
+      "room-3101",
+    ],
     storylineIds: ["troupe-hisoka-hunt", "heil-ly-morena", "mafia-war"],
     abilitiesUsedIds: ["luini-teleportation", "voconte-door"],
     changes: {
@@ -2481,7 +2519,7 @@ export const chapters: ChapterInfo[] = [
 
       "sodom",
     ],
-    locationIds: ["hidden-passage-network", "tier-3"],
+    locationIds: ["hidden-passage-network", "tier-3", "heil-ly-hideout"],
     storylineIds: ["heil-ly-morena", "ship-security-crisis"],
     abilitiesUsedIds: ["voconte-door"],
     changes: {
@@ -2516,7 +2554,7 @@ export const chapters: ChapterInfo[] = [
       "momolly",
       "borksen",
     ],
-    locationIds: ["tier-3"],
+    locationIds: ["tier-3", "meteor-city"],
     storylineIds: ["troupe-hisoka-hunt", "mafia-war"],
     changes: {
       newKnowledge: [
@@ -2539,7 +2577,7 @@ export const chapters: ChapterInfo[] = [
       "machi",
       "franklin",
     ],
-    locationIds: [],
+    locationIds: ["meteor-city"],
     storylineIds: ["troupe-hisoka-hunt"],
     changes: {
       newKnowledge: [
@@ -2562,7 +2600,7 @@ export const chapters: ChapterInfo[] = [
       "machi",
       "franklin",
     ],
-    locationIds: [],
+    locationIds: ["meteor-city"],
     storylineIds: ["troupe-hisoka-hunt"],
     changes: {
       newKnowledge: [
@@ -2611,7 +2649,7 @@ export const chapters: ChapterInfo[] = [
       "yokotani",
       "voconte",
     ],
-    locationIds: ["hidden-passage-network", "tier-3"],
+    locationIds: ["hidden-passage-network", "tier-3", "heil-ly-hideout"],
     storylineIds: ["heil-ly-morena", "mafia-war"],
     abilitiesUsedIds: ["sweet-home", "lsdf", "voconte-door"],
     changes: {
@@ -2963,7 +3001,14 @@ export const chapters: ChapterInfo[] = [
       "tajao",
       "sodom",
     ],
-    locationIds: ["tier-1", "cha-r-territory", "hidden-passage-network"],
+    locationIds: [
+      "tier-1",
+      "cha-r-territory",
+      "hidden-passage-network",
+      "tier-1-casino",
+      "heil-ly-hideout",
+      "cha-r-office",
+    ],
     storylineIds: ["troupe-hisoka-hunt", "mafia-war", "heil-ly-morena"],
     abilitiesUsedIds: ["metamorphosen"],
     changes: {
@@ -3040,7 +3085,7 @@ export const chapters: ChapterInfo[] = [
       "voconte",
       "yokotani",
     ],
-    locationIds: ["tier-3", "hidden-passage-network"],
+    locationIds: ["tier-3", "hidden-passage-network", "heil-ly-hideout"],
     storylineIds: ["heil-ly-morena"],
     changes: {
       newThreats: ["Morena's recruitment ritual is itself a Nen trap"],
@@ -3059,7 +3104,7 @@ export const chapters: ChapterInfo[] = [
       "ev-408-sml-alarm",
     ],
     appearingCharacterIds: ["morena", "borksen", "yokotani", "voconte"],
-    locationIds: ["hidden-passage-network", "black-whale"],
+    locationIds: ["hidden-passage-network", "black-whale", "heil-ly-hideout"],
     storylineIds: ["heil-ly-morena", "special-martial-law"],
     abilitiesUsedIds: ["morena-contagion"],
     changes: {
@@ -3083,7 +3128,7 @@ export const chapters: ChapterInfo[] = [
       "ev-409-hideout-between-tiers",
     ],
     appearingCharacterIds: ["morena", "borksen", "yokotani", "voconte"],
-    locationIds: ["hidden-passage-network", "black-whale"],
+    locationIds: ["hidden-passage-network", "black-whale", "heil-ly-hideout"],
     storylineIds: [
       "heil-ly-morena",
       "special-martial-law",
@@ -3121,7 +3166,11 @@ export const chapters: ChapterInfo[] = [
       "botobai",
       "kaiser",
     ],
-    locationIds: ["hidden-passage-network", "ministry-of-justice"],
+    locationIds: [
+      "hidden-passage-network",
+      "ministry-of-justice",
+      "heil-ly-hideout",
+    ],
     storylineIds: [
       "heil-ly-morena",
       "special-martial-law",
@@ -3304,6 +3353,7 @@ export const chapters: ChapterInfo[] = [
       "halkenburg-quarters",
       "benjamin-quarters",
       "grand-hall-1001",
+      "vvip-area",
     ],
     storylineIds: [
       "halkenburg-movement",

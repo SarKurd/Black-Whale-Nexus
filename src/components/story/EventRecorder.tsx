@@ -126,7 +126,7 @@ export function EventEntry({
             <div className="flex flex-wrap items-baseline gap-x-2 text-xs">
               <span className="intel-label">Location</span>
               <Link
-                href={`/map?location=${location.id}`}
+                href={`/map?location=${location.id}&ch=${event.chapter}`}
                 className="text-teal hover:text-gold-bright"
               >
                 {location.name}
