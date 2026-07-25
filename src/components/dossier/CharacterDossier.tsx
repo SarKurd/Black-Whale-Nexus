@@ -847,12 +847,19 @@ function MysteriesTab({ d, ch }: { d: Derived; ch: number }) {
   return (
     <div className="space-y-3">
       {d.myMysteries.map((m) => (
-        <Link
+        <article
           key={m.id}
-          href={`/mysteries#${m.id}`}
-          className="dossier block p-3 transition-colors hover:border-gold-line"
+          className="dossier p-3 transition-colors hover:border-gold-line"
         >
-          <div className="text-sm text-ivory">{m.question}</div>
+          <Link
+            href={`/mysteries#${m.id}`}
+            className="text-sm text-ivory transition-colors hover:text-gold-bright"
+          >
+            {m.question}
+            <span className="ml-1.5 text-teal" aria-hidden>
+              →
+            </span>
+          </Link>
           <p className="mt-1 line-clamp-2 text-xs text-muted">
             {currentIntelText(m.summary, ch) ??
               "Current-state case summary sealed."}
@@ -860,7 +867,7 @@ function MysteriesTab({ d, ch }: { d: Derived; ch: number }) {
           <div className="mt-1.5 flex items-center gap-2">
             <ChapterRef ch={m.introducedCh} />
           </div>
-        </Link>
+        </article>
       ))}
     </div>
   );
