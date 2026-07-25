@@ -4520,4 +4520,70 @@ export const characters: Character[] = [
     chapterAppearances: [372, 400, 402, 403, 410, 411],
     tags: ["bureau", "schemer"],
   },
+  {
+    id: "steiner",
+    name: "Steiner",
+    role: "IPA Head Undersecretary, on loan to Kakin's Justice Bureau",
+    bio: "One of the International Permit Agency's highest-ranked officials: the bureaucrat whose V6 compromise sanctioned the whole voyage, aboard as Beyond's designated Dark Continent guide and loaned to the Justice Bureau Investigation Department. Kaiser has quietly made him the Bureau's last failsafe — the panic-device holder whose guaranteed-survivor status is exactly what would mark him for death if events ever outran the official record.",
+    bioReveals: [
+      {
+        revealCh: 341,
+        text: "His initiation was the IPA basement: wrung-out corpses brought home from past expeditions and a Hunter kept alive fifty years by the Zobae immortality disease. Assigned to memorize Journey to the New World, he reached his own conclusion — the Dark Continent is no place humanity should ever go back to.",
+      },
+      {
+        revealCh: 342,
+        text: "The V6 is his architecture: he briefed the V5 heads to admit Kakin, unofficially back the voyage, and stage an uninhabited island as the public's 'New Continent' — letting Nasubi's expedition suffer the real one. His director called it the work of a future director; Steiner confessed the dishonesty conflicted him.",
+      },
+      {
+        revealCh: 359,
+        text: "Aboard as Beyond's designated guide, he works through a heavily tagged copy of Journey to the New World and tells Peuckert and his cabinmates to at least read the labyrinthine-city chapter — if he dies, one of them inherits the deputy secretary's seat.",
+      },
+      {
+        revealCh: 400,
+        text: "Kaiser hands him the Justice Bureau's panic device: press it if Benjamin's men or the Royal Army arrive. His status as one of the few witnesses guaranteed to return alive is the point — and Steiner quietly works out that the designated survivor dying would itself be the message: something happened that could not go in the record.",
+      },
+    ],
+    monogram: "SN",
+    factionIds: ["justice-bureau"],
+    introducedCh: 341,
+    statusHistory: [{ ch: 341, status: "alive" }],
+    locationHistory: [
+      {
+        ch: 359,
+        locationId: "black-whale",
+        note: "Aboard with the IPA contingent as Beyond's designated Dark Continent guide.",
+      },
+      {
+        ch: 389,
+        locationId: "ministry-of-justice",
+        note: "On loan to the Justice Bureau Investigation Department for the duration of the voyage.",
+      },
+    ],
+    objectives: [
+      {
+        text: "Let nobody reach the new world — and keep the ones who must go on a short leash.",
+        kind: "known",
+        revealCh: 341,
+        status: "active",
+      },
+      {
+        text: "Press the panic device the moment Benjamin's men or the Royal Army enter the Justice Bureau.",
+        kind: "hidden",
+        revealCh: 400,
+        status: "active",
+      },
+    ],
+    possessions: [
+      {
+        text: "A heavily tagged copy of Journey to the New World (East edition).",
+        revealCh: 359,
+      },
+      {
+        text: "Kaiser's panic device — the last check against a martial-law takeover of the Justice Bureau.",
+        revealCh: 400,
+      },
+    ],
+    chapterAppearances: [341, 342, 359, 389, 400, 402, 403],
+    tags: ["bureau", "expedition"],
+  },
 ];

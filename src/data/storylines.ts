@@ -1591,6 +1591,7 @@ export const storylines: Storyline[] = [
       "yushohi",
       "chiyamasi",
       "kaiser",
+      "steiner",
       "mizaistom",
       "luzurus",
       "ridge",

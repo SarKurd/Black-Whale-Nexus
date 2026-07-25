@@ -249,6 +249,7 @@ export const knowledgeFacts: KnowledgeFact[] = [
       "furykov",
       "mizaistom",
       "kaiser",
+      "steiner",
       "kurapika",
     ],
   },
@@ -1284,6 +1285,13 @@ export const characterKnowledge: CharacterKnowledge[] = [
     state: "suspects",
     sinceCh: 400,
     note: "Warned Steiner the Justice Bureau becomes a dictator's base under SML (ch 400); Benjamin's slips in later probing confirmed a declaration was coming.",
+  },
+  {
+    factId: "fact-special-martial-law",
+    characterId: "steiner",
+    state: "suspects",
+    sinceCh: 400,
+    note: "Briefed by Kaiser and handed the panic device (ch 400); reads his own designation as the surviving witness as proof the worst case is being planned for.",
   },
   {
     factId: "fact-special-martial-law",
