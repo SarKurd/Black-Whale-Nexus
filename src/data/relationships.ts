@@ -1575,6 +1575,70 @@ export const relationships: Relationship[] = [
     ],
   },
   {
+    id: "rel-ipa-director-commands-steiner",
+    from: "ipa-director",
+    to: "steiner",
+    kind: "commands",
+    directed: true,
+    strength: "strong",
+    secret: false,
+    confirmed: true,
+    startCh: 341,
+    revealCh: 341,
+    mutualAwareness: true,
+    description:
+      "The IPA's head grooms his deputy secretary the way he was once groomed: the basement initiation, the Journey to the New World report, and — after the V5 briefing — a laughing verdict that Steiner is just like his younger self, destined to run the agency.",
+    history: [
+      {
+        ch: 341,
+        text: "Escorts Steiner through the basement's corpses and the Zobae cell, then orders a report on the book within the week.",
+      },
+      {
+        ch: 342,
+        text: "Congratulates Steiner on the V5 presentation and answers his conflicted conscience: peace over honesty.",
+      },
+    ],
+    evidence: [
+      {
+        chapter: 341,
+        note: "The basement escort and the report order.",
+        confidence: "canonical",
+      },
+    ],
+  },
+  {
+    id: "rel-peuckert-serves-steiner",
+    from: "peuckert",
+    to: "steiner",
+    kind: "serves",
+    directed: true,
+    strength: "moderate",
+    secret: false,
+    confirmed: true,
+    startCh: 359,
+    revealCh: 359,
+    mutualAwareness: true,
+    description:
+      "Task-force subordinate and Tier 1 cabinmate: one of the men who would inherit Steiner's deputy-secretary seat if he dies, and his partner on the Bureau's field work — the Halkenburg custody team and Kaiser's letter-rounds escort.",
+    history: [
+      {
+        ch: 389,
+        text: "Arrives with Steiner in the five-man task force that takes Halkenburg into custody.",
+      },
+      {
+        ch: 402,
+        text: "Walks with Steiner in Kaiser's armed escort for Fugetsu's letter deliveries.",
+      },
+    ],
+    evidence: [
+      {
+        chapter: 359,
+        note: "The cabin scene: Steiner lecturing his would-be successors.",
+        confidence: "canonical",
+      },
+    ],
+  },
+  {
     id: "rel-basho-serves-luzurus",
     from: "basho",
     to: "luzurus",
@@ -1736,6 +1800,29 @@ export const relationships: Relationship[] = [
       {
         chapter: 375,
         note: "The marked-guard scene.",
+        confidence: "canonical",
+      },
+    ],
+  },
+  {
+    id: "rel-worio-serves-halkenburg",
+    from: "worio-bay",
+    to: "halkenburg",
+    kind: "serves",
+    directed: true,
+    strength: "moderate",
+    secret: true,
+    confirmed: true,
+    startCh: 403,
+    revealCh: 403,
+    mutualAwareness: true,
+    description:
+      "Pinion-marked during the supporters' visitation and left in place as a dead drop: Halkenburg instructed him to tell everything to whoever raised the topic of Nen abilities on their own — starting with the fact that the Ninth Prince is going to die soon.",
+    eventIds: ["ev-403-worio-message"],
+    evidence: [
+      {
+        chapter: 403,
+        note: "The Room E-6 interview: the mark shown, the instructions relayed.",
         confidence: "canonical",
       },
     ],

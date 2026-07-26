@@ -4557,6 +4557,7 @@ export const characters: Character[] = [
     ],
     monogram: "SN",
     factionIds: ["justice-bureau"],
+    superiorId: "ipa-director",
     introducedCh: 341,
     statusHistory: [{ ch: 341, status: "alive" }],
     locationHistory: [
@@ -4597,5 +4598,108 @@ export const characters: Character[] = [
     ],
     chapterAppearances: [341, 342, 359, 389, 400, 402, 403],
     tags: ["bureau", "expedition"],
+  },
+  {
+    id: "ipa-director",
+    name: "IPA Director",
+    role: "Director of the International Permit Agency",
+    bio: "The short, heavy old man who runs the International Permit Agency — and, unofficially, one of the handful of 'sole survivors' who came back from the Dark Continent physically and mentally intact. He initiated Steiner in the corpse-lined agency basement, supplied the V5 the warnings that shaped the V6 accommodation, and dictated Beyond's six-clause custody contract to Cheadle by phone. He stays ashore; his agency rides the ship.",
+    bioReveals: [
+      {
+        revealCh: 341,
+        text: "Walks his newly assigned deputy secretary through the IPA basement: wrung-out corpses recovered on the known world's side and a Hunter kept alive fifty years by the Zobae immortality disease. He hands Steiner the East edition of Journey to the New World, warns that the Gatekeeper hates ill-mannered visitors, and orders a report within the week.",
+      },
+      {
+        revealCh: 342,
+        text: "After Steiner's V5 briefing he congratulates his protégé — laughing that the young man is just like him — and answers his misgivings with the agency's creed: their duty was to warn and to propose a safer route to people already set on going. An honest world would be best, but peace matters more.",
+      },
+      {
+        revealCh: 345,
+        text: "By phone, he orders Cheadle to bind Beyond with a six-clause contract — one violation means life in prison — and to start a riot broadcast to the whole world if he breaks it. A bureaucrat positioned to threaten the Hunter Association's own chairman.",
+      },
+      {
+        revealCh: 359,
+        text: "Peuckert names him among the unofficial 'sole survivors': in his youth he visited the Dark Continent and returned sound — the quiet credential underneath his authority.",
+      },
+    ],
+    monogram: "ID",
+    factionIds: [],
+    introducedCh: 341,
+    statusHistory: [{ ch: 341, status: "alive" }],
+    locationHistory: [],
+    objectives: [
+      {
+        text: "Keep Pandora's Box shut: warn the powers, route the voyage, and keep the record clean.",
+        kind: "known",
+        revealCh: 341,
+        status: "active",
+      },
+    ],
+    chapterAppearances: [341, 342, 345],
+    tags: ["off-ship"],
+  },
+  {
+    id: "peuckert",
+    name: "Peuckert",
+    role: "IPA Special Task Force member, on loan to Kakin's Justice Bureau",
+    bio: "The stout, freckled IPA man under Steiner: a Special Task Force member loaned with him to the Justice Bureau Investigation Department. He was one of the five-man team that took Halkenburg into custody, and later walked in Kaiser's armed escort for Fugetsu's letter rounds.",
+    bioReveals: [
+      {
+        revealCh: 359,
+        text: "Introduced in the Tier 1 cabin where Steiner grinds through Journey to the New World: Peuckert is the cabinmate who waves the danger off — the Hunter Association is protecting them, and the current IPA Director is one of the unofficial 'sole survivors' — while asking to be remembered when Steiner's promotion lands.",
+      },
+      {
+        revealCh: 389,
+        text: "One of the five Restricted Voyage Permit Agency task-force men who arrive with Steiner to take Halkenburg into custody, severing the Ninth Prince from his soldiers until trial.",
+      },
+      {
+        revealCh: 402,
+        text: "Walks in Kaiser's escort for Fugetsu's Tier 1 letter rounds, alongside Steiner, a third IPA loanee, and armed Kakin soldiers.",
+      },
+    ],
+    monogram: "PT",
+    factionIds: ["justice-bureau"],
+    superiorId: "steiner",
+    introducedCh: 359,
+    statusHistory: [{ ch: 359, status: "alive" }],
+    locationHistory: [
+      {
+        ch: 359,
+        locationId: "black-whale",
+        note: "Aboard with the IPA contingent, bunking with Steiner on Tier 1.",
+      },
+      {
+        ch: 389,
+        locationId: "ministry-of-justice",
+        note: "Working the Justice Bureau Investigation Department's task-force details.",
+      },
+    ],
+    chapterAppearances: [359, 389, 402],
+    tags: ["bureau", "expedition"],
+  },
+  {
+    id: "worio-bay",
+    name: "Worio Bay",
+    role: "Justice Bureau staff member",
+    bio: "A quiet Justice Bureau staffer whose left hand carries Halkenburg's pinion mark. He fainted during the supporters' visitation — at a different time and place than the mass collapse — was parked in Room E-6 under 'medical observation', and turned out to be a pre-placed message: if anyone raised Nen unprompted, tell them everything, starting with the fact that the Ninth Prince is going to die soon.",
+    bioReveals: [
+      {
+        revealCh: 403,
+        text: "Steiner flags his off-schedule fainting to Kaiser as the anomaly worth interviewing. In Room E-6, Worio holds up the pinion mark on his left hand and relays his instructions from Halkenburg — who anticipated Kaiser would connect the dots and come asking — then leans forward and delivers the message: Halkenburg is going to die soon.",
+      },
+    ],
+    monogram: "WB",
+    factionIds: ["justice-bureau"],
+    introducedCh: 403,
+    statusHistory: [{ ch: 403, status: "alive" }],
+    locationHistory: [
+      {
+        ch: 403,
+        locationId: "black-whale",
+        note: "Standing by in Room E-6, officially for medical observation.",
+      },
+    ],
+    chapterAppearances: [403],
+    tags: ["bureau", "marked"],
   },
 ];

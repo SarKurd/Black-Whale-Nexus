@@ -107,7 +107,13 @@ export const knowledgeFacts: KnowledgeFact[] = [
       "The Ninth Prince's marked guards are ammunition: the arrow robs its victim of their will in exchange for one of his own followers' bodies (shown on-page, ch 382).",
     kind: "beast-effect",
     readerRevealCh: 382,
-    relatedCharacterIds: ["halkenburg", "ladiolus", "sumidori", "yuhirai"],
+    relatedCharacterIds: [
+      "halkenburg",
+      "ladiolus",
+      "sumidori",
+      "yuhirai",
+      "worio-bay",
+    ],
     relatedAbilityIds: ["ab-beast-halkenburg"],
   },
   {
@@ -787,6 +793,13 @@ export const characterKnowledge: CharacterKnowledge[] = [
     characterId: "balsamilco",
     state: "suspects",
     sinceCh: 389,
+  },
+  {
+    factId: "fact-halkenburg-ability",
+    characterId: "worio-bay",
+    state: "misunderstands",
+    sinceCh: 403,
+    note: "Bears the mark and knows the message he was left to deliver; nothing shows he knows what the marks spend.",
   },
 
   // fact-beast-parasitic-nature

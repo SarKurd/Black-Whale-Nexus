@@ -1,5 +1,5 @@
 /**
- * Portrait manifest — one-time locally committed asset set (129 files).
+ * Portrait manifest — one-time locally committed asset set (132 files).
  * Black-and-white manga artwork sourced from Hunterpedia (Manga tab where
  * available), converted to grayscale JPEG for this unofficial fan project.
  */
@@ -44,6 +44,7 @@ export const portraits: Record<string, string> = {
   hinrigh: "/portraits/hinrigh.jpg",
   hisoka: "/portraits/hisoka.jpg",
   illumi: "/portraits/illumi.jpg",
+  "ipa-director": "/portraits/ipa-director.jpg",
   izunavi: "/portraits/izunavi.jpg",
   kacho: "/portraits/kacho.jpg",
   kaiser: "/portraits/kaiser.jpg",
@@ -85,6 +86,7 @@ export const portraits: Record<string, string> = {
   otocin: "/portraits/otocin.jpg",
   padaille: "/portraits/padaille.jpg",
   pariston: "/portraits/pariston.jpg",
+  peuckert: "/portraits/peuckert.jpg",
   phinks: "/portraits/phinks.jpg",
   pyon: "/portraits/pyon.jpg",
   ridge: "/portraits/ridge.jpg",
@@ -128,6 +130,7 @@ export const portraits: Record<string, string> = {
   "woble-substitute": "/portraits/woble-substitute.jpg",
   wolfe: "/portraits/wolfe.jpg",
   woody: "/portraits/woody.jpg",
+  "worio-bay": "/portraits/worio-bay.jpg",
   yokotani: "/portraits/yokotani.jpg",
   yuhirai: "/portraits/yuhirai.jpg",
   yushohi: "/portraits/yushohi.jpg",

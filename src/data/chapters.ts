@@ -78,6 +78,7 @@ export const chapters: ChapterInfo[] = [
       "In the International Permit Agency's basement, a new deputy secretary is shown what the Dark Continent sends home: wrung-out corpses found in the known world and a Hunter kept alive fifty years by the Zobae immortality disease. The Zodiacs watch Netero's second DVD — Beyond once defied him, took an unexplored route, and brought back new threats, so Netero asks the Association to reach the Continent before his son. Then Beyond himself walks in and tells them to inform the V5 they have 'captured' him.",
     eventIds: ["ev-341-netero-dvd", "ev-341-beyond-surrenders"],
     appearingCharacterIds: [
+      "ipa-director",
       "steiner",
       "saiyu",
       "cluck",
@@ -95,7 +96,7 @@ export const chapters: ChapterInfo[] = [
     locationIds: ["hunter-hq"],
     storylineIds: ["expedition-prep", "beyond-netero"],
     changes: {
-      newCharacters: ["steiner"],
+      newCharacters: ["ipa-director", "steiner"],
       newKnowledge: [
         "Five Threats came back from past expeditions: Brion, Ai, Hellbell, Pap, and Zobae",
         "Netero's dying request: the Association must precede Beyond to the Dark Continent",
@@ -134,6 +135,7 @@ export const chapters: ChapterInfo[] = [
       "saiyu",
       "ginta",
       "steiner",
+      "ipa-director",
       "ging",
       "pariston",
     ],
@@ -245,6 +247,7 @@ export const chapters: ChapterInfo[] = [
       "pariston",
       "tserriednich",
       "cheadle",
+      "ipa-director",
       "beyond",
       "saccho",
       "kanzai",
@@ -814,6 +817,7 @@ export const chapters: ChapterInfo[] = [
       "saccho",
       "kanzai",
       "steiner",
+      "peuckert",
       "leorio",
       "botobai",
       "kurapika",
@@ -855,7 +859,7 @@ export const chapters: ChapterInfo[] = [
     ],
     abilitiesUsedIds: ["dowsing-chain", "texture-surprise"],
     changes: {
-      newCharacters: ["sevanti", "melody", "nugui"],
+      newCharacters: ["peuckert", "sevanti", "melody", "nugui"],
       deaths: ["woody"],
       newThreats: [
         "An unseen killer drains guards inside a sealed, watched suite",
@@ -2328,6 +2332,7 @@ export const chapters: ChapterInfo[] = [
       "balsamilco",
       "benjamin",
       "kanjidol",
+      "peuckert",
       "steiner",
       "halkenburg",
       "camilla",
@@ -2799,6 +2804,7 @@ export const chapters: ChapterInfo[] = [
       "longhi",
       "balsamilco",
       "kaiser",
+      "peuckert",
       "fugetsu",
       "steiner",
       "kacho",
@@ -2876,6 +2882,7 @@ export const chapters: ChapterInfo[] = [
       "tyson",
       "woble",
       "steiner",
+      "worio-bay",
     ],
     locationIds: [
       "ministry-of-justice",
@@ -2892,7 +2899,7 @@ export const chapters: ChapterInfo[] = [
     ],
     abilitiesUsedIds: ["ab-beast-halkenburg"],
     changes: {
-      newCharacters: ["unma"],
+      newCharacters: ["unma", "worio-bay"],
       newKnowledge: [
         "Halkenburg's ability runs on devoted civilians, not just his guards",
         "Unma is Halkenburg's birth mother, hidden with Duazul for his safety",

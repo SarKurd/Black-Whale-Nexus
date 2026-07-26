@@ -322,7 +322,7 @@ export const events: StoryEvent[] = [
     chapter: 345,
     kind: "decision",
     locationId: "hunter-hq",
-    participantIds: ["beyond", "cheadle"],
+    participantIds: ["beyond", "cheadle", "ipa-director"],
     storylineIds: ["expedition-prep", "beyond-netero"],
     knowledgeChanges: [
       { factId: "fact-beyond-plan", characterId: "cheadle", state: "suspects" },
@@ -3224,6 +3224,7 @@ export const events: StoryEvent[] = [
       "basho",
       "kanjidol",
       "steiner",
+      "peuckert",
     ],
     storylineIds: ["kacho-fugetsu", "special-martial-law"],
     consequences: [
@@ -3320,7 +3321,7 @@ export const events: StoryEvent[] = [
     day: 11,
     kind: "discovery",
     locationId: "ministry-of-justice",
-    participantIds: ["kaiser", "steiner", "halkenburg"],
+    participantIds: ["kaiser", "steiner", "worio-bay", "halkenburg"],
     storylineIds: ["halkenburg-movement", "special-martial-law"],
     confidence: "canonical",
   },
