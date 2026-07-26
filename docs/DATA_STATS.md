@@ -11,7 +11,7 @@
 | characters | 243 |
 | princes | 14 |
 | factions | 24 |
-| relationships | 332 |
+| relationships | 342 |
 | events | 238 |
 | chapters | 75 |
 | locations | 61 |
