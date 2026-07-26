@@ -215,6 +215,8 @@ export interface Faction {
 
 export type RelationshipKind =
   | "family"
+  | "friend"
+  | "partners"
   | "serves"
   | "commands"
   | "protects"

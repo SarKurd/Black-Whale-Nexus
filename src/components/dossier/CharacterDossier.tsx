@@ -506,7 +506,7 @@ function DossierTab({ c, d, ch }: { c: Char; d: Derived; ch: number }) {
 }
 
 const REL_GROUPS: { label: string; kinds: string[] }[] = [
-  { label: "Kinship & court", kinds: ["family", "romantic"] },
+  { label: "Kinship & court", kinds: ["family", "friend", "romantic"] },
   {
     label: "Chain of command",
     kinds: ["serves", "commands", "hired", "member-of", "former-member-of"],
@@ -515,7 +515,10 @@ const REL_GROUPS: { label: string; kinds: string[] }[] = [
     label: "Protection & trust",
     kinds: ["protects", "trusts", "mentoring", "teaching-nen"],
   },
-  { label: "Alliances", kinds: ["allied", "secret-alliance", "negotiating"] },
+  {
+    label: "Alliances",
+    kinds: ["allied", "secret-alliance", "negotiating", "partners"],
+  },
   { label: "Hostilities", kinds: ["enemy", "hunting", "targeting", "killed"] },
   {
     label: "Suspicion & surveillance",

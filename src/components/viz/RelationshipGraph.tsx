@@ -41,6 +41,8 @@ interface GraphLink extends SimulationLinkDatum<GraphNode> {
 const KIND_FAMILY: Record<RelationshipKind, { color: string; family: string }> =
   {
     family: { color: "var(--gold)", family: "kinship" },
+    friend: { color: "var(--gold)", family: "kinship" },
+    partners: { color: "#4a7a78", family: "alliance" },
     romantic: { color: "var(--gold)", family: "kinship" },
     serves: { color: "#5d6b8c", family: "service" },
     commands: { color: "#5d6b8c", family: "service" },
@@ -73,6 +75,8 @@ const KIND_FAMILY: Record<RelationshipKind, { color: string; family: string }> =
 
 export const KIND_LABEL: Record<RelationshipKind, string> = {
   family: "Family",
+  friend: "Friend of",
+  partners: "Partners with",
   romantic: "Romantic",
   serves: "Serves",
   commands: "Commands",
