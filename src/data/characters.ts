@@ -4714,6 +4714,7 @@ export const characters: Character[] = [
     introducedCh: 358,
     nenType: "conjurer",
     nenTypeRevealCh: 361,
+    nenAbilityIds: ["kurton-transformation"],
     statusHistory: [
       { ch: 358, status: "alive" },
       {
@@ -4735,6 +4736,7 @@ export const characters: Character[] = [
     monogram: "TE",
     factionIds: ["hunter-association"],
     introducedCh: 359,
+    nenAbilityIds: ["transport-portals"],
     statusHistory: [{ ch: 359, status: "alive" }],
     locationHistory: [
       {
@@ -6042,6 +6044,8 @@ export const characters: Character[] = [
     factionIds: ["heil-ly"],
     superiorId: "morena",
     introducedCh: 378,
+    nenType: "conjurer",
+    nenTypeRevealCh: 394,
     statusHistory: [{ ch: 378, status: "alive" }],
     locationHistory: [
       { ch: 378, revealCh: 394, locationId: "heil-ly-hideout" },
@@ -6076,6 +6080,8 @@ export const characters: Character[] = [
     factionIds: ["heil-ly"],
     superiorId: "morena",
     introducedCh: 378,
+    nenType: "conjurer",
+    nenTypeRevealCh: 394,
     statusHistory: [{ ch: 378, status: "alive" }],
     locationHistory: [
       { ch: 378, revealCh: 394, locationId: "heil-ly-hideout" },
@@ -6110,6 +6116,9 @@ export const characters: Character[] = [
     factionIds: ["heil-ly"],
     superiorId: "morena",
     introducedCh: 378,
+    nenType: "enhancer",
+    nenTypeRevealCh: 394,
+    nenAbilityIds: ["supernatural-smell"],
     statusHistory: [{ ch: 378, status: "alive" }],
     locationHistory: [
       { ch: 378, revealCh: 394, locationId: "heil-ly-hideout" },
@@ -6144,6 +6153,7 @@ export const characters: Character[] = [
     factionIds: ["heil-ly"],
     superiorId: "morena",
     introducedCh: 378,
+    nenAbilityIds: ["gateaume-doppelganger"],
     statusHistory: [{ ch: 378, status: "alive" }],
     locationHistory: [
       { ch: 378, revealCh: 394, locationId: "heil-ly-hideout" },
@@ -6161,6 +6171,8 @@ export const characters: Character[] = [
     factionIds: ["heil-ly"],
     superiorId: "morena",
     introducedCh: 378,
+    nenType: "transmuter",
+    nenTypeRevealCh: 394,
     statusHistory: [{ ch: 378, status: "alive" }],
     locationHistory: [
       { ch: 378, revealCh: 394, locationId: "heil-ly-hideout" },
@@ -6178,6 +6190,8 @@ export const characters: Character[] = [
     factionIds: ["heil-ly"],
     superiorId: "morena",
     introducedCh: 378,
+    nenType: "conjurer",
+    nenTypeRevealCh: 394,
     statusHistory: [{ ch: 378, status: "alive" }],
     locationHistory: [
       { ch: 378, revealCh: 394, locationId: "heil-ly-hideout" },
@@ -6214,6 +6228,8 @@ export const characters: Character[] = [
     factionIds: ["heil-ly"],
     superiorId: "morena",
     introducedCh: 378,
+    nenType: "enhancer",
+    nenTypeRevealCh: 394,
     statusHistory: [{ ch: 378, status: "alive" }],
     locationHistory: [
       { ch: 378, revealCh: 394, locationId: "heil-ly-hideout" },
@@ -6248,6 +6264,8 @@ export const characters: Character[] = [
     factionIds: ["heil-ly"],
     superiorId: "morena",
     introducedCh: 378,
+    nenType: "emitter",
+    nenTypeRevealCh: 391,
     statusHistory: [{ ch: 378, status: "alive" }],
     locationHistory: [
       { ch: 378, revealCh: 394, locationId: "heil-ly-hideout" },
@@ -6284,6 +6302,8 @@ export const characters: Character[] = [
     factionIds: ["heil-ly"],
     superiorId: "morena",
     introducedCh: 378,
+    nenType: "enhancer",
+    nenTypeRevealCh: 391,
     statusHistory: [{ ch: 378, status: "alive" }],
     locationHistory: [
       { ch: 378, revealCh: 394, locationId: "heil-ly-hideout" },
@@ -6381,6 +6401,7 @@ export const characters: Character[] = [
     monogram: "MO",
     factionIds: ["xi-yu"],
     introducedCh: 392,
+    nenAbilityIds: ["la-vie-en-rose"],
     statusHistory: [
       {
         ch: 0,

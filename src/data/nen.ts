@@ -3495,6 +3495,146 @@ export const nenAbilities: NenAbility[] = [
     ],
     confidence: "canonical",
   },
+  {
+    id: "kurton-transformation",
+    name: "Boat or Vehicle Transformation",
+    userCharacterId: "kurton",
+    kind: "personal",
+    nenType: "conjurer",
+    description:
+      "Kurton's symbiotic ability: he turns his own body into a ship or a car capable of carrying up to five passengers, burning the passengers' aura as fuel. Never shown on-page — it exists in the archive only as the escape option Izunavi and Bill mourn when they inventory Room 1014's ways off the Black Whale after his death.",
+    conditions: [
+      "Requires the passengers' own aura as fuel — a symbiotic, not solo, ability.",
+      "Capacity capped at five passengers.",
+    ],
+    effects: [
+      "A self-contained sea or land escape vehicle for a five-person party.",
+    ],
+    firstSeenCh: 361,
+    revealCh: 361,
+    status: "broken",
+    awareCharacterIds: [
+      { characterId: "bill", sinceCh: 0 },
+      { characterId: "izunavi", sinceCh: 361 },
+      { characterId: "kurapika", sinceCh: 361 },
+    ],
+    evidence: [
+      {
+        chapter: 361,
+        note: "Described during the escape-route inventory after Kurton's death; Hunterpedia's descriptive name is unofficial. Lost with its user.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "transport-portals",
+    name: "Transport Portals",
+    userCharacterId: "tokarine",
+    kind: "personal",
+    nenType: "emitter",
+    description:
+      "Tokarine's transport ability, by her own assessment a lesser Knov: useful for moving goods, but incapable of teleportation and low in capacity. It is the planned freight line from the Dark Continent back to Knov's staging base — if Gel can find her two or three more transporters to share the route.",
+    conditions: [
+      "Cannot teleport — transport only, by Tokarine's own description.",
+      "Low capacity; she asks for two or three more transporters to make the route viable.",
+    ],
+    effects: [
+      "Scheduled to haul supplies and personnel from the Dark Continent to the relay base.",
+    ],
+    firstSeenCh: 359,
+    revealCh: 359,
+    status: "active",
+    awareCharacterIds: [{ characterId: "gel", sinceCh: 359 }],
+    evidence: [
+      {
+        chapter: 359,
+        note: "Self-described in the Tier 3 logistics meeting; Hunterpedia's descriptive name is unofficial.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "la-vie-en-rose",
+    name: "La Vie en rose (Zombie Girl)",
+    userCharacterId: "misha",
+    kind: "post-mortem",
+    nenType: "unknown",
+    description:
+      "The post-mortem ability of the Xi-Yu's late undertaker: whenever a Xi-Yu family member kills someone, Misha Hao appears — a dead woman riding the corpse's back, unseen by bystanders — and inconspicuously walks the body away. Once the corpse is disposed of, she vanishes. Its workings suggest Manipulation, but the Nen category is unrecorded.",
+    activation:
+      "Triggers automatically when a Xi-Yu family member kills someone.",
+    effects: [
+      "Padaille's corpse stood up mid-plaza, satisfied the soldiers, and walked itself away (ch 392).",
+      "The family's murders clean up after themselves — a ghost as evidence-disposal.",
+    ],
+    firstSeenCh: 392,
+    revealCh: 392,
+    status: "active",
+    awareCharacterIds: [{ characterId: "hinrigh", sinceCh: 392 }],
+    affectedCharacterIds: ["padaille"],
+    evidence: [
+      {
+        chapter: 392,
+        note: "Named and shown as Padaille's corpse walks away; the reader-facing note explains the post-mortem trigger.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "gateaume-doppelganger",
+    name: "Doppelgänger",
+    userCharacterId: "gateaume",
+    kind: "personal",
+    nenType: "unknown",
+    description:
+      "Gateaume projects a double of himself — an unbothered old man visible even to non-Nen users and capable of complex, specific tasks. It mans the Heil-Ly's front door: luring marks into Room 3101 so that Voconte's ability teleports them into the hideout's kill-box. Likely Conjuration worked with Manipulation; the exact mechanics are unrecorded.",
+    effects: [
+      "Greets and baits victims at Room 3101 while Gateaume is elsewhere (chs 393–394).",
+      "Visible to ordinary people — bait that works on soldiers and mafiosi alike.",
+    ],
+    firstSeenCh: 393,
+    revealCh: 394,
+    status: "active",
+    awareCharacterIds: [
+      { characterId: "hinrigh", sinceCh: 394 },
+      { characterId: "ken-i", sinceCh: 394 },
+    ],
+    evidence: [
+      {
+        chapter: 394,
+        note: "The double vanishes from the raided room; Hunterpedia's descriptive name is unofficial.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "supernatural-smell",
+    name: "Supernatural Smell",
+    userCharacterId: "dogman",
+    kind: "personal",
+    nenType: "enhancer",
+    description:
+      "At level 62 of Morena's Contagion game, Dogman's sense of smell has sharpened past bloodhound and into intelligence asset: he can sniff out a person's Nen type from five meters away, and tell whether they have learned Nen at all from two.",
+    range: "Nen type at ~5 m; Nen-user detection at ~2 m.",
+    effects: [
+      "Turns a crowd into a legible map of who is armed with Nen and with what.",
+    ],
+    firstSeenCh: 405,
+    revealCh: 405,
+    status: "active",
+    evidence: [
+      {
+        chapter: 405,
+        note: "Demonstrated on Tier 1; Hunterpedia's descriptive name is unofficial.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
 ];
 
 /** One record per prince whose beast has been meaningfully observed. */

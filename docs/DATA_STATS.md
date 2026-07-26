@@ -15,7 +15,7 @@
 | events | 238 |
 | chapters | 75 |
 | locations | 61 |
-| nen abilities | 87 |
+| nen abilities | 92 |
 | guardian beasts | 14 |
 | knowledge facts | 23 |
 | knowledge rows | 148 |
