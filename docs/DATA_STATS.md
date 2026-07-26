@@ -4,22 +4,22 @@
 > hand — re-run the validator instead. Referenced by `docs/DATA_GUIDE.md`.
 
 - Chapter coverage: **340–414**
-- Validation at last run: **0 errors, 5 warnings**
+- Validation at last run: **0 errors, 16 warnings**
 
 | Collection | Count |
 | --- | --- |
-| characters | 132 |
+| characters | 243 |
 | princes | 14 |
 | factions | 24 |
-| relationships | 202 |
+| relationships | 260 |
 | events | 238 |
 | chapters | 75 |
-| locations | 60 |
+| locations | 61 |
 | nen abilities | 87 |
 | guardian beasts | 14 |
 | knowledge facts | 23 |
 | knowledge rows | 148 |
-| deaths | 18 |
+| deaths | 22 |
 | storylines | 17 |
 | mysteries | 16 |
 | theories | 12 |

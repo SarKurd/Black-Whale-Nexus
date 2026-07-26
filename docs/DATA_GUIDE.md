@@ -112,10 +112,12 @@ IDs are permanent — never rename. Cross-references are by id everywhere.
    every cross-reference, that `connectedIds` form a clean undirected graph
    (no self-loops/duplicates, every link reciprocated), and that no event,
    death, or locationHistory entry becomes reader-visible before its
-   location's `introducedCh`. (There are **5 known warnings** — empty
-   `locationHistory` for off-ship/dead-ashore characters gon, killua, shalnark,
-   kortopi, and ipa-director (never boards; no registered off-ship location
-   fits the IPA). These are intentional; don't "fix" them.)
+   location's `introducedCh`. (There are **16 known warnings**, all one class:
+   empty `locationHistory` for characters who are off-ship with no canonical
+   registered location, or dead with no known resting place — gon, killua,
+   shalnark, kortopi, ipa-director, linssen, netero, zigg, linne, alluka,
+   misha, makaha, risnorth, pairo, pakunoda, uvogin. These are intentional;
+   don't "fix" them by inventing a location.)
 6. `npm run build` — should generate all pages (~730).
 7. Browser-verify via the prod preview (see below) if it's UI-observable.
 8. Commit only when the user asks. **No co-author trailer** (user preference).
@@ -127,7 +129,7 @@ Black-and-white **manga** artwork, one-time fetch, committed under
 wiki infobox's **Manga tab**; grayscale everything for a uniform look. To add a
 new character's portrait: fetch the manga image, `sips` it to grayscale JPEG,
 regenerate the manifest, keep it a one-time committed asset (no fetch script in
-the repo). The committed set currently has 132 files. The two Woble identities
+the repo). The committed set currently has 243 files. The two Woble identities
 have distinct portraits: `woble.jpg` is the real prince (ch 350, pre-swap) and
 `woble-substitute.jpg` is the boy aboard (wiki page "Woble (boy)", ch 364
 panel). Every registered character has a verified local portrait.

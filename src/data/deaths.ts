@@ -149,6 +149,26 @@ export const deaths: DeathRecord[] = [
     princeContextId: "prince-woble",
   },
   {
+    id: "death-kurton",
+    victimId: "kurton",
+    killerId: "sayird",
+    method:
+      "Stabbed in Room 1014 by Sayird — 'since he was free, it asked him to do it': the one Guardian Spirit Beast that stayed clinging to Sayird after the manifestation directed the knife. The two restrained royal guards died with him.",
+    locationId: "room-1014",
+    chapter: 360,
+    revealCh: 360,
+    witnessIds: ["kurapika", "bill", "oito", "shimano"],
+    investigation:
+      "Kurapika pinned Sayird alive, sedated him, and used Steal Chain to hold his aura in a Zetsu-like state — the hand that killed identified, the beast that ordered it unattributed.",
+    consequences: [
+      "Woble's original guard detail is wiped out to the last man",
+      "Kurton's ship/car Conjuration — Room 1014's best physical exit from the Black Whale — dies with him",
+    ],
+    confidence: "canonical",
+    factionId: "woble-camp",
+    princeContextId: "prince-woble",
+  },
+  {
     id: "death-myuhan",
     victimId: "myuhan",
     suspectedKillerIds: [],
@@ -435,5 +455,69 @@ export const deaths: DeathRecord[] = [
     mysteryIds: ["my-morena-endgame"],
     confidence: "canonical",
     factionId: "heil-ly",
+  },
+  {
+    id: "death-vic",
+    victimId: "vic",
+    killerId: "luini",
+    method:
+      "Taken from the Cha-R office's front room during Luini's Door infiltration and killed with the rest of the watch grunts — Nobunaga breaks the news to Tsudonke while pointing at the hitman's own bisected corpse.",
+    locationId: "cha-r-office",
+    chapter: 392,
+    revealCh: 393,
+    awareCharacterIds: ["nobunaga", "phinks", "feitan", "tsudonke"],
+    investigation:
+      "None — the Troupe settled the account by killing Luini before the bodies were even found.",
+    consequences: [
+      "The Cha-R office watch learns that grunts without Nen are simply ammunition in this war",
+    ],
+    confidence: "canonical",
+    factionId: "cha-r",
+  },
+  {
+    id: "death-tassi",
+    victimId: "tassi",
+    killerId: "bille",
+    method:
+      "Stepped into Room 3101 to retrieve Hinrigh's knife and was teleported into the Heil-Ly's kill-box, where Bille appeared behind him and drove a knife into his neck. Terebellum carried the corpse to the laundry room for processing.",
+    locationId: "room-3101",
+    chapter: 394,
+    revealCh: 394,
+    witnessIds: ["bille"],
+    awareCharacterIds: [
+      "bille",
+      "terebellum",
+      "montblanc",
+      "chiffon",
+      "morena",
+    ],
+    investigation:
+      "The Xi-Yu crew outside saw only the vanishing; the Heil-Ly logged it as another level for Bille.",
+    consequences: [
+      "Confirms Room 3101 as a one-way trap: whoever enters is delivered to the Heil-Ly",
+    ],
+    confidence: "canonical",
+    factionId: "xi-yu",
+  },
+  {
+    id: "death-odessa",
+    victimId: "odessa",
+    killerId: "kanjidol",
+    method:
+      "Assassinated in his bunk in Room 1007's servants' quarters minutes before the Special Martial Law declaration — mouth clamped, knife driven up through the chin. He briefly survived the first stab; Kanjidol finished the work, and Ridge found the body immediately after.",
+    locationId: "room-1007",
+    chapter: 414,
+    revealCh: 414,
+    witnessIds: ["kanjidol"],
+    awareCharacterIds: ["kanjidol", "ridge"],
+    investigation:
+      "None yet possible — the kill opens Benjamin's purge of royal guards unaffiliated with the army, fifteen minutes ahead of the martial-law clock.",
+    consequences: [
+      "Benjamin's soldiers began eliminating rival guards before martial law even took effect",
+      "Ridge is drawn into a fight with Kanjidol over the corpse",
+    ],
+    confidence: "canonical",
+    factionId: "luzurus-camp",
+    princeContextId: "prince-luzurus",
   },
 ];

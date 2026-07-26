@@ -13,6 +13,15 @@ export const locations: ShipLocation[] = [
   // Off-ship locations
   // -------------------------------------------------------------------------
   {
+    id: "beyond-hideout",
+    name: "Beyond's Hideout",
+    kind: "other",
+    canonicity: "canonical",
+    description:
+      "The lair where Beyond Netero's ten hand-picked specialists assemble before the voyage: the room Ging walks into to buy the No. 2 seat at double pay, the venue for his lectures on the past Dark Continent expeditions, and the stage for Pariston's pre-issued loyalty test on Muherr's men.",
+    introducedCh: 340,
+  },
+  {
     id: "whale-island",
     name: "Whale Island",
     kind: "other",

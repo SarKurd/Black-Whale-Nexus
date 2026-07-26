@@ -28,6 +28,7 @@ export const princes: Prince[] = [
       "chiyamasi",
       "butch",
       "rihan",
+      "orau",
     ],
     publicStrategy:
       "Overt military dominance: control ship security, position soldiers as 'loaned guards' in every rival household, and win by attrition.",
@@ -137,7 +138,22 @@ export const princes: Prince[] = [
     beastId: "beast-camilla",
     personalAbilityId: "camilla-cat",
     guardsOriginal: 12,
-    guardCharacterIds: ["sarahell", "fukataki"],
+    guardCharacterIds: [
+      "sarahell",
+      "fukataki",
+      "moswana",
+      "bucket",
+      "hignori",
+      "umanma",
+      "nukuocon",
+      "gidal",
+      "burvena",
+      "lisamsetta",
+      "kako",
+      "mozbe",
+      "meshush",
+      "taler",
+    ],
     publicStrategy:
       "Direct elimination of rivals, starting at the top — protocol and consequences be damned.",
     hiddenStrategy: {
@@ -310,7 +326,7 @@ export const princes: Prince[] = [
     beastId: "beast-tserriednich",
     personalAbilityId: "parallel-future",
     guardsOriginal: 15,
-    guardCharacterIds: ["theta", "salkov"],
+    guardCharacterIds: ["theta", "salkov", "vantine", "danjin", "myuhan"],
     publicStrategy:
       "Charm the court, patronize the arts, and appear the reasonable alternative to Benjamin.",
     hiddenStrategy: {
@@ -418,7 +434,15 @@ export const princes: Prince[] = [
     siblingNote: "Full sibling of Camilla and Luzurus under Queen Duazul.",
     beastId: "beast-tubeppa",
     guardsOriginal: 12,
-    guardCharacterIds: ["maor", "longhi", "rihan"],
+    guardCharacterIds: [
+      "maor",
+      "longhi",
+      "rihan",
+      "beeta",
+      "konattsu",
+      "mizaurouno",
+      "heisen",
+    ],
     publicStrategy:
       "Technocratic neutrality: fund research, avoid provocation, survive on competence.",
     hiddenStrategy: {
@@ -499,8 +523,16 @@ export const princes: Prince[] = [
     siblingNote: "Only child of Queen Katrono.",
     beastId: "beast-tyson",
     guardsOriginal: 11,
-    guardCharacterIds: ["izunavi"],
-    hunterCharacterIds: ["izunavi"],
+    guardCharacterIds: [
+      "izunavi",
+      "giuliano",
+      "madwig",
+      "himonce",
+      "anzel",
+      "hyuga",
+      "orau",
+    ],
+    hunterCharacterIds: ["izunavi", "giuliano"],
     publicStrategy:
       "Radiate love and joy; publish her gospel; assume goodwill is armor.",
     currentObjective: [
@@ -547,8 +579,20 @@ export const princes: Prince[] = [
     siblingNote: "Full sibling of Camilla and Tubeppa under Queen Duazul.",
     beastId: "beast-luzurus",
     guardsOriginal: 12,
-    guardCharacterIds: ["basho", "ridge", "satobi", "kanjidol"],
-    hunterCharacterIds: ["basho", "ridge"],
+    guardCharacterIds: [
+      "basho",
+      "ridge",
+      "satobi",
+      "kanjidol",
+      "scairt",
+      "rice",
+      "famule",
+      "bharate",
+      "javietti",
+      "gadeau",
+      "odessa",
+    ],
+    hunterCharacterIds: ["basho", "ridge", "scairt"],
     publicStrategy:
       "Keep his head down and his pipe lit; appear too indolent to bother killing.",
     hiddenStrategy: {
@@ -634,7 +678,7 @@ export const princes: Prince[] = [
     siblingNote: "Only child of Queen Swinko-swinko.",
     beastId: "beast-salele",
     guardsOriginal: 10,
-    guardCharacterIds: ["yushohi"],
+    guardCharacterIds: ["yushohi", "mushaho", "koroabde"],
     publicStrategy:
       "Float through the war on a barge of pleasures; be nobody's problem.",
     currentObjective: [
@@ -801,7 +845,14 @@ export const princes: Prince[] = [
     siblingNote: "Twin of Fugetsu.",
     beastId: "beast-kacho",
     guardsOriginal: 9,
-    guardCharacterIds: ["melody", "loberry", "keeney"],
+    guardCharacterIds: [
+      "melody",
+      "loberry",
+      "keeney",
+      "yuri",
+      "roccoli",
+      "lizlura",
+    ],
     hunterCharacterIds: ["melody", "keeney"],
     publicStrategy:
       "Perform contempt for everyone, especially her twin, so the pair never looks like a joint target.",
@@ -873,7 +924,13 @@ export const princes: Prince[] = [
     siblingNote: "Twin of Kacho.",
     beastId: "beast-fugetsu",
     guardsOriginal: 9,
-    guardCharacterIds: ["ladiolus"],
+    guardCharacterIds: [
+      "ladiolus",
+      "illardia",
+      "bachaem",
+      "ryoji",
+      "toneaster",
+    ],
     publicStrategy:
       "Endure; she never wanted the war and barely acknowledges it.",
     currentObjective: [
@@ -1026,7 +1083,14 @@ export const princes: Prince[] = [
     siblingNote: "Younger sibling of Momoze; inherited her guard detail.",
     beastId: "beast-marayam",
     guardsOriginal: 15,
-    guardCharacterIds: ["hanzo", "biscuit", "belerainte", "vergei", "barrigen"],
+    guardCharacterIds: [
+      "hanzo",
+      "biscuit",
+      "belerainte",
+      "vergei",
+      "barrigen",
+      "naipei",
+    ],
     hunterCharacterIds: ["hanzo", "biscuit", "belerainte"],
     publicStrategy:
       "A child has no strategy; Sevanti's is fortress defense with double-staffed guards.",
@@ -1092,13 +1156,14 @@ export const princes: Prince[] = [
       "kurapika",
       "bill",
       "sayird",
+      "kurton",
       "woody",
       "shimano",
       "babimyna",
       "sakata",
       "hashito",
     ],
-    hunterCharacterIds: ["kurapika", "bill"],
+    hunterCharacterIds: ["kurapika", "bill", "kurton"],
     publicStrategy:
       "An infant has none; Oito's is total dependence on Kurapika's competence.",
     hiddenStrategy: {
