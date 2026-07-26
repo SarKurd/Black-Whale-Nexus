@@ -2,8 +2,8 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
-import { notFound } from "next/navigation";
-import { useMemo, useState } from "react";
+import { notFound, useSearchParams } from "next/navigation";
+import { Suspense, useMemo, useState } from "react";
 import {
   ArchiveNote,
   ChapterRef,
@@ -60,6 +60,12 @@ const TABS = [
 ] as const;
 type Tab = (typeof TABS)[number];
 
+function tabFromParam(value: string | null): Tab {
+  return (
+    TABS.find((tab) => tab.toLowerCase() === value?.toLowerCase()) ?? "Dossier"
+  );
+}
+
 const KNOWLEDGE_STATE_LABEL: Record<KnowledgeState, string> = {
   knows: "Knows",
   suspects: "Suspects",
@@ -73,10 +79,52 @@ const KNOWLEDGE_STATE_LABEL: Record<KnowledgeState, string> = {
 };
 
 export function CharacterDossier({ id }: { id: string }) {
+  return (
+    <Suspense
+      fallback={
+        <CharacterDossierContent
+          id={id}
+          tab="Dossier"
+          onTabChange={() => undefined}
+        />
+      }
+    >
+      <RoutedCharacterDossier id={id} />
+    </Suspense>
+  );
+}
+
+function RoutedCharacterDossier({ id }: { id: string }) {
+  const searchParams = useSearchParams();
+  const tab = tabFromParam(searchParams.get("tab"));
+
+  function selectTab(nextTab: Tab) {
+    const params = new URLSearchParams(searchParams.toString());
+    if (nextTab === "Dossier") params.delete("tab");
+    else params.set("tab", nextTab.toLowerCase());
+    const query = params.toString();
+    window.history.pushState(
+      null,
+      "",
+      `${window.location.pathname}${query ? `?${query}` : ""}${window.location.hash}`,
+    );
+  }
+
+  return <CharacterDossierContent id={id} tab={tab} onTabChange={selectTab} />;
+}
+
+function CharacterDossierContent({
+  id,
+  tab,
+  onTabChange,
+}: {
+  id: string;
+  tab: Tab;
+  onTabChange: (tab: Tab) => void;
+}) {
   const c = characterById.get(id);
   const ch = useEffectiveChapter();
   const hideTheories = useNexusStore((s) => s.hideTheories);
-  const [tab, setTab] = useState<Tab>("Dossier");
   const [chronology, setChronology] = useState<SortDirection>("desc");
 
   const derived = useMemo(() => {
@@ -242,7 +290,7 @@ export function CharacterDossier({ id }: { id: string }) {
           <button
             key={t}
             type="button"
-            onClick={() => setTab(t)}
+            onClick={() => onTabChange(t)}
             className={`-mb-px border-b-2 px-3 py-2 font-mono text-[11px] uppercase tracking-widest transition-colors ${
               tab === t
                 ? "border-gold text-gold-bright"
