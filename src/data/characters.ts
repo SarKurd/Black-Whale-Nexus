@@ -941,7 +941,14 @@ export const characters: Character[] = [
         note: "Indictment for contempt of the ceremony and lese-majeste deferred as prospective queen mother; confined to Room 1014's master bedroom, with leaving charged as flight from custody.",
       },
     ],
-    locationHistory: [{ ch: 359, locationId: "room-1014" }],
+    locationHistory: [
+      { ch: 359, locationId: "room-1014" },
+      {
+        ch: 415,
+        locationId: "room-1014",
+        note: "Confined to the master bedroom under deferred indictment; stepping out is flight from custody.",
+      },
+    ],
     objectives: [
       {
         text: "Keep Woble alive through the voyage.",

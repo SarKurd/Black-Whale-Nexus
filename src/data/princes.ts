@@ -71,6 +71,10 @@ export const princes: Prince[] = [
         text: "Halkenburg's soul, riding Balsamilco, has already fired an arrow at him — his chief strategist is enemy ordnance.",
         revealCh: 413,
       },
+      {
+        text: "Beyond's curse on Furykov may even point at Benjamin himself — the bearer cannot rule it out, and neither can the reader.",
+        revealCh: 415,
+      },
     ],
     riskHistory: [
       {
@@ -186,6 +190,10 @@ export const princes: Prince[] = [
       {
         text: "Benjamin watches her every move through the inherited Secret Window, knows she is a counteractive type, and has reserved her elimination for himself under martial law.",
         revealCh: 413,
+      },
+      {
+        text: "Furykov's private analysis of Beyond's birth-curse puts her at the top of the target list — a Nen user as dangerous to the regime as Halkenburg, cursed to die when Furykov does.",
+        revealCh: 415,
       },
     ],
     riskHistory: [
@@ -519,6 +527,10 @@ export const princes: Prince[] = [
         ch: 402,
         text: "Joint pledge with Woble: both renounce the throne for Zhang Lei if the three survive together. Her beast appears for the first time.",
       },
+      {
+        ch: 415,
+        text: "Rihan's martial-law lockdown puts a pistol to her researcher's head; she shields the science staff, reads the declaration as either a trump card burned early or a premeditated cull of the senior princes, and goes to Room 1001 with the tests still running.",
+      },
     ],
   },
   {
@@ -643,6 +655,11 @@ export const princes: Prince[] = [
         ch: 414,
         risk: "critical",
         why: "Benjamin's purge is inside his walls: two guards stabbed in their sleep with both outcomes unresolved, Kanjidol active, martial-law soldiers at his door.",
+      },
+      {
+        ch: 415,
+        risk: "critical",
+        why: "Missing during the purge with Rice, household framed for treason via Kanjidol's manufactured arrest — a fugitive prince is exactly what martial law wants to shoot.",
       },
     ],
     assessment: {
@@ -1009,6 +1026,10 @@ export const princes: Prince[] = [
         ch: 404,
         text: "Collapses into protected sleep at the Justice Bureau infirmary; the beast-'Kacho' begins visibly fading beside her.",
       },
+      {
+        ch: 415,
+        text: "Room 1011 is sealed as an absent prince's quarters; Seiko orders that Fugetsu not leave the Ministry of Justice no matter what happens.",
+      },
     ],
     mysteryIds: ["my-fugetsu-door-limits"],
   },
@@ -1153,6 +1174,10 @@ export const princes: Prince[] = [
         ch: 390,
         text: "Beast's continued growth alarms the household's Hunters.",
       },
+      {
+        ch: 415,
+        text: "Bisky reads Saquelle's timed go-order and commits the camp to holing up: the Nen space is likely one-time-use, and leaving could reset, sleep, or erase the beast entirely.",
+      },
     ],
     mysteryIds: ["my-marayam-beast-form"],
   },
@@ -1232,6 +1257,11 @@ export const princes: Prince[] = [
         risk: "moderate",
         why: "Ineligibility declared: the infant aboard is a decoy, the real prince unfindable. Priority as a target drops — but the curse question stays open and Sarahell's work continues.",
       },
+      {
+        ch: 415,
+        risk: "high",
+        why: "Special Martial Law doubles as a ship-wide manhunt: if the real Woble is found — or proven ashore — the deferrals end and Oito's line goes with them.",
+      },
     ],
     assessment: {
       political:
@@ -1270,6 +1300,10 @@ export const princes: Prince[] = [
       {
         ch: 414,
         text: "Mainland protection planned for the real Woble via Oito's coded-letter channel; Kurapika thinks of Gon and Killua.",
+      },
+      {
+        ch: 415,
+        text: "Benjamin's 'clemency': the substitute is ruled legally blameless and Oito's indictment deferred as prospective queen mother — both confined to the master bedroom while the ship is searched for the real prince.",
       },
     ],
     mysteryIds: ["my-woble-beast-ability", "my-silent-majority-user"],

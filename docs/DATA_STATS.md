@@ -23,4 +23,4 @@
 | storylines | 17 |
 | mysteries | 16 |
 | theories | 12 |
-| glossary terms | 42 |
+| glossary terms | 43 |

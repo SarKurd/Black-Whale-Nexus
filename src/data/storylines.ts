@@ -1596,6 +1596,8 @@ export const storylines: Storyline[] = [
       "luzurus",
       "ridge",
       "kurapika",
+      "rihan",
+      "babimyna",
     ],
     factionIds: ["benjamin-camp", "kakin-military", "justice-bureau"],
     objectives: [

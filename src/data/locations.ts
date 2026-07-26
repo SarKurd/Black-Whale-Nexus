@@ -138,6 +138,11 @@ export const locations: ShipLocation[] = [
         value: "lethal",
         note: "Special Martial Law: rival princes' guards to be executed on sight (Hunter Association exempt).",
       },
+      {
+        ch: 415,
+        value: "tense",
+        note: "The consolidation order empties the royal deck toward Room 1001 — weapons surrendered, escorts left at the door.",
+      },
     ],
     connectedIds: [
       "black-whale",
@@ -296,6 +301,11 @@ export const locations: ShipLocation[] = [
         value: "lethal",
         note: "Open mafia killings; bodies disappear without inquiry.",
       },
+      {
+        ch: 415,
+        value: "tense",
+        note: "Soldiers flood the lower tiers at the declaration, subduing passengers at gunpoint.",
+      },
     ],
     connectedIds: [
       "black-whale",
@@ -378,6 +388,11 @@ export const locations: ShipLocation[] = [
         ch: 370,
         value: "tense",
         note: "Attacks subside once the room fills with rival camps' observers.",
+      },
+      {
+        ch: 415,
+        value: "tense",
+        note: "Freedom shrinks to the master bedroom: deferred indictments, with any exit charged as flight from custody.",
       },
     ],
     connectedIds: ["marayam-quarters", "royal-quarters"],
@@ -472,6 +487,11 @@ export const locations: ShipLocation[] = [
         ch: 388,
         value: "tense",
         note: "Tubeppa reads Salé-salé's death from his banquet no-show and concludes she is Benjamin's next target.",
+      },
+      {
+        ch: 415,
+        value: "tense",
+        note: "Rihan's lockdown at gunpoint: stand by until further orders, the prince to Room 1001 with Royal Army escorts only.",
       },
     ],
     connectedIds: ["royal-quarters"],
@@ -571,6 +591,11 @@ export const locations: ShipLocation[] = [
         value: "tense",
         note: "Fugetsu's worsening state after Kacho's loss alarms her detail.",
       },
+      {
+        ch: 415,
+        value: "tense",
+        note: "Sealed as an absent prince's room for the duration of martial law; Seiko orders no one admitted.",
+      },
     ],
     connectedIds: ["royal-quarters", "kacho-quarters"],
     introducedCh: 358,
@@ -636,6 +661,11 @@ export const locations: ShipLocation[] = [
         ch: 375,
         value: "secure",
         note: "The safest room aboard, provided you never step out.",
+      },
+      {
+        ch: 415,
+        value: "tense",
+        note: "Benjamin's plant acknowledges a 2:15 go-order inside; the camp holes up rather than march Marayam out of a one-shot sanctuary.",
       },
     ],
     connectedIds: ["marayam-quarters"],
@@ -880,6 +910,11 @@ export const locations: ShipLocation[] = [
         ch: 414,
         value: "lethal",
         note: "Benjamin's embedded soldier begins killing the detail from inside.",
+      },
+      {
+        ch: 415,
+        value: "contested",
+        note: "A prince and Rice missing, the household scrambling under a treason framing, and the bound Kanjidol grinning on-site.",
       },
     ],
     connectedIds: ["royal-quarters"],

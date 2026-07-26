@@ -96,6 +96,10 @@ export const factions: Faction[] = [
         text: "Kanjidol, Yushohi, and Chiyamasi activated against Luzurus's household and Room 1009.",
         ch: 414,
       },
+      {
+        ch: 415,
+        text: "Special Martial Law takes effect ship-wide at 2:15 p.m.: princes ordered to Room 1001 disarmed to hear Benjamin alone, with cohabitation there if the 'crisis' persists.",
+      },
     ],
     statusByChapter: [
       { ch: 366, value: "Observer network operational in most rival suites." },
@@ -625,6 +629,10 @@ export const factions: Faction[] = [
       {
         text: "Special Martial Law enforcement: tier lockdowns, shoot-on-sight authority, execution of rival princes' guards.",
         ch: 409,
+      },
+      {
+        ch: 415,
+        text: "The Royal Army floods the lower tiers, seals absent princes' rooms, and locks down every household — Room 1005 at gunpoint.",
       },
     ],
     statusByChapter: [

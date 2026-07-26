@@ -166,6 +166,15 @@ export const glossary: GlossaryTerm[] = [
     introducedCh: 403,
   },
   {
+    id: "general-store-dealer",
+    term: "General-Store Dealer (Yorozuya)",
+    definition:
+      "The ship's catalog store with an off-board delivery arm: drones and high-speed boats run personal requests to and from the mainland while the Black Whale is still in their operational zone, with orders closing two weeks after departure. Censorship was abolished, but the military takes custody of outgoing mail under the quarantine law — which is exactly why Room 1014's coded postcard to Yamato is a calculated risk.",
+    category: "arc",
+    relatedIds: ["special-martial-law"],
+    introducedCh: 415,
+  },
+  {
     id: "special-martial-law",
     term: "Special Martial Law",
     definition:
