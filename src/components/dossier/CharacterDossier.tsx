@@ -12,8 +12,10 @@ import {
   EntityLink,
   EntityList,
   Monogram,
+  OrderToggle,
   Panel,
   SectionHeading,
+  type SortDirection,
   StatusChip,
   Tag,
 } from "@/components/ui/kit";
@@ -75,6 +77,7 @@ export function CharacterDossier({ id }: { id: string }) {
   const ch = useEffectiveChapter();
   const hideTheories = useNexusStore((s) => s.hideTheories);
   const [tab, setTab] = useState<Tab>("Dossier");
+  const [chronology, setChronology] = useState<SortDirection>("desc");
 
   const derived = useMemo(() => {
     if (!c) return null;
@@ -261,11 +264,31 @@ export function CharacterDossier({ id }: { id: string }) {
         >
           {tab === "Dossier" && <DossierTab c={c} d={d} ch={ch} />}
           {tab === "Relationships" && <RelationshipsTab c={c} d={d} ch={ch} />}
-          {tab === "Timeline" && <TimelineTab d={d} />}
+          {tab === "Timeline" && (
+            <TimelineTab
+              d={d}
+              direction={chronology}
+              onDirectionChange={setChronology}
+            />
+          )}
           {tab === "Knowledge" && <KnowledgeTab d={d} />}
           {tab === "Nen" && <NenTab c={c} d={d} ch={ch} />}
-          {tab === "Locations" && <LocationsTab c={c} ch={ch} />}
-          {tab === "Chapters" && <ChaptersTab c={c} ch={ch} />}
+          {tab === "Locations" && (
+            <LocationsTab
+              c={c}
+              ch={ch}
+              direction={chronology}
+              onDirectionChange={setChronology}
+            />
+          )}
+          {tab === "Chapters" && (
+            <ChaptersTab
+              c={c}
+              ch={ch}
+              direction={chronology}
+              onDirectionChange={setChronology}
+            />
+          )}
           {tab === "Mysteries" && <MysteriesTab d={d} ch={ch} />}
           {tab === "Theories" && (
             <TheoriesTab d={d} ch={ch} hideTheories={hideTheories} />
@@ -617,25 +640,39 @@ function RelationshipsTab({ c, d, ch }: { c: Char; d: Derived; ch: number }) {
   );
 }
 
-function TimelineTab({ d }: { d: Derived }) {
+function TimelineTab({
+  d,
+  direction,
+  onDirectionChange,
+}: {
+  d: Derived;
+  direction: SortDirection;
+  onDirectionChange: (direction: SortDirection) => void;
+}) {
   if (d.evs.length === 0)
     return <ArchiveNote>No recorded incidents at this clearance.</ArchiveNote>;
+  const orderedEvents = direction === "desc" ? [...d.evs].reverse() : d.evs;
   return (
-    <ol className="relative ml-3 space-y-4 border-l border-line pl-5">
-      {d.evs.map((e) => (
-        <li key={e.id} className="relative">
-          <span className="absolute -left-[26px] top-1.5 h-2 w-2 rounded-full border border-gold-dim bg-panel" />
-          <div className="flex flex-wrap items-baseline gap-2">
-            <ChapterRef ch={e.chapter} />
-            <span className="text-sm text-ivory">{e.title}</span>
-            <span className="font-mono text-[9px] uppercase tracking-widest text-faint">
-              {e.kind}
-            </span>
-          </div>
-          <p className="mt-0.5 text-xs text-muted">{e.summary}</p>
-        </li>
-      ))}
-    </ol>
+    <div>
+      <div className="mb-3 flex justify-end">
+        <OrderToggle direction={direction} onChange={onDirectionChange} />
+      </div>
+      <ol className="relative ml-3 space-y-4 border-l border-line pl-5">
+        {orderedEvents.map((e) => (
+          <li key={e.id} className="relative">
+            <span className="absolute -left-[26px] top-1.5 h-2 w-2 rounded-full border border-gold-dim bg-panel" />
+            <div className="flex flex-wrap items-baseline gap-2">
+              <ChapterRef ch={e.chapter} />
+              <span className="text-sm text-ivory">{e.title}</span>
+              <span className="font-mono text-[9px] uppercase tracking-widest text-faint">
+                {e.kind}
+              </span>
+            </div>
+            <p className="mt-0.5 text-xs text-muted">{e.summary}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
   );
 }
 
@@ -766,80 +803,120 @@ function NenTab({ c, d, ch }: { c: Char; d: Derived; ch: number }) {
   );
 }
 
-function LocationsTab({ c, ch }: { c: Char; ch: number }) {
-  const trail = c.locationHistory
+function LocationsTab({
+  c,
+  ch,
+  direction,
+  onDirectionChange,
+}: {
+  c: Char;
+  ch: number;
+  direction: SortDirection;
+  onDirectionChange: (direction: SortDirection) => void;
+}) {
+  const chronologicalTrail = c.locationHistory
     .filter((l) => (l.revealCh ?? l.ch) <= ch)
-    .sort((a, b) => b.ch - a.ch);
+    .sort((a, b) => a.ch - b.ch);
+  const trail =
+    direction === "desc"
+      ? [...chronologicalTrail].reverse()
+      : chronologicalTrail;
+  const current = chronologicalTrail.at(-1);
   if (trail.length === 0)
     return <ArchiveNote>No movement records at this clearance.</ArchiveNote>;
   return (
-    <ol className="relative ml-3 space-y-4 border-l border-line pl-5">
-      {trail.map((l, i) => {
-        const loc = locationById.get(l.locationId);
-        return (
-          <li key={`${l.ch}-${l.locationId}`} className="relative">
-            <span
-              className={`absolute -left-[26px] top-1.5 h-2 w-2 rounded-full border ${
-                i === 0
-                  ? "border-gold bg-gold/40"
-                  : "border-line-strong bg-panel"
-              }`}
-            />
-            <div className="flex flex-wrap items-baseline gap-2">
-              <ChapterRef ch={l.ch} />
-              <Link
-                href={`/map?location=${l.locationId}&ch=${l.revealCh ?? l.ch}`}
-                className="text-sm text-teal hover:text-gold-bright"
-              >
-                {loc?.name ?? l.locationId}
-              </Link>
-              {i === 0 && (
-                <span className="font-mono text-[9px] uppercase tracking-widest text-gold">
-                  current
-                </span>
-              )}
-              {loc && loc.canonicity !== "canonical" && (
-                <span className="font-mono text-[9px] uppercase tracking-widest text-faint">
-                  {loc.canonicity}
-                </span>
-              )}
-            </div>
-            {l.note && <p className="text-xs text-muted">{l.note}</p>}
-          </li>
-        );
-      })}
-    </ol>
+    <div>
+      <div className="mb-3 flex justify-end">
+        <OrderToggle direction={direction} onChange={onDirectionChange} />
+      </div>
+      <ol className="relative ml-3 space-y-4 border-l border-line pl-5">
+        {trail.map((l) => {
+          const loc = locationById.get(l.locationId);
+          const isCurrent = l === current;
+          return (
+            <li key={`${l.ch}-${l.locationId}`} className="relative">
+              <span
+                className={`absolute -left-[26px] top-1.5 h-2 w-2 rounded-full border ${
+                  isCurrent
+                    ? "border-gold bg-gold/40"
+                    : "border-line-strong bg-panel"
+                }`}
+              />
+              <div className="flex flex-wrap items-baseline gap-2">
+                <ChapterRef ch={l.ch} />
+                <Link
+                  href={`/map?location=${l.locationId}&ch=${l.revealCh ?? l.ch}`}
+                  className="text-sm text-teal hover:text-gold-bright"
+                >
+                  {loc?.name ?? l.locationId}
+                </Link>
+                {isCurrent && (
+                  <span className="font-mono text-[9px] uppercase tracking-widest text-gold">
+                    current
+                  </span>
+                )}
+                {loc && loc.canonicity !== "canonical" && (
+                  <span className="font-mono text-[9px] uppercase tracking-widest text-faint">
+                    {loc.canonicity}
+                  </span>
+                )}
+              </div>
+              {l.note && <p className="text-xs text-muted">{l.note}</p>}
+            </li>
+          );
+        })}
+      </ol>
+    </div>
   );
 }
 
-function ChaptersTab({ c, ch }: { c: Char; ch: number }) {
-  const apps = (c.chapterAppearances ?? []).filter((n) => n <= ch);
+function ChaptersTab({
+  c,
+  ch,
+  direction,
+  onDirectionChange,
+}: {
+  c: Char;
+  ch: number;
+  direction: SortDirection;
+  onDirectionChange: (direction: SortDirection) => void;
+}) {
+  const chronologicalApps = (c.chapterAppearances ?? [])
+    .filter((n) => n <= ch)
+    .sort((a, b) => a - b);
+  const apps =
+    direction === "desc" ? [...chronologicalApps].reverse() : chronologicalApps;
   if (apps.length === 0)
     return <ArchiveNote>No chapter appearances at this clearance.</ArchiveNote>;
   return (
-    <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
-      {apps.map((n) => {
-        const info = chapterByNumber.get(n);
-        return (
-          <Link
-            key={n}
-            href={`/chapters/${n}`}
-            className="dossier group p-3 transition-colors hover:border-gold-line"
-          >
-            <div className="font-mono text-[10px] tracking-widest text-gold">
-              CH.{n}
-            </div>
-            <div className="text-sm text-ivory group-hover:text-gold-bright">
-              {info?.title ?? "Not individually indexed"}
-            </div>
-            {info && (
-              <p className="mt-1 line-clamp-2 text-xs text-muted">
-                {info.summary}
-              </p>
-            )}
-          </Link>
-        );
-      })}
+    <div>
+      <div className="mb-3 flex justify-end">
+        <OrderToggle direction={direction} onChange={onDirectionChange} />
+      </div>
+      <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+        {apps.map((n) => {
+          const info = chapterByNumber.get(n);
+          return (
+            <Link
+              key={n}
+              href={`/chapters/${n}`}
+              className="dossier group p-3 transition-colors hover:border-gold-line"
+            >
+              <div className="font-mono text-[10px] tracking-widest text-gold">
+                CH.{n}
+              </div>
+              <div className="text-sm text-ivory group-hover:text-gold-bright">
+                {info?.title ?? "Not individually indexed"}
+              </div>
+              {info && (
+                <p className="mt-1 line-clamp-2 text-xs text-muted">
+                  {info.summary}
+                </p>
+              )}
+            </Link>
+          );
+        })}
+      </div>
     </div>
   );
 }

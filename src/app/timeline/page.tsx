@@ -18,7 +18,13 @@ import {
   EventEntry,
   RecorderList,
 } from "@/components/story/EventRecorder";
-import { ArchiveNote, ChapterRef, SectionHeading } from "@/components/ui/kit";
+import {
+  ArchiveNote,
+  ChapterRef,
+  OrderToggle,
+  SectionHeading,
+  type SortDirection,
+} from "@/components/ui/kit";
 import {
   ancestorChain,
   chapterByNumber,
@@ -62,6 +68,12 @@ type MovementRecord = Character["locationHistory"][number];
 type TimelineRow =
   | { kind: "event"; event: StoryEvent }
   | { kind: "move"; move: MovementRecord };
+type DaySection = {
+  key: string;
+  label: string;
+  events: StoryEvent[];
+  showMeta: boolean;
+};
 
 /** Voyage day of an event: explicit, else derived from its chapter's day range. */
 function eventDay(e: StoryEvent): number | undefined {
@@ -118,6 +130,14 @@ function sortDayEvents(list: StoryEvent[]): StoryEvent[] {
   return out;
 }
 
+function sortEventsByChapter(
+  list: StoryEvent[],
+  direction: SortDirection,
+): StoryEvent[] {
+  const chronological = [...list].sort((a, b) => a.chapter - b.chapter);
+  return direction === "desc" ? chronological.reverse() : chronological;
+}
+
 /** Group a chapter's events by their leading storyline for parallel columns. */
 function splitByStoryline(evts: StoryEvent[]): [string, StoryEvent[]][] {
   const map = new Map<string, StoryEvent[]>();
@@ -169,6 +189,7 @@ function TimelineInner() {
   const [locationFilter, setLocationFilter] = useState("");
   const [storylineSel, setStorylineSel] = useState("");
   const [characterSel, setCharacterSel] = useState("");
+  const [chronology, setChronology] = useState<SortDirection>("desc");
 
   // With no kind chips active the rail shows the landmark set; active chips
   // override it, so filtering by "decision" no longer yields an empty rail.
@@ -249,8 +270,17 @@ function TimelineInner() {
       list.push(e);
       map.set(e.chapter, list);
     }
-    return [...map.entries()].sort((a, b) => a[0] - b[0]);
-  }, [filtered]);
+    const groups = [...map.entries()].map(
+      ([num, list]) =>
+        [num, chronology === "desc" ? [...list].reverse() : list] as [
+          number,
+          StoryEvent[],
+        ],
+    );
+    return groups.sort((a, b) =>
+      chronology === "desc" ? b[0] - a[0] : a[0] - b[0],
+    );
+  }, [filtered, chronology]);
 
   const dayGroups = useMemo(() => {
     const map = new Map<number, StoryEvent[]>();
@@ -319,10 +349,13 @@ function TimelineInner() {
     list.filter((e) => filteredIds.has(e.id));
 
   const storylineEvents = storylineSel
-    ? applyEventFilters(
-        (eventsByStoryline.get(storylineSel) ?? []).filter(
-          (e) => e.chapter <= ch,
+    ? sortEventsByChapter(
+        applyEventFilters(
+          (eventsByStoryline.get(storylineSel) ?? []).filter(
+            (e) => e.chapter <= ch,
+          ),
         ),
+        chronology,
       )
     : [];
   const characterEvents = characterSel
@@ -340,7 +373,7 @@ function TimelineInner() {
   // The subject's chronology: recorded incidents interleaved with their
   // reader-visible position changes; an arrival sorts before that chapter's
   // events.
-  const characterRows: TimelineRow[] = [
+  const chronologicalCharacterRows: TimelineRow[] = [
     ...characterEvents.map((event) => ({ kind: "event" as const, event })),
     ...subjectMoves.map((move) => ({ kind: "move" as const, move })),
   ].sort((a, b) => {
@@ -350,6 +383,46 @@ function TimelineInner() {
       chA - chB || (a.kind === "move" ? 0 : 1) - (b.kind === "move" ? 0 : 1)
     );
   });
+  const characterRows =
+    chronology === "desc"
+      ? [...chronologicalCharacterRows].reverse()
+      : chronologicalCharacterRows;
+
+  const daySections = useMemo<DaySection[]>(() => {
+    const orderEvents = (list: StoryEvent[]) =>
+      chronology === "desc" ? [...list].reverse() : list;
+    const preVoyage: DaySection[] =
+      dayGroups.preVoyage.length > 0
+        ? [
+            {
+              key: "pre-voyage",
+              label: "Pre-voyage",
+              events: orderEvents(dayGroups.preVoyage),
+              showMeta: true,
+            },
+          ]
+        : [];
+    const dated = dayGroups.dated.map(([day, list]) => ({
+      key: `day-${day}`,
+      label: `Day ${day}`,
+      events: orderEvents(list),
+      showMeta: true,
+    }));
+    const undated: DaySection[] =
+      dayGroups.undated.length > 0
+        ? [
+            {
+              key: "undated",
+              label: "Undated",
+              events: orderEvents(dayGroups.undated),
+              showMeta: false,
+            },
+          ]
+        : [];
+    return chronology === "desc"
+      ? [...undated, ...dated.reverse(), ...preVoyage]
+      : [...preVoyage, ...dated, ...undated];
+  }, [dayGroups, chronology]);
 
   const selectClass =
     "border border-line bg-panel px-2 py-1.5 text-xs text-parchment outline-none";
@@ -475,9 +548,14 @@ function TimelineInner() {
               ))}
             </select>
           </label>
-          <span className="ml-auto font-mono text-[10px] tracking-widest text-faint">
-            {filtered.length} record{filtered.length === 1 ? "" : "s"} in view
-          </span>
+          <div className="ml-auto flex items-center gap-2">
+            {mode !== "landmarks" && (
+              <OrderToggle direction={chronology} onChange={setChronology} />
+            )}
+            <span className="font-mono text-[10px] tracking-widest text-faint">
+              {filtered.length} record{filtered.length === 1 ? "" : "s"} in view
+            </span>
+          </div>
         </div>
       </div>
 
@@ -516,17 +594,23 @@ function TimelineInner() {
               </div>
               {/* Compact chronological list on small screens */}
               <div className="sm:hidden">
+                <div className="mb-3 flex justify-end">
+                  <OrderToggle
+                    direction={chronology}
+                    onChange={setChronology}
+                  />
+                </div>
                 <RecorderList>
-                  {filtered
-                    .filter((e) => activeKinds.includes(e.kind))
-                    .sort((a, b) => a.chapter - b.chapter)
-                    .map((e) => (
-                      <EventEntry
-                        key={e.id}
-                        event={e}
-                        highlighted={e.id === highlightId}
-                      />
-                    ))}
+                  {sortEventsByChapter(
+                    filtered.filter((e) => activeKinds.includes(e.kind)),
+                    chronology,
+                  ).map((e) => (
+                    <EventEntry
+                      key={e.id}
+                      event={e}
+                      highlighted={e.id === highlightId}
+                    />
+                  ))}
                 </RecorderList>
               </div>
             </>
@@ -545,35 +629,19 @@ function TimelineInner() {
                     No incidents on file at this clearance and filter set.
                   </ArchiveNote>
                 )}
-              {dayGroups.preVoyage.length > 0 && (
-                <section>
+              {daySections.map((section) => (
+                <section key={section.key}>
                   <SectionHeading
                     right={
-                      <DayMeta events={dayGroups.preVoyage} label="records" />
+                      section.showMeta ? (
+                        <DayMeta events={section.events} label="records" />
+                      ) : undefined
                     }
                   >
-                    Pre-voyage
+                    {section.label}
                   </SectionHeading>
                   <RecorderList>
-                    {dayGroups.preVoyage.map((e) => (
-                      <EventEntry
-                        key={e.id}
-                        event={e}
-                        highlighted={e.id === highlightId}
-                      />
-                    ))}
-                  </RecorderList>
-                </section>
-              )}
-              {dayGroups.dated.map(([day, evts]) => (
-                <section key={day}>
-                  <SectionHeading
-                    right={<DayMeta events={evts} label="records" />}
-                  >
-                    Day {day}
-                  </SectionHeading>
-                  <RecorderList>
-                    {evts.map((e) => (
+                    {section.events.map((e) => (
                       <EventEntry
                         key={e.id}
                         event={e}
@@ -583,20 +651,6 @@ function TimelineInner() {
                   </RecorderList>
                 </section>
               ))}
-              {dayGroups.undated.length > 0 && (
-                <section>
-                  <SectionHeading>Undated</SectionHeading>
-                  <RecorderList>
-                    {dayGroups.undated.map((e) => (
-                      <EventEntry
-                        key={e.id}
-                        event={e}
-                        highlighted={e.id === highlightId}
-                      />
-                    ))}
-                  </RecorderList>
-                </section>
-              )}
             </div>
           )}
 

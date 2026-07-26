@@ -1,9 +1,12 @@
 "use client";
 
+import { useState } from "react";
 import {
   ArchiveNote,
   ChapterRef,
   EntityLink,
+  OrderToggle,
+  type SortDirection,
   StatusChip,
   Tag,
 } from "@/components/ui/kit";
@@ -71,6 +74,7 @@ export function LocationPanel({
   onClose: () => void;
 }) {
   const loc = locationById.get(id);
+  const [chronology, setChronology] = useState<SortDirection>("desc");
   if (!loc) return <ArchiveNote>No such compartment on file.</ArchiveNote>;
   if (loc.introducedCh > ch) {
     return (
@@ -127,13 +131,19 @@ export function LocationPanel({
     .filter((v): v is { characterId: string; lastCh: number } => v !== null)
     .sort((a, b) => b.lastCh - a.lastCh);
 
-  const eventsHere = allEvents
+  const chronologicalEvents = allEvents
     .filter((e) => e.locationId === id && e.chapter <= ch)
     .sort((a, b) => a.chapter - b.chapter);
+  const eventsHere =
+    chronology === "desc" ? chronologicalEvents.reverse() : chronologicalEvents;
 
-  const deathsHere = allDeaths
+  const chronologicalDeaths = allDeaths
     .filter((d) => d.locationId === id && (d.revealCh ?? d.chapter) <= ch)
     .sort((a, b) => a.chapter - b.chapter);
+  const deathsHere =
+    chronology === "desc" ? chronologicalDeaths.reverse() : chronologicalDeaths;
+  const orderedPrevious =
+    chronology === "desc" ? previous : [...previous].reverse();
 
   const control = latestStamp(loc.controlHistory, ch);
   const controlFaction = control ? factionById.get(control.value) : undefined;
@@ -200,6 +210,11 @@ export function LocationPanel({
             threat: {threatLevel}
           </span>
         )}
+        <OrderToggle
+          direction={chronology}
+          onChange={setChronology}
+          className="ml-auto"
+        />
       </div>
 
       <p className="mt-2 text-xs leading-relaxed text-muted">
@@ -290,7 +305,7 @@ export function LocationPanel({
         <div className="mt-3 border-t border-line pt-2">
           <div className="intel-label mb-1">Previous occupants</div>
           <ul className="space-y-1">
-            {previous.map((v) => (
+            {orderedPrevious.map((v) => (
               <li
                 key={v.characterId}
                 className="flex items-baseline justify-between gap-2 text-sm"

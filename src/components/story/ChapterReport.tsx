@@ -2,9 +2,16 @@
 
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import type { ReactNode } from "react";
+import { type ReactNode, useState } from "react";
 import { EventEntry, RecorderList } from "@/components/story/EventRecorder";
-import { ArchiveNote, EntityLink, Monogram, Panel } from "@/components/ui/kit";
+import {
+  ArchiveNote,
+  EntityLink,
+  Monogram,
+  OrderToggle,
+  Panel,
+  type SortDirection,
+} from "@/components/ui/kit";
 import {
   abilityById,
   chapterByNumber,
@@ -83,6 +90,7 @@ function MysteryLink({ id }: { id: string }) {
 
 export function ChapterReport({ num }: { num: string }) {
   const ch = useEffectiveChapter();
+  const [chronology, setChronology] = useState<SortDirection>("desc");
   const n = Number(num);
   const info = chapterByNumber.get(n);
 
@@ -114,9 +122,13 @@ export function ChapterReport({ num }: { num: string }) {
   const next =
     idx >= 0 && idx < covered.length - 1 ? covered[idx + 1] : undefined;
 
-  const chapterEvents = info.eventIds
+  const chronologicalEvents = info.eventIds
     .map((id) => eventById.get(id))
     .filter((e) => e !== undefined);
+  const chapterEvents =
+    chronology === "desc"
+      ? [...chronologicalEvents].reverse()
+      : chronologicalEvents;
   const appearing = info.appearingCharacterIds.filter(
     (id) => (characterById.get(id)?.introducedCh ?? 0) <= ch,
   );
@@ -193,7 +205,13 @@ export function ChapterReport({ num }: { num: string }) {
       <div className="grid gap-4 lg:grid-cols-3">
         <div className="space-y-4 lg:col-span-2">
           {/* Event sequence */}
-          <Panel label="Voyage recorder" title="Event sequence">
+          <Panel
+            label="Voyage recorder"
+            title="Event sequence"
+            actions={
+              <OrderToggle direction={chronology} onChange={setChronology} />
+            }
+          >
             {chapterEvents.length === 0 ? (
               <ArchiveNote>
                 No discrete incidents indexed for this chapter.

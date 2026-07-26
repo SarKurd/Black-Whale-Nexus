@@ -118,7 +118,7 @@ export function EventRail({
   kinds?: EventKind[];
   highlightId?: string;
   onSelect?: (id: string) => void;
-  onOverflow?: (chapter: number) => void;
+  onOverflow: (chapter: number) => void;
   /** The highlighted event is in the data but fell into an overflow pill. */
   onMissingHighlight?: () => void;
 }) {
@@ -333,10 +333,20 @@ export function EventRail({
         {/* Per-chapter overflow pills — stacks past MAX_TIER live in the
             chapter view instead of growing the rail without bound. */}
         {[...overflow.entries()].map(([num, count]) => (
+          // biome-ignore lint/a11y/useSemanticElements: SVG cannot contain an HTML button; the group supplies equivalent keyboard and button semantics.
           <g
             key={num}
-            className={onOverflow ? "cursor-pointer" : undefined}
-            onClick={() => onOverflow?.(num)}
+            className="cursor-pointer"
+            role="button"
+            tabIndex={0}
+            aria-label={`${count} more landmark${count === 1 ? "" : "s"} in chapter ${num} — open the chapter view`}
+            onClick={() => onOverflow(num)}
+            onKeyDown={(event) => {
+              if (event.key === "Enter" || event.key === " ") {
+                event.preventDefault();
+                onOverflow(num);
+              }
+            }}
           >
             <rect
               x={chX(num) + 7}
@@ -357,10 +367,7 @@ export function EventRail({
             >
               +{count}
             </text>
-            <title>
-              {count} more landmark{count === 1 ? "" : "s"} in chapter {num} —
-              open the chapter view
-            </title>
+            <title>{`${count} more landmark${count === 1 ? "" : "s"} in chapter ${num} — open the chapter view`}</title>
           </g>
         ))}
       </svg>

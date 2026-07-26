@@ -12,6 +12,34 @@ import {
 } from "@/lib/spoiler";
 import type { CharacterStatus, Confidence } from "@/lib/types";
 
+export type SortDirection = "desc" | "asc";
+
+/** Compact, explicit chronology control shared by recorder-style lists. */
+export function OrderToggle({
+  direction,
+  onChange,
+  className = "",
+}: {
+  direction: SortDirection;
+  onChange: (direction: SortDirection) => void;
+  className?: string;
+}) {
+  const latestFirst = direction === "desc";
+  const nextLabel = latestFirst ? "Oldest first" : "Latest first";
+  return (
+    <button
+      type="button"
+      onClick={() => onChange(latestFirst ? "asc" : "desc")}
+      aria-label={`List order: ${latestFirst ? "latest first" : "oldest first"}. Switch to ${nextLabel.toLowerCase()}.`}
+      title={`Switch to ${nextLabel.toLowerCase()}`}
+      className={`inline-flex items-center gap-1.5 border border-line px-2 py-1 font-mono text-[9px] uppercase tracking-widest text-teal transition-colors hover:border-gold-line hover:text-gold-bright ${className}`}
+    >
+      <span aria-hidden>{latestFirst ? "↓" : "↑"}</span>
+      {latestFirst ? "Latest first" : "Oldest first"}
+    </button>
+  );
+}
+
 /** Layered dossier panel with registration ticks. */
 export function Panel({
   label,

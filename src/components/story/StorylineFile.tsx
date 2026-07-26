@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { useState } from "react";
 import { EventEntry, RecorderList } from "@/components/story/EventRecorder";
 import {
   ArchiveNote,
@@ -9,7 +10,9 @@ import {
   EntityLink,
   EntityList,
   Monogram,
+  OrderToggle,
   Panel,
+  type SortDirection,
 } from "@/components/ui/kit";
 import { characterById, eventsByStoryline, storylineById } from "@/lib/db";
 import {
@@ -43,6 +46,7 @@ const NODE_META: Record<StorylineNodeKind, { label: string; color: string }> = {
 export function StorylineFile({ id }: { id: string }) {
   const ch = useEffectiveChapter();
   const s = storylineById.get(id);
+  const [chronology, setChronology] = useState<SortDirection>("desc");
 
   if (!s) notFound();
 
@@ -70,11 +74,13 @@ export function StorylineFile({ id }: { id: string }) {
   const statusNote = latestStamp(s.status, ch)?.note;
   const nodes = [...s.nodes]
     .filter((n) => n.ch <= ch)
-    .sort((a, b) => a.ch - b.ch);
+    .sort((a, b) => (chronology === "desc" ? b.ch - a.ch : a.ch - b.ch));
   const hiddenNodeCount = s.nodes.length - nodes.length;
-  const threadEvents = (eventsByStoryline.get(s.id) ?? []).filter(
-    (e) => e.chapter <= ch,
-  );
+  const chronologicalEvents = [...(eventsByStoryline.get(s.id) ?? [])]
+    .filter((e) => e.chapter <= ch)
+    .sort((a, b) => a.chapter - b.chapter);
+  const threadEvents =
+    chronology === "desc" ? chronologicalEvents.reverse() : chronologicalEvents;
   const participants = s.participantIds.filter(
     (pid) => (characterById.get(pid)?.introducedCh ?? 0) <= ch,
   );
@@ -126,7 +132,13 @@ export function StorylineFile({ id }: { id: string }) {
       <div className="grid gap-4 lg:grid-cols-3">
         <div className="space-y-4 lg:col-span-2">
           {/* Node timeline */}
-          <Panel label="Thread trace" title="How the thread has run">
+          <Panel
+            label="Thread trace"
+            title="How the thread has run"
+            actions={
+              <OrderToggle direction={chronology} onChange={setChronology} />
+            }
+          >
             {nodes.length === 0 ? (
               <ArchiveNote>No plotted nodes at this clearance yet.</ArchiveNote>
             ) : (
@@ -196,7 +208,13 @@ export function StorylineFile({ id }: { id: string }) {
           </Panel>
 
           {/* Recorder entries */}
-          <Panel label="Voyage recorder" title="Incidents on this thread">
+          <Panel
+            label="Voyage recorder"
+            title="Incidents on this thread"
+            actions={
+              <OrderToggle direction={chronology} onChange={setChronology} />
+            }
+          >
             {threadEvents.length === 0 ? (
               <ArchiveNote>
                 No incidents indexed for this thread at this clearance.
