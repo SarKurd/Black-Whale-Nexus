@@ -2145,6 +2145,115 @@ export const relationships: Relationship[] = [
     ],
   },
   {
+    id: "rel-pakunoda-member-troupe",
+    from: "pakunoda",
+    to: "phantom-troupe",
+    kind: "member-of",
+    directed: true,
+    strength: "strong",
+    secret: false,
+    confirmed: true,
+    startCh: 0,
+    revealCh: 0,
+    endCh: 0,
+    endNote:
+      "Died in York New, years before the voyage — the memory-reader the Troupe never replaced.",
+    mutualAwareness: true,
+    description:
+      "Founding member and the Spider's mind-reader, dead before the voyage. The origin flashback restores her beginning: the Meteor City girl who read people 'like a book' and cast Sheila and Sarasa as the Power Cleaners heroines.",
+    evidence: [
+      { chapter: 0, note: "Pre-arc.", confidence: "canonical" },
+      {
+        chapter: 395,
+        note: "Her childhood role shown in the Troupe-origin flashback.",
+        confidence: "canonical",
+      },
+    ],
+  },
+  {
+    id: "rel-uvogin-member-troupe",
+    from: "uvogin",
+    to: "phantom-troupe",
+    kind: "member-of",
+    directed: true,
+    strength: "strong",
+    secret: false,
+    confirmed: true,
+    startCh: 0,
+    revealCh: 0,
+    endCh: 0,
+    endNote:
+      "Killed by Kurapika's Chain Jail in York New, years before the voyage.",
+    mutualAwareness: true,
+    description:
+      "Founding member, dead before the voyage. The flashback shows where his oath began: won over by Chrollo's live performance, he answered the three-year plan at Sarasa's grave — if Chrollo is the head, he follows him until he dies.",
+    evidence: [
+      { chapter: 0, note: "Pre-arc.", confidence: "canonical" },
+      {
+        chapter: 397,
+        note: "The founding oath at the grave shown in flashback.",
+        confidence: "canonical",
+      },
+    ],
+  },
+  {
+    id: "rel-risnorth-killed-sarasa",
+    from: "risnorth",
+    to: "sarasa",
+    kind: "killed",
+    directed: true,
+    strength: "strong",
+    secret: true,
+    confirmed: true,
+    startCh: 0,
+    revealCh: 397,
+    mutualAwareness: false,
+    description:
+      "Mom's Help's chairman was one of the traffickers who took Sarasa: quota already met, the group chose 'one last round of fun' when they came upon her alone in the Uga Forest dump — murdered her on film, bagged the pieces, and staged the scene with two written messages. To the world he died a philanthropist; the connection has never been public.",
+    evidence: [
+      {
+        chapter: 396,
+        note: "The traffickers' van weighs 'one more' with the quota met.",
+        confidence: "canonical",
+      },
+      {
+        chapter: 397,
+        note: "The murder, the staging, and the aftermath shown in flashback.",
+        confidence: "canonical",
+      },
+    ],
+  },
+  {
+    id: "rel-chrollo-hunting-risnorth",
+    from: "chrollo",
+    to: "risnorth",
+    kind: "hunting",
+    directed: true,
+    strength: "strong",
+    secret: true,
+    confirmed: true,
+    startCh: 0,
+    revealCh: 397,
+    endCh: 0,
+    endNote:
+      "Risnorth was murdered ten years before the voyage; a claim of credit surfaced in the media and was retracted. The archive leaves the hand unnamed.",
+    mutualAwareness: false,
+    description:
+      "The vow over Sarasa's grave is a hunting license: build a criminal haven infamous enough to lure her killers back, live as a villain the world shudders at, and kill. The Phantom Troupe is the trap; Mom's Help's chairman was its quarry.",
+    evidence: [
+      {
+        chapter: 397,
+        note: "The grave-side vow shown in flashback.",
+        confidence: "canonical",
+      },
+      {
+        chapter: 405,
+        note: "The anniversary newscast: an unsolved murder, a retracted claim of credit, dark-web rumors.",
+        confidence: "canonical",
+      },
+    ],
+  },
+  {
     id: "rel-kalluto-member-troupe",
     from: "kalluto",
     to: "phantom-troupe",
