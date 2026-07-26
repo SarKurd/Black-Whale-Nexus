@@ -899,6 +899,11 @@ export const mysteries: Mystery[] = [
         value: "partially-answered",
         note: "A second bearer surfaces: Furykov, whose curse Unma weaponized against Benjamin.",
       },
+      {
+        ch: 415,
+        value: "partially-answered",
+        note: "The flashback fills in the machine: armed by the Seed Urn ceremony, aura-fed since birth, target locked among the first eight princes — Furykov's own guess is Camilla, unless it is Benjamin. Who each sacrifice actually kills stays open.",
+      },
     ],
     relatedCharacterIds: [
       "beyond",

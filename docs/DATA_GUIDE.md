@@ -7,16 +7,16 @@ already made, and the gotchas that have bitten us.
 ## What this project is
 
 A client-only Next.js intelligence archive for the Hunter × Hunter **Succession
-War continuity, manga chapters 340–414**. Design is finished and must not be
+War continuity, manga chapters 340–415**. Design is finished and must not be
 changed without an explicit request — work here is almost always *data*.
 
-- Arc bounds live in `src/lib/types.ts`: `ARC_START = 340`, `ARC_END = 414`,
+- Arc bounds live in `src/lib/types.ts`: `ARC_START = 340`, `ARC_END = 415`,
   `PRE_ARC = 339`.
 - The 2011 anime ends at **chapter 339**. So `introducedCh: 0` / `revealCh: 0`
   means "known before 340" and is always visible. Anything first appearing at
   340+ gets its real chapter.
 - Clearance control (`ChapterControl`) has two modes only: **Manga·Ch** (slider,
-  340–414) and **Full**. There is no "Anime" mode — it was dropped as redundant
+  340–415) and **Full**. There is no "Anime" mode — it was dropped as redundant
   with the slider's low end. `SpoilerMode = "chapter" | "full"`.
 
 ## Source of truth: Hunterpedia
@@ -141,7 +141,7 @@ Black-and-white **manga** artwork, one-time fetch, committed under
 wiki infobox's **Manga tab**; grayscale everything for a uniform look. To add a
 new character's portrait: fetch the manga image, `sips` it to grayscale JPEG,
 regenerate the manifest, keep it a one-time committed asset (no fetch script in
-the repo). The committed set currently has 243 files. The two Woble identities
+the repo). The committed set currently has 248 files. The two Woble identities
 have distinct portraits: `woble.jpg` is the real prince (ch 350, pre-swap) and
 `woble-substitute.jpg` is the boy aboard (wiki page "Woble (boy)", ch 364
 panel). Every registered character has a verified local portrait.
@@ -208,6 +208,18 @@ prod server. The user often has their own dev server on 3000; don't fight it.
 - Duel abilities are `revealCh: 0` when anime-known (Gallery Fake, Black Voice,
   Texture Surprise, Bungee Gum) with the duel usage in `uses`; only genuinely
   new ones (Sun and Moon, Order Stamp, Disgusting Telephone) use real chapters.
+
+- **Chapter 415 errata (maintainer rulings — do not "correct"):** the chapter's
+  timestamp caption misprints the day; the archive uses **day 12, 1:50 p.m.,
+  25 minutes before Special Martial Law** (declared ≈2:15 p.m.). The Nen-space
+  caption misprints the room; Bisky and Saquelle are in **Room 1013**
+  (Marayam's), while Coventoba is in Room 1003. Official English title:
+  "Authenticity". Note the wiki synopsis's "365 years to decipher" is a typo —
+  the official reads ~365 days (plus ~700 days to conjure the cleansing item).
+  Ch 415 was ingested from the Hunterpedia synopsis cross-verified against the
+  official MANGA Plus translation, which supplied details the wiki dropped
+  (Beyond's colony-base-camp motive, the anti-exorcist obfuscation, the
+  weapons-surrender term at Room 1001, Kanjidol's purge-pretext targets).
 
 ## Registry completeness
 

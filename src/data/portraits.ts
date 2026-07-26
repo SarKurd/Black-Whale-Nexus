@@ -1,5 +1,5 @@
 /**
- * Portrait manifest — one-time locally committed asset set (243 files).
+ * Portrait manifest — one-time locally committed asset set (248 files).
  * Black-and-white manga artwork sourced from Hunterpedia (Manga tab where
  * available), converted to grayscale JPEG for this unofficial fan project.
  */
@@ -96,6 +96,7 @@ export const portraits: Record<string, string> = {
   "ken-i": "/portraits/ken-i.jpg",
   killua: "/portraits/killua.jpg",
   kobihi: "/portraits/kobihi.jpg",
+  komiya: "/portraits/komiya.jpg",
   konattsu: "/portraits/konattsu.jpg",
   kontasutin: "/portraits/kontasutin.jpg",
   koroabde: "/portraits/koroabde.jpg",
@@ -116,6 +117,7 @@ export const portraits: Record<string, string> = {
   luzurus: "/portraits/luzurus.jpg",
   lynch: "/portraits/lynch.jpg",
   machi: "/portraits/machi.jpg",
+  macne: "/portraits/macne.jpg",
   madwig: "/portraits/madwig.jpg",
   maizan: "/portraits/maizan.jpg",
   makaha: "/portraits/makaha.jpg",
@@ -134,6 +136,7 @@ export const portraits: Record<string, string> = {
   mizaistom: "/portraits/mizaistom.jpg",
   mizaurouno: "/portraits/mizaurouno.jpg",
   mizuri: "/portraits/mizuri.jpg",
+  momiita: "/portraits/momiita.jpg",
   momolly: "/portraits/momolly.jpg",
   momoze: "/portraits/momoze.jpg",
   montblanc: "/portraits/montblanc.jpg",
@@ -170,6 +173,7 @@ export const portraits: Record<string, string> = {
   perigord: "/portraits/perigord.jpg",
   peuckert: "/portraits/peuckert.jpg",
   phinks: "/portraits/phinks.jpg",
+  pitakusu: "/portraits/pitakusu.jpg",
   pyon: "/portraits/pyon.jpg",
   quorolle: "/portraits/quorolle.jpg",
   renko: "/portraits/renko.jpg",
@@ -179,6 +183,7 @@ export const portraits: Record<string, string> = {
   rihan: "/portraits/rihan.jpg",
   risnorth: "/portraits/risnorth.jpg",
   roccoli: "/portraits/roccoli.jpg",
+  ryubihhi: "/portraits/ryubihhi.jpg",
   ryoji: "/portraits/ryoji.jpg",
   saccho: "/portraits/saccho.jpg",
   saiyu: "/portraits/saiyu.jpg",

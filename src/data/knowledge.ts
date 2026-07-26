@@ -1162,9 +1162,9 @@ export const characterKnowledge: CharacterKnowledge[] = [
     factId: "fact-beyond-curse",
     characterId: "furykov",
     state: "knows",
-    sinceCh: 413,
-    revealCh: 413,
-    note: "Learned he is cursed when Unma weaponized the mark against him.",
+    sinceCh: 0,
+    revealCh: 415,
+    note: "Has known since two months before departure: Combo Master flagged the curse on Seed Urn night, and Beyond confirmed the design by phone (shown ch 415). Unma weaponizing the mark (ch 413) only proved how much others knew too.",
   },
   {
     factId: "fact-beyond-curse",

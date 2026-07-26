@@ -125,6 +125,10 @@ export const princes: Prince[] = [
         ch: 413,
         text: "Discovers Furykov's TSK-17 poisoning and Unma's betrayal; accepts Furykov back and accelerates the purge, marking Camilla and Tserriednich for personal execution.",
       },
+      {
+        ch: 415,
+        text: "Special Martial Law goes live at 2:15 p.m.: princes summoned to Room 1001 to hear him alone, weapons surrendered at the door, Royal-Army-only escorts — and the 'clemency' for Room 1014 doubles as a ship-wide hunt for the real Woble.",
+      },
     ],
     mysteryIds: ["my-nasubi-intent"],
   },
@@ -442,6 +446,10 @@ export const princes: Prince[] = [
       "konattsu",
       "mizaurouno",
       "heisen",
+      "momiita",
+      "ryubihhi",
+      "pitakusu",
+      "komiya",
     ],
     publicStrategy:
       "Technocratic neutrality: fund research, avoid provocation, survive on competence.",
@@ -591,6 +599,7 @@ export const princes: Prince[] = [
       "javietti",
       "gadeau",
       "odessa",
+      "macne",
     ],
     hunterCharacterIds: ["basho", "ridge", "scairt"],
     publicStrategy:
@@ -665,6 +674,10 @@ export const princes: Prince[] = [
       {
         ch: 414,
         text: "Anticipates martial law before the announcement: orders no resistance, drugs burned, and Ridge onto Kanjidol.",
+      },
+      {
+        ch: 415,
+        text: "Gone: when the martial-law lockdown reaches Room 1007, the prince and Rice are already missing — Satobi's guess is the Cha-R boss.",
       },
     ],
   },

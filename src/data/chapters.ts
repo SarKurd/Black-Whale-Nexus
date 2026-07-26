@@ -1,11 +1,13 @@
 /**
  * Chapter pages — per-chapter summaries and "what changed" diff blocks for
- * chapters 358–414, using real chapter titles.
+ * chapters 358–415, using real chapter titles.
  *
  * Voyage days follow canon anchors: departure (ch 359) = day 1; ch 369 opens
  * day 2 (18h in); ch 376 hits day 3; the first banquet (ch 382–383) is day 8;
- * ch 388 ends on day 10; ch 403 is day 11; ch 407–414 all fall on day 12
- * (ch 411 states 8 a.m. of the twelfth day). "≈" marks interpolation.
+ * ch 388 ends on day 10; ch 403 is day 11; ch 407–415 all fall on day 12
+ * (ch 411 states 8 a.m. of the twelfth day; ch 415 runs 1:50–2:35 p.m. —
+ * its printed "Day 11 (Wednesday)" caption is a Togashi-side misprint, see
+ * DATA_GUIDE). "≈" marks interpolation.
  */
 
 import type { ChapterInfo } from "@/lib/types";
@@ -3944,6 +3946,105 @@ export const chapters: ChapterInfo[] = [
       ],
       changedObjectives: [
         "Bill defects from Beyond; Room 1014 plots to trap him with a Moonlight Act contract",
+      ],
+      mysteriesAdvanced: ["my-beyond-curse-targets", "my-woble-location"],
+    },
+  },
+  {
+    number: 415,
+    title: "Authenticity",
+    day: "12 (1:50–≈2:35 p.m.)",
+    summary:
+      "A flashback answers chapter 413's question: Furykov has known for months. Two months before departure, his conjured laptop Combo Master flagged Beyond's curse on him — two victims, himself and one anonymized prince — and a phone call got cheerful confirmation from Beyond, plus the arithmetic that makes the counter hopeless: about a year of deciphering at Beyond's side, then seven hundred days to conjure a cleansing item. His father's parting counsel: only a sole surviving prince keeps the Guardian Spirit Beast's blessing. In the present, Oito's coded Yamato postcard goes to the general-store dealer under Babimyna's nose — minutes before Special Martial Law slams down at 2:15 p.m. The princes are ordered to Room 1001 to hear Benjamin alone; Luzurus and Rice are already gone; the restrained Kanjidol grins at the pretext he manufactured; Bisky opts to hole up inside Marayam's one-shot Nen space; and Benjamin's 'clemency' confines Oito and the substitute to a bedroom while the ship is searched for a prince who was never aboard.",
+    eventIds: [
+      "ev-415-curse-discovered",
+      "ev-415-postcard-plan",
+      "ev-415-sml-declared",
+      "ev-415-luzurus-vanishes",
+      "ev-415-nen-space-standoff",
+      "ev-415-room1014-ruling",
+    ],
+    appearingCharacterIds: [
+      "furykov",
+      "beyond",
+      "shimano",
+      "kurapika",
+      "oito",
+      "sakata",
+      "babimyna",
+      "camilla",
+      "coventoba",
+      "tserriednich",
+      "salkov",
+      "rihan",
+      "momiita",
+      "ryubihhi",
+      "pitakusu",
+      "mizaurouno",
+      "longhi",
+      "beeta",
+      "maor",
+      "heisen",
+      "komiya",
+      "tubeppa",
+      "izunavi",
+      "tyson",
+      "orau",
+      "giuliano",
+      "famule",
+      "ridge",
+      "basho",
+      "macne",
+      "javietti",
+      "satobi",
+      "kanjidol",
+      "seiko",
+      "bachaem",
+      "saquelle",
+      "biscuit",
+      "vergei",
+    ],
+    locationIds: [
+      "room-1014",
+      "vvip-area",
+      "zhang-lei-quarters",
+      "tserriednich-quarters",
+      "room-1005",
+      "room-1006",
+      "room-1007",
+      "fugetsu-quarters",
+      "room-1013-nen-space",
+    ],
+    storylineIds: [
+      "special-martial-law",
+      "kurapika-woble",
+      "benjamin-military",
+      "beyond-netero",
+      "succession-contest",
+      "luzurus-investigation",
+    ],
+    abilitiesUsedIds: ["combo-master", "beyond-curse"],
+    changes: {
+      newCharacters: ["momiita", "ryubihhi", "pitakusu", "komiya", "macne"],
+      newKnowledge: [
+        "Furykov has known about his curse since the night of the Seed Urn ceremony — and that its target is one of the first eight princes",
+        "Beyond's curse siphons its bearer's aura from birth, was overbuilt to beat any Guardian Spirit Beast, and resists deciphering as anti-exorcist insurance",
+        "Only a sole surviving prince keeps the beast's blessing and the nation's prosperity — Beyond's stated reading of the contest's rule",
+        "Marayam's Nen space is likely a one-time-use ability: leave, and it may reset, sleep, or vanish",
+      ],
+      newThreats: [
+        "Kanjidol's restraint is manufactured 'proof' to purge the Hunter guards, Luzurus's household, and the Cha-R as traitors",
+        "Special Martial Law doubles as a ship-wide manhunt for the real Prince Woble",
+      ],
+      movement: [
+        "Luzurus and Rice vanish from Room 1007 — Satobi's guess: with the Cha-R boss",
+        "All princes ordered to Room 1001 — weapons surrendered at the door, escorts wait outside, Benjamin speaks alone",
+        "Oito's eight postcards enter the general-store delivery chain under military oversight",
+      ],
+      changedObjectives: [
+        "Tubeppa weighs two readings: a trump card burned early, or a premeditated cull of the senior princes",
+        "Bisky commits Marayam's camp to holing up inside the Nen space, treason charge or not",
+        "Kurapika concludes the declaration came too fast — something bigger than the curse revelation is driving it",
       ],
       mysteriesAdvanced: ["my-beyond-curse-targets", "my-woble-location"],
     },

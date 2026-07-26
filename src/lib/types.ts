@@ -7,7 +7,7 @@
  * fact; `ch` on history entries marks when it becomes true in-universe.
  *
  * Chapter numbering follows the manga. This dataset covers the full
- * Succession War continuity: chapters 340–414 — from Beyond Netero's
+ * Succession War continuity: chapters 340–415 — from Beyond Netero's
  * expedition announcement through the current chapter. `0` on
  * `introducedCh` means the entity was known before chapter 340 (the 2011
  * anime ends at chapter 339, so anime-only viewers know it).
@@ -16,7 +16,7 @@
 export type Id = string;
 
 export const ARC_START = 340;
-export const ARC_END = 414;
+export const ARC_END = 415;
 export const PRE_ARC = 339;
 
 /** How certain we are about a claim. Rendered as a visible indicator. */

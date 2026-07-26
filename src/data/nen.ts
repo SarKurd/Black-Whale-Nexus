@@ -2416,7 +2416,7 @@ export const nenAbilities: NenAbility[] = [
     kind: "personal",
     nenType: "specialist",
     description:
-      "Furykov's Specialist analysis ability, formally explained only in ch 413: by cumulatively spending time near a target, he deciphers the full details of their ability — then can spend the same amount of time again to craft equipment that destroys, supplements, or amplifies it. It is the engine behind his uncanny knack for spotting Nen users and their types.",
+      "Furykov's Specialist analysis ability, formally explained in ch 413 and shown in full in ch 415's flashback: it conjures a laptop bearing Kakin's great-tree emblem, whose game-like interface (weapon/armor/tool menus) monitors him and analyzes hostile Nen. By cumulatively spending time near a target, he deciphers the full details of their ability — then can spend the same amount of time again to craft equipment that destroys, supplements, or amplifies it. It is the engine behind his uncanny knack for spotting Nen users and their types, and he counts on it to sort true statements from lies.",
     activation:
       "Passive accumulation of time in the target's vicinity; equipment creation is a second, equal time investment.",
     conditions: [
@@ -2427,8 +2427,13 @@ export const nenAbilities: NenAbility[] = [
     effects: [
       "Full read of a target's ability mechanics.",
       "Bespoke anti-ability (or pro-ability) equipment.",
+      "Alerts on covert or phased Nen attacks against Furykov — curses and illness-types included — and lists everyone hit by the same attack.",
+      "Quoted him a counter-plan against Beyond's curse: roughly 365 days of deciphering at Beyond's side, then about 700 more to conjure a cleansing item.",
     ],
-    weaknesses: ["Slow by design; useless in a surprise engagement."],
+    weaknesses: [
+      "Slow by design; useless in a surprise engagement.",
+      "A caster can obfuscate: Beyond wove his curse to resist deciphering as insurance against exorcists, and the affected-users list conceals a co-victim's face at the caster's will.",
+    ],
     firstSeenCh: 369,
     revealCh: 413,
     uses: [
@@ -2440,9 +2445,16 @@ export const nenAbilities: NenAbility[] = [
         ch: 413,
         note: "Mechanics formally introduced after his confession to Benjamin.",
       },
+      {
+        ch: 415,
+        note: "The conjured-laptop form shown in flashback: the curse alert, the affected-users list, and the hopeless counter-timeline against Beyond's curse.",
+      },
     ],
     status: "active",
-    awareCharacterIds: [{ characterId: "benjamin", sinceCh: 413 }],
+    awareCharacterIds: [
+      { characterId: "benjamin", sinceCh: 413 },
+      { characterId: "beyond", sinceCh: 0 },
+    ],
     evidence: [
       {
         chapter: 413,
@@ -2736,6 +2748,9 @@ export const nenAbilities: NenAbility[] = [
     conditions: [
       "Mark is visible only under Gyo.",
       "Cannot be purged by burning or excising the marked flesh (per the Nen user who examined Longhi).",
+      "Furykov's curse armed itself the night 'that prince' performed the Seed Urn ceremony — locking a target among the first eight princes (ch 415).",
+      "It siphons the bearer's aura from birth, banking power for decades so it can beat any Guardian Spirit Beast regardless of target.",
+      "Deliberately woven to resist deciphering — Combo Master quotes ~365 days of analysis at Beyond's side plus ~700 days to conjure a cleansing item; Beyond calls it insurance against exorcists.",
     ],
     effects: [
       "Curses a predetermined target to death on the sacrifice's demise.",
@@ -2752,6 +2767,10 @@ export const nenAbilities: NenAbility[] = [
       {
         ch: 413,
         note: "Furykov reveals his own eye-mark and Unma's 48-hour TSK-17 ultimatum backed by curse activation.",
+      },
+      {
+        ch: 415,
+        note: "Flashback: Beyond confirms the design to Furykov two months before departure — motive included: favor with the next king, and Kakin's colony as the expedition's base camp.",
       },
     ],
     status: "active",
