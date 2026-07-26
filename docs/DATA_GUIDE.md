@@ -46,6 +46,18 @@ Key parsing notes:
   corpse (appears as a body), `{{M}}`/`{{Mi}}`/`{{I}}` = mention/image-only
   (the character did not physically appear — do NOT list them in
   `appearingCharacterIds`), `{{V}}` = voice/vision-only (alive, not a death).
+- **What counts for `appearingCharacterIds`** (settled by the chs 340–414
+  audit): plain, `{{D}}`, `{{Co}}`, and `{{F}}` flashback panels count —
+  drawn-on-page is the test. `{{M}}`/`{{Mi}}`/`{{I}}` and `{{V}}` do not.
+  `{{Sm|…}}` depends on its qualifier: Video, Possessed, Corpse, Casket,
+  Nen Double, Guardian Spirit Beast, and Flashback count; Photo, Image,
+  Cover, Silhouette, Vision, and Mentioned-anything do not. Deliberate
+  deviations: ch 414's imagination montage keeps gon/killua/alluka/noko out
+  of the chapter list (their personal `chapterAppearances` keep 414); the
+  boy aboard is `woble-substitute` wherever the wiki writes "Woble"; the
+  possessed Balsamilco chapters also list `halkenburg`. Personal
+  `chapterAppearances` are curated "notable" lists and may include montage
+  and flashback panels.
 - This wiki does NOT enable the `extracts` prop; use `revisions` (raw wikitext).
 - Ability standalone pages often don't exist — mechanics live in the
   **character** page's ability section.
@@ -208,6 +220,24 @@ registry. Do not leave named people as prose-only references.
 For a killer/cause that is genuinely NOT a person — e.g. Kacho killed by the
 ritual's horde of hands for fleeing the ship — use the `DeathRecord.killerName`
 free-text field instead of inventing a registry id. `death-kacho` uses it.
+
+## Relationship-graph conventions (settled by the full-registry audit)
+
+- `superiorId` renders directly in the dossier and does NOT need a matching
+  edge. Edges carry the **primary allegiance**: a guard's `serves` edge points
+  at the prince (or the queen who placed them), not at their captain.
+- Roster parity: everyone in a prince's `guardCharacterIds` has a `serves`
+  edge — except Woble's Room 1014 household, which deliberately uses
+  `protects`/`commands`/`trusts` instead.
+- Every `DeathRecord` with a `killerId` has a matching `killed` edge.
+- `friend` edges only where at least one endpoint has **no** shared
+  faction/`member-of` bond (no 36-edge clique among Troupe founders — their
+  membership edges carry it; Sarasa and Sheila need explicit edges because
+  they were never members).
+- Kacho→Fugetsu has two `protects` edges on purpose: Kacho herself, and her
+  beast Without You after her death.
+- Nasubi has a `family` edge to Benjamin only — deliberate: `royal-family`
+  membership binds the rest; 13 more king-edges would hairball the web.
 
 ## How to hunt for missing content (the method that works)
 
