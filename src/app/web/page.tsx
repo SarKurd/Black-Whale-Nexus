@@ -3,7 +3,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { Suspense, useEffect, useMemo, useState } from "react";
+import { Suspense, useCallback, useEffect, useMemo, useState } from "react";
 import {
   ArchiveNote,
   ChapterRef,
@@ -93,8 +93,37 @@ function WebPageInner() {
   );
 
   useEffect(() => {
+    if (focusParam) setSelection({ kind: "node", id: focusParam });
+  }, [focusParam]);
+
+  useEffect(() => {
     if (presetParam && presetById.has(presetParam)) setPresetId(presetParam);
   }, [presetParam]);
+
+  const clearFocusParam = useCallback(() => {
+    if (!focusParam) return;
+    const nextParams = new URLSearchParams(params.toString());
+    nextParams.delete("focus");
+    const query = nextParams.toString();
+    window.history.replaceState(
+      null,
+      "",
+      `${window.location.pathname}${query ? `?${query}` : ""}${window.location.hash}`,
+    );
+  }, [focusParam, params]);
+
+  const handleSelectionChange = useCallback(
+    (nextSelection: GraphSelection | null) => {
+      setSelection(nextSelection);
+      if (
+        focusParam &&
+        (nextSelection?.kind !== "node" || nextSelection.id !== focusParam)
+      ) {
+        clearFocusParam();
+      }
+    },
+    [clearFocusParam, focusParam],
+  );
 
   // The Evolve slider is a local rewind for replaying the network's growth.
   // When the global clearance changes, snap it back to follow — otherwise a
@@ -109,21 +138,25 @@ function WebPageInner() {
   useEffect(() => {
     if (!selection) return;
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setSelection(null);
+      if (e.key === "Escape") handleSelectionChange(null);
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [selection]);
+  }, [selection, handleSelectionChange]);
 
   // Displayed chapter can rewind below clearance but never above it.
   const displayCh = Math.min(viewCh ?? ch, ch);
+  const activeFocusId =
+    selection?.kind === "node" && selection.id === focusParam
+      ? focusParam
+      : undefined;
 
   const nodeIds = useMemo(() => {
     const preset = presetById.get(presetId) ?? presetById.get("all");
     const ids = preset?.nodeIds() ?? new Set<string>();
-    if (focusParam) ids.add(focusParam);
+    if (activeFocusId) ids.add(activeFocusId);
     return ids;
-  }, [presetId, focusParam]);
+  }, [presetId, activeFocusId]);
 
   return (
     <div>
@@ -137,7 +170,7 @@ function WebPageInner() {
             value={presetId}
             onChange={(e) => {
               setPresetId(e.target.value);
-              setSelection(null);
+              handleSelectionChange(null);
             }}
             className="border border-line bg-panel px-2 py-1.5 text-sm text-parchment outline-none"
             aria-label="Graph preset"
@@ -179,9 +212,9 @@ function WebPageInner() {
           <RelationshipGraph
             nodeIds={nodeIds}
             chapter={displayCh}
-            focusId={focusParam}
+            focusId={activeFocusId}
             selection={selection}
-            onSelect={setSelection}
+            onSelect={handleSelectionChange}
           />
         </div>
 
@@ -203,13 +236,13 @@ function WebPageInner() {
                   <NodePanel
                     id={selection.id}
                     ch={displayCh}
-                    onClose={() => setSelection(null)}
+                    onClose={() => handleSelectionChange(null)}
                   />
                 ) : (
                   <EdgePanel
                     id={selection.id}
                     ch={displayCh}
-                    onClose={() => setSelection(null)}
+                    onClose={() => handleSelectionChange(null)}
                   />
                 )}
               </div>
