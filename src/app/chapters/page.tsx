@@ -1,22 +1,30 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo } from "react";
-import { ArchiveNote, SectionHeading } from "@/components/ui/kit";
+import { useMemo, useState } from "react";
+import {
+  ArchiveNote,
+  OrderToggle,
+  SectionHeading,
+  type SortDirection,
+} from "@/components/ui/kit";
 import { sortedChapters, storylineById } from "@/lib/db";
 import { useEffectiveChapter } from "@/lib/store";
 import type { ChapterInfo } from "@/lib/types";
 
 export default function ChaptersIndexPage() {
   const ch = useEffectiveChapter();
+  const [chronology, setChronology] = useState<SortDirection>("asc");
 
   const { open, sealed } = useMemo(() => {
-    const covered: ChapterInfo[] = sortedChapters;
+    const covered: ChapterInfo[] = [...sortedChapters].sort((a, b) =>
+      chronology === "desc" ? b.number - a.number : a.number - b.number,
+    );
     return {
       open: covered.filter((c) => c.number <= ch),
       sealed: covered.filter((c) => c.number > ch),
     };
-  }, [ch]);
+  }, [ch, chronology]);
 
   return (
     <div>
@@ -27,6 +35,10 @@ export default function ChaptersIndexPage() {
           Filed reports for every covered chapter of the voyage. Reports above
           your clearance stay sealed — not even their titles are written out.
         </p>
+      </div>
+
+      <div className="mb-4 flex justify-end">
+        <OrderToggle direction={chronology} onChange={setChronology} />
       </div>
 
       {open.length === 0 ? (
