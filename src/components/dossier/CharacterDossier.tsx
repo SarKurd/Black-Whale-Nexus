@@ -205,13 +205,15 @@ function CharacterDossierContent({
     <div>
       {/* File header */}
       <div className="dossier dossier-gold corner-ticks mb-4 p-5">
-        <div className="flex flex-wrap items-start gap-4">
+        <div className="flex items-start gap-4">
           <Monogram characterId={c.id} size="lg" />
           <div className="min-w-0 flex-1">
             <div className="intel-label-gold">
               Personnel file · {faction?.name ?? "Unaffiliated"}
             </div>
-            <h1 className="royal-heading text-3xl">{c.name}</h1>
+            <h1 className="royal-heading break-words text-2xl sm:text-3xl">
+              {c.name}
+            </h1>
             {c.aliases && c.aliases.length > 0 && (
               <div className="font-mono text-[11px] tracking-wider text-muted">
                 a.k.a. {c.aliases.join(" · ")}
@@ -245,29 +247,32 @@ function CharacterDossierContent({
                 ))}
             </div>
           </div>
-          <div className="flex flex-col items-end gap-1.5">
-            <Link
-              href={`/web?focus=${c.id}`}
-              className="border border-line px-2.5 py-1 font-mono text-[10px] uppercase tracking-widest text-teal hover:border-gold-line hover:text-gold-bright"
-            >
-              Focus in web
-            </Link>
-            <Link
-              href={`/compare?type=characters&a=${c.id}`}
-              className="border border-line px-2.5 py-1 font-mono text-[10px] uppercase tracking-widest text-teal hover:border-gold-line hover:text-gold-bright"
-            >
-              Compare
-            </Link>
-            {d.prince && (
-              <Link
-                href={`/princes/${d.prince.id}`}
-                className="border border-gold-line px-2.5 py-1 font-mono text-[10px] uppercase tracking-widest text-gold hover:text-gold-bright"
-              >
-                Royal profile
-              </Link>
-            )}
-          </div>
         </div>
+        <nav
+          aria-label="Character file actions"
+          className="mt-4 grid grid-cols-2 gap-2 border-t border-line/60 pt-3 sm:flex sm:justify-end"
+        >
+          {d.prince && (
+            <Link
+              href={`/princes/${d.prince.id}`}
+              className="col-span-2 border border-gold-line px-2.5 py-1.5 text-center font-mono text-[10px] uppercase tracking-widest text-gold hover:text-gold-bright sm:col-auto"
+            >
+              Royal profile
+            </Link>
+          )}
+          <Link
+            href={`/web?focus=${c.id}`}
+            className="border border-line px-2.5 py-1.5 text-center font-mono text-[10px] uppercase tracking-widest text-teal hover:border-gold-line hover:text-gold-bright"
+          >
+            Focus in web
+          </Link>
+          <Link
+            href={`/compare?type=characters&a=${c.id}`}
+            className="border border-line px-2.5 py-1.5 text-center font-mono text-[10px] uppercase tracking-widest text-teal hover:border-gold-line hover:text-gold-bright"
+          >
+            Compare
+          </Link>
+        </nav>
         {d.targeting.length > 0 && (
           <div className="mt-3 border-t border-line pt-2 text-sm">
             <span className="stamp mr-3 inline-block text-[10px] text-blood-bright">

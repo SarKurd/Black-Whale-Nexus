@@ -125,13 +125,15 @@ export function PrinceProfile({ id }: { id: string }) {
     >
       {/* Royal file header */}
       <div className="dossier dossier-gold corner-ticks mb-4 p-5">
-        <div className="flex flex-wrap items-start gap-4">
+        <div className="flex items-start gap-4">
           <Monogram characterId={p.characterId} size="lg" />
           <div className="min-w-0 flex-1">
             <div className="intel-label-gold">
               Royal file · {ordinal(p.rank)} Prince of Kakin
             </div>
-            <h1 className="royal-heading text-3xl">{name}</h1>
+            <h1 className="royal-heading break-words text-2xl sm:text-3xl">
+              {name}
+            </h1>
             <div className="mt-1 text-sm text-parchment">
               Born to{" "}
               {p.motherCharacterId ? (
@@ -173,27 +175,30 @@ export function PrinceProfile({ id }: { id: string }) {
               )}
             </div>
           </div>
-          <div className="flex flex-col items-end gap-1.5">
-            <Link
-              href={`/characters/${p.characterId}`}
-              className="border border-gold-line px-2.5 py-1 font-mono text-[10px] uppercase tracking-widest text-gold hover:text-gold-bright"
-            >
-              Personnel dossier
-            </Link>
-            <Link
-              href={`/web?focus=${p.characterId}`}
-              className="border border-line px-2.5 py-1 font-mono text-[10px] uppercase tracking-widest text-teal hover:border-gold-line hover:text-gold-bright"
-            >
-              Focus in web
-            </Link>
-            <Link
-              href={`/compare?type=princes&a=${p.id}`}
-              className="border border-line px-2.5 py-1 font-mono text-[10px] uppercase tracking-widest text-teal hover:border-gold-line hover:text-gold-bright"
-            >
-              Compare
-            </Link>
-          </div>
         </div>
+        <nav
+          aria-label="Prince file actions"
+          className="mt-4 grid grid-cols-2 gap-2 border-t border-line/60 pt-3 sm:flex sm:justify-end"
+        >
+          <Link
+            href={`/characters/${p.characterId}`}
+            className="col-span-2 border border-gold-line px-2.5 py-1.5 text-center font-mono text-[10px] uppercase tracking-widest text-gold hover:text-gold-bright sm:col-auto"
+          >
+            Personnel dossier
+          </Link>
+          <Link
+            href={`/web?focus=${p.characterId}`}
+            className="border border-line px-2.5 py-1.5 text-center font-mono text-[10px] uppercase tracking-widest text-teal hover:border-gold-line hover:text-gold-bright"
+          >
+            Focus in web
+          </Link>
+          <Link
+            href={`/compare?type=princes&a=${p.id}`}
+            className="border border-line px-2.5 py-1.5 text-center font-mono text-[10px] uppercase tracking-widest text-teal hover:border-gold-line hover:text-gold-bright"
+          >
+            Compare
+          </Link>
+        </nav>
       </div>
 
       <div className="grid gap-4 lg:grid-cols-3">
