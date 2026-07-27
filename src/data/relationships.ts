@@ -3745,10 +3745,166 @@ export const relationships: Relationship[] = [
     secret: false,
     confirmed: true,
     startCh: 0,
-    revealCh: 0,
+    revealCh: 340,
     mutualAwareness: true,
-    description: "Vice-leader, saboteur-in-waiting, or both.",
-    evidence: [{ chapter: 0, note: "Pre-arc.", confidence: "canonical" }],
+    description:
+      "Beyond's original number two and the expedition's smiling internal threat: he built his position before the public announcement, then let Ging buy the title while keeping the team's loyalties and contact network in view.",
+    history: [
+      {
+        ch: 340,
+        text: "Appears among the ten key followers flanking Beyond during Kakin's announcement.",
+      },
+      {
+        ch: 343,
+        text: "Identifies himself as the expedition team's number two when Ging enters the hierarchy.",
+      },
+      {
+        ch: 347,
+        text: "Accepts Ging's nominal promotion, transmits the returning members' contacts, and declines Ging's offer to keep leading so he can watch what Ging does with the position.",
+      },
+    ],
+    evidence: [
+      {
+        chapter: 340,
+        note: "Shown among Beyond's ten important followers; the chapter notes identify him as part of the expedition team.",
+        confidence: "canonical",
+      },
+      {
+        chapter: 343,
+        note: "States that he is the team's current number two.",
+        confidence: "canonical",
+      },
+    ],
+  },
+  {
+    id: "rel-pariston-former-zodiacs",
+    from: "pariston",
+    to: "zodiacs",
+    kind: "former-member-of",
+    directed: true,
+    strength: "strong",
+    secret: false,
+    confirmed: true,
+    startCh: 340,
+    revealCh: 340,
+    mutualAwareness: true,
+    description:
+      "The former Rat and Association vice-chairman resigned from the Zodiacs before Beyond's announcement reached their conference room, leaving his old colleagues to hunt the expedition he had already joined.",
+    evidence: [
+      {
+        chapter: 340,
+        note: "Cheadle reports that Ging and Pariston have resigned from the Zodiacs; Pariston is simultaneously shown beside Beyond.",
+        confidence: "canonical",
+      },
+    ],
+  },
+  {
+    id: "rel-pariston-allied-beyond",
+    from: "pariston",
+    to: "beyond",
+    kind: "allied",
+    directed: false,
+    strength: "strong",
+    secret: false,
+    confirmed: true,
+    startCh: 340,
+    revealCh: 340,
+    mutualAwareness: true,
+    description:
+      "Beyond's original deputy and the architect working to reunite him with the expedition after landfall. The alliance is real but not transparent: Beyond does not know Pariston planted Saiyu inside the Zodiacs or designed a breakout on his behalf.",
+    history: [
+      {
+        ch: 340,
+        text: "Pariston stands among Beyond's ten key followers during the public expedition announcement.",
+      },
+      {
+        ch: 343,
+        text: "Runs the expedition team as Beyond's number two while its leader remains in custody.",
+      },
+      {
+        ch: 349,
+        text: "Mizaistom reconstructs Pariston's hidden plan to recover Beyond through Saiyu — a conspiracy Beyond himself does not know exists.",
+      },
+    ],
+    evidence: [
+      {
+        chapter: 340,
+        note: "Publicly presented as one of Beyond's ten important followers.",
+        confidence: "canonical",
+      },
+      {
+        chapter: 349,
+        note: "Mizaistom identifies Pariston as the mastermind plotting to take Beyond back.",
+        confidence: "canonical",
+      },
+    ],
+  },
+  {
+    id: "rel-pariston-commands-saiyu",
+    from: "pariston",
+    to: "saiyu",
+    kind: "commands",
+    directed: true,
+    strength: "strong",
+    secret: true,
+    confirmed: true,
+    startCh: 340,
+    revealCh: 349,
+    mutualAwareness: true,
+    description:
+      "Pariston's inside man among the Zodiacs. Saiyu guards Beyond officially while preserving a route to free him after landfall; the principal being rescued is the only part of the triangle kept outside the plan.",
+    history: [
+      {
+        ch: 348,
+        text: "Kurapika's hidden-camera lie detection isolates Saiyu as the Zodiac mole.",
+      },
+      {
+        ch: 349,
+        text: "Mizaistom names Pariston as the mastermind behind Saiyu's conspiracy and treats the Monkey as Pariston's spy.",
+      },
+    ],
+    evidence: [
+      {
+        chapter: 349,
+        note: "Mizaistom concludes that Pariston masterminded the conspiracy with Saiyu and is plotting to recover Beyond.",
+        confidence: "canonical",
+      },
+    ],
+  },
+  {
+    id: "rel-pariston-manipulating-muherr",
+    from: "pariston",
+    to: "muherr",
+    kind: "manipulating",
+    directed: true,
+    strength: "moderate",
+    secret: true,
+    confirmed: true,
+    startCh: 346,
+    revealCh: 347,
+    endCh: 347,
+    endNote:
+      "The staged attack ended once Ging exposed the test and defeated Muherr's men.",
+    mutualAwareness: true,
+    description:
+      "Pariston turns Muherr's hostility and mercenary unit into a concealed field test: force Ging through a staged ultimatum and aura-bullet ambush, then watch closely enough to learn how he fights.",
+    history: [
+      {
+        ch: 346,
+        text: "Muherr's side presents Ging and Pariston with an ultimatum designed to force one of them out of the expedition.",
+      },
+      {
+        ch: 347,
+        text: "Ging defeats the attackers and identifies the entire confrontation as Pariston's show, staged to expose his abilities.",
+      },
+    ],
+    evidence: [
+      {
+        chapter: 347,
+        note: "Ging identifies the attack as Pariston's staged test; Muherr later discusses how their scheme was discovered.",
+        confidence: "canonical",
+      },
+    ],
   },
   {
     id: "rel-ging-member-expedition",
@@ -3778,8 +3934,43 @@ export const relationships: Relationship[] = [
     startCh: 0,
     revealCh: 0,
     mutualAwareness: true,
-    description: "Mutual, gleeful, and permanent.",
-    evidence: [{ chapter: 0, note: "Pre-arc.", confidence: "canonical" }],
+    description:
+      "Ging joins Beyond's team to keep Pariston from acting unchecked; Pariston answers by treating the only person who reads him cleanly as both adversary and entertainment. Their contest drives the expedition's entire internal hierarchy.",
+    history: [
+      {
+        ch: 342,
+        text: "Ging confronts Pariston over the 5,000 Chimera Ant soldiers and declares that he will no longer let him act freely.",
+      },
+      {
+        ch: 343,
+        text: "Ging dissects Pariston's need to hurt what he loves and claims the number-two seat specifically to obstruct him.",
+      },
+      {
+        ch: 345,
+        text: "Pariston recognizes Ging's thinking as uncomfortably similar to his own and privately admits hating someone for the first time.",
+      },
+      {
+        ch: 347,
+        text: "Ging exposes Pariston's staged ambush, tells him to test him directly next time, and accepts the nominal leadership Pariston relinquishes to observe him.",
+      },
+    ],
+    evidence: [
+      {
+        chapter: 342,
+        note: "Ging explicitly challenges Pariston and vows to stop him from doing as he pleases.",
+        confidence: "canonical",
+      },
+      {
+        chapter: 345,
+        note: "Pariston privately identifies Ging as the first person he has hated.",
+        confidence: "canonical",
+      },
+      {
+        chapter: 347,
+        note: "Ging exposes Pariston's staged attack and states that his purpose is to thwart Pariston's schemes.",
+        confidence: "canonical",
+      },
+    ],
   },
   {
     id: "rel-leorio-trusts-kurapika",
