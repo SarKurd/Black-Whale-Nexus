@@ -138,7 +138,7 @@ function FactionCard({
       initial={{ opacity: 0, y: 8 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.25, delay: Math.min(index, 8) * 0.04 }}
-      className="dossier corner-ticks group flex h-full flex-col transition-colors hover:border-gold-line"
+      className="dossier corner-ticks group flex h-full min-w-0 flex-col transition-colors hover:border-gold-line"
     >
       {/* Faction color bar — the swatch used for this faction across the app. */}
       <div

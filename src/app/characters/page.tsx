@@ -121,7 +121,7 @@ export default function CharactersPage() {
               <Link
                 key={c.id}
                 href={`/characters/${c.id}`}
-                className="dossier corner-ticks group flex gap-3 p-3 transition-colors hover:border-gold-line"
+                className="dossier corner-ticks group flex min-w-0 gap-3 p-3 transition-colors hover:border-gold-line"
               >
                 <Monogram characterId={c.id} />
                 <div className="min-w-0 flex-1">

@@ -265,7 +265,7 @@ function AbilityCard({ ability }: { ability: NenAbility }) {
       ? ability.description
       : ability.description.slice(0, periodIdx + 1);
   return (
-    <article className="dossier group block p-3 transition-colors hover:border-gold-line">
+    <article className="dossier group block min-w-0 p-3 transition-colors hover:border-gold-line">
       <div className="flex items-baseline justify-between gap-2">
         <Link
           href={`/nen/${ability.id}`}
