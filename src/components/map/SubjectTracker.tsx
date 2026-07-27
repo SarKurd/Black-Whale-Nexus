@@ -2,7 +2,7 @@
 
 import { useMemo, useRef, useState } from "react";
 import { Monogram, StatusChip } from "@/components/ui/kit";
-import { characterById, characters, locationById } from "@/lib/db";
+import { characterById, characters, locationById, locations } from "@/lib/db";
 import { locationAt, statusAt } from "@/lib/spoiler";
 import { ARC_START } from "@/lib/types";
 import { CANONICITY_COLOR, isAboard } from "./occupancy";
@@ -17,12 +17,14 @@ export function SubjectTracker({
   displayCh,
   trackedId,
   onTrack,
+  onSelectLocation,
   onViewChapter,
 }: {
   ch: number;
   displayCh: number;
   trackedId: string | null;
   onTrack: (characterId: string | null) => void;
+  onSelectLocation: (locationId: string) => void;
   onViewChapter: (ch: number) => void;
 }) {
   const [query, setQuery] = useState("");
@@ -31,15 +33,37 @@ export function SubjectTracker({
   const matches = useMemo(() => {
     const q = query.trim().toLowerCase();
     if (q.length < 2) return [];
-    const visible = characters.filter(
-      (c) => c.introducedCh <= ch && c.name.toLowerCase().includes(q),
-    );
-    visible.sort((a, b) => {
-      const aStarts = a.name.toLowerCase().startsWith(q) ? 0 : 1;
-      const bStarts = b.name.toLowerCase().startsWith(q) ? 0 : 1;
-      return aStarts - bStarts || a.name.localeCompare(b.name);
-    });
-    return visible.slice(0, 8);
+    const visibleCharacters = characters
+      .filter((c) => c.introducedCh <= ch && c.name.toLowerCase().includes(q))
+      .map((character) => ({
+        kind: "character" as const,
+        id: character.id,
+        name: character.name,
+        character,
+      }));
+    const visibleLocations = locations
+      .filter(
+        (location) =>
+          location.introducedCh <= ch &&
+          location.name.toLowerCase().includes(q),
+      )
+      .map((location) => ({
+        kind: "location" as const,
+        id: location.id,
+        name: location.name,
+        location,
+      }));
+    return [...visibleCharacters, ...visibleLocations]
+      .sort((a, b) => {
+        const aStarts = a.name.toLowerCase().startsWith(q) ? 0 : 1;
+        const bStarts = b.name.toLowerCase().startsWith(q) ? 0 : 1;
+        return (
+          aStarts - bStarts ||
+          (a.kind === b.kind ? 0 : a.kind === "character" ? -1 : 1) ||
+          a.name.localeCompare(b.name)
+        );
+      })
+      .slice(0, 10);
   }, [query, ch]);
 
   const tracked = trackedId ? characterById.get(trackedId) : undefined;
@@ -70,31 +94,43 @@ export function SubjectTracker({
   return (
     <div className="mb-3">
       <div className="flex flex-wrap items-center gap-2">
-        <span className="intel-label">Track subject</span>
-        <div className="relative">
+        <span className="intel-label">Find on map</span>
+        <div className="relative min-w-52 flex-1 sm:max-w-sm">
           <input
             ref={inputRef}
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Name…"
-            aria-label="Track a character on the blueprint"
-            className="w-44 border border-line bg-transparent px-2 py-1 font-mono text-xs text-parchment placeholder:text-faint focus:border-gold-line focus:outline-none"
+            placeholder="Person or location…"
+            aria-label="Find a person or location on the map"
+            className="w-full border border-line bg-transparent px-2.5 py-1.5 font-mono text-xs text-parchment placeholder:text-faint focus:border-gold-line focus:outline-none"
           />
           {matches.length > 0 && (
-            <ul className="absolute left-0 top-full z-40 mt-1 w-56 border border-line-strong bg-bg-deep/95 backdrop-blur-[2px]">
-              {matches.map((c) => (
-                <li key={c.id}>
+            <ul className="absolute left-0 top-full z-40 mt-1 w-full min-w-72 border border-line-strong bg-bg-deep/95 backdrop-blur-[2px]">
+              {matches.map((match) => (
+                <li key={`${match.kind}-${match.id}`}>
                   <button
                     type="button"
                     onClick={() => {
-                      onTrack(c.id);
+                      if (match.kind === "character") onTrack(match.id);
+                      else onSelectLocation(match.id);
                       setQuery("");
                     }}
                     className="flex w-full items-center gap-2 px-2 py-1.5 text-left text-xs text-parchment hover:bg-raised hover:text-gold-bright"
                   >
-                    <Monogram characterId={c.id} size="sm" />
-                    <span className="min-w-0 truncate">{c.name}</span>
+                    {match.kind === "character" ? (
+                      <Monogram characterId={match.id} size="sm" />
+                    ) : (
+                      <span className="flex h-7 w-7 shrink-0 items-center justify-center border border-line font-mono text-[9px] uppercase text-teal">
+                        L
+                      </span>
+                    )}
+                    <span className="min-w-0 flex-1 truncate">
+                      {match.name}
+                    </span>
+                    <span className="font-mono text-[9px] uppercase tracking-wider text-faint">
+                      {match.kind}
+                    </span>
                   </button>
                 </li>
               ))}

@@ -31,7 +31,8 @@ export function TierAccordion({
   selectedId: string | null;
   onSelect: (locationId: string) => void;
 }) {
-  const [openTiers, setOpenTiers] = useState<Set<number>>(new Set([1]));
+  const [openTier, setOpenTier] = useState<number | null>(1);
+  const [shoreOpen, setShoreOpen] = useState(false);
   const tiers = locations
     .filter((l) => l.kind === "tier")
     .sort((a, b) => (a.tier ?? 0) - (b.tier ?? 0));
@@ -58,34 +59,53 @@ export function TierAccordion({
   }, [occupancy, displayCh]);
 
   function toggle(tier: number) {
-    setOpenTiers((prev) => {
-      const next = new Set(prev);
-      if (next.has(tier)) next.delete(tier);
-      else next.add(tier);
-      return next;
-    });
+    setOpenTier((current) => (current === tier ? null : tier));
   }
 
   return (
     <div className="space-y-2">
       {shoreLocs.length > 0 && (
         <div className="dossier border-dashed">
-          <div className="px-3 pt-2">
-            <span className="intel-label">Shore records · off-ship</span>
-          </div>
-          <div className="space-y-1.5 px-3 pb-2 pt-1.5">
-            {shoreLocs.map((loc) => (
-              <LocationRow
-                key={loc.id}
-                loc={loc}
-                displayCh={displayCh}
-                occupants={livingByRow.get(loc.id) ?? []}
-                remains={remainsByRow.get(loc.id)?.length ?? 0}
-                selectedId={selectedId}
-                onSelect={onSelect}
-              />
-            ))}
-          </div>
+          <button
+            type="button"
+            onClick={() => setShoreOpen((open) => !open)}
+            className="flex w-full items-center justify-between gap-3 px-3 py-2.5 text-left"
+          >
+            <span>
+              <span className="intel-label">Shore records · off-ship</span>
+              <span className="mt-0.5 block text-xs text-faint">
+                {shoreLocs.length} mapped locations
+              </span>
+            </span>
+            <span className="font-mono text-xs text-gold">
+              {shoreOpen ? "−" : "+"}
+            </span>
+          </button>
+          <AnimatePresence initial={false}>
+            {shoreOpen && (
+              <motion.div
+                initial={{ height: 0, opacity: 0 }}
+                animate={{ height: "auto", opacity: 1 }}
+                exit={{ height: 0, opacity: 0 }}
+                transition={{ duration: 0.15 }}
+                className="overflow-hidden"
+              >
+                <div className="space-y-1.5 border-t border-line px-3 py-2">
+                  {shoreLocs.map((loc) => (
+                    <LocationRow
+                      key={loc.id}
+                      loc={loc}
+                      displayCh={displayCh}
+                      occupants={livingByRow.get(loc.id) ?? []}
+                      remains={remainsByRow.get(loc.id)?.length ?? 0}
+                      selectedId={selectedId}
+                      onSelect={onSelect}
+                    />
+                  ))}
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       )}
       <LocationRow
@@ -103,7 +123,7 @@ export function TierAccordion({
           (l) =>
             l.tier === tier && l.kind !== "tier" && l.introducedCh <= displayCh,
         );
-        const open = openTiers.has(tier);
+        const open = openTier === tier;
         const count = occupancy.byLocation.get(tierLoc.id)?.length ?? 0;
         const headerThreat = latestStamp(tierLoc.threatHistory, displayCh)
           ?.value as ThreatLevel | undefined;
@@ -112,7 +132,7 @@ export function TierAccordion({
             <button
               type="button"
               onClick={() => toggle(tier)}
-              className="flex w-full items-baseline justify-between gap-2 px-3 py-2 text-left"
+              className="flex w-full items-center justify-between gap-3 px-3 py-2.5 text-left"
             >
               <span
                 className={`font-mono text-[11px] uppercase tracking-widest ${
@@ -230,13 +250,13 @@ function LocationRow({
     <button
       type="button"
       onClick={() => onSelect(loc.id)}
-      className={`w-full border border-l-2 px-2 py-1.5 text-left transition-colors ${
+      className={`min-h-14 w-full border border-l-2 px-2.5 py-2 text-left transition-colors ${
         selected ? "border-gold-line" : "border-line hover:border-line-strong"
       }`}
       style={{ borderLeftColor: controlColor }}
     >
       <span className="flex w-full items-baseline justify-between gap-2">
-        <span className="min-w-0 truncate text-sm text-parchment">
+        <span className="min-w-0 pr-2 text-sm leading-snug text-parchment">
           {label ? `${loc.name} · ${label}` : loc.name}
           {mark && (
             <span className="ml-1.5 font-mono text-[9px] text-faint">

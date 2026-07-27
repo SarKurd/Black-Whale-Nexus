@@ -33,6 +33,7 @@ import {
 const allCharacters = characters as Character[];
 const allEvents = events as StoryEvent[];
 const allDeaths = deaths as DeathRecord[];
+type PanelTab = "summary" | "people" | "incidents";
 
 function kindLabel(kind: string): string {
   return kind.replace(/-/g, " ");
@@ -75,6 +76,7 @@ export function LocationPanel({
 }) {
   const loc = locationById.get(id);
   const [chronology, setChronology] = useState<SortDirection>("desc");
+  const [activeTab, setActiveTab] = useState<PanelTab>("summary");
   if (!loc) return <ArchiveNote>No such compartment on file.</ArchiveNote>;
   if (loc.introducedCh > ch) {
     return (
@@ -210,11 +212,6 @@ export function LocationPanel({
             threat: {threatLevel}
           </span>
         )}
-        <OrderToggle
-          direction={chronology}
-          onChange={setChronology}
-          className="ml-auto"
-        />
       </div>
 
       <p className="mt-2 text-xs leading-relaxed text-muted">
@@ -226,7 +223,62 @@ export function LocationPanel({
         )}
       </p>
 
-      {controlFaction && (
+      <div
+        className="mt-3 grid grid-cols-3 border border-line"
+        role="tablist"
+        aria-label="Compartment intelligence sections"
+      >
+        {(
+          [
+            ["summary", "Summary"],
+            ["people", `People ${current.length + remains.length}`],
+            ["incidents", `Incidents ${eventsHere.length + deathsHere.length}`],
+          ] as const
+        ).map(([value, label]) => (
+          <button
+            key={value}
+            type="button"
+            role="tab"
+            aria-selected={activeTab === value}
+            onClick={() => setActiveTab(value)}
+            className={`px-2 py-1.5 font-mono text-[9px] uppercase tracking-wider transition-colors ${
+              activeTab === value
+                ? "bg-gold/10 text-gold-bright"
+                : "text-muted hover:bg-raised hover:text-parchment"
+            }`}
+          >
+            {label}
+          </button>
+        ))}
+      </div>
+
+      {activeTab === "summary" && (
+        <div className="mt-2 grid grid-cols-3 gap-1.5">
+          {[
+            ["Present", current.length],
+            ["Remains", remains.length],
+            ["Incidents", eventsHere.length],
+          ].map(([label, value]) => (
+            <div key={label} className="border border-line bg-bg-deep/40 p-2">
+              <div className="font-mono text-[8px] uppercase tracking-widest text-faint">
+                {label}
+              </div>
+              <div className="royal-heading mt-0.5 text-lg text-ivory">
+                {value}
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {activeTab === "incidents" && (
+        <div className="mt-3 flex items-center justify-between border-t border-line pt-2">
+          <span className="intel-label">Chronology</span>
+          <OrderToggle direction={chronology} onChange={setChronology} />
+        </div>
+      )}
+
+      {activeTab === "summary" && controlFaction && (
         <div className="mt-3 border-t border-line pt-2">
           <div className="intel-label mb-1">Controlled by</div>
           <div className="flex items-center gap-2 text-sm">
@@ -245,37 +297,40 @@ export function LocationPanel({
 
       {/* A room holding only the dead skips the living-occupants block —
           "no tracked persons" above a list of remains reads absurd. */}
-      {(current.length > 0 || remains.length === 0) && (
-        <div className="mt-3 border-t border-line pt-2">
-          <div className="intel-label mb-1">
-            Current occupants ({current.length})
+      {activeTab === "people" &&
+        (current.length > 0 || remains.length === 0) && (
+          <div className="mt-3 border-t border-line pt-2">
+            <div className="intel-label mb-1">
+              Current occupants ({current.length})
+            </div>
+            {current.length === 0 ? (
+              <ArchiveNote>
+                No tracked persons here at this chapter.
+              </ArchiveNote>
+            ) : (
+              <ul className="space-y-1">
+                {current.map((o) => {
+                  const c = characterById.get(o.characterId);
+                  const st = c ? statusAt(c, ch) : undefined;
+                  return (
+                    <li
+                      key={o.characterId}
+                      className="flex items-baseline justify-between gap-2 text-sm"
+                    >
+                      <EntityLink id={o.characterId} />
+                      <span className="flex shrink-0 items-center gap-2">
+                        {st && <StatusChip status={st.status} note={st.note} />}
+                        <ChapterRef ch={o.sinceCh} />
+                      </span>
+                    </li>
+                  );
+                })}
+              </ul>
+            )}
           </div>
-          {current.length === 0 ? (
-            <ArchiveNote>No tracked persons here at this chapter.</ArchiveNote>
-          ) : (
-            <ul className="space-y-1">
-              {current.map((o) => {
-                const c = characterById.get(o.characterId);
-                const st = c ? statusAt(c, ch) : undefined;
-                return (
-                  <li
-                    key={o.characterId}
-                    className="flex items-baseline justify-between gap-2 text-sm"
-                  >
-                    <EntityLink id={o.characterId} />
-                    <span className="flex shrink-0 items-center gap-2">
-                      {st && <StatusChip status={st.status} note={st.note} />}
-                      <ChapterRef ch={o.sinceCh} />
-                    </span>
-                  </li>
-                );
-              })}
-            </ul>
-          )}
-        </div>
-      )}
+        )}
 
-      {remains.length > 0 && (
+      {activeTab === "people" && remains.length > 0 && (
         <div className="mt-3 border-t border-line pt-2">
           <div className="intel-label mb-1" style={{ color: "var(--blood)" }}>
             Remains interred ({remains.length})
@@ -301,7 +356,7 @@ export function LocationPanel({
         </div>
       )}
 
-      {previous.length > 0 && (
+      {activeTab === "people" && previous.length > 0 && (
         <div className="mt-3 border-t border-line pt-2">
           <div className="intel-label mb-1">Previous occupants</div>
           <ul className="space-y-1">
@@ -320,7 +375,7 @@ export function LocationPanel({
         </div>
       )}
 
-      {eventsHere.length > 0 && (
+      {activeTab === "incidents" && eventsHere.length > 0 && (
         <div className="mt-3 border-t border-line pt-2">
           <div className="intel-label mb-1">Incidents logged here</div>
           <ol className="space-y-1.5">
@@ -337,7 +392,7 @@ export function LocationPanel({
         </div>
       )}
 
-      {deathsHere.length > 0 && (
+      {activeTab === "incidents" && deathsHere.length > 0 && (
         <div className="mt-3 border-t border-line pt-2">
           <div className="intel-label mb-1" style={{ color: "var(--blood)" }}>
             Deaths on site
@@ -358,7 +413,7 @@ export function LocationPanel({
         </div>
       )}
 
-      {connected.length > 0 && (
+      {activeTab === "summary" && connected.length > 0 && (
         <div className="mt-3 border-t border-line pt-2">
           <div className="intel-label mb-1">Connected compartments</div>
           <div className="flex flex-wrap gap-1.5">
@@ -376,7 +431,7 @@ export function LocationPanel({
         </div>
       )}
 
-      {relatedChapters.length > 0 && (
+      {activeTab === "summary" && relatedChapters.length > 0 && (
         <div className="mt-3 border-t border-line pt-2">
           <div className="intel-label mb-1">Related chapters</div>
           <div className="flex flex-wrap gap-x-2 gap-y-1">
