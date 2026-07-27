@@ -166,11 +166,11 @@ export default function CommandCenter() {
             </h1>
             <p className="mt-2 max-w-xl text-sm text-muted">
               Live situation archive for the succession war aboard Black Whale
-              No.&nbsp;1. All records reconstructed to your clearance level —
-              nothing below is shown before the story reveals it.
+              No.&nbsp;1. Records reconstructed to your clearance level —
+              nothing appears before the story reveals it.
             </p>
           </div>
-          <div className="text-right">
+          <div className="ml-auto min-w-0 max-w-full text-right">
             <div className="intel-label">Record state</div>
             <div className="royal-heading text-2xl text-gold-bright">
               {preArc ? "Pre-voyage" : `Chapter ${ch}`}
