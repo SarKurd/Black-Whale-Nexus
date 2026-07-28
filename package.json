@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "generate:indexes": "tsx scripts/generate-client-indexes.ts && biome format --write src/generated",
+    "prebuild": "npm run generate:indexes",
+    "predev": "npm run generate:indexes",
     "build": "next build",
     "dev": "next dev",
     "lint": "biome check",

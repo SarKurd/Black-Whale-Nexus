@@ -1,8 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useSearchParams } from "next/navigation";
-import { type ReactNode, Suspense, useMemo, useState } from "react";
+import { type ReactNode, Suspense, useMemo } from "react";
 import {
   ArchiveNote,
   ChapterRef,
@@ -46,6 +45,7 @@ import type {
   RiskLevel,
 } from "@/lib/types";
 import { ARC_END } from "@/lib/types";
+import { useUrlString } from "@/lib/urlState";
 
 const COMPARE_TYPES = [
   "characters",
@@ -104,14 +104,14 @@ function ComparePageFallback() {
 
 function ComparePageInner() {
   const clearanceChapter = useEffectiveChapter();
-  const params = useSearchParams();
-
-  const typeParam = params.get("type");
-  const [compareType, setCompareType] = useState<CompareType>(
-    isCompareType(typeParam) ? typeParam : "characters",
+  const [compareTypeValue, setCompareTypeValue] = useUrlString(
+    "type",
+    "characters",
+    (value) => isCompareType(value),
   );
-  const [idA, setIdA] = useState(params.get("a") ?? "");
-  const [idB, setIdB] = useState(params.get("b") ?? "");
+  const compareType = compareTypeValue as CompareType;
+  const [idA, setIdA] = useUrlString("a");
+  const [idB, setIdB] = useUrlString("b");
 
   // Only entities already on record at this clearance can be selected.
   const options = useMemo(
@@ -125,7 +125,7 @@ function ComparePageInner() {
 
   const switchType = (t: CompareType) => {
     if (t === compareType) return;
-    setCompareType(t);
+    setCompareTypeValue(t);
     setIdA("");
     setIdB("");
   };
@@ -149,6 +149,7 @@ function ComparePageInner() {
             key={t}
             type="button"
             onClick={() => switchType(t)}
+            aria-pressed={compareType === t}
             className={`-mb-px border-b-2 px-3 py-2 font-mono text-[11px] uppercase tracking-widest transition-colors ${
               compareType === t
                 ? "border-gold text-gold-bright"

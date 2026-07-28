@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { type ReactNode, useState } from "react";
+import type { ReactNode } from "react";
 import { EventEntry, RecorderList } from "@/components/story/EventRecorder";
 import {
   ArchiveNote,
@@ -24,6 +24,7 @@ import {
 } from "@/lib/db";
 import { useEffectiveChapter } from "@/lib/store";
 import type { ChapterInfo, Mystery, NenAbility } from "@/lib/types";
+import { useUrlString } from "@/lib/urlState";
 
 interface DiffEntry {
   k: string;
@@ -90,7 +91,13 @@ function MysteryLink({ id }: { id: string }) {
 
 export function ChapterReport({ num }: { num: string }) {
   const ch = useEffectiveChapter();
-  const [chronology, setChronology] = useState<SortDirection>("desc");
+  const [chronologyValue, setChronologyValue] = useUrlString(
+    "order",
+    "desc",
+    (value) => value === "asc" || value === "desc",
+  );
+  const chronology = chronologyValue as SortDirection;
+  const setChronology = (value: SortDirection) => setChronologyValue(value);
   const n = Number(num);
   const info = chapterByNumber.get(n);
 

@@ -20,13 +20,13 @@
   --ivory: #eae3d0;
   --parchment: #c8bfa6;
   --muted: #7e8499;
-  --faint: #565d75;
-  --blood: #b23434;
+  --faint: #768096;
+  --blood: #d15858;
   --blood-bright: #d64848;
   --alive: #6f8f6a;
   --warn: #b08d36;
-  --teal: #4a7a78;
-  --violet: #6d5a86;
+  --teal: #668f8c;
+  --violet: #8f7baa;
 }
 
 @theme inline {
@@ -57,6 +57,11 @@
 
 html {
   color-scheme: dark;
+}
+
+:focus-visible {
+  outline: 2px solid var(--gold-bright);
+  outline-offset: 3px;
 }
 
 body {
@@ -176,6 +181,21 @@ body {
 * {
   scrollbar-width: thin;
   scrollbar-color: var(--line-strong) transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    /* biome-ignore lint/complexity/noImportantStyles: accessibility override must win over component animation declarations */
+    scroll-behavior: auto !important;
+    /* biome-ignore lint/complexity/noImportantStyles: accessibility override must win over component animation declarations */
+    animation-duration: 0.01ms !important;
+    /* biome-ignore lint/complexity/noImportantStyles: accessibility override must win over component animation declarations */
+    animation-iteration-count: 1 !important;
+    /* biome-ignore lint/complexity/noImportantStyles: accessibility override must win over component animation declarations */
+    transition-duration: 0.01ms !important;
+  }
 }
 
 /* Blinking cursor for live-feed feel */

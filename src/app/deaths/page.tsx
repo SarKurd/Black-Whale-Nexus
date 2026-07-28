@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import {
   ArchiveNote,
   ChapterRef,
@@ -33,6 +33,7 @@ import type {
   Faction,
   Mystery,
 } from "@/lib/types";
+import { useUrlString } from "@/lib/urlState";
 
 // Typed aliases — the data modules are authored in parallel, so the raw
 // exports may be error-typed until they land. These casts are no-ops once
@@ -62,11 +63,16 @@ function princeLabel(princeId: string): string {
 
 export default function DeathsPage() {
   const ch = useEffectiveChapter();
-  const [fromCh, setFromCh] = useState<string>("all");
-  const [toCh, setToCh] = useState<string>("all");
-  const [faction, setFaction] = useState<string>("all");
-  const [killer, setKiller] = useState<"all" | "known" | "unknown">("all");
-  const [prince, setPrince] = useState<string>("all");
+  const [fromCh, setFromCh] = useUrlString("from", "all");
+  const [toCh, setToCh] = useUrlString("to", "all");
+  const [faction, setFaction] = useUrlString("faction", "all");
+  const [killerValue, setKiller] = useUrlString(
+    "killer",
+    "all",
+    (value) => value === "all" || value === "known" || value === "unknown",
+  );
+  const killer = killerValue as "all" | "known" | "unknown";
+  const [prince, setPrince] = useUrlString("prince", "all");
 
   const census = useMemo(() => {
     const counts = Object.fromEntries(
@@ -211,6 +217,7 @@ export default function DeathsPage() {
         <select
           value={faction}
           onChange={(e) => setFaction(e.target.value)}
+          aria-label="Filter deaths by faction"
           className="border border-line bg-panel px-2 py-1.5 text-sm text-parchment outline-none"
         >
           <option value="all">All factions</option>
@@ -223,6 +230,7 @@ export default function DeathsPage() {
         <select
           value={prince}
           onChange={(e) => setPrince(e.target.value)}
+          aria-label="Filter deaths by prince context"
           className="border border-line bg-panel px-2 py-1.5 text-sm text-parchment outline-none"
         >
           <option value="all">All prince contexts</option>
@@ -238,6 +246,7 @@ export default function DeathsPage() {
               key={k}
               type="button"
               onClick={() => setKiller(k)}
+              aria-pressed={killer === k}
               className={`border px-2 py-1 font-mono text-[10px] uppercase tracking-widest transition-colors ${
                 killer === k
                   ? "border-gold-line bg-gold/10 text-gold-bright"

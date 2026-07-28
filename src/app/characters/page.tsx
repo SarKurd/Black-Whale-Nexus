@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import {
   ArchiveNote,
   Monogram,
@@ -9,10 +9,14 @@ import {
   StatusChip,
   Tag,
 } from "@/components/ui/kit";
-import { characters, factionById, factions } from "@/lib/db";
+import { characters } from "@/data/characters";
+import { factions } from "@/data/factions";
 import { statusAt } from "@/lib/spoiler";
 import { useEffectiveChapter } from "@/lib/store";
 import type { CharacterStatus } from "@/lib/types";
+import { useUrlString } from "@/lib/urlState";
+
+const factionById = new Map(factions.map((faction) => [faction.id, faction]));
 
 const STATUS_FILTERS: (CharacterStatus | "all")[] = [
   "all",
@@ -26,9 +30,12 @@ const STATUS_FILTERS: (CharacterStatus | "all")[] = [
 
 export default function CharactersPage() {
   const ch = useEffectiveChapter();
-  const [query, setQuery] = useState("");
-  const [faction, setFaction] = useState<string>("all");
-  const [status, setStatus] = useState<CharacterStatus | "all">("all");
+  const [query, setQuery] = useUrlString("q", "");
+  const [faction, setFaction] = useUrlString("faction", "all");
+  const [statusValue, setStatus] = useUrlString("status", "all", (value) =>
+    STATUS_FILTERS.includes(value as CharacterStatus | "all"),
+  );
+  const status = statusValue as CharacterStatus | "all";
 
   const visibleFactions = useMemo(
     () =>
@@ -73,12 +80,14 @@ export default function CharactersPage() {
         <input
           value={query}
           onChange={(e) => setQuery(e.target.value)}
+          aria-label="Filter character dossiers"
           placeholder="Filter by name, alias, role…"
           className="w-64 border border-line bg-panel px-3 py-1.5 text-sm text-ivory outline-none placeholder:text-faint focus:border-gold-line"
         />
         <select
           value={faction}
           onChange={(e) => setFaction(e.target.value)}
+          aria-label="Filter characters by faction"
           className="border border-line bg-panel px-2 py-1.5 text-sm text-parchment outline-none"
         >
           <option value="all">All factions</option>
@@ -94,6 +103,7 @@ export default function CharactersPage() {
               key={s}
               type="button"
               onClick={() => setStatus(s)}
+              aria-pressed={status === s}
               className={`border px-2 py-1 font-mono text-[10px] uppercase tracking-widest transition-colors ${
                 status === s
                   ? "border-gold-line bg-gold/10 text-gold-bright"

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import {
   ArchiveNote,
   ChapterRef,
@@ -10,7 +10,8 @@ import {
   SectionHeading,
   Tag,
 } from "@/components/ui/kit";
-import { beasts, characterById, nenAbilities } from "@/lib/db";
+import { characters } from "@/data/characters";
+import { beasts, nenAbilities } from "@/data/nen";
 import { useEffectiveChapter } from "@/lib/store";
 import type {
   AbilityKind,
@@ -18,11 +19,15 @@ import type {
   NenAbility,
   NenType,
 } from "@/lib/types";
+import { useUrlString } from "@/lib/urlState";
 
 // The @/data modules are authored in parallel; these pins assert the intended
 // element types so this file typechecks before the datasets land.
 const allAbilities = nenAbilities as NenAbility[];
 const allBeasts = beasts as GuardianBeast[];
+const characterById = new Map(
+  characters.map((character) => [character.id, character]),
+);
 
 const KIND_ORDER: { kind: AbilityKind; label: string; blurb: string }[] = [
   {
@@ -78,8 +83,17 @@ const ABILITY_STATUS_COLOR: Record<string, string> = {
 
 export default function NenPage() {
   const ch = useEffectiveChapter();
-  const [typeFilter, setTypeFilter] = useState<Set<NenType>>(new Set());
-  const [query, setQuery] = useState("");
+  const [typeParam, setTypeParam] = useUrlString("types", "");
+  const [query, setQuery] = useUrlString("q", "");
+  const typeFilter = useMemo(
+    () =>
+      new Set(
+        typeParam
+          .split(",")
+          .filter((value) => NEN_TYPES.includes(value as NenType)) as NenType[],
+      ),
+    [typeParam],
+  );
 
   const matches = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -94,12 +108,10 @@ export default function NenPage() {
   }, [typeFilter, query]);
 
   function toggleType(t: NenType) {
-    setTypeFilter((prev) => {
-      const next = new Set(prev);
-      if (next.has(t)) next.delete(t);
-      else next.add(t);
-      return next;
-    });
+    const next = new Set(typeFilter);
+    if (next.has(t)) next.delete(t);
+    else next.add(t);
+    setTypeParam(NEN_TYPES.filter((type) => next.has(type)).join(","));
   }
 
   const visibleBeasts = allBeasts.filter((b) => b.firstSeenCh <= ch);
@@ -127,6 +139,7 @@ export default function NenPage() {
               key={t}
               type="button"
               onClick={() => toggleType(t)}
+              aria-pressed={active}
               className={`border px-2 py-1 font-mono text-[10px] uppercase tracking-widest transition-colors ${
                 active
                   ? "border-gold-line text-gold-bright"

@@ -1,20 +1,32 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import {
   ArchiveNote,
   OrderToggle,
   SectionHeading,
   type SortDirection,
 } from "@/components/ui/kit";
-import { sortedChapters, storylineById } from "@/lib/db";
+import { chapters } from "@/data/chapters";
+import { storylines } from "@/data/storylines";
 import { useEffectiveChapter } from "@/lib/store";
 import type { ChapterInfo } from "@/lib/types";
+import { useUrlString } from "@/lib/urlState";
+
+const sortedChapters = [...chapters].sort((a, b) => a.number - b.number);
+const storylineById = new Map(
+  storylines.map((storyline) => [storyline.id, storyline]),
+);
 
 export default function ChaptersIndexPage() {
   const ch = useEffectiveChapter();
-  const [chronology, setChronology] = useState<SortDirection>("asc");
+  const [order, setOrder] = useUrlString(
+    "order",
+    "asc",
+    (value) => value === "asc" || value === "desc",
+  );
+  const chronology = order as SortDirection;
 
   const { open, sealed } = useMemo(() => {
     const covered: ChapterInfo[] = [...sortedChapters].sort((a, b) =>
@@ -38,7 +50,7 @@ export default function ChaptersIndexPage() {
       </div>
 
       <div className="mb-4 flex justify-end">
-        <OrderToggle direction={chronology} onChange={setChronology} />
+        <OrderToggle direction={chronology} onChange={setOrder} />
       </div>
 
       {open.length === 0 ? (

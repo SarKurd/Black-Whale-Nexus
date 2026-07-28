@@ -3,7 +3,8 @@
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { notFound, useSearchParams } from "next/navigation";
-import { Suspense, useMemo, useState } from "react";
+import { Suspense, useMemo } from "react";
+import { EvidenceDrawer } from "@/components/ui/EvidenceDrawer";
 import {
   ArchiveNote,
   ChapterRef,
@@ -46,6 +47,7 @@ import {
 } from "@/lib/spoiler";
 import { useEffectiveChapter, useNexusStore } from "@/lib/store";
 import type { KnowledgeState, Relationship } from "@/lib/types";
+import { useUrlString } from "@/lib/urlState";
 
 const TABS = [
   "Dossier",
@@ -125,7 +127,13 @@ function CharacterDossierContent({
   const c = characterById.get(id);
   const ch = useEffectiveChapter();
   const hideTheories = useNexusStore((s) => s.hideTheories);
-  const [chronology, setChronology] = useState<SortDirection>("desc");
+  const [chronologyValue, setChronologyValue] = useUrlString(
+    "order",
+    "desc",
+    (value) => value === "asc" || value === "desc",
+  );
+  const chronology = chronologyValue as SortDirection;
+  const setChronology = (value: SortDirection) => setChronologyValue(value);
 
   const derived = useMemo(() => {
     if (!c) return null;
@@ -672,9 +680,13 @@ function RelationshipsTab({ c, d, ch }: { c: Char; d: Derived; ch: number }) {
                     </p>
                     <div className="mt-1.5 flex flex-wrap items-center gap-2">
                       <ChapterRef ch={r.revealCh} />
-                      {r.evidence[0] && (
-                        <ConfidenceBadge level={r.evidence[0].confidence} />
-                      )}
+                      <EvidenceDrawer
+                        title={`${KIND_LABEL[r.kind]} · evidence`}
+                        evidence={r.evidence.filter(
+                          (item) => item.chapter <= ch,
+                        )}
+                        summary={r.description}
+                      />
                       <Link
                         href={`/web?focus=${other}`}
                         className="ml-auto font-mono text-[9px] uppercase tracking-widest text-teal hover:text-gold-bright"
@@ -795,6 +807,11 @@ function NenTab({ c, d, ch }: { c: Char; d: Derived; ch: number }) {
           <div className="mt-2 flex flex-wrap items-center gap-2">
             <ConfidenceBadge level={a.confidence} />
             <ChapterRef ch={a.revealCh} />
+            <EvidenceDrawer
+              title={`${a.name} · evidence`}
+              evidence={a.evidence.filter((item) => item.chapter <= ch)}
+              summary={a.description}
+            />
             <Link
               href={`/nen/${a.id}`}
               className="font-mono text-[10px] uppercase tracking-widest text-teal hover:text-gold-bright"

@@ -3,7 +3,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import {
   ordinal,
   RISK_COLOR,
@@ -22,6 +22,7 @@ import { currentIntelText, statusAt } from "@/lib/spoiler";
 import { useEffectiveChapter } from "@/lib/store";
 import type { Character, Prince } from "@/lib/types";
 import { ARC_START } from "@/lib/types";
+import { useUrlString } from "@/lib/urlState";
 
 const VIEWS = [
   "Council",
@@ -70,7 +71,10 @@ function buildIntel(ch: number): PrinceIntel[] {
 
 export default function RoyalWarCouncilPage() {
   const ch = useEffectiveChapter();
-  const [view, setView] = useState<View>("Council");
+  const [viewValue, setViewValue] = useUrlString("view", "Council", (value) =>
+    VIEWS.includes(value as View),
+  );
+  const view = viewValue as View;
 
   const intel = useMemo(() => buildIntel(ch), [ch]);
   const preArc = ch < ARC_START;
@@ -110,7 +114,8 @@ export default function RoyalWarCouncilPage() {
               <button
                 key={v}
                 type="button"
-                onClick={() => setView(v)}
+                onClick={() => setViewValue(v)}
+                aria-pressed={view === v}
                 className={`-mb-px border-b-2 px-3 py-2 font-mono text-[11px] uppercase tracking-widest transition-colors ${
                   view === v
                     ? "border-gold text-gold-bright"

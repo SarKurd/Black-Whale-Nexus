@@ -12,7 +12,7 @@ import {
   SectionHeading,
   StatusChip,
 } from "@/components/ui/kit";
-import { RelationshipGraph } from "@/components/viz/RelationshipGraph";
+import { DeferredRelationshipGraph } from "@/components/viz/DeferredRelationshipGraph";
 import { investigationPaths } from "@/data/paths";
 import {
   characterById,
@@ -522,7 +522,7 @@ export default function CommandCenter() {
           }
         >
           <div className="h-72 border border-line/60 bg-bg-deep/50">
-            <RelationshipGraph nodeIds={webNodes} chapter={ch} compact />
+            <DeferredRelationshipGraph nodeIds={webNodes} chapter={ch} />
           </div>
           <p className="mt-2 font-mono text-[10px] tracking-wider text-faint">
             Red edges: hostilities · dashed: secret · click a node to open its

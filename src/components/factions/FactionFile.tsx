@@ -4,10 +4,10 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { useMemo } from "react";
+import { EvidenceDrawer } from "@/components/ui/EvidenceDrawer";
 import {
   ArchiveNote,
   ChapterRef,
-  ConfidenceBadge,
   DataRow,
   EntityLink,
   Monogram,
@@ -403,9 +403,13 @@ export function FactionFile({ id }: { id: string }) {
                     </p>
                     <div className="mt-1.5 flex flex-wrap items-center gap-2">
                       <ChapterRef ch={r.revealCh} />
-                      {r.evidence[0] && (
-                        <ConfidenceBadge level={r.evidence[0].confidence} />
-                      )}
+                      <EvidenceDrawer
+                        title={`${KIND_LABEL[r.kind]} · evidence`}
+                        evidence={r.evidence.filter(
+                          (item) => item.chapter <= ch,
+                        )}
+                        summary={r.description}
+                      />
                     </div>
                   </div>
                 );

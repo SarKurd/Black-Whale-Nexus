@@ -1,6 +1,4 @@
 "use client";
-
-import { useState } from "react";
 import {
   ArchiveNote,
   ChapterRef,
@@ -21,6 +19,7 @@ import {
 } from "@/lib/db";
 import { currentIntelText, latestStamp, statusAt } from "@/lib/spoiler";
 import type { Character, DeathRecord, StoryEvent } from "@/lib/types";
+import { useUrlString } from "@/lib/urlState";
 import {
   CANONICITY_COLOR,
   type Occupancy,
@@ -75,8 +74,19 @@ export function LocationPanel({
   onClose: () => void;
 }) {
   const loc = locationById.get(id);
-  const [chronology, setChronology] = useState<SortDirection>("desc");
-  const [activeTab, setActiveTab] = useState<PanelTab>("summary");
+  const [chronologyValue, setChronologyValue] = useUrlString(
+    "order",
+    "desc",
+    (value) => value === "asc" || value === "desc",
+  );
+  const [activeTabValue, setActiveTabValue] = useUrlString(
+    "panel",
+    "summary",
+    (value) => ["summary", "people", "incidents"].includes(value),
+  );
+  const chronology = chronologyValue as SortDirection;
+  const activeTab = activeTabValue as PanelTab;
+  const setChronology = (value: SortDirection) => setChronologyValue(value);
   if (!loc) return <ArchiveNote>No such compartment on file.</ArchiveNote>;
   if (loc.introducedCh > ch) {
     return (
@@ -240,7 +250,7 @@ export function LocationPanel({
             type="button"
             role="tab"
             aria-selected={activeTab === value}
-            onClick={() => setActiveTab(value)}
+            onClick={() => setActiveTabValue(value)}
             className={`px-2 py-1.5 font-mono text-[9px] uppercase tracking-wider transition-colors ${
               activeTab === value
                 ? "bg-gold/10 text-gold-bright"

@@ -3,11 +3,11 @@
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { Suspense, useCallback, useEffect, useMemo, useState } from "react";
+import { Suspense, useCallback, useEffect, useMemo } from "react";
+import { EvidenceDrawer } from "@/components/ui/EvidenceDrawer";
 import {
   ArchiveNote,
   ChapterRef,
-  ConfidenceBadge,
   EntityLink,
   Monogram,
   StatusChip,
@@ -22,6 +22,7 @@ import { graphPresets, presetById } from "@/lib/presets";
 import { currentIntelText, statusAt } from "@/lib/spoiler";
 import { useEffectiveChapter } from "@/lib/store";
 import { ARC_END, ARC_START } from "@/lib/types";
+import { updateUrlState, useUrlString } from "@/lib/urlState";
 
 export default function WebPage() {
   return (
@@ -84,54 +85,45 @@ function WebPageInner() {
   const ch = useEffectiveChapter();
   const params = useSearchParams();
   const focusParam = params.get("focus") ?? undefined;
-  const presetParam = params.get("preset") ?? undefined;
-
-  const [presetId, setPresetId] = useState(presetParam ?? "all");
-  const [viewCh, setViewCh] = useState<number | null>(null);
-  const [selection, setSelection] = useState<GraphSelection | null>(
-    focusParam ? { kind: "node", id: focusParam } : null,
+  const [presetId, setPresetId] = useUrlString("preset", "all", (value) =>
+    presetById.has(value),
   );
-
-  useEffect(() => {
-    if (focusParam) setSelection({ kind: "node", id: focusParam });
-  }, [focusParam]);
-
-  useEffect(() => {
-    if (presetParam && presetById.has(presetParam)) setPresetId(presetParam);
-  }, [presetParam]);
-
-  const clearFocusParam = useCallback(() => {
-    if (!focusParam) return;
-    const nextParams = new URLSearchParams(params.toString());
-    nextParams.delete("focus");
-    const query = nextParams.toString();
-    window.history.replaceState(
-      null,
-      "",
-      `${window.location.pathname}${query ? `?${query}` : ""}${window.location.hash}`,
-    );
-  }, [focusParam, params]);
+  const [chapterValue, setChapterValue] = useUrlString("at", "", (value) =>
+    Number.isFinite(Number(value)),
+  );
+  const [selectionValue, setSelectionValue] = useUrlString(
+    "selected",
+    focusParam ? `node:${focusParam}` : "",
+    (value) => /^(node|edge):.+/.test(value),
+  );
+  const selectionParts = selectionValue.match(/^(node|edge):(.+)$/);
+  const selection: GraphSelection | null = selectionParts
+    ? {
+        kind: selectionParts[1] as GraphSelection["kind"],
+        id: selectionParts[2],
+      }
+    : null;
+  const viewCh = chapterValue
+    ? Math.min(Math.max(Math.round(Number(chapterValue)), ARC_START), ch)
+    : null;
 
   const handleSelectionChange = useCallback(
     (nextSelection: GraphSelection | null) => {
-      setSelection(nextSelection);
-      if (
-        focusParam &&
-        (nextSelection?.kind !== "node" || nextSelection.id !== focusParam)
-      ) {
-        clearFocusParam();
-      }
+      setSelectionValue(
+        nextSelection ? `${nextSelection.kind}:${nextSelection.id}` : "",
+      );
+      if (focusParam) updateUrlState({ focus: null });
     },
-    [clearFocusParam, focusParam],
+    [focusParam, setSelectionValue],
   );
 
-  // The Evolve slider is a local rewind for replaying the network's growth.
-  // When the global clearance changes, snap it back to follow — otherwise a
-  // value dragged earlier would pin here and drift out of sync with clearance.
+  // Preserve an explicitly shared replay chapter. If clearance drops below it,
+  // clamp the pin so the URL never advertises inaccessible intelligence.
   useEffect(() => {
-    void ch;
-    setViewCh(null);
-  }, [ch]);
+    if (chapterValue && Number(chapterValue) > ch) {
+      setChapterValue(String(ch));
+    }
+  }, [ch, chapterValue, setChapterValue]);
 
   // Escape closes the file panel. The panel is non-blocking (the graph stays
   // interactive behind it), so page scroll is intentionally not locked.
@@ -146,10 +138,7 @@ function WebPageInner() {
 
   // Displayed chapter can rewind below clearance but never above it.
   const displayCh = Math.min(viewCh ?? ch, ch);
-  const activeFocusId =
-    selection?.kind === "node" && selection.id === focusParam
-      ? focusParam
-      : undefined;
+  const activeFocusId = selection?.kind === "node" ? selection.id : undefined;
 
   const nodeIds = useMemo(() => {
     const preset = presetById.get(presetId) ?? presetById.get("all");
@@ -188,7 +177,9 @@ function WebPageInner() {
               min={ARC_START}
               max={ARC_END}
               value={displayCh}
-              onChange={(e) => setViewCh(Math.min(Number(e.target.value), ch))}
+              onChange={(e) =>
+                setChapterValue(String(Math.min(Number(e.target.value), ch)))
+              }
               className="w-36 accent-[var(--gold)]"
               aria-label="Network as of chapter"
               disabled={ch <= ARC_START}
@@ -404,18 +395,11 @@ function EdgePanel({
         </div>
       )}
       <div className="mt-3">
-        <div className="intel-label mb-1">Evidence</div>
-        <ul className="space-y-1.5">
-          {r.evidence.map((e) => (
-            <li key={`${e.chapter}-${e.note}`} className="text-xs text-muted">
-              <span className="mr-2 inline-flex items-center gap-2">
-                <ChapterRef ch={e.chapter} />
-                <ConfidenceBadge level={e.confidence} />
-              </span>
-              {e.note}
-            </li>
-          ))}
-        </ul>
+        <EvidenceDrawer
+          title={`${KIND_LABEL[r.kind]} · evidence`}
+          evidence={r.evidence.filter((item) => item.chapter <= ch)}
+          summary={r.description}
+        />
       </div>
       <div className="mt-3 border-t border-line pt-2 text-xs text-muted">
         Known since <ChapterRef ch={r.revealCh} />

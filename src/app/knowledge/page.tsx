@@ -1,8 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { useSearchParams } from "next/navigation";
-import { Suspense, useEffect, useMemo, useState } from "react";
+import { Suspense, useMemo } from "react";
 import {
   ArchiveNote,
   ChapterRef,
@@ -21,6 +20,7 @@ import type {
   KnowledgeState,
 } from "@/lib/types";
 import { ARC_START } from "@/lib/types";
+import { useUrlString } from "@/lib/urlState";
 
 // The @/data modules are authored in parallel; these pins assert the intended
 // types so this file typechecks before the datasets land.
@@ -113,16 +113,7 @@ function KnowledgePageFallback() {
 
 function KnowledgePageInner() {
   const ch = useEffectiveChapter();
-  const params = useSearchParams();
-  const factParam = params.get("fact");
-
-  const [selectedFactId, setSelectedFactId] = useState<string | null>(
-    factParam,
-  );
-
-  useEffect(() => {
-    if (factParam) setSelectedFactId(factParam);
-  }, [factParam]);
+  const [selectedFactId, setSelectedFactId] = useUrlString("fact");
 
   const visibleFacts = useMemo(
     () => allFacts.filter((f) => f.readerRevealCh <= ch),
@@ -131,7 +122,7 @@ function KnowledgePageInner() {
   const sealedCount = allFacts.length - visibleFacts.length;
 
   const selectedFact =
-    selectedFactId !== null ? factLookup.get(selectedFactId) : undefined;
+    selectedFactId !== "" ? factLookup.get(selectedFactId) : undefined;
   const factIsOpen =
     selectedFact !== undefined && selectedFact.readerRevealCh <= ch;
 
@@ -167,6 +158,7 @@ function KnowledgePageInner() {
                         <button
                           type="button"
                           onClick={() => setSelectedFactId(fact.id)}
+                          aria-pressed={active}
                           className={`flex w-full items-baseline justify-between gap-2 border border-l-2 px-2 py-1.5 text-left text-sm transition-colors ${
                             active
                               ? "border-gold-line text-gold-bright"

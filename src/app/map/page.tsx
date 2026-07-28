@@ -1,8 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { useSearchParams } from "next/navigation";
-import { Suspense, useEffect, useMemo, useRef, useState } from "react";
+import { Suspense, useEffect, useMemo, useState } from "react";
 import { LocationPanel } from "@/components/map/LocationPanel";
 import { MapExplorer } from "@/components/map/MapExplorer";
 import { computeOccupancy } from "@/components/map/occupancy";
@@ -12,6 +11,7 @@ import { characterById, factionById, locationById, locations } from "@/lib/db";
 import { latestStamp, locationAt } from "@/lib/spoiler";
 import { useEffectiveChapter } from "@/lib/store";
 import { ARC_END, ARC_START } from "@/lib/types";
+import { useUrlString } from "@/lib/urlState";
 
 export default function MapPage() {
   return (
@@ -59,51 +59,41 @@ function MapPageFallback() {
 
 function MapPageInner() {
   const ch = useEffectiveChapter();
-  const params = useSearchParams();
-  const locationParam = params.get("location");
-  const chParam = params.get("ch");
-
-  const [selectedId, setSelectedId] = useState<string | null>(locationParam);
-  const [viewCh, setViewCh] = useState<number | null>(() => {
-    const n = Number(chParam);
-    return chParam !== null && Number.isFinite(n)
-      ? Math.max(ARC_START, Math.round(n))
-      : null;
-  });
-  const [trackedId, setTrackedId] = useState<string | null>(null);
-  const [focusedTier, setFocusedTier] = useState<number | null>(() =>
-    locationParam ? (locationById.get(locationParam)?.tier ?? null) : null,
+  const [selectedValue, setSelectedValue] = useUrlString("location");
+  const [chapterValue, setChapterValue] = useUrlString("at", "", (value) =>
+    Number.isFinite(Number(value)),
   );
+  const [trackedValue, setTrackedValue] = useUrlString("track");
+  const [tierValue, setTierValue] = useUrlString("tier", "", (value) =>
+    Number.isFinite(Number(value)),
+  );
+  const selectedId = selectedValue || null;
+  const trackedId = trackedValue || null;
+  const viewCh = chapterValue
+    ? Math.min(Math.max(Math.round(Number(chapterValue)), ARC_START), ch)
+    : null;
+  const focusedTier = tierValue
+    ? Math.round(Number(tierValue))
+    : selectedId
+      ? (locationById.get(selectedId)?.tier ?? null)
+      : null;
   const [playing, setPlaying] = useState(false);
 
+  // Preserve an explicitly shared replay chapter. If clearance drops below it,
+  // clamp the pin so the URL never advertises inaccessible intelligence.
   useEffect(() => {
-    if (!locationParam) return;
-    setSelectedId(locationParam);
-    const tier = locationById.get(locationParam)?.tier;
-    if (tier) setFocusedTier(tier);
-  }, [locationParam]);
-
-  // The Voyage replay slider is a local rewind for stepping the ship state
-  // back through the voyage. When the global clearance changes, snap it back
-  // to follow — otherwise an earlier value pins here and drifts out of sync.
-  // Skipped on mount so an incoming ?ch= deep link survives.
-  const mounted = useRef(false);
-  useEffect(() => {
-    if (!mounted.current) {
-      mounted.current = true;
-      return;
+    if (chapterValue && Number(chapterValue) > ch) {
+      setChapterValue(String(ch));
     }
-    void ch;
-    setViewCh(null);
     setPlaying(false);
-  }, [ch]);
+  }, [ch, chapterValue, setChapterValue]);
 
   // While a compartment file is open, Escape closes it and the page is locked
   // so only the dossier's own content scrolls.
   useEffect(() => {
     if (!selectedId) return;
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setSelectedId(null);
+      if (e.key === "Escape") setSelectedValue("");
     };
     window.addEventListener("keydown", onKey);
     // The scroll container is <html>, not <body>, so lock the root element.
@@ -114,7 +104,7 @@ function MapPageInner() {
       window.removeEventListener("keydown", onKey);
       root.style.overflow = previousOverflow;
     };
-  }, [selectedId]);
+  }, [selectedId, setSelectedValue]);
 
   // The scrubber can rewind below clearance but never above it.
   const displayCh = Math.min(viewCh ?? ch, ch);
@@ -122,13 +112,11 @@ function MapPageInner() {
   useEffect(() => {
     if (!playing) return;
     const timer = setInterval(() => {
-      setViewCh((prev) => {
-        const current = Math.min(prev ?? ch, ch);
-        return current >= ch ? current : current + 1;
-      });
+      const next = displayCh >= ch ? displayCh : displayCh + 1;
+      setChapterValue(String(next));
     }, 700);
     return () => clearInterval(timer);
-  }, [playing, ch]);
+  }, [playing, displayCh, ch, setChapterValue]);
 
   useEffect(() => {
     if (playing && displayCh >= ch) setPlaying(false);
@@ -143,8 +131,8 @@ function MapPageInner() {
     const resolved = locationAt(character, displayCh);
     if (!resolved) return;
     const location = locationById.get(resolved.locationId);
-    if (location?.tier) setFocusedTier(location.tier);
-  }, [trackedId, displayCh]);
+    if (location?.tier) setTierValue(String(location.tier));
+  }, [trackedId, displayCh, setTierValue]);
 
   // Derived from what is rendered at displayCh so it can never outrun clearance.
   const factionKey = useMemo(() => {
@@ -169,7 +157,7 @@ function MapPageInner() {
 
   function pinChapter(n: number) {
     setPlaying(false);
-    setViewCh(Math.min(Math.max(n, ARC_START), ch));
+    setChapterValue(String(Math.min(Math.max(n, ARC_START), ch)));
   }
 
   function togglePlay() {
@@ -177,14 +165,18 @@ function MapPageInner() {
       setPlaying(false);
       return;
     }
-    if (displayCh >= ch) setViewCh(ARC_START);
+    if (displayCh >= ch) setChapterValue(String(ARC_START));
     setPlaying(true);
   }
 
   function selectLocation(locationId: string) {
-    setSelectedId(locationId);
+    setSelectedValue(locationId);
     const tier = locationById.get(locationId)?.tier;
-    if (tier) setFocusedTier(tier);
+    if (tier) setTierValue(String(tier));
+  }
+
+  function closeLocation() {
+    setSelectedValue("");
   }
 
   const transportDisabled = ch <= ARC_START;
@@ -234,7 +226,7 @@ function MapPageInner() {
             value={displayCh}
             onChange={(e) => {
               setPlaying(false);
-              setViewCh(Math.min(Number(e.target.value), ch));
+              setChapterValue(String(Math.min(Number(e.target.value), ch)));
             }}
             className="min-w-0 flex-1 accent-[var(--gold)] sm:w-36 sm:flex-none"
             aria-label="Ship state as of chapter"
@@ -256,7 +248,7 @@ function MapPageInner() {
         ch={ch}
         displayCh={displayCh}
         trackedId={trackedId}
-        onTrack={setTrackedId}
+        onTrack={(id) => setTrackedValue(id ?? "")}
         onSelectLocation={selectLocation}
         onViewChapter={pinChapter}
       />
@@ -269,7 +261,7 @@ function MapPageInner() {
             occupancy={occupancy}
             selectedId={selectedId}
             focusedTier={focusedTier}
-            onFocusTier={setFocusedTier}
+            onFocusTier={(tier) => setTierValue(tier ? String(tier) : "")}
             onSelect={selectLocation}
           />
         </div>
@@ -295,7 +287,7 @@ function MapPageInner() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.12 }}
-            onClick={() => setSelectedId(null)}
+            onClick={closeLocation}
             role="dialog"
             aria-modal="true"
             aria-label="Compartment file"
@@ -316,7 +308,7 @@ function MapPageInner() {
                   occupancy={occupancy}
                   onSelect={selectLocation}
                   onViewChapter={pinChapter}
-                  onClose={() => setSelectedId(null)}
+                  onClose={closeLocation}
                 />
               </div>
             </motion.div>

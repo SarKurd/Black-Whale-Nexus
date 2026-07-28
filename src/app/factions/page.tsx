@@ -2,16 +2,26 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import { ArchiveNote, EntityLink, SectionHeading } from "@/components/ui/kit";
-import { charactersByFaction, factions } from "@/lib/db";
+import { characters } from "@/data/characters";
+import { factions } from "@/data/factions";
 import { currentIntelText } from "@/lib/spoiler";
 import { useEffectiveChapter } from "@/lib/store";
 import type { Faction, FactionKind } from "@/lib/types";
+import { useUrlString } from "@/lib/urlState";
 
 // Typed alias — the data module is authored in parallel, so the raw export
 // may be error-typed until it lands. This cast is a no-op once it exists.
 const allFactions = factions as Faction[];
+const charactersByFaction = new Map<string, typeof characters>();
+for (const character of characters) {
+  for (const factionId of character.factionIds) {
+    const members = charactersByFaction.get(factionId) ?? [];
+    members.push(character);
+    charactersByFaction.set(factionId, members);
+  }
+}
 
 /** Registry groups — factions are filed by the kind of power they wield. */
 const GROUPS: { id: string; label: string; kinds: FactionKind[] }[] = [
@@ -40,7 +50,9 @@ const KIND_LABEL: Record<FactionKind, string> = {
 
 export default function FactionsPage() {
   const ch = useEffectiveChapter();
-  const [group, setGroup] = useState<string>("all");
+  const [group, setGroup] = useUrlString("group", "all", (value) =>
+    ["all", ...GROUPS.map((item) => item.id)].includes(value),
+  );
 
   const grouped = useMemo(() => {
     const visible = allFactions.filter((f) => f.introducedCh <= ch);
@@ -75,6 +87,7 @@ export default function FactionsPage() {
             key={g.id}
             type="button"
             onClick={() => setGroup(g.id)}
+            aria-pressed={group === g.id}
             className={`border px-2 py-1 font-mono text-[10px] uppercase tracking-widest transition-colors ${
               group === g.id
                 ? "border-gold-line bg-gold/10 text-gold-bright"

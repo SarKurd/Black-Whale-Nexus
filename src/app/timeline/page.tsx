@@ -2,14 +2,14 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import {
   type CSSProperties,
   Suspense,
+  useCallback,
   useEffect,
   useMemo,
   useRef,
-  useState,
 } from "react";
 import { CharacterPicker } from "@/components/story/CharacterPicker";
 import { EventRail, LANDMARK_KINDS } from "@/components/story/EventRail";
@@ -52,6 +52,7 @@ import type {
   StoryEvent,
   Storyline,
 } from "@/lib/types";
+import { updateUrlState, useUrlString } from "@/lib/urlState";
 
 const MODES = [
   ["landmarks", "Landmarks"],
@@ -179,17 +180,38 @@ function TimelinePageFallback() {
 function TimelineInner() {
   const ch = useEffectiveChapter();
   const params = useSearchParams();
-  const router = useRouter();
   const highlightId = params.get("event") ?? undefined;
 
-  const [mode, setMode] = useState<Mode>("landmarks");
-  const [kindFilter, setKindFilter] = useState<EventKind[]>([]);
-  const [princeFilter, setPrinceFilter] = useState("");
-  const [factionFilter, setFactionFilter] = useState("");
-  const [locationFilter, setLocationFilter] = useState("");
-  const [storylineSel, setStorylineSel] = useState("");
-  const [characterSel, setCharacterSel] = useState("");
-  const [chronology, setChronology] = useState<SortDirection>("desc");
+  const [modeValue, setModeValue] = useUrlString("mode", "landmarks", (value) =>
+    MODES.some(([mode]) => mode === value),
+  );
+  const mode = modeValue as Mode;
+  const [kindValue, setKindValue] = useUrlString("kinds");
+  const kindFilter = useMemo(
+    () =>
+      kindValue
+        .split(",")
+        .filter((kind): kind is EventKind =>
+          ALL_KINDS.includes(kind as EventKind),
+        ),
+    [kindValue],
+  );
+  const [princeFilter, setPrinceFilter] = useUrlString("prince");
+  const [factionFilter, setFactionFilter] = useUrlString("faction");
+  const [locationFilter, setLocationFilter] = useUrlString("location");
+  const [storylineSel, setStorylineSel] = useUrlString("storyline");
+  const [characterSel, setCharacterSel] = useUrlString("character");
+  const [chronologyValue, setChronologyValue] = useUrlString(
+    "order",
+    "desc",
+    (value) => value === "asc" || value === "desc",
+  );
+  const chronology = chronologyValue as SortDirection;
+  const setChronology = (value: SortDirection) => setChronologyValue(value);
+  const setMode = useCallback(
+    (value: Mode) => setModeValue(value),
+    [setModeValue],
+  );
 
   // With no kind chips active the rail shows the landmark set; active chips
   // override it, so filtering by "decision" no longer yields an empty rail.
@@ -209,7 +231,7 @@ function TimelineInner() {
       mode === "day" ||
       (mode === "landmarks" && activeKinds.includes(target.kind));
     if (!rendersTarget) setMode("chapter");
-  }, [highlightId, ch, mode, activeKinds]);
+  }, [highlightId, ch, mode, activeKinds, setMode]);
 
   // Scroll to a deep-linked event once it is rendered.
   useEffect(() => {
@@ -448,6 +470,7 @@ function TimelineInner() {
             key={value}
             type="button"
             onClick={() => setMode(value)}
+            aria-pressed={mode === value}
             className={`-mb-px border-b-2 px-3 py-2 font-mono text-[11px] uppercase tracking-widest transition-colors ${
               mode === value
                 ? "border-gold text-gold-bright"
@@ -470,13 +493,13 @@ function TimelineInner() {
               <button
                 key={k}
                 type="button"
-                onClick={() =>
-                  setKindFilter((prev) =>
-                    prev.includes(k)
-                      ? prev.filter((x) => x !== k)
-                      : [...prev, k],
-                  )
-                }
+                onClick={() => {
+                  const next = active
+                    ? kindFilter.filter((x) => x !== k)
+                    : [...kindFilter, k];
+                  setKindValue(next.join(","));
+                }}
+                aria-pressed={active}
                 className="border px-1.5 py-px font-mono text-[9px] uppercase tracking-[0.12em] transition-colors"
                 style={{
                   color: active ? meta.color : "var(--faint)",
@@ -495,7 +518,7 @@ function TimelineInner() {
           {kindFilter.length > 0 && (
             <button
               type="button"
-              onClick={() => setKindFilter([])}
+              onClick={() => setKindValue("")}
               className="ml-1 font-mono text-[9px] uppercase tracking-widest text-teal hover:text-gold-bright"
             >
               clear
@@ -576,9 +599,7 @@ function TimelineInner() {
                   chapter={ch}
                   kinds={activeKinds}
                   highlightId={highlightId}
-                  onSelect={(id) =>
-                    router.push(`/timeline?event=${id}`, { scroll: false })
-                  }
+                  onSelect={(id) => updateUrlState({ event: id }, "push")}
                   onOverflow={jumpToChapter}
                   onMissingHighlight={() => setMode("chapter")}
                 />

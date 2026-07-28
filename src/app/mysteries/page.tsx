@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
+import { EvidenceDrawer } from "@/components/ui/EvidenceDrawer";
 import {
   ArchiveNote,
   ChapterRef,
@@ -12,6 +13,7 @@ import { mysteries } from "@/lib/db";
 import { currentIntelText, mysteryStatusAt } from "@/lib/spoiler";
 import { useEffectiveChapter } from "@/lib/store";
 import type { Evidence, Mystery, MysteryStatus } from "@/lib/types";
+import { useUrlString } from "@/lib/urlState";
 
 const STATUS_ORDER: MysteryStatus[] = [
   "open",
@@ -47,7 +49,13 @@ interface CaseEntry {
 
 export default function MysteriesPage() {
   const clearanceChapter = useEffectiveChapter();
-  const [statusFilter, setStatusFilter] = useState<MysteryStatus | null>(null);
+  const [statusValue, setStatusValue] = useUrlString(
+    "status",
+    "all",
+    (value) => value === "all" || STATUS_ORDER.includes(value as MysteryStatus),
+  );
+  const statusFilter =
+    statusValue === "all" ? null : (statusValue as MysteryStatus);
 
   // Only cases that have entered the record at this clearance, with their
   // status reconstructed as of the clearance chapter.
@@ -89,7 +97,8 @@ export default function MysteriesPage() {
       <div className="mb-5 flex flex-wrap gap-2">
         <button
           type="button"
-          onClick={() => setStatusFilter(null)}
+          onClick={() => setStatusValue("all")}
+          aria-pressed={statusFilter === null}
           className={`border px-2.5 py-1 font-mono text-[10px] uppercase tracking-widest transition-colors ${
             statusFilter === null
               ? "border-gold-line text-gold-bright"
@@ -105,7 +114,8 @@ export default function MysteriesPage() {
             <button
               key={status}
               type="button"
-              onClick={() => setStatusFilter(active ? null : status)}
+              onClick={() => setStatusValue(active ? "all" : status)}
+              aria-pressed={active}
               disabled={count === 0}
               className={`border px-2.5 py-1 font-mono text-[10px] uppercase tracking-widest transition-colors disabled:cursor-not-allowed disabled:opacity-40 ${
                 active ? "border-current" : "border-line hover:border-current"
@@ -188,12 +198,28 @@ function CaseFile({
           </div>
           <h2 className="royal-heading text-xl">{mystery.question}</h2>
         </div>
-        <span
-          className="stamp shrink-0 text-[11px]"
-          style={{ color: MYSTERY_STATUS_COLOR[status] }}
-        >
-          {MYSTERY_STATUS_LABEL[status]}
-        </span>
+        <div className="flex shrink-0 flex-col items-end gap-2">
+          <span
+            className="stamp text-[11px]"
+            style={{ color: MYSTERY_STATUS_COLOR[status] }}
+          >
+            {MYSTERY_STATUS_LABEL[status]}
+          </span>
+          <EvidenceDrawer
+            title={`${mystery.question} · evidence`}
+            evidence={[
+              ...evidenceFor.map((item) => ({
+                ...item,
+                note: `Supports: ${item.note}`,
+              })),
+              ...evidenceAgainst.map((item) => ({
+                ...item,
+                note: `Counters: ${item.note}`,
+              })),
+            ].sort((a, b) => a.chapter - b.chapter)}
+            summary="All chapter-cleared evidence currently attached to this case."
+          />
+        </div>
       </header>
 
       <div className="space-y-4 p-4">

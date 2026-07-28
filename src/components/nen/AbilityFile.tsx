@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { ReactNode } from "react";
+import { EvidenceDrawer } from "@/components/ui/EvidenceDrawer";
 import {
   ArchiveNote,
   ChapterRef,
@@ -105,6 +106,11 @@ export function AbilityFile({ id }: { id: string }) {
                 {status}
               </span>
               <ConfidenceBadge level={ability.confidence} />
+              <EvidenceDrawer
+                title={`${ability.name} · evidence`}
+                evidence={evidence}
+                summary={ability.description}
+              />
             </div>
           </div>
           <span className="stamp shrink-0 text-[10px] text-gold">

@@ -1,24 +1,81 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import dynamic from "next/dynamic";
+import { useEffect, useRef, useState } from "react";
 import { ChapterControl } from "@/components/shell/ChapterControl";
-import { CommandPalette } from "@/components/shell/CommandPalette";
+import { ShareLinkButton } from "@/components/shell/ShareLinkButton";
 import { Sidebar } from "@/components/shell/Sidebar";
 import { useNexusStore } from "@/lib/store";
 
+const CommandPalette = dynamic(() =>
+  import("@/components/shell/CommandPalette").then(
+    (module) => module.CommandPalette,
+  ),
+);
+
 export function AppShell({ children }: { children: React.ReactNode }) {
   const [paletteOpen, setPaletteOpen] = useState(false);
+  const [paletteLoaded, setPaletteLoaded] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const menuDialogRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    useNexusStore.persist.rehydrate();
+    void Promise.resolve(useNexusStore.persist.rehydrate());
+
+    // Scope is a private reader preference, not part of a shared view.
+    // Clean up links created by older versions without applying their value.
+    const url = new URL(window.location.href);
+    if (url.searchParams.has("scope")) {
+      url.searchParams.delete("scope");
+      window.history.replaceState(
+        null,
+        "",
+        `${url.pathname}${url.search}${url.hash}`,
+      );
+    }
   }, []);
+
+  useEffect(() => {
+    if (!menuOpen) return;
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        event.preventDefault();
+        setMenuOpen(false);
+        return;
+      }
+      if (event.key !== "Tab" || !menuDialogRef.current) return;
+      const focusable = [
+        ...menuDialogRef.current.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
+        ),
+      ];
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last?.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first?.focus();
+      }
+    };
+    requestAnimationFrame(() =>
+      menuDialogRef.current?.querySelector<HTMLElement>("a[href]")?.focus(),
+    );
+    window.addEventListener("keydown", onKey);
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      menuButtonRef.current?.focus();
+    };
+  }, [menuOpen]);
 
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
       if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
         e.preventDefault();
+        setPaletteLoaded(true);
         setPaletteOpen((o) => !o);
       }
     }
@@ -49,6 +106,11 @@ export function AppShell({ children }: { children: React.ReactNode }) {
               onClick={() => setMenuOpen(false)}
             />
             <motion.div
+              ref={menuDialogRef}
+              id="mobile-navigation"
+              role="dialog"
+              aria-modal="true"
+              aria-label="Main navigation"
               className="absolute inset-y-0 left-0 w-64 bg-bg"
               initial={{ x: -280 }}
               animate={{ x: 0 }}
@@ -65,9 +127,12 @@ export function AppShell({ children }: { children: React.ReactNode }) {
         {/* Top intel bar */}
         <header className="sticky top-0 z-30 flex flex-wrap items-center gap-x-3 gap-y-2 border-b border-line bg-bg-deep/90 px-4 py-2 backdrop-blur">
           <button
+            ref={menuButtonRef}
             type="button"
             className="border border-line px-2 py-1 font-mono text-[10px] uppercase tracking-widest text-muted hover:text-parchment lg:hidden"
             onClick={() => setMenuOpen(true)}
+            aria-expanded={menuOpen}
+            aria-controls="mobile-navigation"
           >
             Menu
           </button>
@@ -78,7 +143,10 @@ export function AppShell({ children }: { children: React.ReactNode }) {
           <div className="flex-1" />
           <button
             type="button"
-            onClick={() => setPaletteOpen(true)}
+            onClick={() => {
+              setPaletteLoaded(true);
+              setPaletteOpen(true);
+            }}
             className="flex items-center gap-2 border border-line px-2.5 py-1 text-xs text-muted transition-colors hover:border-gold-line hover:text-parchment"
           >
             <span className="hidden sm:inline">Search the archive</span>
@@ -87,6 +155,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
               ⌘K
             </kbd>
           </button>
+          <ShareLinkButton />
         </header>
 
         <main className="mx-auto max-w-7xl px-4 py-6 lg:px-8">{children}</main>
@@ -111,10 +180,12 @@ export function AppShell({ children }: { children: React.ReactNode }) {
         </footer>
       </div>
 
-      <CommandPalette
-        open={paletteOpen}
-        onClose={() => setPaletteOpen(false)}
-      />
+      {paletteLoaded && (
+        <CommandPalette
+          open={paletteOpen}
+          onClose={() => setPaletteOpen(false)}
+        />
+      )}
     </div>
   );
 }

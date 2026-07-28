@@ -1,9 +1,10 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import { characterById, factionById, locations } from "@/lib/db";
 import { latestStamp } from "@/lib/spoiler";
 import type { ShipLocation } from "@/lib/types";
+import { useUrlString } from "@/lib/urlState";
 import {
   assignToContainers,
   CANONICITY_DASH,
@@ -137,9 +138,24 @@ export function MapExplorer({
   onFocusTier: (tier: number | null) => void;
   onSelect: (locationId: string) => void;
 }) {
-  const [layer, setLayer] = useState<MapLayer>("activity");
-  const [activeOnly, setActiveOnly] = useState(false);
-  const [showShore, setShowShore] = useState(false);
+  const [layerValue, setLayerValue] = useUrlString(
+    "layer",
+    "activity",
+    (value) => LAYERS.some(([layer]) => layer === value),
+  );
+  const [activeOnlyValue, setActiveOnlyValue] = useUrlString(
+    "active",
+    "all",
+    (value) => value === "all" || value === "only",
+  );
+  const [showShoreValue, setShowShoreValue] = useUrlString(
+    "shore",
+    "hidden",
+    (value) => value === "hidden" || value === "shown",
+  );
+  const layer = layerValue as MapLayer;
+  const activeOnly = activeOnlyValue === "only";
+  const showShore = showShoreValue === "shown";
 
   const visibleLocations = useMemo(
     () => locations.filter((loc) => loc.introducedCh <= displayCh),
@@ -213,7 +229,7 @@ export function MapExplorer({
               : "Choose a tier to inspect its rooms. The whole-ship view prioritizes orientation and current activity."}
           </p>
         </div>
-        <LayerControl layer={layer} onChange={setLayer} />
+        <LayerControl layer={layer} onChange={setLayerValue} />
       </div>
 
       {focusedTierLoc ? (
@@ -227,7 +243,9 @@ export function MapExplorer({
           remainsByContainer={remainsByContainer}
           selectedId={selectedId}
           activeOnly={activeOnly}
-          onActiveOnlyChange={setActiveOnly}
+          onActiveOnlyChange={(next) =>
+            setActiveOnlyValue(next ? "only" : "all")
+          }
           onSelect={onSelect}
         />
       ) : (
@@ -241,7 +259,9 @@ export function MapExplorer({
           livingByContainer={livingByContainer}
           remainsByContainer={remainsByContainer}
           showShore={showShore}
-          onShowShoreChange={setShowShore}
+          onShowShoreChange={(next) =>
+            setShowShoreValue(next ? "shown" : "hidden")
+          }
           onFocusTier={onFocusTier}
           onSelect={onSelect}
           selectedId={selectedId}

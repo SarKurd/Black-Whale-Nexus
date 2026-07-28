@@ -73,6 +73,7 @@ export function Sidebar({ onNavigate }: { onNavigate?: () => void }) {
                   key={item.href}
                   href={item.href}
                   onClick={onNavigate}
+                  aria-current={active ? "page" : undefined}
                   className={`group flex items-center gap-2.5 border-l px-2 py-1.5 text-sm transition-colors ${
                     active
                       ? "border-gold bg-gold/5 text-ivory"

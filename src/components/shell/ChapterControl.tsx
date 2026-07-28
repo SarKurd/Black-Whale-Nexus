@@ -41,6 +41,7 @@ export function ChapterControl({ large = false }: { large?: boolean }) {
             key={m.id}
             type="button"
             onClick={() => setMode(m.id)}
+            aria-pressed={effMode === m.id}
             className={`px-2 py-1 font-mono text-[10px] uppercase tracking-widest transition-colors ${
               effMode === m.id
                 ? "bg-gold/15 text-gold-bright"
@@ -64,7 +65,9 @@ export function ChapterControl({ large = false }: { large?: boolean }) {
             min={ARC_START}
             max={ARC_END}
             value={effChapter}
-            onChange={(e) => setChapter(Number(e.target.value))}
+            onChange={(e) => {
+              setChapter(Number(e.target.value));
+            }}
             className={`accent-[var(--gold)] ${
               large ? "w-full" : "w-full sm:w-24 lg:w-36"
             }`}

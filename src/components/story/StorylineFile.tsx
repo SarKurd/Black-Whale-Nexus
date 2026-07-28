@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { useState } from "react";
 import { EventEntry, RecorderList } from "@/components/story/EventRecorder";
 import {
   ArchiveNote,
@@ -22,6 +21,7 @@ import {
 } from "@/lib/spoiler";
 import { useEffectiveChapter } from "@/lib/store";
 import type { StorylineNodeKind } from "@/lib/types";
+import { useUrlString } from "@/lib/urlState";
 
 const STATUS_COLOR: Record<string, string> = {
   active: "var(--teal)",
@@ -46,7 +46,13 @@ const NODE_META: Record<StorylineNodeKind, { label: string; color: string }> = {
 export function StorylineFile({ id }: { id: string }) {
   const ch = useEffectiveChapter();
   const s = storylineById.get(id);
-  const [chronology, setChronology] = useState<SortDirection>("desc");
+  const [chronologyValue, setChronologyValue] = useUrlString(
+    "order",
+    "desc",
+    (value) => value === "asc" || value === "desc",
+  );
+  const chronology = chronologyValue as SortDirection;
+  const setChronology = (value: SortDirection) => setChronologyValue(value);
 
   if (!s) notFound();
 

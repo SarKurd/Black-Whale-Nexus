@@ -2,26 +2,35 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import {
   ArchiveNote,
   ChapterRef,
   EntityLink,
   SectionHeading,
 } from "@/components/ui/kit";
-import {
-  abilityById,
-  characterById,
-  factionById,
-  glossary,
-  locationById,
-} from "@/lib/db";
+import { characters } from "@/data/characters";
+import { factions } from "@/data/factions";
+import { glossary } from "@/data/glossary";
+import { locations } from "@/data/locations";
+import { nenAbilities } from "@/data/nen";
 import { useEffectiveChapter } from "@/lib/store";
 import type { GlossaryTerm } from "@/lib/types";
+import { useUrlString } from "@/lib/urlState";
 
 // Typed alias — the data module is authored in parallel, so the raw export
 // may be error-typed until it lands. This cast is a no-op once it exists.
 const glossaryTerms = glossary as GlossaryTerm[];
+const characterById = new Map(
+  characters.map((character) => [character.id, character]),
+);
+const factionById = new Map(factions.map((faction) => [faction.id, faction]));
+const locationById = new Map(
+  locations.map((location) => [location.id, location]),
+);
+const abilityById = new Map(
+  nenAbilities.map((ability) => [ability.id, ability]),
+);
 
 const CATEGORY_ORDER: GlossaryTerm["category"][] = [
   "nen",
@@ -61,7 +70,7 @@ function relatedVisible(id: string, ch: number): boolean {
 
 export default function GlossaryPage() {
   const ch = useEffectiveChapter();
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useUrlString("q", "");
 
   const sections = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -93,6 +102,7 @@ export default function GlossaryPage() {
         <input
           value={query}
           onChange={(e) => setQuery(e.target.value)}
+          aria-label="Filter glossary terms"
           placeholder="Quick filter A–Z…"
           className="w-64 border border-line bg-panel px-3 py-1.5 text-sm text-ivory outline-none placeholder:text-faint focus:border-gold-line"
         />
