@@ -11,17 +11,9 @@ interface PreferencesState {
   /** Upper chapter bound when spoilerMode === "chapter". */
   spoilerChapter: number;
   hideTheories: boolean;
-  density: "comfortable" | "compact";
-  favoriteCharacterIds: string[];
-  recentlyViewed: { href: string; label: string }[];
-  completedPaths: string[];
   setSpoilerMode: (mode: SpoilerMode) => void;
   setSpoilerChapter: (ch: number) => void;
   setHideTheories: (hide: boolean) => void;
-  setDensity: (d: "comfortable" | "compact") => void;
-  toggleFavorite: (characterId: string) => void;
-  pushRecent: (entry: { href: string; label: string }) => void;
-  markPathCompleted: (pathId: string) => void;
 }
 
 export const useNexusStore = create<PreferencesState>()(
@@ -30,33 +22,9 @@ export const useNexusStore = create<PreferencesState>()(
       spoilerMode: "full",
       spoilerChapter: ARC_END,
       hideTheories: false,
-      density: "comfortable",
-      favoriteCharacterIds: [],
-      recentlyViewed: [],
-      completedPaths: [],
       setSpoilerMode: (spoilerMode) => set({ spoilerMode }),
       setSpoilerChapter: (spoilerChapter) => set({ spoilerChapter }),
       setHideTheories: (hideTheories) => set({ hideTheories }),
-      setDensity: (density) => set({ density }),
-      toggleFavorite: (characterId) =>
-        set((s) => ({
-          favoriteCharacterIds: s.favoriteCharacterIds.includes(characterId)
-            ? s.favoriteCharacterIds.filter((id) => id !== characterId)
-            : [...s.favoriteCharacterIds, characterId],
-        })),
-      pushRecent: (entry) =>
-        set((s) => ({
-          recentlyViewed: [
-            entry,
-            ...s.recentlyViewed.filter((r) => r.href !== entry.href),
-          ].slice(0, 12),
-        })),
-      markPathCompleted: (pathId) =>
-        set((s) => ({
-          completedPaths: s.completedPaths.includes(pathId)
-            ? s.completedPaths
-            : [...s.completedPaths, pathId],
-        })),
     }),
     {
       name: "black-whale-nexus-prefs",
