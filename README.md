@@ -1,4 +1,4 @@
-# Black Whale Nexus
+<h1 align="center">Black Whale Nexus</h1>
 
 An interactive intelligence archive for the full Hunter × Hunter **Succession
 War continuity from chapter 340 onward** — from Beyond Netero's Dark Continent

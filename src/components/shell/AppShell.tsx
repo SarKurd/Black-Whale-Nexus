@@ -167,6 +167,21 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             </span>
             <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
               <a
+                href="https://github.com/SarKurd/Black-Whale-Nexus"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="intel-label inline-flex items-center gap-1.5 text-muted transition-colors hover:text-parchment"
+              >
+                <svg
+                  aria-hidden="true"
+                  viewBox="0 0 24 24"
+                  className="h-3.5 w-3.5 shrink-0 fill-current"
+                >
+                  <path d="M12 .297a12 12 0 0 0-3.793 23.39c.6.113.82-.258.82-.577v-2.234c-3.338.726-4.04-1.416-4.04-1.416-.546-1.387-1.332-1.756-1.332-1.756-1.09-.745.083-.73.083-.73 1.205.085 1.84 1.238 1.84 1.238 1.07 1.835 2.809 1.305 3.495.998.108-.776.418-1.305.762-1.605-2.665-.304-5.466-1.332-5.466-5.93 0-1.31.467-2.381 1.235-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23a11.5 11.5 0 0 1 6.009 0c2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.233 1.911 1.233 3.221 0 4.61-2.806 5.624-5.478 5.921.43.372.814 1.103.814 2.222v3.293c0 .322.216.694.825.576A12.001 12.001 0 0 0 12 .297" />
+                </svg>
+                GitHub ↗
+              </a>
+              <a
                 href="https://ko-fi.com/sarbast"
                 target="_blank"
                 rel="noopener noreferrer"
