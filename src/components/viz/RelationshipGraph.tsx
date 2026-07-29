@@ -436,7 +436,13 @@ export function RelationshipGraph({
           return (
             <motion.line
               key={l.rel.id}
-              initial={{ opacity: 0 }}
+              initial={{
+                opacity: 0,
+                x1: s.x,
+                y1: s.y,
+                x2: t.x,
+                y2: t.y,
+              }}
               animate={{
                 opacity: dimmed ? 0.06 : ended ? 0.22 : isSel ? 1 : 0.55,
                 x1: s.x,
