@@ -199,6 +199,15 @@ export const STATIC_PAGE_SEO = {
       "Review clearly labeled Hunter × Hunter Succession War theories alongside their supporting evidence, contradictions, confidence, and current status.",
     path: "/theories",
   },
+  // Keep new sections at the end: sectionOgCard numbers them by declaration
+  // order, and earlier cards must keep their file numbers.
+  "/declassified": {
+    title: "Newly Declassified Intel",
+    heading: "Declassification Digest",
+    description:
+      "Review everything newly declassified between two chapter clearances of the Succession War — deaths revealed, characters entering the record, knowledge gained, and mysteries advanced.",
+    path: "/declassified",
+  },
 } as const satisfies Record<string, SeoPage>;
 
 export function characterSeo(character: Character): SeoPage {

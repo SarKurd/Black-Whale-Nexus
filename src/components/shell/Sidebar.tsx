@@ -39,6 +39,7 @@ const NAV: {
       { href: "/mysteries", label: "Mysteries", code: "13" },
       { href: "/compare", label: "Compare", code: "14" },
       { href: "/theories", label: "Theory Room", code: "15" },
+      { href: "/declassified", label: "Declassified", code: "16" },
     ],
   },
 ];

@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import { ARC_END } from "@/lib/types";
@@ -31,6 +32,13 @@ export const useNexusStore = create<PreferencesState>()(
       // Rehydrate after mount (see AppShell) so the first client render
       // matches the statically prerendered HTML.
       skipHydration: true,
+      // A corrupt persisted entry makes hydration fail silently, which would
+      // leave useStoreHydrated false forever — drop it and hydrate defaults.
+      onRehydrateStorage: () => (_state, error) => {
+        if (!error) return;
+        useNexusStore.persist.clearStorage();
+        void useNexusStore.persist.rehydrate();
+      },
     },
   ),
 );
@@ -47,4 +55,22 @@ export function useEffectiveChapter(): number {
   const ch = useNexusStore((s) => s.spoilerChapter);
   if (mode === "full") return ARC_END;
   return ch;
+}
+
+/**
+ * True once the persisted preferences have been rehydrated (AppShell triggers
+ * that after mount). Writes that *derive from* persisted state must wait for
+ * this — a child effect that runs before rehydration would persist the
+ * defaults right over the reader's saved preferences.
+ */
+export function useStoreHydrated(): boolean {
+  const [hydrated, setHydrated] = useState(false);
+  useEffect(() => {
+    if (useNexusStore.persist.hasHydrated()) {
+      setHydrated(true);
+      return;
+    }
+    return useNexusStore.persist.onFinishHydration(() => setHydrated(true));
+  }, []);
+  return hydrated;
 }
