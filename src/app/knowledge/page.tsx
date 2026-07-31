@@ -1,7 +1,12 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
+import Link from "next/link";
 import { Suspense, useMemo } from "react";
+import {
+  EVENT_KIND_META,
+  EventKindChip,
+} from "@/components/story/EventRecorder";
 import {
   ArchiveNote,
   ChapterRef,
@@ -12,12 +17,19 @@ import {
   SectionHeading,
   Tag,
 } from "@/components/ui/kit";
-import { factById, knowledgeByFact, knowledgeFacts } from "@/lib/db";
+import {
+  factById,
+  type KnowledgePropagation,
+  knowledgeByFact,
+  knowledgeFacts,
+  knowledgePropagationByFact,
+} from "@/lib/db";
 import { useEffectiveChapter } from "@/lib/store";
 import type {
   CharacterKnowledge,
   KnowledgeFact,
   KnowledgeState,
+  StoryEvent,
 } from "@/lib/types";
 import { ARC_START } from "@/lib/types";
 import { useUrlString } from "@/lib/urlState";
@@ -262,6 +274,8 @@ function ClearanceBoard({ fact, ch }: { fact: KnowledgeFact; ch: number }) {
 
       <SpreadStrip rows={rows} ch={ch} />
 
+      <PropagationRecord fact={fact} ch={ch} />
+
       {buckets.length === 0 ? (
         <ArchiveNote>
           No character-level intelligence recorded at this clearance.
@@ -417,5 +431,96 @@ function SpreadStrip({ rows, ch }: { rows: CharacterKnowledge[]; ch: number }) {
         ))}
       </div>
     </div>
+  );
+}
+
+/* ---------------------------------------------------------------------------
+   Transmission record: the chain of events that moved each character to a
+   knowledge state — who learned (or was misled) about the fact, when, and
+   through which incident. Sourced from StoryEvent.knowledgeChanges.
+--------------------------------------------------------------------------- */
+
+function PropagationRecord({ fact, ch }: { fact: KnowledgeFact; ch: number }) {
+  const hops = knowledgePropagationByFact.get(fact.id) ?? [];
+  if (hops.length === 0) return null;
+
+  const cleared = hops.filter((hop) => hop.event.chapter <= ch);
+  const sealedHops = hops.length - cleared.length;
+
+  // Consecutive hops from the same event render as one entry.
+  const entries: { event: StoryEvent; changes: KnowledgePropagation[] }[] = [];
+  for (const hop of cleared) {
+    const last = entries[entries.length - 1];
+    if (last && last.event.id === hop.event.id) last.changes.push(hop);
+    else entries.push({ event: hop.event, changes: [hop] });
+  }
+
+  return (
+    <Panel label="Transmission record" title="How the intelligence traveled">
+      {entries.length === 0 ? (
+        <ArchiveNote>
+          Every traced transmission of this fact is sealed beyond current
+          clearance (chapter {ch}).
+        </ArchiveNote>
+      ) : (
+        <ol className="relative ml-1.5 space-y-4 border-l border-line pl-5">
+          {entries.map(({ event, changes }) => (
+            <li key={event.id} className="relative">
+              <span
+                className="absolute -left-[25px] top-1 h-2 w-2 rounded-full border"
+                style={{
+                  borderColor: EVENT_KIND_META[event.kind].color,
+                  background: "var(--panel)",
+                }}
+                aria-hidden
+              />
+              <div className="flex flex-wrap items-center gap-2">
+                <ChapterRef ch={event.chapter} />
+                {event.day !== undefined && (
+                  <span className="font-mono text-[9px] uppercase tracking-widest text-faint">
+                    Day {event.day}
+                    {event.approxTime ? ` · ${event.approxTime}` : ""}
+                  </span>
+                )}
+                <EventKindChip kind={event.kind} />
+              </div>
+              <Link
+                href={`/timeline?event=${event.id}`}
+                className="mt-0.5 block text-sm leading-snug text-ivory hover:text-gold-bright"
+              >
+                {event.title}
+              </Link>
+              <ul className="mt-1 space-y-0.5">
+                {changes.map((change) => (
+                  <li
+                    key={`${change.characterId}-${change.state}`}
+                    className="flex flex-wrap items-baseline gap-x-2 text-xs"
+                  >
+                    <EntityLink id={change.characterId} />
+                    <span className="text-faint" aria-hidden>
+                      →
+                    </span>
+                    <span
+                      className="font-mono text-[10px] uppercase tracking-widest"
+                      style={{ color: STATE_COLOR[change.state] }}
+                    >
+                      {STATE_LABEL[change.state]}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </li>
+          ))}
+        </ol>
+      )}
+      {sealedHops > 0 && entries.length > 0 && (
+        <div className="mt-3">
+          <ArchiveNote>
+            {sealedHops} later transmission{sealedHops === 1 ? "" : "s"} sealed
+            beyond current clearance (chapter {ch}).
+          </ArchiveNote>
+        </div>
+      )}
+    </Panel>
   );
 }

@@ -24,6 +24,7 @@ import type {
   DeathRecord,
   Faction,
   GuardianBeast,
+  KnowledgeState,
   NenAbility,
   Prince,
   Relationship,
@@ -205,6 +206,33 @@ export const knowledgeByCharacter = (() => {
   }
   return map;
 })();
+
+/** One hop in a fact's spread: the event that moved a character to a state. */
+export interface KnowledgePropagation {
+  event: StoryEvent;
+  characterId: string;
+  state: KnowledgeState;
+}
+
+/** Event-driven knowledge changes grouped by fact, in story order. */
+export const knowledgePropagationByFact: Map<string, KnowledgePropagation[]> =
+  (() => {
+    const map = new Map<string, KnowledgePropagation[]>();
+    for (const event of events) {
+      for (const change of event.knowledgeChanges ?? []) {
+        const list = map.get(change.factId) ?? [];
+        list.push({
+          event,
+          characterId: change.characterId,
+          state: change.state,
+        });
+        map.set(change.factId, list);
+      }
+    }
+    for (const list of map.values())
+      list.sort((a, b) => a.event.chapter - b.event.chapter);
+    return map;
+  })();
 
 export const sortedChapters = [...chapters].sort((a, b) => a.number - b.number);
 
