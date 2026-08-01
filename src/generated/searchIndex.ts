@@ -6559,7 +6559,7 @@ export const searchIndex: SearchItem[] = [
     sub: "Event · Ch.404",
     kind: "Event",
     href: "/chronology?event=ev-404-mind-swap-doctrine",
-    hay: "the full mechanics of the mind swap halkenburg-in-balsamilco narrates his ability's rules, proven on shikaku, sumidori, and vict: one mind awake at a time, his side holding priority; when the possessed side's original body dies, the victim's mind returns home and the intruder sleeps. his plan: kill his own body, ride balsamilco for roughly ten hours, and win the contest as a dead man.",
+    hay: "the full mechanics of the mind swap halkenburg-in-balsamilco narrates his ability's rules, proven on shikaku, sumidori, and vict: one mind awake at a time, his side holding priority; when the possessed side's original body dies, the victim's mind returns home and the intruder sleeps. his plan: let his original body die, keep his soul active inside balsamilco for roughly ten hours, and continue the contest from there.",
     revealCh: 404,
   },
   {

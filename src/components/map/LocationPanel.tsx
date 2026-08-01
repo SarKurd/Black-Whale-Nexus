@@ -405,20 +405,33 @@ export function LocationPanel({
       {activeTab === "incidents" && deathsHere.length > 0 && (
         <div className="mt-3 border-t border-line pt-2">
           <div className="intel-label mb-1" style={{ color: "var(--blood)" }}>
-            Deaths on site
+            Death records on site
           </div>
           <ul className="space-y-1.5">
-            {deathsHere.map((d) => (
-              <li
-                key={d.id}
-                className="border-l-2 border-blood/60 pl-2 text-xs text-muted"
-              >
-                <EntityLink id={d.victimId} className="text-blood-bright" />{" "}
-                <span className="mr-1">— {d.method}</span>
-                <ChapterRef ch={d.chapter} />
-                <ReplayAt ch={d.chapter} onViewChapter={onViewChapter} />
-              </li>
-            ))}
+            {deathsHere.map((d) => {
+              const bodyOnly = d.scope === "body";
+              return (
+                <li
+                  key={d.id}
+                  className={`border-l-2 pl-2 text-xs text-muted ${
+                    bodyOnly ? "border-gold/60" : "border-blood/60"
+                  }`}
+                >
+                  <EntityLink
+                    id={d.victimId}
+                    className={bodyOnly ? "text-gold" : "text-blood-bright"}
+                  />{" "}
+                  {bodyOnly && (
+                    <span className="mr-1 font-mono text-[9px] uppercase tracking-wider text-gold-bright">
+                      body only · soul active
+                    </span>
+                  )}
+                  <span className="mr-1">— {d.method}</span>
+                  <ChapterRef ch={d.chapter} />
+                  <ReplayAt ch={d.chapter} onViewChapter={onViewChapter} />
+                </li>
+              );
+            })}
           </ul>
         </div>
       )}

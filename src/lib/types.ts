@@ -35,6 +35,7 @@ export interface Evidence {
 
 export type CharacterStatus =
   | "alive"
+  | "soul-active"
   | "dead"
   | "missing"
   | "incapacitated"
@@ -489,6 +490,8 @@ export interface CharacterKnowledge {
 export interface DeathRecord {
   id: Id;
   victimId: Id;
+  /** What the record confirms. Defaults to the death of the whole person. */
+  scope?: "person" | "body";
   killerId?: Id;
   suspectedKillerIds?: Id[];
   /** Named killer/cause that is not a registry character (e.g. the contest's

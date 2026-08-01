@@ -45,6 +45,7 @@ const mysteryLookup = mysteryById as ReadonlyMap<string, Mystery>;
 
 const CENSUS_ORDER: CharacterStatus[] = [
   "alive",
+  "soul-active",
   "dead",
   "missing",
   "incapacitated",
@@ -155,9 +156,9 @@ export default function DeathsPage() {
         <div className="intel-label-gold">Ledger · Casualty records</div>
         <h1 className="royal-heading text-3xl">Death & Status Tracker</h1>
         <p className="mt-1 max-w-2xl text-sm text-muted">
-          The casualty ledger of the succession war, reconstructed to your
-          clearance. Deaths the story has not yet revealed at chapter {ch} are
-          withheld.
+          Confirmed deaths and body-death records from the succession war,
+          reconstructed to your clearance. Records the story has not yet
+          revealed at chapter {ch} are withheld.
         </p>
       </div>
 
@@ -308,8 +309,9 @@ export default function DeathsPage() {
             <SectionHeading>Archive note</SectionHeading>
             <p className="text-xs text-faint">
               A record enters this ledger only once the manga confirms or
-              reveals the death. Suspected killers carry a warning badge until
-              the record is closed.
+              reveals a death. A body-only record does not mark the person as
+              deceased when their soul remains active. Suspected killers carry a
+              warning badge until the record is closed.
             </p>
           </div>
         </div>
@@ -327,6 +329,7 @@ function DeathRow({
   ch: number;
   index: number;
 }) {
+  const bodyOnly = record.scope === "body";
   const relatedMysteries = (record.mysteryIds ?? [])
     .map((mid) => mysteryLookup.get(mid))
     .filter((m): m is Mystery => Boolean(m && m.introducedCh <= ch));
@@ -338,7 +341,7 @@ function DeathRow({
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.25, delay: Math.min(index, 8) * 0.04 }}
       className="dossier corner-ticks scroll-mt-16 border-l-2 p-4"
-      style={{ borderLeftColor: "var(--blood)" }}
+      style={{ borderLeftColor: bodyOnly ? "var(--gold)" : "var(--blood)" }}
     >
       <div className="flex flex-wrap items-center gap-3">
         <Monogram characterId={record.victimId} />
@@ -349,6 +352,11 @@ function DeathRow({
               className="royal-heading text-lg"
             />
             <ChapterRef ch={record.chapter} />
+            {bodyOnly && (
+              <span className="border border-gold-line bg-gold/10 px-1.5 py-px font-mono text-[9px] uppercase tracking-widest text-gold-bright">
+                Body death · soul active
+              </span>
+            )}
             {record.revealCh !== undefined &&
               record.revealCh !== record.chapter && (
                 <span className="font-mono text-[9px] uppercase tracking-widest text-faint">

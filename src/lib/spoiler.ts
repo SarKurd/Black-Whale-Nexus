@@ -117,6 +117,7 @@ export function mysteryStatusAt(m: Mystery, at: number): MysteryStatus {
 /** Human labels. */
 export const STATUS_LABEL: Record<CharacterStatus, string> = {
   alive: "Alive",
+  "soul-active": "Soul active",
   dead: "Deceased",
   missing: "Missing",
   incapacitated: "Incapacitated",
@@ -128,6 +129,7 @@ export const STATUS_LABEL: Record<CharacterStatus, string> = {
 
 export const STATUS_COLOR: Record<CharacterStatus, string> = {
   alive: "var(--alive)",
+  "soul-active": "var(--teal)",
   dead: "var(--blood)",
   missing: "var(--warn)",
   incapacitated: "var(--warn)",

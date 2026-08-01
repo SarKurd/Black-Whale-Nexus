@@ -8646,24 +8646,31 @@ export const relationships: Relationship[] = [
       },
     ],
   },
+  // Permanent id retained after correcting the edge from a completed kill to
+  // Balsamilco's failed targeting operation; Halkenburg poisoned himself.
   {
     id: "rel-balsamilco-killed-halkenburg",
     from: "balsamilco",
     to: "halkenburg",
-    kind: "killed",
+    kind: "targeting",
     directed: true,
     strength: "strong",
     secret: true,
     confirmed: true,
-    startCh: 404,
-    revealCh: 404,
+    startCh: 402,
+    revealCh: 402,
     mutualAwareness: false,
     description:
-      "Balsamilco's hands administered the TSK-17 — but the mind wearing them was Halkenburg's own: the arrow had swapped them, and the prince poisoned his own flesh from inside his captor's body, then managed the 'sudden illness' cover story himself.",
+      "Balsamilco brought TSK-17 to the courthouse intending to kill Halkenburg. The plan was hijacked after the mind swap: Halkenburg, controlling Balsamilco's body, used the stolen poison on his own original body and managed the 'sudden illness' cover story himself. Balsamilco never administered it.",
     evidence: [
       {
+        chapter: 402,
+        note: "Balsamilco loads TSK-17 and resolves to eliminate Halkenburg.",
+        confidence: "canonical",
+      },
+      {
         chapter: 404,
-        note: "The courthouse poisoning and its aftermath.",
+        note: "Halkenburg controls Balsamilco's body while deliberately arranging his own body's death.",
         confidence: "canonical",
       },
     ],

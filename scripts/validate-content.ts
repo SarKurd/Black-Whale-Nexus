@@ -323,6 +323,7 @@ for (const d of deaths) {
   const victim = characters.find((c) => c.id === d.victimId);
   if (
     victim &&
+    d.scope !== "body" &&
     !victim.statusHistory.some(
       (s) => s.status === "dead" || s.status === "presumed-dead",
     )

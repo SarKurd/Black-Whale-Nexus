@@ -148,22 +148,37 @@ export function EventEntry({
                 Casualties
               </span>
               <span>
-                {event.casualtyIds.map((id, i) => (
-                  <span key={id}>
-                    {i > 0 && <span className="text-faint"> · </span>}
-                    <span className="line-through decoration-[var(--blood)] decoration-1">
-                      <EntityLink id={id} />
+                {event.casualtyIds.map((id, i) => {
+                  const deathRecord = deathByVictim.get(id);
+                  const bodyOnly = deathRecord?.scope === "body";
+                  return (
+                    <span key={id}>
+                      {i > 0 && <span className="text-faint"> · </span>}
+                      {bodyOnly ? (
+                        <EntityLink id={id} className="text-gold" />
+                      ) : (
+                        <span className="line-through decoration-[var(--blood)] decoration-1">
+                          <EntityLink id={id} />
+                        </span>
+                      )}
+                      {bodyOnly && (
+                        <span className="ml-1 font-mono text-[9px] uppercase tracking-wider text-gold-bright">
+                          body only · soul active
+                        </span>
+                      )}
+                      {deathRecord && (
+                        <Link
+                          href={`/deaths#${id}`}
+                          className={`ml-1 font-mono text-[9px] uppercase tracking-wider hover:text-gold-bright ${
+                            bodyOnly ? "text-gold" : "text-blood-bright"
+                          }`}
+                        >
+                          {bodyOnly ? "body record" : "record"} ▸
+                        </Link>
+                      )}
                     </span>
-                    {deathByVictim.has(id) && (
-                      <Link
-                        href={`/deaths#${id}`}
-                        className="ml-1 font-mono text-[9px] uppercase tracking-wider text-blood-bright hover:text-gold-bright"
-                      >
-                        record ▸
-                      </Link>
-                    )}
-                  </span>
-                ))}
+                  );
+                })}
               </span>
             </div>
           )}

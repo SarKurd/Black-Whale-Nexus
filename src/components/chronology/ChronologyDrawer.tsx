@@ -167,21 +167,36 @@ export function ChronologyDrawer({
             <div>
               <dt className="intel-label mb-1 text-blood-bright">Casualties</dt>
               <dd className="flex flex-wrap gap-x-3 gap-y-1">
-                {event.casualtyIds.map((id) => (
-                  <span key={id}>
-                    <span className="line-through decoration-blood">
-                      <EntityLink id={id} />
+                {event.casualtyIds.map((id) => {
+                  const deathRecord = deathByVictim.get(id);
+                  const bodyOnly = deathRecord?.scope === "body";
+                  return (
+                    <span key={id}>
+                      {bodyOnly ? (
+                        <EntityLink id={id} className="text-gold" />
+                      ) : (
+                        <span className="line-through decoration-blood">
+                          <EntityLink id={id} />
+                        </span>
+                      )}
+                      {bodyOnly && (
+                        <span className="ml-1 font-mono text-[9px] uppercase tracking-wider text-gold-bright">
+                          body only · soul active
+                        </span>
+                      )}
+                      {deathRecord && (
+                        <Link
+                          href={`/deaths#${id}`}
+                          className={`ml-1 font-mono text-[9px] uppercase tracking-wider hover:text-gold-bright ${
+                            bodyOnly ? "text-gold" : "text-blood-bright"
+                          }`}
+                        >
+                          {bodyOnly ? "body record" : "record"} ▸
+                        </Link>
+                      )}
                     </span>
-                    {deathByVictim.has(id) && (
-                      <Link
-                        href={`/deaths#${id}`}
-                        className="ml-1 font-mono text-[9px] uppercase tracking-wider text-blood-bright hover:text-gold-bright"
-                      >
-                        record ▸
-                      </Link>
-                    )}
-                  </span>
-                ))}
+                  );
+                })}
               </dd>
             </div>
           )}

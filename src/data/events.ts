@@ -3453,7 +3453,7 @@ export const events: StoryEvent[] = [
     id: "ev-404-mind-swap-doctrine",
     title: "The full mechanics of the mind swap",
     summary:
-      "Halkenburg-in-Balsamilco narrates his ability's rules, proven on Shikaku, Sumidori, and Vict: one mind awake at a time, his side holding priority; when the possessed side's original body dies, the victim's mind returns home and the intruder sleeps. His plan: kill his own body, ride Balsamilco for roughly ten hours, and win the contest as a dead man.",
+      "Halkenburg-in-Balsamilco narrates his ability's rules, proven on Shikaku, Sumidori, and Vict: one mind awake at a time, his side holding priority; when the possessed side's original body dies, the victim's mind returns home and the intruder sleeps. His plan: let his original body die, keep his soul active inside Balsamilco for roughly ten hours, and continue the contest from there.",
     chapter: 404,
     day: 11,
     kind: "nen-reveal",

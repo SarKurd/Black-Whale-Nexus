@@ -822,8 +822,8 @@ export const princes: Prince[] = [
       },
       {
         ch: 404,
-        risk: "eliminated",
-        why: "Body dead — but his unlit Flame of Life and Nasubi's own words say his soul, in Balsamilco, is still a contestant. Eliminated in form, fighting in fact.",
+        risk: "critical",
+        why: "His original body is dead, but his soul remains active inside Balsamilco and he is still contest-eligible. His survival now depends on a borrowed body inside enemy territory.",
       },
     ],
     assessment: {

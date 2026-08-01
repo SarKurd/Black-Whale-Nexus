@@ -447,14 +447,14 @@ export const characters: Character[] = [
       { ch: 349, status: "alive" },
       {
         ch: 403,
-        status: "possessed",
+        status: "soul-active",
         revealCh: 403,
-        note: "Mind swapped into Balsamilco by his own arrow; his body lies comatose under TSK-17.",
+        note: "Soul and mind swapped into Balsamilco by his own arrow; his original body lies comatose under TSK-17.",
       },
       {
         ch: 404,
-        status: "dead",
-        note: "Body only — his soul persists in Balsamilco, and per King Nasubi his succession eligibility persists with it. His Flame of Life remains unlit in the burial chamber.",
+        status: "soul-active",
+        note: "His original body is dead, but his soul remains active inside Balsamilco. King Nasubi confirms that Halkenburg is still a Succession Contest participant.",
       },
     ],
     locationHistory: [
@@ -472,9 +472,9 @@ export const characters: Character[] = [
       },
       {
         ch: 413,
-        locationId: "burial-chamber",
+        locationId: "halkenburg-quarters",
         revealCh: 413,
-        note: "His corpse is interred beside Salé-salé and Kacho, Flame of Life unlit; his soul fights on from Room 1009 in Balsamilco's body.",
+        note: "His soul operates from Room 1009 inside Balsamilco's body. Only Halkenburg's original corpse is interred in the burial chamber, where his Flame of Life remains unlit.",
       },
     ],
     objectives: [

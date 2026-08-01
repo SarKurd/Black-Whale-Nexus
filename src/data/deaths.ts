@@ -366,10 +366,11 @@ export const deaths: DeathRecord[] = [
   {
     id: "death-halkenburg",
     victimId: "halkenburg",
-    killerId: "balsamilco",
+    scope: "body",
+    killerId: "halkenburg",
     suspectedKillerIds: [],
     method:
-      "Body death by TSK-17: Balsamilco carried the bioweapon vial into the courthouse to erase him, but Halkenburg's arrow swapped their minds first (ch 403) — so the prince, wearing Balsamilco's body, administered the poison to his own flesh and managed the 'sudden illness' cover story himself. Doctors failed to resuscitate the body in the early hours of Day 12; his soul did not die with it.",
+      "Self-inflicted body death by TSK-17: Balsamilco carried the bioweapon vial into the courthouse intending to erase him, but Halkenburg's arrow swapped their minds first (ch 403). Wearing Balsamilco's body, Halkenburg deliberately administered the poison to his own original body and managed the 'sudden illness' cover story himself. Doctors failed to resuscitate the body in the early hours of Day 12; his soul did not die with it.",
     locationId: "tier-3-medical",
     chapter: 404,
     witnessIds: [],

@@ -528,10 +528,18 @@ function DossierTab({ c, d, ch }: { c: Char; d: Derived; ch: number }) {
             <ChapterRef ch={c.introducedCh} />
           </DataRow>
           {d.death && (d.death.revealCh ?? d.death.chapter) <= ch && (
-            <DataRow label="Death record">
+            <DataRow
+              label={
+                d.death.scope === "body" ? "Body death record" : "Death record"
+              }
+            >
               <Link
                 href="/deaths"
-                className="text-blood-bright hover:text-gold-bright"
+                className={
+                  d.death.scope === "body"
+                    ? "text-gold hover:text-gold-bright"
+                    : "text-blood-bright hover:text-gold-bright"
+                }
               >
                 Ch.{d.death.chapter} — {d.death.method}
               </Link>
