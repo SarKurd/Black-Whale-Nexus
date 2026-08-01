@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { useMemo } from "react";
 import {
@@ -119,7 +120,7 @@ export default function NenPage() {
 
   return (
     <div>
-      <div className="mb-4">
+      <div className="archive-page-header mb-6">
         <div className="intel-label-gold">Nen research archive</div>
         <h1 className="royal-heading text-3xl">Ability Files</h1>
         <p className="mt-2 max-w-3xl text-xs text-muted">
@@ -182,8 +183,8 @@ export default function NenPage() {
               <p className="mb-3 text-xs text-faint">{blurb}</p>
               {shown.length > 0 && (
                 <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
-                  {shown.map((a) => (
-                    <AbilityCard key={a.id} ability={a} />
+                  {shown.map((a, index) => (
+                    <AbilityCard key={a.id} ability={a} index={index} />
                   ))}
                 </div>
               )}
@@ -211,8 +212,17 @@ export default function NenPage() {
                     </ArchiveNote>
                   ) : (
                     <div className="grid gap-3 md:grid-cols-2">
-                      {visibleBeasts.map((b) => (
-                        <div key={b.id} className="dossier p-3">
+                      {visibleBeasts.map((b, index) => (
+                        <motion.div
+                          key={b.id}
+                          initial={{ opacity: 0, y: 6 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{
+                            duration: 0.2,
+                            delay: Math.min(index, 10) * 0.03,
+                          }}
+                          className="dossier p-3"
+                        >
                           <div className="flex flex-wrap items-baseline gap-2">
                             <span className="intel-label-gold">Beast of</span>
                             <EntityLink id={b.princeId} />
@@ -246,7 +256,7 @@ export default function NenPage() {
                               </Link>
                             )}
                           </div>
-                        </div>
+                        </motion.div>
                       ))}
                     </div>
                   )}
@@ -269,7 +279,13 @@ export default function NenPage() {
   );
 }
 
-function AbilityCard({ ability }: { ability: NenAbility }) {
+function AbilityCard({
+  ability,
+  index,
+}: {
+  ability: NenAbility;
+  index: number;
+}) {
   const status = ability.status ?? "unknown";
   // One-line teaser: first sentence only (lookbehind regex needs ES2018+).
   const periodIdx = ability.description.indexOf(". ");
@@ -278,7 +294,12 @@ function AbilityCard({ ability }: { ability: NenAbility }) {
       ? ability.description
       : ability.description.slice(0, periodIdx + 1);
   return (
-    <article className="dossier group block min-w-0 p-3 transition-colors hover:border-gold-line">
+    <motion.article
+      initial={{ opacity: 0, y: 6 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.2, delay: Math.min(index, 10) * 0.03 }}
+      className="dossier group block min-w-0 p-3 transition-colors hover:border-gold-line"
+    >
       <div className="flex items-baseline justify-between gap-2">
         <Link
           href={`/nen/${ability.id}`}
@@ -313,6 +334,6 @@ function AbilityCard({ ability }: { ability: NenAbility }) {
           <ChapterRef ch={ability.revealCh} />
         </div>
       </div>
-    </article>
+    </motion.article>
   );
 }

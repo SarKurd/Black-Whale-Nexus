@@ -48,7 +48,7 @@ export default function TheoriesPage() {
 
   return (
     <div>
-      <div className="mb-4">
+      <div className="archive-page-header mb-6">
         <div className="intel-label" style={{ color: "var(--violet)" }}>
           Speculative annex
         </div>

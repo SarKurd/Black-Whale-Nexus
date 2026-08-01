@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useId, useRef } from "react";
+import { createPortal } from "react-dom";
 import { EventKindChip } from "@/components/story/EventRecorder";
 import {
   ChapterRef,
@@ -26,6 +27,10 @@ export function ChronologyDrawer({
   const titleId = useId();
   const drawerRef = useRef<HTMLDivElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
+  const portalTarget =
+    typeof document === "undefined"
+      ? null
+      : ((document.fullscreenElement as HTMLElement | null) ?? document.body);
   const location = event.locationId
     ? locationById.get(event.locationId)
     : undefined;
@@ -35,9 +40,15 @@ export function ChronologyDrawer({
 
   useEffect(() => {
     const root = document.documentElement;
+    const body = document.body;
+    const fullscreenRoot = document.fullscreenElement as HTMLElement | null;
     const previousOverflow = root.style.overflow;
+    const previousBodyOverflow = body.style.overflow;
+    const previousFullscreenOverflow = fullscreenRoot?.style.overflow;
     root.style.overflow = "hidden";
-    closeRef.current?.focus();
+    body.style.overflow = "hidden";
+    if (fullscreenRoot) fullscreenRoot.style.overflow = "hidden";
+    closeRef.current?.focus({ preventScroll: true });
     const onKeyDown = (keyboardEvent: KeyboardEvent) => {
       if (keyboardEvent.key === "Escape") {
         keyboardEvent.preventDefault();
@@ -61,13 +72,24 @@ export function ChronologyDrawer({
     };
     window.addEventListener("keydown", onKeyDown);
     return () => {
+      const preservedScrollY = window.scrollY;
       root.style.overflow = previousOverflow;
+      body.style.overflow = previousBodyOverflow;
+      if (fullscreenRoot) {
+        fullscreenRoot.style.overflow = previousFullscreenOverflow ?? "";
+      }
       window.removeEventListener("keydown", onKeyDown);
+      window.scrollTo(0, preservedScrollY);
     };
   }, [onClose]);
 
-  return (
-    <div className={styles.drawerBackdrop}>
+  if (!portalTarget) return null;
+
+  return createPortal(
+    <div
+      className={styles.drawerBackdrop}
+      data-testid="chronology-event-overlay"
+    >
       <button
         type="button"
         aria-label="Close incident record"
@@ -79,7 +101,8 @@ export function ChronologyDrawer({
         role="dialog"
         aria-modal="true"
         aria-labelledby={titleId}
-        className={`${styles.drawer} dossier dossier-gold bg-panel p-5`}
+        className={`${styles.drawer} dossier dossier-gold p-5`}
+        data-testid="chronology-event-drawer"
       >
         <header className="flex items-start justify-between gap-4 border-b border-line pb-4">
           <div>
@@ -247,6 +270,7 @@ export function ChronologyDrawer({
           Locate in Reveal Order <span aria-hidden>→</span>
         </Link>
       </div>
-    </div>
+    </div>,
+    portalTarget,
   );
 }

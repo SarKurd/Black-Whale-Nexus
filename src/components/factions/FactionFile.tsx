@@ -117,7 +117,7 @@ export function FactionFile({ id }: { id: string }) {
   return (
     <div>
       {/* File header */}
-      <div className="dossier dossier-gold corner-ticks mb-4 p-5">
+      <div className="archive-record-header dossier dossier-gold corner-ticks mb-4 p-5">
         <div className="flex flex-wrap items-start gap-4">
           <div
             className="royal-heading flex h-20 w-20 shrink-0 items-center justify-center border text-2xl"

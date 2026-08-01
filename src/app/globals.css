@@ -1,32 +1,32 @@
 @import "tailwindcss";
 
 /* ---------------------------------------------------------------------------
-   Black Whale Nexus — Kakin intelligence-archive identity.
-   Near-black navy hull, parchment ink, tarnished gold royalty, blood alerts.
+   Black Whale Nexus — cinematic Kakin intelligence interface.
+   Swiss restraint and navigational cartography over a royal void.
 --------------------------------------------------------------------------- */
 
 :root {
-  --bg: #060a13;
-  --bg-deep: #04070e;
-  --bg-raised: #0a111f;
-  --panel: #0b1120;
-  --panel-2: #0e1526;
-  --line: #1b2740;
-  --line-strong: #2a3a5e;
-  --gold: #b3954a;
-  --gold-dim: #8a7239;
-  --gold-bright: #d8ba6e;
-  --gold-line: rgba(179, 149, 74, 0.32);
-  --ivory: #eae3d0;
-  --parchment: #c8bfa6;
-  --muted: #7e8499;
-  --faint: #768096;
-  --blood: #d15858;
-  --blood-bright: #d64848;
-  --alive: #6f8f6a;
-  --warn: #b08d36;
-  --teal: #668f8c;
-  --violet: #8f7baa;
+  --bg: #070a12;
+  --bg-deep: #03060c;
+  --bg-raised: #0e1520;
+  --panel: rgba(8, 13, 23, 0.74);
+  --panel-2: rgba(15, 23, 36, 0.78);
+  --line: rgba(184, 207, 228, 0.14);
+  --line-strong: rgba(197, 220, 239, 0.3);
+  --gold: #c2a968;
+  --gold-dim: #877746;
+  --gold-bright: #e1cd92;
+  --gold-line: rgba(194, 169, 104, 0.34);
+  --ivory: #f0f5f7;
+  --parchment: #d3dde2;
+  --muted: #91a0ad;
+  --faint: #647482;
+  --blood: #c85e60;
+  --blood-bright: #e06969;
+  --alive: #8db99c;
+  --warn: #d0a85d;
+  --teal: #86cbd2;
+  --violet: #a392bd;
 }
 
 @theme inline {
@@ -65,17 +65,7 @@ html {
 }
 
 body {
-  background:
-    radial-gradient(
-      1200px 800px at 70% -10%,
-      rgba(30, 45, 80, 0.35),
-      transparent 60%
-    ),
-    radial-gradient(
-      900px 600px at 0% 100%,
-      rgba(20, 30, 55, 0.3),
-      transparent 55%
-    ), var(--bg);
+  background: var(--bg-deep);
   color: var(--parchment);
   font-family: var(--font-geist-sans), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -86,25 +76,21 @@ body {
   color: var(--ivory);
 }
 
-/* Nautical chart grid, kept very faint. */
+/* Mariner chart layer: broad enough to read as world-space, never graph paper. */
 .nautical-grid {
   background-image:
-    linear-gradient(to right, rgba(90, 110, 160, 0.055) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(90, 110, 160, 0.055) 1px, transparent 1px),
-    linear-gradient(to right, rgba(90, 110, 160, 0.035) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(90, 110, 160, 0.035) 1px, transparent 1px);
+    linear-gradient(to right, rgba(156, 191, 217, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(156, 191, 217, 0.035) 1px, transparent 1px);
   background-size:
-    160px 160px,
-    160px 160px,
-    32px 32px,
-    32px 32px;
+    180px 180px,
+    180px 180px;
 }
 
 /* Classified-document label: small caps mono. */
 .intel-label {
   font-family: var(--font-geist-mono), monospace;
   font-size: 0.625rem;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--muted);
 }
@@ -112,23 +98,28 @@ body {
 .intel-label-gold {
   font-family: var(--font-geist-mono), monospace;
   font-size: 0.625rem;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--gold);
 }
 
-/* Royal display heading */
+/* Royal display heading: light Swiss typography with ceremonial spacing. */
 .royal-heading {
-  font-family: var(--font-cinzel), serif;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  font-weight: 300;
   color: var(--ivory);
-  letter-spacing: 0.06em;
+  letter-spacing: 0.075em;
 }
 
 /* Dossier panel — thin manga-panel border, layered paper */
 .dossier {
   position: relative;
-  background: linear-gradient(180deg, var(--panel-2), var(--panel));
+  background: linear-gradient(135deg, var(--panel-2), var(--panel));
   border: 1px solid var(--line);
+  box-shadow:
+    inset 0 1px rgba(255, 255, 255, 0.025),
+    0 18px 55px rgba(0, 0, 0, 0.12);
+  backdrop-filter: blur(18px) saturate(115%);
 }
 
 .dossier-gold {
@@ -140,9 +131,9 @@ body {
 .corner-ticks::after {
   content: "";
   position: absolute;
-  width: 8px;
-  height: 8px;
-  border-color: var(--gold-dim);
+  width: 13px;
+  height: 13px;
+  border-color: rgba(194, 216, 233, 0.44);
   border-style: solid;
   pointer-events: none;
 }
@@ -155,6 +146,665 @@ body {
   bottom: -1px;
   right: -1px;
   border-width: 0 1px 1px 0;
+}
+
+/* ---------------------------------------------------------------------------
+   Shared shell — cinematic field, minimal footprint, navigational motion.
+--------------------------------------------------------------------------- */
+
+.nexus-shell {
+  position: relative;
+  isolation: isolate;
+  overflow-x: clip;
+}
+
+.nexus-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  overflow: hidden;
+  background: #03060c;
+  pointer-events: none;
+}
+
+.nexus-backdrop img {
+  object-fit: cover;
+  object-position: 56% center;
+  filter: contrast(1.08) sepia(0.08) saturate(0.7);
+  opacity: 0.76;
+  transform: scale(1.025);
+  animation: nexus-drift 26s ease-in-out infinite alternate;
+}
+
+.nexus-backdrop::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(3, 6, 12, 0.98) 0 15%,
+      rgba(3, 6, 12, 0.7) 37%,
+      rgba(3, 6, 12, 0.16) 72%
+    ), linear-gradient(180deg, rgba(3, 6, 12, 0.16), rgba(3, 6, 12, 0.76));
+}
+
+.nexus-backdrop::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background-image: radial-gradient(
+    rgba(222, 232, 237, 0.08) 0.55px,
+    transparent 0.7px
+  );
+  background-size: 4px 4px;
+  mix-blend-mode: soft-light;
+  opacity: 0.34;
+  pointer-events: none;
+}
+
+.nexus-topbar {
+  background: rgba(4, 8, 14, 0.54);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.14);
+  backdrop-filter: blur(22px) saturate(120%);
+  animation: nexus-topbar-in 420ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.nexus-action-button {
+  border: 1px solid var(--line);
+  background: rgba(174, 205, 226, 0.025);
+  color: var(--muted);
+  transition:
+    border-color 170ms ease,
+    background 170ms ease,
+    color 170ms ease;
+}
+
+.nexus-action-button:hover,
+.nexus-action-button:focus-visible {
+  border-color: rgba(204, 225, 239, 0.4);
+  background: rgba(194, 218, 235, 0.07);
+  color: var(--ivory);
+}
+
+.nexus-main > * {
+  animation: nexus-page-in 460ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Keep backdrop-filter surfaces out of transformed route layers. Chromium can
+   otherwise paint the header first and apply its blur a frame later. */
+.nexus-main > :has(> .archive-page-header) {
+  animation: none;
+}
+
+.nexus-main > :has(> .archive-page-header) > :not(.archive-page-header) {
+  animation: nexus-page-in 460ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.nexus-footer {
+  color: var(--faint);
+  background: rgba(4, 8, 14, 0.18);
+  backdrop-filter: blur(10px);
+}
+
+.nexus-sidebar {
+  position: relative;
+  background: linear-gradient(90deg, rgba(3, 6, 12, 0.92), rgba(4, 8, 14, 0.74));
+  box-shadow: 22px 0 60px rgba(0, 0, 0, 0.24);
+  backdrop-filter: blur(24px) saturate(115%);
+}
+
+.nexus-sidebar::after {
+  content: "";
+  position: absolute;
+  right: -1px;
+  top: 0;
+  width: 1px;
+  height: 28%;
+  background: linear-gradient(180deg, var(--teal), transparent);
+  opacity: 0.52;
+  pointer-events: none;
+}
+
+.nexus-brand {
+  position: relative;
+  min-height: 108px;
+  animation: nexus-brand-in 520ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.nexus-brand::after {
+  content: "";
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  bottom: -1px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--gold), transparent 72%);
+  opacity: 0.42;
+}
+
+.nexus-mark {
+  width: 52px;
+  height: 52px;
+  flex: 0 0 auto;
+  object-fit: contain;
+  filter: drop-shadow(0 0 14px rgba(201, 162, 74, 0.14));
+}
+
+.nexus-nav-group {
+  animation: nexus-nav-in 420ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.nexus-nav-group:nth-child(2) {
+  animation-delay: 45ms;
+}
+
+.nexus-nav-group:nth-child(3) {
+  animation-delay: 90ms;
+}
+
+.nexus-nav-group:nth-child(4) {
+  animation-delay: 135ms;
+}
+
+.nexus-nav-item {
+  position: relative;
+  min-height: 34px;
+  border-left: 1px solid transparent;
+  transition:
+    border-color 170ms ease,
+    background 170ms ease,
+    color 170ms ease,
+    transform 170ms ease;
+}
+
+.nexus-nav-item::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(223, 237, 245, 0.66), transparent);
+  transition: width 240ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.nexus-nav-item:hover,
+.nexus-nav-item:focus-visible {
+  background: rgba(198, 221, 236, 0.055);
+  color: var(--ivory);
+  transform: translateX(2px);
+}
+
+.nexus-nav-item:hover::after,
+.nexus-nav-item:focus-visible::after,
+.nexus-nav-item[data-active="true"]::after {
+  width: 100%;
+}
+
+.nexus-nav-item[data-active="true"] {
+  border-left-color: var(--teal);
+  background: linear-gradient(90deg, rgba(134, 203, 210, 0.13), transparent 88%);
+  color: var(--ivory);
+}
+
+.command-hero {
+  position: relative;
+  min-height: 330px;
+  overflow: hidden;
+  border: 1px solid rgba(199, 220, 234, 0.22);
+  background:
+    linear-gradient(105deg, rgba(5, 9, 16, 0.82), rgba(12, 20, 31, 0.34)),
+    radial-gradient(rgba(225, 231, 234, 0.08) 0.55px, transparent 0.7px);
+  background-size:
+    auto,
+    4px 4px;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(12px);
+}
+
+.command-hero::before {
+  content: "";
+  position: absolute;
+  right: -115px;
+  top: -205px;
+  width: 510px;
+  height: 510px;
+  border: 1px solid rgba(190, 218, 235, 0.12);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 56px rgba(190, 218, 235, 0.014),
+    0 0 0 112px rgba(190, 218, 235, 0.01);
+  pointer-events: none;
+}
+
+.command-hero::after {
+  content: "";
+  position: absolute;
+  right: 87px;
+  top: 48px;
+  width: 8px;
+  height: 8px;
+  transform: rotate(45deg);
+  background: var(--gold-bright);
+  box-shadow: 0 0 18px rgba(225, 205, 146, 0.6);
+}
+
+.destination-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  border-block: 1px solid var(--line);
+  background: var(--line);
+}
+
+.destination-tile {
+  position: relative;
+  min-height: 132px;
+  overflow: hidden;
+  background: rgba(6, 11, 19, 0.54);
+  padding: 1.1rem;
+  color: var(--parchment);
+  backdrop-filter: blur(14px);
+  transition:
+    background 220ms ease,
+    color 220ms ease;
+  animation: nexus-destination-in 480ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.destination-tile:nth-child(2) {
+  animation-delay: 55ms;
+}
+
+.destination-tile:nth-child(3) {
+  animation-delay: 110ms;
+}
+
+.destination-tile:nth-child(4) {
+  animation-delay: 165ms;
+}
+
+.destination-tile::before {
+  content: "";
+  position: absolute;
+  right: 1.1rem;
+  top: 1.1rem;
+  width: 9px;
+  height: 9px;
+  transform: rotate(45deg);
+  border: 1px solid currentColor;
+  opacity: 0.42;
+  transition:
+    background 180ms ease,
+    opacity 180ms ease,
+    transform 220ms ease;
+}
+
+.destination-tile::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: var(--teal);
+  transition: width 320ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.destination-tile:hover,
+.destination-tile:focus-visible {
+  background: rgba(170, 205, 224, 0.11);
+  color: var(--ivory);
+  outline: none;
+}
+
+.destination-tile:hover::before,
+.destination-tile:focus-visible::before {
+  transform: rotate(135deg) scale(1.15);
+  background: var(--gold-bright);
+  opacity: 0.9;
+}
+
+.destination-tile:hover::after,
+.destination-tile:focus-visible::after {
+  width: 100%;
+}
+
+.destination-code {
+  display: block;
+  color: var(--teal);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.55rem;
+  letter-spacing: 0.18em;
+}
+
+.destination-name {
+  display: block;
+  margin-top: 1.55rem;
+  color: var(--ivory);
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: transform 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.destination-tile:hover .destination-name,
+.destination-tile:focus-visible .destination-name {
+  transform: translateY(-3px);
+}
+
+.destination-detail {
+  display: block;
+  margin-top: 0.35rem;
+  color: var(--muted);
+  font-size: 0.7rem;
+  line-height: 1.45;
+}
+
+/* ---------------------------------------------------------------------------
+   Archive routes — collection headers, dossier surfaces, and instrument UI.
+--------------------------------------------------------------------------- */
+
+.archive-page-header {
+  position: relative;
+  min-height: 164px;
+  overflow: hidden;
+  padding: 1.55rem 1.75rem;
+  border-block: 1px solid var(--line);
+  background:
+    linear-gradient(
+      102deg,
+      rgba(3, 7, 13, 0.88),
+      rgba(11, 19, 29, 0.46) 68%,
+      rgba(8, 14, 23, 0.16)
+    ), radial-gradient(rgba(225, 232, 236, 0.075) 0.55px, transparent 0.75px);
+  background-size:
+    auto,
+    4px 4px;
+  box-shadow: 0 22px 58px rgba(0, 0, 0, 0.16);
+  backdrop-filter: blur(15px) saturate(108%);
+}
+
+.archive-page-header::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  z-index: 0;
+  width: 2px;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    var(--teal) 24% 76%,
+    transparent
+  );
+  box-shadow: 18px 0 42px rgba(134, 203, 210, 0.12);
+}
+
+.archive-page-header::after {
+  content: "";
+  position: absolute;
+  right: 2.25rem;
+  top: 2.1rem;
+  width: 12px;
+  height: 12px;
+  transform: rotate(45deg);
+  border: 1px solid rgba(225, 232, 236, 0.56);
+  box-shadow:
+    0 0 0 8px rgba(194, 169, 104, 0.025),
+    0 0 24px rgba(134, 203, 210, 0.15);
+  pointer-events: none;
+}
+
+.archive-page-header > * {
+  position: relative;
+  z-index: 1;
+  animation: archive-header-content-in 420ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.archive-page-header :is(h1, h2).royal-heading {
+  margin-top: 0.45rem;
+  max-width: 62rem;
+  font-size: clamp(2.25rem, 4.4vw, 4rem);
+  line-height: 0.98;
+  letter-spacing: 0.065em;
+}
+
+.archive-page-header p {
+  margin-top: 1rem;
+  max-width: 48rem;
+  font-size: 0.79rem;
+  line-height: 1.7;
+}
+
+.archive-record-header {
+  min-height: 168px;
+  overflow: hidden;
+  padding: 1.65rem 1.75rem;
+  background:
+    linear-gradient(108deg, rgba(5, 9, 16, 0.9), rgba(13, 22, 33, 0.48)),
+    radial-gradient(rgba(225, 232, 236, 0.07) 0.55px, transparent 0.75px);
+  background-size:
+    auto,
+    4px 4px;
+  box-shadow:
+    inset 0 1px rgba(255, 255, 255, 0.035),
+    0 24px 64px rgba(0, 0, 0, 0.2);
+  animation: archive-header-in 480ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.archive-record-header :is(h1, h2).royal-heading {
+  margin-top: 0.35rem;
+  font-size: clamp(2rem, 3.8vw, 3.5rem);
+  line-height: 1;
+}
+
+.archive-panel {
+  background:
+    linear-gradient(132deg, rgba(11, 18, 28, 0.78), rgba(4, 8, 14, 0.67)),
+    radial-gradient(rgba(225, 232, 236, 0.05) 0.5px, transparent 0.7px);
+  background-size:
+    auto,
+    5px 5px;
+}
+
+.archive-panel-header {
+  min-height: 58px;
+  background: linear-gradient(
+    90deg,
+    rgba(173, 207, 225, 0.055),
+    transparent 72%
+  );
+}
+
+.archive-panel-header .royal-heading {
+  letter-spacing: 0.055em;
+}
+
+.archive-section-heading {
+  min-height: 25px;
+}
+
+.archive-section-heading > .intel-label-gold:first-child {
+  color: var(--teal);
+}
+
+.archive-section-heading > .h-px {
+  background: linear-gradient(90deg, var(--line-strong), transparent);
+}
+
+.archive-control,
+.archive-tag {
+  background: rgba(179, 210, 228, 0.035);
+  backdrop-filter: blur(10px);
+}
+
+.nexus-main
+  :is(
+    input:not([type="range"]):not([type="checkbox"]):not([type="radio"]),
+    select
+  ) {
+  min-height: 38px;
+  border-color: var(--line);
+  background: rgba(5, 10, 17, 0.72);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.025);
+  backdrop-filter: blur(14px);
+  transition:
+    border-color 170ms ease,
+    background 170ms ease,
+    color 170ms ease;
+}
+
+.nexus-main
+  :is(
+    input:not([type="range"]):not([type="checkbox"]):not([type="radio"]),
+    select
+  ):hover {
+  border-color: var(--line-strong);
+  background: rgba(10, 17, 26, 0.82);
+}
+
+.nexus-main
+  :is(
+    input:not([type="range"]):not([type="checkbox"]):not([type="radio"]),
+    select
+  ):focus {
+  border-color: var(--teal);
+  outline: none;
+}
+
+@keyframes archive-header-in {
+  from {
+    opacity: 0;
+    clip-path: inset(0 22% 0 0);
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes archive-header-content-in {
+  from {
+    opacity: 0;
+    transform: translateY(7px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes nexus-drift {
+  from {
+    transform: scale(1.025) translate3d(0, 0, 0);
+  }
+  to {
+    transform: scale(1.055) translate3d(-0.5%, -0.35%, 0);
+  }
+}
+
+@keyframes nexus-topbar-in {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes nexus-brand-in {
+  from {
+    opacity: 0;
+    transform: translateX(-18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes nexus-nav-in {
+  from {
+    opacity: 0;
+    transform: translateX(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes nexus-page-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes nexus-destination-in {
+  from {
+    opacity: 0;
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@media (max-width: 1023px) {
+  .nexus-backdrop img {
+    object-position: 68% center;
+    opacity: 0.54;
+  }
+
+  .nexus-backdrop::before {
+    background: linear-gradient(
+      180deg,
+      rgba(3, 6, 12, 0.48),
+      rgba(3, 6, 12, 0.84)
+    );
+  }
+}
+
+@media (max-width: 760px) {
+  .destination-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .destination-tile {
+    min-height: 118px;
+  }
+
+  .command-hero {
+    min-height: 380px;
+  }
+
+  .archive-page-header {
+    min-height: 148px;
+    padding: 1.35rem 1.25rem;
+  }
+
+  .archive-page-header::after {
+    right: 1.25rem;
+    top: 1.5rem;
+  }
+
+  .archive-record-header {
+    min-height: 152px;
+    padding: 1.35rem 1.25rem;
+  }
 }
 
 /* Redaction bar for spoiler-locked strings that must show *something*. */
@@ -178,12 +828,14 @@ body {
 }
 
 /* Thin scrollbars befitting an instrument panel */
+/* biome-ignore lint/style/noDescendingSpecificity: the scrollbar treatment intentionally applies to every nested element */
 * {
   scrollbar-width: thin;
   scrollbar-color: var(--line-strong) transparent;
 }
 
 @media (prefers-reduced-motion: reduce) {
+  /* biome-ignore lint/style/noDescendingSpecificity: the accessibility override intentionally applies after all component motion */
   *,
   *::before,
   *::after {
@@ -195,6 +847,10 @@ body {
     animation-iteration-count: 1 !important;
     /* biome-ignore lint/complexity/noImportantStyles: accessibility override must win over component animation declarations */
     transition-duration: 0.01ms !important;
+  }
+
+  .blink {
+    animation: none;
   }
 }
 
@@ -211,18 +867,4 @@ body {
 }
 .blink {
   animation: blink 1.2s step-end infinite;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .blink {
-    animation: none;
-  }
-  *,
-  *::before,
-  *::after {
-    /* biome-ignore lint/complexity/noImportantStyles: reduced-motion override must beat inline animation styles */
-    animation-duration: 0.001s !important;
-    /* biome-ignore lint/complexity/noImportantStyles: reduced-motion override must beat inline transition styles */
-    transition-duration: 0.001s !important;
-  }
 }

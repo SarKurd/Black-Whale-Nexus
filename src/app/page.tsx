@@ -48,6 +48,33 @@ const RISK_COLOR: Record<string, string> = {
   eliminated: "var(--faint)",
 };
 
+const PRIMARY_DESTINATIONS = [
+  {
+    href: "/princes",
+    code: "ROYAL / 01",
+    label: "Succession Council",
+    detail: "Fourteen heirs, their status, guards, and shifting threat levels.",
+  },
+  {
+    href: "/chronology",
+    code: "EVENT / 02",
+    label: "Event Archive",
+    detail: "Trace incidents by in-universe sequence or chapter reveal order.",
+  },
+  {
+    href: "/web",
+    code: "INTEL / 03",
+    label: "Relationship Web",
+    detail: "Expose alliances, hostilities, secrets, and active targets.",
+  },
+  {
+    href: "/map",
+    code: "VESSEL / 04",
+    label: "Black Whale Map",
+    detail: "Navigate five tiers, restricted zones, and current locations.",
+  },
+] as const;
+
 export default function CommandCenter() {
   const ch = useEffectiveChapter();
 
@@ -153,26 +180,26 @@ export default function CommandCenter() {
   );
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-8">
       {/* Masthead */}
-      <div className="dossier dossier-gold corner-ticks relative overflow-hidden px-6 py-6">
-        <div className="flex flex-wrap items-end justify-between gap-4">
+      <section className="command-hero corner-ticks px-6 py-7 sm:px-8 sm:py-9">
+        <div className="relative z-10 flex min-h-52 flex-wrap items-end justify-between gap-6">
           <div>
             <div className="intel-label-gold">
               Kingdom of Kakin · Bureau of Succession Intelligence
             </div>
-            <h1 className="royal-heading mt-1 text-3xl sm:text-4xl">
+            <h1 className="royal-heading mt-3 max-w-2xl text-4xl leading-none sm:text-6xl">
               Black Whale Nexus
             </h1>
-            <p className="mt-2 max-w-xl text-sm text-muted">
+            <p className="mt-5 max-w-xl text-sm leading-relaxed text-muted">
               Live situation archive for the succession war aboard Black Whale
               No.&nbsp;1. Records reconstructed to your clearance level —
               nothing appears before the story reveals it.
             </p>
           </div>
-          <div className="ml-auto min-w-0 max-w-full text-right">
+          <div className="ml-auto min-w-0 max-w-full border-l border-line-strong pl-5 text-right">
             <div className="intel-label">Record state</div>
-            <div className="royal-heading text-2xl text-gold-bright">
+            <div className="royal-heading mt-1 text-2xl text-gold-bright">
               {preArc ? "Pre-voyage" : `Chapter ${ch}`}
             </div>
             <div className="font-mono text-[11px] tracking-wider text-muted">
@@ -186,10 +213,27 @@ export default function CommandCenter() {
             </div>
           </div>
         </div>
-        <div className="mt-4 border-t border-line pt-3">
+        <div className="relative z-10 mt-8 border-t border-line pt-4">
           <ChapterControl large />
         </div>
-      </div>
+      </section>
+
+      <nav
+        className="destination-grid"
+        aria-label="Primary archive destinations"
+      >
+        {PRIMARY_DESTINATIONS.map((destination) => (
+          <Link
+            key={destination.href}
+            href={destination.href}
+            className="destination-tile"
+          >
+            <span className="destination-code">{destination.code}</span>
+            <span className="destination-name">{destination.label}</span>
+            <span className="destination-detail">{destination.detail}</span>
+          </Link>
+        ))}
+      </nav>
 
       {preArc && (
         <ArchiveNote>

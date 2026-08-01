@@ -152,7 +152,7 @@ export default function DeathsPage() {
 
   return (
     <div>
-      <div className="mb-5">
+      <div className="archive-page-header mb-6">
         <div className="intel-label-gold">Ledger · Casualty records</div>
         <h1 className="royal-heading text-3xl">Death & Status Tracker</h1>
         <p className="mt-1 max-w-2xl text-sm text-muted">

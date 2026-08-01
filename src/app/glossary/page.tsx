@@ -89,7 +89,7 @@ export default function GlossaryPage() {
 
   return (
     <div>
-      <div className="mb-5">
+      <div className="archive-page-header mb-6">
         <div className="intel-label-gold">Reference · Codex</div>
         <h1 className="royal-heading text-3xl">Glossary</h1>
         <p className="mt-1 max-w-2xl text-sm text-muted">

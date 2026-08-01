@@ -81,7 +81,7 @@ export function AbilityFile({ id }: { id: string }) {
   return (
     <div>
       {/* File header */}
-      <div className="dossier dossier-gold corner-ticks mb-4 p-5">
+      <div className="archive-record-header dossier dossier-gold corner-ticks mb-4 p-5">
         <div className="flex flex-wrap items-start justify-between gap-4">
           <div className="min-w-0">
             <div className="intel-label-gold">

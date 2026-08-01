@@ -32,7 +32,7 @@ export function OrderToggle({
       onClick={() => onChange(latestFirst ? "asc" : "desc")}
       aria-label={`List order: ${latestFirst ? "latest first" : "oldest first"}. Switch to ${nextLabel.toLowerCase()}.`}
       title={`Switch to ${nextLabel.toLowerCase()}`}
-      className={`inline-flex items-center gap-1.5 border border-line px-2 py-1 font-mono text-[9px] uppercase tracking-widest text-teal transition-colors hover:border-gold-line hover:text-gold-bright ${className}`}
+      className={`archive-control inline-flex items-center gap-1.5 border border-line px-2 py-1 font-mono text-[9px] uppercase tracking-widest text-teal transition-colors hover:border-gold-line hover:text-gold-bright ${className}`}
     >
       <span aria-hidden>{latestFirst ? "↓" : "↑"}</span>
       {latestFirst ? "Latest first" : "Oldest first"}
@@ -58,10 +58,10 @@ export function Panel({
 }) {
   return (
     <section
-      className={`dossier corner-ticks ${gold ? "dossier-gold" : ""} ${className}`}
+      className={`archive-panel dossier corner-ticks ${gold ? "dossier-gold" : ""} ${className}`}
     >
       {(label || title || actions) && (
-        <header className="flex items-baseline justify-between gap-3 border-b border-line px-4 py-2.5">
+        <header className="archive-panel-header flex items-baseline justify-between gap-3 border-b border-line px-4 py-2.5">
           <div className="min-w-0">
             {label && <div className="intel-label-gold">{label}</div>}
             {title && (
@@ -84,7 +84,7 @@ export function SectionHeading({
   right?: ReactNode;
 }) {
   return (
-    <div className="mb-3 flex items-center gap-3">
+    <div className="archive-section-heading mb-3 flex items-center gap-3">
       <span className="intel-label-gold whitespace-nowrap">{children}</span>
       <span className="h-px flex-1 bg-line" />
       {right}
@@ -130,7 +130,7 @@ export function ConfidenceBadge({ level }: { level: Confidence }) {
 
 export function Tag({ children }: { children: ReactNode }) {
   return (
-    <span className="inline-block border border-line bg-raised px-1.5 py-px font-mono text-[10px] uppercase tracking-wider text-muted">
+    <span className="archive-tag inline-block border border-line bg-raised px-1.5 py-px font-mono text-[10px] uppercase tracking-wider text-muted">
       {children}
     </span>
   );

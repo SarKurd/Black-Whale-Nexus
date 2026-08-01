@@ -124,7 +124,7 @@ export function PrinceProfile({ id }: { id: string }) {
       transition={{ duration: 0.2 }}
     >
       {/* Royal file header */}
-      <div className="dossier dossier-gold corner-ticks mb-4 p-5">
+      <div className="archive-record-header dossier dossier-gold corner-ticks mb-4 p-5">
         <div className="flex items-start gap-4">
           <Monogram characterId={p.characterId} size="lg" />
           <div className="min-w-0 flex-1">

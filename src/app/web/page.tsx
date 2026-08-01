@@ -35,11 +35,17 @@ export default function WebPage() {
 function WebPageFallback() {
   return (
     <div>
-      <div className="mb-4 flex flex-wrap items-end justify-between gap-3">
-        <div>
-          <div className="intel-label-gold">Investigation board</div>
-          <h1 className="royal-heading text-3xl">Relationship Web</h1>
-        </div>
+      <div className="archive-page-header mb-4">
+        <div className="intel-label-gold">Investigation board</div>
+        <h1 className="royal-heading text-3xl">Relationship Web</h1>
+        <p className="max-w-3xl text-xs text-muted">
+          {presetById.get("all")?.description} — Solid edges are public and
+          confirmed, dashed are secret, dotted are suspected. Drag to pan,
+          scroll or pinch to zoom, click nodes or edges for the intelligence
+          file. The slider replays how the network grew, up to your clearance.
+        </p>
+      </div>
+      <div className="mb-4 flex flex-wrap items-center justify-end gap-3">
         <div className="flex flex-wrap items-center gap-3">
           <select
             value="all"
@@ -71,12 +77,6 @@ function WebPageFallback() {
           </div>
         </div>
       </div>
-      <p className="mb-3 max-w-3xl text-xs text-muted">
-        {presetById.get("all")?.description} — Solid edges are public and
-        confirmed, dashed are secret, dotted are suspected. Drag to pan, scroll
-        or pinch to zoom, click nodes or edges for the intelligence file. The
-        slider replays how the network grew, up to your clearance.
-      </p>
     </div>
   );
 }
@@ -149,11 +149,17 @@ function WebPageInner() {
 
   return (
     <div>
-      <div className="mb-4 flex flex-wrap items-end justify-between gap-3">
-        <div>
-          <div className="intel-label-gold">Investigation board</div>
-          <h1 className="royal-heading text-3xl">Relationship Web</h1>
-        </div>
+      <div className="archive-page-header mb-4">
+        <div className="intel-label-gold">Investigation board</div>
+        <h1 className="royal-heading text-3xl">Relationship Web</h1>
+        <p className="max-w-3xl text-xs text-muted">
+          {presetById.get(presetId)?.description} — Solid edges are public and
+          confirmed, dashed are secret, dotted are suspected. Drag to pan,
+          scroll or pinch to zoom, click nodes or edges for the intelligence
+          file. The slider replays how the network grew, up to your clearance.
+        </p>
+      </div>
+      <div className="mb-4 flex flex-wrap items-center justify-end gap-3">
         <div className="flex flex-wrap items-center gap-3">
           <select
             value={presetId}
@@ -190,13 +196,6 @@ function WebPageInner() {
           </div>
         </div>
       </div>
-
-      <p className="mb-3 max-w-3xl text-xs text-muted">
-        {presetById.get(presetId)?.description} — Solid edges are public and
-        confirmed, dashed are secret, dotted are suspected. Drag to pan, scroll
-        or pinch to zoom, click nodes or edges for the intelligence file. The
-        slider replays how the network grew, up to your clearance.
-      </p>
 
       <div className="relative">
         <div className="dossier corner-ticks h-[72vh] min-h-[480px] bg-bg-deep/60">

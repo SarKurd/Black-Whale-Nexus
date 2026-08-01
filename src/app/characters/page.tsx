@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { useMemo } from "react";
 import {
@@ -67,7 +68,7 @@ export default function CharactersPage() {
 
   return (
     <div>
-      <div className="mb-5">
+      <div className="archive-page-header mb-6">
         <div className="intel-label-gold">Registry · Personnel files</div>
         <h1 className="royal-heading text-3xl">Character Dossiers</h1>
         <p className="mt-1 max-w-2xl text-sm text-muted">
@@ -123,42 +124,51 @@ export default function CharactersPage() {
         <ArchiveNote>No personnel records match at this clearance.</ArchiveNote>
       ) : (
         <div className="grid gap-2.5 sm:grid-cols-2 xl:grid-cols-3">
-          {rows.map(({ c, st }) => {
+          {rows.map(({ c, st }, index) => {
             const fac = c.factionIds[0]
               ? factionById.get(c.factionIds[0])
               : undefined;
             return (
-              <Link
+              <motion.div
                 key={c.id}
-                href={`/characters/${c.id}`}
-                className="dossier corner-ticks group flex min-w-0 gap-3 p-3 transition-colors hover:border-gold-line"
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.2,
+                  delay: Math.min(index, 12) * 0.02,
+                }}
               >
-                <Monogram characterId={c.id} />
-                <div className="min-w-0 flex-1">
-                  <div className="flex items-baseline justify-between gap-2">
-                    <span className="truncate text-base text-ivory group-hover:text-gold-bright">
-                      {c.name}
-                    </span>
-                    {st && <StatusChip status={st.status} />}
-                  </div>
-                  <div className="truncate text-xs text-muted">{c.role}</div>
-                  <div className="mt-1.5 flex flex-wrap gap-1">
-                    {fac && (
-                      <span
-                        className="border px-1.5 py-px font-mono text-[9px] uppercase tracking-wider"
-                        style={{
-                          color: fac.color,
-                          borderColor:
-                            "color-mix(in srgb, currentColor 35%, transparent)",
-                        }}
-                      >
-                        {fac.name}
+                <Link
+                  href={`/characters/${c.id}`}
+                  className="dossier corner-ticks group flex h-full min-w-0 gap-3 p-3 transition-colors hover:border-gold-line"
+                >
+                  <Monogram characterId={c.id} />
+                  <div className="min-w-0 flex-1">
+                    <div className="flex items-baseline justify-between gap-2">
+                      <span className="truncate text-base text-ivory group-hover:text-gold-bright">
+                        {c.name}
                       </span>
-                    )}
-                    {c.incomplete && <Tag>partial file</Tag>}
+                      {st && <StatusChip status={st.status} />}
+                    </div>
+                    <div className="truncate text-xs text-muted">{c.role}</div>
+                    <div className="mt-1.5 flex flex-wrap gap-1">
+                      {fac && (
+                        <span
+                          className="border px-1.5 py-px font-mono text-[9px] uppercase tracking-wider"
+                          style={{
+                            color: fac.color,
+                            borderColor:
+                              "color-mix(in srgb, currentColor 35%, transparent)",
+                          }}
+                        >
+                          {fac.name}
+                        </span>
+                      )}
+                      {c.incomplete && <Tag>partial file</Tag>}
+                    </div>
                   </div>
-                </div>
-              </Link>
+                </Link>
+              </motion.div>
             );
           })}
         </div>

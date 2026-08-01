@@ -98,7 +98,7 @@ export default function StorylinesPage() {
 
   return (
     <div>
-      <div className="mb-5">
+      <div className="archive-page-header mb-6">
         <div className="intel-label-gold">Mission map</div>
         <h1 className="royal-heading text-3xl">Storyline Explorer</h1>
         <p className="mt-1 max-w-2xl text-xs text-muted">

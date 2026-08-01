@@ -2,6 +2,7 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import dynamic from "next/dynamic";
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { ChapterControl } from "@/components/shell/ChapterControl";
 import { ShareLinkButton } from "@/components/shell/ShareLinkButton";
@@ -84,9 +85,19 @@ export function AppShell({ children }: { children: React.ReactNode }) {
   }, []);
 
   return (
-    <div className="nautical-grid min-h-dvh">
+    <div className="nexus-shell nautical-grid min-h-dvh">
+      <div className="nexus-backdrop" aria-hidden="true">
+        <Image
+          src="/images/black-whale-manga-bg.png"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+        />
+      </div>
+
       {/* Desktop sidebar */}
-      <div className="fixed inset-y-0 left-0 z-40 hidden w-56 lg:block">
+      <div className="fixed inset-y-0 left-0 z-40 hidden w-64 lg:block">
         <Sidebar />
       </div>
 
@@ -102,7 +113,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             <button
               type="button"
               aria-label="Close menu"
-              className="absolute inset-0 bg-bg-deep/80"
+              className="absolute inset-0 bg-bg-deep/80 backdrop-blur-sm"
               onClick={() => setMenuOpen(false)}
             />
             <motion.div
@@ -111,7 +122,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
               role="dialog"
               aria-modal="true"
               aria-label="Main navigation"
-              className="absolute inset-y-0 left-0 w-64 bg-bg"
+              className="absolute inset-y-0 left-0 w-72 bg-bg"
               initial={{ x: -280 }}
               animate={{ x: 0 }}
               exit={{ x: -280 }}
@@ -123,13 +134,13 @@ export function AppShell({ children }: { children: React.ReactNode }) {
         )}
       </AnimatePresence>
 
-      <div className="lg:pl-56">
+      <div className="relative z-10 lg:pl-64">
         {/* Top intel bar */}
-        <header className="sticky top-0 z-30 flex flex-wrap items-center gap-x-3 gap-y-2 border-b border-line bg-bg-deep/90 px-4 py-2 backdrop-blur">
+        <header className="nexus-topbar sticky top-0 z-30 flex min-h-14 flex-wrap items-center gap-x-3 gap-y-2 border-b border-line px-4 py-2 lg:px-8">
           <button
             ref={menuButtonRef}
             type="button"
-            className="border border-line px-2 py-1 font-mono text-[10px] uppercase tracking-widest text-muted hover:text-parchment lg:hidden"
+            className="nexus-action-button px-2.5 py-1.5 font-mono text-[10px] uppercase tracking-widest lg:hidden"
             onClick={() => setMenuOpen(true)}
             aria-expanded={menuOpen}
             aria-controls="mobile-navigation"
@@ -137,7 +148,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             Menu
           </button>
           <div className="hidden items-center gap-2 sm:flex">
-            <span className="intel-label-gold">Clearance</span>
+            <span className="intel-label-gold">Archive clearance</span>
           </div>
           <ChapterControl />
           <div className="flex-1" />
@@ -147,20 +158,22 @@ export function AppShell({ children }: { children: React.ReactNode }) {
               setPaletteLoaded(true);
               setPaletteOpen(true);
             }}
-            className="flex items-center gap-2 border border-line px-2.5 py-1 text-xs text-muted transition-colors hover:border-gold-line hover:text-parchment"
+            className="nexus-action-button flex items-center gap-2 px-3 py-1.5 text-xs"
           >
             <span className="hidden sm:inline">Search the archive</span>
             <span className="sm:hidden">Search</span>
-            <kbd className="border border-line px-1 font-mono text-[9px] text-faint">
+            <kbd className="border border-line px-1.5 font-mono text-[9px] text-faint">
               ⌘K
             </kbd>
           </button>
           <ShareLinkButton />
         </header>
 
-        <main className="mx-auto max-w-7xl px-4 py-6 lg:px-8">{children}</main>
+        <main className="nexus-main mx-auto max-w-[1520px] px-4 py-7 lg:px-10 lg:py-10">
+          {children}
+        </main>
 
-        <footer className="mx-auto max-w-7xl border-t border-line px-4 py-5 lg:px-8">
+        <footer className="nexus-footer mx-auto max-w-[1520px] border-t border-line px-4 py-5 lg:px-10">
           <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
             <span className="intel-label">
               Unofficial fan archive · Hunter × Hunter © Yoshihiro Togashi

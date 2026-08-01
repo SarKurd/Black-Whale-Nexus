@@ -31,7 +31,7 @@ export function ShareLinkButton() {
     <button
       type="button"
       onClick={copyLink}
-      className="border border-line px-2.5 py-1 font-mono text-[10px] uppercase tracking-widest text-muted transition-colors hover:border-gold-line hover:text-parchment"
+      className="nexus-action-button px-2.5 py-1 font-mono text-[10px] uppercase tracking-widest"
       aria-label={
         copied
           ? "Intelligence link copied"

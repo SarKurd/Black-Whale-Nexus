@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -47,22 +48,32 @@ const NAV: {
 export function Sidebar({ onNavigate }: { onNavigate?: () => void }) {
   const pathname = usePathname();
   return (
-    <nav className="flex h-full flex-col overflow-y-auto border-r border-line bg-bg-deep/80">
+    <nav className="nexus-sidebar flex h-full flex-col overflow-y-auto border-r border-line">
       <Link
         href="/"
         onClick={onNavigate}
-        className="block border-b border-line px-4 py-4"
+        className="nexus-brand flex items-center gap-3 border-b border-line px-4 py-4"
       >
-        <div className="intel-label-gold">Kakin Empire · Classified</div>
-        <div className="royal-heading mt-1 text-lg leading-tight">
-          Black Whale
-          <br />
-          Nexus
+        <Image
+          src="/images/whale-line.svg"
+          alt=""
+          width={52}
+          height={52}
+          className="nexus-mark"
+          aria-hidden="true"
+        />
+        <div>
+          <div className="intel-label-gold">Kakin Royal Archive</div>
+          <div className="royal-heading mt-1 text-lg leading-tight">
+            Black Whale
+            <br />
+            Nexus
+          </div>
         </div>
       </Link>
       <div className="flex-1 px-2 py-3">
         {NAV.map((group) => (
-          <div key={group.group} className="mb-4">
+          <div key={group.group} className="nexus-nav-group mb-4">
             <div className="intel-label px-2 pb-1.5">{group.group}</div>
             {group.items.map((item) => {
               const active =
@@ -75,10 +86,9 @@ export function Sidebar({ onNavigate }: { onNavigate?: () => void }) {
                   href={item.href}
                   onClick={onNavigate}
                   aria-current={active ? "page" : undefined}
-                  className={`group flex items-center gap-2.5 border-l px-2 py-1.5 text-sm transition-colors ${
-                    active
-                      ? "border-gold bg-gold/5 text-ivory"
-                      : "border-transparent text-muted hover:border-line-strong hover:text-parchment"
+                  data-active={active ? "true" : undefined}
+                  className={`nexus-nav-item group flex items-center gap-2.5 px-2 py-1.5 text-sm ${
+                    active ? "text-ivory" : "text-muted hover:text-parchment"
                   }`}
                 >
                   <span

@@ -101,7 +101,7 @@ export function StorylineFile({ id }: { id: string }) {
     <div className="space-y-4">
       {/* Thread header */}
       <div
-        className="dossier dossier-gold corner-ticks p-5"
+        className="archive-record-header dossier dossier-gold corner-ticks p-5"
         style={{ borderLeft: `3px solid ${s.color}` }}
       >
         <div className="flex flex-wrap items-start justify-between gap-4">

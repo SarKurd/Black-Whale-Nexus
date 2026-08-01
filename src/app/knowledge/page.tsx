@@ -110,7 +110,7 @@ export default function KnowledgePage() {
 function KnowledgePageFallback() {
   return (
     <div>
-      <div className="mb-4">
+      <div className="archive-page-header mb-6">
         <div className="intel-label-gold">Intelligence-clearance network</div>
         <h1 className="royal-heading text-3xl">Who Knows What</h1>
         <p className="mt-2 max-w-3xl text-xs text-muted">
@@ -140,7 +140,7 @@ function KnowledgePageInner() {
 
   return (
     <div>
-      <div className="mb-4">
+      <div className="archive-page-header mb-6">
         <div className="intel-label-gold">Intelligence-clearance network</div>
         <h1 className="royal-heading text-3xl">Who Knows What</h1>
         <p className="mt-2 max-w-3xl text-xs text-muted">

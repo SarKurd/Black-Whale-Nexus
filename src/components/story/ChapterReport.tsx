@@ -160,7 +160,7 @@ export function ChapterReport({ num }: { num: string }) {
   return (
     <div className="space-y-4">
       {/* Report header */}
-      <div className="dossier dossier-gold corner-ticks p-5">
+      <div className="archive-record-header dossier dossier-gold corner-ticks p-5">
         <div className="flex flex-wrap items-start justify-between gap-4">
           <div className="min-w-0">
             <div className="intel-label-gold">

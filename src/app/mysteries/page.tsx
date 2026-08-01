@@ -83,7 +83,7 @@ export default function MysteriesPage() {
 
   return (
     <div>
-      <div className="mb-4">
+      <div className="archive-page-header mb-6">
         <div className="intel-label-gold">Analyst case board</div>
         <h1 className="royal-heading text-3xl">Open Mysteries</h1>
         <p className="mt-1 max-w-3xl text-xs text-muted">

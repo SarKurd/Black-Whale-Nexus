@@ -57,6 +57,7 @@ export function EventChronology() {
   const nativeFullscreenActive = useRef(false);
   const eventButtons = useRef(new Map<string, HTMLButtonElement>());
   const revealHandled = useRef<string | null>(null);
+  const interactionSelectionKey = useRef<string | null>(null);
   const fallbackScrollY = useRef(0);
   const [flowElement, setFlowElement] = useState<HTMLDivElement | null>(null);
   const [activeSection, setActiveSection] = useState("pre-voyage");
@@ -142,6 +143,10 @@ export function EventChronology() {
     [filteredEvents],
   );
   const selectedEvent = selectedId ? eventById.get(selectedId) : undefined;
+  const selectedSectionKey = selectedEvent
+    ? sectionForEvent(selectedEvent, view)
+    : null;
+  const selectedLocationKey = selectedId ? `${view}:${selectedId}` : null;
   const visibleSelectedEvent =
     selectedEvent && selectedEvent.chapter <= clearance
       ? selectedEvent
@@ -187,17 +192,30 @@ export function EventChronology() {
   }, [clearFilters, clearance, filteredIds, selectedId, setSelectedId]);
 
   useEffect(() => {
-    if (!selectedId || !filteredIds.has(selectedId)) return;
-    const timer = window.setTimeout(() => {
-      document.getElementById(`event-${selectedId}`)?.scrollIntoView({
-        behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
-          ? "auto"
-          : "smooth",
+    if (
+      !selectedId ||
+      !selectedSectionKey ||
+      !selectedLocationKey ||
+      !filteredIds.has(selectedId)
+    )
+      return;
+    if (interactionSelectionKey.current === selectedLocationKey) return;
+    const frame = window.requestAnimationFrame(() => {
+      const target = document.getElementById(`event-${selectedId}`);
+      if (!target) return;
+      const renderedSection = target.closest<HTMLElement>(
+        "[data-chronology-section]",
+      );
+      if (renderedSection?.dataset.chronologySection !== selectedSectionKey)
+        return;
+      target.scrollIntoView({
+        behavior: "auto",
         block: "center",
+        inline: "nearest",
       });
-    }, 180);
-    return () => window.clearTimeout(timer);
-  }, [filteredIds, selectedId]);
+    });
+    return () => window.cancelAnimationFrame(frame);
+  }, [filteredIds, selectedId, selectedLocationKey, selectedSectionKey]);
 
   useEffect(() => {
     const onFullscreenChange = () => {
@@ -294,14 +312,18 @@ export function EventChronology() {
 
   const selectEvent = useCallback(
     (event: StoryEvent) => {
+      interactionSelectionKey.current = `${view}:${event.id}`;
       setSelectedId(event.id, "push");
     },
-    [setSelectedId],
+    [setSelectedId, view],
   );
   const closeDrawer = useCallback(() => {
     const previousId = selectedId;
+    interactionSelectionKey.current = null;
     setSelectedId("");
-    requestAnimationFrame(() => eventButtons.current.get(previousId)?.focus());
+    requestAnimationFrame(() =>
+      eventButtons.current.get(previousId)?.focus({ preventScroll: true }),
+    );
   }, [selectedId, setSelectedId]);
 
   const timestampedCount = filteredEvents.filter(
@@ -320,7 +342,7 @@ export function EventChronology() {
         fallbackFullscreen ? styles.fallbackFullscreen : ""
       }`}
     >
-      <header className="mb-5 flex flex-wrap items-end justify-between gap-4">
+      <header className="archive-page-header mb-6 flex flex-wrap items-end justify-between gap-4">
         <div>
           <div className="intel-label-gold">Two readings of the record</div>
           <h1 className="royal-heading mt-1 text-3xl sm:text-4xl">

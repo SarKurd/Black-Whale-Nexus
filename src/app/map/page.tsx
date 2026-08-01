@@ -24,7 +24,7 @@ export default function MapPage() {
 function MapPageFallback() {
   return (
     <div>
-      <div className="mb-4 flex flex-wrap items-end justify-between gap-3">
+      <div className="archive-page-header mb-6 flex flex-wrap items-end justify-between gap-3">
         <div>
           <div className="intel-label-gold">Deck plans · conceptual</div>
           <h1 className="royal-heading text-3xl">Tactical Blueprint</h1>
@@ -185,7 +185,7 @@ function MapPageInner() {
 
   return (
     <div>
-      <div className="mb-4 flex flex-wrap items-end justify-between gap-3">
+      <div className="archive-page-header mb-6 flex flex-wrap items-end justify-between gap-3">
         <div>
           <div className="intel-label-gold">Deck plans · conceptual</div>
           <h1 className="royal-heading text-3xl">Tactical Blueprint</h1>

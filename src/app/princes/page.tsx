@@ -81,7 +81,7 @@ export default function RoyalWarCouncilPage() {
 
   return (
     <div>
-      <div className="mb-5">
+      <div className="archive-page-header mb-6">
         <div className="intel-label-gold">
           Registry · The royal line of Kakin
         </div>
