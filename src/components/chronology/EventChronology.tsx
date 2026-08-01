@@ -615,7 +615,7 @@ export function EventChronology() {
             measureKey={measureKey}
             selectedId={selectedId}
           />
-          <div className="relative z-10">
+          <div>
             {view === "in-universe"
               ? chronologySections.map((section) => (
                   <ChronologyDay
@@ -913,10 +913,10 @@ function ChronologyDay({
                     data-chronology-anchor
                     data-chronology-source={sourceId}
                     data-chronology-kind={precision}
-                    className={`${styles.centerAnchor} mt-3 flex h-3 w-3 items-center justify-center rounded-full border border-gold-dim bg-bg-deep shadow-[0_0_0_4px_rgba(4,7,14,0.9)]`}
+                    className={`${styles.centerAnchor} mt-3 flex h-3 w-3 items-center justify-center rounded-full border border-gold-bright bg-bg-deep shadow-[0_0_0_4px_rgba(4,7,14,0.9)]`}
                     aria-hidden
                   >
-                    <span className="h-0.5 w-0.5 rounded-full bg-gold-dim" />
+                    <span className="h-0.5 w-0.5 rounded-full bg-gold-bright" />
                   </span>
                   <ChronologyEventCard
                     event={event}

@@ -162,10 +162,11 @@ export function ChronologyConnections({
       viewBox={`0 0 ${geometry.width} ${geometry.height}`}
     >
       {geometry.paths.map((path) => (
-        <g key={path.id}>
-          <path d={path.d} className={styles.pathUnderlay} />
-          <path d={path.d} className={classFor(path.kind, path.selected)} />
-        </g>
+        <path
+          key={path.id}
+          d={path.d}
+          className={classFor(path.kind, path.selected)}
+        />
       ))}
     </svg>
   );
