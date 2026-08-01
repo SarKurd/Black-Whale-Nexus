@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { Suspense, useMemo } from "react";
 import {
@@ -199,32 +199,22 @@ function KnowledgePageInner() {
 
         {/* Clearance board */}
         <div className="min-w-0">
-          <AnimatePresence mode="wait">
+          <motion.div
+            key={factIsOpen && selectedFact ? selectedFact.id : "empty"}
+            initial={{ y: 8 }}
+            animate={{ y: 0 }}
+            transition={{ duration: 0.18, ease: "easeOut" }}
+          >
             {factIsOpen && selectedFact ? (
-              <motion.div
-                key={selectedFact.id}
-                initial={{ opacity: 0, y: 8 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -8 }}
-                transition={{ duration: 0.18 }}
-              >
-                <ClearanceBoard fact={selectedFact} ch={ch} />
-              </motion.div>
+              <ClearanceBoard fact={selectedFact} ch={ch} />
             ) : (
-              <motion.div
-                key="empty"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-              >
-                <ArchiveNote>
-                  {selectedFactId && !factIsOpen
-                    ? "That fact is sealed beyond your current clearance."
-                    : "Select a fact from the ledger to open its clearance board."}
-                </ArchiveNote>
-              </motion.div>
+              <ArchiveNote>
+                {selectedFactId && !factIsOpen
+                  ? "That fact is sealed beyond your current clearance."
+                  : "Select a fact from the ledger to open its clearance board."}
+              </ArchiveNote>
             )}
-          </AnimatePresence>
+          </motion.div>
         </div>
       </div>
     </div>

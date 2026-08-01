@@ -169,7 +169,7 @@ function TermCard({
       initial={animateEntrance ? { opacity: 0, y: 6 } : false}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.2, delay: Math.min(index, 10) * 0.03 }}
-      className="archive-collection-card archive-collection-card--tall dossier scroll-mt-24 p-3.5"
+      className="dossier corner-ticks scroll-mt-24 p-3.5"
     >
       <div className="flex flex-wrap items-baseline justify-between gap-2">
         <span className="royal-heading text-base text-ivory">{term.term}</span>

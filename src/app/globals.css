@@ -126,21 +126,6 @@ body {
   border-color: var(--gold-line);
 }
 
-/* Keep full archive collections in the document while letting supporting
-   browsers skip layout and paint work for cards far outside the viewport. */
-.archive-collection-card {
-  content-visibility: auto;
-  contain-intrinsic-block-size: auto 160px;
-}
-
-.archive-collection-card--compact {
-  contain-intrinsic-block-size: auto 84px;
-}
-
-.archive-collection-card--tall {
-  contain-intrinsic-block-size: auto 210px;
-}
-
 /* Corner registration ticks, drawn with pseudo-elements */
 .corner-ticks::before,
 .corner-ticks::after {

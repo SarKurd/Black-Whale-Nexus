@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { notFound, useSearchParams } from "next/navigation";
 import { Suspense, useMemo } from "react";
@@ -315,47 +315,44 @@ function CharacterDossierContent({
         ))}
       </div>
 
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={tab}
-          initial={{ opacity: 0, y: 6 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -6 }}
-          transition={{ duration: 0.15 }}
-        >
-          {tab === "Dossier" && <DossierTab c={c} d={d} ch={ch} />}
-          {tab === "Relationships" && <RelationshipsTab c={c} d={d} ch={ch} />}
-          {tab === "Timeline" && (
-            <TimelineTab
-              d={d}
-              direction={chronology}
-              onDirectionChange={setChronology}
-            />
-          )}
-          {tab === "Knowledge" && <KnowledgeTab d={d} />}
-          {tab === "Nen" && <NenTab c={c} d={d} ch={ch} />}
-          {tab === "Locations" && (
-            <LocationsTab
-              c={c}
-              ch={ch}
-              direction={chronology}
-              onDirectionChange={setChronology}
-            />
-          )}
-          {tab === "Chapters" && (
-            <ChaptersTab
-              c={c}
-              ch={ch}
-              direction={chronology}
-              onDirectionChange={setChronology}
-            />
-          )}
-          {tab === "Mysteries" && <MysteriesTab d={d} ch={ch} />}
-          {tab === "Theories" && (
-            <TheoriesTab d={d} ch={ch} hideTheories={hideTheories} />
-          )}
-        </motion.div>
-      </AnimatePresence>
+      <motion.div
+        key={tab}
+        initial={{ y: 6 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.15, ease: "easeOut" }}
+      >
+        {tab === "Dossier" && <DossierTab c={c} d={d} ch={ch} />}
+        {tab === "Relationships" && <RelationshipsTab c={c} d={d} ch={ch} />}
+        {tab === "Timeline" && (
+          <TimelineTab
+            d={d}
+            direction={chronology}
+            onDirectionChange={setChronology}
+          />
+        )}
+        {tab === "Knowledge" && <KnowledgeTab d={d} />}
+        {tab === "Nen" && <NenTab c={c} d={d} ch={ch} />}
+        {tab === "Locations" && (
+          <LocationsTab
+            c={c}
+            ch={ch}
+            direction={chronology}
+            onDirectionChange={setChronology}
+          />
+        )}
+        {tab === "Chapters" && (
+          <ChaptersTab
+            c={c}
+            ch={ch}
+            direction={chronology}
+            onDirectionChange={setChronology}
+          />
+        )}
+        {tab === "Mysteries" && <MysteriesTab d={d} ch={ch} />}
+        {tab === "Theories" && (
+          <TheoriesTab d={d} ch={ch} hideTheories={hideTheories} />
+        )}
+      </motion.div>
     </div>
   );
 }

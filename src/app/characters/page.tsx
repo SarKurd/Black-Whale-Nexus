@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import {
   ArchiveNote,
   Monogram,
@@ -31,6 +31,7 @@ const STATUS_FILTERS: (CharacterStatus | "all")[] = [
 
 export default function CharactersPage() {
   const ch = useEffectiveChapter();
+  const [animateCards, setAnimateCards] = useState(true);
   const [query, setQuery] = useUrlString("q", "");
   const [faction, setFaction] = useUrlString("faction", "all");
   const [statusValue, setStatus] = useUrlString("status", "all", (value) =>
@@ -80,14 +81,20 @@ export default function CharactersPage() {
       <div className="mb-4 flex flex-wrap items-center gap-3">
         <input
           value={query}
-          onChange={(e) => setQuery(e.target.value)}
+          onChange={(e) => {
+            setAnimateCards(false);
+            setQuery(e.target.value);
+          }}
           aria-label="Filter character dossiers"
           placeholder="Filter by name, alias, role…"
           className="w-64 border border-line bg-panel px-3 py-1.5 text-sm text-ivory outline-none placeholder:text-faint focus:border-gold-line"
         />
         <select
           value={faction}
-          onChange={(e) => setFaction(e.target.value)}
+          onChange={(e) => {
+            setAnimateCards(false);
+            setFaction(e.target.value);
+          }}
           aria-label="Filter characters by faction"
           className="border border-line bg-panel px-2 py-1.5 text-sm text-parchment outline-none"
         >
@@ -103,7 +110,10 @@ export default function CharactersPage() {
             <button
               key={s}
               type="button"
-              onClick={() => setStatus(s)}
+              onClick={() => {
+                setAnimateCards(false);
+                setStatus(s);
+              }}
               aria-pressed={status === s}
               className={`border px-2 py-1 font-mono text-[10px] uppercase tracking-widest transition-colors ${
                 status === s
@@ -131,8 +141,9 @@ export default function CharactersPage() {
             return (
               <motion.div
                 key={c.id}
-                className="archive-collection-card archive-collection-card--compact"
-                initial={index < 18 ? { opacity: 0, y: 8 } : false}
+                initial={
+                  animateCards && index < 18 ? { opacity: 0, y: 8 } : false
+                }
                 animate={{ opacity: 1, y: 0 }}
                 transition={{
                   duration: 0.2,

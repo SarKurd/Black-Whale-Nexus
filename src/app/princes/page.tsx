@@ -1,9 +1,9 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import {
   ordinal,
   RISK_COLOR,
@@ -71,6 +71,7 @@ function buildIntel(ch: number): PrinceIntel[] {
 
 export default function RoyalWarCouncilPage() {
   const ch = useEffectiveChapter();
+  const [animateCouncil, setAnimateCouncil] = useState(true);
   const [viewValue, setViewValue] = useUrlString("view", "Council", (value) =>
     VIEWS.includes(value as View),
   );
@@ -114,7 +115,10 @@ export default function RoyalWarCouncilPage() {
               <button
                 key={v}
                 type="button"
-                onClick={() => setViewValue(v)}
+                onClick={() => {
+                  if (v !== view) setAnimateCouncil(false);
+                  setViewValue(v);
+                }}
                 aria-pressed={view === v}
                 className={`-mb-px border-b-2 px-3 py-2 font-mono text-[11px] uppercase tracking-widest transition-colors ${
                   view === v
@@ -127,38 +131,40 @@ export default function RoyalWarCouncilPage() {
             ))}
           </div>
 
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={view}
-              initial={{ opacity: 0, y: 6 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -6 }}
-              transition={{ duration: 0.15 }}
-            >
-              {view === "Council" && <CouncilView intel={intel} />}
-              {view === "Strategic table" && (
-                <StrategicTable intel={intel} ch={ch} />
-              )}
-              {view === "Succession ring" && (
-                <>
-                  <div className="hidden md:block">
-                    <SuccessionRing intel={intel} />
+          <motion.div
+            key={view}
+            initial={{ y: 6 }}
+            animate={{ y: 0 }}
+            transition={{ duration: 0.15, ease: "easeOut" }}
+          >
+            {view === "Council" && (
+              <CouncilView intel={intel} animateEntrance={animateCouncil} />
+            )}
+            {view === "Strategic table" && (
+              <StrategicTable intel={intel} ch={ch} />
+            )}
+            {view === "Succession ring" && (
+              <>
+                <div className="hidden md:block">
+                  <SuccessionRing intel={intel} />
+                </div>
+                {/* The radial chart needs room — fall back to cards on small screens. */}
+                <div className="md:hidden">
+                  <ArchiveNote>
+                    The succession ring requires a wider display. Showing the
+                    council roster instead.
+                  </ArchiveNote>
+                  <div className="mt-3">
+                    <CouncilView
+                      intel={intel}
+                      animateEntrance={animateCouncil}
+                    />
                   </div>
-                  {/* The radial chart needs room — fall back to cards on small screens. */}
-                  <div className="md:hidden">
-                    <ArchiveNote>
-                      The succession ring requires a wider display. Showing the
-                      council roster instead.
-                    </ArchiveNote>
-                    <div className="mt-3">
-                      <CouncilView intel={intel} />
-                    </div>
-                  </div>
-                </>
-              )}
-              {view === "Evolution" && <EvolutionBoard intel={intel} ch={ch} />}
-            </motion.div>
-          </AnimatePresence>
+                </div>
+              </>
+            )}
+            {view === "Evolution" && <EvolutionBoard intel={intel} ch={ch} />}
+          </motion.div>
         </>
       )}
     </div>
@@ -169,7 +175,13 @@ export default function RoyalWarCouncilPage() {
 /* Council — rich prince cards in rank order                                  */
 /* ------------------------------------------------------------------------- */
 
-function CouncilView({ intel }: { intel: PrinceIntel[] }) {
+function CouncilView({
+  intel,
+  animateEntrance,
+}: {
+  intel: PrinceIntel[];
+  animateEntrance: boolean;
+}) {
   if (intel.length === 0)
     return (
       <ArchiveNote>No royal records on file at this clearance.</ArchiveNote>
@@ -180,7 +192,7 @@ function CouncilView({ intel }: { intel: PrinceIntel[] }) {
         ({ p, c, status, guardsAlive, beastSeen, risk, objective }, i) => (
           <motion.div
             key={p.id}
-            initial={{ opacity: 0, y: 8 }}
+            initial={animateEntrance ? { opacity: 0, y: 8 } : false}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.2, delay: i * 0.02 }}
           >

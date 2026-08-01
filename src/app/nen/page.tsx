@@ -226,7 +226,7 @@ export default function NenPage() {
                             duration: 0.2,
                             delay: Math.min(index, 10) * 0.03,
                           }}
-                          className="archive-collection-card dossier p-3"
+                          className="dossier corner-ticks p-3"
                         >
                           <div className="flex flex-wrap items-baseline gap-2">
                             <span className="intel-label-gold">Beast of</span>
@@ -305,7 +305,7 @@ function AbilityCard({
       initial={animateEntrance ? { opacity: 0, y: 6 } : false}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.2, delay: Math.min(index, 10) * 0.03 }}
-      className="archive-collection-card dossier group block min-w-0 p-3 transition-colors hover:border-gold-line"
+      className="dossier corner-ticks group block min-w-0 p-3 transition-colors hover:border-gold-line"
     >
       <div className="flex items-baseline justify-between gap-2">
         <Link
