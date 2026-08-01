@@ -2900,7 +2900,7 @@ export const chapters: ChapterInfo[] = [
     day: "10 (flashback)",
     summary:
       "Hinrigh confirms the Heil-Ly teleport with camcorder footage while three Spiders cut into the hidden room — and the arc dives into Meteor City. Child Chrollo dubs a foreign tokusatsu tape into the local tongue with Pakunoda, Sheila, and Sarasa as the heroines; a furious Uvogin hunts him for a stolen video; and the city's stolen children pile up in small graves.",
-    eventIds: ["ev-395-troupe-origins"],
+    eventIds: ["ev-395-troupe-origins", "ev-395-sheila-meets-kurapika-pairo"],
     appearingCharacterIds: [
       "hinrigh",
       "perigord",
@@ -2936,6 +2936,7 @@ export const chapters: ChapterInfo[] = [
       ],
       newKnowledge: [
         "Meteor City's law of retribution and its bargain with the Mafia",
+        "Sheila is the same Dino Hunter reader who later met Kurapika and Pairo",
       ],
     },
   },

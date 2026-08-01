@@ -370,10 +370,10 @@ export default function CommandCenter() {
           title="Recent major events"
           actions={
             <Link
-              href="/timeline"
+              href="/chronology"
               className="intel-label text-teal hover:text-gold-bright"
             >
-              Timeline →
+              Event Archive →
             </Link>
           }
         >

@@ -190,7 +190,7 @@ export function StorylineFile({ id }: { id: string }) {
                           {n.eventIds.map((eid) => (
                             <Link
                               key={eid}
-                              href={`/timeline?event=${eid}`}
+                              href={`/chronology?event=${eid}`}
                               className="font-mono text-[9px] uppercase tracking-widest text-teal hover:text-gold-bright"
                             >
                               recorder entry →

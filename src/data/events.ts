@@ -2876,10 +2876,12 @@ export const events: StoryEvent[] = [
   // -------------------------------------------------------------------------
   {
     id: "ev-395-troupe-origins",
-    title: "Meteor City: the Power Cleaners troupe",
+    title: "Sheila joins Chrollo's Power Cleaners troupe",
     summary:
       "A flashback opens the Troupe's origin: child Chrollo dubbing foreign videos in a church, Pakunoda, Sheila, and Sarasa voicing the heroines, a furious Uvogin hunting him over a stolen tape. A theater company begins to form in a city whose children are stolen for sport.",
     chapter: 395,
+    chronologyBeforeChapter: 340,
+    chronologySequence: 10,
     kind: "other",
     locationId: "meteor-city",
     participantIds: [
@@ -2895,6 +2897,41 @@ export const events: StoryEvent[] = [
       "sarasa",
     ],
     storylineIds: ["troupe-hisoka-hunt"],
+    evidence: [
+      {
+        chapter: 395,
+        note: "The founding flashback depicts Chrollo and the future Troupe members as children in Meteor City.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "ev-395-sheila-meets-kurapika-pairo",
+    title: "Sheila meets Kurapika and Pairo",
+    summary:
+      "After leaving the future Spiders' path, an injured Sheila is found in the Lukso Province woods by young Kurapika and Pairo. They hide and care for her while she teaches them about the outside world, then she gives them Dino Hunter — the same book she carried in Meteor City — and departs with a note.",
+    chapter: 395,
+    chronologyBeforeChapter: 340,
+    chronologySequence: 50,
+    kind: "conversation",
+    participantIds: ["sheila", "kurapika", "pairo"],
+    storylineIds: ["troupe-hisoka-hunt"],
+    consequences: [
+      "Dino Hunter becomes Kurapika and Pairo's model for exploring the outside world",
+    ],
+    evidence: [
+      {
+        chapter: 0,
+        note: "Kurapika's Memories: Part One shows the boys sheltering injured Sheila, learning about the outside world from her, and receiving Dino Hunter.",
+        confidence: "canonical",
+      },
+      {
+        chapter: 395,
+        note: "The Meteor City flashback identifies Sheila as Chrollo's childhood friend and shows her carrying the same Dino Hunter book.",
+        confidence: "canonical",
+      },
+    ],
     confidence: "canonical",
   },
   {
@@ -2903,6 +2940,8 @@ export const events: StoryEvent[] = [
     summary:
       "The screening's tape jams and Chrollo carries the show live, winning over even Uvogin. The children claim recurring roles, decide they are a troupe — 'each of us is worth a hundred members' — and Sarasa leaves alone for sorting duty as a van of child-snatchers, quota already met, considers one more.",
     chapter: 396,
+    chronologyBeforeChapter: 340,
+    chronologySequence: 20,
     kind: "decision",
     locationId: "meteor-city",
     participantIds: [
@@ -2918,6 +2957,13 @@ export const events: StoryEvent[] = [
       "sarasa",
     ],
     storylineIds: ["troupe-hisoka-hunt"],
+    evidence: [
+      {
+        chapter: 396,
+        note: "The chapter continues the same Meteor City childhood sequence begun in chapter 395.",
+        confidence: "canonical",
+      },
+    ],
     confidence: "canonical",
   },
   {
@@ -2926,6 +2972,8 @@ export const events: StoryEvent[] = [
     summary:
       "Sarasa is abducted, dismembered, and staged with a filmed message by outsiders who prey on Meteor City. Over her grave Chrollo vows to build a criminal haven that will lure her killers back, live as a villain the world shudders at, and kill — and Uvogin names him the Troupe's head.",
     chapter: 397,
+    chronologyBeforeChapter: 340,
+    chronologySequence: 30,
     kind: "death",
     locationId: "meteor-city",
     participantIds: [
@@ -2946,6 +2994,13 @@ export const events: StoryEvent[] = [
     consequences: [
       "The Phantom Troupe's founding purpose is revenge dressed as banditry",
     ],
+    evidence: [
+      {
+        chapter: 397,
+        note: "The chapter continues the childhood flashback through Sarasa's murder and Chrollo's vow at her grave.",
+        confidence: "canonical",
+      },
+    ],
     confidence: "canonical",
   },
   {
@@ -2954,6 +3009,8 @@ export const events: StoryEvent[] = [
     summary:
       "Chrollo asks Uvogin for three years to build his power and a system for Meteor City; Uvogin answers that if Chrollo is the head, he will follow him until he dies. Eight children raise their fingers, and the group that will terrify the world takes its shape.",
     chapter: 397,
+    chronologyBeforeChapter: 340,
+    chronologySequence: 40,
     kind: "decision",
     locationId: "meteor-city",
     participantIds: [
@@ -2968,6 +3025,13 @@ export const events: StoryEvent[] = [
       "sheila",
     ],
     storylineIds: ["troupe-hisoka-hunt"],
+    evidence: [
+      {
+        chapter: 397,
+        note: "The founding flashback ends with the children choosing Chrollo, followed by a years-later view of the Spider formed.",
+        confidence: "canonical",
+      },
+    ],
     confidence: "canonical",
   },
 

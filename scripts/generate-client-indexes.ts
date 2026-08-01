@@ -178,7 +178,7 @@ for (const event of events) {
     label: event.title,
     sub: `Event · Ch.${event.chapter}`,
     kind: "Event",
-    href: `/timeline?event=${event.id}`,
+    href: `/chronology?event=${event.id}`,
     hay: `${event.title} ${event.summary}`.toLowerCase(),
     revealCh: event.chapter,
   });

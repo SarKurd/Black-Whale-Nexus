@@ -6514,8 +6514,8 @@ export const characters: Character[] = [
   {
     id: "sheila",
     name: "Sheila",
-    role: "Meteor City child of the Troupe's origin",
-    bio: "The bookish girl of the Troupe-origin flashback — reader of Dino Hunter, recruited by Pakunoda with Sarasa to voice the Power Cleaners heroines because the love triangles needed three actresses with chemistry. One of the children around whom the 'troupe' formed; her present whereabouts are unknown.",
+    role: "Meteor City child; aspiring Hunter; Kurapika and Pairo's visitor",
+    bio: "The bookish girl connecting two histories: a childhood friend of Chrollo who joined the Power Cleaners performances, then rejected the future Spiders' revenge path after Sarasa's murder. Later, injured in the Lukso Province woods, she was sheltered by Kurapika and Pairo, taught them about the outside world, and left them her copy of Dino Hunter. Her present whereabouts are unknown.",
     monogram: "SH",
     factionIds: [],
     introducedCh: 395,
@@ -6523,7 +6523,7 @@ export const characters: Character[] = [
       {
         ch: 395,
         status: "unknown",
-        note: "Shown only in the fifteen-years-past flashback; no present-day trace.",
+        note: "Known from the Meteor City and Kurta childhood records; no present-day trace.",
       },
     ],
     locationHistory: [

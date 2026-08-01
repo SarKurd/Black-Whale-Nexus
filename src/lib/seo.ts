@@ -143,13 +143,6 @@ export const STATIC_PAGE_SEO = {
       "Follow the parallel storylines of Kurapika, the Kakin princes, Benjamin's army, the mafia war, Morena, Hisoka, and the Phantom Troupe.",
     path: "/storylines",
   },
-  "/timeline": {
-    title: "Succession War Timeline",
-    heading: "Timeline",
-    description:
-      "Replay the Hunter × Hunter Succession War chapter by chapter, with simultaneous incidents, movements, discoveries, battles, and deaths aligned.",
-    path: "/timeline",
-  },
   "/chapters": {
     title: "Hunter × Hunter Chapters 340 Onward",
     heading: "Chapter Archive",
@@ -207,6 +200,13 @@ export const STATIC_PAGE_SEO = {
     description:
       "Review everything newly declassified between two chapter clearances of the Succession War — deaths revealed, characters entering the record, knowledge gained, and mysteries advanced.",
     path: "/declassified",
+  },
+  "/chronology": {
+    title: "Succession War Event Archive",
+    heading: "Event Archive",
+    description:
+      "Explore the Succession War in in-universe order or replay its events in the chapter order Togashi revealed them.",
+    path: "/chronology",
   },
 } as const satisfies Record<string, SeoPage>;
 

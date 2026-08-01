@@ -207,7 +207,7 @@ export const investigationPaths: InvestigationPath[] = [
     blurb: "Set your clearance, then replay the record chapter by chapter.",
     steps: [
       { label: "Chapter incident reports", href: "/chapters" },
-      { label: "Voyage timeline", href: "/timeline" },
+      { label: "Event archive", href: "/chronology" },
     ],
   },
 ];

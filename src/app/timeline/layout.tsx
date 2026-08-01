@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { createPageMetadata, STATIC_PAGE_SEO } from "@/lib/seo";
 
-export const metadata: Metadata = createPageMetadata(
-  STATIC_PAGE_SEO["/timeline"],
-);
+export const metadata: Metadata = {
+  title: "Event Archive",
+  robots: { index: false, follow: true },
+};
 
 export default function TimelineLayout({
   children,

@@ -6891,6 +6891,62 @@ export const relationships: Relationship[] = [
     ],
   },
   {
+    id: "rel-sheila-friend-kurapika",
+    from: "sheila",
+    to: "kurapika",
+    kind: "friend",
+    directed: false,
+    strength: "moderate",
+    secret: false,
+    confirmed: true,
+    startCh: 0,
+    revealCh: 395,
+    mutualAwareness: true,
+    description:
+      "Kurapika and Pairo sheltered Sheila while her injured leg healed. She taught them about the outside world and left them Dino Hunter, the book that sharpened Kurapika's desire to leave the Kurta forest.",
+    evidence: [
+      {
+        chapter: 0,
+        note: "Their meeting, conversations, and parting note in Kurapika's Memories: Part One.",
+        confidence: "canonical",
+      },
+      {
+        chapter: 395,
+        note: "The Troupe-origin flashback establishes that this Sheila came from Chrollo's Meteor City circle.",
+        confidence: "canonical",
+      },
+    ],
+    eventIds: ["ev-395-sheila-meets-kurapika-pairo"],
+  },
+  {
+    id: "rel-sheila-friend-pairo",
+    from: "sheila",
+    to: "pairo",
+    kind: "friend",
+    directed: false,
+    strength: "moderate",
+    secret: false,
+    confirmed: true,
+    startCh: 0,
+    revealCh: 395,
+    mutualAwareness: true,
+    description:
+      "Pairo helped Kurapika hide and care for the injured Sheila. Her stories and copy of Dino Hunter gave both boys a shared dream of exploring the outside world.",
+    evidence: [
+      {
+        chapter: 0,
+        note: "Their meeting and time together in Kurapika's Memories: Part One.",
+        confidence: "canonical",
+      },
+      {
+        chapter: 395,
+        note: "The Troupe-origin flashback connects Sheila and Dino Hunter to Meteor City.",
+        confidence: "canonical",
+      },
+    ],
+    eventIds: ["ev-395-sheila-meets-kurapika-pairo"],
+  },
+  {
     id: "rel-chrollo-friend-sarasa",
     from: "chrollo",
     to: "sarasa",

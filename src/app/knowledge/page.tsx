@@ -485,7 +485,7 @@ function PropagationRecord({ fact, ch }: { fact: KnowledgeFact; ch: number }) {
                 <EventKindChip kind={event.kind} />
               </div>
               <Link
-                href={`/timeline?event=${event.id}`}
+                href={`/chronology?event=${event.id}`}
                 className="mt-0.5 block text-sm leading-snug text-ivory hover:text-gold-bright"
               >
                 {event.title}

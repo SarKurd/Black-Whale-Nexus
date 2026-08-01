@@ -26,7 +26,7 @@ const NAV: {
     items: [
       { href: "/web", label: "Relationship Web", code: "06" },
       { href: "/storylines", label: "Storylines", code: "07" },
-      { href: "/timeline", label: "Timeline", code: "08" },
+      { href: "/chronology", label: "Event Archive", code: "08" },
       { href: "/chapters", label: "Chapters", code: "09" },
       { href: "/map", label: "Black Whale Map", code: "10" },
     ],

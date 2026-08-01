@@ -297,6 +297,13 @@ export interface StoryEvent {
   chapter: number;
   /** Voyage day aboard the Black Whale, when inferable. */
   day?: number;
+  /**
+   * For undated flashbacks whose occurrence is canonically earlier than a
+   * known chapter-era event. Reveal Order continues to use `chapter`.
+   */
+  chronologyBeforeChapter?: number;
+  /** Tie-breaker for records sharing the same undated chronology anchor. */
+  chronologySequence?: number;
   approxTime?: string;
   kind: EventKind;
   locationId?: Id;
