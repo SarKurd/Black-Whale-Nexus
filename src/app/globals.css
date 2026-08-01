@@ -235,13 +235,14 @@ body {
 
 /* Keep backdrop-filter surfaces out of transformed route layers. Chromium can
    otherwise paint the header first and apply its blur a frame later. */
-.nexus-main > :has(> :is(.archive-page-header, .archive-record-header)) {
+.nexus-main
+> :has(> :is(.command-hero, .archive-page-header, .archive-record-header)) {
   animation: none;
 }
 
 .nexus-main
-  > :has(> :is(.archive-page-header, .archive-record-header))
-  > :not(:is(.archive-page-header, .archive-record-header)) {
+  > :has(> :is(.command-hero, .archive-page-header, .archive-record-header))
+  > :not(:is(.command-hero, .archive-page-header, .archive-record-header)) {
   animation: nexus-page-in 460ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
