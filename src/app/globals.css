@@ -677,6 +677,114 @@ body {
   outline: none;
 }
 
+/* ---------------------------------------------------------------------------
+   Shared interaction language — every link and button receives a deliberate
+   response, while each control type keeps the visual weight appropriate to it.
+--------------------------------------------------------------------------- */
+
+:where(a[href], button:not(:disabled)) {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition-property:
+    color, border-color, background-color, background-size, box-shadow, opacity,
+    filter, transform;
+  transition-duration: 180ms;
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+:where(a[href], button:not(:disabled)):active {
+  filter: brightness(0.88);
+  transition-duration: 70ms;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.42;
+}
+
+/* Framed controls inherit the command-center panel sweep. */
+button.border:not(:disabled),
+a.border[href] {
+  background-image: linear-gradient(
+    90deg,
+    rgba(134, 203, 210, 0.1),
+    rgba(194, 169, 104, 0.035) 64%,
+    transparent
+  );
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 0 100%;
+  box-shadow: inset 0 1px rgba(232, 241, 245, 0.025);
+}
+
+button.border:not(:disabled):hover,
+button.border:not(:disabled):focus-visible,
+a.border[href]:hover,
+a.border[href]:focus-visible {
+  border-color: var(--line-strong);
+  background-size: 100% 100%;
+  box-shadow:
+    inset 0 1px rgba(232, 241, 245, 0.055),
+    0 10px 28px rgba(0, 0, 0, 0.12);
+}
+
+button[aria-pressed="true"] {
+  box-shadow:
+    inset 0 -2px var(--gold-line),
+    inset 0 1px rgba(232, 241, 245, 0.05);
+}
+
+/* Card links lift by only two pixels, matching the restrained destination row. */
+.dossier:is(a, button) {
+  transition:
+    border-color 190ms ease,
+    background-color 190ms ease,
+    box-shadow 220ms ease,
+    color 190ms ease,
+    filter 100ms ease,
+    transform 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.dossier:is(a, button):hover,
+.dossier:is(a, button):focus-visible {
+  transform: translateY(-2px);
+  border-color: var(--line-strong);
+  box-shadow:
+    inset 0 1px rgba(232, 241, 245, 0.04),
+    0 22px 46px rgba(0, 0, 0, 0.22);
+}
+
+/* Unframed navigation references gain a quiet teal-to-gold tracking line. */
+a[href]:not(.dossier):not(.destination-tile):not(.nexus-brand):not(
+    .nexus-nav-item
+  ):not(.underline):not(.border) {
+  background-image: linear-gradient(90deg, currentColor, var(--gold-bright));
+  background-repeat: no-repeat;
+  background-position: left calc(100% - 1px);
+  background-size: 0 1px;
+}
+
+a[href]:not(.dossier):not(.destination-tile):not(.nexus-brand):not(
+    .nexus-nav-item
+  ):not(.underline):not(.border):hover,
+a[href]:not(.dossier):not(.destination-tile):not(.nexus-brand):not(
+    .nexus-nav-item
+  ):not(.underline):not(.border):focus-visible {
+  background-size: 100% 1px;
+}
+
+a.underline[href] {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.22em;
+  transition-property:
+    color, text-decoration-color, text-underline-offset, filter;
+}
+
+a.underline[href]:hover,
+a.underline[href]:focus-visible {
+  text-underline-offset: 0.3em;
+}
+
 @keyframes archive-header-content-in {
   from {
     opacity: 0;
