@@ -43,10 +43,8 @@ export function ChronologyEventCard({
       data-selected={selected ? "true" : "false"}
       className={`${styles.eventCard} ${
         side === "left" ? styles.eventLeft : styles.eventRight
-      } dossier corner-ticks scroll-mt-44 border transition-colors ${
-        selected
-          ? "border-gold bg-gold/8"
-          : "border-line bg-panel/95 hover:border-line-strong"
+      } dossier scroll-mt-44 border ${
+        selected ? "border-gold bg-gold/8" : "border-line bg-panel/95"
       }`}
       style={{
         borderLeftColor: meta.color,
