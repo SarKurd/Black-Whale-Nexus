@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { useMemo } from "react";
@@ -118,11 +117,7 @@ export function PrinceProfile({ id }: { id: string }) {
   const location = d.loc ? locationById.get(d.loc.locationId) : undefined;
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 6 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.2 }}
-    >
+    <div>
       {/* Royal file header */}
       <div className="archive-record-header dossier dossier-gold corner-ticks mb-4 p-5">
         <div className="flex items-start gap-4">
@@ -472,6 +467,6 @@ export function PrinceProfile({ id }: { id: string }) {
           ))}
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }

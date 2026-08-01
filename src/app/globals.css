@@ -103,12 +103,12 @@ body {
   color: var(--gold);
 }
 
-/* Royal display heading: light Swiss typography with ceremonial spacing. */
+/* Royal display heading: ceremonial serif; body copy remains Geist Sans. */
 .royal-heading {
-  font-family: var(--font-geist-sans), system-ui, sans-serif;
-  font-weight: 300;
+  font-family: var(--font-cinzel), serif;
+  font-weight: 400;
   color: var(--ivory);
-  letter-spacing: 0.075em;
+  letter-spacing: 0.06em;
 }
 
 /* Dossier panel — thin manga-panel border, layered paper */
@@ -235,11 +235,13 @@ body {
 
 /* Keep backdrop-filter surfaces out of transformed route layers. Chromium can
    otherwise paint the header first and apply its blur a frame later. */
-.nexus-main > :has(> .archive-page-header) {
+.nexus-main > :has(> :is(.archive-page-header, .archive-record-header)) {
   animation: none;
 }
 
-.nexus-main > :has(> .archive-page-header) > :not(.archive-page-header) {
+.nexus-main
+  > :has(> :is(.archive-page-header, .archive-record-header))
+  > :not(:is(.archive-page-header, .archive-record-header)) {
   animation: nexus-page-in 460ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
@@ -558,10 +560,11 @@ body {
   pointer-events: none;
 }
 
-.archive-page-header > * {
+.archive-page-header > *,
+.archive-record-header > * {
   position: relative;
   z-index: 1;
-  animation: archive-header-content-in 420ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: archive-header-content-in 480ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .archive-page-header :is(h1, h2).royal-heading {
@@ -592,7 +595,6 @@ body {
   box-shadow:
     inset 0 1px rgba(255, 255, 255, 0.035),
     0 24px 64px rgba(0, 0, 0, 0.2);
-  animation: archive-header-in 480ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .archive-record-header :is(h1, h2).royal-heading {
@@ -675,7 +677,7 @@ body {
   outline: none;
 }
 
-@keyframes archive-header-in {
+@keyframes archive-header-content-in {
   from {
     opacity: 0;
     clip-path: inset(0 22% 0 0);
@@ -684,17 +686,6 @@ body {
   to {
     opacity: 1;
     clip-path: inset(0 0 0 0);
-    transform: translateY(0);
-  }
-}
-
-@keyframes archive-header-content-in {
-  from {
-    opacity: 0;
-    transform: translateY(7px);
-  }
-  to {
-    opacity: 1;
     transform: none;
   }
 }
