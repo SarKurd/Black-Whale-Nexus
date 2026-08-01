@@ -42,8 +42,8 @@ export function Monogram({
           height={160}
           loading="lazy"
           decoding="async"
+          fetchPriority="low"
           className="h-full w-full object-cover object-top"
-          style={{ filter: "saturate(0.82) contrast(1.02)" }}
         />
       </div>
     );

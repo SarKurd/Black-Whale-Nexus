@@ -131,7 +131,8 @@ export default function CharactersPage() {
             return (
               <motion.div
                 key={c.id}
-                initial={{ opacity: 0, y: 8 }}
+                className="archive-collection-card archive-collection-card--compact"
+                initial={index < 18 ? { opacity: 0, y: 8 } : false}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{
                   duration: 0.2,

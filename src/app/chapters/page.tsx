@@ -68,7 +68,7 @@ export default function ChaptersIndexPage() {
               <Link
                 key={c.number}
                 href={`/chapters/${c.number}`}
-                className="dossier corner-ticks group flex flex-col p-4 transition-colors hover:border-gold-line"
+                className="archive-collection-card dossier corner-ticks group flex flex-col p-4 transition-colors hover:border-gold-line"
               >
                 <div className="flex items-baseline justify-between gap-3">
                   <span className="font-mono text-2xl tracking-widest text-gold">

@@ -126,6 +126,21 @@ body {
   border-color: var(--gold-line);
 }
 
+/* Keep full archive collections in the document while letting supporting
+   browsers skip layout and paint work for cards far outside the viewport. */
+.archive-collection-card {
+  content-visibility: auto;
+  contain-intrinsic-block-size: auto 160px;
+}
+
+.archive-collection-card--compact {
+  contain-intrinsic-block-size: auto 84px;
+}
+
+.archive-collection-card--tall {
+  contain-intrinsic-block-size: auto 210px;
+}
+
 /* Corner registration ticks, drawn with pseudo-elements */
 .corner-ticks::before,
 .corner-ticks::after {
@@ -161,7 +176,7 @@ body {
 .nexus-backdrop {
   position: fixed;
   inset: 0;
-  z-index: -2;
+  z-index: 0;
   overflow: hidden;
   background: #03060c;
   pointer-events: none;
@@ -948,6 +963,7 @@ a.underline[href]:focus-visible {
   .nexus-backdrop img {
     object-position: 68% center;
     opacity: 0.48;
+    animation: none;
   }
 
   .nexus-backdrop::before {
@@ -956,6 +972,20 @@ a.underline[href]:focus-visible {
       rgba(3, 6, 12, 0.48),
       rgba(3, 6, 12, 0.84)
     );
+  }
+}
+
+/* Dense glass-card collections can create hundreds of compositing surfaces on
+   touch devices. This opaque equivalent keeps the same tonal treatment without
+   requiring a live backdrop blur for every character. */
+@media (max-width: 1023px), (hover: none) and (pointer: coarse) {
+  .dossier {
+    background: linear-gradient(
+      135deg,
+      rgba(15, 23, 36, 0.96),
+      rgba(8, 13, 23, 0.94)
+    );
+    backdrop-filter: none;
   }
 }
 

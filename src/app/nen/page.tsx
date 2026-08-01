@@ -162,7 +162,7 @@ export default function NenPage() {
       </div>
 
       <div className="space-y-8">
-        {KIND_ORDER.map(({ kind, label, blurb }) => {
+        {KIND_ORDER.map(({ kind, label, blurb }, kindIndex) => {
           const ofKind = allAbilities.filter((a) => a.kind === kind);
           if (ofKind.length === 0) return null;
           const unsealed = ofKind.filter((a) => a.revealCh <= ch);
@@ -184,7 +184,12 @@ export default function NenPage() {
               {shown.length > 0 && (
                 <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
                   {shown.map((a, index) => (
-                    <AbilityCard key={a.id} ability={a} index={index} />
+                    <AbilityCard
+                      key={a.id}
+                      ability={a}
+                      index={index}
+                      animateEntrance={kindIndex === 0 && index < 12}
+                    />
                   ))}
                 </div>
               )}
@@ -221,7 +226,7 @@ export default function NenPage() {
                             duration: 0.2,
                             delay: Math.min(index, 10) * 0.03,
                           }}
-                          className="dossier p-3"
+                          className="archive-collection-card dossier p-3"
                         >
                           <div className="flex flex-wrap items-baseline gap-2">
                             <span className="intel-label-gold">Beast of</span>
@@ -282,9 +287,11 @@ export default function NenPage() {
 function AbilityCard({
   ability,
   index,
+  animateEntrance,
 }: {
   ability: NenAbility;
   index: number;
+  animateEntrance: boolean;
 }) {
   const status = ability.status ?? "unknown";
   // One-line teaser: first sentence only (lookbehind regex needs ES2018+).
@@ -295,10 +302,10 @@ function AbilityCard({
       : ability.description.slice(0, periodIdx + 1);
   return (
     <motion.article
-      initial={{ opacity: 0, y: 6 }}
+      initial={animateEntrance ? { opacity: 0, y: 6 } : false}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.2, delay: Math.min(index, 10) * 0.03 }}
-      className="dossier group block min-w-0 p-3 transition-colors hover:border-gold-line"
+      className="archive-collection-card dossier group block min-w-0 p-3 transition-colors hover:border-gold-line"
     >
       <div className="flex items-baseline justify-between gap-2">
         <Link
