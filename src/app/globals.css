@@ -171,7 +171,7 @@ body {
   object-fit: cover;
   object-position: 56% center;
   filter: contrast(1.08) sepia(0.08) saturate(0.7);
-  opacity: 0.76;
+  opacity: 0.33;
   transform: scale(1.025);
   animation: nexus-drift 26s ease-in-out infinite alternate;
 }
@@ -757,7 +757,7 @@ body {
 @media (max-width: 1023px) {
   .nexus-backdrop img {
     object-position: 68% center;
-    opacity: 0.54;
+    opacity: 0.48;
   }
 
   .nexus-backdrop::before {
