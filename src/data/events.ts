@@ -4292,12 +4292,20 @@ export const events: StoryEvent[] = [
     summary:
       "Flashback, two months before departure: on the night of the Seed Urn ceremony, Combo Master's conjured laptop flags a curse on Furykov — two afflicted users, himself and one anonymized prince. He phones Beyond, who confirms everything with a smile: planted at birth, twenty-plus years of siphoned aura, armed by the ceremony, fired by Furykov's death — and hopeless to counter, needing about a year of deciphering at Beyond's side plus seven hundred days to conjure a cleansing item. The parting counsel from father to son: only a sole surviving prince keeps the Guardian Spirit Beast's blessing.",
     chapter: 415,
+    chronologyBeforeChapter: 350,
     kind: "nen-reveal",
     participantIds: ["furykov", "beyond"],
     storylineIds: ["beyond-netero", "benjamin-military"],
     consequences: [
       "The curse's target is pinned to the first eight princes; Furykov's working suspect is Camilla — unless it is Benjamin himself",
       "Beyond's motive on the record: favor with the next king, and Kakin's colony as the expedition's base camp",
+    ],
+    evidence: [
+      {
+        chapter: 415,
+        note: "The flashback is explicitly set two months before departure, on the night of the Seed Urn ceremony.",
+        confidence: "canonical",
+      },
     ],
     confidence: "canonical",
   },
