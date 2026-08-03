@@ -133,7 +133,7 @@ export default function CharactersPage() {
       {rows.length === 0 ? (
         <ArchiveNote>No personnel records match at this clearance.</ArchiveNote>
       ) : (
-        <div className="grid gap-2.5 sm:grid-cols-2 xl:grid-cols-3">
+        <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2 xl:grid-cols-3">
           {rows.map(({ c, st }, index) => {
             const fac = c.factionIds[0]
               ? factionById.get(c.factionIds[0])

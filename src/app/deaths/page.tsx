@@ -263,7 +263,7 @@ export default function DeathsPage() {
         </span>
       </div>
 
-      <div className="grid gap-4 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
         {/* Death records */}
         <div className="space-y-3 lg:col-span-2">
           {records.length === 0 ? (
