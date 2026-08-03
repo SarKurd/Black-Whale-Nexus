@@ -153,31 +153,35 @@ export default function CharactersPage() {
                 <Link
                   href={`/characters/${c.id}`}
                   prefetch={false}
-                  className="dossier corner-ticks group flex h-full min-w-0 gap-3 p-3 transition-colors hover:border-gold-line"
+                  className="dossier corner-ticks group flex h-full min-w-0 p-3 transition-colors hover:border-gold-line"
                 >
-                  <Monogram characterId={c.id} />
-                  <div className="min-w-0 flex-1">
-                    <div className="flex items-baseline justify-between gap-2">
-                      <span className="truncate text-base text-ivory group-hover:text-gold-bright">
-                        {c.name}
-                      </span>
-                      {st && <StatusChip status={st.status} />}
-                    </div>
-                    <div className="truncate text-xs text-muted">{c.role}</div>
-                    <div className="mt-1.5 flex flex-wrap gap-1">
-                      {fac && (
-                        <span
-                          className="border px-1.5 py-px font-mono text-[9px] uppercase tracking-wider"
-                          style={{
-                            color: fac.color,
-                            borderColor:
-                              "color-mix(in srgb, currentColor 35%, transparent)",
-                          }}
-                        >
-                          {fac.name}
+                  <div className="dossier-body flex min-w-0 flex-1 gap-3">
+                    <Monogram characterId={c.id} />
+                    <div className="min-w-0 flex-1">
+                      <div className="flex items-baseline justify-between gap-2">
+                        <span className="truncate text-base text-ivory group-hover:text-gold-bright">
+                          {c.name}
                         </span>
-                      )}
-                      {c.incomplete && <Tag>partial file</Tag>}
+                        {st && <StatusChip status={st.status} />}
+                      </div>
+                      <div className="truncate text-xs text-muted">
+                        {c.role}
+                      </div>
+                      <div className="mt-1.5 flex flex-wrap gap-1">
+                        {fac && (
+                          <span
+                            className="border px-1.5 py-px font-mono text-[9px] uppercase tracking-wider"
+                            style={{
+                              color: fac.color,
+                              borderColor:
+                                "color-mix(in srgb, currentColor 35%, transparent)",
+                            }}
+                          >
+                            {fac.name}
+                          </span>
+                        )}
+                        {c.incomplete && <Tag>partial file</Tag>}
+                      </div>
                     </div>
                   </div>
                 </Link>

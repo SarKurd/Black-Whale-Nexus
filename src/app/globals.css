@@ -148,6 +148,13 @@ body {
   border-width: 0 1px 1px 0;
 }
 
+/* Skips offscreen card-body rendering. Must stay on this inner wrapper —
+   paint containment on the card itself clips the corner ticks at -1px. */
+.dossier-body {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 62px;
+}
+
 /* ---------------------------------------------------------------------------
    Shared shell — cinematic field, minimal footprint, navigational motion.
 --------------------------------------------------------------------------- */
