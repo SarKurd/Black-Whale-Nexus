@@ -4540,7 +4540,7 @@ export const events: StoryEvent[] = [
     kind: "movement",
     locationId: "tserriednich-quarters",
     participantIds: ["benjamin", "furykov", "butch", "danjin", "vantine"],
-    storylineIds: ["special-martial-law", "benjamin-military"],
+    storylineIds: ["special-martial-law", "benjamin-military", "nen-classes"],
     consequences: [
       "Danjin is in military custody as a specimen of Kurapika's teaching",
       "Benjamin's Kurapika file flips from threat to recruitment target",

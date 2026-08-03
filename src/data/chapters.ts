@@ -4089,6 +4089,7 @@ export const chapters: ChapterInfo[] = [
       "benjamin-military",
       "succession-contest",
       "tserriednich-nen",
+      "nen-classes",
     ],
     abilitiesUsedIds: ["moswana-curse", "camilla-cat", "parallel-future"],
     changes: {
