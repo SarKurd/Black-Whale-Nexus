@@ -35,16 +35,17 @@ const NODE_KIND_LABEL: Record<string, string> = {
 };
 
 // --- Map geometry -----------------------------------------------------------
-const LABEL_W = 200;
+const LABEL_W = 200; // sticky lane-label column (HTML, outside the scrolling SVG)
 const PX_PER_CH = 16;
+const PAD_LEFT = 12;
 const PAD_RIGHT = 28;
 const RULER_H = 36;
 const LANE_H = 46;
-const MAP_W = LABEL_W + (ARC_END - ARC_START) * PX_PER_CH + PAD_RIGHT;
+const MAP_W = PAD_LEFT + (ARC_END - ARC_START) * PX_PER_CH + PAD_RIGHT;
 
 function chX(chapter: number): number {
   const clamped = Math.min(Math.max(chapter, ARC_START), ARC_END);
-  return LABEL_W + (clamped - ARC_START) * PX_PER_CH;
+  return PAD_LEFT + (clamped - ARC_START) * PX_PER_CH;
 }
 
 interface Lane {
@@ -97,6 +98,9 @@ export default function StorylinesPage() {
   const lastTick = ticks.at(-1);
   if (lastTick !== undefined && ARC_END - lastTick >= 3) ticks.push(ARC_END);
   const cursorX = ch >= ARC_START ? chX(ch) : undefined;
+  // Near the right edge the clearance label would clip past the SVG — flip it
+  // to the cursor's left instead.
+  const cursorLabelFlipped = cursorX !== undefined && cursorX + 92 > MAP_W;
 
   const openLane = (id: string) => router.push(`/storylines/${id}`);
 
@@ -122,229 +126,257 @@ export default function StorylinesPage() {
         <>
           {/* Branching map (lg and up) */}
           <div className="dossier corner-ticks hidden overflow-x-auto bg-bg-deep/50 lg:block">
-            <svg
-              width={MAP_W}
-              height={mapH}
-              viewBox={`0 0 ${MAP_W} ${mapH}`}
-              role="img"
-              aria-label="Storyline branching map across chapters"
-              className="block"
-            >
-              {/* Chapter ruler + grid */}
-              <line
-                x1={LABEL_W}
-                y1={RULER_H}
-                x2={MAP_W - PAD_RIGHT + 8}
-                y2={RULER_H}
-                stroke="var(--line)"
-              />
-              {ticks.map((t) => (
-                <g key={t}>
-                  <line
-                    x1={chX(t)}
-                    y1={RULER_H - 5}
-                    x2={chX(t)}
-                    y2={mapH - 6}
-                    stroke="var(--line)"
-                    strokeOpacity={0.45}
-                  />
-                  <text
-                    x={chX(t)}
-                    y={RULER_H - 10}
-                    textAnchor="middle"
-                    fill="var(--muted)"
-                    fontSize={9}
-                    fontFamily="var(--font-geist-mono), monospace"
-                    letterSpacing="0.1em"
-                  >
-                    {t}
-                  </text>
-                </g>
-              ))}
-
-              {/* Clearance cursor */}
-              {cursorX !== undefined && (
-                <g>
-                  <line
-                    x1={cursorX}
-                    y1={10}
-                    x2={cursorX}
-                    y2={mapH - 4}
-                    stroke="var(--gold)"
-                    strokeWidth={1}
-                    strokeDasharray="3 3"
-                  />
-                  <text
-                    x={cursorX + 5}
-                    y={14}
-                    fill="var(--gold-bright)"
-                    fontSize={8}
-                    fontFamily="var(--font-geist-mono), monospace"
-                    letterSpacing="0.18em"
-                  >
-                    CLEARANCE {ch}
-                  </text>
-                </g>
-              )}
-
-              {/* Cross-thread connectors (under the lanes) */}
-              {lanes.map((lane) =>
-                lane.visibleNodes
-                  .filter(
-                    (n) =>
-                      n.linkId &&
-                      ["merge", "intersect", "trigger"].includes(n.kind),
-                  )
-                  .map((n) => {
-                    const target = n.linkId
-                      ? laneByStorylineId.get(n.linkId)
-                      : undefined;
-                    if (!target) return null;
-                    const x = chX(n.ch);
-                    const midY = (lane.y + target.y) / 2;
-                    const dash =
-                      n.kind === "intersect"
-                        ? "4 3"
-                        : n.kind === "trigger"
-                          ? "1.5 3"
-                          : undefined;
-                    return (
-                      <path
-                        key={`${lane.storyline.id}-${n.ch}-${n.kind}-${n.linkId}`}
-                        d={`M ${x} ${lane.y} Q ${x + 30} ${midY} ${x} ${target.y}`}
-                        fill="none"
-                        stroke={lane.storyline.color}
-                        strokeWidth={1}
-                        strokeOpacity={0.55}
-                        strokeDasharray={dash}
-                      />
-                    );
-                  }),
-              )}
-
-              {/* Lanes */}
-              {lanes.map((lane) => {
-                const s = lane.storyline;
-                const nodes = lane.visibleNodes;
-                const segments: {
-                  x1: number;
-                  x2: number;
-                  dashed: boolean;
-                  k: string;
-                }[] = [];
-                for (let i = 0; i < nodes.length - 1; i++) {
-                  segments.push({
-                    x1: chX(nodes[i].ch),
-                    x2: chX(nodes[i + 1].ch),
-                    dashed: nodes[i].kind === "pause",
-                    k: `${nodes[i].ch}-${nodes[i + 1].ch}`,
-                  });
-                }
-                const last = nodes.at(-1);
-                if (last && lane.lineEndCh > last.ch) {
-                  segments.push({
-                    x1: chX(last.ch),
-                    x2: chX(lane.lineEndCh),
-                    dashed: last.kind === "pause",
-                    k: `${last.ch}-tail`,
-                  });
-                }
-                return (
-                  // SVG-native anchor keeps the lane keyboard-accessible;
-                  // click is intercepted for client-side navigation.
-                  <a
-                    key={s.id}
-                    href={`/storylines/${s.id}`}
-                    className="cursor-pointer"
-                    aria-label={`Open storyline file: ${s.name}`}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      openLane(s.id);
-                    }}
-                  >
-                    {/* Lane hover strip */}
-                    <rect
-                      x={0}
-                      y={lane.y - LANE_H / 2}
-                      width={MAP_W}
-                      height={LANE_H}
-                      fill="transparent"
-                      className="hover:fill-[rgba(179,149,74,0.05)]"
+            <div className="flex w-max">
+              {/* Lane labels stay pinned while the graph scrolls. */}
+              <div
+                className="sticky left-0 z-10 shrink-0 border-r border-line/60 bg-bg-deep"
+                style={{ width: LABEL_W }}
+              >
+                <div style={{ height: RULER_H }} />
+                {lanes.map((lane) => {
+                  const s = lane.storyline;
+                  return (
+                    <a
+                      key={s.id}
+                      href={`/storylines/${s.id}`}
+                      className="flex items-center px-2.5 hover:bg-[rgba(179,149,74,0.05)]"
+                      style={{ height: LANE_H }}
+                      aria-label={`Open storyline file: ${s.name}`}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        openLane(s.id);
+                      }}
+                    >
+                      <span
+                        className="truncate font-mono"
+                        style={{
+                          color: s.color,
+                          fontSize: 10,
+                          letterSpacing: "0.08em",
+                        }}
+                      >
+                        {s.name}
+                      </span>
+                    </a>
+                  );
+                })}
+              </div>
+              <svg
+                width={MAP_W}
+                height={mapH}
+                viewBox={`0 0 ${MAP_W} ${mapH}`}
+                role="img"
+                aria-label="Storyline branching map across chapters"
+                className="block"
+              >
+                {/* Chapter ruler + grid */}
+                <line
+                  x1={PAD_LEFT}
+                  y1={RULER_H}
+                  x2={MAP_W - PAD_RIGHT + 8}
+                  y2={RULER_H}
+                  stroke="var(--line)"
+                />
+                {ticks.map((t) => (
+                  <g key={t}>
+                    <line
+                      x1={chX(t)}
+                      y1={RULER_H - 5}
+                      x2={chX(t)}
+                      y2={mapH - 6}
+                      stroke="var(--line)"
+                      strokeOpacity={0.45}
                     />
                     <text
-                      x={10}
-                      y={lane.y + 3}
-                      fill={s.color}
-                      fontSize={10}
+                      x={chX(t)}
+                      y={RULER_H - 10}
+                      textAnchor="middle"
+                      fill="var(--muted)"
+                      fontSize={9}
                       fontFamily="var(--font-geist-mono), monospace"
-                      letterSpacing="0.08em"
+                      letterSpacing="0.1em"
                     >
-                      {s.name.length > 26 ? `${s.name.slice(0, 25)}…` : s.name}
+                      {t}
                     </text>
+                  </g>
+                ))}
 
-                    {segments.map((seg) => (
-                      <line
-                        key={seg.k}
-                        x1={seg.x1}
-                        y1={lane.y}
-                        x2={seg.x2}
-                        y2={lane.y}
-                        stroke={s.color}
-                        strokeWidth={1.5}
-                        strokeOpacity={seg.dashed ? 0.5 : 0.85}
-                        strokeDasharray={seg.dashed ? "3 4" : undefined}
-                      />
-                    ))}
+                {/* Clearance cursor */}
+                {cursorX !== undefined && (
+                  <g>
+                    <line
+                      x1={cursorX}
+                      y1={10}
+                      x2={cursorX}
+                      y2={mapH - 4}
+                      stroke="var(--gold)"
+                      strokeWidth={1}
+                      strokeDasharray="3 3"
+                    />
+                    <text
+                      x={cursorLabelFlipped ? cursorX - 5 : cursorX + 5}
+                      y={14}
+                      textAnchor={cursorLabelFlipped ? "end" : "start"}
+                      fill="var(--gold-bright)"
+                      fontSize={8}
+                      fontFamily="var(--font-geist-mono), monospace"
+                      letterSpacing="0.18em"
+                    >
+                      CLEARANCE {ch}
+                    </text>
+                  </g>
+                )}
 
-                    {nodes.map((n, i) => {
+                {/* Cross-thread connectors (under the lanes) */}
+                {lanes.map((lane) =>
+                  lane.visibleNodes
+                    .filter(
+                      (n) =>
+                        n.linkId &&
+                        ["merge", "intersect", "trigger"].includes(n.kind),
+                    )
+                    .map((n) => {
+                      const target = n.linkId
+                        ? laneByStorylineId.get(n.linkId)
+                        : undefined;
+                      if (!target) return null;
                       const x = chX(n.ch);
-                      const title = `${NODE_KIND_LABEL[n.kind]} · ch.${n.ch} — ${n.title}`;
-                      const entry = {
-                        initial: { opacity: 0 },
-                        animate: { opacity: 1 },
-                        transition: {
-                          duration: 0.25,
-                          delay: lane.index * 0.04 + i * 0.02,
-                        },
-                      };
-                      if (n.kind === "end") {
-                        return (
-                          <motion.rect
-                            key={`${n.ch}-${n.kind}`}
-                            {...entry}
-                            x={x - 4.5}
-                            y={lane.y - 4.5}
-                            width={9}
-                            height={9}
-                            fill={s.color}
-                          >
-                            <title>{title}</title>
-                          </motion.rect>
-                        );
-                      }
-                      const isBegin = n.kind === "begin";
-                      const isPause = n.kind === "pause";
-                      const isClimax = n.kind === "climax";
+                      const midY = (lane.y + target.y) / 2;
+                      const dash =
+                        n.kind === "intersect"
+                          ? "4 3"
+                          : n.kind === "trigger"
+                            ? "1.5 3"
+                            : undefined;
                       return (
-                        <motion.circle
-                          key={`${n.ch}-${n.kind}`}
-                          {...entry}
-                          cx={x}
-                          cy={lane.y}
-                          r={isClimax ? 6.5 : isBegin || isPause ? 4.5 : 3.5}
-                          fill={isBegin || isPause ? "var(--bg-deep)" : s.color}
+                        <path
+                          key={`${lane.storyline.id}-${n.ch}-${n.kind}-${n.linkId}`}
+                          d={`M ${x} ${lane.y} Q ${x + 30} ${midY} ${x} ${target.y}`}
+                          fill="none"
+                          stroke={lane.storyline.color}
+                          strokeWidth={1}
+                          strokeOpacity={0.55}
+                          strokeDasharray={dash}
+                        />
+                      );
+                    }),
+                )}
+
+                {/* Lanes */}
+                {lanes.map((lane) => {
+                  const s = lane.storyline;
+                  const nodes = lane.visibleNodes;
+                  const segments: {
+                    x1: number;
+                    x2: number;
+                    dashed: boolean;
+                    k: string;
+                  }[] = [];
+                  for (let i = 0; i < nodes.length - 1; i++) {
+                    segments.push({
+                      x1: chX(nodes[i].ch),
+                      x2: chX(nodes[i + 1].ch),
+                      dashed: nodes[i].kind === "pause",
+                      k: `${nodes[i].ch}-${nodes[i + 1].ch}`,
+                    });
+                  }
+                  const last = nodes.at(-1);
+                  if (last && lane.lineEndCh > last.ch) {
+                    segments.push({
+                      x1: chX(last.ch),
+                      x2: chX(lane.lineEndCh),
+                      dashed: last.kind === "pause",
+                      k: `${last.ch}-tail`,
+                    });
+                  }
+                  return (
+                    // SVG-native anchor keeps the lane keyboard-accessible;
+                    // click is intercepted for client-side navigation.
+                    <a
+                      key={s.id}
+                      href={`/storylines/${s.id}`}
+                      className="cursor-pointer"
+                      aria-label={`Open storyline file: ${s.name}`}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        openLane(s.id);
+                      }}
+                    >
+                      {/* Lane hover strip */}
+                      <rect
+                        x={0}
+                        y={lane.y - LANE_H / 2}
+                        width={MAP_W}
+                        height={LANE_H}
+                        fill="transparent"
+                        className="hover:fill-[rgba(179,149,74,0.05)]"
+                      />
+                      {segments.map((seg) => (
+                        <line
+                          key={seg.k}
+                          x1={seg.x1}
+                          y1={lane.y}
+                          x2={seg.x2}
+                          y2={lane.y}
                           stroke={s.color}
                           strokeWidth={1.5}
-                          strokeDasharray={isPause ? "2 2" : undefined}
-                        >
-                          <title>{title}</title>
-                        </motion.circle>
-                      );
-                    })}
-                  </a>
-                );
-              })}
-            </svg>
+                          strokeOpacity={seg.dashed ? 0.5 : 0.85}
+                          strokeDasharray={seg.dashed ? "3 4" : undefined}
+                        />
+                      ))}
+
+                      {nodes.map((n, i) => {
+                        const x = chX(n.ch);
+                        const title = `${NODE_KIND_LABEL[n.kind]} · ch.${n.ch} — ${n.title}`;
+                        const entry = {
+                          initial: { opacity: 0 },
+                          animate: { opacity: 1 },
+                          transition: {
+                            duration: 0.25,
+                            delay: lane.index * 0.04 + i * 0.02,
+                          },
+                        };
+                        if (n.kind === "end") {
+                          return (
+                            <motion.rect
+                              key={`${n.ch}-${n.kind}`}
+                              {...entry}
+                              x={x - 4.5}
+                              y={lane.y - 4.5}
+                              width={9}
+                              height={9}
+                              fill={s.color}
+                            >
+                              <title>{title}</title>
+                            </motion.rect>
+                          );
+                        }
+                        const isBegin = n.kind === "begin";
+                        const isPause = n.kind === "pause";
+                        const isClimax = n.kind === "climax";
+                        return (
+                          <motion.circle
+                            key={`${n.ch}-${n.kind}`}
+                            {...entry}
+                            cx={x}
+                            cy={lane.y}
+                            r={isClimax ? 6.5 : isBegin || isPause ? 4.5 : 3.5}
+                            fill={
+                              isBegin || isPause ? "var(--bg-deep)" : s.color
+                            }
+                            stroke={s.color}
+                            strokeWidth={1.5}
+                            strokeDasharray={isPause ? "2 2" : undefined}
+                          >
+                            <title>{title}</title>
+                          </motion.circle>
+                        );
+                      })}
+                    </a>
+                  );
+                })}
+              </svg>
+            </div>
           </div>
 
           {/* Mobile fallback: simplified vertical list */}
