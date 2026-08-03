@@ -263,7 +263,7 @@ export const knowledgeFacts: KnowledgeFact[] = [
     id: "fact-benjamin-cursed",
     label: "A half-day curse is killing Benjamin",
     description:
-      "Moswana died casting her decade-nursed Yomotsu Hegui into Benjamin's eyes at touching distance — despair-faced marks on his irises, potency Camilla rates as lethal within half a day. Stacked on the TSK-17 already in his blood, the First Prince now dies on two clocks.",
+      "Moswana died right in front of Benjamin, eyes locked, casting her decade-nursed Yomotsu Hegui into him — despair-faced marks on his irises, potency Camilla rates as lethal within half a day. Stacked on the TSK-17 already in his blood, the First Prince now dies on two clocks.",
     kind: "nen-ability",
     readerRevealCh: 416,
     relatedCharacterIds: ["benjamin", "moswana", "camilla"],

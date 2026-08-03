@@ -4091,7 +4091,7 @@ export const chapters: ChapterInfo[] = [
       "tserriednich-nen",
       "nen-classes",
     ],
-    abilitiesUsedIds: ["moswana-curse", "camilla-cat", "parallel-future"],
+    abilitiesUsedIds: ["moswana-curse", "parallel-future"],
     changes: {
       deaths: ["fukataki", "moswana"],
       movement: [
@@ -4101,7 +4101,7 @@ export const chapters: ChapterInfo[] = [
       newKnowledge: [
         "Benjamin's own count: twelve hours from TSK-17 symptom onset to death, the last two in a coma — ten functional hours left as martial law begins",
         "Benjamin tells Camilla to her face that he knows her ability is a counteractive type that fires when she is killed",
-        "Moswana's curse was nursed for over ten years with Benjamin as its target; cast at touching distance with eyes locked, Camilla rates it lethal within half a day",
+        "Moswana's curse was nursed for over ten years with Benjamin as its target; cast right in front of him with eyes locked, Camilla rates it lethal within half a day",
         "Camilla claims she can drop her metabolism into near-hibernation and survive without food or water for three months",
         "Tserriednich's coming death will be a ruse — Salkov alone holds the protocol: coffin the body at once, report exactly what was seen, tell no one about the ability",
         "Salkov concludes the ability triggers on Zetsu and is already running — undetectable even at arm's length",

@@ -2007,11 +2007,11 @@ export const relationships: Relationship[] = [
     kind: "knows-ability-of",
     directed: true,
     strength: "strong",
-    secret: true,
+    secret: false,
     confirmed: true,
     startCh: 413,
     revealCh: 413,
-    mutualAwareness: false,
+    mutualAwareness: true,
     description:
       "Secret Window, leveled up by extended use, now replays what Musse saw before dying — so Benjamin knows Camilla is a counteractive-type whose death is a loaded trap. Her one hidden card is face-up to the man most likely to kill her.",
     history: [
@@ -6588,7 +6588,7 @@ export const relationships: Relationship[] = [
     revealCh: 363,
     mutualAwareness: true,
     description:
-      "Have-Not raised into the household guard; volunteers in his heart for the death that curses Benjamin.",
+      "Have-Not raised into the household guard; volunteers in her heart for the death that curses Benjamin.",
     evidence: [
       {
         chapter: 363,
@@ -9105,7 +9105,7 @@ export const relationships: Relationship[] = [
     revealCh: 416,
     mutualAwareness: true,
     description:
-      "One blast each for Camilla's two servants — Fukataki mid-massage among them — the instant Camilla's own gunfire bounced off his Ken. Retaliation priced at someone else's life.",
+      "One blast each for Camilla's two servants — the majordomo Fukataki among them, standing aside from the interrupted massage — the instant Camilla's own gunfire bounced off his Ken. Retaliation priced at someone else's life.",
     eventIds: ["ev-416-room302-raid"],
     evidence: [
       {
@@ -9124,11 +9124,11 @@ export const relationships: Relationship[] = [
     strength: "strong",
     secret: true,
     confirmed: true,
-    startCh: 389,
+    startCh: 0,
     revealCh: 389,
     endCh: 416,
     endNote:
-      "Fulfilled: she died casting the curse into his eyes at touching distance.",
+      "Fulfilled: she died right in front of Benjamin, eyes locked, and the curse fired.",
     mutualAwareness: false,
     description:
       "The curse corps' assignment for the First Prince was hers — a wish nursed daily for over ten years, waiting only for proximity. Benjamin's raid delivered the target to her door.",

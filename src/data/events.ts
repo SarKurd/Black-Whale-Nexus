@@ -4425,7 +4425,7 @@ export const events: StoryEvent[] = [
     id: "ev-416-room302-raid",
     title: "Benjamin at Camilla's door",
     summary:
-      "An hour into martial law, Benjamin marches on Room 302 with Furykov and Butch, reminding himself of the arithmetic: twelve hours from TSK-17 symptom onset to death, the last two in a coma — ten functional hours left. Mozbe and Taler measure the firepower gap and stand down. Inside, Camilla takes her massage without pausing, then sits up and empties her gun at him; the rounds bounce off his Ken, and his answering shots kill her two servants — the majordomo Fukataki and an unnamed colleague — where they stand. He tells her plainly that he knows her ability is a counteractive type that fires when she is killed; she dares him to a contest of clocks — her starvation against his curse.",
+      "An hour into martial law, Benjamin marches on Room 302 with Furykov and Butch, reminding himself of the arithmetic: twelve hours from TSK-17 symptom onset to death, the last two in a coma — ten functional hours left. Mozbe and Taler measure the firepower gap and stand down. Inside, Camilla takes her massage without pausing, then sits up and opens fire on him; the rounds bounce off his Ken, and his answering shots kill her two servants — the majordomo Fukataki and an unnamed colleague — where they stand. He tells her plainly that he knows her ability is a counteractive type that fires when she is killed; she dares him to a contest of clocks — her starvation against his curse.",
     chapter: 416,
     day: 12,
     approxTime: "≈2:15 p.m. onward",
@@ -4459,7 +4459,7 @@ export const events: StoryEvent[] = [
     id: "ev-416-moswana-curse",
     title: "Ten years, spent in one breath",
     summary:
-      "As Camilla finishes her taunt, Moswana staggers into the bedroom, ignoring the rifles trained on her, and pulls the knife from her own throat — dying at touching distance with her eyes locked on Benjamin, the prescribed casting of the Have-Nots' curse. Dark specters burst from her corpse, envelop him, and sear a face-in-despair mark onto his irises. Camilla declares the curse complete: Moswana nursed it for over ten years, and at this potency Benjamin won't last half a day. Privately she runs her own numbers — metabolism to the floor, near-hibernation, three months without food or water.",
+      "As Camilla finishes her taunt, Moswana staggers into the bedroom, ignoring the rifles trained on her, and pulls the knife from her own throat — dying right in front of Benjamin with her eyes locked on his, the prescribed casting of the Have-Nots' curse. Dark specters burst from her corpse, envelop him, and sear a face-in-despair mark onto his irises. Camilla declares the curse complete: Moswana nursed it for over ten years, and at this potency Benjamin won't last half a day. Privately she runs her own numbers — metabolism to the floor, near-hibernation, three months without food or water.",
     chapter: 416,
     day: 12,
     kind: "death",
@@ -4470,7 +4470,7 @@ export const events: StoryEvent[] = [
     storylineIds: ["special-martial-law", "succession-contest"],
     consequences: [
       "Benjamin is now dying on two clocks: TSK-17 and a peak-potency Yomotsu Hegui",
-      "The Have-Nots' curse doctrine is proven on-page: suicide at touching distance, eyes locked, beats even a Nen-armored target",
+      "The Have-Nots' curse doctrine is proven on-page: suicide before the target's eyes beats even a Nen-armored target",
     ],
     evidence: [
       {

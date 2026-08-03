@@ -205,7 +205,7 @@ export const glossary: GlossaryTerm[] = [
     id: "have-nots-term",
     term: "Have-Nots",
     definition:
-      "Kakin's lowest caste — historically barred from office and military rank, and once the exclusive source of 'afterlife companions' buried with failed princes. Camilla armed them with status, a ward of their own, and a shared suicide-curse ability (Yomotsu Hegui): carry a token of the target, hate daily, then burn it, drink the ashes, and die — the curse strips the target's aura and, at full strength, kills. Most of her fifteen aboard are Have-Not curse assassins, one an exorcist. Moswana's casting against Benjamin (ch 416) — a decade of devotion spent at touching distance, eyes locked — is the doctrine's first on-page proof.",
+      "Kakin's lowest caste — historically barred from office and military rank, and once the exclusive source of 'afterlife companions' buried with failed princes. Camilla armed them with status, a ward of their own, and a shared suicide-curse ability (Yomotsu Hegui): carry a token of the target, hate daily, then burn it, drink the ashes, and die — the curse strips the target's aura and, at full strength, kills. Most of her fifteen aboard are Have-Not curse assassins, one an exorcist. Moswana's casting against Benjamin (ch 416) — a decade of devotion spent right in front of him, eyes locked — is the doctrine's first on-page proof.",
     category: "kakin",
     relatedIds: ["kakin-empire", "succession-war"],
     introducedCh: 389,

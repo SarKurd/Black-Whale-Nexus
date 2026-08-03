@@ -3675,13 +3675,13 @@ export const nenAbilities: NenAbility[] = [
     kind: "curse",
     nenType: "unknown",
     description:
-      "Moswana's instance of the Have-Nots' suicide curse (Viz renders the full shout 'Dust in the Wind: Hell Fruit — Yomotsu-Hegui'), nursed daily for over ten years with First Prince Benjamin as its target. The first casting of the technique shown on-page: dying at touching distance with eyes locked, she fired it at what Camilla calls peak potency.",
+      "Moswana's instance of the Have-Nots' suicide curse (Viz renders the full shout 'Dust in the Wind: Hell Fruit — Yomotsu-Hegui'), nursed daily for over ten years with First Prince Benjamin as its target. The first casting of the technique shown on-page: dying right in front of him with eyes locked, she fired it at what Camilla calls peak potency.",
     activation:
       "Burn the target-linked object, drink an infusion of its ashes, then die by the carried dagger — executed here as a knife through her own throat, pulled free before Benjamin's eyes.",
     conditions: [
       "Years of daily devotion grow the curse; Moswana carried hers for over a decade.",
       "Casting is fatal by definition — her life for the curse.",
-      "Dying close enough to touch the target while holding eye contact maximizes potency — Fukataki's doctrine, proven here.",
+      "Dying close enough to touch the target while holding eye contact maximizes potency — Fukataki's doctrine (ch 389).",
     ],
     cost: "The caster's life.",
     effects: [
@@ -3694,7 +3694,7 @@ export const nenAbilities: NenAbility[] = [
     uses: [
       {
         ch: 416,
-        note: "Cast during Benjamin's Room 302 raid: the target walked into touching distance on his own, and Moswana spent her ten years in one breath.",
+        note: "Cast during Benjamin's Room 302 raid: the target came to her on his own, and Moswana spent her ten years in one breath.",
       },
     ],
     status: "active",

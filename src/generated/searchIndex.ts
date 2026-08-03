@@ -4111,7 +4111,7 @@ export const searchIndex: SearchItem[] = [
     sub: "Nen · unknown",
     kind: "Ability",
     href: "/nen/moswana-curse",
-    hay: "yomotsu hegui moswana's instance of the have-nots' suicide curse (viz renders the full shout 'dust in the wind: hell fruit — yomotsu-hegui'), nursed daily for over ten years with first prince benjamin as its target. the first casting of the technique shown on-page: dying at touching distance with eyes locked, she fired it at what camilla calls peak potency. unknown",
+    hay: "yomotsu hegui moswana's instance of the have-nots' suicide curse (viz renders the full shout 'dust in the wind: hell fruit — yomotsu-hegui'), nursed daily for over ten years with first prince benjamin as its target. the first casting of the technique shown on-page: dying right in front of him with eyes locked, she fired it at what camilla calls peak potency. unknown",
     revealCh: 389,
   },
   {
@@ -7027,7 +7027,7 @@ export const searchIndex: SearchItem[] = [
     sub: "Event · Ch.416",
     kind: "Event",
     href: "/chronology?event=ev-416-room302-raid",
-    hay: "benjamin at camilla's door an hour into martial law, benjamin marches on room 302 with furykov and butch, reminding himself of the arithmetic: twelve hours from tsk-17 symptom onset to death, the last two in a coma — ten functional hours left. mozbe and taler measure the firepower gap and stand down. inside, camilla takes her massage without pausing, then sits up and empties her gun at him; the rounds bounce off his ken, and his answering shots kill her two servants — the majordomo fukataki and an unnamed colleague — where they stand. he tells her plainly that he knows her ability is a counteractive type that fires when she is killed; she dares him to a contest of clocks — her starvation against his curse.",
+    hay: "benjamin at camilla's door an hour into martial law, benjamin marches on room 302 with furykov and butch, reminding himself of the arithmetic: twelve hours from tsk-17 symptom onset to death, the last two in a coma — ten functional hours left. mozbe and taler measure the firepower gap and stand down. inside, camilla takes her massage without pausing, then sits up and opens fire on him; the rounds bounce off his ken, and his answering shots kill her two servants — the majordomo fukataki and an unnamed colleague — where they stand. he tells her plainly that he knows her ability is a counteractive type that fires when she is killed; she dares him to a contest of clocks — her starvation against his curse.",
     revealCh: 416,
   },
   {
@@ -7036,7 +7036,7 @@ export const searchIndex: SearchItem[] = [
     sub: "Event · Ch.416",
     kind: "Event",
     href: "/chronology?event=ev-416-moswana-curse",
-    hay: "ten years, spent in one breath as camilla finishes her taunt, moswana staggers into the bedroom, ignoring the rifles trained on her, and pulls the knife from her own throat — dying at touching distance with her eyes locked on benjamin, the prescribed casting of the have-nots' curse. dark specters burst from her corpse, envelop him, and sear a face-in-despair mark onto his irises. camilla declares the curse complete: moswana nursed it for over ten years, and at this potency benjamin won't last half a day. privately she runs her own numbers — metabolism to the floor, near-hibernation, three months without food or water.",
+    hay: "ten years, spent in one breath as camilla finishes her taunt, moswana staggers into the bedroom, ignoring the rifles trained on her, and pulls the knife from her own throat — dying right in front of benjamin with her eyes locked on his, the prescribed casting of the have-nots' curse. dark specters burst from her corpse, envelop him, and sear a face-in-despair mark onto his irises. camilla declares the curse complete: moswana nursed it for over ten years, and at this potency benjamin won't last half a day. privately she runs her own numbers — metabolism to the floor, near-hibernation, three months without food or water.",
     revealCh: 416,
   },
   {
@@ -7535,7 +7535,7 @@ export const searchIndex: SearchItem[] = [
     sub: "Glossary",
     kind: "Term",
     href: "/glossary#have-nots-term",
-    hay: "have-nots kakin's lowest caste — historically barred from office and military rank, and once the exclusive source of 'afterlife companions' buried with failed princes. camilla armed them with status, a ward of their own, and a shared suicide-curse ability (yomotsu hegui): carry a token of the target, hate daily, then burn it, drink the ashes, and die — the curse strips the target's aura and, at full strength, kills. most of her fifteen aboard are have-not curse assassins, one an exorcist. moswana's casting against benjamin (ch 416) — a decade of devotion spent at touching distance, eyes locked — is the doctrine's first on-page proof.",
+    hay: "have-nots kakin's lowest caste — historically barred from office and military rank, and once the exclusive source of 'afterlife companions' buried with failed princes. camilla armed them with status, a ward of their own, and a shared suicide-curse ability (yomotsu hegui): carry a token of the target, hate daily, then burn it, drink the ashes, and die — the curse strips the target's aura and, at full strength, kills. most of her fifteen aboard are have-not curse assassins, one an exorcist. moswana's casting against benjamin (ch 416) — a decade of devotion spent right in front of him, eyes locked — is the doctrine's first on-page proof.",
     revealCh: 389,
   },
   {
@@ -7931,7 +7931,7 @@ export const searchIndex: SearchItem[] = [
     sub: "Intel fact",
     kind: "Fact",
     href: "/knowledge?fact=fact-benjamin-cursed",
-    hay: "a half-day curse is killing benjamin moswana died casting her decade-nursed yomotsu hegui into benjamin's eyes at touching distance — despair-faced marks on his irises, potency camilla rates as lethal within half a day. stacked on the tsk-17 already in his blood, the first prince now dies on two clocks.",
+    hay: "a half-day curse is killing benjamin moswana died right in front of benjamin, eyes locked, casting her decade-nursed yomotsu hegui into him — despair-faced marks on his irises, potency camilla rates as lethal within half a day. stacked on the tsk-17 already in his blood, the first prince now dies on two clocks.",
     revealCh: 416,
   },
   {
