@@ -152,6 +152,7 @@ export default function CharactersPage() {
               >
                 <Link
                   href={`/characters/${c.id}`}
+                  prefetch={false}
                   className="dossier corner-ticks group flex h-full min-w-0 gap-3 p-3 transition-colors hover:border-gold-line"
                 >
                   <Monogram characterId={c.id} />
