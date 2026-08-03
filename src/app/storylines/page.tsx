@@ -92,6 +92,10 @@ export default function StorylinesPage() {
   const mapH = RULER_H + lanes.length * LANE_H + 18;
   const ticks: number[] = [];
   for (let t = ARC_START + 2; t <= ARC_END; t += 5) ticks.push(t);
+  // Always label the coverage edge; skip when a 5-step tick already sits close
+  // enough that the two labels would collide.
+  const lastTick = ticks.at(-1);
+  if (lastTick !== undefined && ARC_END - lastTick >= 3) ticks.push(ARC_END);
   const cursorX = ch >= ARC_START ? chX(ch) : undefined;
 
   const openLane = (id: string) => router.push(`/storylines/${id}`);
