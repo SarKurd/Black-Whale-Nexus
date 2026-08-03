@@ -160,7 +160,7 @@ export const glossary: GlossaryTerm[] = [
     id: "tsk-17",
     term: "TSK-17",
     definition:
-      "A failed Kakin military bioweapon repurposed as the succession war's perfect silent killer: its proteins denature in under thirty seconds in open air, but inhaled in time it mimics stomach flu, kills by multiple organ failure within half a day, and accelerates decomposition until no autopsy can find it. It ended Halkenburg's body — administered by the prince himself from inside Balsamilco — and, via Furykov, is now killing Benjamin, who turned it once more: a silent release from his boot at Camilla's bedside, engineered to kill her without giving Cat's Name a killer.",
+      "A failed Kakin military bioweapon repurposed as the succession war's perfect silent killer: its proteins denature in under thirty seconds in open air, but inhaled in time it mimics stomach flu, kills by multiple organ failure within half a day, and accelerates decomposition until no autopsy can find it. It ended Halkenburg's body — administered by the prince himself from inside Balsamilco — and, via Furykov, is now killing Benjamin, who turned it once more: a silent release from his boot as he stood over Camilla, engineered to kill her without giving Cat's Name a killer.",
     category: "kakin",
     relatedIds: ["special-martial-law"],
     introducedCh: 403,

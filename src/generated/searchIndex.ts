@@ -3274,7 +3274,7 @@ export const searchIndex: SearchItem[] = [
     sub: "Special Martial Law blares across every tier, and Benjamin is already moving — b",
     kind: "Chapter",
     href: "/chapters/416",
-    hay: "chapter 416 proclamation special martial law blares across every tier, and benjamin is already moving — by his own arithmetic, ten functional hours remain before the tsk-17 coma. at room 302 mozbe and taler back down from a hopeless standoff; camilla greets him with gunfire that bounces off his ken, and he answers by shooting her two servants — the majordomo fukataki among them — dead where they stand. then the trap ten years in the cultivating: moswana staggers in, pulls the knife from her own throat, and dies eye to eye with the first prince — the have-nots' curse cast at peak potency. camilla gives him half a day. his reply is a riddle — if an incurable disease kills you, who does your cat crush? and what if the man who gave it to you dies first? — delivered while his boot silently vents tsk-17 at her bedside. room 1004 is next: the door kicked in, tserriednich's household kneeling at the walls, danjin pulled out for questioning at the central ministry of justice ('i need kurapika as a teacher in my army'). salkov — entrusted moments earlier with the feign-death protocol: coffin the body at once, report exactly what you saw, never speak of the ability — watches benjamin blast the zetsu-bound fourth prince across the bedroom mid-sentence.",
+    hay: "chapter 416 proclamation special martial law blares across every tier, and benjamin is already moving — by his own arithmetic, ten functional hours remain before the tsk-17 coma. at room 302 mozbe and taler back down from a hopeless standoff; camilla greets him with gunfire that bounces off his ken, and he answers by shooting her two servants — the majordomo fukataki among them — dead where they stand. then the trap ten years in the cultivating: moswana staggers in, pulls the knife from her own throat, and dies eye to eye with the first prince — the have-nots' curse cast at peak potency. camilla gives him half a day. his reply is a riddle — if an incurable disease kills you, who does your cat crush? and what if the man who gave it to you dies first? — delivered while his boot silently vents tsk-17 where he stands over her. room 1004 is next: the door kicked in, tserriednich's household kneeling at the walls, danjin pulled out for questioning at the central ministry of justice ('i need kurapika as a teacher in my army'). salkov — entrusted moments earlier with the feign-death protocol: coffin the body at once, report exactly what you saw, never speak of the ability — watches benjamin blast the zetsu-bound fourth prince across the bedroom mid-sentence.",
     revealCh: 416,
   },
   {
@@ -4112,7 +4112,7 @@ export const searchIndex: SearchItem[] = [
     kind: "Ability",
     href: "/nen/moswana-curse",
     hay: "yomotsu hegui moswana's instance of the have-nots' suicide curse (viz renders the full shout 'dust in the wind: hell fruit — yomotsu-hegui'), nursed daily for over ten years with first prince benjamin as its target. the first casting of the technique shown on-page: dying right in front of him with eyes locked, she fired it at what camilla calls peak potency. unknown",
-    revealCh: 389,
+    revealCh: 416,
   },
   {
     id: "beyond-hideout",
@@ -7027,7 +7027,7 @@ export const searchIndex: SearchItem[] = [
     sub: "Event · Ch.416",
     kind: "Event",
     href: "/chronology?event=ev-416-room302-raid",
-    hay: "benjamin at camilla's door an hour into martial law, benjamin marches on room 302 with furykov and butch, reminding himself of the arithmetic: twelve hours from tsk-17 symptom onset to death, the last two in a coma — ten functional hours left. mozbe and taler measure the firepower gap and stand down. inside, camilla takes her massage without pausing, then sits up and opens fire on him; the rounds bounce off his ken, and his answering shots kill her two servants — the majordomo fukataki and an unnamed colleague — where they stand. he tells her plainly that he knows her ability is a counteractive type that fires when she is killed; she dares him to a contest of clocks — her starvation against his curse.",
+    hay: "benjamin at camilla's door as the martial-law broadcast blares, benjamin marches on room 302 with furykov and butch, reminding himself of the arithmetic: twelve hours from tsk-17 symptom onset to death, the last two in a coma — ten functional hours left. mozbe and taler measure the firepower gap and stand down. inside, camilla lies face-down on her massage table while fukataki and a second servant step aside; then she sits up and opens fire on him. the rounds bounce off his ken, and his answering shots kill both servants where they stand. he tells her plainly that he knows her ability is a counteractive type that fires when she is killed; she dares him to a contest of clocks — her starvation against his curse.",
     revealCh: 416,
   },
   {
@@ -7045,7 +7045,7 @@ export const searchIndex: SearchItem[] = [
     sub: "Event · Ch.416",
     kind: "Event",
     href: "/chronology?event=ev-416-tsk17-camilla",
-    hay: "a riddle with the boot's valve open cursed and unshaken, benjamin poses camilla a hypothetical: suppose she caught an incurable illness from him — is he the killer, or the disease? would a pathogen have aura enough to feed her revival? and if he carried the same illness and died first, whom would her ability kill to bring her back? while she listens, his boot silently vents tsk-17 at her bedside. he leaves her with the riddle: he is not afraid of death — is she?",
+    hay: "a riddle with the boot's valve open cursed and unshaken, benjamin poses camilla a hypothetical: suppose she caught an incurable illness from him — is he the killer, or the disease? would a pathogen have aura enough to feed her revival? and if he carried the same illness and died first, whom would her ability kill to bring her back? while she listens unmoving, his boot silently vents tsk-17 where he stands over her. he leaves her with the riddle: he is not afraid of death — is she?",
     revealCh: 416,
   },
   {
@@ -7063,7 +7063,7 @@ export const searchIndex: SearchItem[] = [
     sub: "Event · Ch.416",
     kind: "Event",
     href: "/chronology?event=ev-416-room1004-breach",
-    hay: "room 1004, by the book no response at the locked door, so benjamin kicks it in and takes point himself: anyone who moves behind him gets shot. inside, twenty men kneel facing the walls, calm and silent — indistinguishable, as butch warned, from the royal soldiers among them. danjin's aura catches benjamin's eye; one question confirms him a room 1014 student, and butch is ordered to take him to the central ministry of justice for questioning. benjamin's private verdict: if the reports of nen-from-nothing are true, he needs kurapika as an instructor for his army.",
+    hay: "room 1004, by the book no response at the locked door, so benjamin kicks it in and takes point himself: anyone who moves behind him gets shot. inside, tserriednich's men kneel facing the walls, calm and silent — twenty in the quarters by butch's count, the prince included, with royal soldiers among them he cannot tell apart. danjin's aura catches benjamin's eye; one question confirms him a room 1014 student, and butch is ordered to take him to the central ministry of justice for questioning. benjamin's private verdict: if the reports of nen-from-nothing are true, he needs kurapika as an instructor for his army.",
     revealCh: 416,
   },
   {
@@ -7490,7 +7490,7 @@ export const searchIndex: SearchItem[] = [
     sub: "Glossary",
     kind: "Term",
     href: "/glossary#tsk-17",
-    hay: "tsk-17 a failed kakin military bioweapon repurposed as the succession war's perfect silent killer: its proteins denature in under thirty seconds in open air, but inhaled in time it mimics stomach flu, kills by multiple organ failure within half a day, and accelerates decomposition until no autopsy can find it. it ended halkenburg's body — administered by the prince himself from inside balsamilco — and, via furykov, is now killing benjamin, who turned it once more: a silent release from his boot at camilla's bedside, engineered to kill her without giving cat's name a killer.",
+    hay: "tsk-17 a failed kakin military bioweapon repurposed as the succession war's perfect silent killer: its proteins denature in under thirty seconds in open air, but inhaled in time it mimics stomach flu, kills by multiple organ failure within half a day, and accelerates decomposition until no autopsy can find it. it ended halkenburg's body — administered by the prince himself from inside balsamilco — and, via furykov, is now killing benjamin, who turned it once more: a silent release from his boot as he stood over camilla, engineered to kill her without giving cat's name a killer.",
     revealCh: 403,
   },
   {
@@ -7940,7 +7940,7 @@ export const searchIndex: SearchItem[] = [
     sub: "Intel fact",
     kind: "Fact",
     href: "/knowledge?fact=fact-camilla-tsk17",
-    hay: "camilla is silently infected with tsk-17 mid-riddle, benjamin's boot vented tsk-17 at camilla's bedside. if the disease — or a man already dead of it — is what kills her, cat's name may have no killer to crush and no life to pour back. her revival, the war's most broken ability, now has a live counterexample incubating inside her.",
+    hay: "camilla is silently infected with tsk-17 mid-riddle, benjamin's boot vented tsk-17 as he stood over camilla. if the disease — or a man already dead of it — is what kills her, cat's name may have no killer to crush and no life to pour back. her revival, the war's most broken ability, now has a live counterexample incubating inside her.",
     revealCh: 416,
   },
   {

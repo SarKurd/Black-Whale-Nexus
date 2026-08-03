@@ -144,7 +144,7 @@ export const princes: Prince[] = [
       },
       {
         ch: 416,
-        text: "Sweeps Tier 1 personally on ten functional hours: kills Camilla's servants, takes Moswana's decade-nursed curse in the eyes, counters with a silent TSK-17 release at Camilla's bedside, then breaches Room 1004, seizes Danjin as proof of Kurapika's teaching, and blasts Tserriednich mid-sentence.",
+        text: "Sweeps Tier 1 personally on ten functional hours: kills Camilla's servants, takes Moswana's decade-nursed curse in the eyes, counters with a silent TSK-17 release standing over Camilla, then breaches Room 1004, seizes Danjin as proof of Kurapika's teaching, and blasts Tserriednich mid-sentence.",
       },
     ],
     mysteryIds: ["my-nasubi-intent"],
@@ -271,7 +271,7 @@ export const princes: Prince[] = [
       },
       {
         ch: 416,
-        text: "The decade-long Moswana gambit lands a half-day curse on Benjamin — at the price of Fukataki, a second servant, and Moswana herself. His reply: a silent TSK-17 release at her bedside, and the first riddle her revival cannot answer.",
+        text: "The decade-long Moswana gambit lands a half-day curse on Benjamin — at the price of Fukataki, a second servant, and Moswana herself. His reply: a silent TSK-17 release as he stood over her, and the first riddle her revival cannot answer.",
       },
     ],
   },
@@ -431,7 +431,7 @@ export const princes: Prince[] = [
       {
         ch: 416,
         risk: "critical",
-        why: "Took Benjamin's blast point-blank while holding Zetsu — survival now rides entirely on an unfinished, still-practiced ability and a staged death.",
+        why: "Took Benjamin's blaster shot while holding Zetsu — survival now rides entirely on an unfinished, still-practiced ability and a staged death.",
       },
     ],
     assessment: {

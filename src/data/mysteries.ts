@@ -341,7 +341,7 @@ export const mysteries: Mystery[] = [
     ],
     latestDevelopment: {
       ch: 416,
-      text: "The ability meets its first live test: Benjamin's blast lands on a prince holding closed-eye Zetsu, with a feign-death script already handed to Salkov — who reasons the power was running before the door came down.",
+      text: "The ability is staked outright: Benjamin's blast lands on a prince holding closed-eye Zetsu, a feign-death script already handed to Salkov — who reasons the power was running before the door came down.",
     },
   },
   {

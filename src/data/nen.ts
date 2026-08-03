@@ -2999,7 +2999,7 @@ export const nenAbilities: NenAbility[] = [
     status: "active",
     awareCharacterIds: [
       { characterId: "tserriednich", sinceCh: 387 },
-      { characterId: "salkov", sinceCh: 416 },
+      { characterId: "salkov", sinceCh: 386 },
     ],
     affectedCharacterIds: ["theta"],
     evidence: [
@@ -3689,8 +3689,8 @@ export const nenAbilities: NenAbility[] = [
       "Seared a face-in-despair mark onto his irises — the curse's brand.",
       "At this potency Camilla rates it lethal within half a day, even against the First Prince.",
     ],
-    firstSeenCh: 389,
-    revealCh: 389,
+    firstSeenCh: 416,
+    revealCh: 416,
     uses: [
       {
         ch: 416,

@@ -4425,7 +4425,7 @@ export const events: StoryEvent[] = [
     id: "ev-416-room302-raid",
     title: "Benjamin at Camilla's door",
     summary:
-      "An hour into martial law, Benjamin marches on Room 302 with Furykov and Butch, reminding himself of the arithmetic: twelve hours from TSK-17 symptom onset to death, the last two in a coma — ten functional hours left. Mozbe and Taler measure the firepower gap and stand down. Inside, Camilla takes her massage without pausing, then sits up and opens fire on him; the rounds bounce off his Ken, and his answering shots kill her two servants — the majordomo Fukataki and an unnamed colleague — where they stand. He tells her plainly that he knows her ability is a counteractive type that fires when she is killed; she dares him to a contest of clocks — her starvation against his curse.",
+      "As the martial-law broadcast blares, Benjamin marches on Room 302 with Furykov and Butch, reminding himself of the arithmetic: twelve hours from TSK-17 symptom onset to death, the last two in a coma — ten functional hours left. Mozbe and Taler measure the firepower gap and stand down. Inside, Camilla lies face-down on her massage table while Fukataki and a second servant step aside; then she sits up and opens fire on him. The rounds bounce off his Ken, and his answering shots kill both servants where they stand. He tells her plainly that he knows her ability is a counteractive type that fires when she is killed; she dares him to a contest of clocks — her starvation against his curse.",
     chapter: 416,
     day: 12,
     approxTime: "≈2:15 p.m. onward",
@@ -4485,7 +4485,7 @@ export const events: StoryEvent[] = [
     id: "ev-416-tsk17-camilla",
     title: "A riddle with the boot's valve open",
     summary:
-      "Cursed and unshaken, Benjamin poses Camilla a hypothetical: suppose she caught an incurable illness from him — is he the killer, or the disease? would a pathogen have aura enough to feed her revival? and if he carried the same illness and died first, whom would her ability kill to bring her back? While she listens, his boot silently vents TSK-17 at her bedside. He leaves her with the riddle: he is not afraid of death — is she?",
+      "Cursed and unshaken, Benjamin poses Camilla a hypothetical: suppose she caught an incurable illness from him — is he the killer, or the disease? would a pathogen have aura enough to feed her revival? and if he carried the same illness and died first, whom would her ability kill to bring her back? While she listens unmoving, his boot silently vents TSK-17 where he stands over her. He leaves her with the riddle: he is not afraid of death — is she?",
     chapter: 416,
     day: 12,
     kind: "assassination-attempt",
@@ -4534,7 +4534,7 @@ export const events: StoryEvent[] = [
     id: "ev-416-room1004-breach",
     title: "Room 1004, by the book",
     summary:
-      "No response at the locked door, so Benjamin kicks it in and takes point himself: anyone who moves behind him gets shot. Inside, twenty men kneel facing the walls, calm and silent — indistinguishable, as Butch warned, from the royal soldiers among them. Danjin's aura catches Benjamin's eye; one question confirms him a Room 1014 student, and Butch is ordered to take him to the central Ministry of Justice for questioning. Benjamin's private verdict: if the reports of Nen-from-nothing are true, he needs Kurapika as an instructor for his army.",
+      "No response at the locked door, so Benjamin kicks it in and takes point himself: anyone who moves behind him gets shot. Inside, Tserriednich's men kneel facing the walls, calm and silent — twenty in the quarters by Butch's count, the prince included, with royal soldiers among them he cannot tell apart. Danjin's aura catches Benjamin's eye; one question confirms him a Room 1014 student, and Butch is ordered to take him to the central Ministry of Justice for questioning. Benjamin's private verdict: if the reports of Nen-from-nothing are true, he needs Kurapika as an instructor for his army.",
     chapter: 416,
     day: 12,
     kind: "movement",
@@ -4572,7 +4572,7 @@ export const events: StoryEvent[] = [
     ],
     consequences: [
       "Tserriednich takes the hit in Zetsu, exactly the stage his ruse called for; his condition is unrevealed",
-      "Benjamin spends none of his remaining hours verifying the kill",
+      "The page cuts at the blast — no death is shown or confirmed, and Benjamin's follow-up is unrevealed",
     ],
     evidence: [
       {

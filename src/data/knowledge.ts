@@ -274,7 +274,7 @@ export const knowledgeFacts: KnowledgeFact[] = [
     id: "fact-camilla-tsk17",
     label: "Camilla is silently infected with TSK-17",
     description:
-      "Mid-riddle, Benjamin's boot vented TSK-17 at Camilla's bedside. If the disease — or a man already dead of it — is what kills her, Cat's Name may have no killer to crush and no life to pour back. Her revival, the war's most broken ability, now has a live counterexample incubating inside her.",
+      "Mid-riddle, Benjamin's boot vented TSK-17 as he stood over Camilla. If the disease — or a man already dead of it — is what kills her, Cat's Name may have no killer to crush and no life to pour back. Her revival, the war's most broken ability, now has a live counterexample incubating inside her.",
     kind: "plan",
     readerRevealCh: 416,
     relatedCharacterIds: ["benjamin", "camilla"],
@@ -1426,6 +1426,6 @@ export const characterKnowledge: CharacterKnowledge[] = [
     characterId: "benjamin",
     state: "unaware",
     sinceCh: 416,
-    note: "Shot the prince mid-sentence and spent no time confirming the kill.",
+    note: "Shot the prince mid-sentence — 'I don't have time to waste with you' — while the protocol lived only between Tserriednich and Salkov.",
   },
 ];

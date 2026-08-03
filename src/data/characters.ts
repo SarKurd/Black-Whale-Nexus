@@ -26,7 +26,7 @@ export const characters: Character[] = [
       },
       {
         revealCh: 416,
-        text: "Leads the purge personally on ten functional hours — twelve from symptom onset to death, the last two comatose. The Room 302 raid costs him his eyes' clarity: Moswana dies right in front of him, and her decade-nursed Yomotsu Hegui sears despair-faced marks onto his irises — a second clock Camilla rates at half a day. His answer is colder arithmetic — a silent TSK-17 release at her bedside and a riddle about whom her cat could crush if disease, or a dead man, is what kills her. Room 1004 follows: Danjin seized as proof of Kurapika's teaching, and Tserriednich blasted across his bedroom mid-sentence.",
+        text: "Leads the purge personally on ten functional hours — twelve from symptom onset to death, the last two comatose. The Room 302 raid costs him his eyes' clarity: Moswana dies right in front of him, and her decade-nursed Yomotsu Hegui sears despair-faced marks onto his irises — a second clock Camilla rates at half a day. His answer is colder arithmetic — a silent TSK-17 release as he stood over her, and a riddle about whom her cat could crush if disease, or a dead man, is what kills her. Room 1004 follows: Danjin seized as proof of Kurapika's teaching, and Tserriednich blasted across his bedroom mid-sentence.",
       },
     ],
     monogram: "P1",
@@ -113,7 +113,7 @@ export const characters: Character[] = [
         knownBy: ["balsamilco"],
       },
       {
-        text: "His boot conceals a TSK-17 dispenser: he silently released the bioweapon at Camilla's bedside while she listened to his 'hypothetical' about an incurable disease.",
+        text: "He silently released TSK-17 from his boot, standing over Camilla while she listened to his 'hypothetical' about an incurable disease.",
         revealCh: 416,
       },
     ],
@@ -2413,7 +2413,7 @@ export const characters: Character[] = [
       },
       {
         revealCh: 416,
-        text: "Tserriednich hands him — a man whose name he had to ask — the feign-death protocol: report exactly what he witnesses, coffin the body at once so nobody sees it, and never speak of the ability. Kneeling through Benjamin's breach, Salkov works the logic himself: if the ability triggers on Zetsu it is already running, undetectable even to him at arm's length — and he resolves to witness the confrontation and unravel the ability, for Theta's sake.",
+        text: "Tserriednich hands him — a man whose name he had to ask — the feign-death protocol: report exactly what he witnesses, coffin the body at once so nobody sees it, and never speak of the ability. Kneeling through Benjamin's breach, Salkov works the logic himself: if the ability triggers on Zetsu it is already running, undetectable even to him from inside the same room — and he resolves to witness the confrontation and unravel the ability, for Theta's sake.",
       },
     ],
     monogram: "SL",
