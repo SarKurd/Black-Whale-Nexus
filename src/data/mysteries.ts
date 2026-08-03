@@ -296,6 +296,11 @@ export const mysteries: Mystery[] = [
         value: "partially-answered",
         note: "The training data narrows it: something activates during his Zetsu, and even his instructors can't see the beast.",
       },
+      {
+        ch: 416,
+        value: "partially-answered",
+        note: "Tserriednich stakes his life on it: a scripted 'fake death' under Benjamin's gun, held in Zetsu — and Salkov concludes the ability is already running, undetectable at arm's length.",
+      },
     ],
     relatedCharacterIds: ["tserriednich", "theta", "salkov"],
     evidenceFor: [
@@ -335,8 +340,8 @@ export const mysteries: Mystery[] = [
       },
     ],
     latestDevelopment: {
-      ch: 404,
-      text: "Zetsu activation down past 3.5 seconds in three days; a ball of aura condenses between his hands as his instructors quietly lose faith in their own ceilings.",
+      ch: 416,
+      text: "The ability meets its first live test: Benjamin's blast lands on a prince holding closed-eye Zetsu, with a feign-death script already handed to Salkov — who reasons the power was running before the door came down.",
     },
   },
   {

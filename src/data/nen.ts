@@ -498,6 +498,7 @@ export const nenAbilities: NenAbility[] = [
     weaknesses: [
       "Useless against detention, starvation, or anything short of murder — she cannot negate damage without dying.",
       "Benjamin now knows she is a counteractive type (via the leveled-up Secret Window) and plans around triggering it, ch 413.",
+      "Benjamin's riddle, ch 416: if an incurable disease kills her, is there a killer to crush — and would a pathogen carry enough aura to revive her? If the man who infected her is already dead of the same disease, whom does the cat kill? He infected her with TSK-17 on the spot, and her certainty visibly broke.",
     ],
     firstSeenCh: 373,
     revealCh: 373,
@@ -512,6 +513,7 @@ export const nenAbilities: NenAbility[] = [
       { characterId: "furykov", sinceCh: 373 },
       { characterId: "balsamilco", sinceCh: 389 },
       { characterId: "benjamin", sinceCh: 413 },
+      { characterId: "butch", sinceCh: 416 },
     ],
     evidence: [
       {
@@ -522,6 +524,11 @@ export const nenAbilities: NenAbility[] = [
       {
         chapter: 413,
         note: "Benjamin identifies her as 'counteractive type' via the leveled-up Secret Window.",
+        confidence: "canonical",
+      },
+      {
+        chapter: 416,
+        note: "Benjamin states the trigger to her face — 'your ability activates when you're killed' — and stages the disease counter.",
         confidence: "canonical",
       },
     ],
@@ -2984,9 +2991,16 @@ export const nenAbilities: NenAbility[] = [
         ch: 387,
         note: "Tserriednich reconstructs the two-stage, ten-second mechanism and begins training its activation speed.",
       },
+      {
+        ch: 416,
+        note: "Held through Benjamin's breach: Salkov reasons that if the ability triggers on Zetsu it is already running — the stage for the prince's declared feign-death ruse — as Benjamin's blast lands.",
+      },
     ],
     status: "active",
-    awareCharacterIds: [{ characterId: "tserriednich", sinceCh: 387 }],
+    awareCharacterIds: [
+      { characterId: "tserriednich", sinceCh: 387 },
+      { characterId: "salkov", sinceCh: 416 },
+    ],
     affectedCharacterIds: ["theta"],
     evidence: [
       {
@@ -3649,6 +3663,59 @@ export const nenAbilities: NenAbility[] = [
       {
         chapter: 405,
         note: "Demonstrated on Tier 1; Hunterpedia's descriptive name is unofficial.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "moswana-curse",
+    name: "Yomotsu Hegui",
+    userCharacterId: "moswana",
+    kind: "curse",
+    nenType: "unknown",
+    description:
+      "Moswana's instance of the Have-Nots' suicide curse (Viz renders the full shout 'Dust in the Wind: Hell Fruit — Yomotsu-Hegui'), nursed daily for over ten years with First Prince Benjamin as its target. The first casting of the technique shown on-page: dying at touching distance with eyes locked, she fired it at what Camilla calls peak potency.",
+    activation:
+      "Burn the target-linked object, drink an infusion of its ashes, then die by the carried dagger — executed here as a knife through her own throat, pulled free before Benjamin's eyes.",
+    conditions: [
+      "Years of daily devotion grow the curse; Moswana carried hers for over a decade.",
+      "Casting is fatal by definition — her life for the curse.",
+      "Dying close enough to touch the target while holding eye contact maximizes potency — Fukataki's doctrine, proven here.",
+    ],
+    cost: "The caster's life.",
+    effects: [
+      "Dark spectral aura burst from her corpse, rushed Benjamin, and enveloped him.",
+      "Seared a face-in-despair mark onto his irises — the curse's brand.",
+      "At this potency Camilla rates it lethal within half a day, even against the First Prince.",
+    ],
+    firstSeenCh: 389,
+    revealCh: 389,
+    uses: [
+      {
+        ch: 416,
+        note: "Cast during Benjamin's Room 302 raid: the target walked into touching distance on his own, and Moswana spent her ten years in one breath.",
+      },
+    ],
+    status: "active",
+    awareCharacterIds: [
+      { characterId: "sarahell", sinceCh: 389 },
+      { characterId: "camilla", sinceCh: 389 },
+      { characterId: "fukataki", sinceCh: 389 },
+      { characterId: "benjamin", sinceCh: 416 },
+      { characterId: "furykov", sinceCh: 416 },
+      { characterId: "butch", sinceCh: 416 },
+    ],
+    affectedCharacterIds: ["benjamin"],
+    evidence: [
+      {
+        chapter: 389,
+        note: "Her assignment and eagerness to die cursing Benjamin are stated at the bedroom door during Sarahell's briefing chapter.",
+        confidence: "canonical",
+      },
+      {
+        chapter: 416,
+        note: "The full casting, the specters, the iris marks, and Camilla's half-a-day estimate are on-page.",
         confidence: "canonical",
       },
     ],

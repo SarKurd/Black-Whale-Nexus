@@ -24,6 +24,10 @@ export const characters: Character[] = [
         revealCh: 413,
         text: "Poisoned with the failed bioweapon TSK-17 by Furykov under Queen Unma's coercion; roughly half a day from death. His response: race the clock — martial law, the elimination of the remaining princes, and a plan to merge his Guardian Spirit Beast with his inheritance ability so that he transcends kingship and watches over Kakin as a god.",
       },
+      {
+        revealCh: 416,
+        text: "Leads the purge personally on ten functional hours — twelve from symptom onset to death, the last two comatose. The Room 302 raid costs him his eyes' clarity: Moswana's decade-nursed Yomotsu Hegui dies into him at touching distance, searing despair-faced marks onto his irises, a second clock Camilla rates at half a day. His answer is colder arithmetic — a silent TSK-17 release at her bedside and a riddle about whom her cat could crush if disease, or a dead man, is what kills her. Room 1004 follows: Danjin seized as proof of Kurapika's teaching, and Tserriednich blasted across his bedroom mid-sentence.",
+      },
     ],
     monogram: "P1",
     factionIds: ["benjamin-camp", "royal-family", "kakin-military"],
@@ -35,6 +39,11 @@ export const characters: Character[] = [
         ch: 413,
         status: "alive",
         note: "Dying of TSK-17 poisoning — symptoms began roughly twelve hours before death; still alive and commanding at ch. 414.",
+      },
+      {
+        ch: 416,
+        status: "alive",
+        note: "Now on two death clocks: ten functional hours of TSK-17 by his own count, plus Moswana's peak-potency curse — despair-faced marks in his irises — which Camilla rates lethal within half a day.",
       },
     ],
     locationHistory: [
@@ -54,6 +63,11 @@ export const characters: Character[] = [
         ch: 410,
         locationId: "ministry-of-justice",
         note: "Takes the Justice Bureau as his joint-force command center under Special Martial Law.",
+      },
+      {
+        ch: 416,
+        locationId: "tserriednich-quarters",
+        note: "Sweeps Tier 1 in person with Furykov and Butch: Camilla's Room 302 confinement first, then Room 1004.",
       },
     ],
     objectives: [
@@ -98,10 +112,14 @@ export const characters: Character[] = [
         revealCh: 413,
         knownBy: ["balsamilco"],
       },
+      {
+        text: "His boot conceals a TSK-17 dispenser: he silently released the bioweapon at Camilla's bedside while she listened to his 'hypothetical' about an incurable disease.",
+        revealCh: 416,
+      },
     ],
     chapterAppearances: [
       348, 349, 358, 359, 361, 363, 364, 368, 375, 389, 392, 402, 403, 404, 410,
-      413,
+      413, 416,
     ],
     tags: ["prince", "nen-user", "military"],
   },
@@ -119,6 +137,10 @@ export const characters: Character[] = [
         revealCh: 413,
         text: "Benjamin, reviewing Musse's memories through the leveled-up Secret Window, now classifies her as a counteractive-type Nen user — and plans to handle her personally under martial law.",
       },
+      {
+        revealCh: 416,
+        text: "Her decade-long gambit lands: Moswana's suicide casting puts a half-day curse in Benjamin's eyes, and Camilla — who claims she can drop into near-hibernation and last three months without food or water — settles in to outlast him. Then his parting riddle: he has silently infected her with TSK-17, and if a disease, or a man already dead of it, is what kills her, her cat may have no life to crush. For the first time on-page, her certainty breaks.",
+      },
     ],
     monogram: "P2",
     factionIds: ["camilla-camp", "royal-family"],
@@ -135,6 +157,11 @@ export const characters: Character[] = [
         ch: 376,
         status: "detained",
         note: "Confined under surveillance in the VVIP area by court ruling pending the Musse investigation.",
+      },
+      {
+        ch: 416,
+        status: "detained",
+        note: "Still confined — servants shot dead around her, Moswana spent, and Benjamin's boot-released TSK-17 in her lungs. Her counter: metabolic near-hibernation, and a plan to outlive him.",
       },
     ],
     locationHistory: [
@@ -166,7 +193,7 @@ export const characters: Character[] = [
       },
     ],
     chapterAppearances: [
-      349, 358, 363, 366, 372, 373, 376, 389, 403, 404, 411, 415,
+      349, 358, 363, 366, 372, 373, 376, 389, 403, 404, 411, 415, 416,
     ],
     tags: ["prince", "nen-user", "assassin"],
   },
@@ -231,6 +258,10 @@ export const characters: Character[] = [
         revealCh: 404,
         text: "His Zetsu activation time has collapsed from ten seconds toward one under Salkov's supervision — mastery pace his instructors call monstrous. Meanwhile he has cut ties with the Heil-Ly, whose boss Morena now plots to infect his circle, and Benjamin has marked him for personal execution under martial law.",
       },
+      {
+        revealCh: 416,
+        text: "He meets Benjamin's raid with a script already written: his coming death will be a ruse, and Salkov — whose gun he borrowed and whose name he had to ask — holds the protocol: coffin the body at once, report exactly what was seen, tell no one about the ability. He stands in closed-eye Zetsu through sirens and a kicked-in door, offers his brother a spar, and is blasted across the bedroom mid-sentence, condition unrevealed.",
+      },
     ],
     monogram: "P4",
     factionIds: ["tserriednich-camp", "royal-family"],
@@ -238,7 +269,14 @@ export const characters: Character[] = [
     nenType: "specialist",
     nenTypeRevealCh: 376,
     nenAbilityIds: ["parallel-future"],
-    statusHistory: [{ ch: 343, status: "alive" }],
+    statusHistory: [
+      { ch: 343, status: "alive" },
+      {
+        ch: 416,
+        status: "alive",
+        note: "Shot across his Room 1004 bedroom by Benjamin's blaster while holding Zetsu — the staged opening of his own feign-death plan; his true condition is unrevealed.",
+      },
+    ],
     locationHistory: [{ ch: 359, locationId: "tserriednich-quarters" }],
     objectives: [
       {
@@ -258,6 +296,11 @@ export const characters: Character[] = [
         revealCh: 359,
         knownBy: ["theta", "salkov"],
       },
+      {
+        text: "His death under Benjamin's gun is scripted: a feign-death ruse built on his Zetsu-triggered ability, with Salkov ordered to coffin the body unseen, report exactly what he witnessed, and tell no one about the ability.",
+        revealCh: 416,
+        knownBy: ["salkov"],
+      },
     ],
     falseBeliefs: [
       {
@@ -270,7 +313,7 @@ export const characters: Character[] = [
     ],
     chapterAppearances: [
       345, 348, 349, 358, 359, 362, 366, 368, 375, 376, 385, 387, 394, 402, 404,
-      413, 415,
+      413, 415, 416,
     ],
     tags: ["prince", "nen-user", "killer"],
   },
@@ -2242,6 +2285,11 @@ export const characters: Character[] = [
         locationId: "benjamin-quarters",
         note: "At Benjamin's side in the VVIP area through the poisoning confrontation and martial-law mobilization.",
       },
+      {
+        ch: 416,
+        locationId: "tserriednich-quarters",
+        note: "Rifle in hand beside Benjamin through the Room 302 raid and the Room 1004 breach.",
+      },
     ],
     objectives: [
       {
@@ -2263,7 +2311,9 @@ export const characters: Character[] = [
         knownBy: ["unma", "benjamin", "beyond"],
       },
     ],
-    chapterAppearances: [363, 369, 370, 371, 372, 373, 401, 404, 411, 413, 415],
+    chapterAppearances: [
+      363, 369, 370, 371, 372, 373, 401, 404, 411, 413, 415, 416,
+    ],
     tags: ["guard", "nen-user", "military", "analyst"],
   },
   {
@@ -2361,6 +2411,10 @@ export const characters: Character[] = [
         revealCh: 402,
         text: "With Theta down after the failed killshot, he runs the prince's Zetsu drills alone — timing activations that fall from ten seconds toward one in days, losing faith in himself with every stopwatch click. He suspects Tserriednich activates some ability during Zetsu and that even Theta's testimony may have been manipulated by the beast.",
       },
+      {
+        revealCh: 416,
+        text: "Tserriednich hands him — a man whose name he had to ask — the feign-death protocol: report exactly what he witnesses, coffin the body at once so nobody sees it, and never speak of the ability. Kneeling through Benjamin's breach, Salkov works the logic himself: if the ability triggers on Zetsu it is already running, undetectable even to him at arm's length — and he resolves to witness the confrontation and unravel the ability, for Theta's sake.",
+      },
     ],
     monogram: "SL",
     factionIds: ["tserriednich-camp"],
@@ -2369,7 +2423,15 @@ export const characters: Character[] = [
     nenType: "unknown",
     statusHistory: [{ ch: 348, status: "alive" }],
     locationHistory: [{ ch: 362, locationId: "tserriednich-quarters" }],
-    chapterAppearances: [348, 362, 385, 386, 387, 394, 402, 404, 413, 415],
+    objectives: [
+      {
+        text: "Witness the Benjamin confrontation up close and unravel Tserriednich's ability — for Theta's sake.",
+        kind: "hidden",
+        revealCh: 416,
+        status: "active",
+      },
+    ],
+    chapterAppearances: [348, 362, 385, 386, 387, 394, 402, 404, 413, 415, 416],
     tags: ["guard", "nen-user"],
     incomplete: true,
   },
@@ -4092,13 +4154,20 @@ export const characters: Character[] = [
     id: "fukataki",
     name: "Fukataki",
     role: "Camilla's guard; household majordomo",
-    bio: "The Second Prince's majordomo and Sarahell's confidante within the Have-Not corps. Keeps the curse program's timelines — which princes can be cursed, how long each takes, and which beasts make it impossible.",
+    bio: "The Second Prince's majordomo and Sarahell's confidante within the Have-Not corps. Keeps the curse program's timelines — which princes can be cursed, how long each takes, and which beasts make it impossible. It is her doctrine — die close enough to touch, looking the prince in the eye — that Moswana's casting finally proves. She is shot mid-massage in Benjamin's raid, one blast, no warning.",
     monogram: "FK",
     factionIds: ["camilla-camp"],
     servesPrinceId: "prince-camilla",
     superiorId: "sarahell",
     introducedCh: 389,
-    statusHistory: [{ ch: 389, status: "alive" }],
+    statusHistory: [
+      { ch: 389, status: "alive" },
+      {
+        ch: 416,
+        status: "dead",
+        note: "Shot dead by Benjamin — instant retaliation for Camilla opening fire — alongside a second, unnamed servant.",
+      },
+    ],
     locationHistory: [
       {
         ch: 389,
@@ -4106,7 +4175,7 @@ export const characters: Character[] = [
         note: "With Camilla's confined household.",
       },
     ],
-    chapterAppearances: [389, 404, 411],
+    chapterAppearances: [389, 404, 411, 416],
     tags: ["guard", "staff"],
     incomplete: true,
   },
@@ -4217,15 +4286,22 @@ export const characters: Character[] = [
     id: "butch",
     name: "Butch",
     role: "Benjamin's officer",
-    bio: "The First Prince's on-hand officer in the VVIP area: gatekeeper for visitors, relay for field orders, and the man who carried Benjamin's red-alert and martial-law instructions down the chain.",
+    bio: "The First Prince's on-hand officer in the VVIP area: gatekeeper for visitors, relay for field orders, and the man who carried Benjamin's red-alert and martial-law instructions down the chain. Under martial law he clears rooms at Benjamin's shoulder — and escorts Danjin out of Room 1004 for questioning.",
     monogram: "BU",
     factionIds: ["benjamin-camp", "kakin-military"],
     servesPrinceId: "prince-benjamin",
     superiorId: "benjamin",
     introducedCh: 358,
     statusHistory: [{ ch: 358, status: "alive" }],
-    locationHistory: [{ ch: 402, locationId: "benjamin-quarters" }],
-    chapterAppearances: [402, 403, 413],
+    locationHistory: [
+      { ch: 402, locationId: "benjamin-quarters" },
+      {
+        ch: 416,
+        locationId: "tserriednich-quarters",
+        note: "Rifle in hand beside Benjamin through the Room 302 raid and the Room 1004 breach.",
+      },
+    ],
+    chapterAppearances: [402, 403, 413, 416],
     tags: ["guard", "military"],
     incomplete: true,
   },
@@ -5445,7 +5521,14 @@ export const characters: Character[] = [
     servesPrinceId: "prince-tserriednich",
     superiorId: "tserriednich",
     introducedCh: 348,
-    statusHistory: [{ ch: 348, status: "alive" }],
+    statusHistory: [
+      { ch: 348, status: "alive" },
+      {
+        ch: 416,
+        status: "detained",
+        note: "Seized in Room 1004 during Benjamin's sweep — his aura caught the First Prince's eye — and sent for questioning about Room 1014's Nen classes.",
+      },
+    ],
     locationHistory: [
       { ch: 358, locationId: "tserriednich-quarters" },
       {
@@ -5453,9 +5536,14 @@ export const characters: Character[] = [
         locationId: "room-1014",
         note: "Attending Kurapika's Nen classes for the Fourth Prince.",
       },
+      {
+        ch: 416,
+        locationId: "ministry-of-justice",
+        note: "Taken away by Butch on Benjamin's order, bound for questioning at the central Ministry of Justice.",
+      },
     ],
     chapterAppearances: [
-      348, 369, 370, 371, 372, 376, 382, 386, 388, 401, 411, 412,
+      348, 369, 370, 371, 372, 376, 382, 386, 388, 401, 411, 412, 416,
     ],
     tags: ["guard", "hunter", "nen-student"],
     incomplete: true,
@@ -5472,7 +5560,7 @@ export const characters: Character[] = [
     introducedCh: 363,
     statusHistory: [{ ch: 363, status: "alive" }],
     locationHistory: [{ ch: 363, locationId: "tserriednich-quarters" }],
-    chapterAppearances: [363, 385, 387, 400, 402],
+    chapterAppearances: [363, 385, 387, 400, 402, 416],
     tags: ["guard"],
     incomplete: true,
   },
@@ -5884,20 +5972,34 @@ export const characters: Character[] = [
   {
     id: "moswana",
     name: "Moswana",
-    role: "Camilla's Have-Not bodyguard",
-    bio: "One of the casteless Have-Nots Camilla raised into her personal guard. He keeps close to the prince through the Benjamin standoff, escorts her to the VVIP confinement with Nukuocon — and stands her bedroom door eager for the honor of dying to curse Benjamin.",
+    role: "Camilla's Have-Not bodyguard; curse assassin",
+    bio: "One of the casteless Have-Nots Camilla raised into her personal guard — and the corps' assigned curse-bearer for the First Prince, a wish she nursed daily for over ten years. She keeps close to the prince through the Benjamin standoff, escorts her to the VVIP confinement with Nukuocon, and stands her bedroom door eager for the honor of dying to curse Benjamin. When his raid brings the target to her, she spends everything: a knife through her own throat at touching distance, eyes locked on his.",
     monogram: "MN",
     factionIds: ["camilla-camp"],
     servesPrinceId: "prince-camilla",
     superiorId: "sarahell",
     introducedCh: 363,
-    statusHistory: [{ ch: 363, status: "alive" }],
+    nenType: "unknown",
+    nenAbilityIds: ["moswana-curse"],
+    statusHistory: [
+      { ch: 363, status: "alive" },
+      {
+        ch: 416,
+        status: "dead",
+        note: "Suicide by design: died casting her decade-nursed Yomotsu Hegui into Benjamin's eyes during the Room 302 raid.",
+      },
+    ],
     locationHistory: [
       { ch: 363, locationId: "camilla-quarters" },
       { ch: 376, locationId: "vvip-area" },
+      {
+        ch: 416,
+        locationId: "camilla-confinement",
+        note: "Fell in Camilla's Room 302 bedroom, the curse fired.",
+      },
     ],
-    chapterAppearances: [363, 376, 389],
-    tags: ["guard", "assassin"],
+    chapterAppearances: [363, 376, 389, 416],
+    tags: ["guard", "assassin", "nen-user"],
     incomplete: true,
   },
   {
@@ -6038,15 +6140,22 @@ export const characters: Character[] = [
     id: "mozbe",
     name: "Mozbe",
     role: "Camilla's Have-Not bodyguard",
-    bio: "One of the Have-Not household revealed as Camilla's curse corps, attending Sarahell's briefing on the Shikaku suicide during the VVIP confinement.",
+    bio: "One of the Have-Not household revealed as Camilla's curse corps, attending Sarahell's briefing on the Shikaku suicide during the VVIP confinement. On door duty when Benjamin's raid arrives, he draws with Taler, reads the firepower gap, and stands down under a three-second ultimatum.",
     monogram: "MB",
     factionIds: ["camilla-camp"],
     servesPrinceId: "prince-camilla",
     superiorId: "sarahell",
     introducedCh: 389,
     statusHistory: [{ ch: 389, status: "alive" }],
-    locationHistory: [{ ch: 389, locationId: "vvip-area" }],
-    chapterAppearances: [389],
+    locationHistory: [
+      { ch: 389, locationId: "vvip-area" },
+      {
+        ch: 416,
+        locationId: "camilla-confinement",
+        note: "On the Room 302 door when Benjamin forces entry.",
+      },
+    ],
+    chapterAppearances: [389, 416],
     tags: ["guard"],
     incomplete: true,
   },
@@ -6070,15 +6179,22 @@ export const characters: Character[] = [
     id: "taler",
     name: "Taler",
     role: "Camilla's Have-Not bodyguard",
-    bio: "One of the Have-Not household revealed as Camilla's curse corps, attending Sarahell's briefing on the Shikaku suicide during the VVIP confinement.",
+    bio: "One of the Have-Not household revealed as Camilla's curse corps, attending Sarahell's briefing on the Shikaku suicide during the VVIP confinement. With Mozbe at the Room 302 door when Benjamin's raid arrives, he stands down rather than trade fire against rifles.",
     monogram: "TL",
     factionIds: ["camilla-camp"],
     servesPrinceId: "prince-camilla",
     superiorId: "sarahell",
     introducedCh: 389,
     statusHistory: [{ ch: 389, status: "alive" }],
-    locationHistory: [{ ch: 389, locationId: "vvip-area" }],
-    chapterAppearances: [389],
+    locationHistory: [
+      { ch: 389, locationId: "vvip-area" },
+      {
+        ch: 416,
+        locationId: "camilla-confinement",
+        note: "On the Room 302 door when Benjamin forces entry.",
+      },
+    ],
+    chapterAppearances: [389, 416],
     tags: ["guard"],
     incomplete: true,
   },

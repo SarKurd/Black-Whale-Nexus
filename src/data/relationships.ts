@@ -198,8 +198,16 @@ export const relationships: Relationship[] = [
         ch: 373,
         text: "Her direct attack fails: she shoots her way to Benjamin, is stopped by his aura, and is arrested by Furykov.",
       },
+      {
+        ch: 416,
+        text: "The feud goes terminal in one room: her gunfire bounces off his Ken, Moswana's suicide casting puts a half-day curse in his eyes, and he leaves her silently infected with TSK-17 and a riddle about whom her cat could crush.",
+      },
     ],
-    eventIds: [],
+    eventIds: [
+      "ev-416-room302-raid",
+      "ev-416-moswana-curse",
+      "ev-416-tsk17-camilla",
+    ],
     evidence: [
       {
         chapter: 363,
@@ -1938,11 +1946,22 @@ export const relationships: Relationship[] = [
     mutualAwareness: false,
     description:
       "Standing intent rather than active operation: the Hunter running Room 1014 is on the First Prince's list, pending the war's arithmetic.",
+    history: [
+      {
+        ch: 416,
+        text: "The file flips from threat to asset: Danjin's aura convinces Benjamin the Nen-from-nothing reports are real, and he resolves to recruit Kurapika as an instructor for his army.",
+      },
+    ],
     evidence: [
       {
         chapter: 363,
         note: "Camp posture; no strike order shown.",
         confidence: "strong-inference",
+      },
+      {
+        chapter: 416,
+        note: "'I need Kurapika as a teacher in my army' — internal monologue during the Room 1004 sweep.",
+        confidence: "canonical",
       },
     ],
   },
@@ -1995,10 +2014,21 @@ export const relationships: Relationship[] = [
     mutualAwareness: false,
     description:
       "Secret Window, leveled up by extended use, now replays what Musse saw before dying — so Benjamin knows Camilla is a counteractive-type whose death is a loaded trap. Her one hidden card is face-up to the man most likely to kill her.",
+    history: [
+      {
+        ch: 416,
+        text: "No longer secret from her: he says it to her face mid-raid — 'your ability activates when you're killed' — then turns the knowledge into a disease riddle she cannot answer.",
+      },
+    ],
     evidence: [
       {
         chapter: 413,
         note: "Benjamin checks Camilla through Secret Window and reads Musse's final sight.",
+        confidence: "canonical",
+      },
+      {
+        chapter: 416,
+        note: "Stated aloud in Room 302 before Furykov and Butch.",
         confidence: "canonical",
       },
     ],
@@ -9020,6 +9050,98 @@ export const relationships: Relationship[] = [
       {
         chapter: 415,
         note: "Shown on household duty.",
+        confidence: "canonical",
+      },
+    ],
+  },
+  {
+    id: "rel-benjamin-hunting-tserriednich",
+    from: "benjamin",
+    to: "tserriednich",
+    kind: "hunting",
+    directed: true,
+    strength: "strong",
+    secret: false,
+    confirmed: true,
+    startCh: 413,
+    revealCh: 413,
+    mutualAwareness: true,
+    description:
+      "Marked for personal execution under martial law — the 'bioterror conspirator' of Benjamin's own pretext. In Room 1004 the hunt lands: Benjamin blasts him across the bedroom mid-sentence, spending none of his dwindling hours confirming the kill.",
+    history: [
+      {
+        ch: 413,
+        text: "Benjamin reserves Tserriednich's death for himself in the martial-law plan.",
+      },
+      {
+        ch: 416,
+        text: "'Who gave you permission to speak?' — the blast lands on a prince standing in Zetsu, exactly the stage his feign-death ruse called for.",
+      },
+    ],
+    eventIds: ["ev-416-tserriednich-shot"],
+    evidence: [
+      {
+        chapter: 413,
+        note: "Named in the martial-law pretext and reserved for Benjamin personally.",
+        confidence: "canonical",
+      },
+      {
+        chapter: 416,
+        note: "The shot is the chapter's final page.",
+        confidence: "canonical",
+      },
+    ],
+  },
+  {
+    id: "rel-benjamin-killed-fukataki",
+    from: "benjamin",
+    to: "fukataki",
+    kind: "killed",
+    directed: true,
+    strength: "strong",
+    secret: false,
+    confirmed: true,
+    startCh: 416,
+    revealCh: 416,
+    mutualAwareness: true,
+    description:
+      "One blast each for Camilla's two servants — Fukataki mid-massage among them — the instant Camilla's own gunfire bounced off his Ken. Retaliation priced at someone else's life.",
+    eventIds: ["ev-416-room302-raid"],
+    evidence: [
+      {
+        chapter: 416,
+        note: "Both servants shot on-page during the Room 302 raid.",
+        confidence: "canonical",
+      },
+    ],
+  },
+  {
+    id: "rel-moswana-targeting-benjamin",
+    from: "moswana",
+    to: "benjamin",
+    kind: "targeting",
+    directed: true,
+    strength: "strong",
+    secret: true,
+    confirmed: true,
+    startCh: 389,
+    revealCh: 389,
+    endCh: 416,
+    endNote:
+      "Fulfilled: she died casting the curse into his eyes at touching distance.",
+    mutualAwareness: false,
+    description:
+      "The curse corps' assignment for the First Prince was hers — a wish nursed daily for over ten years, waiting only for proximity. Benjamin's raid delivered the target to her door.",
+    eventIds: ["ev-416-moswana-curse"],
+    evidence: [
+      {
+        chapter: 389,
+        note: "Stands Camilla's bedroom door eager for the honor of dying to curse Benjamin.",
+        confidence: "canonical",
+      },
+      {
+        chapter: 416,
+        note: "The casting shown on-page; Camilla calls it a wish fulfilled after more than ten years.",
         confidence: "canonical",
       },
     ],

@@ -259,6 +259,39 @@ export const knowledgeFacts: KnowledgeFact[] = [
       "kurapika",
     ],
   },
+  {
+    id: "fact-benjamin-cursed",
+    label: "A half-day curse is killing Benjamin",
+    description:
+      "Moswana died casting her decade-nursed Yomotsu Hegui into Benjamin's eyes at touching distance — despair-faced marks on his irises, potency Camilla rates as lethal within half a day. Stacked on the TSK-17 already in his blood, the First Prince now dies on two clocks.",
+    kind: "nen-ability",
+    readerRevealCh: 416,
+    relatedCharacterIds: ["benjamin", "moswana", "camilla"],
+    relatedAbilityIds: ["moswana-curse"],
+    relatedEventIds: ["ev-416-moswana-curse"],
+  },
+  {
+    id: "fact-camilla-tsk17",
+    label: "Camilla is silently infected with TSK-17",
+    description:
+      "Mid-riddle, Benjamin's boot vented TSK-17 at Camilla's bedside. If the disease — or a man already dead of it — is what kills her, Cat's Name may have no killer to crush and no life to pour back. Her revival, the war's most broken ability, now has a live counterexample incubating inside her.",
+    kind: "plan",
+    readerRevealCh: 416,
+    relatedCharacterIds: ["benjamin", "camilla"],
+    relatedAbilityIds: ["camilla-cat"],
+    relatedEventIds: ["ev-416-tsk17-camilla"],
+  },
+  {
+    id: "fact-tserriednich-ruse",
+    label: "Tserriednich's death will be a ruse",
+    description:
+      "Before Benjamin's breach, Tserriednich told Salkov the plan: he is about to die, but it will be fake. Salkov must report exactly what he witnesses, coffin the body immediately so no one examines it, and never speak of the ability. The blast that ends chapter 416 is the plan's opening move.",
+    kind: "plan",
+    readerRevealCh: 416,
+    relatedCharacterIds: ["tserriednich", "salkov", "benjamin"],
+    relatedAbilityIds: ["parallel-future"],
+    relatedEventIds: ["ev-416-tserriednich-ruse", "ev-416-tserriednich-shot"],
+  },
 ];
 
 export const characterKnowledge: CharacterKnowledge[] = [
@@ -1326,5 +1359,73 @@ export const characterKnowledge: CharacterKnowledge[] = [
     state: "unaware",
     sinceCh: 413,
     note: "Room 1014 hears the announcement like everyone else; the plan behind it is invisible to him.",
+  },
+
+  // fact-benjamin-cursed
+  {
+    factId: "fact-benjamin-cursed",
+    characterId: "benjamin",
+    state: "knows",
+    sinceCh: 416,
+    note: "Took the casting eyes-open and walked on; 'not that I am afraid of death'.",
+  },
+  {
+    factId: "fact-benjamin-cursed",
+    characterId: "camilla",
+    state: "knows",
+    sinceCh: 416,
+    note: "Her plan for over ten years; she declares the curse complete and rates it at half a day.",
+  },
+  {
+    factId: "fact-benjamin-cursed",
+    characterId: "furykov",
+    state: "observed",
+    sinceCh: 416,
+    note: "Watched the casting land, rifle raised and useless against it.",
+  },
+  {
+    factId: "fact-benjamin-cursed",
+    characterId: "butch",
+    state: "observed",
+    sinceCh: 416,
+  },
+
+  // fact-camilla-tsk17
+  {
+    factId: "fact-camilla-tsk17",
+    characterId: "benjamin",
+    state: "knows",
+    sinceCh: 416,
+    note: "His own hand — the boot release was staged under the cover of a hypothetical.",
+  },
+  {
+    factId: "fact-camilla-tsk17",
+    characterId: "camilla",
+    state: "suspects",
+    sinceCh: 416,
+    note: "The release itself was silent, but his riddle — 'suppose you caught an illness from me' — says the quiet part almost aloud; she is left visibly shaken.",
+  },
+
+  // fact-tserriednich-ruse
+  {
+    factId: "fact-tserriednich-ruse",
+    characterId: "tserriednich",
+    state: "knows",
+    sinceCh: 416,
+    note: "The author of the plan; he staged the room, the witness, and his own corpse-handling in advance.",
+  },
+  {
+    factId: "fact-tserriednich-ruse",
+    characterId: "salkov",
+    state: "was-told",
+    sinceCh: 416,
+    note: "Sole keeper of the protocol: report exactly what he sees, coffin the body unseen, tell no one about the ability.",
+  },
+  {
+    factId: "fact-tserriednich-ruse",
+    characterId: "benjamin",
+    state: "unaware",
+    sinceCh: 416,
+    note: "Shot the prince mid-sentence and spent no time confirming the kill.",
   },
 ];

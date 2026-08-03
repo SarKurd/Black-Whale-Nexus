@@ -465,9 +465,21 @@ export const locations: ShipLocation[] = [
     canonicity: "canonical",
     description:
       "The Fourth Prince's suite, part salon and part private horror. Behind the connoisseur's front, Tserriednich undergoes Nen instruction from Theta at a pace that terrifies his own teacher, and his guardian beast watches everything.",
-    controlHistory: [{ ch: 358, value: "tserriednich-camp" }],
+    controlHistory: [
+      { ch: 358, value: "tserriednich-camp" },
+      {
+        ch: 416,
+        value: "kakin-military",
+        note: "Benjamin kicks in the door under Special Martial Law; the household kneels while his squad sweeps the suite.",
+      },
+    ],
     threatHistory: [
       { ch: 373, value: "tense", note: "Theta realizes what she is creating." },
+      {
+        ch: 416,
+        value: "lethal",
+        note: "The Fourth Prince is blasted across his own bedroom mid-sentence.",
+      },
     ],
     connectedIds: ["royal-quarters"],
     introducedCh: 358,
@@ -865,6 +877,11 @@ export const locations: ShipLocation[] = [
         ch: 389,
         value: "tense",
         note: "The Have-Not curse program operates from inside the confinement.",
+      },
+      {
+        ch: 416,
+        value: "lethal",
+        note: "Benjamin's raid: two servants shot dead, Moswana's suicide casting, and a silent TSK-17 release at the prince's bedside.",
       },
     ],
     connectedIds: ["vvip-area"],

@@ -160,7 +160,7 @@ export const glossary: GlossaryTerm[] = [
     id: "tsk-17",
     term: "TSK-17",
     definition:
-      "A failed Kakin military bioweapon repurposed as the succession war's perfect silent killer: its proteins denature in under thirty seconds in open air, but inhaled in time it mimics stomach flu, kills by multiple organ failure within half a day, and accelerates decomposition until no autopsy can find it. It ended Halkenburg's body — administered by the prince himself from inside Balsamilco — and, via Furykov, is now killing Benjamin.",
+      "A failed Kakin military bioweapon repurposed as the succession war's perfect silent killer: its proteins denature in under thirty seconds in open air, but inhaled in time it mimics stomach flu, kills by multiple organ failure within half a day, and accelerates decomposition until no autopsy can find it. It ended Halkenburg's body — administered by the prince himself from inside Balsamilco — and, via Furykov, is now killing Benjamin, who turned it once more: a silent release from his boot at Camilla's bedside, engineered to kill her without giving Cat's Name a killer.",
     category: "kakin",
     relatedIds: ["special-martial-law"],
     introducedCh: 403,
@@ -205,7 +205,7 @@ export const glossary: GlossaryTerm[] = [
     id: "have-nots-term",
     term: "Have-Nots",
     definition:
-      "Kakin's lowest caste — historically barred from office and military rank, and once the exclusive source of 'afterlife companions' buried with failed princes. Camilla armed them with status, a ward of their own, and a shared suicide-curse ability (Yomotsu Hegui): carry a token of the target, hate daily, then burn it, drink the ashes, and die — the curse strips the target's aura and, at full strength, kills. Most of her fifteen aboard are Have-Not curse assassins, one an exorcist.",
+      "Kakin's lowest caste — historically barred from office and military rank, and once the exclusive source of 'afterlife companions' buried with failed princes. Camilla armed them with status, a ward of their own, and a shared suicide-curse ability (Yomotsu Hegui): carry a token of the target, hate daily, then burn it, drink the ashes, and die — the curse strips the target's aura and, at full strength, kills. Most of her fifteen aboard are Have-Not curse assassins, one an exorcist. Moswana's casting against Benjamin (ch 416) — a decade of devotion spent at touching distance, eyes locked — is the doctrine's first on-page proof.",
     category: "kakin",
     relatedIds: ["kakin-empire", "succession-war"],
     introducedCh: 389,

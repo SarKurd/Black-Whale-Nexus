@@ -3139,6 +3139,12 @@ export const entityIndex: Record<string, EntityIndexEntry> = {
     color: "var(--teal)",
     frameColor: "var(--gold-dim)",
   },
+  "moswana-curse": {
+    name: "Yomotsu Hegui",
+    href: "/nen/moswana-curse",
+    color: "var(--teal)",
+    frameColor: "var(--gold-dim)",
+  },
   "expedition-prep": {
     name: "The Expedition Deal",
     href: "/storylines/expedition-prep",
@@ -3538,6 +3544,24 @@ export const entityIndex: Record<string, EntityIndexEntry> = {
   "fact-special-martial-law": {
     name: "fact-special-martial-law",
     href: "/knowledge?fact=fact-special-martial-law",
+    color: "var(--teal)",
+    frameColor: "var(--gold-dim)",
+  },
+  "fact-benjamin-cursed": {
+    name: "fact-benjamin-cursed",
+    href: "/knowledge?fact=fact-benjamin-cursed",
+    color: "var(--teal)",
+    frameColor: "var(--gold-dim)",
+  },
+  "fact-camilla-tsk17": {
+    name: "fact-camilla-tsk17",
+    href: "/knowledge?fact=fact-camilla-tsk17",
+    color: "var(--teal)",
+    frameColor: "var(--gold-dim)",
+  },
+  "fact-tserriednich-ruse": {
+    name: "fact-tserriednich-ruse",
+    href: "/knowledge?fact=fact-tserriednich-ruse",
     color: "var(--teal)",
     frameColor: "var(--gold-dim)",
   },

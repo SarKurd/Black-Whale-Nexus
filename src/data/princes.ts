@@ -75,6 +75,10 @@ export const princes: Prince[] = [
         text: "Beyond's curse on Furykov may even point at Benjamin himself — the bearer cannot rule it out, and neither can the reader.",
         revealCh: 415,
       },
+      {
+        text: "Moswana's peak-potency curse is in his eyes: a second death-clock Camilla rates at half a day, stacked on the TSK-17.",
+        revealCh: 416,
+      },
     ],
     riskHistory: [
       {
@@ -91,6 +95,11 @@ export const princes: Prince[] = [
         ch: 413,
         risk: "critical",
         why: "Poisoned with TSK-17 by his own guard; dying on a half-day clock while Halkenburg's arrow hunts him.",
+      },
+      {
+        ch: 416,
+        risk: "critical",
+        why: "Two death-clocks running at once — ten functional hours of TSK-17 by his own count, and a peak-potency Have-Not curse seared into his eyes.",
       },
     ],
     assessment: {
@@ -132,6 +141,10 @@ export const princes: Prince[] = [
       {
         ch: 415,
         text: "Special Martial Law goes live at 2:15 p.m.: princes summoned to Room 1001 to hear him alone, weapons surrendered at the door, Royal-Army-only escorts — and the 'clemency' for Room 1014 doubles as a ship-wide hunt for the real Woble.",
+      },
+      {
+        ch: 416,
+        text: "Sweeps Tier 1 personally on ten functional hours: kills Camilla's servants, takes Moswana's decade-nursed curse in the eyes, counters with a silent TSK-17 release at Camilla's bedside, then breaches Room 1004, seizes Danjin as proof of Kurapika's teaching, and blasts Tserriednich mid-sentence.",
       },
     ],
     mysteryIds: ["my-nasubi-intent"],
@@ -177,6 +190,10 @@ export const princes: Prince[] = [
         text: "Let Sarahell's curse program do from confinement what her guns cannot.",
         revealCh: 389,
       },
+      {
+        text: "Outlast: drop into metabolic near-hibernation and survive confinement — and whatever Benjamin released — to the contest's end.",
+        revealCh: 416,
+      },
     ],
     vulnerabilities: [
       {
@@ -195,6 +212,10 @@ export const princes: Prince[] = [
         text: "Furykov's private analysis of Beyond's birth-curse puts her at the top of the target list — a Nen user as dangerous to the regime as Halkenburg, cursed to die when Furykov does.",
         revealCh: 415,
       },
+      {
+        text: "TSK-17 is in her lungs, and Benjamin's riddle frames the gap in Cat's Name: a death by disease — or by a killer already dead — may leave the cat nothing to crush and no life to pour back.",
+        revealCh: 416,
+      },
     ],
     riskHistory: [
       {
@@ -211,6 +232,11 @@ export const princes: Prince[] = [
         ch: 413,
         risk: "critical",
         why: "A dying Benjamin, armed with knowledge of her ability's type, is coming for her personally under martial law.",
+      },
+      {
+        ch: 416,
+        risk: "critical",
+        why: "Silently infected with the bioweapon killing Benjamin himself — an attack routed precisely around her revival's trigger.",
       },
     ],
     assessment: {
@@ -242,6 +268,10 @@ export const princes: Prince[] = [
       {
         ch: 411,
         text: "Sends a single guard — the disguised Sarahell — into Kurapika's second class round.",
+      },
+      {
+        ch: 416,
+        text: "The decade-long Moswana gambit lands a half-day curse on Benjamin — at the price of Fukataki, a second servant, and Moswana herself. His reply: a silent TSK-17 release at her bedside, and the first riddle her revival cannot answer.",
       },
     ],
   },
@@ -354,6 +384,10 @@ export const princes: Prince[] = [
         text: "Cut Zetsu activation below one second and master the future-sight window.",
         revealCh: 402,
       },
+      {
+        text: "Die convincingly under Benjamin's gun — coffin sealed, witness scripted, ability secret — and re-enter the war unseen.",
+        revealCh: 416,
+      },
     ],
     vulnerabilities: [
       {
@@ -394,6 +428,11 @@ export const princes: Prince[] = [
         risk: "critical",
         why: "Named in Benjamin's martial-law casus belli; a dying first prince intends to kill him personally.",
       },
+      {
+        ch: 416,
+        risk: "critical",
+        why: "Took Benjamin's blast point-blank while holding Zetsu — survival now rides entirely on an unfinished, still-practiced ability and a staged death.",
+      },
     ],
     assessment: {
       political:
@@ -432,6 +471,10 @@ export const princes: Prince[] = [
       {
         ch: 413,
         text: "Named alongside Halkenburg as the bioterror pretext for Benjamin's martial law.",
+      },
+      {
+        ch: 416,
+        text: "Hands Salkov the feign-death protocol — coffin at once, report exactly what you saw, never speak of the ability — then takes Benjamin's blast mid-sentence, in Zetsu, exactly as staged.",
       },
     ],
     mysteryIds: ["my-tserriednich-god-beast"],

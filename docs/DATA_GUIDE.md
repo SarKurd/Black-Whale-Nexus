@@ -7,16 +7,16 @@ already made, and the gotchas that have bitten us.
 ## What this project is
 
 A client-only Next.js intelligence archive for the Hunter × Hunter **Succession
-War continuity, manga chapters 340–415**. Design is finished and must not be
+War continuity, manga chapters 340–416**. Design is finished and must not be
 changed without an explicit request — work here is almost always *data*.
 
-- Arc bounds live in `src/lib/types.ts`: `ARC_START = 340`, `ARC_END = 415`,
+- Arc bounds live in `src/lib/types.ts`: `ARC_START = 340`, `ARC_END = 416`,
   `PRE_ARC = 339`.
 - The 2011 anime ends at **chapter 339**. So `introducedCh: 0` / `revealCh: 0`
   means "known before 340" and is always visible. Anything first appearing at
   340+ gets its real chapter.
 - Clearance control (`ChapterControl`) has two modes only: **Manga·Ch** (slider,
-  340–415) and **Full**. There is no "Anime" mode — it was dropped as redundant
+  340–416) and **Full**. There is no "Anime" mode — it was dropped as redundant
   with the slider's low end. `SpoilerMode = "chapter" | "full"`.
 
 ## Source of truth: Hunterpedia
@@ -220,6 +220,24 @@ prod server. The user often has their own dev server on 3000; don't fight it.
   official MANGA Plus translation, which supplied details the wiki dropped
   (Beyond's colony-base-camp motive, the anti-exorcist obfuscation, the
   weapons-surrender term at Room 1001, Kanjidol's purge-pretext targets).
+
+- **Chapter 416 rulings (ingested from Hunterpedia + official MANGA Plus +
+  VoraciousDrake's translation):** official English title is **"Proclamation"**
+  (VD's post title "Declaration" is his own rendering). **Moswana is female**
+  (wiki `|gender`; an earlier bio said "He" — fixed, don't regress). Her curse
+  is her own instance of the Have-Nots' technique, entered as `moswana-curse`
+  (name "Yomotsu Hegui"; Viz's on-page shout is "Dust in the Wind: Hell Fruit —
+  Yomotsu-Hegui") — the Cavic-keyed `yomotsu-hegui` entry stays as-is. Her
+  death is suicide by design → `killerId: "moswana"` with **no** self killed
+  edge (the `death-halkenburg` precedent). The second servant Benjamin shoots
+  is **unnamed** — prose-only, no registry id, no death record. **Tserriednich
+  gets NO death record**: the blast is the staged opening of his declared
+  feign-death ruse (official wording: "it's going to be a ruse", body into a
+  **coffin** at once), and no death is shown or confirmed. Benjamin's Camilla
+  infection is canonical: the official page draws a *FSST* puff from his boot
+  mid-riddle, and the wiki states the TSK-17 release outright. Benjamin's clock
+  per his own monologue: 12 h from symptom onset to death, last 2 h comatose →
+  ten functional hours from ≈2:15 p.m., day 12.
 
 ## Registry completeness
 

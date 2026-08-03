@@ -521,4 +521,42 @@ export const deaths: DeathRecord[] = [
     factionId: "luzurus-camp",
     princeContextId: "prince-luzurus",
   },
+  {
+    id: "death-fukataki",
+    victimId: "fukataki",
+    killerId: "benjamin",
+    method:
+      "Shot dead mid-massage in Camilla's Room 302 bedroom — one blast each for her and a second, unnamed servant — Benjamin's instant retaliation for Camilla emptying her gun at him.",
+    locationId: "camilla-confinement",
+    chapter: 416,
+    revealCh: 416,
+    witnessIds: ["camilla", "furykov", "butch"],
+    awareCharacterIds: ["benjamin", "camilla", "furykov", "butch"],
+    consequences: [
+      "Camilla loses her majordomo — the curse program's keeper of timelines and doctrine",
+      "The confinement suite's household is reduced to its curse corps",
+    ],
+    confidence: "canonical",
+    factionId: "camilla-camp",
+    princeContextId: "prince-camilla",
+  },
+  {
+    id: "death-moswana",
+    victimId: "moswana",
+    killerId: "moswana",
+    method:
+      "Suicide by design: drove a knife into her own throat and pulled it free, dying at touching distance with her eyes locked on Benjamin's — the prescribed casting that fired her decade-nursed Yomotsu Hegui at peak potency.",
+    locationId: "camilla-confinement",
+    chapter: 416,
+    revealCh: 416,
+    witnessIds: ["benjamin", "camilla", "furykov", "butch"],
+    awareCharacterIds: ["benjamin", "camilla", "furykov", "butch"],
+    consequences: [
+      "The curse enveloped Benjamin and seared despair-faced marks onto his irises; Camilla rates it lethal within half a day",
+      "The Have-Nots' close-contact casting doctrine is proven on-page for the first time",
+    ],
+    confidence: "canonical",
+    factionId: "camilla-camp",
+    princeContextId: "prince-camilla",
+  },
 ];

@@ -1,7 +1,7 @@
 # Black Whale Nexus
 
 An intelligence-archive web app for the Hunter × Hunter Succession War
-(manga chapters 340–415). Most work here is **content data**, not code.
+(manga chapters 340–416). Most work here is **content data**, not code.
 
 **Before editing anything under `src/data/`, read [`docs/DATA_GUIDE.md`](docs/DATA_GUIDE.md).**
 It records the source-of-truth workflow (Hunterpedia), the content model, the

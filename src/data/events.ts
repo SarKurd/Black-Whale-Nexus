@@ -4421,4 +4421,166 @@ export const events: StoryEvent[] = [
     ],
     confidence: "canonical",
   },
+  {
+    id: "ev-416-room302-raid",
+    title: "Benjamin at Camilla's door",
+    summary:
+      "An hour into martial law, Benjamin marches on Room 302 with Furykov and Butch, reminding himself of the arithmetic: twelve hours from TSK-17 symptom onset to death, the last two in a coma — ten functional hours left. Mozbe and Taler measure the firepower gap and stand down. Inside, Camilla takes her massage without pausing, then sits up and empties her gun at him; the rounds bounce off his Ken, and his answering shots kill her two servants — the majordomo Fukataki and an unnamed colleague — where they stand. He tells her plainly that he knows her ability is a counteractive type that fires when she is killed; she dares him to a contest of clocks — her starvation against his curse.",
+    chapter: 416,
+    day: 12,
+    approxTime: "≈2:15 p.m. onward",
+    kind: "battle",
+    locationId: "camilla-confinement",
+    participantIds: [
+      "benjamin",
+      "furykov",
+      "butch",
+      "mozbe",
+      "taler",
+      "camilla",
+      "fukataki",
+    ],
+    casualtyIds: ["fukataki"],
+    storylineIds: ["special-martial-law", "benjamin-military"],
+    consequences: [
+      "Camilla's household is cut down to her curse corps; her confinement is now an occupied room",
+      "Benjamin says aloud — before Furykov and Butch — that Camilla's ability triggers on her death",
+    ],
+    evidence: [
+      {
+        chapter: 416,
+        note: "Benjamin's opening monologue gives the twelve-hour/two-hour arithmetic; the servant killings and Ken deflection are on-page.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "ev-416-moswana-curse",
+    title: "Ten years, spent in one breath",
+    summary:
+      "As Camilla finishes her taunt, Moswana staggers into the bedroom, ignoring the rifles trained on her, and pulls the knife from her own throat — dying at touching distance with her eyes locked on Benjamin, the prescribed casting of the Have-Nots' curse. Dark specters burst from her corpse, envelop him, and sear a face-in-despair mark onto his irises. Camilla declares the curse complete: Moswana nursed it for over ten years, and at this potency Benjamin won't last half a day. Privately she runs her own numbers — metabolism to the floor, near-hibernation, three months without food or water.",
+    chapter: 416,
+    day: 12,
+    kind: "death",
+    locationId: "camilla-confinement",
+    participantIds: ["moswana", "benjamin", "camilla"],
+    witnessIds: ["furykov", "butch"],
+    casualtyIds: ["moswana"],
+    storylineIds: ["special-martial-law", "succession-contest"],
+    consequences: [
+      "Benjamin is now dying on two clocks: TSK-17 and a peak-potency Yomotsu Hegui",
+      "The Have-Nots' curse doctrine is proven on-page: suicide at touching distance, eyes locked, beats even a Nen-armored target",
+    ],
+    evidence: [
+      {
+        chapter: 416,
+        note: "The casting, the specters, the eye-marks, and Camilla's half-a-day estimate are all shown or stated on-page.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "ev-416-tsk17-camilla",
+    title: "A riddle with the boot's valve open",
+    summary:
+      "Cursed and unshaken, Benjamin poses Camilla a hypothetical: suppose she caught an incurable illness from him — is he the killer, or the disease? would a pathogen have aura enough to feed her revival? and if he carried the same illness and died first, whom would her ability kill to bring her back? While she listens, his boot silently vents TSK-17 at her bedside. He leaves her with the riddle: he is not afraid of death — is she?",
+    chapter: 416,
+    day: 12,
+    kind: "assassination-attempt",
+    locationId: "camilla-confinement",
+    participantIds: ["benjamin", "camilla"],
+    witnessIds: ["furykov", "butch"],
+    storylineIds: ["benjamin-military", "succession-contest"],
+    consequences: [
+      "Camilla is infected with the bioweapon that is killing Benjamin himself",
+      "Her certainty in Cat's Name is visibly broken for the first time",
+    ],
+    evidence: [
+      {
+        chapter: 416,
+        note: "The release is drawn as a puff from his boot mid-riddle; the wiki synopsis states the infection outright.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "ev-416-tserriednich-ruse",
+    title: "The feign-death protocol",
+    summary:
+      "Shortly before Benjamin reaches Room 1004, Tserriednich takes Salkov's gun — 'I'm gonna use it' — and, asking the man's name mid-errand, hands him the plan: he is about to die, but it will be a ruse. Salkov is to report exactly what he sees, coffin the body immediately so no one looks at it, and never speak of the ability. Salkov connects the dots on his own: Theta never sensed the illusion she was shown, the prince is obsessed with Zetsu speed — if the ability triggers on Zetsu, it is already running.",
+    chapter: 416,
+    day: 12,
+    kind: "decision",
+    locationId: "tserriednich-quarters",
+    participantIds: ["tserriednich", "salkov"],
+    storylineIds: ["tserriednich-nen", "succession-contest"],
+    consequences: [
+      "Salkov alone holds the protocol — and privately vows to analyze the ability for Theta's sake",
+      "Tserriednich stakes his life on an unfinished technique he is still practicing",
+    ],
+    evidence: [
+      {
+        chapter: 416,
+        note: "Delivered as Salkov's flashback while the prince holds Zetsu; 'it's going to be a ruse' and the coffin order are verbatim.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "ev-416-room1004-breach",
+    title: "Room 1004, by the book",
+    summary:
+      "No response at the locked door, so Benjamin kicks it in and takes point himself: anyone who moves behind him gets shot. Inside, twenty men kneel facing the walls, calm and silent — indistinguishable, as Butch warned, from the royal soldiers among them. Danjin's aura catches Benjamin's eye; one question confirms him a Room 1014 student, and Butch is ordered to take him to the central Ministry of Justice for questioning. Benjamin's private verdict: if the reports of Nen-from-nothing are true, he needs Kurapika as an instructor for his army.",
+    chapter: 416,
+    day: 12,
+    kind: "movement",
+    locationId: "tserriednich-quarters",
+    participantIds: ["benjamin", "furykov", "butch", "danjin", "vantine"],
+    storylineIds: ["special-martial-law", "benjamin-military"],
+    consequences: [
+      "Danjin is in military custody as a specimen of Kurapika's teaching",
+      "Benjamin's Kurapika file flips from threat to recruitment target",
+    ],
+    evidence: [
+      {
+        chapter: 416,
+        note: "The breach, the kneeling household, and the Ministry order are on-page; the Kurapika verdict is Benjamin's internal monologue.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "ev-416-tserriednich-shot",
+    title: "'Who gave you permission to speak?'",
+    summary:
+      "In the master bedroom Salkov kneels, hands raised, while Tserriednich stands in closed-eye Zetsu — flawless through sirens and a kicked-in door. Benjamin registers the surprise ('to think that even you could use Nen'), lets the prince get half a sentence into an offer to spar, and blasts him across the room mid-word. The chapter ends with the Fourth Prince airborne and his staged death — if that is what this is — already in motion, with Salkov watching for exactly that.",
+    chapter: 416,
+    day: 12,
+    kind: "assassination-attempt",
+    locationId: "tserriednich-quarters",
+    participantIds: ["benjamin", "tserriednich"],
+    witnessIds: ["salkov", "furykov", "butch"],
+    storylineIds: [
+      "tserriednich-nen",
+      "benjamin-military",
+      "succession-contest",
+    ],
+    consequences: [
+      "Tserriednich takes the hit in Zetsu, exactly the stage his ruse called for; his condition is unrevealed",
+      "Benjamin spends none of his remaining hours verifying the kill",
+    ],
+    evidence: [
+      {
+        chapter: 416,
+        note: "The blast and dialogue are the chapter's final page; no death is shown or confirmed.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
 ];
