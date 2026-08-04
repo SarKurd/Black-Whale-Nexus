@@ -141,9 +141,7 @@ export default function CharactersPage() {
             return (
               <motion.div
                 key={c.id}
-                initial={
-                  animateCards && index < 18 ? { opacity: 0, y: 8 } : false
-                }
+                initial={animateCards ? { opacity: 0, y: 8 } : false}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{
                   duration: 0.2,
