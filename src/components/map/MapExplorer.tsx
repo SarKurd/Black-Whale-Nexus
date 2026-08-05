@@ -29,11 +29,16 @@ const LAYERS = [
 
 type MapLayer = (typeof LAYERS)[number][0];
 
+/**
+ * Band widths trace the manga cutaway (ch. 341): Tier 1 is the ship riding on
+ * the whale's back, the body swells to its widest at Tier 4 (the waterline),
+ * and Tier 5 tucks into the underbelly.
+ */
 const TIER_WIDTH: Record<number, string> = {
-  1: "78%",
-  2: "86%",
-  3: "92%",
-  4: "84%",
+  1: "58%",
+  2: "80%",
+  3: "90%",
+  4: "94%",
   5: "72%",
 };
 
@@ -328,14 +333,40 @@ function ShipOverview({
           className="pointer-events-none absolute inset-0 h-full w-full text-line-strong"
           aria-hidden="true"
         >
+          {/* Topside ship (Tier 1) riding on the whale's back */}
           <path
-            d="M 150 28 C 70 44 34 160 42 300 C 34 430 86 556 190 570 L 812 570 C 900 558 944 410 956 300 C 944 180 914 52 834 28 Z"
+            d="M 224 166 L 250 60 L 752 60 L 768 166"
             fill="none"
             stroke="currentColor"
             strokeWidth="2"
           />
           <path
-            d="M 956 300 L 995 250 L 976 300 L 995 350 Z"
+            d="M 660 60 L 666 44 L 700 44 L 706 60"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+          />
+          {/* Whale body — widest at the Tier 4 waterline, tucked underbelly */}
+          <path
+            d="M 230 150 C 90 170 28 268 28 390 C 28 474 96 556 210 572 L 790 572 C 880 564 928 520 922 478 C 958 436 972 416 968 390 C 960 268 908 168 768 150 C 600 138 400 138 230 150 Z"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+          />
+          {/* Waterline at the widest point of the body */}
+          <line
+            x1="10"
+            y1="390"
+            x2="990"
+            y2="390"
+            stroke="currentColor"
+            strokeWidth="1"
+            strokeDasharray="10 7"
+            opacity="0.55"
+          />
+          {/* Tail fluke trailing from the lower-right stern */}
+          <path
+            d="M 922 478 L 984 446 L 952 486 L 988 532 Z"
             fill="none"
             stroke="currentColor"
             strokeWidth="2"

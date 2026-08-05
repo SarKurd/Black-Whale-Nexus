@@ -28,13 +28,17 @@ const PAD = 10;
 const MAX_DOTS = 8;
 const PASSAGE_ID = "hidden-passage-network";
 
-/** Horizontal extent of each tier band — taper suggests the whale hull. */
+/**
+ * Horizontal extent of each tier band. Tier 1 is the topside ship riding on
+ * the whale's back; the body bulges around Tiers 2–5 and is widest at Tier 4,
+ * matching the manga cutaway (ch. 340s cross-section).
+ */
 const BAND_X: Record<number, [number, number]> = {
-  1: [150, 900],
-  2: [122, 928],
-  3: [114, 934],
-  4: [134, 914],
-  5: [184, 862],
+  1: [160, 905],
+  2: [135, 915],
+  3: [95, 940],
+  4: [80, 948],
+  5: [185, 845],
 };
 
 interface BoxLayout {
@@ -191,20 +195,38 @@ function computeDots(
   return { dots, overflows };
 }
 
-/** Whale silhouette wrapped around the stacked tier bands. */
-function hullPath(topY: number, bottomY: number): string {
-  const midY = (topY + bottomY) / 2;
-  const [t1x0, t1x1] = BAND_X[1];
-  const [t5x0, t5x1] = BAND_X[5];
+/**
+ * Whale-body silhouette wrapped around Tiers 2–5 only — Tier 1 is the ship
+ * on the whale's back. Widest at the waterline (Tier 4), tucked in at the
+ * Tier 5 underbelly, with the tail root at the lower right.
+ */
+function hullPath(deckY: number, waterY: number, bottomY: number): string {
   return [
-    `M ${t1x0} ${topY}`,
-    // Bow (whale head) sweeping down the left side.
-    `C ${t1x0 - 100} ${topY + 6} 34 ${midY - 70} 34 ${midY}`,
-    `C 34 ${midY + 70} ${t5x0 - 110} ${bottomY - 6} ${t5x0} ${bottomY}`,
-    `L ${t5x1} ${bottomY}`,
-    // Tapering stern toward the tail.
-    `C ${t5x1 + 56} ${bottomY - 10} 946 ${midY + 34} 956 ${midY}`,
-    `C 946 ${midY - 34} ${t1x1 + 44} ${topY + 10} ${t1x1} ${topY}`,
+    `M 170 ${deckY}`,
+    // Head: bulge out to the left, widest at the waterline.
+    `C 88 ${deckY + 6} 40 ${waterY - 56} 40 ${waterY}`,
+    `C 40 ${waterY + 52} 96 ${bottomY - 20} 178 ${bottomY}`,
+    `L 850 ${bottomY}`,
+    // Underside sweeping back to the low tail root.
+    `C 910 ${bottomY - 4} 938 ${bottomY - 12} 952 ${bottomY - 26}`,
+    // Up the stern to the widest point, then over the shoulder to the deck.
+    `C 962 ${waterY + 44} 964 ${waterY + 12} 960 ${waterY}`,
+    `C 954 ${waterY - 58} 924 ${deckY + 10} 895 ${deckY}`,
+    // Gentle camber of the whale's back where the ship sits.
+    `C 700 ${deckY - 10} 360 ${deckY - 10} 170 ${deckY}`,
+    "Z",
+  ].join(" ");
+}
+
+/** Two-lobed tail fluke at the lower right, angled down like the manga. */
+function flukePath(bottomY: number): string {
+  const rootX = 950;
+  const rootY = bottomY - 28;
+  return [
+    `M ${rootX} ${rootY}`,
+    `L ${rootX + 44} ${rootY - 20}`,
+    `L ${rootX + 24} ${rootY + 6}`,
+    `L ${rootX + 48} ${rootY + 34}`,
     "Z",
   ].join(" ");
 }
@@ -269,9 +291,13 @@ export function ShipBlueprint({
     [livingByContainer, boxByLoc, bandByLoc, trackedId],
   );
 
-  const midY = (topY + bottomY) / 2;
+  const bandOf = (tier: number) => bands.find((b) => b.loc.tier === tier);
+  const tier1 = bandOf(1);
+  // Deck line: where the topside ship meets the whale's back.
+  const deckY = tier1 ? tier1.y + tier1.h : topY;
+  // The body is widest at Tier 4 — that's where the manga puts the waterline.
+  const waterlineY = bandOf(4)?.y ?? (deckY + bottomY) / 2;
   const viewH = (passage ? passage.y + passage.h : bottomY) + 26;
-  const waterlineY = topY - 22;
 
   const directCount = (id: string) => livingByContainer.get(id)?.length ?? 0;
   const remainsCount = (id: string) => remainsByContainer.get(id)?.length ?? 0;
@@ -336,7 +362,7 @@ export function ShipBlueprint({
       {/* Ship root — the hull itself is the black-whale record. */}
       <g {...interactiveProps(() => onSelect("black-whale"))}>
         <path
-          d={hullPath(topY, bottomY)}
+          d={hullPath(deckY, waterlineY, bottomY)}
           fill="var(--bg-deep)"
           fillOpacity={0.5}
           stroke={
@@ -346,20 +372,49 @@ export function ShipBlueprint({
           }
           strokeWidth={1.3}
         />
-        {/* Tail fluke */}
+        {/* Tail fluke at the lower right, trailing below the stern */}
         <path
-          d={`M 956 ${midY} L 992 ${midY - 44} L 972 ${midY} L 992 ${midY + 44} Z`}
-          fill="none"
+          d={flukePath(bottomY)}
+          fill="var(--bg-deep)"
+          fillOpacity={0.5}
           stroke="var(--line-strong)"
           strokeWidth={1.1}
         />
-        {/* Dorsal fin */}
-        <path
-          d={`M 460 ${topY} C 480 ${topY - 26} 540 ${topY - 26} 560 ${topY} Z`}
-          fill="none"
-          stroke="var(--line-strong)"
-          strokeWidth={1.1}
-        />
+        {/* Topside ship (Tier 1) riding on the whale's back */}
+        {tier1 && (
+          <path
+            d={[
+              // Raked bow rising from the deck line at the left.
+              `M ${tier1.x0 - 34} ${deckY}`,
+              `L ${tier1.x0} ${tier1.y}`,
+              `L ${tier1.x1} ${tier1.y}`,
+              // Near-vertical stern back down to the deck.
+              `L ${tier1.x1 + 18} ${deckY}`,
+            ].join(" ")}
+            fill="var(--bg-deep)"
+            fillOpacity={0.5}
+            stroke={
+              selectedId === "black-whale"
+                ? "var(--gold-bright)"
+                : "var(--line-strong)"
+            }
+            strokeWidth={1.3}
+          />
+        )}
+        {/* Bridge mast atop the superstructure */}
+        {tier1 && (
+          <path
+            d={[
+              `M ${(tier1.x0 + tier1.x1) / 2 - 40} ${tier1.y}`,
+              `L ${(tier1.x0 + tier1.x1) / 2 - 32} ${tier1.y - 14}`,
+              `L ${(tier1.x0 + tier1.x1) / 2 + 32} ${tier1.y - 14}`,
+              `L ${(tier1.x0 + tier1.x1) / 2 + 40} ${tier1.y}`,
+            ].join(" ")}
+            fill="none"
+            stroke="var(--line-strong)"
+            strokeWidth={1.1}
+          />
+        )}
         <text
           x={BAND_X[1][0]}
           y={topY - 8}
