@@ -2092,15 +2092,20 @@ export const nenAbilities: NenAbility[] = [
   },
   {
     id: "ab-beast-benjamin",
-    name: "Benjamin's Beast (the deathbed deity)",
+    name: "Bohemian Rhapsody ('The Wandering People')",
     userCharacterId: "benjamin",
     kind: "guardian-beast",
     nenType: "unknown",
     description:
-      "A terrifying creature perched on the First Prince's shoulders — Balsamilco called it 'valiant, befitting the next King' (ch 363). Long undemonstrated, it screeched low-level evil spirits away from Fugetsu (ch 402); per Furykov (ch 413), its true power activates on Benjamin's death: it can turn him into a guardian deity of Kakin — a Guardian Spirit Beast in his own right, watching over future kings, potentially replacing the Seed Urn ceremony itself, with Benjamin Baton intact.",
+      "The First Prince's Guardian Spirit Beast ability, named on-page in chapter 417 — a terrifying creature perched on his shoulders that Balsamilco called 'valiant, befitting the next King' (ch 363). On Benjamin's death it merges with his Nen, chooses one of his natural blood relatives, and becomes that person's Guardian Spirit Beast — then keeps wandering the bloodline, with Benjamin and the beast alternating the choice of each new host as the current one dies. Once fused with a Nen beast and unable to inhabit a living human body, Benjamin forfeits his right of succession exactly as Kacho did — which is why his endgame runs through the Emergency Law and an heir of his own blood, not the throne. Furykov told him the mechanics (ch 413/417); the leak-era translation of the name follows VoraciousDrake.",
+    conditions: [
+      "Activates on Benjamin's death: his Nen merges into the beast and it possesses a natural blood relative.",
+      "Host succession alternates: Benjamin and the beast take turns choosing each new host when the current one dies.",
+      "The fusion costs Benjamin his succession eligibility — the Kacho precedent, stated in the exposition itself.",
+    ],
     effects: [
       "Dispels lesser evil spirits (shown, ch 402).",
-      "Post-mortem apotheosis: Benjamin as Kakin's guardian deity, retaining Benjamin Baton (per Furykov, ch 413).",
+      "Post-mortem inheritance: Benjamin's Nen rides his bloodline forever — his stated means of protecting Kakin 'for all of eternity' (ch 417).",
     ],
     firstSeenCh: 362,
     revealCh: 413,
@@ -2116,8 +2121,13 @@ export const nenAbilities: NenAbility[] = [
         note: "Deity mechanism explained by Furykov; Benjamin builds his endgame on it.",
         confidence: "strong-inference",
       },
+      {
+        chapter: 417,
+        note: "Named 'The Wandering People' (Bohemian Rhapsody) in a full exposition panel: post-mortem merger, blood-relative hosts, alternating choice, and the Kacho-style loss of succession rights.",
+        confidence: "canonical",
+      },
     ],
-    confidence: "strong-inference",
+    confidence: "canonical",
   },
   {
     id: "ab-beast-camilla",
@@ -2159,6 +2169,7 @@ export const nenAbilities: NenAbility[] = [
     effects: [
       "Daily coin production (first coins pocketed by Coventoba and gifted to Tenftory, ch 372–389).",
       "Deferred, distributed power: circulated coins bank Nen for after the succession (Kurapika's analysis, ch 404).",
+      "Compulsion proven at '10': Coventoba voluntarily confessed his complicity after ten days holding a coin, and Benjamin reads the self-awareness as a semi-coercive design (ch 417).",
     ],
     firstSeenCh: 362,
     revealCh: 375,
@@ -2172,6 +2183,11 @@ export const nenAbilities: NenAbility[] = [
       {
         chapter: 404,
         note: "Number/design experiments run with Kurapika; cumulative-Conjuration reading given on-page.",
+        confidence: "canonical",
+      },
+      {
+        chapter: 417,
+        note: "Coventoba's ten-day coin compelled his confession; Benjamin orders him to keep carrying it, betting the frozen '10' stays inert while Zhang Lei is hunted.",
         confidence: "canonical",
       },
     ],
@@ -2394,6 +2410,10 @@ export const nenAbilities: NenAbility[] = [
       {
         ch: 413,
         note: "Benjamin watches Camilla's massage schedule live and reviews Musse's final observations — learning she is a counteractive type.",
+      },
+      {
+        ch: 417,
+        note: "Still feeding Benjamin during the sweep: he watches the infected Camilla demand the Surgeon General, Central Medical Department staff, and a bacterial-or-viral verdict on the weapon.",
       },
     ],
     status: "active",
@@ -3705,6 +3725,8 @@ export const nenAbilities: NenAbility[] = [
       { characterId: "benjamin", sinceCh: 416 },
       { characterId: "furykov", sinceCh: 416 },
       { characterId: "butch", sinceCh: 416 },
+      { characterId: "balsamilco", sinceCh: 417 },
+      { characterId: "coventoba", sinceCh: 417 },
     ],
     affectedCharacterIds: ["benjamin"],
     evidence: [
@@ -3732,7 +3754,7 @@ export const beasts: GuardianBeast[] = [
     appearance:
       "A fearsome creature perched on the First Prince's shoulders — 'valiant, befitting the next King' per Balsamilco (ch 363).",
     behaviorNote:
-      "Screeched low-level evil spirits away from Fugetsu (ch 402); per Furykov it can deify Benjamin after death, Benjamin Baton intact (ch 413).",
+      "Screeched low-level evil spirits away from Fugetsu (ch 402); its ability is Bohemian Rhapsody (ch 417): after Benjamin's death it merges with his Nen and wanders his bloodline, host by host — the mechanism his whole endgame rides on.",
     firstSeenCh: 362,
     status: "active",
     confidence: "strong-inference",

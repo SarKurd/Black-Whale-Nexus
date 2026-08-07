@@ -269,8 +269,8 @@ export const mysteries: Mystery[] = [
       },
     ],
     latestDevelopment: {
-      ch: 413,
-      text: "The remaining frontier is what Halkenburg is testing NOW: soul-only persistence after his body's death, and a fresh arrow already flying at Benjamin.",
+      ch: 417,
+      text: "A new frontier opens: Balsamilco woke as himself, so Halkenburg's soul can move on without a fresh arrow strike being observed — Benjamin concludes he has 'some means to transfer his soul' and activated the ability from inside Balsa's body. The feather mark on the new host's hand is now the military's manhunt criterion.",
     },
     resolution: {
       ch: 404,
@@ -300,6 +300,11 @@ export const mysteries: Mystery[] = [
         ch: 416,
         value: "partially-answered",
         note: "Tserriednich stakes his life on it: a scripted 'fake death' under Benjamin's gun, held in Zetsu — and Salkov concludes the ability is already running, undetectable at arm's length.",
+      },
+      {
+        ch: 417,
+        value: "partially-answered",
+        note: "The body soaks the blast, the stomping, and a proclaimed execution without any counteractive response — Benjamin himself expected one and found none. Salkov, doubting reality itself, fixes on the one Nen-visible test available: Theta's scar.",
       },
     ],
     relatedCharacterIds: ["tserriednich", "theta", "salkov"],
@@ -340,8 +345,8 @@ export const mysteries: Mystery[] = [
       },
     ],
     latestDevelopment: {
-      ch: 416,
-      text: "The ability is staked outright: Benjamin's blast lands on a prince holding closed-eye Zetsu, a feign-death script already handed to Salkov — who reasons the power was running before the door came down.",
+      ch: 417,
+      text: "If the feign-death is the ability working, it is working horrifyingly well: a mangled corpse, no visible counter, and a chief witness who can no longer tell whether the whole room shares one illusion. Salkov's next move — checking Theta's Nen-visible scar — doubles as the reader's test too.",
     },
   },
   {
@@ -761,8 +766,8 @@ export const mysteries: Mystery[] = [
       },
     ],
     latestDevelopment: {
-      ch: 413,
-      text: "In the burial chamber between Salé-salé and Kacho, Nasubi confirms the contest's true death condition — succession rights persist while the soul persists — and shows no surprise at any of it.",
+      ch: 417,
+      text: "Benjamin's endgame turns the king into a lever: Article One of the Emergency Law obliges Nasubi to name new successors once every heir faces inevitable death. Whether the officiant of the rite would simply comply — or whether the ritual has its own answer to an empty board — is now the question under the question.",
     },
   },
   {
@@ -887,8 +892,8 @@ export const mysteries: Mystery[] = [
       },
     ],
     latestDevelopment: {
-      ch: 414,
-      text: "Kurapika reframes ignorance as armor: if Woble isn't aboard, she is untouchable, and every camp must keep searching anyway. Contact plan: an unaddressed coded letter through Oito's relative in Yamato.",
+      ch: 417,
+      text: "Benjamin sets the terms of the search's ending: prove the real Woble is off the ship and the swap costs Oito's family only exile — but if the Fourteenth Prince is found aboard, he will treat the swap as a throne-stealing scheme and kill both mothers, both children, and the whole clan.",
     },
   },
   {
@@ -959,8 +964,8 @@ export const mysteries: Mystery[] = [
       },
     ],
     latestDevelopment: {
-      ch: 414,
-      text: "Room 1014 resolves to act as though Woble is cursed: unravel the curse at its source or find Woble and an exorcist. Bill floats turning the whole Association against the contest; Beyond himself remains the only authoritative source, and probably a trap.",
+      ch: 417,
+      text: "Benjamin now plans around the worst case as if it were fact: if Beyond's curse on Furykov is aimed at him, dying first works as a countercurse — one more reason his endgame schedules his own death before his enemies'.",
     },
   },
   {

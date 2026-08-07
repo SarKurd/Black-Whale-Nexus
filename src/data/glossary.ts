@@ -180,8 +180,22 @@ export const glossary: GlossaryTerm[] = [
     definition:
       "Benjamin's Tier-1 takeover decree, declared 2:15 p.m. on Day 12 under a fabricated bio-terror conspiracy: all three branches of government consolidated under military force, royal soldiers authorized to shoot without warning, rival princes' personal guards executed on sight (Hunter Association members exempt), and the princes assembled in Grand Hall 1001. A dying man's race to be anointed successor.",
     category: "arc",
-    relatedIds: ["tsk-17", "justice-bureau-term", "succession-war"],
+    relatedIds: [
+      "tsk-17",
+      "justice-bureau-term",
+      "succession-war",
+      "emergency-law",
+    ],
     introducedCh: 408,
+  },
+  {
+    id: "emergency-law",
+    term: "Emergency Law (Article One)",
+    definition:
+      "Kakin statute independent of the succession contest, abbreviated the way Special Martial Law is: it covers a crisis threatening the monarchy's survival — 'in the event of inevitable attacks such as scientific weaponry, epidemic, riots, and natural disasters, where the crown and its next generation of heirs are all dead or otherwise face an impending death'. In that case the reigning king must immediately decree the names and priority of the next successors. Benjamin's endgame is built on triggering it: annihilate every heir including himself, then have Nasubi name Benjamin's own child first in line.",
+    category: "kakin",
+    relatedIds: ["special-martial-law", "succession-war", "tsk-17"],
+    introducedCh: 417,
   },
   {
     id: "flame-of-life",

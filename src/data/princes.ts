@@ -53,6 +53,10 @@ export const princes: Prince[] = [
         text: "Merge his Guardian Spirit Beast with his inheritance ability and persist past death as Kakin's watching 'god'.",
         revealCh: 413,
       },
+      {
+        text: "Annihilate or infect every remaining prince, trigger Article One of the Emergency Law, and have his own child named heir apparent — with Bohemian Rhapsody carrying his Nen down the bloodline forever.",
+        revealCh: 417,
+      },
     ],
     vulnerabilities: [
       {
@@ -146,6 +150,10 @@ export const princes: Prince[] = [
         ch: 416,
         text: "Sweeps Tier 1 personally on ten functional hours: kills Camilla's servants, takes Moswana's decade-nursed curse in the eyes, counters with a silent TSK-17 release standing over Camilla, then breaches Room 1004, seizes Danjin as proof of Kurapika's teaching, and blasts Tserriednich mid-sentence.",
       },
+      {
+        ch: 417,
+        text: "Proclaims Tserriednich's execution over the body, doses Tubeppa and Tyson from his boot, gets Balsamilco back (the Ninth Prince's soul moved on), arrests both mafia bosses, and lays out the endgame: total annihilation of the heirs, Article One of the Emergency Law, his child named successor, and his own early death as a countercurse — with Bohemian Rhapsody as the eternal mechanism.",
+      },
     ],
     mysteryIds: ["my-nasubi-intent"],
   },
@@ -238,6 +246,11 @@ export const princes: Prince[] = [
         risk: "critical",
         why: "Silently infected with the bioweapon killing Benjamin himself — an attack routed precisely around her revival's trigger.",
       },
+      {
+        ch: 417,
+        risk: "critical",
+        why: "Benjamin's private estimate gives her thirteen to nineteen hours; her countermeasure is now a medical requisition list, not a weapon.",
+      },
     ],
     assessment: {
       political:
@@ -272,6 +285,10 @@ export const princes: Prince[] = [
       {
         ch: 416,
         text: "The decade-long Moswana gambit lands a half-day curse on Benjamin — at the price of Fukataki, a second servant, and Moswana herself. His reply: a silent TSK-17 release as he stood over her, and the first riddle her revival cannot answer.",
+      },
+      {
+        ch: 417,
+        text: "She converts rage into logistics: the Surgeon General summoned mid-martial-law, the Central Medical Department requisitioned, and a demand to establish whether the weapon is bacterial or viral — the parameters her survival plan needs.",
       },
     ],
   },
@@ -332,6 +349,11 @@ export const princes: Prince[] = [
         risk: "high",
         why: "Slipped to Tier 2 through Onior's residence just before martial law; Benjamin's reconnaissance squad is dedicated to finding him.",
       },
+      {
+        ch: 417,
+        risk: "critical",
+        why: "Named a priority target of Benjamin's annihilation plan: his escape route is mapped, his patron is under arrest with his location as the only bargaining chip, and two squadrons' recon and skirmish units hunt him on fifteen-minute report cycles.",
+      },
     ],
     assessment: {
       political:
@@ -355,6 +377,10 @@ export const princes: Prince[] = [
       {
         ch: 410,
         text: "Vanishes to Tier 2 via Onior's residence minutes before martial law; whereabouts unconfirmed.",
+      },
+      {
+        ch: 417,
+        text: "The military maps his route — the connecting bridge off Onior's corridor to Tier 2 — and arrests his patron, whose only chip is Zhang Lei's location. His coin in Coventoba's pocket has already forced one confession at '10'.",
       },
     ],
   },
@@ -433,6 +459,11 @@ export const princes: Prince[] = [
         risk: "critical",
         why: "Took Benjamin's blaster shot while holding Zetsu — survival now rides entirely on an unfinished, still-practiced ability and a staged death.",
       },
+      {
+        ch: 417,
+        risk: "critical",
+        why: "Publicly executed: the body absorbed the blast, the stomping, and the proclamation with no visible counter. Either the ruse is running perfectly or it failed at the first hurdle — the archive tracks him as presumed dead pending proof either way.",
+      },
     ],
     assessment: {
       political:
@@ -475,6 +506,10 @@ export const princes: Prince[] = [
       {
         ch: 416,
         text: "Hands Salkov the feign-death protocol — coffin at once, report exactly what you saw, never speak of the ability — then takes Benjamin's blast mid-sentence, in Zetsu, exactly as staged.",
+      },
+      {
+        ch: 417,
+        text: "Declared executed over his own mangled body, with leniency dangled for anyone testifying to his crimes. Benjamin notes the absence of any counteractive response; Salkov, ordered to report exactly what he saw, exits doubting reality itself — with Theta's Nen-visible scar as his one test.",
       },
     ],
     mysteryIds: ["my-tserriednich-god-beast"],
@@ -549,6 +584,11 @@ export const princes: Prince[] = [
         risk: "high",
         why: "Martial law suspends the truce's usefulness: Benjamin's purge treats every non-aligned prince's household as suspect.",
       },
+      {
+        ch: 417,
+        risk: "critical",
+        why: "Silently infected with TSK-17 at the Grand Hall audience — dying on roughly Camilla's clock without knowing it, confined to quarters, her suspicion aimed at the right man but the wrong mechanism.",
+      },
     ],
     assessment: {
       political:
@@ -573,6 +613,10 @@ export const princes: Prince[] = [
       {
         ch: 415,
         text: "Rihan's martial-law lockdown puts a pistol to her researcher's head; she shields the science staff, reads the declaration as either a trump card burned early or a premeditated cull of the senior princes, and goes to Room 1001 with the tests still running.",
+      },
+      {
+        ch: 417,
+        text: "At the Grand Hall audience she interrogates the cover story, works out that a monarchy's fall just crowns a military regime — a scenario needing Benjamin and Camilla both gone — and invites herself onto his 'safety checks'. She leaves the room infected and unaware.",
       },
     ],
   },
@@ -616,6 +660,11 @@ export const princes: Prince[] = [
         risk: "moderate",
         why: "Soft target by temperament, low priority by rank.",
       },
+      {
+        ch: 417,
+        risk: "critical",
+        why: "Silently infected with TSK-17 at the Grand Hall audience, on roughly Camilla's clock. Benjamin's ledger entry is almost apologetic — respectable, but not King material — and she suspects nothing.",
+      },
     ],
     assessment: {
       political:
@@ -630,6 +679,10 @@ export const princes: Prince[] = [
         text: "Hires Izunavi — one of Kurapika's five planted Hunters — off the pre-voyage bodyguard listings.",
       },
       { ch: 366, text: "Beast's influence over readers of her book hinted." },
+      {
+        ch: 417,
+        text: "Charms her way through the Grand Hall audience — greeting her jailer with hearts and gallows humor — while his boot doses her with TSK-17. She leaves flattering him as the natural king, infected and unaware.",
+      },
     ],
   },
   {
@@ -704,6 +757,11 @@ export const princes: Prince[] = [
         risk: "critical",
         why: "Missing during the purge with Rice, household framed for treason via Kanjidol's manufactured arrest — a fugitive prince is exactly what martial law wants to shoot.",
       },
+      {
+        ch: 417,
+        risk: "critical",
+        why: "Confirmed escaped before the declaration, with a Hunter's assault on Kanjidol as the abetting act — and now hunted by two squadrons' recon and skirmish units, his Cha-R patron under arrest.",
+      },
     ],
     assessment: {
       political: "Written off by the court, which is partly the point.",
@@ -738,6 +796,10 @@ export const princes: Prince[] = [
       {
         ch: 415,
         text: "Gone: when the martial-law lockdown reaches Room 1007, the prince and Rice are already missing — Satobi's guess is the Cha-R boss.",
+      },
+      {
+        ch: 417,
+        text: "The military files it plainly: he escaped before the order issued, abetted by the Hunter who assaulted Kanjidol. Benjamin turns that assault into a warrant to squeeze the Association and re-tasks the Third and Seventh Squadrons onto him and Zhang Lei.",
       },
     ],
   },
@@ -868,6 +930,11 @@ export const princes: Prince[] = [
         risk: "critical",
         why: "His original body is dead, but his soul remains active inside Balsamilco and he is still contest-eligible. His survival now depends on a borrowed body inside enemy territory.",
       },
+      {
+        ch: 417,
+        risk: "high",
+        why: "He got out of the enemy's command loop before the sweep closed on it — Balsamilco woke up alone and himself. But the host is unknown even to the reader, and the military now hunts feather-marked hands ship-wide.",
+      },
     ],
     assessment: {
       political:
@@ -904,6 +971,10 @@ export const princes: Prince[] = [
       {
         ch: 413,
         text: "His Flame of Life stays unlit; Nasubi confirms he is still fighting. Fires an arrow at Benjamin from Room 1009.",
+      },
+      {
+        ch: 417,
+        text: "Vacates Balsamilco before the sweep reaches him: the captain is found alone, unharmed, and verifiably himself. Benjamin concludes the prince can transfer his soul onward and did so from inside Balsa's body — and puts Balsamilco himself on the feather-mark manhunt.",
       },
     ],
     mysteryIds: ["my-halkenburg-arrow-mechanics"],
@@ -1043,6 +1114,11 @@ export const princes: Prince[] = [
         risk: "critical",
         why: "An enemy Nen mark is draining her toward death through her own ability; Benjamin gives her ten days. Basho's talisman and enforced rest are the only brakes.",
       },
+      {
+        ch: 417,
+        risk: "critical",
+        why: "Marked for euthanasia: Benjamin reads her as already dead, spirit-haunted past saving, and plans a painless killing dressed up as suicide by poison over a TSK-17 infection.",
+      },
     ],
     assessment: {
       political: "None; her line's survival is now her whole constituency.",
@@ -1072,6 +1148,10 @@ export const princes: Prince[] = [
       {
         ch: 415,
         text: "Room 1011 is sealed as an absent prince's quarters; Seiko orders that Fugetsu not leave the Ministry of Justice no matter what happens.",
+      },
+      {
+        ch: 417,
+        text: "Benjamin's ledger writes her off with something close to pity: the spirits swarming her after Kacho's death were real and no act, so he schedules a painless killing behind a fabricated TSK-despair suicide — and wishes her an ordinary family next life.",
       },
     ],
     mysteryIds: ["my-fugetsu-door-limits"],
@@ -1305,6 +1385,11 @@ export const princes: Prince[] = [
         risk: "high",
         why: "Special Martial Law doubles as a ship-wide manhunt: if the real Woble is found — or proven ashore — the deferrals end and Oito's line goes with them.",
       },
+      {
+        ch: 417,
+        risk: "high",
+        why: "Benjamin sets the stakes explicitly: proof the real Woble is off the ship buys exile for Oito's whole clan; the prince found aboard means death for both mothers, both children, and every relative.",
+      },
     ],
     assessment: {
       political:
@@ -1347,6 +1432,10 @@ export const princes: Prince[] = [
       {
         ch: 415,
         text: "Benjamin's 'clemency': the substitute is ruled legally blameless and Oito's indictment deferred as prospective queen mother — both confined to the master bedroom while the ship is searched for the real prince.",
+      },
+      {
+        ch: 417,
+        text: "Benjamin reconstructs the swap almost exactly — the sister with an infant of her own, the price families accept for a baby's life — and rates Oito 99% truthful about the ineligibility. His terms: exile if the real Woble is proven off-ship, annihilation of both mothers, both children, and the whole clan if she is found aboard.",
       },
     ],
     mysteryIds: ["my-woble-beast-ability", "my-silent-majority-user"],

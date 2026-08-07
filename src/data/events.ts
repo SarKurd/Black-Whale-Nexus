@@ -4583,4 +4583,167 @@ export const events: StoryEvent[] = [
     ],
     confidence: "canonical",
   },
+  {
+    id: "ev-417-private-execution",
+    title: "A private execution, proclaimed",
+    summary:
+      "The blast lands and Benjamin keeps going — boot to the fallen prince's abdomen, then his face, a taunt about how dangerous Zetsu is when it takes the Guardian Spirit Beast with it, and a proclamation to the kneeling household: the execution was his own doing, Tserriednich's crimes go to trial, and anyone who testifies to them buys leniency. Every witness is ordered to report exactly what they saw — the very words Tserriednich used for his ruse — and Salkov, hearing the echo, stops trusting his own senses: is everyone seeing the same illusion? His anchor becomes Theta's scar, visible only to Nen users. Benjamin sends him and Danjin to the Central Justice Bureau for detention and orders the courtrooms on the Ministry of Justice's seventh floor secured as the military's unified headquarters.",
+    chapter: 417,
+    day: 12,
+    kind: "decision",
+    locationId: "tserriednich-quarters",
+    participantIds: ["benjamin", "tserriednich", "salkov", "danjin"],
+    witnessIds: ["theta"],
+    storylineIds: [
+      "tserriednich-nen",
+      "special-martial-law",
+      "benjamin-military",
+    ],
+    consequences: [
+      "Tserriednich is publicly dead — by lynching, per Benjamin's own word — with no death confirmed on-page and the feign-death protocol in motion",
+      "Salkov and Danjin go into Justice Bureau custody; the witness testimony Benjamin demands is exactly what the ruse counts on",
+    ],
+    evidence: [
+      {
+        chapter: 417,
+        note: "Stomping, proclamation, and detention orders are on-page; Salkov's illusion spiral and the Theta-scar test are his internal monologue.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "ev-417-first-division-report",
+    title: "The status board after the declaration",
+    summary:
+      "Benjamin's soldiers tally the haul: two princes in custody — the Fifth and Sixth — with Zhang Lei and Luzurus escaped before the declaration, the latter with help from a Hunter who assaulted Kanjidol. Benjamin turns the assault into leverage: once the Ministry of Justice is secured, a special tribunal will issue a warrant for the Hunter, extradition demanded, the search for the missing princes made the Association's price. Coventoba has confessed his coin-bought cooperation with Zhang Lei and asked to be locked up — Benjamin reads the self-awareness as proof the coercion is only partial. And in Room 1009 the sweep found Balsamilco alone, unconscious in a chair, unharmed; awake, he passes Benjamin's rehearsed verification questions completely. Benjamin's private conclusion: the arrow doesn't just swap — Halkenburg has some way to transfer his soul onward, and he activated it from inside Balsa's body.",
+    chapter: 417,
+    day: 12,
+    kind: "investigation",
+    locationId: "royal-quarters",
+    participantIds: ["benjamin", "balsamilco", "coventoba"],
+    storylineIds: [
+      "special-martial-law",
+      "halkenburg-movement",
+      "benjamin-military",
+    ],
+    consequences: [
+      "Balsamilco is himself again and cleared; both he and Coventoba sit in the dining hall under voluntary confinement",
+      "Halkenburg's soul is loose in an unknown host; a Hunter arrest warrant becomes Benjamin's lever on the Association",
+    ],
+    evidence: [
+      {
+        chapter: 417,
+        note: "Soldier reports and the verification are on-page; the soul-transfer reading is Benjamin's internal monologue.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "ev-417-room1001-audience",
+    title: "An audience with the boot's valve open",
+    summary:
+      "Tubeppa and Tyson wait in Grand Hall 1001, and Benjamin gives them the courtesy version: a traitor in the military — one of his own private guard, tied to Camilla — stole part of a scientific weapon that cannot function alone, hence the martial law, hence the confinement to the princes' quarters and VVIP area, hence the 'formality' of safety inspections each prince may attend. He even shares Kurapika's hypothesis that multiple surviving princes might cost the nation its guardian spirits yet leave everyone alive — a possibility he says the princes should weigh together. While they listen, his boot vents TSK-17 into the room. Tyson flatters him; Tubeppa runs the numbers underneath: a collapsed monarchy simply becomes a military regime, and that scenario only pays off once Benjamin and Camilla are both off the board — so what is the theater for?",
+    chapter: 417,
+    day: 12,
+    kind: "assassination-attempt",
+    locationId: "grand-hall-1001",
+    participantIds: ["benjamin", "tubeppa", "tyson"],
+    storylineIds: ["special-martial-law", "succession-contest"],
+    consequences: [
+      "Tubeppa and Tyson are infected without knowing it — Benjamin expects them to die around Camilla's hour",
+      "Tubeppa commits to accompanying the 'safety checks', trusting nothing in the cover story",
+    ],
+    evidence: [
+      {
+        chapter: 417,
+        note: "The audience and the FSHHH boot release are on-page; a flashback shows Benjamin loading a fresh TSK-17 vial into the boot mechanism.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "ev-417-gyo-briefing",
+    title: "'Use Gyo' — the First Squadron sees the clocks",
+    summary:
+      "Balsamilco tries once more to keep Benjamin out of the sweep line; Benjamin overrules him — analyzing enemy abilities is the job, risk is a soldier's duty, his included — and orders him and Coventoba to use Gyo. They see the despair-marks in his eyes, and he lays it out plainly: a curse from Camilla's Have-Not guards, a TSK-17 infection with roughly half a day left, and possibly Beyond's curse on Furykov pointed at him too — 'exciting, isn't it?' A call-and-response rally closes the ranks. Assignments follow: Balsamilco hunts whoever the Ninth Prince's soul now wears, the feather mark on the back of a hand the definitive proof; Coventoba keeps carrying the coin frozen at '10' — Zhang Lei has nowhere to spend it.",
+    chapter: 417,
+    day: 12,
+    kind: "nen-reveal",
+    locationId: "tier-3",
+    participantIds: ["benjamin", "balsamilco", "coventoba"],
+    storylineIds: [
+      "benjamin-military",
+      "halkenburg-movement",
+      "special-martial-law",
+    ],
+    consequences: [
+      "Benjamin's inner circle now knows all of his death-clocks",
+      "The feather-mark manhunt for Halkenburg's host begins under Balsamilco",
+    ],
+    evidence: [
+      {
+        chapter: 417,
+        note: "The Gyo order, the eye-marks, and both assignments are on-page.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "ev-417-mafia-arrests",
+    title: "Cornered from the top, crushed at the bottom",
+    summary:
+      "Soldiers interrupt Onior's meal with rifles leveled. Benjamin's logic is simple: Zhang Lei's trajectory makes Onior's help obvious — a felony — so both the Xi-Yu and Cha-R bosses are arrested on treason and sedition and carted toward the Ministry of Justice, with word passed to Onior that his only bargaining chip is the Third Prince's location. Chiyamasi reports the trail: Zhang Lei crossed the connecting bridge from the corridor of Onior's quarters to Tier 2 right before the declaration, route being verified, updates every fifteen minutes. The Third and Seventh Squadrons' recon and skirmish units are re-tasked entirely onto Zhang Lei and Luzurus.",
+    chapter: 417,
+    day: 12,
+    kind: "movement",
+    locationId: "onior-residence",
+    participantIds: ["benjamin", "onior", "chiyamasi"],
+    storylineIds: ["mafia-war", "special-martial-law", "benjamin-military"],
+    consequences: [
+      "Both patron families are ordered decapitated at a stroke — the three-family order now answers to martial law",
+      "Zhang Lei's head start shrinks to a fifteen-minute reporting cycle",
+    ],
+    evidence: [
+      {
+        chapter: 417,
+        note: "Onior's arrest is drawn mid-meal; the Cha-R boss is named in the same order but not shown, so only Onior is recorded as appearing.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "ev-417-emergency-law",
+    title: "Article One, and a god's itinerary",
+    summary:
+      "Walking his secured Tier 3, Benjamin unrolls the endgame in monologue. The bad ending is multiple princes alive at the continental port — but all princes dead is not one, because Article One of the Emergency Law covers exactly this: when the crown's whole next generation faces inevitable death, the king must immediately name the next successors. So: before he dies, every remaining prince is assassinated or infected, the annihilation becomes unavoidable, and Nasubi is compelled to put Benjamin's child first in line — with Bohemian Rhapsody carrying Benjamin's own Nen down the bloodline as its permanent guardian. Dying first is even tactically sound: a countercurse beats Beyond's curse if it exists. The ledger gets personal: Camilla — thirteen to nineteen hours, already screaming through Secret Window for the Surgeon General, the Central Medical Department, and a bacterial-or-viral verdict; Fugetsu — already dead in his eyes, haunted by real spirits, to be euthanized painlessly behind an official suicide story; Oito — her baby swap deduced almost exactly, answered with exile if the real Woble can be proven off-ship and clan-wide death if she cannot; and Mother — who used Furykov's loyalty and Benjamin's own patriotism to script this suicide purge — will be made to choose whose life she begs for.",
+    chapter: 417,
+    day: 12,
+    kind: "decision",
+    locationId: "tier-3",
+    participantIds: ["benjamin", "camilla"],
+    storylineIds: [
+      "succession-contest",
+      "benjamin-military",
+      "kurapika-woble",
+      "beyond-netero",
+    ],
+    consequences: [
+      "The contest's endgame is redefined: Benjamin no longer needs to outlive anyone",
+      "Oito's household has one path to survival — proof that the real Woble is not aboard",
+      "Unma's scheme is fully deduced by its intended victim",
+    ],
+    evidence: [
+      {
+        chapter: 417,
+        note: "Article One is read out in the monologue; the Bohemian Rhapsody exposition panel carries the mechanics; Camilla's demands are shown remotely.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
 ];

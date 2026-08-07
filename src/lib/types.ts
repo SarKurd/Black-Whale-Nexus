@@ -16,7 +16,7 @@
 export type Id = string;
 
 export const ARC_START = 340;
-export const ARC_END = 416;
+export const ARC_END = 417;
 export const PRE_ARC = 339;
 
 /** How certain we are about a claim. Rendered as a visible indicator. */

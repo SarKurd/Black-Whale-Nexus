@@ -239,6 +239,36 @@ prod server. The user often has their own dev server on 3000; don't fight it.
   per his own monologue: 12 h from symptom onset to death, last 2 h comatose →
   ten functional hours from ≈2:15 p.m., day 12.
 
+- **Chapter 417 rulings (ingested from the leaked scan + VoraciousDrake's
+  translation — PROVISIONAL, re-review when the official MANGA Plus release
+  lands 2026-08-09):** `ARC_END` is now **417**. Title "Emergency". Hunterpedia
+  had no Chapter 417 page at ingest time, so the usual wiki cross-check was
+  unavailable — VD's text was the source of truth (his page notes carry the
+  Central Justice Bureau vs. Ministry of Justice terminology problem, which the
+  chapters themselves leave contradictory; the archive keeps both names as the
+  chapter uses them and says so in the notes).
+  - **Tserriednich gets NO death record** and status `presumed-dead`: Benjamin
+    stomps the body and proclaims an execution, but the ch-416 feign-death
+    protocol is running and nothing is confirmed. Benjamin himself notes no
+    counteractive ability fired. Do not add a `DeathRecord`.
+  - **Benjamin's beast ability is named**: `ab-beast-benjamin` renamed to
+    **Bohemian Rhapsody ('The Wandering People')** — post-mortem merger with his
+    Nen, possession of a natural blood relative, alternating host choice, and
+    loss of succession eligibility on the Kacho precedent. The English name
+    follows VD (the kanji 流浪の民 is also the Japanese title of Schumann's
+    *Zigeunerleben*).
+  - **Balsamilco is restored to `alive`** and drops the `possessed` tag:
+    Halkenburg's soul left him for an unknown host, so Halkenburg's own
+    `locationHistory` moves to `black-whale` (whereabouts unknown). The feather
+    mark on the back of a hand is the in-universe manhunt criterion.
+  - **Tubeppa and Tyson are `detained` and silently infected** with TSK-17 at
+    the Grand Hall audience; neither knows. Camilla's window per Benjamin is
+    13–19 hours (not the ch-416 "half a day").
+  - **The Cha-R boss is named in the arrest order but not drawn** — Brocco Li
+    stays out of `appearingCharacterIds` and keeps his `alive` status; only
+    Onior's arrest is on-page. Same drawn-on-page test as always.
+  - Emergency Law (Article One) is a new glossary term, `emergency-law`.
+
 ## Registry completeness
 
 Every named character within the dataset's chapter coverage belongs in the

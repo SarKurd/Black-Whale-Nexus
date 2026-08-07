@@ -211,6 +211,11 @@ export const locations: ShipLocation[] = [
         value: "heil-ly",
         note: "One family per bottom tier: Tier 3 answers to the Heil-Ly.",
       },
+      {
+        ch: 417,
+        value: "kakin-military",
+        note: "Swept area by area and reported fully secured to the First Prince walking it in person.",
+      },
     ],
     threatHistory: [
       { ch: 362, value: "tense" },
@@ -223,6 +228,11 @@ export const locations: ShipLocation[] = [
         ch: 409,
         value: "lethal",
         note: "Special Martial Law: civilians kneel against walls under shoot-on-sight orders.",
+      },
+      {
+        ch: 417,
+        value: "lethal",
+        note: "Declared fully secured — 'all of Tier 3 is now under our control' — and walked in person by Benjamin's First Squadron, with the Xi-Yu boss arrested along the way.",
       },
     ],
     connectedIds: [
@@ -752,6 +762,11 @@ export const locations: ShipLocation[] = [
         value: "contested",
         note: "Occupied as the martial-law command center.",
       },
+      {
+        ch: 417,
+        value: "contested",
+        note: "Formalized as the military's unified headquarters — the seventh floor's courtrooms, secured before Benjamin's arrival, with detainees and arrested mafia bosses funnelled in.",
+      },
     ],
     connectedIds: ["tier-2", "tier-1"],
     introducedCh: 381,
@@ -888,13 +903,18 @@ export const locations: ShipLocation[] = [
     parentId: "royal-quarters",
     canonicity: "canonical",
     description:
-      "Benjamin's vacated suite, redesignated under Special Martial Law as the 'Grand Hall' where the surviving princes are to be assembled by 2:30 p.m. on day twelve. A gathering framed as protective custody, functioning as a kill box.",
+      "Benjamin's vacated suite, redesignated under Special Martial Law as the 'Grand Hall' where the surviving princes are to be assembled by 2:30 p.m. on day twelve. A gathering framed as protective custody, functioning as a kill box — and it works exactly as designed: only two princes ever arrive, and both leave infected.",
     controlHistory: [{ ch: 413, value: "benjamin-camp" }],
     threatHistory: [
       {
         ch: 413,
         value: "lethal",
         note: "The assembly point of Benjamin's endgame purge.",
+      },
+      {
+        ch: 417,
+        value: "lethal",
+        note: "Escorts cleared from the room on Benjamin's order, then TSK-17 vented from his boot while he briefed Tubeppa and Tyson alone.",
       },
     ],
     connectedIds: ["royal-quarters", "benjamin-quarters", "tier-1"],

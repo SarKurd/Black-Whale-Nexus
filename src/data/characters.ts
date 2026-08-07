@@ -28,6 +28,10 @@ export const characters: Character[] = [
         revealCh: 416,
         text: "Leads the purge personally on ten functional hours — twelve from symptom onset to death, the last two comatose. The Room 302 raid costs him his eyes' clarity: Moswana dies right in front of him, and her decade-nursed Yomotsu Hegui sears despair-faced marks onto his irises — a second clock Camilla rates at half a day. His answer is colder arithmetic — a silent TSK-17 release as he stood over her, and a riddle about whom her cat could crush if disease, or a dead man, is what kills her. Room 1004 follows: Danjin seized as proof of Kurapika's teaching, and Tserriednich blasted across his bedroom mid-sentence.",
       },
+      {
+        revealCh: 417,
+        text: "The full endgame surfaces: kill or infect every remaining prince before his own clocks run out, make the annihilation of the heirs inevitable, and force Article One of the Emergency Law — Nasubi must name new successors, starting with Benjamin's own child, while Bohemian Rhapsody carries Benjamin's Nen down the bloodline forever. Dying first is part of the design: a countercurse against whatever Beyond may have pointed at him. Along the way he stomps and proclaims Tserriednich's 'execution', doses Tubeppa and Tyson from his boot mid-briefing, has his inner circle read his cursed eyes through Gyo, deduces both the Woble swap and his mother's whole scheme — and grants Oito the war's strangest clemency terms.",
+      },
     ],
     monogram: "P1",
     factionIds: ["benjamin-camp", "royal-family", "kakin-military"],
@@ -69,6 +73,11 @@ export const characters: Character[] = [
         locationId: "tserriednich-quarters",
         note: "Sweeps Tier 1 in person with Furykov and Butch: Camilla's Room 302 confinement first, then Room 1004.",
       },
+      {
+        ch: 417,
+        locationId: "tier-3",
+        note: "Receives the two detained princes in Grand Hall 1001, then walks his secured Tier 3 while the unified headquarters is prepared in the Ministry of Justice's seventh-floor courtrooms.",
+      },
     ],
     objectives: [
       {
@@ -91,6 +100,18 @@ export const characters: Character[] = [
         text: "Merge his Guardian Spirit Beast with his ability and ascend past kingship — rule Kakin as a god after death.",
         kind: "hidden",
         revealCh: 413,
+        status: "active",
+      },
+      {
+        text: "Assassinate or infect every remaining prince, trigger Article One of the Emergency Law, and have Nasubi name his own child heir apparent — with his own early death doubling as a countercurse against Beyond's.",
+        kind: "hidden",
+        revealCh: 417,
+        status: "active",
+      },
+      {
+        text: "Confront his mother with the choice her scheme earned: beg for her own life, or for 'little brother's'.",
+        kind: "hidden",
+        revealCh: 417,
         status: "active",
       },
     ],
@@ -116,10 +137,14 @@ export const characters: Character[] = [
         text: "He silently released TSK-17 from his boot, standing over Camilla while she listened to his 'hypothetical' about an incurable disease.",
         revealCh: 416,
       },
+      {
+        text: "He reloaded the boot mechanism with a fresh TSK-17 vial and infected Tubeppa and Tyson during the Grand Hall 1001 briefing — they should die around the same hour as Camilla.",
+        revealCh: 417,
+      },
     ],
     chapterAppearances: [
       348, 349, 358, 359, 361, 363, 364, 368, 375, 389, 392, 402, 403, 404, 410,
-      413, 416,
+      413, 416, 417,
     ],
     tags: ["prince", "nen-user", "military"],
   },
@@ -163,6 +188,11 @@ export const characters: Character[] = [
         status: "detained",
         note: "Still confined — servants shot dead around her, Moswana spent, and Benjamin's boot-released TSK-17 in her lungs. Her counter: metabolic near-hibernation, and a plan to outlive him.",
       },
+      {
+        ch: 417,
+        status: "detained",
+        note: "Benjamin's private estimate gives her thirteen to nineteen hours. She fights it as procurement: summon the Surgeon General mid-martial-law, requisition the Central Medical Department, and have scientists determine whether the weapon is bacterial or viral.",
+      },
     ],
     locationHistory: [
       { ch: 359, locationId: "camilla-quarters" },
@@ -193,7 +223,7 @@ export const characters: Character[] = [
       },
     ],
     chapterAppearances: [
-      349, 358, 363, 366, 372, 373, 376, 389, 403, 404, 411, 415, 416,
+      349, 358, 363, 366, 372, 373, 376, 389, 403, 404, 411, 415, 416, 417,
     ],
     tags: ["prince", "nen-user", "assassin"],
   },
@@ -222,6 +252,12 @@ export const characters: Character[] = [
         ch: 410,
         locationId: "tier-2",
         note: "Slipped to Tier 2 through Onior's residence minutes before martial law; Benjamin guesses the Justice Bureau or a mafia rendezvous, but his refuge is unconfirmed.",
+      },
+      {
+        ch: 417,
+        revealCh: 417,
+        locationId: "tier-2",
+        note: "The military confirms the route — through the connecting bridge off Onior's corridor to Tier 2, minutes before the declaration — and re-tasks two squadrons' recon and skirmish units onto him. His current refuge is still unknown.",
       },
     ],
     objectives: [
@@ -262,6 +298,10 @@ export const characters: Character[] = [
         revealCh: 416,
         text: "He meets Benjamin's raid with a script already written: his coming death will be a ruse, and Salkov — whose gun he borrowed and whose name he had to ask — holds the protocol: coffin the body at once, report exactly what was seen, tell no one about the ability. He stands in closed-eye Zetsu through sirens and a kicked-in door, offers his brother a spar, and is blasted across the bedroom mid-sentence, condition unrevealed.",
       },
+      {
+        revealCh: 417,
+        text: "The body takes everything Benjamin gives it — the blast, the stomping, a public proclamation of execution — without a flicker. Even Benjamin registers the oddity: no counteractive ability fired; the new trick was apparently still in training. Whether the mangled corpse the First Prince gloats over is the ruse working exactly as scripted, or the script failing, is the question Salkov now doubts his own senses over.",
+      },
     ],
     monogram: "P4",
     factionIds: ["tserriednich-camp", "royal-family"],
@@ -275,6 +315,11 @@ export const characters: Character[] = [
         ch: 416,
         status: "alive",
         note: "Shot across his Room 1004 bedroom by Benjamin's blaster while holding Zetsu — the staged opening of his own feign-death plan; his true condition is unrevealed.",
+      },
+      {
+        ch: 417,
+        status: "presumed-dead",
+        note: "Publicly executed: body mangled, stomped, and proclaimed dead by Benjamin before the household. No death record — the feign-death protocol he handed Salkov is in motion, and his true condition remains unrevealed.",
       },
     ],
     locationHistory: [{ ch: 359, locationId: "tserriednich-quarters" }],
@@ -313,7 +358,7 @@ export const characters: Character[] = [
     ],
     chapterAppearances: [
       345, 348, 349, 358, 359, 362, 366, 368, 375, 376, 385, 387, 394, 402, 404,
-      413, 415, 416,
+      413, 415, 416, 417,
     ],
     tags: ["prince", "nen-user", "killer"],
   },
@@ -322,10 +367,23 @@ export const characters: Character[] = [
     name: "Tubeppa Hui Guo Rou",
     role: "Fifth Prince of Kakin",
     bio: "A severe, scientifically minded prince backed by chemical and industrial interests. Approaches the war like an engineering problem: assess, isolate, apply pressure. Quietly probes for alliances with capable outsiders.",
+    bioReveals: [
+      {
+        revealCh: 417,
+        text: "Detained under martial law and granted an 'audience': Benjamin's cover story, Kurapika's everyone-survives hypothesis — and, invisibly, TSK-17 from the First Prince's boot. She buys none of the theater, works out that a fallen monarchy just means a military regime with Benjamin closest to the throne once he and Camilla are off the board, and resolves to shadow every 'safety check' he runs.",
+      },
+    ],
     monogram: "P5",
     factionIds: ["tubeppa-camp", "royal-family"],
     introducedCh: 349,
-    statusHistory: [{ ch: 349, status: "alive" }],
+    statusHistory: [
+      { ch: 349, status: "alive" },
+      {
+        ch: 417,
+        status: "detained",
+        note: "Confined to the princes' quarters under martial law — and silently infected with TSK-17 at the Grand Hall audience. Benjamin expects her to die around the same hour as Camilla; she does not know.",
+      },
+    ],
     locationHistory: [
       {
         ch: 359,
@@ -346,7 +404,7 @@ export const characters: Character[] = [
         revealCh: 370,
       },
     ],
-    chapterAppearances: [349, 358, 366, 370, 415],
+    chapterAppearances: [349, 358, 366, 370, 415, 417],
     tags: ["prince"],
     incomplete: true,
   },
@@ -355,10 +413,23 @@ export const characters: Character[] = [
     name: "Tyson Hui Guo Rou",
     role: "Sixth Prince of Kakin",
     bio: "A flamboyant romantic who publishes a personal gospel of love and joy. Appears the least martial of the elder princes; her guards suspect her naivety is at least partly sincere.",
+    bioReveals: [
+      {
+        revealCh: 417,
+        text: "Greets her jailer with hearts: at the Grand Hall audience she flatters Benjamin as the natural king, jokes about getting back to the mutual killing, and takes the confinement in stride — while his boot silently doses her with TSK-17. Benjamin's private verdict is almost fond: respectable in her way, but not King material.",
+      },
+    ],
     monogram: "P6",
     factionIds: ["tyson-camp", "royal-family"],
     introducedCh: 349,
-    statusHistory: [{ ch: 349, status: "alive" }],
+    statusHistory: [
+      { ch: 349, status: "alive" },
+      {
+        ch: 417,
+        status: "detained",
+        note: "Confined to the princes' quarters under martial law — and silently infected with TSK-17 at the Grand Hall audience, on roughly Camilla's clock. She suspects nothing.",
+      },
+    ],
     locationHistory: [
       {
         ch: 359,
@@ -372,7 +443,7 @@ export const characters: Character[] = [
         note: "Her suite, first drawn under its number during the retinue roll-call.",
       },
     ],
-    chapterAppearances: [349, 358, 366, 370, 415],
+    chapterAppearances: [349, 358, 366, 370, 415, 417],
     tags: ["prince"],
     incomplete: true,
   },
@@ -499,6 +570,11 @@ export const characters: Character[] = [
         status: "soul-active",
         note: "His original body is dead, but his soul remains active inside Balsamilco. King Nasubi confirms that Halkenburg is still a Succession Contest participant.",
       },
+      {
+        ch: 417,
+        status: "soul-active",
+        note: "Balsamilco woke up as himself, alone in Room 1009 — the Ninth Prince's soul has moved on to an unknown host. Benjamin's read: he has some means of transferring his soul onward and fired it from inside Balsa's body. The feather mark on the back of a hand would identify the new vessel.",
+      },
     ],
     locationHistory: [
       { ch: 359, locationId: "halkenburg-quarters" },
@@ -518,6 +594,11 @@ export const characters: Character[] = [
         locationId: "halkenburg-quarters",
         revealCh: 413,
         note: "His soul operates from Room 1009 inside Balsamilco's body. Only Halkenburg's original corpse is interred in the burial chamber, where his Flame of Life remains unlit.",
+      },
+      {
+        ch: 417,
+        locationId: "black-whale",
+        note: "Whereabouts unknown: his soul left Balsamilco for an unidentified host. Balsamilco leads the military's feather-mark manhunt for whoever now carries him.",
       },
     ],
     objectives: [
@@ -622,6 +703,10 @@ export const characters: Character[] = [
         revealCh: 402,
         text: "The deterioration has a suspected cause: a Nen mark on her shoulder blade tricks her into believing her door works without limits, draining her toward a Zetsu-weak state that attracts low-level evil spirits. Basho's talisman and enforced rest hold the line while 'Kacho', Melody, and Kaiser hunt the mark's owner.",
       },
+      {
+        revealCh: 417,
+        text: "Benjamin's ledger already counts her dead. Reading the state she fell into after Kacho's death as unfeignable and the things swarming her as real spirits drawn to a despairing soul, he schedules a killing dressed as suicide — poison, despair over a TSK-17 infection — with a promise to make it painless and a wish that she be born into an ordinary family next time.",
+      },
     ],
     monogram: "P11",
     factionIds: ["fugetsu-camp", "royal-family"],
@@ -649,7 +734,7 @@ export const characters: Character[] = [
       },
     ],
     chapterAppearances: [
-      349, 358, 366, 370, 381, 383, 388, 398, 400, 402, 403, 404, 411,
+      349, 358, 366, 370, 381, 383, 388, 398, 400, 402, 403, 404, 411, 417,
     ],
     tags: ["prince", "nen-user"],
   },
@@ -836,6 +921,10 @@ export const characters: Character[] = [
         revealCh: 413,
         text: "She chose Halkenburg over Benjamin. Holding Beyond's curse over Furykov's head, she coerced him into poisoning her own firstborn with TSK-17 within 48 hours — the betrayal Benjamin deduces as he dies.",
       },
+      {
+        revealCh: 417,
+        text: "Benjamin reconstructs the whole design and reads it as elegant: she exploited Furykov's worst-case fear that Beyond's curse pointed at Benjamin, handed him the weapon, and counted on her firstborn's patriotism to turn martial law into a suicide mission that takes the other princes with him — clearing the board for a 'little brother' she can control. His answer, when he comes for her: choose whose life you beg for.",
+      },
     ],
     monogram: "UN",
     factionIds: ["royal-family"],
@@ -847,6 +936,11 @@ export const characters: Character[] = [
         text: "Backs Halkenburg for the throne; blackmailed Furykov into assassinating Benjamin.",
         revealCh: 413,
         knownBy: ["furykov", "benjamin", "halkenburg"],
+      },
+      {
+        text: "Per Benjamin's reconstruction, the poisoning was only the trigger: she engineered the martial-law purge itself, betting her firstborn's devotion would clear every rival heir on his way out.",
+        revealCh: 417,
+        knownBy: ["benjamin"],
       },
     ],
     chapterAppearances: [349, 358, 366, 403],
@@ -971,6 +1065,10 @@ export const characters: Character[] = [
       {
         revealCh: 412,
         text: "Her deepest play predates the voyage: she swapped her daughter for her sister's infant son before departure, then guarded the secret even from Kurapika by exploiting Kakin's gendered name pronunciations — answering his truth-chain honestly about a 'Woble' that changed gender mid-sentence. She understood from the start that her ignorance of the real Woble's location was her strongest shield.",
+      },
+      {
+        revealCh: 417,
+        text: "Benjamin has worked it out almost move for move — the sister nursing an infant of her own as the only ally she had, the families who will trade a baby's life for their relatives' wealth — and calls the swap low while admitting he understands it. He rates her 99% truthful about the ineligibility, and sets the price: prove the real Woble is off the ship and her whole clan is merely exiled; let the prince be found aboard and he kills both mothers, both children, and every relative.",
       },
     ],
     monogram: "OI",
@@ -1862,6 +1960,10 @@ export const characters: Character[] = [
         revealCh: 403,
         text: "Halkenburg shot first. The arrow swapped their minds; since then the body reporting 'mission progress' to Benjamin has been Halkenburg wearing Balsamilco. Balsamilco's own mind sleeps while the intruder holds priority.",
       },
+      {
+        revealCh: 417,
+        text: "Found alone in Room 1009, unconscious in a chair and unharmed — then awake, and himself: he answers Benjamin's rehearsed verification questions perfectly, meaning Halkenburg's soul has moved on. He requests his own incarceration anyway, sits with Coventoba in the dining hall, and is reinstated within the hour — assigned to hunt whoever now bears the feather mark of the Ninth Prince's ability.",
+      },
     ],
     monogram: "BM",
     factionIds: ["benjamin-camp", "kakin-military"],
@@ -1875,6 +1977,11 @@ export const characters: Character[] = [
         status: "possessed",
         revealCh: 403,
         note: "Body under Halkenburg's control; his own mind is suppressed while the possessor is awake. Took one TSK-17 vial with him into the courthouse.",
+      },
+      {
+        ch: 417,
+        status: "alive",
+        note: "Himself again: found unconscious and alone in Room 1009, cleared by Benjamin's rehearsed verification questions after Halkenburg's soul moved on. Requested incarceration, was refused, and now leads the feather-mark manhunt for the new host.",
       },
     ],
     locationHistory: [
@@ -1890,9 +1997,16 @@ export const characters: Character[] = [
         revealCh: 413,
         note: "Bound to a chair in Room 1009 while Halkenburg's soul fires from his body.",
       },
+      {
+        ch: 417,
+        locationId: "tier-3",
+        note: "Cleared and back at Benjamin's shoulder for the Tier 3 sweep, after a brief voluntary confinement in the dining hall with Coventoba.",
+      },
     ],
-    chapterAppearances: [358, 363, 364, 368, 375, 389, 402, 403, 404, 411, 413],
-    tags: ["guard", "strategist", "military", "possessed"],
+    chapterAppearances: [
+      358, 363, 364, 368, 375, 389, 402, 403, 404, 411, 413, 417,
+    ],
+    tags: ["guard", "strategist", "military"],
   },
   {
     id: "vincent",
@@ -1991,6 +2105,10 @@ export const characters: Character[] = [
         revealCh: 413,
         text: "Martial law put him in an impossible seat: ordered to secure a prince who had already vanished to Tier 2, he relayed what little Room 1003 knew while Benjamin's reconnaissance squads took over the hunt.",
       },
+      {
+        revealCh: 417,
+        text: "Ten days holding Zhang Lei's coin caught up with him: its compulsion made him volunteer his own complicity, and he asked to be locked up. Benjamin refused — awareness of the manipulation means it is only semi-coercive — debriefed him personally, and kept him in the ranks, coin and all: the number sits at '10', and Zhang Lei has nowhere left to spend it.",
+      },
     ],
     monogram: "CO",
     factionIds: ["benjamin-camp", "kakin-military"],
@@ -2005,8 +2123,19 @@ export const characters: Character[] = [
         locationId: "zhang-lei-quarters",
         note: "Posted into Zhang Lei's Room 1003 under the guard exchange.",
       },
+      {
+        ch: 417,
+        locationId: "tier-3",
+        note: "Briefly self-confined in the dining hall with Balsamilco, then retained at Benjamin's side for the Tier 3 sweep — still carrying the coin.",
+      },
     ],
-    chapterAppearances: [358, 363, 366, 374, 389, 402, 413, 415],
+    possessions: [
+      {
+        text: "One of Zhang Lei's coins, held past ten days — its face reads '10', and its compulsion already forced his confession",
+        revealCh: 417,
+      },
+    ],
+    chapterAppearances: [358, 363, 366, 374, 389, 402, 413, 415, 417],
     tags: ["guard", "spy", "military"],
     incomplete: true,
   },
@@ -2364,7 +2493,7 @@ export const characters: Character[] = [
           "His future-sight let him dodge a bullet he had already 'seen'. The attempt failed; his beast nicked her face as a first warning, promising she ceases to be human on the third lie.",
       },
     ],
-    chapterAppearances: [348, 362, 363, 366, 368, 376, 384, 385, 387],
+    chapterAppearances: [348, 362, 363, 366, 368, 376, 384, 385, 387, 417],
     tags: ["guard", "nen-user", "double-agent"],
   },
   {
@@ -2415,14 +2544,32 @@ export const characters: Character[] = [
         revealCh: 416,
         text: "Tserriednich hands him — a man whose name he had to ask — the feign-death protocol: report exactly what he witnesses, coffin the body at once so nobody sees it, and never speak of the ability. Kneeling through Benjamin's breach, Salkov works the logic himself: if the ability triggers on Zetsu it is already running, undetectable even to him from inside the same room — and he resolves to witness the confrontation and unravel the ability, for Theta's sake.",
       },
+      {
+        revealCh: 417,
+        text: "The confrontation breaks him instead: watching Benjamin desecrate the body and then demand witnesses report exactly what they saw — Tserriednich's own instruction, word for word — Salkov stops trusting reality. When did the illusion start? Is everyone in the room inside it? He claws back to one testable fact: Theta's scar is visible only to Nen users — if it is gone, the world he is seeing is fake. Benjamin ships him and Danjin to the Central Justice Bureau before he can check.",
+      },
     ],
     monogram: "SL",
     factionIds: ["tserriednich-camp"],
     servesPrinceId: "prince-tserriednich",
     introducedCh: 348,
     nenType: "unknown",
-    statusHistory: [{ ch: 348, status: "alive" }],
-    locationHistory: [{ ch: 362, locationId: "tserriednich-quarters" }],
+    statusHistory: [
+      { ch: 348, status: "alive" },
+      {
+        ch: 417,
+        status: "detained",
+        note: "Sent with Danjin to the Central Justice Bureau and held there on Benjamin's order — a prosecution witness to the 'execution', and the sole keeper of the coffin protocol.",
+      },
+    ],
+    locationHistory: [
+      { ch: 362, locationId: "tserriednich-quarters" },
+      {
+        ch: 417,
+        locationId: "justice-bureau-hq",
+        note: "Detained at the 'Central Justice Bureau' — whether that names the Bureau's own offices or the Ministry of Justice complex is a terminology knot the chapters leave unresolved.",
+      },
+    ],
     objectives: [
       {
         text: "Witness the Benjamin confrontation up close and unravel Tserriednich's ability — for Theta's sake.",
@@ -2430,8 +2577,16 @@ export const characters: Character[] = [
         revealCh: 416,
         status: "active",
       },
+      {
+        text: "Verify reality itself: check whether Theta's Nen-visible scar is still there.",
+        kind: "hidden",
+        revealCh: 417,
+        status: "active",
+      },
     ],
-    chapterAppearances: [348, 362, 385, 386, 387, 394, 402, 404, 413, 415, 416],
+    chapterAppearances: [
+      348, 362, 385, 386, 387, 394, 402, 404, 413, 415, 416, 417,
+    ],
     tags: ["guard", "nen-user"],
     incomplete: true,
   },
@@ -3794,18 +3949,36 @@ export const characters: Character[] = [
     name: "Onior Longbao",
     role: "Boss of the Xi-Yu family",
     bio: "The old-line boss of Xi-Yu, patron-bound to Prince Zhang Lei. Delegates the shooting war to Hinrigh while managing the family's obligations upward to the royal deck.",
+    bioReveals: [
+      {
+        revealCh: 417,
+        text: "Martial law reaches his dinner table: rifles level mid-meal and he is arrested for treason and sedition — Benjamin having read Zhang Lei's escape trajectory as obviously Onior's work. The message passed down with the cuffs: the only bargaining chip he holds is the Third Prince's location.",
+      },
+    ],
     monogram: "ON",
     factionIds: ["xi-yu"],
     introducedCh: 378,
-    statusHistory: [{ ch: 378, status: "alive" }],
+    statusHistory: [
+      { ch: 378, status: "alive" },
+      {
+        ch: 417,
+        status: "detained",
+        note: "Arrested at his own table on treason and sedition charges; bound for the Ministry of Justice with Zhang Lei's location as his only leverage.",
+      },
+    ],
     locationHistory: [
       {
         ch: 378,
         locationId: "onior-residence",
         note: "Dining in his residence while he orders Hinrigh by phone to find Hisoka before the Spiders do; the 'second-track' bosses keep rooms near the court.",
       },
+      {
+        ch: 417,
+        locationId: "ministry-of-justice",
+        note: "Hauled off toward Benjamin's consolidated headquarters under arrest.",
+      },
     ],
-    chapterAppearances: [378, 384, 390, 410],
+    chapterAppearances: [378, 384, 390, 410, 417],
     tags: ["mafia", "boss"],
   },
   {
@@ -3813,6 +3986,12 @@ export const characters: Character[] = [
     name: "Brocco Li",
     role: "Boss of the Cha-R family",
     bio: "Elder boss of Cha-R, holding Tier 5's entrenched positions. His family's watch over its territory keeps producing the arc's strangest negative result: no trace of Hisoka, anywhere.",
+    bioReveals: [
+      {
+        revealCh: 417,
+        text: "Named in the same breath as Onior when Benjamin orders both patron bosses arrested for treason and sedition and transferred to the Ministry of Justice. Only Onior's arrest is shown; whether the order reached Brocco Li is unrevealed.",
+      },
+    ],
     monogram: "BR",
     factionIds: ["cha-r"],
     introducedCh: 378,
@@ -4277,8 +4456,13 @@ export const characters: Character[] = [
         locationId: "halkenburg-quarters",
         note: "Outside Room 1009 with Yushohi, accumulating invincibility.",
       },
+      {
+        ch: 417,
+        locationId: "tier-2",
+        note: "On Zhang Lei's trail: reports the Third Prince crossed the connecting bridge from Onior's corridor to Tier 2 just before the declaration, with updates promised every fifteen minutes.",
+      },
     ],
-    chapterAppearances: [376, 413, 414],
+    chapterAppearances: [376, 413, 414, 417],
     tags: ["guard", "nen-user", "military"],
     incomplete: true,
   },
@@ -5528,6 +5712,11 @@ export const characters: Character[] = [
         status: "detained",
         note: "Seized in Room 1004 during Benjamin's sweep — his aura caught the First Prince's eye — and sent for questioning about Room 1014's Nen classes.",
       },
+      {
+        ch: 417,
+        status: "detained",
+        note: "Redirected: he and Salkov are to be held at the Central Justice Bureau, witnesses in the case Benjamin intends to build at trial.",
+      },
     ],
     locationHistory: [
       { ch: 358, locationId: "tserriednich-quarters" },
@@ -5541,9 +5730,14 @@ export const characters: Character[] = [
         locationId: "ministry-of-justice",
         note: "Taken away by Butch on Benjamin's order, bound for questioning at the central Ministry of Justice.",
       },
+      {
+        ch: 417,
+        locationId: "justice-bureau-hq",
+        note: "Sent with Salkov into detention at the 'Central Justice Bureau' — the chapters leave the Bureau-vs-Ministry naming unresolved.",
+      },
     ],
     chapterAppearances: [
-      348, 369, 370, 371, 372, 376, 382, 386, 388, 401, 411, 412, 416,
+      348, 369, 370, 371, 372, 376, 382, 386, 388, 401, 411, 412, 416, 417,
     ],
     tags: ["guard", "hunter", "nen-student"],
     incomplete: true,

@@ -292,6 +292,49 @@ export const knowledgeFacts: KnowledgeFact[] = [
     relatedAbilityIds: ["parallel-future"],
     relatedEventIds: ["ev-416-tserriednich-ruse", "ev-416-tserriednich-shot"],
   },
+  {
+    id: "fact-balsamilco-restored",
+    label: "Halkenburg's soul has left Balsamilco",
+    description:
+      "The martial-law sweep found Balsamilco alone in Room 1009, unconscious in a chair and unharmed. Awake, he passes Benjamin's rehearsed verification questions completely — he is himself again, which means the Ninth Prince's soul transferred onward to an unknown host. The military's test for the new vessel: the feather mark on the back of a hand.",
+    kind: "identity",
+    readerRevealCh: 417,
+    relatedCharacterIds: ["balsamilco", "halkenburg", "benjamin", "coventoba"],
+    relatedAbilityIds: ["ab-beast-halkenburg"],
+    relatedEventIds: ["ev-417-first-division-report"],
+  },
+  {
+    id: "fact-bohemian-rhapsody",
+    label: "Benjamin's beast ability: Bohemian Rhapsody",
+    description:
+      "Furykov taught Benjamin his Guardian Spirit Beast's ability, named on-page in chapter 417: after Benjamin dies, it merges with his Nen, chooses one of his natural blood relatives, and becomes that person's Guardian Spirit Beast — then keeps descending the bloodline, Benjamin and the beast alternating the choice of each new host. Fusing costs him succession eligibility, exactly as Kacho's transformation did — which is why his endgame needs the Emergency Law, not the throne.",
+    kind: "nen-ability",
+    readerRevealCh: 417,
+    relatedCharacterIds: ["benjamin", "furykov", "kacho"],
+    relatedAbilityIds: ["ab-beast-benjamin"],
+    relatedEventIds: ["ev-417-emergency-law"],
+  },
+  {
+    id: "fact-tubeppa-tyson-tsk17",
+    label: "Tubeppa and Tyson are silently infected",
+    description:
+      "During the Grand Hall 1001 audience, Benjamin's boot vented TSK-17 while he delivered the cover story — a reloaded vial shown in flashback. He expects the Fifth and Sixth Princes to die around the same time as Camilla, whose own clock he puts at thirteen to nineteen hours. Neither victim knows.",
+    kind: "plan",
+    readerRevealCh: 417,
+    relatedCharacterIds: ["benjamin", "tubeppa", "tyson", "camilla"],
+    relatedEventIds: ["ev-417-room1001-audience"],
+  },
+  {
+    id: "fact-benjamin-emergency-law",
+    label: "Benjamin's Article One endgame",
+    description:
+      "Benjamin's revised victory condition needs no survivor. Article One of the Emergency Law: when the crown's entire next generation is dead or faces inevitable death, the king must immediately name and rank new successors. So he will assassinate or infect every remaining prince, die first himself — a countercurse against whatever Beyond may have aimed at him — and compel Nasubi to put Benjamin's child at the head of the list, with Bohemian Rhapsody carrying his own Nen down the bloodline as its eternal guardian. He has also deduced Unma's whole scheme and plans to make her choose whose life she begs for.",
+    kind: "plan",
+    readerRevealCh: 417,
+    relatedCharacterIds: ["benjamin", "nasubi", "unma", "furykov", "beyond"],
+    relatedAbilityIds: ["ab-beast-benjamin", "beyond-curse"],
+    relatedEventIds: ["ev-417-emergency-law"],
+  },
 ];
 
 export const characterKnowledge: CharacterKnowledge[] = [
@@ -1153,6 +1196,13 @@ export const characterKnowledge: CharacterKnowledge[] = [
     sinceCh: 413,
     note: "His camp treats the swap as a possible ploy: the real Woble may still be aboard and eligible.",
   },
+  {
+    factId: "fact-woble-swap",
+    characterId: "benjamin",
+    state: "knows",
+    sinceCh: 417,
+    note: "Deduces the whole arrangement — the sister with an infant of her own, the swap at boarding — and rates Oito 99% truthful about the eligibility. But what he 'concludes as fact' is a separate matter: exile if Woble is proven off-ship, clan-wide death if she is found aboard.",
+  },
 
   // fact-beyond-curse
   {
@@ -1294,6 +1344,13 @@ export const characterKnowledge: CharacterKnowledge[] = [
     state: "unaware",
     sinceCh: 403,
     note: "His own mind sleeps while the prince drives; sedatives keep it that way.",
+  },
+  {
+    factId: "fact-halkenburg-possession",
+    characterId: "balsamilco",
+    state: "knows",
+    sinceCh: 417,
+    note: "Awake and briefed: he knows his body carried the Ninth Prince, requested incarceration over it, and now hunts the feather-marked hand the soul moved on to.",
   },
   {
     factId: "fact-halkenburg-possession",

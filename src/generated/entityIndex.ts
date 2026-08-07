@@ -2900,7 +2900,7 @@ export const entityIndex: Record<string, EntityIndexEntry> = {
     frameColor: "var(--gold-dim)",
   },
   "ab-beast-benjamin": {
-    name: "Benjamin's Beast (the deathbed deity)",
+    name: "Bohemian Rhapsody ('The Wandering People')",
     href: "/nen/ab-beast-benjamin",
     color: "var(--teal)",
     frameColor: "var(--gold-dim)",
@@ -3562,6 +3562,30 @@ export const entityIndex: Record<string, EntityIndexEntry> = {
   "fact-tserriednich-ruse": {
     name: "fact-tserriednich-ruse",
     href: "/knowledge?fact=fact-tserriednich-ruse",
+    color: "var(--teal)",
+    frameColor: "var(--gold-dim)",
+  },
+  "fact-balsamilco-restored": {
+    name: "fact-balsamilco-restored",
+    href: "/knowledge?fact=fact-balsamilco-restored",
+    color: "var(--teal)",
+    frameColor: "var(--gold-dim)",
+  },
+  "fact-bohemian-rhapsody": {
+    name: "fact-bohemian-rhapsody",
+    href: "/knowledge?fact=fact-bohemian-rhapsody",
+    color: "var(--teal)",
+    frameColor: "var(--gold-dim)",
+  },
+  "fact-tubeppa-tyson-tsk17": {
+    name: "fact-tubeppa-tyson-tsk17",
+    href: "/knowledge?fact=fact-tubeppa-tyson-tsk17",
+    color: "var(--teal)",
+    frameColor: "var(--gold-dim)",
+  },
+  "fact-benjamin-emergency-law": {
+    name: "fact-benjamin-emergency-law",
+    href: "/knowledge?fact=fact-benjamin-emergency-law",
     color: "var(--teal)",
     frameColor: "var(--gold-dim)",
   },
