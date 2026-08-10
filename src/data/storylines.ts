@@ -843,7 +843,7 @@ export const storylines: Storyline[] = [
       {
         ch: 417,
         kind: "advance",
-        title: "A corpse, a proclamation, and a witness doubting reality",
+        title: "The ruse holds — an illusion takes the execution",
         eventIds: ["ev-417-private-execution"],
       },
     ],

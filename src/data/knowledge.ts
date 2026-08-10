@@ -307,7 +307,7 @@ export const knowledgeFacts: KnowledgeFact[] = [
     id: "fact-bohemian-rhapsody",
     label: "Benjamin's beast ability: Bohemian Rhapsody",
     description:
-      "Furykov taught Benjamin his Guardian Spirit Beast's ability, named on-page in chapter 417: after Benjamin dies, it merges with his Nen, chooses one of his natural blood relatives, and becomes that person's Guardian Spirit Beast — then keeps descending the bloodline, Benjamin and the beast alternating the choice of each new host. Fusing costs him succession eligibility, exactly as Kacho's transformation did — which is why his endgame needs the Emergency Law, not the throne.",
+      "Furykov taught Benjamin his Guardian Spirit Beast's ability, named on-page in chapter 417 ('Gypsy Life': Bohemian Rhapsody): after Benjamin dies, it fuses with Benjamin Baton, chooses one of his blood relatives, and becomes that person's Guardian Spirit Beast — then keeps descending the bloodline, Benjamin and the beast alternating the choice of each new host. Fusing costs him succession eligibility, exactly as Kacho's transformation did — which is why his endgame needs the Emergency Law, not the throne.",
     kind: "nen-ability",
     readerRevealCh: 417,
     relatedCharacterIds: ["benjamin", "furykov", "kacho"],
@@ -328,10 +328,17 @@ export const knowledgeFacts: KnowledgeFact[] = [
     id: "fact-benjamin-emergency-law",
     label: "Benjamin's Article One endgame",
     description:
-      "Benjamin's revised victory condition needs no survivor. Article One of the Emergency Law: when the crown's entire next generation is dead or faces inevitable death, the king must immediately name and rank new successors. So he will assassinate or infect every remaining prince, die first himself — a countercurse against whatever Beyond may have aimed at him — and compel Nasubi to put Benjamin's child at the head of the list, with Bohemian Rhapsody carrying his own Nen down the bloodline as its eternal guardian. He has also deduced Unma's whole scheme and plans to make her choose whose life she begs for.",
+      "Benjamin's revised victory condition needs no survivor. Article One of the Emergency Law: when the crown's entire next generation is dead or faces impending death, the king must immediately decree the names and priority of the next successors. So he will eliminate or infect every remaining prince — Halkenburg, Luzurus, Zhang Lei, and Marayam by name — and compel Nasubi to put Benjamin's child at the head of the list, with Bohemian Rhapsody carrying his own Nen down the bloodline as its eternal guardian. He has also deduced Unma's whole scheme and plans to make her choose between her own life and 'Brother's'.",
     kind: "plan",
     readerRevealCh: 417,
-    relatedCharacterIds: ["benjamin", "nasubi", "unma", "furykov", "beyond"],
+    relatedCharacterIds: [
+      "benjamin",
+      "nasubi",
+      "unma",
+      "furykov",
+      "beyond",
+      "marayam",
+    ],
     relatedAbilityIds: ["ab-beast-benjamin", "beyond-curse"],
     relatedEventIds: ["ev-417-emergency-law"],
   },

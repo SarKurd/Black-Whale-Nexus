@@ -2092,14 +2092,14 @@ export const nenAbilities: NenAbility[] = [
   },
   {
     id: "ab-beast-benjamin",
-    name: "Bohemian Rhapsody ('The Wandering People')",
+    name: "Bohemian Rhapsody ('Gypsy Life')",
     userCharacterId: "benjamin",
     kind: "guardian-beast",
     nenType: "unknown",
     description:
-      "The First Prince's Guardian Spirit Beast ability, named on-page in chapter 417 — a terrifying creature perched on his shoulders that Balsamilco called 'valiant, befitting the next King' (ch 363). On Benjamin's death it merges with his Nen, chooses one of his natural blood relatives, and becomes that person's Guardian Spirit Beast — then keeps wandering the bloodline, with Benjamin and the beast alternating the choice of each new host as the current one dies. Once fused with a Nen beast and unable to inhabit a living human body, Benjamin forfeits his right of succession exactly as Kacho did — which is why his endgame runs through the Emergency Law and an heir of his own blood, not the throne. Furykov told him the mechanics (ch 413/417); the leak-era translation of the name follows VoraciousDrake.",
+      "The First Prince's Guardian Spirit Beast ability, named on-page in chapter 417 — a terrifying creature perched on his shoulders that Balsamilco called 'valiant, befitting the next King' (ch 363). After Benjamin's death it fuses with his Nen (specifically Benjamin Baton) and chooses one of his blood relatives to become the Guardian Spirit Beast of — then keeps wandering the bloodline, with Benjamin and the beast alternating the choice of each new host as the current one dies. Once fused with a Nen beast and unable to inhabit a living human body, Benjamin forfeits his right of succession exactly as Kacho did — which is why his endgame runs through the Emergency Law and an heir of his own blood, not the throne. Furykov told him the mechanics (ch 413/417).",
     conditions: [
-      "Activates on Benjamin's death: his Nen merges into the beast and it possesses a natural blood relative.",
+      "Activates on Benjamin's death: his Nen fuses into the beast and it possesses one of his blood relatives.",
       "Host succession alternates: Benjamin and the beast take turns choosing each new host when the current one dies.",
       "The fusion costs Benjamin his succession eligibility — the Kacho precedent, stated in the exposition itself.",
     ],
@@ -2123,7 +2123,7 @@ export const nenAbilities: NenAbility[] = [
       },
       {
         chapter: 417,
-        note: "Named 'The Wandering People' (Bohemian Rhapsody) in a full exposition panel: post-mortem merger, blood-relative hosts, alternating choice, and the Kacho-style loss of succession rights.",
+        note: "Named in a full exposition panel — 流浪の民 read as 'Bohemian Rhapsody', rendered 'Gypsy Life' by Viz, literally 'Wandering People' — covering the post-mortem fusion with Benjamin Baton, blood-relative hosts, alternating choice, and the Kacho-style loss of succession rights. Note: Viz's wording garbles the host rule into fixed criteria reused every time; the alternating-choice reading follows the Japanese.",
         confidence: "canonical",
       },
     ],

@@ -461,8 +461,8 @@ export const princes: Prince[] = [
       },
       {
         ch: 417,
-        risk: "critical",
-        why: "Publicly executed: the body absorbed the blast, the stomping, and the proclamation with no visible counter. Either the ruse is running perfectly or it failed at the first hurdle — the archive tracks him as presumed dead pending proof either way.",
+        risk: "moderate",
+        why: "The ruse worked: the body Benjamin shot, stomped, and filed as 'head crushed' is an illusion, and the Fourth Prince is off every camp's board — including his executioner's. Being officially dead is the safest position anyone aboard has held.",
       },
     ],
     assessment: {
@@ -509,7 +509,7 @@ export const princes: Prince[] = [
       },
       {
         ch: 417,
-        text: "Declared executed over his own mangled body, with leniency dangled for anyone testifying to his crimes. Benjamin notes the absence of any counteractive response; Salkov, ordered to report exactly what he saw, exits doubting reality itself — with Theta's Nen-visible scar as his one test.",
+        text: "The ruse lands: Benjamin shoots, stomps, crushes the head, and files him as dead — but the body is an illusion. Pardons are dangled for anyone testifying to his crimes, and Salkov, ordered to report exactly what he saw, is detained before he can check Theta's Nen-visible wound.",
       },
     ],
     mysteryIds: ["my-tserriednich-god-beast"],
@@ -1278,6 +1278,11 @@ export const princes: Prince[] = [
         ch: 413,
         risk: "high",
         why: "Martial law demands his presence in Grand Hall 1001; his location reads as 'unknown' to Benjamin's camp, and Rihan will be dispatched if the household fails to appear.",
+      },
+      {
+        ch: 417,
+        risk: "critical",
+        why: "Named outright in Benjamin's ledger alongside Halkenburg, Luzurus, and Zhang Lei as a prince still to be eliminated or infected with TSK-17. The Nen space is now the only thing between him and that list.",
       },
     ],
     assessment: {

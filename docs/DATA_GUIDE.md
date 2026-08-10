@@ -239,34 +239,48 @@ prod server. The user often has their own dev server on 3000; don't fight it.
   per his own monologue: 12 h from symptom onset to death, last 2 h comatose →
   ten functional hours from ≈2:15 p.m., day 12.
 
-- **Chapter 417 rulings (ingested from the leaked scan + VoraciousDrake's
-  translation — PROVISIONAL, re-review when the official MANGA Plus release
-  lands 2026-08-09):** `ARC_END` is now **417**. Title "Emergency". Hunterpedia
-  had no Chapter 417 page at ingest time, so the usual wiki cross-check was
-  unavailable — VD's text was the source of truth (his page notes carry the
-  Central Justice Bureau vs. Ministry of Justice terminology problem, which the
-  chapters themselves leave contradictory; the archive keeps both names as the
-  chapter uses them and says so in the notes).
-  - **Tserriednich gets NO death record** and status `presumed-dead`: Benjamin
-    stomps the body and proclaims an execution, but the ch-416 feign-death
-    protocol is running and nothing is confirmed. Benjamin himself notes no
-    counteractive ability fired. Do not add a `DeathRecord`.
-  - **Benjamin's beast ability is named**: `ab-beast-benjamin` renamed to
-    **Bohemian Rhapsody ('The Wandering People')** — post-mortem merger with his
-    Nen, possession of a natural blood relative, alternating host choice, and
-    loss of succession eligibility on the Kacho precedent. The English name
-    follows VD (the kanji 流浪の民 is also the Japanese title of Schumann's
-    *Zigeunerleben*).
+- **Chapter 417 rulings (first ingested from the leaked scan + VoraciousDrake's
+  translation, then RECONCILED against the official 2026-08-10 MANGA Plus
+  release and the Hunterpedia page that followed it):** `ARC_END` is now **417**.
+  Official English title is **"Contingency"** (有事, *Yūji*) — the leak-era
+  working title "Emergency" was wrong; don't regress it. VD's page notes still
+  carry the Central Justice Bureau vs. Ministry of Justice terminology problem,
+  which the chapters themselves leave contradictory; the archive keeps both
+  names as each chapter uses them and says so in the notes.
+  - **Tserriednich stays `alive` with NO death record.** The official synopsis
+    has Benjamin shoot him, stomp his abdomen and face, and file him as "dead,
+    head crushed" — but the wiki marks the appearance `{{Sm|(Illusion)}}` and
+    keeps his `|status` as Alive. The ch-416 feign-death protocol worked. The
+    first pass had him `presumed-dead`; the official release corrected that.
+    Do not add a `DeathRecord`.
+  - **New `{{Sm}}` qualifier ruling: `Illusion` counts** for
+    `appearingCharacterIds` — an illusory body is drawn on the page, which is
+    the settled test. (Contrast `Vision`, which does not; Camilla appears only
+    as `{{Sm|(Vision)}}` here and is therefore excluded.)
+  - **Benjamin's beast ability is named**: `ab-beast-benjamin` is
+    **Bohemian Rhapsody**, 流浪の民 — Viz renders it "Gypsy Life", literally
+    "Wandering People", and the Viz edition acknowledges the Schumann
+    *Zigeunerleben* reference. It fuses with **Benjamin Baton** after his death,
+    possesses one of his blood relatives, then alternates host choice between
+    Benjamin and the beast forever. **Viz's wording garbles that host rule**
+    into fixed criteria reused each time; the wiki flags this as an error and
+    the archive follows the Japanese. Fusing costs Benjamin his succession
+    eligibility on the Kacho precedent.
   - **Balsamilco is restored to `alive`** and drops the `possessed` tag:
     Halkenburg's soul left him for an unknown host, so Halkenburg's own
     `locationHistory` moves to `black-whale` (whereabouts unknown). The feather
     mark on the back of a hand is the in-universe manhunt criterion.
   - **Tubeppa and Tyson are `detained` and silently infected** with TSK-17 at
-    the Grand Hall audience; neither knows. Camilla's window per Benjamin is
+    the Room 1001 audience; neither knows. Camilla's window per Benjamin is
     13–19 hours (not the ch-416 "half a day").
-  - **The Cha-R boss is named in the arrest order but not drawn** — Brocco Li
-    stays out of `appearingCharacterIds` and keeps his `alive` status; only
-    Onior's arrest is on-page. Same drawn-on-page test as always.
+  - **Brocco Li IS arrested and drawn**: the official synopsis has soldiers
+    escorting both the Xi-Yu and Cha-R bosses to the Ministry of Justice, and
+    the wiki lists him plain. The first pass wrongly excluded him on the
+    strength of the scan panel alone — a reminder that the appearance list is
+    the authority, not one cropped page.
+  - **Benjamin's ledger names Marayam** alongside Halkenburg, Luzurus, and
+    Zhang Lei as still to be eliminated or infected — a detail the leak text
+    did not surface.
   - Emergency Law (Article One) is a new glossary term, `emergency-law`.
 
 ## Registry completeness

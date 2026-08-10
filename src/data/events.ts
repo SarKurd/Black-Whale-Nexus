@@ -4587,26 +4587,26 @@ export const events: StoryEvent[] = [
     id: "ev-417-private-execution",
     title: "A private execution, proclaimed",
     summary:
-      "The blast lands and Benjamin keeps going — boot to the fallen prince's abdomen, then his face, a taunt about how dangerous Zetsu is when it takes the Guardian Spirit Beast with it, and a proclamation to the kneeling household: the execution was his own doing, Tserriednich's crimes go to trial, and anyone who testifies to them buys leniency. Every witness is ordered to report exactly what they saw — the very words Tserriednich used for his ruse — and Salkov, hearing the echo, stops trusting his own senses: is everyone seeing the same illusion? His anchor becomes Theta's scar, visible only to Nen users. Benjamin sends him and Danjin to the Central Justice Bureau for detention and orders the courtrooms on the Ministry of Justice's seventh floor secured as the military's unified headquarters.",
+      "Bullets tear through the Fourth Prince's abdomen and send him flying; his head snaps back as he lands, blood spilling from his mouth. Benjamin walks past the kneeling Salkov, declares the prince's words a disease to society, and stomps — abdomen first, then the face — while announcing this as a private execution carried out on his own authority. Anyone who testifies to Tserriednich's crimes gets a pardon. Then the line that unravels Salkov: report exactly what you saw, the very words Tserriednich used for his ruse. Eyes on the floor, Salkov works the problem — is the body behind him the fake, when did the illusion start, and how far does it reach? — and settles on the one available test: the wound on Theta's face, visible only to Nen users. Benjamin exhales in relief that no counteractive ability fired, then sends Salkov and Danjin to the Central Justice Bureau and orders the Ministry of Justice's seventh-floor courtrooms secured as the military's headquarters.",
     chapter: 417,
     day: 12,
     kind: "decision",
     locationId: "tserriednich-quarters",
-    participantIds: ["benjamin", "tserriednich", "salkov", "danjin"],
-    witnessIds: ["theta"],
+    participantIds: ["benjamin", "tserriednich", "salkov"],
+    witnessIds: ["furykov", "vantine"],
     storylineIds: [
       "tserriednich-nen",
       "special-martial-law",
       "benjamin-military",
     ],
     consequences: [
-      "Tserriednich is publicly dead — by lynching, per Benjamin's own word — with no death confirmed on-page and the feign-death protocol in motion",
-      "Salkov and Danjin go into Justice Bureau custody; the witness testimony Benjamin demands is exactly what the ruse counts on",
+      "Tserriednich is dead on the official record — head crushed, per Benjamin's own ledger — while the body on the page is an illusion and the prince's true condition is unrevealed",
+      "Salkov and Danjin go into Justice Bureau custody before the Theta-scar test can be run; the testimony Benjamin demands is exactly what the ruse counts on",
     ],
     evidence: [
       {
         chapter: 417,
-        note: "Stomping, proclamation, and detention orders are on-page; Salkov's illusion spiral and the Theta-scar test are his internal monologue.",
+        note: "Shooting, stomping, pardons, and detention orders are on-page. The wiki marks Tserriednich's appearance as an illusion and keeps his status alive; Salkov's spiral and the Theta-scar test are his internal monologue.",
         confidence: "canonical",
       },
     ],
@@ -4701,16 +4701,16 @@ export const events: StoryEvent[] = [
     day: 12,
     kind: "movement",
     locationId: "onior-residence",
-    participantIds: ["benjamin", "onior", "chiyamasi"],
+    participantIds: ["benjamin", "onior", "brocco", "chiyamasi"],
     storylineIds: ["mafia-war", "special-martial-law", "benjamin-military"],
     consequences: [
-      "Both patron families are ordered decapitated at a stroke — the three-family order now answers to martial law",
+      "Both patron families are decapitated at a stroke — the three-family order now answers to martial law",
       "Zhang Lei's head start shrinks to a fifteen-minute reporting cycle",
     ],
     evidence: [
       {
         chapter: 417,
-        note: "Onior's arrest is drawn mid-meal; the Cha-R boss is named in the same order but not shown, so only Onior is recorded as appearing.",
+        note: "Onior's arrest is drawn mid-meal; the official synopsis has soldiers escorting both the Xi-Yu and Cha-R bosses to the Ministry of Justice, and the wiki lists Brocco Li as appearing.",
         confidence: "canonical",
       },
     ],
@@ -4720,12 +4720,12 @@ export const events: StoryEvent[] = [
     id: "ev-417-emergency-law",
     title: "Article One, and a god's itinerary",
     summary:
-      "Walking his secured Tier 3, Benjamin unrolls the endgame in monologue. The bad ending is multiple princes alive at the continental port — but all princes dead is not one, because Article One of the Emergency Law covers exactly this: when the crown's whole next generation faces inevitable death, the king must immediately name the next successors. So: before he dies, every remaining prince is assassinated or infected, the annihilation becomes unavoidable, and Nasubi is compelled to put Benjamin's child first in line — with Bohemian Rhapsody carrying Benjamin's own Nen down the bloodline as its permanent guardian. Dying first is even tactically sound: a countercurse beats Beyond's curse if it exists. The ledger gets personal: Camilla — thirteen to nineteen hours, already screaming through Secret Window for the Surgeon General, the Central Medical Department, and a bacterial-or-viral verdict; Fugetsu — already dead in his eyes, haunted by real spirits, to be euthanized painlessly behind an official suicide story; Oito — her baby swap deduced almost exactly, answered with exile if the real Woble can be proven off-ship and clan-wide death if she cannot; and Mother — who used Furykov's loyalty and Benjamin's own patriotism to script this suicide purge — will be made to choose whose life she begs for.",
+      "Heading for the Justice Bureau, Benjamin unrolls the endgame in monologue. The bad ending is multiple princes alive at the continental port — but all princes dead is not one, because Article One of the Emergency Law covers exactly this: a crisis threatening the monarchy's survival, where the crown and its whole next generation are dead or facing impending death, obliges the king to immediately decree the names and priority of the next successors. So: before he dies, every remaining prince is eliminated or infected, and Nasubi is compelled to put Benjamin's child first in line — with Bohemian Rhapsody fusing to Benjamin Baton and carrying his Nen down the bloodline as its permanent guardian. Then the ledger, prince by prince: Camilla dead in 13–19 hours, already working the medical department through Secret Window while he plans to pin the terrorism on her as the aggressor; Tserriednich dead, head crushed; Tubeppa and Tyson infected and dying on Camilla's clock; Fugetsu too weak to resist, to be killed behind a suicide pretense; Woble and Oito no concern unless the real prince is aboard, in which case the whole family dies; and Halkenburg, Luzurus, Zhang Lei and Marayam still to be eliminated or infected. Last, his mother — who exploited Furykov's inability to rule out the worst case, and abused his loyalty, to provoke this very declaration — will be made to choose between her own life and 'Brother's'.",
     chapter: 417,
     day: 12,
     kind: "decision",
     locationId: "tier-3",
-    participantIds: ["benjamin", "camilla"],
+    participantIds: ["benjamin"],
     storylineIds: [
       "succession-contest",
       "benjamin-military",
@@ -4734,13 +4734,14 @@ export const events: StoryEvent[] = [
     ],
     consequences: [
       "The contest's endgame is redefined: Benjamin no longer needs to outlive anyone",
+      "Marayam joins Halkenburg, Luzurus, and Zhang Lei on the explicit eliminate-or-infect list",
       "Oito's household has one path to survival — proof that the real Woble is not aboard",
       "Unma's scheme is fully deduced by its intended victim",
     ],
     evidence: [
       {
         chapter: 417,
-        note: "Article One is read out in the monologue; the Bohemian Rhapsody exposition panel carries the mechanics; Camilla's demands are shown remotely.",
+        note: "Article One is quoted in the monologue; the Bohemian Rhapsody exposition panel carries the mechanics; the prince-by-prince ledger and Camilla's remote demands close the chapter.",
         confidence: "canonical",
       },
     ],

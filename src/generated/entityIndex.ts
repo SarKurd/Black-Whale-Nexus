@@ -2900,7 +2900,7 @@ export const entityIndex: Record<string, EntityIndexEntry> = {
     frameColor: "var(--gold-dim)",
   },
   "ab-beast-benjamin": {
-    name: "Bohemian Rhapsody ('The Wandering People')",
+    name: "Bohemian Rhapsody ('Gypsy Life')",
     href: "/nen/ab-beast-benjamin",
     color: "var(--teal)",
     frameColor: "var(--gold-dim)",

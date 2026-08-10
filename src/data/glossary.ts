@@ -192,7 +192,7 @@ export const glossary: GlossaryTerm[] = [
     id: "emergency-law",
     term: "Emergency Law (Article One)",
     definition:
-      "Kakin statute independent of the succession contest, abbreviated the way Special Martial Law is: it covers a crisis threatening the monarchy's survival — 'in the event of inevitable attacks such as scientific weaponry, epidemic, riots, and natural disasters, where the crown and its next generation of heirs are all dead or otherwise face an impending death'. In that case the reigning king must immediately decree the names and priority of the next successors. Benjamin's endgame is built on triggering it: annihilate every heir including himself, then have Nasubi name Benjamin's own child first in line.",
+      "Kakin statute codified as a contingency for national crisis independent of the succession contest, and abbreviated the way Special Martial Law is. Article One covers a crisis threatening the monarchy's survival: 'in the event of inevitable attacks such as scientific weaponry, epidemic, riots, and natural disasters, where the crown and its next generation of heirs are all dead or otherwise face an impending death.' In that case the reigning king must immediately decree the names and priority of the next successors. Benjamin's endgame is built on triggering it: eliminate every heir including himself, then have Nasubi name Benjamin's own child first in line.",
     category: "kakin",
     relatedIds: ["special-martial-law", "succession-war", "tsk-17"],
     introducedCh: 417,

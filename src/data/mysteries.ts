@@ -303,8 +303,8 @@ export const mysteries: Mystery[] = [
       },
       {
         ch: 417,
-        value: "partially-answered",
-        note: "The body soaks the blast, the stomping, and a proclaimed execution without any counteractive response — Benjamin himself expected one and found none. Salkov, doubting reality itself, fixes on the one Nen-visible test available: Theta's scar.",
+        value: "likely-answered",
+        note: "The feign-death works: the body Benjamin shoots, stomps, and files as 'head crushed' is an illusion, and the prince's status stays alive. Whatever the ability is, it can put a convincing corpse in a room full of witnesses — Salkov included, who is detained before he can test Theta's Nen-visible wound.",
       },
     ],
     relatedCharacterIds: ["tserriednich", "theta", "salkov"],
@@ -346,7 +346,7 @@ export const mysteries: Mystery[] = [
     ],
     latestDevelopment: {
       ch: 417,
-      text: "If the feign-death is the ability working, it is working horrifyingly well: a mangled corpse, no visible counter, and a chief witness who can no longer tell whether the whole room shares one illusion. Salkov's next move — checking Theta's Nen-visible scar — doubles as the reader's test too.",
+      text: "The ability is now demonstrated rather than theorized: it produced a corpse solid enough for Benjamin to shoot, stomp, and file as dead, in front of a room of witnesses. What remains open is its type, its range, and whether Salkov — the one man asking whether the whole room shares one illusion — ever gets to check Theta's wound.",
     },
   },
   {
