@@ -4155,6 +4155,7 @@ export const chapters: ChapterInfo[] = [
       "chiyamasi",
       "onior",
       "brocco",
+      "camilla",
     ],
     locationIds: [
       "tserriednich-quarters",

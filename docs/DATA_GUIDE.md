@@ -255,8 +255,16 @@ prod server. The user often has their own dev server on 3000; don't fight it.
     Do not add a `DeathRecord`.
   - **New `{{Sm}}` qualifier ruling: `Illusion` counts** for
     `appearingCharacterIds` — an illusory body is drawn on the page, which is
-    the settled test. (Contrast `Vision`, which does not; Camilla appears only
-    as `{{Sm|(Vision)}}` here and is therefore excluded.)
+    the settled test.
+  - **Camilla counts too, despite the wiki's `{{Sm|(Vision)}}`.** She is drawn
+    full-figure on page 16, mid-shout, issuing live orders (Surgeon General,
+    Central Medical Department, bacterial-or-viral) through Benjamin's Secret
+    Window feed. That is the guide's **Video** case — a live remote feed, which
+    counts — not the excluded `Vision` case. Compare ch 413, where the wiki
+    wrote `{{Sm|(Vision; Image)}}` for a genuinely static recollection and she
+    is correctly excluded; in chs 404/415/416 she is plain and included. When a
+    wiki qualifier and the drawn page disagree, **the page wins** — check the
+    art before trusting the label.
   - **Benjamin's beast ability is named**: `ab-beast-benjamin` is
     **Bohemian Rhapsody**, 流浪の民 — Viz renders it "Gypsy Life", literally
     "Wandering People", and the Viz edition acknowledges the Schumann

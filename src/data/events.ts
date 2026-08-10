@@ -4725,7 +4725,7 @@ export const events: StoryEvent[] = [
     day: 12,
     kind: "decision",
     locationId: "tier-3",
-    participantIds: ["benjamin"],
+    participantIds: ["benjamin", "camilla"],
     storylineIds: [
       "succession-contest",
       "benjamin-military",
