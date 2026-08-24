@@ -48,7 +48,13 @@ const RISK_COLOR: Record<string, string> = {
   eliminated: "var(--faint)",
 };
 
-const PRIMARY_DESTINATIONS = [
+const PRIMARY_DESTINATIONS: ReadonlyArray<{
+  href: string;
+  code: string;
+  label: string;
+  detail: string;
+  wide?: boolean;
+}> = [
   {
     href: "/princes",
     code: "ROYAL / 01",
@@ -73,7 +79,15 @@ const PRIMARY_DESTINATIONS = [
     label: "Black Whale Map",
     detail: "Navigate five tiers, restricted zones, and current locations.",
   },
-] as const;
+  {
+    href: "/declassified",
+    code: "RECORD / 05",
+    label: "Declassified",
+    detail:
+      "The chapter-by-chapter diff of the archive — deaths, new abilities, moved mysteries, and every fresh reveal at your clearance.",
+    wide: true,
+  },
+];
 
 export default function CommandCenter() {
   const ch = useEffectiveChapter();
@@ -199,9 +213,19 @@ export default function CommandCenter() {
           </div>
           <div className="ml-auto min-w-0 max-w-full border-l border-line-strong pl-5 text-right">
             <div className="intel-label">Record state</div>
-            <div className="royal-heading mt-1 text-2xl text-gold-bright">
-              {preArc ? "Pre-voyage" : `Chapter ${ch}`}
-            </div>
+            {preArc || !intel.currentChapter ? (
+              <div className="royal-heading mt-1 text-2xl text-gold-bright">
+                {preArc ? "Pre-voyage" : `Chapter ${ch}`}
+              </div>
+            ) : (
+              <Link
+                href={`/chapters/${intel.currentChapter.number}`}
+                className="royal-heading mt-1 block text-2xl text-gold-bright transition-colors hover:text-ivory"
+                title="Open the latest incident report"
+              >
+                Chapter {ch} →
+              </Link>
+            )}
             <div className="font-mono text-[11px] tracking-wider text-muted">
               {preArc
                 ? "The whale has not sailed"
@@ -211,6 +235,14 @@ export default function CommandCenter() {
                       : "between filed reports"
                   }`}
             </div>
+            {!preArc && (
+              <Link
+                href="/declassified"
+                className="stamp mt-3 inline-block text-[10px] text-gold-bright transition-colors hover:text-ivory"
+              >
+                Declassified · view changes
+              </Link>
+            )}
           </div>
         </div>
         <div className="relative z-10 mt-8 border-t border-line pt-4">
@@ -226,7 +258,11 @@ export default function CommandCenter() {
           <Link
             key={destination.href}
             href={destination.href}
-            className="destination-tile"
+            className={
+              destination.wide
+                ? "destination-tile destination-tile--wide"
+                : "destination-tile"
+            }
           >
             <span className="destination-code">{destination.code}</span>
             <span className="destination-name">{destination.label}</span>

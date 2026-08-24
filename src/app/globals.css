@@ -489,6 +489,10 @@ body {
   animation-delay: 165ms;
 }
 
+.destination-tile:nth-child(5) {
+  animation-delay: 220ms;
+}
+
 .destination-tile::before {
   content: "";
   position: absolute;
@@ -565,6 +569,27 @@ body {
   color: var(--muted);
   font-size: 0.7rem;
   line-height: 1.45;
+}
+
+/* Full-width variant — the declassified strip under the four column tiles. */
+.destination-tile--wide {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: 1.25rem;
+  row-gap: 0.15rem;
+  min-height: 0;
+  padding-block: 0.95rem;
+}
+
+.destination-tile--wide .destination-name {
+  margin-top: 0;
+}
+
+.destination-tile--wide .destination-detail {
+  margin-top: 0;
+  flex: 1 1 16rem;
 }
 
 /* ---------------------------------------------------------------------------
