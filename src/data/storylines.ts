@@ -770,7 +770,7 @@ export const storylines: Storyline[] = [
     name: "Tserriednich's Awakening",
     color: "#a67fb8",
     summary:
-      "Theta agrees to teach the Fourth Prince Nen, planning to throttle the pace. Tserriednich learns in days what takes others years, survives her point-blank bullet through a Zetsu-borne vision of the future, and turns his teacher's deception into a leash around her neck. By day twelve he is closing on sub-second Zetsu — and martial law has just named him a terrorist.",
+      "Theta agrees to teach the Fourth Prince Nen, planning to throttle the pace. Tserriednich learns in days what takes others years, survives her point-blank bullet through a Zetsu-borne vision of the future, and turns his teacher's deception into a leash around her neck. When martial law names him a terrorist he answers with his masterpiece: a scripted execution under Benjamin's gun, taken by an illusion while he stands beside it — then a self-managed wake, a rulebook written from live experiments, and a hooded exit toward Route A with under four hours of illusion left.",
     status: [
       { ch: 362, value: "active" },
       {
@@ -783,17 +783,23 @@ export const storylines: Storyline[] = [
         value: "escalating",
         note: "Future sight mastered; Theta's rebellion has failed once already.",
       },
+      {
+        ch: 418,
+        value: "escalating",
+        note: "Officially dead and loose: the ability is codified, the wake is staged, and the escape clock is running.",
+      },
     ],
     participantIds: ["tserriednich", "theta", "salkov"],
     factionIds: ["tserriednich-camp"],
     objectives: [
       "Theta: contain — or end — the monster she is arming, and survive",
-      "Tserriednich: master Zetsu entry under one second and dominate the contest",
+      "Tserriednich: cross a hostile ship as a dead man — Route A, before the beast's battery dies",
     ],
     openQuestions: [
-      "What exactly is the second, self-made beast beside his Guardian?",
+      "Did Theta perceive anything at the casket — and what happens the moment the illusion collapses?",
       "Can Theta survive a third lie?",
-      "How will he answer being named a bio-terrorist by Benjamin?",
+      "How does a will written inside the illusion end up readable by the deceived?",
+      "Where is he going — the destination was cut off mid-thought",
     ],
     relatedIds: ["succession-contest", "heil-ly-morena"],
     nodes: [
@@ -845,6 +851,17 @@ export const storylines: Storyline[] = [
         kind: "advance",
         title: "The ruse holds — an illusion takes the execution",
         eventIds: ["ev-417-private-execution"],
+      },
+      {
+        ch: 418,
+        kind: "advance",
+        title: "Hypothesis: the rulebook, the wake, the way out",
+        eventIds: [
+          "ev-418-ability-rulebook",
+          "ev-418-execution-replay",
+          "ev-418-staged-wake",
+          "ev-418-route-a-departure",
+        ],
       },
     ],
     introducedCh: 362,

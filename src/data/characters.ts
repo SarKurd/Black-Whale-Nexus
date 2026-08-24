@@ -144,7 +144,7 @@ export const characters: Character[] = [
     ],
     chapterAppearances: [
       348, 349, 358, 359, 361, 363, 364, 368, 375, 389, 392, 402, 403, 404, 410,
-      413, 416, 417,
+      413, 416, 417, 418,
     ],
     tags: ["prince", "nen-user", "military"],
   },
@@ -302,6 +302,10 @@ export const characters: Character[] = [
         revealCh: 417,
         text: "The body takes everything Benjamin gives it — bullets through the abdomen, a boot to the torso, then to the face — and Benjamin walks away satisfied that no counteractive ability ever fired, filing the Fourth Prince in his ledger as dead with his head crushed. Salkov, eyes on the floor, is the only one asking the right question: is the body behind him the fake, when did the illusion begin, and was the Benjamin he just heard even real?",
       },
+      {
+        revealCh: 418,
+        text: "The same hours replayed from inside the trick: he spends the minutes before the raid codifying his ability's rules on Salkov's water bottle, hands Salkov a gun and the line 'soon I'm gonna die here', then stands beside his own execution critiquing Benjamin's haste. What follows is a funeral he stage-manages invisibly — a scribbled will read aloud (no funeral, no posthumous name, no viewings), a coffin packed with confiscated guns, three bullets that crumple against the guard captain who annoyed him — before Theta's near-miss glance at the casket rattles him, thrills him, and sends him out the door with under four hours of illusion left: 'time to start this escape adventure'.",
+      },
     ],
     monogram: "P4",
     factionIds: ["tserriednich-camp", "royal-family"],
@@ -321,6 +325,11 @@ export const characters: Character[] = [
         status: "alive",
         note: "Publicly 'executed' — shot, stomped, head crushed, and entered in Benjamin's ledger as dead. But the body on the page is an illusion and the wiki keeps his status alive: the feign-death protocol handed to Salkov is working. His real whereabouts and condition are unrevealed.",
       },
+      {
+        ch: 418,
+        status: "alive",
+        note: "Alive, unhurt, and officially dead — free to walk his own wake unseen. By his math the illusion holds roughly 3 hours 48 minutes more; he leaves Room 1004 disguised in a hoodie, planning Route A off Tier 1, destination cut off mid-thought.",
+      },
     ],
     locationHistory: [{ ch: 359, locationId: "tserriednich-quarters" }],
     objectives: [
@@ -333,6 +342,12 @@ export const characters: Character[] = [
         text: "Master Nen completely, beyond what his coerced teachers intend to give him.",
         kind: "hidden",
         revealCh: 368,
+      },
+      {
+        text: "Slip off Tier 1 by Route A — the royal passage nobody is watching — while the ship still believes him executed, before the beast's stored aura runs dry.",
+        kind: "hidden",
+        revealCh: 418,
+        status: "active",
       },
     ],
     secrets: [
@@ -358,7 +373,7 @@ export const characters: Character[] = [
     ],
     chapterAppearances: [
       345, 348, 349, 358, 359, 362, 366, 368, 375, 376, 385, 387, 394, 402, 404,
-      413, 415, 416, 417,
+      413, 415, 416, 417, 418,
     ],
     tags: ["prince", "nen-user", "killer"],
   },
@@ -2450,6 +2465,12 @@ export const characters: Character[] = [
     name: "Theta",
     role: "Tserriednich's guard; coerced Nen instructor",
     bio: "A professional soldier-Hunter in the Fourth Prince's employ, forced to teach him Nen after he saw through her stalling. Teaches him honestly enough to survive his tests — while designing the curriculum around a plan to kill him before he finishes it.",
+    bioReveals: [
+      {
+        revealCh: 418,
+        text: "At the wake she moves on the casket — Salkov stops her with a warning that defying the prince's will would be 'the second time' — then turns and looks squarely at the spot where the invisible Tserriednich stands. He panics ('can she see me… no… that's impossible'), levels a gun at her, and lowers it when she walks past him without a flicker. Whether she perceived anything is left deliberately unanswered; the one Hunter whose ability once broke his Zetsu is the one person he calls capable of doing it again.",
+      },
+    ],
     monogram: "TH",
     factionIds: ["tserriednich-camp"],
     servesPrinceId: "prince-tserriednich",
@@ -2493,7 +2514,7 @@ export const characters: Character[] = [
           "His future-sight let him dodge a bullet he had already 'seen'. The attempt failed; his beast nicked her face as a first warning, promising she ceases to be human on the third lie.",
       },
     ],
-    chapterAppearances: [348, 362, 363, 366, 368, 376, 384, 385, 387, 417],
+    chapterAppearances: [348, 362, 363, 366, 368, 376, 384, 385, 387, 417, 418],
     tags: ["guard", "nen-user", "double-agent"],
   },
   {
@@ -2548,6 +2569,10 @@ export const characters: Character[] = [
         revealCh: 417,
         text: "He keeps his eyes on the floor and thinks instead — and he is the only person in the room who gets it right. Is the body behind him the fake? When did the illusion start, and how far does it reach? Is the Benjamin he can hear even real? When Benjamin demands that witnesses report exactly what they saw — Tserriednich's own instruction, word for word — Salkov wonders if it is coincidence, then claws back to one testable fact: the wound on Theta's face is visible only to Nen users, so if it is gone, what he is seeing is fake. He is shipped to the Central Justice Bureau with Danjin before he can check.",
       },
+      {
+        revealCh: 418,
+        text: "Chapter 418 shows him still in Room 1004 through the wake — the Bureau escort evidently deferred. He executes the protocol to the letter: bags the corpse ('this weight… this stench of blood and entrails… are these all really an illusion!?'), reads the will aloud, absorbs Captain Vantine's you-should-have-shielded-him tirade with a soldier's answer, and warns Theta off the casket — disobeying the prince's wishes would be 'the second time'. The military's own announcement makes him the sole transporter of the coffin after the 6 a.m. wake.",
+      },
     ],
     monogram: "SL",
     factionIds: ["tserriednich-camp"],
@@ -2561,6 +2586,11 @@ export const characters: Character[] = [
         status: "detained",
         note: "Sent with Danjin to the Central Justice Bureau and held there on Benjamin's order — a prosecution witness to the 'execution', and the sole keeper of the coffin protocol.",
       },
+      {
+        ch: 418,
+        status: "detained",
+        note: "Still — or again — in Room 1004 for the will-reading and wake, confined there with the rest of the household under armed watch. Chapter 417's Bureau escort and this chapter sit in visible tension; the archive records both as written. Designated to transport the coffin alone after 6 a.m. on day 13.",
+      },
     ],
     locationHistory: [
       { ch: 362, locationId: "tserriednich-quarters" },
@@ -2568,6 +2598,11 @@ export const characters: Character[] = [
         ch: 417,
         locationId: "justice-bureau-hq",
         note: "Detained at the 'Central Justice Bureau' — whether that names the Bureau's own offices or the Ministry of Justice complex is a terminology knot the chapters leave unresolved.",
+      },
+      {
+        ch: 418,
+        locationId: "tserriednich-quarters",
+        note: "On-page in Room 1004 through the inspection, will-reading, and wake, despite chapter 417's escort order — deferred, rescinded, or a continuity seam the chapters don't resolve.",
       },
     ],
     objectives: [
@@ -2585,7 +2620,7 @@ export const characters: Character[] = [
       },
     ],
     chapterAppearances: [
-      348, 362, 385, 386, 387, 394, 402, 404, 413, 415, 416, 417,
+      348, 362, 385, 386, 387, 394, 402, 404, 413, 415, 416, 417, 418,
     ],
     tags: ["guard", "nen-user"],
     incomplete: true,
@@ -4497,7 +4532,7 @@ export const characters: Character[] = [
         note: "Rifle in hand beside Benjamin through the Room 302 raid and the Room 1004 breach.",
       },
     ],
-    chapterAppearances: [402, 403, 413, 416, 417],
+    chapterAppearances: [402, 403, 413, 416, 417, 418],
     tags: ["guard", "military"],
     incomplete: true,
   },
@@ -5749,7 +5784,7 @@ export const characters: Character[] = [
       },
     ],
     chapterAppearances: [
-      348, 369, 370, 371, 372, 376, 382, 386, 388, 401, 411, 412, 416, 417,
+      348, 369, 370, 371, 372, 376, 382, 386, 388, 401, 411, 412, 416, 417, 418,
     ],
     tags: ["guard", "hunter", "nen-student"],
     incomplete: true,
@@ -5757,8 +5792,14 @@ export const characters: Character[] = [
   {
     id: "vantine",
     name: "Vantine",
-    role: "Tserriednich's senior bodyguard",
-    bio: "The bodyguard who handles the Fourth Prince's political housekeeping: when Benjamin plants a soldier on every brother, it is Vantine who asks what to do about it — and relays Tserriednich's answer, 'You idiot', verbatim. He keeps the room during Theta's Nen training and the household's later maneuvers.",
+    role: "Captain of Tserriednich's personal guards",
+    bio: "Captain of the Fourth Prince's personal guard and his political housekeeper: when Benjamin plants a soldier on every brother, it is Vantine who asks what to do about it — and relays Tserriednich's answer, 'You idiot', verbatim. He keeps the room during Theta's Nen training and the household's later maneuvers.",
+    bioReveals: [
+      {
+        revealCh: 418,
+        text: "At the wake he rounds on Salkov — couldn't you have shielded the prince with your own body? — a display his invisible employer finds so irritating that three bullets crumple harmlessly against his forehead, unnoticed, while a royal soldier threatens the whole room with sedition charges. Tserriednich's parting review: 'a real pathetic display, Captain Vantine.'",
+      },
+    ],
     monogram: "VA",
     factionIds: ["tserriednich-camp"],
     servesPrinceId: "prince-tserriednich",
@@ -5766,7 +5807,7 @@ export const characters: Character[] = [
     introducedCh: 363,
     statusHistory: [{ ch: 363, status: "alive" }],
     locationHistory: [{ ch: 363, locationId: "tserriednich-quarters" }],
-    chapterAppearances: [363, 385, 387, 400, 402, 416, 417],
+    chapterAppearances: [363, 385, 387, 400, 402, 416, 417, 418],
     tags: ["guard"],
     incomplete: true,
   },

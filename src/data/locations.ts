@@ -475,13 +475,25 @@ export const locations: ShipLocation[] = [
     canonicity: "canonical",
     description:
       "The Fourth Prince's suite, part salon and part private horror. Behind the connoisseur's front, Tserriednich undergoes Nen instruction from Theta at a pace that terrifies his own teacher, and his guardian beast watches everything.",
-    controlHistory: [{ ch: 358, value: "tserriednich-camp" }],
+    controlHistory: [
+      { ch: 358, value: "tserriednich-camp" },
+      {
+        ch: 417,
+        value: "kakin-military",
+        note: "Occupied after the 'execution': weapons confiscated, movement confined to the suite, exits answered with lethal force — the household mourns under guard.",
+      },
+    ],
     threatHistory: [
       { ch: 373, value: "tense", note: "Theta realizes what she is creating." },
       {
         ch: 416,
         value: "lethal",
         note: "The Fourth Prince is blasted across his own bedroom mid-sentence.",
+      },
+      {
+        ch: 418,
+        value: "contested",
+        note: "The shooting is over but nothing here is what it looks like: the corpse lying in state is a prediction, and its author walks the wake unseen.",
       },
     ],
     connectedIds: ["royal-quarters"],

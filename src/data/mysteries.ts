@@ -306,6 +306,11 @@ export const mysteries: Mystery[] = [
         value: "likely-answered",
         note: "The feign-death works: the body Benjamin shoots, stomps, and files as 'head crushed' is an illusion, and the prince's status stays alive. Whatever the ability is, it can put a convincing corpse in a room full of witnesses — Salkov included, who is detained before he can test Theta's Nen-visible wound.",
       },
+      {
+        ch: 418,
+        value: "likely-answered",
+        note: "The user publishes his own answer: the instinct-born Nen beast is the engine, planted like an antenna at the activation point, broadcasting the illusion over a spherical field on stored aura (1:11 charge ratio). What stays open: the Guardian Spirit Beast's own type and ability, the field's true radius, whether latecomers entering the zone fall under the spell, and how a will written inside the illusion became readable.",
+      },
     ],
     relatedCharacterIds: ["tserriednich", "theta", "salkov"],
     evidenceFor: [
@@ -329,11 +334,16 @@ export const mysteries: Mystery[] = [
         note: "Salkov's analysis: an ability seems to trigger during Tserriednich's Zetsu — an outlier even among specialists — while the jester-like beast stays invisible to him.",
         confidence: "strong-inference",
       },
+      {
+        chapter: 418,
+        note: "Tserriednich's own monologue: the Nen beast plants itself at the activation point 'like an antenna', runs on aura stored while his nodes were open, and dies with its battery — Salkov's ch-402 model, confirmed by the user.",
+        confidence: "canonical",
+      },
     ],
     possibleExplanations: [
       {
-        text: "The beast stores aura under normal conditions and activates its power when Tserriednich enters Zetsu (Salkov's working model).",
-        confidence: "strong-inference",
+        text: "The beast stores aura under normal conditions and activates its power when Tserriednich enters Zetsu (Salkov's working model — confirmed by Tserriednich's own ch-418 experiments).",
+        confidence: "canonical",
       },
       {
         text: "The beast amplifies or hosts his time-perception ability.",
@@ -345,8 +355,8 @@ export const mysteries: Mystery[] = [
       },
     ],
     latestDevelopment: {
-      ch: 417,
-      text: "The ability is now demonstrated rather than theorized: it produced a corpse solid enough for Benjamin to shoot, stomp, and file as dead, in front of a room of witnesses. What remains open is its type, its range, and whether Salkov — the one man asking whether the whole room shares one illusion — ever gets to check Theta's wound.",
+      ch: 418,
+      text: "Tserriednich confirms Salkov's model himself: the self-made beast stores aura while his nodes are open and spends it as an antenna broadcasting the illusion — one part runtime per eleven parts charging. The boundary question is half-closed: the future sight and illusion belong to the beast-engine; the Guardian Spirit Beast, its type, and its truth-branding ability remain a separate, still-open file.",
     },
   },
   {

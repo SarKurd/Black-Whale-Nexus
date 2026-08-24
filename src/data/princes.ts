@@ -414,6 +414,10 @@ export const princes: Prince[] = [
         text: "Die convincingly under Benjamin's gun — coffin sealed, witness scripted, ability secret — and re-enter the war unseen.",
         revealCh: 416,
       },
+      {
+        text: "Escape Tier 1 via the royal Route A before the beast's battery dies — roughly 3 hours 48 minutes — and move through a ship that believes him executed.",
+        revealCh: 418,
+      },
     ],
     vulnerabilities: [
       {
@@ -431,6 +435,10 @@ export const princes: Prince[] = [
       {
         text: "Benjamin's martial-law pretext names him a bioterror conspirator — and Benjamin has reserved his death for himself.",
         revealCh: 413,
+      },
+      {
+        text: "His resurrection runs on a battery: leave the beast-antenna's radius or run out its stored aura (≈3 h 48 m from the wake) and every witness snaps back to reality. Any pain breaks his Zetsu outright, his rules bar him from stealing a uniform, and once the illusion drops, the window before someone verifies the coffin is 'a few days at most, an hour minimum'.",
+        revealCh: 418,
       },
     ],
     riskHistory: [
@@ -463,6 +471,11 @@ export const princes: Prince[] = [
         ch: 417,
         risk: "moderate",
         why: "The ruse worked: the body Benjamin shot, stomped, and filed as 'head crushed' is an illusion, and the Fourth Prince is off every camp's board — including his executioner's. Being officially dead is the safest position anyone aboard has held.",
+      },
+      {
+        ch: 418,
+        risk: "high",
+        why: "The safety of being dead now has an expiry: the illusion's battery reads ≈3 h 48 m, leaving the antenna's radius cancels it instantly, and he is walking out alone, unarmed of Nen while in Zetsu, through a martial-law ship where a single recognizer — guard or soldier — collapses the whole ruse.",
       },
     ],
     assessment: {
@@ -510,6 +523,10 @@ export const princes: Prince[] = [
       {
         ch: 417,
         text: "The ruse lands: Benjamin shoots, stomps, crushes the head, and files him as dead — but the body is an illusion. Pardons are dangled for anyone testifying to his crimes, and Salkov, ordered to report exactly what he saw, is detained before he can check Theta's Nen-visible wound.",
+      },
+      {
+        ch: 418,
+        text: "He codifies his ability's rulebook, stage-manages his own wake — will, guard-filled coffin, a 6 a.m. transfer entrusted to Salkov alone — and leaves Room 1004 in a hoodie with about 3 hours 48 minutes of illusion left, betting on Route A while Benjamin's column takes Route C.",
       },
     ],
     mysteryIds: ["my-tserriednich-god-beast"],

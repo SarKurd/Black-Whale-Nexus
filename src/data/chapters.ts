@@ -4217,4 +4217,54 @@ export const chapters: ChapterInfo[] = [
       ],
     },
   },
+  {
+    number: 418,
+    title: "Hypothesis",
+    day: "12 (afternoon–evening)",
+    summary:
+      "The martial-law hours replayed entirely from inside Tserriednich's trick. Before the sirens, he codifies his ability with Salkov as unwitting lab equipment: Zetsu plus closed eyes triggers the 'Ephemeral Ten Seconds', a ten-second future seen in a blink; keeping Zetsu up afterward sustains an illusion world in which everyone nearby lives out the prediction while he moves unseen. The rules, tested on a water bottle: people are untouchable wax dolls, unheld objects can be moved but never weaponized, and the vision only continues from actions already taken. The engine is his Nen beast, planted like an antenna at the activation point over a spherical field, burning stored aura at one-eleventh of its charging time. Then the raid: he steps off his tape marks, hands Salkov a gun and the promise 'soon I'm gonna die here', and watches Benjamin execute a prediction — annoyed his brother didn't torture him first. The wake that follows is his own production: a scribbled will (no funeral, no viewings, one wish — an honest, truly unified country), a coffin he packs with confiscated guns, three bullets crumpling off Vantine's forehead mid-tirade, and the military's own announcement handing the sealed casket to Salkov alone after 6 a.m. on day 13. He maps the three Tier-1 passages, banks on the royal Route A while Benjamin's column takes C — and freezes when Theta, warned off the casket ('the second time'), turns and looks squarely at where he stands. She walks past. Roughly 3 hours 48 minutes remain on the beast's battery as he heads out: 'time to start this escape adventure.'",
+    eventIds: [
+      "ev-418-ability-rulebook",
+      "ev-418-execution-replay",
+      "ev-418-staged-wake",
+      "ev-418-route-a-departure",
+    ],
+    appearingCharacterIds: [
+      "tserriednich",
+      "salkov",
+      "vantine",
+      "danjin",
+      "benjamin",
+      "butch",
+      "theta",
+    ],
+    locationIds: ["tserriednich-quarters"],
+    storylineIds: [
+      "tserriednich-nen",
+      "special-martial-law",
+      "benjamin-military",
+      "succession-contest",
+    ],
+    abilitiesUsedIds: ["parallel-future"],
+    changes: {
+      newKnowledge: [
+        "The ability's full rulebook from the user himself: trigger, the three people/object/consequence restrictions, the beast-antenna's spherical field, static toward its edge, and a 1:11 charge-to-runtime aura battery — ≈3 h 48 m left after the wake",
+        "His Zetsu no longer breaks for any stimulus except pain; entry speed has plateaued at 2.92 seconds",
+        "Three passages link Tier 1 to the lower decks: Route A (starboard, royalty/VVIP, the designed shortest path), Route B (stern, soldiers and mafia), Route C (portside, general use)",
+        "Nasubi, by his son's read, will neither expose nor cover for the deception once the coffin reaches him — the false-death window after the ability drops is 'a few days at most, an hour minimum'",
+      ],
+      movement: [
+        "Benjamin's column, by Tserriednich's deduction, is marching Route C to the Ministry of Justice's Tier 3 central entrance; Route B is locked down around the arrested mafia bosses",
+        "Tserriednich leaves Room 1004 disguised in a hoodie, betting his escape on the unwatched Route A",
+      ],
+      newThreats: [
+        "A hard countdown now runs under the ruse: battery exhaustion or one step past the antenna's radius snaps every witness back to reality at once",
+      ],
+      changedObjectives: [
+        "Tserriednich pivots from dying convincingly to escaping Tier 1 before the illusion dies with the battery",
+        "Salkov becomes the coffin's sole custodian after the 6 a.m. wake — the plan's second act rides on him",
+      ],
+      mysteriesAdvanced: ["my-tserriednich-god-beast"],
+    },
+  },
 ];

@@ -3026,7 +3026,7 @@ export const entityIndex: Record<string, EntityIndexEntry> = {
     frameColor: "var(--gold-dim)",
   },
   "parallel-future": {
-    name: "Parallel Future",
+    name: "Parallel Future ('Ephemeral Ten Seconds')",
     href: "/nen/parallel-future",
     color: "var(--teal)",
     frameColor: "var(--gold-dim)",
@@ -3586,6 +3586,18 @@ export const entityIndex: Record<string, EntityIndexEntry> = {
   "fact-benjamin-emergency-law": {
     name: "fact-benjamin-emergency-law",
     href: "/knowledge?fact=fact-benjamin-emergency-law",
+    color: "var(--teal)",
+    frameColor: "var(--gold-dim)",
+  },
+  "fact-parallel-future-rules": {
+    name: "fact-parallel-future-rules",
+    href: "/knowledge?fact=fact-parallel-future-rules",
+    color: "var(--teal)",
+    frameColor: "var(--gold-dim)",
+  },
+  "fact-tier1-routes": {
+    name: "fact-tier1-routes",
+    href: "/knowledge?fact=fact-tier1-routes",
     color: "var(--teal)",
     frameColor: "var(--gold-dim)",
   },

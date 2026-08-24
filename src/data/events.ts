@@ -4747,4 +4747,107 @@ export const events: StoryEvent[] = [
     ],
     confidence: "canonical",
   },
+  {
+    id: "ev-418-ability-rulebook",
+    title: "The rulebook, written on a water bottle",
+    summary:
+      "In the minutes before the sirens, Tserriednich drills with Salkov and codifies what his ability can and cannot do. The trigger: Zetsu plus closed eyes, in either order, for the 'Ephemeral Ten Seconds' — a ten-second future seen in a blink. The rules, tested: people are untouchable wax dolls playing out the predicted script; unheld objects can be moved but never used against anyone; and the vision only ever continues from actions he has already taken — ordering Salkov to fetch water, then snatching the bottle first, leaves his guard solemnly handing thin air to a prince-shaped nothing. His Zetsu entry has plateaued at 2.92 seconds, but it no longer breaks for anything except pain — the siren of Special Martial Law rings through it, and he thanks himself for existing. The engine, by his own hypothesis: his Nen beast plants itself like an antenna where the ability starts, broadcasts over a sphere of untested radius (static builds in his ears toward the edge), and burns stored aura at one-eleventh of its charging time.",
+    chapter: 418,
+    day: 12,
+    approxTime: "≈2 p.m., through the 2:15 declaration",
+    kind: "nen-reveal",
+    locationId: "tserriednich-quarters",
+    participantIds: ["tserriednich", "salkov"],
+    storylineIds: ["tserriednich-nen", "special-martial-law"],
+    consequences: [
+      "The ability's three restrictions, antenna model, and 1:11 aura battery are canon — from the user's own tests, flagged by him as hypotheses to keep refining",
+      "His Zetsu is now stimulus-proof short of pain, which is what makes standing beside his own execution possible",
+    ],
+    evidence: [
+      {
+        chapter: 418,
+        note: "The entire sequence is Tserriednich's on-page monologue and the drawn water-bottle test; Viz names the vision 'Ephemeral Ten Seconds'.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "ev-418-execution-replay",
+    title: "The execution, watched from beside it",
+    summary:
+      "Chapter 417's raid replays from outside the illusion. Vantine bursts in — Danjin watching his back — with word that Benjamin's soldiers are about to force the door. Tserriednich steps back onto the tape marks where his double 'stands', drops Zetsu, and issues final orders: let them break in, surrender weapons, hands up, no resistance whatsoever. Then he takes Salkov's gun, tells him 'soon I'm gonna die here — but you must tell everyone what you'll witness, as is', and re-enters the trick. The real prince stands to the side as Benjamin blasts and stomps a corpse-shaped prediction, mildly offended by the efficiency: he expected torture first, and reads the haste as a man racing his own martial-law clock to the remaining princes.",
+    chapter: 418,
+    day: 12,
+    kind: "decision",
+    locationId: "tserriednich-quarters",
+    participantIds: ["tserriednich", "benjamin", "salkov", "vantine"],
+    witnessIds: ["danjin", "butch"],
+    storylineIds: [
+      "tserriednich-nen",
+      "special-martial-law",
+      "benjamin-military",
+    ],
+    consequences: [
+      "Every witness in Room 1004 — Benjamin included — now shares one scripted memory of the Fourth Prince's death",
+      "The surrender order keeps his household intact and unprovoked under occupation, exactly as the ruse requires",
+    ],
+    evidence: [
+      {
+        chapter: 418,
+        note: "The tape marks, the gun handoff, and the blast-from-the-side viewpoint are all drawn; his critique of Benjamin's haste is monologue.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "ev-418-staged-wake",
+    title: "A wake, stage-managed by the deceased",
+    summary:
+      "The corpse is bagged — Salkov, lifting it, privately staggers: 'this weight… this stench of blood and entrails… are these all really an illusion!?' — and coffined, while the invisible prince scribbles the last will Salkov then reads aloud: no funeral, no posthumous name, no send-off, all viewings refused (a clause conditioned, presciently, on having been killed by the First Prince), one wish — 'an honest, truly unified country'. Vantine rounds on Salkov for not shielding the prince; three bullets from the dead man's borrowed gun crumple against the captain's forehead, unfelt, while a soldier threatens the room with sedition arrests. The inspection closes — every person present matches the roster, the illusory corpse included — and the military honors the will: remains untouched until 6 a.m. on day 13, the wake doubling as the funeral, the coffin then transported by Salkov alone. Tserriednich packs it with confiscated guns so it won't ride empty.",
+    chapter: 418,
+    day: 12,
+    kind: "ceremony",
+    locationId: "tserriednich-quarters",
+    participantIds: ["tserriednich", "salkov", "vantine"],
+    witnessIds: ["theta", "danjin"],
+    storylineIds: ["tserriednich-nen", "special-martial-law"],
+    consequences: [
+      "The will buys a sealed coffin until at least 6 a.m. day 13, with custody passing to the one man inside the plan",
+      "The ability's no-harm rule is demonstrated on Vantine's forehead — and its one standing anomaly is created: a will written inside the illusion that a deceived witness can read",
+    ],
+    evidence: [
+      {
+        chapter: 418,
+        note: "Will text, Vantine's tirade, the crumpled bullets, and the corporal's announcements are on-page; the will-writing anomaly is flagged as unresolved by the wiki's ability notes.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "ev-418-route-a-departure",
+    title: "Route A, and a look that shouldn't exist",
+    summary:
+      "Planning his exit, Tserriednich maps the three passages linking Tier 1 to the lower decks: Route A at the starboard for royalty and VVIPs — designed as the shortest path, with dedicated royal entrances at every public facility — Route B at the stern for soldiers and mafia executives, Route C at the portside for everyone else. Benjamin, he reasons, is marching his full force down C to the Ministry of Justice's Tier 3 central entrance, while B bristles with the firepower cornering the arrested mafia bosses. That leaves A. Then the chapter's held breath: Theta reaches for the casket, Salkov warns her off — 'that would be the second time' — and she turns and looks squarely at the space where the invisible prince stands. He aims a gun at her, panicking that she can see him; she walks past without a flicker, and he re-labels the terror a thrill ('being ignored turns me on'), pockets spare handguns, and heads out: 'time to start this escape adventure'.",
+    chapter: 418,
+    day: 12,
+    kind: "movement",
+    locationId: "tserriednich-quarters",
+    participantIds: ["tserriednich", "theta", "salkov"],
+    storylineIds: ["tserriednich-nen", "special-martial-law"],
+    consequences: [
+      "Tserriednich commits to Route A with roughly 3 hours 48 minutes of illusion left and no way to disguise himself in a taken uniform",
+      "Whether Theta perceived anything at the casket is deliberately unresolved — he names her the one person who could break his Zetsu",
+    ],
+    evidence: [
+      {
+        chapter: 418,
+        note: "The route exposition, the casket warning, Theta's look, and the drawn-gun panic are all on-page; her actual perception is never shown.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
 ];

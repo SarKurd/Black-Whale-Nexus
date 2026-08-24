@@ -2975,31 +2975,41 @@ export const nenAbilities: NenAbility[] = [
   },
   {
     id: "parallel-future",
-    name: "Parallel Future",
+    name: "Parallel Future ('Ephemeral Ten Seconds')",
     userCharacterId: "tserriednich",
     kind: "personal",
     nenType: "specialist",
     description:
-      "Tserriednich's Zetsu-borne future sight. Closing his eyes in Zetsu gives him an instantaneous vision of the next ten seconds; if he remains in Zetsu, real time resumes while the vision continues ten seconds ahead.",
-    activation: "Close both eyes and fully enter Zetsu.",
+      "Tserriednich's Zetsu-borne future sight, self-documented in chapter 418. Entering Zetsu with his eyes closed (in either order) shows him the 'Ephemeral Ten Seconds' — Viz's on-page name for the vision; 'Parallel Future' is the archive's descriptive label — an instantaneous premonition of the next ten seconds that others perceive as a blink. Opening his eyes right after replays those ten seconds in reality; keeping Zetsu up afterward maintains an illusion world in which everyone inside the field goes on perceiving the predicted continuation while the real Tserriednich moves unseen. The engine is his instinct-born Nen beast, which stands like an antenna at the activation point and broadcasts the illusion over a spherical field, running on aura it stored while his nodes were open.",
+    activation:
+      "Enter Zetsu with both eyes closed — 'perform Zetsu and close my eyes' or 'enter Zetsu while my eyes are closed' both trigger it.",
     conditions: [
-      "The initial prediction always covers the next ten seconds.",
-      "Maintaining closed-eye Zetsu keeps the vision running ten seconds ahead of reality.",
+      "The initial prediction always covers the next ten seconds and passes in a blink of real time.",
+      "Opening his eyes right after the vision makes those ten seconds play out in reality; the illusion persists past them for as long as he maintains Zetsu.",
+      "The Nen beast anchors at the point of activation; the field is spherical with an unmeasured radius that covers at least all of Room 1004.",
+      "The beast runs on stored aura — Tserriednich's estimate is one part active time per eleven parts spent charging outside Zetsu.",
     ],
     restrictions: [
-      "Zetsu suppresses his aura defenses while the ability activates.",
-      "Its practical speed depends on how quickly he can enter Zetsu.",
+      "He cannot change the location or physical state of any person in the continuation — people play out the predicted scenario like wax dolls, clothes and hair included; he cannot even slip something into a pocket.",
+      "He can move and alter objects nobody is holding, but cannot use them to harm, prank, or mark a person — bullets he fires simply crumple and drop. Seizing an object first makes its would-be taker act as if they had taken it.",
+      "The vision only ever shows the consequences of actions he has already taken in reality — he cannot script a future by resolving to act after activation.",
+      "Any pain, even a light bump, breaks his Zetsu and with it the ability; other sudden stimuli (sirens, noise) no longer do.",
     ],
+    cost: "Drains the beast's stored aura while he stays in Zetsu; when the battery dies the field and illusion collapse. After the ch-417 execution he calculates roughly 3 hours 48 minutes remaining.",
+    range:
+      "A spherical field of radius 'X' around the beast-antenna — enough to cover Room 1004; the exact radius is untested",
+    targets: "Everyone inside the field when the ability runs",
     effects: [
       "Shows Tserriednich the next ten seconds instantaneously.",
-      "Everyone seen in the vision experiences the predicted sequence even when Tserriednich changes his own actions.",
-      "Lets Tserriednich move outside the perceived future while other observers register the original outcome.",
+      "Everyone inside the field experiences the predicted sequence — and its seamless continuation — even as the real Tserriednich acts freely outside it.",
+      "Sustained through the ch-417 'execution', it kept a mutilated corpse on the floor of Room 1004 solid enough to bag, coffin, and mourn: witnesses report its weight and the smell of blood.",
     ],
     weaknesses: [
-      "The activation window leaves him physically vulnerable until his Zetsu speed is sufficiently trained.",
+      "Static rings in his ears as he moves away from the beast; he expects crossing the field's edge to cancel everything at once and snap every witness back to reality.",
+      "Observers outside the field are never deceived — by his own hypothesis they would watch the 'dead' prince walk around.",
+      "The activation window (2.92 s at his ch-418 plateau) leaves him physically vulnerable, and pain breaks the running ability outright.",
+      "Its people-rules bar him from taking worn clothing — he cannot steal a uniform to disguise himself.",
     ],
-    range: "Events within the vision's field of perception",
-    targets: "Tserriednich and people included in the prediction",
     firstSeenCh: 385,
     revealCh: 387,
     uses: [
@@ -3015,17 +3025,27 @@ export const nenAbilities: NenAbility[] = [
         ch: 416,
         note: "Held through Benjamin's breach: Salkov reasons that if the ability triggers on Zetsu it is already running — the stage for the prince's declared feign-death ruse — as Benjamin's blast lands.",
       },
+      {
+        ch: 418,
+        note: "The full run: an illusory corpse takes the execution, the wake, and the coffin while the real prince tests his rules on Salkov's water bottle, shoots three harmlessly crumpling bullets at Vantine, and packs the casket with confiscated guns. One anomaly stands: he writes a last will inside the illusion that Salkov then finds and reads — unexplained by his own rules.",
+      },
     ],
     status: "active",
     awareCharacterIds: [
       { characterId: "tserriednich", sinceCh: 387 },
       { characterId: "salkov", sinceCh: 386 },
     ],
-    affectedCharacterIds: ["theta"],
+    affectedCharacterIds: ["theta", "salkov", "vantine", "benjamin"],
+    mysteryIds: ["my-tserriednich-god-beast"],
     evidence: [
       {
         chapter: 387,
         note: "Tserriednich tests and narrates the instantaneous ten-second vision and the parallel continuation that follows it.",
+        confidence: "canonical",
+      },
+      {
+        chapter: 418,
+        note: "Tserriednich's own rulebook: the three people/object/consequence restrictions, the beast-antenna model, the 1:11 battery, and the pain-only Zetsu break are all his on-page monologue — hypotheses he explicitly intends to keep testing.",
         confidence: "canonical",
       },
     ],

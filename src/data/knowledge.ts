@@ -342,6 +342,27 @@ export const knowledgeFacts: KnowledgeFact[] = [
     relatedAbilityIds: ["ab-beast-benjamin", "beyond-curse"],
     relatedEventIds: ["ev-417-emergency-law"],
   },
+  {
+    id: "fact-parallel-future-rules",
+    label: "The rules of Tserriednich's illusion",
+    description:
+      "Self-documented in chapter 418: Zetsu with closed eyes triggers the 'Ephemeral Ten Seconds'; sustained Zetsu keeps everyone inside a spherical field living the predicted continuation while the real prince moves unseen. People cannot be touched or altered, objects can be moved but never used against anyone, and the vision only continues from actions already taken. The field is broadcast by his Nen beast from the activation point, on stored aura that lasts one-eleventh of its charging time — about 3 hours 48 minutes after the ch-417 'execution'. Pain, and only pain, breaks his Zetsu.",
+    kind: "nen-ability",
+    readerRevealCh: 418,
+    relatedCharacterIds: ["tserriednich", "salkov", "theta", "vantine"],
+    relatedAbilityIds: ["parallel-future"],
+    relatedEventIds: ["ev-418-ability-rulebook", "ev-418-staged-wake"],
+  },
+  {
+    id: "fact-tier1-routes",
+    label: "Three routes off Tier 1",
+    description:
+      "Movement between Tier 1 and the lower decks runs through three passageways: Route A at the starboard, reserved for royalty and VVIPs and designed as the shortest path (public facilities keep dedicated royal entrances); Route B at the stern for soldiers and mafia executives; Route C at the portside for general passengers. Laid out in Tserriednich's ch-418 escape planning: Benjamin's column takes C toward the Ministry of Justice's Tier 3 central entrance, B is locked down around the arrested bosses, and A goes unwatched.",
+    kind: "passage",
+    readerRevealCh: 418,
+    relatedCharacterIds: ["tserriednich", "benjamin"],
+    relatedEventIds: ["ev-418-route-a-departure"],
+  },
 ];
 
 export const characterKnowledge: CharacterKnowledge[] = [
@@ -1491,5 +1512,44 @@ export const characterKnowledge: CharacterKnowledge[] = [
     state: "unaware",
     sinceCh: 416,
     note: "Shot the prince mid-sentence — 'I don't have time to waste with you' — while the protocol lived only between Tserriednich and Salkov.",
+  },
+  {
+    factId: "fact-tserriednich-ruse",
+    characterId: "vantine",
+    state: "believes-false",
+    sinceCh: 417,
+    revealCh: 418,
+    note: "Mourns a corpse that isn't there — and blames Salkov for it, loudly enough to draw three bullets he never feels.",
+  },
+  {
+    factId: "fact-tserriednich-ruse",
+    characterId: "theta",
+    state: "believes-false",
+    sinceCh: 417,
+    revealCh: 418,
+    note: "Shown the same illusion as everyone else — but she moves on the casket until Salkov's 'second time' warning stops her, and her look at the empty air rattles the prince himself. What she actually perceives is deliberately unresolved.",
+  },
+
+  // fact-parallel-future-rules
+  {
+    factId: "fact-parallel-future-rules",
+    characterId: "tserriednich",
+    state: "knows",
+    sinceCh: 418,
+    note: "His own experimental rulebook — trigger, restrictions, antenna, battery — explicitly flagged as hypotheses he will keep testing.",
+  },
+  {
+    factId: "fact-parallel-future-rules",
+    characterId: "salkov",
+    state: "suspects",
+    sinceCh: 418,
+    note: "Knows the death is scripted and suspects an illusion — but the corpse's weight and stench shake even him: 'are these all really… an illusion!?'",
+  },
+  {
+    factId: "fact-parallel-future-rules",
+    characterId: "benjamin",
+    state: "unaware",
+    sinceCh: 418,
+    note: "Filed the Fourth Prince as dead and moved on; nothing in his ledger allows for a corpse made of prediction.",
   },
 ];

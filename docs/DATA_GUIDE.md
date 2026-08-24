@@ -291,6 +291,61 @@ prod server. The user often has their own dev server on 3000; don't fight it.
     did not surface.
   - Emergency Law (Article One) is a new glossary term, `emergency-law`.
 
+- **Chapter 418 rulings (ingested from the official MANGA Plus release,
+  read page-by-page, cross-checked against Hunterpedia and VoraciousDrake's
+  translation):** `ARC_END` is now **418**. Official English title is
+  **"Hypothesis"** (仮定, *Katei*) — VD's post title "Supposition" is his own
+  rendering. Viz reuses "Hypothesis" for chs 386/394/418; the Japanese titles
+  differ (Kasetsu / Sōtei / Katei).
+  - The whole chapter is Tserriednich's POV, running parallel to the ch-417
+    raid inside Room 1004. Appearance list: tserriednich, salkov, vantine,
+    danjin, benjamin, butch, theta. Melody is `{{M}}`, Nasubi/Brocco Li/Onior
+    are `{{Mi}}` — all excluded per the settled qualifier rules.
+  - **The ability keeps the id `parallel-future`** (the wiki still labels
+    "Parallel Future" as its non-canonical descriptive name) but the entry now
+    carries the on-page vocabulary: Viz's **"Ephemeral Ten Seconds"** (刹那の
+    10秒; VD: "Instantaneous Ten Seconds") for the vision, and the wiki's
+    "Illusion" stage for the sustained continuation. The rulebook is canon
+    from Tserriednich's own experiments: people are untouchable wax dolls;
+    unheld objects movable but never usable against a person (his bullets
+    crumple on Vantine's forehead — that is the restriction, NOT a Vantine
+    ability); the vision only continues from actions already taken. Engine:
+    his instinct-born Nen beast planted "like an antenna" (念獣 kanji read as
+    antenna per VD's note) at the activation point, spherical field of
+    untested radius covering at least Room 1004, static toward the edge,
+    stored-aura battery at a **1:11** runtime-to-charge ratio — Viz:
+    "**another three hours and 48 minutes, give or take**" after the wake.
+    Pain, and only pain, breaks his Zetsu; entry speed plateaued at 2.92 s.
+  - **The will anomaly is recorded, not resolved**: he writes a last will
+    inside the illusion that the deceived Salkov then finds and reads — the
+    wiki flags it as unexplained by his own rules. Don't invent a mechanism.
+  - **Salkov is on-page in Room 1004 through the wake** despite ch 417
+    sending him (with Danjin) to the Central Justice Bureau. The two chapters
+    sit in visible tension; the archive keeps both as written, with notes,
+    and adds a ch-418 `locationHistory` entry back to `tserriednich-quarters`.
+    The military honors the will: remains untouched until **6 a.m., day 13**,
+    wake doubles as funeral, then **Salkov alone** transports the coffin.
+  - **Theta's casket moment is a deliberate tease** — she turns and looks at
+    the invisible prince, he panics, she walks past. The archive records the
+    tease (bioReveals, event, storyline open question) but assigns her
+    `believes-false` on the ruse fact; do not upgrade her to "suspects"
+    without on-page confirmation.
+  - **Routes A/B/C** (Tier 1 ↔ lower decks: starboard royal/VVIP, stern
+    soldiers+mafia, portside general) enter the glossary as `tier1-routes`
+    and knowledge as `fact-tier1-routes`. Viz says Benjamin's column heads
+    down **Route C** to the Ministry of Justice's **Tier 3 central entrance**
+    while the confiscated weapons go to the "Central Justice Bureau on
+    Tier 2" — the Bureau/Ministry terminology knot continues; keep both as
+    each chapter uses them.
+  - `th-tserriednich-time-beast` is **confirmed** (confidence `canonical`),
+    matching the `th-halkenburg-body-swap` precedent. The mystery
+    `my-tserriednich-god-beast` stays `likely-answered`: the beast-engine is
+    answered, but the Guardian Spirit Beast's type/ability, the field radius,
+    and the latecomer question remain open.
+  - Vantine's role is upgraded to **Captain of Tserriednich's personal
+    guards** (wiki `|occupation`; Tserriednich addresses him "Captain
+    Vantine" on-page).
+
 ## Registry completeness
 
 Every named character within the dataset's chapter coverage belongs in the

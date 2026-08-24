@@ -178,6 +178,11 @@ export const theories: Theory[] = [
         value: "strengthened",
         note: "Salkov's instructor-eye analysis converges on the same model: something activates during Tserriednich's Zetsu, and the beast is the likeliest reservoir.",
       },
+      {
+        ch: 418,
+        value: "confirmed",
+        note: "Tserriednich says it himself: the Nen beast stands at the activation point 'like an antenna', broadcasts the illusion over a spherical field, and runs on aura it stored while his nodes were open — battery life one-eleventh of charging time. The engine is the beast; the ceiling is its charge.",
+      },
     ],
     supporting: [
       {
@@ -189,6 +194,11 @@ export const theories: Theory[] = [
         chapter: 402,
         note: "Salkov theorizes the beast stores aura normally and fires when Zetsu cuts the prince's own flow — the only model that fits Theta's testimony.",
         confidence: "strong-inference",
+      },
+      {
+        chapter: 418,
+        note: "The user's own rulebook: beast-as-antenna, spherical field, stored-aura battery at a 1:11 ratio, static toward the field's edge. Written in his monologue while the illusion carried his own funeral.",
+        confidence: "canonical",
       },
     ],
     contradicting: [
@@ -204,9 +214,9 @@ export const theories: Theory[] = [
       },
     ],
     relatedCharacterIds: ["tserriednich", "theta", "salkov"],
-    chapters: [384, 387, 402, 404],
-    confidence: "theory",
-    lastUpdatedCh: 404,
+    chapters: [384, 387, 402, 404, 418],
+    confidence: "canonical",
+    lastUpdatedCh: 418,
   },
   {
     id: "th-halkenburg-body-swap",

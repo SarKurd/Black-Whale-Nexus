@@ -263,6 +263,15 @@ export const glossary: GlossaryTerm[] = [
     introducedCh: 359,
   },
   {
+    id: "tier1-routes",
+    term: "Routes A, B, and C",
+    definition:
+      "The three passageways connecting Tier 1 to the lower decks, mapped in Tserriednich's escape planning: Route A at the starboard for royalty and VVIPs — designed as the shortest path, mirrored by dedicated royal entrances at every public facility — Route B at the stern for soldiers and mafia executives, and Route C at the portside for general passengers. Under Special Martial Law, Benjamin's column takes C, B is locked down around the arrested mafia bosses, and A goes unwatched.",
+    category: "ship",
+    relatedIds: ["ship-tiers", "black-whale", "special-martial-law"],
+    introducedCh: 418,
+  },
+  {
     id: "hidden-passages-term",
     term: "Hidden passages",
     definition:
