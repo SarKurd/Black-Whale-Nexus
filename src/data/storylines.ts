@@ -770,7 +770,7 @@ export const storylines: Storyline[] = [
     name: "Tserriednich's Awakening",
     color: "#a67fb8",
     summary:
-      "Theta agrees to teach the Fourth Prince Nen, planning to throttle the pace. Tserriednich learns in days what takes others years, survives her point-blank bullet through a Zetsu-borne vision of the future, and turns his teacher's deception into a leash around her neck. When martial law names him a terrorist he answers with his masterpiece: a scripted execution under Benjamin's gun, taken by an illusion while he stands beside it — then a self-managed wake, a rulebook written from live experiments, and a hooded exit toward Route A with under four hours of illusion left.",
+      "Theta agrees to teach the Fourth Prince Nen, planning to throttle the pace. Tserriednich learns in days what takes others years, survives her point-blank bullet through a Zetsu-borne vision of the future, and turns his teacher's deception into a leash around her neck. When martial law names him a terrorist he answers with his masterpiece: a scripted execution under Benjamin's gun, taken by an illusion while he stands beside it — then a self-managed wake, a rulebook written from live experiments, and a hooded exit with under four hours of illusion left. The escape itself becomes the final exam: the ability named at last — Laplace's Devil — its 36-meter field measured mid-massacre, and a lockdown-beating reroute through the casino toward Tier 2.",
     status: [
       { ch: 362, value: "active" },
       {
@@ -788,18 +788,23 @@ export const storylines: Storyline[] = [
         value: "escalating",
         note: "Officially dead and loose: the ability is codified, the wake is staged, and the escape clock is running.",
       },
+      {
+        ch: 419,
+        value: "escalating",
+        note: "Blood drawn: four soldiers dead in the VVIP corridor, Tier 1 sealed into a search grid, and the dead prince gambling his way toward the casino's back stairs.",
+      },
     ],
     participantIds: ["tserriednich", "theta", "salkov"],
     factionIds: ["tserriednich-camp"],
     objectives: [
       "Theta: contain — or end — the monster she is arming, and survive",
-      "Tserriednich: cross a hostile ship as a dead man — Route A, before the beast's battery dies",
+      "Tserriednich: cross a hostile, sealed ship as a dead man — casino stairs, connecting passageway, Tier 2 — before the beast's battery dies",
     ],
     openQuestions: [
       "Did Theta perceive anything at the casket — and what happens the moment the illusion collapses?",
       "Can Theta survive a third lie?",
-      "How does a will written inside the illusion end up readable by the deceived?",
-      "Where is he going — the destination was cut off mid-thought",
+      "How does a will written inside the illusion end up readable by the deceived — and why did the Room 1004 guards hear a door the illusion never showed them opening?",
+      "Where is he ultimately going — the destination was cut off mid-thought, and the casino floor he just entered is the one where Hisoka was last seen",
     ],
     relatedIds: ["succession-contest", "heil-ly-morena"],
     nodes: [
@@ -861,6 +866,17 @@ export const storylines: Storyline[] = [
           "ev-418-execution-replay",
           "ev-418-staged-wake",
           "ev-418-route-a-departure",
+        ],
+      },
+      {
+        ch: 419,
+        kind: "advance",
+        title: "Practice: Laplace's Devil earns its name",
+        eventIds: [
+          "ev-419-radius-test",
+          "ev-419-passageway-fight",
+          "ev-419-outsider-test",
+          "ev-419-casino-infiltration",
         ],
       },
     ],
@@ -1709,6 +1725,11 @@ export const storylines: Storyline[] = [
         value: "escalating",
         note: "Declared ship-wide, mid-negotiation, mid-funeral.",
       },
+      {
+        ch: 419,
+        value: "escalating",
+        note: "The regime meets its first enemy it cannot see: a crisis alert seals Tier 1 outright — no deck movement, no doors, no passageways — for a sweep against a 'light-refracting suit'.",
+      },
     ],
     participantIds: [
       "benjamin",
@@ -1792,6 +1813,13 @@ export const storylines: Storyline[] = [
           "ev-417-room1001-audience",
           "ev-417-mafia-arrests",
         ],
+      },
+      {
+        ch: 419,
+        kind: "advance",
+        title: "Crisis alert: an invisible enemy seals Tier 1",
+        linkId: "tserriednich-nen",
+        eventIds: ["ev-419-passageway-fight", "ev-419-tier1-lockdown"],
       },
     ],
     introducedCh: 400,

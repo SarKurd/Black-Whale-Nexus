@@ -3026,7 +3026,7 @@ export const entityIndex: Record<string, EntityIndexEntry> = {
     frameColor: "var(--gold-dim)",
   },
   "parallel-future": {
-    name: "Parallel Future ('Ephemeral Ten Seconds')",
+    name: "Laplace's Devil ('Ephemeral Ten Seconds')",
     href: "/nen/parallel-future",
     color: "var(--teal)",
     frameColor: "var(--gold-dim)",
@@ -3409,6 +3409,12 @@ export const entityIndex: Record<string, EntityIndexEntry> = {
     color: "var(--teal)",
     frameColor: "var(--gold-dim)",
   },
+  "th-casino-convergence": {
+    name: "th-casino-convergence",
+    href: "/theories#th-casino-convergence",
+    color: "var(--teal)",
+    frameColor: "var(--gold-dim)",
+  },
   "fact-kurapika-is-chain-user": {
     name: "fact-kurapika-is-chain-user",
     href: "/knowledge?fact=fact-kurapika-is-chain-user",
@@ -3598,6 +3604,12 @@ export const entityIndex: Record<string, EntityIndexEntry> = {
   "fact-tier1-routes": {
     name: "fact-tier1-routes",
     href: "/knowledge?fact=fact-tier1-routes",
+    color: "var(--teal)",
+    frameColor: "var(--gold-dim)",
+  },
+  "fact-laplace-devil-field": {
+    name: "fact-laplace-devil-field",
+    href: "/knowledge?fact=fact-laplace-devil-field",
     color: "var(--teal)",
     frameColor: "var(--gold-dim)",
   },

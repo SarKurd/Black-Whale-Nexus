@@ -311,6 +311,11 @@ export const mysteries: Mystery[] = [
         value: "likely-answered",
         note: "The user publishes his own answer: the instinct-born Nen beast is the engine, planted like an antenna at the activation point, broadcasting the illusion over a spherical field on stored aura (1:11 charge ratio). What stays open: the Guardian Spirit Beast's own type and ability, the field's true radius, whether latecomers entering the zone fall under the spell, and how a will written inside the illusion became readable.",
       },
+      {
+        ch: 419,
+        value: "likely-answered",
+        note: "Two of the open items close by experiment: the field's radius is roughly 36 meters, and latecomers entering the zone are NOT deceived — the ability is even named, 'Ephemeral Ten Seconds: Laplace's Devil'. Still open: the Guardian Spirit Beast's own type and ability, the will anomaly, and now a stray cousin of it — the Room 1004 guards heard the corridor door slam that the illusion never let them see open.",
+      },
     ],
     relatedCharacterIds: ["tserriednich", "theta", "salkov"],
     evidenceFor: [
@@ -339,6 +344,11 @@ export const mysteries: Mystery[] = [
         note: "Tserriednich's own monologue: the Nen beast plants itself at the activation point 'like an antenna', runs on aura stored while his nodes were open, and dies with its battery — Salkov's ch-402 model, confirmed by the user.",
         confidence: "canonical",
       },
+      {
+        chapter: 419,
+        note: "The activation panel names the ability outright, and his corridor experiments fix the radius (≈36 m), the boundary reset, and the latecomer immunity on-page.",
+        confidence: "canonical",
+      },
     ],
     possibleExplanations: [
       {
@@ -355,8 +365,8 @@ export const mysteries: Mystery[] = [
       },
     ],
     latestDevelopment: {
-      ch: 418,
-      text: "Tserriednich confirms Salkov's model himself: the self-made beast stores aura while his nodes are open and spends it as an antenna broadcasting the illusion — one part runtime per eleven parts charging. The boundary question is half-closed: the future sight and illusion belong to the beast-engine; the Guardian Spirit Beast, its type, and its truth-branding ability remain a separate, still-open file.",
+      ch: 419,
+      text: "The engine gets its name — 'Ephemeral Ten Seconds: Laplace's Devil' — and its dimensions: a 36-meter field measured by ear, boundary resets, blink reactivation, and latecomer immunity, all settled by live experiment mid-massacre. The Guardian Spirit Beast, its type, and its truth-branding ability remain a separate, still-open file — as does the will anomaly, now joined by a door the deceived guards heard but never saw open.",
     },
   },
   {

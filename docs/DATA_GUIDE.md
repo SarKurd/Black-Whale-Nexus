@@ -346,6 +346,75 @@ prod server. The user often has their own dev server on 3000; don't fight it.
     guards** (wiki `|occupation`; Tserriednich addresses him "Captain
     Vantine" on-page).
 
+- **Chapter 419 rulings (PROVISIONAL — ingested from the pre-official
+  English scanlation on cubari ("Togashi's Troupe w/ VoraciousDrake",
+  imgchest `lqyebnxrxyd`, read page-by-page) cross-checked against
+  VoraciousDrake's translation post. Hunterpedia has no 419 page yet and
+  the official MANGA Plus release is pending — reconcile against both when
+  they land, as was done for 417):** `ARC_END` is now **419**. Working title
+  is **"Practice"** (both the scanlation and VD use it); treat it as
+  provisional until Viz confirms.
+  - **The ability is named on-page**: the activation panel reads
+    **"Ephemeral Ten Seconds: 'Laplace's Devil'"** (ラプラスデビル as the
+    furigana/reading pair for 刹那の10秒 — the first time it carries a
+    proper Nen name; VD renders it "Laplace Devil", the scanlation
+    "Laplace's Devil" with a footnote crediting Laplace's demon,
+    Pierre-Simon Laplace, 1814). The entry **keeps the id
+    `parallel-future`** (ids are permanent) but its `name` is now
+    "Laplace's Devil ('Ephemeral Ten Seconds')". Trivia recorded by VD:
+    the official Japanese for Laplace's demon is ラプラスの悪魔; Togashi's
+    デビル points at THE devil, matching the beast's 666 and the lucky
+    numbers 4·9·6 = 216 = 6³ — and ch 418's flavor text 悪魔の散歩 reads in
+    hindsight as "the devil takes a stroll".
+  - **New field rules, all from his own on-page experiments**: radius
+    ≈36 m from the beast-antenna (static tempo in his ears is the gauge;
+    35 was the estimate, 36 the lucky-number bet the door test bore out);
+    leaving the field or releasing Zetsu resets everything at once
+    (illusory bodies vanish "like smoke", post-activation "deaths" undo —
+    the two soldiers he shot after activation sit up alive); while Zetsu
+    holds he can re-trigger at the boundary with a blink, no fresh Zetsu
+    entry; people outside the field at activation are never deceived and
+    stay undeceived even if they enter afterward (tested on a live
+    soldier); worst-case battery budget 23:1. Kills made BEFORE activation
+    are real — **four** by Tserriednich's own bullets (three right-hand,
+    one left), his stated total. **Do not write "four" as the corridor's
+    whole toll**: only the *phantom's* casualties undo at the reset; the
+    deceived soldiers' own gunfire stays real (the vision predicts one man
+    falling to friendly fire, and the aftermath page has survivors sorting
+    real allied bodies from fake ones — "our comrades' bodies are RIGHT
+    there…!!"). The crossfire dead are real but **untotaled on-page** —
+    record them as such, no invented number. Same ruling family as ch 418's
+    Benjamin blast: a deceived person's perceptions are false, their
+    actions and bullets are not. All casualties are anonymous soldiers:
+    **no registry entries, no death records** for unnamed grunts.
+  - **appearingCharacterIds is `["tserriednich"]` alone.** Camilla
+    (Room 1002 musings), Benjamin ("Big Birdbrain"/"Big Buffoon"), and
+    Nasubi ("my old man", "the King") are mention-only; every soldier is
+    unnamed; the Nen beast appears only inside his mental diagrams. His
+    real face (long hair, beard) is drawn once, on the map page.
+  - **The door-sound anomaly is recorded, not explained**: the Room 1004
+    guards hear the corridor doors slam but never saw them open. Fan
+    readings differ (field edge vs. sensory priority); the archive records
+    the on-page fact next to the ch-418 will anomaly and assigns no
+    mechanism.
+  - **The Tier 1 lockdown**: a "crisis alert" seals the tier — no deck
+    movement, no door use, no passageway traffic, the connecting bridge
+    physically withdrawn. The army's institutional read is technological
+    (hallucinogenic gas or a "light-refracting suit", 屈光服 — VD notes the
+    kanji oddity), with gas masks and thermal scopes requisitioned. Nen
+    never enters their reasoning.
+  - **The casino is `tier-1-casino`** — identifying it with Hisoka's
+    ch-405 floor rests on Tier 1 having a single drawn casino; the event
+    evidence marks that identification `strong-inference`. The 4/9
+    machines flanking the final panel (6 absent) are recorded as staging;
+    the Hisoka convergence lives in `th-casino-convergence` as a theory,
+    not canon.
+  - The chapter also delivers the first proper **Tier 1 map**: VVIP
+    entertainment hall (with the down staircase), banquet hall, King &
+    Queens' living quarters, and the connecting passageway to Tier 2 —
+    recorded in `ev-419-casino-infiltration` rather than as new location
+    records.
+
 ## Registry completeness
 
 Every named character within the dataset's chapter coverage belongs in the

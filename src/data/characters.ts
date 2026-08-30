@@ -306,6 +306,10 @@ export const characters: Character[] = [
         revealCh: 418,
         text: "The same hours replayed from inside the trick: he spends the minutes before the raid codifying his ability's rules on Salkov's water bottle, hands Salkov a gun and the line 'soon I'm gonna die here', then stands beside his own execution critiquing Benjamin's haste. What follows is a funeral he stage-manages invisibly — a scribbled will read aloud (no funeral, no posthumous name, no viewings), a coffin packed with confiscated guns, three bullets that crumple against the guard captain who annoyed him — before Theta's near-miss glance at the casket rattles him, thrills him, and sends him out the door with under four hours of illusion left: 'time to start this escape adventure'.",
       },
+      {
+        revealCh: 419,
+        text: "The escape's first leg doubles as his ability's christening — 'Ephemeral Ten Seconds: Laplace's Devil', spoken at activation as he turns the VVIP corridor into a laboratory. He measures the field at roughly 36 meters by the static in his ears, kills four soldiers for real while a scripted double soaks the survivors' fire behind a meat shield, confirms on a live volunteer that latecomers to the field are never deceived, and walks out of range to reset before the double can be unmasked — leaving two knots of soldiers staring at vanished bodies and commanders requisitioning gas masks and thermal scopes against a 'light-refracting suit'. When the crisis alert seals Tier 1, he re-plans without breaking stride: down from the entertainment facilities, across to Tier 2, starting with the casino's anti-rioter spiral staircase — and strolls onto the gaming floor past machines numbered 4 and 9.",
+      },
     ],
     monogram: "P4",
     factionIds: ["tserriednich-camp", "royal-family"],
@@ -330,8 +334,20 @@ export const characters: Character[] = [
         status: "alive",
         note: "Alive, unhurt, and officially dead — free to walk his own wake unseen. By his math the illusion holds roughly 3 hours 48 minutes more; he leaves Room 1004 disguised in a hoodie, planning Route A off Tier 1, destination cut off mid-thought.",
       },
+      {
+        ch: 419,
+        status: "alive",
+        note: "Loose in the VVIP entertainment district with four kills by his own gun behind him — plus the untotaled crossfire dead his phantom drew — and Tier 1 sealed around him. The army hunts an 'invisible enemy' it explains as gas or a light-refracting suit — it has not identified him, and the ruse holds: officially he is still the executed Fourth Prince.",
+      },
     ],
-    locationHistory: [{ ch: 359, locationId: "tserriednich-quarters" }],
+    locationHistory: [
+      { ch: 359, locationId: "tserriednich-quarters" },
+      {
+        ch: 419,
+        locationId: "tier-1-casino",
+        note: "Escape in progress: out of Room 1004, through the massacred VVIP corridor, into the casino as the lockdown sweep begins — aiming for its spiral-staircase emergency exit and Tier 2 beyond.",
+      },
+    ],
     objectives: [
       {
         text: "Win the throne as the natural culmination of his superiority.",
@@ -347,6 +363,12 @@ export const characters: Character[] = [
         text: "Slip off Tier 1 by Route A — the royal passage nobody is watching — while the ship still believes him executed, before the beast's stored aura runs dry.",
         kind: "hidden",
         revealCh: 418,
+        status: "abandoned",
+      },
+      {
+        text: "Beat the lockdown: descend from the entertainment facilities via the casino's spiral-staircase emergency exit, cross the connecting passageway to Tier 2, and find a way to 'stay dead' through the sweep.",
+        kind: "hidden",
+        revealCh: 419,
         status: "active",
       },
     ],
@@ -373,7 +395,7 @@ export const characters: Character[] = [
     ],
     chapterAppearances: [
       345, 348, 349, 358, 359, 362, 366, 368, 375, 376, 385, 387, 394, 402, 404,
-      413, 415, 416, 417, 418,
+      413, 415, 416, 417, 418, 419,
     ],
     tags: ["prince", "nen-user", "killer"],
   },

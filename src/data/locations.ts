@@ -143,6 +143,11 @@ export const locations: ShipLocation[] = [
         value: "tense",
         note: "The consolidation order empties the royal deck toward Room 1001 — weapons surrendered, escorts left at the door.",
       },
+      {
+        ch: 419,
+        value: "lethal",
+        note: "Crisis alert: the whole tier sealed against an 'invisible enemy' — no deck movement, no doors, no passageway traffic, the connecting bridge withdrawn — while soldiers sweep with gas masks and thermal scopes on requisition.",
+      },
     ],
     connectedIds: [
       "black-whale",
@@ -847,6 +852,11 @@ export const locations: ShipLocation[] = [
         value: "lethal",
         note: "Benjamin, poisoned and racing the clock, launches the martial-law purge from his room here.",
       },
+      {
+        ch: 419,
+        value: "lethal",
+        note: "The common passageway becomes the war's strangest crime scene: four soldiers dead by the intruder's own gun, more to the crossfire their comrades poured at his phantom, fake casualties who sat up at the reset, and a culprit's body that vanished 'like smoke'.",
+      },
     ],
     connectedIds: [
       "tier-1",
@@ -970,7 +980,7 @@ export const locations: ShipLocation[] = [
     parentId: "tier-1",
     canonicity: "canonical",
     description:
-      "A high-end casino on the royal deck: card tables running Square-X — the 'go to heaven' variant where a player cannot fold — and banks of slot machines. Hisoka resurfaces on-page here on the twelfth day, winning absurd hands and rolling triple sevens while monologuing about his tastes; Bonolenov, mid-decoy, spots the real man across the floor.",
+      "A high-end casino on the royal deck: card tables running Square-X — the 'go to heaven' variant where a player cannot fold — and banks of slot machines. Hisoka resurfaces on-page here on the twelfth day, winning absurd hands and rolling triple sevens while monologuing about his tastes; Bonolenov, mid-decoy, spots the real man across the floor. Its emergency exit — by Tserriednich's recall, a spiral staircase built against rioters from below — makes it the officially dead Fourth Prince's chosen way off the sealed tier: he walks the floor as the lockdown sweep begins, past machines numbered 4 and 9.",
     connectedIds: ["tier-1"],
     introducedCh: 405,
   },

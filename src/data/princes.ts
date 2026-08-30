@@ -418,6 +418,10 @@ export const princes: Prince[] = [
         text: "Escape Tier 1 via the royal Route A before the beast's battery dies — roughly 3 hours 48 minutes — and move through a ship that believes him executed.",
         revealCh: 418,
       },
+      {
+        text: "Beat the Tier 1 lockdown: down from the entertainment facilities by the casino's spiral-staircase exit, across the connecting passageway to Tier 2 — spending Laplace's Devil only where a gun won't do — and find a way to 'stay dead' through the sweep.",
+        revealCh: 419,
+      },
     ],
     vulnerabilities: [
       {
@@ -439,6 +443,10 @@ export const princes: Prince[] = [
       {
         text: "His resurrection runs on a battery: leave the beast-antenna's radius or run out its stored aura (≈3 h 48 m from the wake) and every witness snaps back to reality. Any pain breaks his Zetsu outright, his rules bar him from stealing a uniform, and once the illusion drops, the window before someone verifies the coffin is 'a few days at most, an hour minimum'.",
         revealCh: 418,
+      },
+      {
+        text: "The corridor massacre made him hunted as well as dead: Tier 1 is sealed and swept, the army wants its invisible enemy kept from the King at all costs, and gas masks and thermal scopes are on requisition — countermeasures aimed at the wrong threat, but a thermal scope doesn't need to understand Nen to find a warm body.",
+        revealCh: 419,
       },
     ],
     riskHistory: [
@@ -476,6 +484,11 @@ export const princes: Prince[] = [
         ch: 418,
         risk: "high",
         why: "The safety of being dead now has an expiry: the illusion's battery reads ≈3 h 48 m, leaving the antenna's radius cancels it instantly, and he is walking out alone, unarmed of Nen while in Zetsu, through a martial-law ship where a single recognizer — guard or soldier — collapses the whole ruse.",
+      },
+      {
+        ch: 419,
+        risk: "high",
+        why: "Still unidentified, but no longer unnoticed: four soldiers dead by his hand, Tier 1 sealed into a search grid until Benjamin's column returns, and thermal-scope countermeasures inbound that don't need to understand the ability to defeat it. His cover story — a bystander idling in the entertainment hall — survives a sweep only if nobody checks the coffin.",
       },
     ],
     assessment: {
@@ -527,6 +540,10 @@ export const princes: Prince[] = [
       {
         ch: 418,
         text: "He codifies his ability's rulebook, stage-manages his own wake — will, guard-filled coffin, a 6 a.m. transfer entrusted to Salkov alone — and leaves Room 1004 in a hoodie with about 3 hours 48 minutes of illusion left, betting on Route A while Benjamin's column takes Route C.",
+      },
+      {
+        ch: 419,
+        text: "Names the ability at last — 'Ephemeral Ten Seconds: Laplace's Devil' — while measuring its 36-meter field on the fly, killing four soldiers through the VVIP corridor behind a scripted double, and proving latecomers to the field can't be deceived. The lockdown kills Route A; he reroutes through the casino's spiral-staircase exit toward Tier 2 and ends the chapter on the gaming floor, between machines numbered 4 and 9.",
       },
     ],
     mysteryIds: ["my-tserriednich-god-beast"],

@@ -2975,19 +2975,22 @@ export const nenAbilities: NenAbility[] = [
   },
   {
     id: "parallel-future",
-    name: "Parallel Future ('Ephemeral Ten Seconds')",
+    name: "Laplace's Devil ('Ephemeral Ten Seconds')",
     userCharacterId: "tserriednich",
     kind: "personal",
     nenType: "specialist",
     description:
-      "Tserriednich's Zetsu-borne future sight, self-documented in chapter 418. Entering Zetsu with his eyes closed (in either order) shows him the 'Ephemeral Ten Seconds' — Viz's on-page name for the vision; 'Parallel Future' is the archive's descriptive label — an instantaneous premonition of the next ten seconds that others perceive as a blink. Opening his eyes right after replays those ten seconds in reality; keeping Zetsu up afterward maintains an illusion world in which everyone inside the field goes on perceiving the predicted continuation while the real Tserriednich moves unseen. The engine is his instinct-born Nen beast, which stands like an antenna at the activation point and broadcasts the illusion over a spherical field, running on aura it stored while his nodes were open.",
+      "Tserriednich's Zetsu-borne future sight, self-documented in chapter 418 and named on-page at the chapter-419 activation: 'Ephemeral Ten Seconds: Laplace's Devil' (ラプラスデビル — a deliberate twist on Laplace's demon, the 1814 thought experiment in causal determinism; the archive's old descriptive label 'Parallel Future' survives only in this entry's id). Entering Zetsu with his eyes closed (in either order) shows him the 'Ephemeral Ten Seconds' — an instantaneous premonition of the next ten seconds that others perceive as a blink. Opening his eyes right after replays those ten seconds in reality; keeping Zetsu up afterward maintains an illusion world in which everyone inside the field goes on perceiving the predicted continuation while the real Tserriednich moves unseen. The engine is his instinct-born Nen beast, which stands like an antenna at the activation point and broadcasts the illusion over a spherical field — measured in chapter 419 at roughly 36 meters — running on aura it stored while his nodes were open.",
     activation:
       "Enter Zetsu with both eyes closed — 'perform Zetsu and close my eyes' or 'enter Zetsu while my eyes are closed' both trigger it.",
     conditions: [
       "The initial prediction always covers the next ten seconds and passes in a blink of real time.",
       "Opening his eyes right after the vision makes those ten seconds play out in reality; the illusion persists past them for as long as he maintains Zetsu.",
-      "The Nen beast anchors at the point of activation; the field is spherical with an unmeasured radius that covers at least all of Room 1004.",
-      "The beast runs on stored aura — Tserriednich's estimate is one part active time per eleven parts spent charging outside Zetsu.",
+      "The Nen beast anchors at the point of activation; the field is spherical with a radius of roughly 36 meters — his own ch-419 measurement, by the static that quickens in his ears toward the edge.",
+      "Only people inside the field at the moment of activation are deceived; anyone outside is unaffected even if they enter the field afterward (tested live on a soldier in ch 419).",
+      "Crossing the boundary — or releasing Zetsu — resets the ability: illusory bodies vanish, scripted 'deaths' undo, and every witness snaps back to reality at once.",
+      "While Zetsu holds, reaching the boundary lets him re-trigger the Ephemeral Ten Seconds with a blink — no fresh Zetsu entry — chaining 36-meter hops against the battery.",
+      "The beast runs on stored aura — Tserriednich's estimate is one part active time per eleven parts spent charging outside Zetsu; for escape planning he budgets a pessimistic 23:1.",
     ],
     restrictions: [
       "He cannot change the location or physical state of any person in the continuation — people play out the predicted scenario like wax dolls, clothes and hair included; he cannot even slip something into a pocket.",
@@ -2995,20 +2998,21 @@ export const nenAbilities: NenAbility[] = [
       "The vision only ever shows the consequences of actions he has already taken in reality — he cannot script a future by resolving to act after activation.",
       "Any pain, even a light bump, breaks his Zetsu and with it the ability; other sudden stimuli (sirens, noise) no longer do.",
     ],
-    cost: "Drains the beast's stored aura while he stays in Zetsu; when the battery dies the field and illusion collapse. After the ch-417 execution he calculates roughly 3 hours 48 minutes remaining.",
+    cost: "Drains the beast's stored aura while he stays in Zetsu; when the battery dies the field and illusion collapse. After the ch-417 execution he calculates roughly 3 hours 48 minutes remaining; setting out in ch 419 he assumes a worst-case 23:1 recharge ratio and budgets 30–45 minutes of use.",
     range:
-      "A spherical field of radius 'X' around the beast-antenna — enough to cover Room 1004; the exact radius is untested",
-    targets: "Everyone inside the field when the ability runs",
+      "A spherical field around the beast-antenna, radius roughly 36 meters by his ch-419 static-tempo measurement — barely enough to reach from Room 1004 to the shared VVIP corridor's doors",
+    targets: "Everyone inside the field at the moment of activation",
     effects: [
       "Shows Tserriednich the next ten seconds instantaneously.",
       "Everyone inside the field experiences the predicted sequence — and its seamless continuation — even as the real Tserriednich acts freely outside it.",
       "Sustained through the ch-417 'execution', it kept a mutilated corpse on the floor of Room 1004 solid enough to bag, coffin, and mourn: witnesses report its weight and the smell of blood.",
     ],
     weaknesses: [
-      "Static rings in his ears as he moves away from the beast; he expects crossing the field's edge to cancel everything at once and snap every witness back to reality.",
-      "Observers outside the field are never deceived — by his own hypothesis they would watch the 'dead' prince walk around.",
-      "The activation window (2.92 s at his ch-418 plateau) leaves him physically vulnerable, and pain breaks the running ability outright.",
+      "Static rings in his ears as he moves away from the beast, its tempo quickening toward the ≈36 m edge, where the field snaps with a 'zap' — confirmed in ch 419, along with the instant reset it causes.",
+      "Observers outside the field are never deceived — confirmed in ch 419, when the Room 1006 lookouts watched the 'dead' prince walk by and a latecomer soldier saw the real him inside the field.",
+      "The activation window (2.92 s at his ch-418 plateau) leaves him physically vulnerable, and pain breaks the running ability outright; stopping Zetsu is easy but restarting costs time, so mid-escape he prefers forcing resets by crossing the boundary.",
       "Its people-rules bar him from taking worn clothing — he cannot steal a uniform to disguise himself.",
+      "The reset is loud evidence: bodies vanishing 'like smoke' before dozens of witnesses handed the royal army an invisible-enemy manhunt, gas masks and thermal scopes on order.",
     ],
     firstSeenCh: 385,
     revealCh: 387,
@@ -3029,6 +3033,10 @@ export const nenAbilities: NenAbility[] = [
         ch: 418,
         note: "The full run: an illusory corpse takes the execution, the wake, and the coffin while the real prince tests his rules on Salkov's water bottle, shoots three harmlessly crumpling bullets at Vantine, and packs the casket with confiscated guns. One anomaly stands: he writes a last will inside the illusion that Salkov then finds and reads — unexplained by his own rules.",
       },
+      {
+        ch: 419,
+        note: "Named at last — 'Ephemeral Ten Seconds: Laplace's Devil' — and field-tested in combat: the radius measured at ≈36 m, a corridor massacre fought once in reality (four dead to his own gun, more to the crossfire his phantom drew) and once in script (a meat-shield double soaking the survivors' fire), the latecomer immunity confirmed on a live soldier, and a deliberate walk out of range to reset before the double could be unmasked. A stray data point: the Room 1004 guards heard the corridor door slam that none of them saw open.",
+      },
     ],
     status: "active",
     awareCharacterIds: [
@@ -3046,6 +3054,11 @@ export const nenAbilities: NenAbility[] = [
       {
         chapter: 418,
         note: "Tserriednich's own rulebook: the three people/object/consequence restrictions, the beast-antenna model, the 1:11 battery, and the pain-only Zetsu break are all his on-page monologue — hypotheses he explicitly intends to keep testing.",
+        confidence: "canonical",
+      },
+      {
+        chapter: 419,
+        note: "The name is spoken at activation with a Laplace's-demon footnote; the 36 m radius, boundary reset, blink reactivation, latecomer immunity, and undone post-activation 'deaths' are all established by his on-page experiments. Ingested from the pre-official scanlation cross-read with VoraciousDrake's translation; pending the official release.",
         confidence: "canonical",
       },
     ],

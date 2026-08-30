@@ -574,4 +574,51 @@ export const theories: Theory[] = [
     confidence: "theory",
     lastUpdatedCh: 405,
   },
+  {
+    id: "th-casino-convergence",
+    claim:
+      "Tserriednich's casino infiltration is steering him into Hisoka — the floor he just entered is the one where the magician was last seen",
+    summary:
+      "Chapter 419 ends with the officially dead Fourth Prince walking into the Tier 1 casino — the same floor where Hisoka resurfaced in chapter 405 and Chrollo's read has a prince inviting him to Tier 1 in the first place. The last panel frames him between machines numbered 4 and 9, two of his three self-declared lucky numbers (4, 9, 6 — whose product is 216, or 6×6×6, the number his beast wears), with the 6 conspicuously missing. Readers take the staging as a signpost: a gamble about to pay out, or a devil about to meet one.",
+    statusHistory: [
+      {
+        ch: 419,
+        value: "unresolved",
+        note: "Pure staging so far: the shared location, the lucky-number set piece, and fourteen chapters of Hisoka going unseen since the casino.",
+      },
+    ],
+    supporting: [
+      {
+        chapter: 405,
+        note: "Hisoka is on-page in the Tier 1 casino, gambling openly and letting hunters come to him; nothing since has moved him.",
+        confidence: "canonical",
+      },
+      {
+        chapter: 419,
+        note: "The final panel places Tserriednich's lucky 4 and 9 on the machines flanking his entrance — deliberate framing in a chapter otherwise devoted to rules and logistics.",
+        confidence: "strong-inference",
+      },
+      {
+        chapter: 392,
+        note: "Chrollo's assessment aboard: someone of princely rank likely invited Hisoka up to Tier 1 — a standing thread connecting the magician to the royal deck.",
+        confidence: "strong-inference",
+      },
+    ],
+    contradicting: [
+      {
+        chapter: 419,
+        note: "Tserriednich wants the casino for its spiral-staircase emergency exit, not its tables — his plan is to pass through with a gun and save the battery, the opposite of seeking a duel.",
+        confidence: "canonical",
+      },
+      {
+        chapter: 405,
+        note: "Fourteen chapters is a long time to assume a man who advertises his location has stayed put.",
+        confidence: "weak-inference",
+      },
+    ],
+    relatedCharacterIds: ["tserriednich", "hisoka", "chrollo"],
+    chapters: [392, 405, 419],
+    confidence: "theory",
+    lastUpdatedCh: 419,
+  },
 ];

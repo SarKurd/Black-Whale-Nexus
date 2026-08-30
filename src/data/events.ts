@@ -4850,4 +4850,124 @@ export const events: StoryEvent[] = [
     ],
     confidence: "canonical",
   },
+  {
+    id: "ev-419-radius-test",
+    title: "36 meters, measured in static",
+    summary:
+      "Stepping out of Room 1004 under the martial-law announcements, Tserriednich turns his escape's first corridor into a rangefinder. Room 1002 stands unguarded — he can only wonder whether Camilla is being held in the VVIP quarters or is already executed. The static in his ears quickens as he leaves the beast-antenna behind; by gut feel the field will snap in another five or six meters, so roughly 35 from the activation point — 'maybe 36', his lucky numbers being 4, 9, and 6. The doors to the shared VVIP corridor sit exactly at that edge, and the lookouts posted at Room 1006 are his control group: they see an armed man in a hoodie plainly, and stand down anyway, reasoning that the guards beside him would be reacting if anything were wrong — outsiders don't meddle in what looks like a covert operation. That settles the rulebook's next page: radius about 36 meters; no one outside it at activation is ever deceived; leaving the field or releasing Zetsu resets everything; and so long as Zetsu holds, a blink at the boundary re-triggers the Ephemeral Ten Seconds with no re-entry lag. He budgets the battery at a pessimistic 23:1 charge-to-runtime and gives himself 30 minutes to destination — 45 at most.",
+    chapter: 419,
+    day: 12,
+    kind: "nen-reveal",
+    locationId: "royal-quarters",
+    participantIds: ["tserriednich"],
+    storylineIds: ["tserriednich-nen", "special-martial-law"],
+    consequences: [
+      "The field's working radius (≈36 m), the boundary reset, and the blink-chained reactivation are established by his own live measurements",
+      "The Room 1006 lookouts' inaction confirms outsiders see the real him — and that bystander deference can cover the gap",
+    ],
+    evidence: [
+      {
+        chapter: 419,
+        note: "The static-tempo monologue, the lucky-number estimate, the 1006 lookouts' stand-down exchange, and the consecutive-reactivation conclusion are all on-page.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "ev-419-passageway-fight",
+    title: "The corridor fought twice",
+    summary:
+      "The VVIP common passageway is full of soldiers — 'How's there so many of you!?' — and the field snaps just as he reaches it, the door slamming shut behind him heard, but not seen, by the Room 1004 guards. He kills the four nearest for real — the two beside him, the two in front — and activates with the ability's name on the page for the first time: 'Ephemeral Ten Seconds: Laplace's Devil'. The next ten seconds run twice. In reality he fires four bullets and downs four men. In the script, he shoots two more on the far right — 'corpses' only until the ability lifts — swaps hands as each gun empties, drags a body up as a shield, takes a phantom bullet in the right leg, and watches three untouched soldiers believe themselves shot while four survivors train their rifles on a 'me' that isn't there. The script's violence is fake, but the deceived men's own gunfire is not: the vision predicts one of the soldiers coming through the doors falling to friendly fire, and every magazine emptied at the phantom flies through a corridor full of comrades. The playback ends with the double still 'resisting' behind its meat shield as the real prince walks the corridor unseen, mapping what his 36 meters do and don't cover: the corner is inside, the blind spot beyond it is not, and the two guards on the connecting door toward the King's living quarters are out of range.",
+    chapter: 419,
+    day: 12,
+    kind: "battle",
+    locationId: "vvip-area",
+    participantIds: ["tserriednich"],
+    storylineIds: ["tserriednich-nen", "special-martial-law"],
+    consequences: [
+      "Four royal soldiers are dead by Tserriednich's own bullets — his stated total — and only the phantom's casualties undo at the reset; the soldiers' real crossfire at the illusion adds allied dead the chapter never counts",
+      "The double buys him free movement: the survivors' attention, fire, and radio traffic all lock onto a prediction",
+    ],
+    evidence: [
+      {
+        chapter: 419,
+        note: "The before/after-activation kill accounting ('I fired three bullets from my right hand, one from my left... and took out four'), the meat-shield playback, and the named activation are all drawn and monologued.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "ev-419-outsider-test",
+    title: "The latecomer experiment",
+    summary:
+      "Mid-firefight, he runs the case chapter 418 left untested: what happens when someone aware of the real him walks into Laplace's Devil's world? He hails the two soldiers guarding the out-of-range connecting door; one steps into the field and simply asks his name and affiliation — confirmed, people outside at activation are unaffected even if they enter afterward. He improvises a cover story worthy of the ability's name: secret orders, traitors in the royal army, the man under fire an unmasked revolutionary — then a color-coded riddle to carry to the odd-numbered princes' soldiers ('what color is the sky?': no answer innocent, red undercover, purple rebel army) and a second recruit taken along for an 'important task'. When the double is finally shot dead and the survivors close in to unmask it, he walks out of the 36-meter boundary to force the reset — stopping Zetsu is easy, but restarting costs time he doesn't have. The corpse and its shield vanish like smoke, the two post-activation 'dead' sit up alive, and two knots of soldiers compare impossible massacres over allied bodies that stayed exactly where they fell — 'I thought it might've been an illusion, but... our comrades' bodies are RIGHT there...!!'. Command's verdict is technological: a hallucinogenic gas or a light-refracting suit, gas masks and thermal scopes requisitioned, and one absolute order — keep him away from the King.",
+    chapter: 419,
+    day: 12,
+    kind: "nen-reveal",
+    locationId: "vvip-area",
+    participantIds: ["tserriednich"],
+    storylineIds: ["tserriednich-nen", "special-martial-law"],
+    consequences: [
+      "The latecomer rule is settled by experiment: entering the field after activation gives no protection to the illusion — and no danger to him from those already inside",
+      "The army now hunts an 'invisible enemy' with tools for the wrong threat model — Nen never enters their reasoning",
+    ],
+    evidence: [
+      {
+        chapter: 419,
+        note: "The 'CONFIRMED!!' beat, the sky-riddle instructions, the deliberate walk out of range, and the vanishing bodies are all on-page; the gas/suit theories and equipment request are the soldiers' own dialogue.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "ev-419-tier1-lockdown",
+    title: "Crisis alert: Tier 1 sealed",
+    summary:
+      "The military's answer to an enemy it cannot see is geometry: a ship-wide announcement declares a critical incident, shuts down the whole of Tier 1, and seals the cruise ship — all movement between decks, all opening and closing of doors, and all passageway traffic prohibited until further instruction. The connecting bridge to the lower tiers is physically withdrawn over its moat. Tserriednich reads the plan at a glance: confine everyone aboard, seal the three key areas — the King's, the princes', and the VVIPs' living quarters — and sweep the sealed grid until Benjamin's column returns from the lower decks. He grades the response faster than expected, notes that at worst he can claim to have been idling in the entertainment hall, and adds a new requirement to the escape: a way to 'stay dead' through the search.",
+    chapter: 419,
+    day: 12,
+    kind: "decision",
+    locationId: "tier-1",
+    participantIds: ["tserriednich"],
+    storylineIds: ["special-martial-law", "tserriednich-nen"],
+    consequences: [
+      "Tier 1 becomes a sealed search grid: Route A is dead, the connecting passageways are cut, and every locked door now needs the ability or a gun",
+      "The sweep runs on a clock he can read — until the 'Birdbrain gang' comes back up, the grunts can only search high and low",
+    ],
+    evidence: [
+      {
+        chapter: 419,
+        note: "The crisis-alert broadcast text, the withdrawn bridge, and his sealed-three-areas read are all on-page.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "ev-419-casino-infiltration",
+    title: "Casino area infiltration",
+    summary:
+      "The re-planned line off Tier 1, drawn over the deck's first proper map — VVIP entertainment hall, banquet hall, King and Queens' living quarters, and the connecting passageway out to Tier 2: go down from the entertainment facilities, then cross to Tier 2 through the connecting passageway. He expects to spend Laplace's Devil twice more — on the only route down from the entertainment hall and at the passageway — and names the worst stretch: passageway to port area, staffed by young soldiers without combat experience whose movements he cannot predict. The casino's emergency exit should hold a spiral staircase designed against rioters from below, and therefore fewer soldiers; ideally he forces it with just a gun and saves the battery. The chapter closes on 'Casino Area Infiltration' — the officially dead Fourth Prince strolling into the gaming floor past machines numbered 4 and 9, two of his three lucky numbers, with the 6 conspicuously absent.",
+    chapter: 419,
+    day: 12,
+    kind: "movement",
+    locationId: "tier-1-casino",
+    participantIds: ["tserriednich"],
+    storylineIds: ["tserriednich-nen", "special-martial-law"],
+    consequences: [
+      "The escape reroutes through the VVIP entertainment district: casino, spiral staircase, connecting passageway, Tier 2",
+      "He walks, knowingly or not, into the one Tier-1 floor where Hisoka was last seen on-page (ch 405)",
+    ],
+    evidence: [
+      {
+        chapter: 419,
+        note: "The Tier-1 map, the young-soldiers worry, the spiral-staircase reasoning, and the final casino panel are all on-page. Identifying this casino with the ch-405 floor rests on Tier 1 having a single drawn casino.",
+        confidence: "strong-inference",
+      },
+    ],
+    confidence: "canonical",
+  },
 ];
