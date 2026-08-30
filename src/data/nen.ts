@@ -2980,7 +2980,7 @@ export const nenAbilities: NenAbility[] = [
     kind: "personal",
     nenType: "specialist",
     description:
-      "Tserriednich's Zetsu-borne future sight, self-documented in chapter 418 and named on-page at the chapter-419 activation: 'Ephemeral Ten Seconds: Laplace's Devil' (ラプラスデビル — a deliberate twist on Laplace's demon, the 1814 thought experiment in causal determinism; the archive's old descriptive label 'Parallel Future' survives only in this entry's id). Entering Zetsu with his eyes closed (in either order) shows him the 'Ephemeral Ten Seconds' — an instantaneous premonition of the next ten seconds that others perceive as a blink. Opening his eyes right after replays those ten seconds in reality; keeping Zetsu up afterward maintains an illusion world in which everyone inside the field goes on perceiving the predicted continuation while the real Tserriednich moves unseen. The engine is his instinct-born Nen beast, which stands like an antenna at the activation point and broadcasts the illusion over a spherical field — measured in chapter 419 at roughly 36 meters — running on aura it stored while his nodes were open.",
+      "Tserriednich's Zetsu-borne future sight, self-documented in chapter 418 and named on-page at the chapter-419 activation: 'Ephemeral Ten Seconds' with the reading ラプラスデビル — literally Laplace's Devil, a deliberate twist on Laplace's demon, the 1814 thought experiment in causal determinism. Viz's official English normalizes the reading to 'Laplace's Demon', flattening the devil-not-demon wordplay (the standard Japanese for the thought experiment is ラプラスの悪魔); the archive follows the wiki's literal rendering, the Bohemian Rhapsody precedent. The old descriptive label 'Parallel Future' survives only in this entry's id. Entering Zetsu with his eyes closed (in either order) shows him the 'Ephemeral Ten Seconds' — an instantaneous premonition of the next ten seconds that others perceive as a blink. Opening his eyes right after replays those ten seconds in reality; keeping Zetsu up afterward maintains an illusion world in which everyone inside the field goes on perceiving the predicted continuation while the real Tserriednich moves unseen. The engine is his instinct-born Nen beast, which stands like an antenna at the activation point and broadcasts the illusion over a spherical field — measured in chapter 419 at roughly 36 meters — running on aura it stored while his nodes were open.",
     activation:
       "Enter Zetsu with both eyes closed — 'perform Zetsu and close my eyes' or 'enter Zetsu while my eyes are closed' both trigger it.",
     conditions: [
@@ -3012,7 +3012,7 @@ export const nenAbilities: NenAbility[] = [
       "Observers outside the field are never deceived — confirmed in ch 419, when the Room 1006 lookouts watched the 'dead' prince walk by and a latecomer soldier saw the real him inside the field.",
       "The activation window (2.92 s at his ch-418 plateau) leaves him physically vulnerable, and pain breaks the running ability outright; stopping Zetsu is easy but restarting costs time, so mid-escape he prefers forcing resets by crossing the boundary.",
       "Its people-rules bar him from taking worn clothing — he cannot steal a uniform to disguise himself.",
-      "The reset is loud evidence: bodies vanishing 'like smoke' before dozens of witnesses handed the royal army an invisible-enemy manhunt, gas masks and thermal scopes on order.",
+      "The reset is loud evidence: bodies vanishing 'into thin air' before dozens of witnesses handed the royal army an invisible-enemy manhunt, gas masks and infrared goggles on order.",
     ],
     firstSeenCh: 385,
     revealCh: 387,
@@ -3035,7 +3035,7 @@ export const nenAbilities: NenAbility[] = [
       },
       {
         ch: 419,
-        note: "Named at last — 'Ephemeral Ten Seconds: Laplace's Devil' — and field-tested in combat: the radius measured at ≈36 m, a corridor massacre fought once in reality (four dead to his own gun, more to the crossfire his phantom drew) and once in script (a meat-shield double soaking the survivors' fire), the latecomer immunity confirmed on a live soldier, and a deliberate walk out of range to reset before the double could be unmasked. A stray data point: the Room 1004 guards heard the corridor door slam that none of them saw open.",
+        note: "Named at last — 'Ephemeral Ten Seconds', read Laplace's Devil (Viz: 'Laplace's Demon') — and field-tested in combat: the radius measured at ≈36 m, a corridor massacre fought once in reality (four dead to his own gun, more to the crossfire his phantom drew) and once in script (a meat-shield double soaking the survivors' fire), the latecomer immunity confirmed on a live soldier, and a deliberate walk out of range to 'force quit' before the double could be unmasked. A stray data point: the Room 1004 guards heard the corridor door slam that none of them saw open.",
       },
     ],
     status: "active",
@@ -3058,7 +3058,7 @@ export const nenAbilities: NenAbility[] = [
       },
       {
         chapter: 419,
-        note: "The name is spoken at activation with a Laplace's-demon footnote; the 36 m radius, boundary reset, blink reactivation, latecomer immunity, and undone post-activation 'deaths' are all established by his on-page experiments. Ingested from the pre-official scanlation cross-read with VoraciousDrake's translation; pending the official release.",
+        note: "The name is spoken at activation — official Viz text: '\"Ephemeral Ten Seconds\" — Laplace's Demon... activate!!' — and the 36 m radius, boundary reset, blink reactivation, latecomer immunity, and undone post-activation 'deaths' are all established by his on-page experiments. Reconciled against the official MANGA Plus release and the Hunterpedia page, which keeps the literal reading 'Laplace's Devil'.",
         confidence: "canonical",
       },
     ],

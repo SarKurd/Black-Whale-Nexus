@@ -346,26 +346,48 @@ prod server. The user often has their own dev server on 3000; don't fight it.
     guards** (wiki `|occupation`; Tserriednich addresses him "Captain
     Vantine" on-page).
 
-- **Chapter 419 rulings (PROVISIONAL — ingested from the pre-official
-  English scanlation on cubari ("Togashi's Troupe w/ VoraciousDrake",
-  imgchest `lqyebnxrxyd`, read page-by-page) cross-checked against
-  VoraciousDrake's translation post. Hunterpedia has no 419 page yet and
-  the official MANGA Plus release is pending — reconcile against both when
-  they land, as was done for 417):** `ARC_END` is now **419**. Working title
-  is **"Practice"** (both the scanlation and VD use it); treat it as
-  provisional until Viz confirms.
-  - **The ability is named on-page**: the activation panel reads
-    **"Ephemeral Ten Seconds: 'Laplace's Devil'"** (ラプラスデビル as the
-    furigana/reading pair for 刹那の10秒 — the first time it carries a
-    proper Nen name; VD renders it "Laplace Devil", the scanlation
-    "Laplace's Devil" with a footnote crediting Laplace's demon,
-    Pierre-Simon Laplace, 1814). The entry **keeps the id
-    `parallel-future`** (ids are permanent) but its `name` is now
-    "Laplace's Devil ('Ephemeral Ten Seconds')". Trivia recorded by VD:
-    the official Japanese for Laplace's demon is ラプラスの悪魔; Togashi's
-    デビル points at THE devil, matching the beast's 666 and the lucky
-    numbers 4·9·6 = 216 = 6³ — and ch 418's flavor text 悪魔の散歩 reads in
-    hindsight as "the devil takes a stroll".
+- **Chapter 419 rulings (first ingested from the pre-official English
+  scanlation on cubari ("Togashi's Troupe w/ VoraciousDrake", imgchest
+  `lqyebnxrxyd`) cross-checked against VoraciousDrake's translation post,
+  then RECONCILED against the official MANGA Plus release — read
+  page-by-page, translation Lillian Olsen — and the Hunterpedia page that
+  followed it):** `ARC_END` is now **419**. Official English title is
+  **"Implementation"** (実践, *Jissen*) — the fan-era working title
+  "Practice" (both VD and the scanlation) was wrong; don't regress it.
+  WSJ #2855 (issue 40), 19 pages. **Sourcing rule from this pass (user
+  directive): when an official speech bubble is too small or illegible to
+  read confidently, fall back to VoraciousDrake's verbiage for that line.**
+  - **The ability is named on-page**: the Japanese attaches ラプラスデビル
+    as the reading for 刹那の10秒 — the first time it carries a proper Nen
+    name. **Viz renders it "'Ephemeral Ten Seconds' — Laplace's Demon"**,
+    normalizing to the thought experiment's standard name; Hunterpedia
+    keeps the literal **"Laplace's Devil"**, and so does the archive (the
+    Bohemian Rhapsody precedent: follow the wiki/Japanese, record Viz's
+    rendering). The entry **keeps the id `parallel-future`** (ids are
+    permanent) but its `name` is "Laplace's Devil ('Ephemeral Ten
+    Seconds')". Trivia recorded by VD: the standard Japanese for Laplace's
+    demon is ラプラスの悪魔; Togashi's デビル points at THE devil, matching
+    the beast's 666 and the lucky numbers 4·9·6 = 216 = 6³ — and ch 418's
+    flavor text 悪魔の散歩 reads in hindsight as "the devil takes a stroll".
+  - **The wiki's ch-419 synopsis contains two errors — the page wins**:
+    (a) it has Tserriednich grab a live soldier "as a hostage"
+    pre-activation; the official page has him kill four ("I killed four
+    guys — left, right, and two in front, before activation!") and the
+    shield is a **corpse** ("I shift the corpse and return fire", "a
+    corpse as a shield"). (b) it says he "deactivates his Zetsu" to end
+    the first field; the official page has him **step out of range** ("I
+    gotta step out of range... so I can force quit my ability!!" — "it's
+    easy to exit Zetsu, but it still takes me time to restart it").
+  - **Viz vocabulary (use these terms)**: the entertainment hall is the
+    **"rec hall"** (map label; VD's "entertainment facility/hall" and the
+    wiki's "VVIP entertainment hall" are the same place); the Tier 1 ↔
+    Tier 2 link is the **"connecting bridge"** (plural "the bridges have
+    been retracted"), not "connecting passageway"; the soldiers request
+    **"gas masks and infrared goggles"** (not thermal scopes) against
+    **"hallucinatory gas, or a refractive suit"**; Camilla's would-be
+    executioner is the **"Birdbrain"**; the aftermath line is "I thought
+    it might be an illusion... but our guys are really dead!!" — which
+    also seals the crossfire-casualties ruling below.
   - **New field rules, all from his own on-page experiments**: radius
     ≈36 m from the beast-antenna (static tempo in his ears is the gauge;
     35 was the estimate, 36 the lucky-number bet the door test bore out);
@@ -381,15 +403,17 @@ prod server. The user often has their own dev server on 3000; don't fight it.
     whole toll**: only the *phantom's* casualties undo at the reset; the
     deceived soldiers' own gunfire stays real (the vision predicts one man
     falling to friendly fire, and the aftermath page has survivors sorting
-    real allied bodies from fake ones — "our comrades' bodies are RIGHT
-    there…!!"). The crossfire dead are real but **untotaled on-page** —
+    real allied bodies from fake ones — Viz: "I thought it might be an
+    illusion... but our guys are really dead!!"). The crossfire dead are
+    real but **untotaled on-page** —
     record them as such, no invented number. Same ruling family as ch 418's
     Benjamin blast: a deceived person's perceptions are false, their
     actions and bullets are not. All casualties are anonymous soldiers:
     **no registry entries, no death records** for unnamed grunts.
-  - **appearingCharacterIds is `["tserriednich"]` alone.** Camilla
-    (Room 1002 musings), Benjamin ("Big Birdbrain"/"Big Buffoon"), and
-    Nasubi ("my old man", "the King") are mention-only; every soldier is
+  - **appearingCharacterIds is `["tserriednich"]` alone** — confirmed by
+    the wiki's list, which marks Camilla, Benjamin, and Nasubi all
+    `{{Mi}}`. Camilla (Room 1002 musings), Benjamin (Viz: "Birdbrain"),
+    and Nasubi ("Dad", "the King") are mention-only; every soldier is
     unnamed; the Nen beast appears only inside his mental diagrams. His
     real face (long hair, beard) is drawn once, on the map page.
   - **The door-sound anomaly is recorded, not explained**: the Room 1004
@@ -397,23 +421,26 @@ prod server. The user often has their own dev server on 3000; don't fight it.
     readings differ (field edge vs. sensory priority); the archive records
     the on-page fact next to the ch-418 will anomaly and assigns no
     mechanism.
-  - **The Tier 1 lockdown**: a "crisis alert" seals the tier — no deck
-    movement, no door use, no passageway traffic, the connecting bridge
-    physically withdrawn. The army's institutional read is technological
-    (hallucinogenic gas or a "light-refracting suit", 屈光服 — VD notes the
-    kanji oddity), with gas masks and thermal scopes requisitioned. Nen
-    never enters their reasoning.
+  - **The Tier 1 lockdown**: "Emergency!! Tier 1 is shutting down!! The
+    cruise ship will be on lockdown!!" — no moving between floors, no
+    opening doors, no moving within corridors; the connecting bridges are
+    retracted from the lower tiers' side. The army's institutional read is
+    technological ("a new weapon... hallucinatory gas, or a refractive
+    suit" — 屈光服; VD notes the kanji oddity), with gas masks and
+    infrared goggles requested. Nen never enters their reasoning.
   - **The casino is `tier-1-casino`** — identifying it with Hisoka's
     ch-405 floor rests on Tier 1 having a single drawn casino; the event
     evidence marks that identification `strong-inference`. The 4/9
     machines flanking the final panel (6 absent) are recorded as staging;
     the Hisoka convergence lives in `th-casino-convergence` as a theory,
     not canon.
-  - The chapter also delivers the first proper **Tier 1 map**: VVIP
-    entertainment hall (with the down staircase), banquet hall, King &
-    Queens' living quarters, and the connecting passageway to Tier 2 —
-    recorded in `ev-419-casino-infiltration` rather than as new location
-    records.
+  - The chapter also delivers the first proper **Tier 1 map** (Viz
+    labels): the VVIP rec hall with its "downstairs", the banquet hall,
+    the King and Queens' quarters, and the bridge "to Tier 2" — recorded
+    in `ev-419-casino-infiltration` rather than as new location records.
+    The scanlation's closing caption "Casino Area Infiltration…" is WSJ
+    flavor text; the MANGA Plus page ends on "To be continued!" without
+    it.
 
 ## Registry completeness
 

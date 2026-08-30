@@ -798,7 +798,7 @@ export const storylines: Storyline[] = [
     factionIds: ["tserriednich-camp"],
     objectives: [
       "Theta: contain — or end — the monster she is arming, and survive",
-      "Tserriednich: cross a hostile, sealed ship as a dead man — casino stairs, connecting passageway, Tier 2 — before the beast's battery dies",
+      "Tserriednich: cross a hostile, locked-down ship as a dead man — casino stairs, connecting bridge, Tier 2 — before the beast's battery dies",
     ],
     openQuestions: [
       "Did Theta perceive anything at the casket — and what happens the moment the illusion collapses?",
@@ -871,7 +871,7 @@ export const storylines: Storyline[] = [
       {
         ch: 419,
         kind: "advance",
-        title: "Practice: Laplace's Devil earns its name",
+        title: "Implementation: Laplace's Devil earns its name",
         eventIds: [
           "ev-419-radius-test",
           "ev-419-passageway-fight",
@@ -1728,7 +1728,7 @@ export const storylines: Storyline[] = [
       {
         ch: 419,
         value: "escalating",
-        note: "The regime meets its first enemy it cannot see: a crisis alert seals Tier 1 outright — no deck movement, no doors, no passageways — for a sweep against a 'light-refracting suit'.",
+        note: "The regime meets its first enemy it cannot see: an emergency broadcast locks Tier 1 down outright — no floor movement, no doors, no corridors — for a sweep against a suspected 'refractive suit'.",
       },
     ],
     participantIds: [
@@ -1817,7 +1817,7 @@ export const storylines: Storyline[] = [
       {
         ch: 419,
         kind: "advance",
-        title: "Crisis alert: an invisible enemy seals Tier 1",
+        title: "Emergency: an invisible enemy locks down Tier 1",
         linkId: "tserriednich-nen",
         eventIds: ["ev-419-passageway-fight", "ev-419-tier1-lockdown"],
       },

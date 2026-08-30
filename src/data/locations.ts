@@ -146,7 +146,7 @@ export const locations: ShipLocation[] = [
       {
         ch: 419,
         value: "lethal",
-        note: "Crisis alert: the whole tier sealed against an 'invisible enemy' — no deck movement, no doors, no passageway traffic, the connecting bridge withdrawn — while soldiers sweep with gas masks and thermal scopes on requisition.",
+        note: "Emergency lockdown: the whole tier shut down against an invisible enemy — no floor movement, no doors, no corridor traffic, the connecting bridges retracted — while soldiers sweep with gas masks and infrared goggles on request.",
       },
     ],
     connectedIds: [

@@ -419,7 +419,7 @@ export const princes: Prince[] = [
         revealCh: 418,
       },
       {
-        text: "Beat the Tier 1 lockdown: down from the entertainment facilities by the casino's spiral-staircase exit, across the connecting passageway to Tier 2 — spending Laplace's Devil only where a gun won't do — and find a way to 'stay dead' through the sweep.",
+        text: "Beat the Tier 1 lockdown: downstairs from the rec hall by the casino's spiral-staircase exit, across the connecting bridge to Tier 2 — spending Laplace's Devil only where a gun won't do — and find a way to 'stay dead' through the sweep.",
         revealCh: 419,
       },
     ],
@@ -445,7 +445,7 @@ export const princes: Prince[] = [
         revealCh: 418,
       },
       {
-        text: "The corridor massacre made him hunted as well as dead: Tier 1 is sealed and swept, the army wants its invisible enemy kept from the King at all costs, and gas masks and thermal scopes are on requisition — countermeasures aimed at the wrong threat, but a thermal scope doesn't need to understand Nen to find a warm body.",
+        text: "The corridor massacre made him hunted as well as dead: Tier 1 is locked down and swept, the army wants its invisible enemy kept from the King at all costs, and gas masks and infrared goggles are on request — countermeasures aimed at the wrong threat, but infrared doesn't need to understand Nen to find a warm body.",
         revealCh: 419,
       },
     ],
@@ -488,7 +488,7 @@ export const princes: Prince[] = [
       {
         ch: 419,
         risk: "high",
-        why: "Still unidentified, but no longer unnoticed: four soldiers dead by his hand, Tier 1 sealed into a search grid until Benjamin's column returns, and thermal-scope countermeasures inbound that don't need to understand the ability to defeat it. His cover story — a bystander idling in the entertainment hall — survives a sweep only if nobody checks the coffin.",
+        why: "Still unidentified, but no longer unnoticed: four soldiers dead by his hand, Tier 1 locked down into a search grid until Benjamin's column returns, and infrared countermeasures inbound that don't need to understand the ability to defeat it. His cover story — a bystander who was in the rec hall the whole time — survives a sweep only if nobody checks the coffin.",
       },
     ],
     assessment: {
@@ -543,7 +543,7 @@ export const princes: Prince[] = [
       },
       {
         ch: 419,
-        text: "Names the ability at last — 'Ephemeral Ten Seconds: Laplace's Devil' — while measuring its 36-meter field on the fly, killing four soldiers through the VVIP corridor behind a scripted double, and proving latecomers to the field can't be deceived. The lockdown kills Route A; he reroutes through the casino's spiral-staircase exit toward Tier 2 and ends the chapter on the gaming floor, between machines numbered 4 and 9.",
+        text: "Names the ability at last — 'Ephemeral Ten Seconds', read Laplace's Devil (Viz: 'Laplace's Demon') — while measuring its 36-meter field on the fly, killing four soldiers through the VVIP corridor behind a scripted double, and proving latecomers to the field can't be deceived. The lockdown kills Route A; he reroutes through the casino's spiral-staircase exit toward the connecting bridge and Tier 2, and ends the chapter on the gaming floor, between machines numbered 4 and 9.",
       },
     ],
     mysteryIds: ["my-tserriednich-god-beast"],

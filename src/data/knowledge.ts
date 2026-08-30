@@ -367,7 +367,7 @@ export const knowledgeFacts: KnowledgeFact[] = [
     id: "fact-laplace-devil-field",
     label: "Laplace's Devil: the field rules",
     description:
-      "Chapter 419's live experiments finish the rulebook: the ability is named 'Ephemeral Ten Seconds: Laplace's Devil', and its field is a sphere of roughly 36 meters around the beast-antenna, its edge audible as quickening static. Only people inside at activation are deceived — outsiders see the real him, and stay undeceived even if they enter afterward. Crossing the boundary or releasing Zetsu resets everything at once: illusory bodies vanish, scripted 'deaths' undo. While Zetsu holds, a blink at the boundary re-triggers the ten seconds with no re-entry lag, chaining hops against a battery he now budgets at a pessimistic 23-to-1 recharge ratio.",
+      "Chapter 419's live experiments finish the rulebook: the ability is named 'Ephemeral Ten Seconds', read Laplace's Devil (Viz: 'Laplace's Demon'), and its field is a sphere of roughly 36 meters around the beast-antenna, its edge audible as quickening static. Only people inside at activation are deceived — outsiders see the real him, and stay undeceived even if they enter afterward. Crossing the boundary or releasing Zetsu resets everything at once: illusory bodies vanish, scripted 'deaths' undo. While Zetsu holds, a blink at the boundary re-triggers the ten seconds with no re-entry lag, chaining hops against a battery he now budgets at a pessimistic 23-to-1 recharge ratio.",
     kind: "nen-ability",
     readerRevealCh: 419,
     relatedCharacterIds: ["tserriednich"],

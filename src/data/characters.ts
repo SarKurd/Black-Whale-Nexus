@@ -308,7 +308,7 @@ export const characters: Character[] = [
       },
       {
         revealCh: 419,
-        text: "The escape's first leg doubles as his ability's christening — 'Ephemeral Ten Seconds: Laplace's Devil', spoken at activation as he turns the VVIP corridor into a laboratory. He measures the field at roughly 36 meters by the static in his ears, kills four soldiers for real while a scripted double soaks the survivors' fire behind a meat shield, confirms on a live volunteer that latecomers to the field are never deceived, and walks out of range to reset before the double can be unmasked — leaving two knots of soldiers staring at vanished bodies and commanders requisitioning gas masks and thermal scopes against a 'light-refracting suit'. When the crisis alert seals Tier 1, he re-plans without breaking stride: down from the entertainment facilities, across to Tier 2, starting with the casino's anti-rioter spiral staircase — and strolls onto the gaming floor past machines numbered 4 and 9.",
+        text: "The escape's first leg doubles as his ability's christening — 'Ephemeral Ten Seconds', read Laplace's Devil (Viz: 'Laplace's Demon'), spoken at activation as he turns the VVIP corridor into a laboratory. He measures the field at roughly 36 meters by the static in his ears, kills four soldiers for real while a scripted double soaks the survivors' fire behind a corpse shield, confirms on a live volunteer that latecomers to the field are never deceived, and walks out of range to 'force quit' before the double can be unmasked — leaving two knots of soldiers staring at vanished bodies and commanders requesting gas masks and infrared goggles against a 'refractive suit'. When the emergency lockdown seals Tier 1, he re-plans without breaking stride: downstairs from the rec hall, across the connecting bridge to Tier 2, starting with the casino's anti-mob spiral staircase — and strolls onto the gaming floor past machines numbered 4 and 9.",
       },
     ],
     monogram: "P4",
@@ -337,7 +337,7 @@ export const characters: Character[] = [
       {
         ch: 419,
         status: "alive",
-        note: "Loose in the VVIP entertainment district with four kills by his own gun behind him — plus the untotaled crossfire dead his phantom drew — and Tier 1 sealed around him. The army hunts an 'invisible enemy' it explains as gas or a light-refracting suit — it has not identified him, and the ruse holds: officially he is still the executed Fourth Prince.",
+        note: "Loose in the VVIP entertainment district with four kills by his own gun behind him — plus the untotaled crossfire dead his phantom drew — and Tier 1 locked down around him. The army hunts an invisible enemy it explains as hallucinatory gas or a refractive suit — it has not identified him, and the ruse holds: officially he is still the executed Fourth Prince.",
       },
     ],
     locationHistory: [
@@ -366,7 +366,7 @@ export const characters: Character[] = [
         status: "abandoned",
       },
       {
-        text: "Beat the lockdown: descend from the entertainment facilities via the casino's spiral-staircase emergency exit, cross the connecting passageway to Tier 2, and find a way to 'stay dead' through the sweep.",
+        text: "Beat the lockdown: get downstairs from the rec hall via the casino's spiral-staircase emergency exit, cross the connecting bridge to Tier 2, and find a way to 'stay dead' through the sweep.",
         kind: "hidden",
         revealCh: 419,
         status: "active",
