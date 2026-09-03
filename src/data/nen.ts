@@ -2998,7 +2998,7 @@ export const nenAbilities: NenAbility[] = [
       "The vision only ever shows the consequences of actions he has already taken in reality — he cannot script a future by resolving to act after activation.",
       "Any pain, even a light bump, breaks his Zetsu and with it the ability; other sudden stimuli (sirens, noise) no longer do.",
     ],
-    cost: "Drains the beast's stored aura while he stays in Zetsu; when the battery dies the field and illusion collapse. After the ch-417 execution he calculates roughly 3 hours 48 minutes remaining; setting out in ch 419 he assumes a worst-case 23:1 recharge ratio and budgets 30–45 minutes of use.",
+    cost: "Drains the beast's stored aura while he stays in Zetsu; when the battery dies the field and illusion collapse. After the ch-417 execution he calculates roughly 3 hours 48 minutes remaining; setting out in ch 419 he assumes a worst-case 23:1 recharge ratio and budgets 30–45 minutes of use. By the end of ch 420 the worst case has all but landed: if 23:1 is real the beast is 'almost out of power', and he drops Zetsu deliberately to bank exactly one more full use.",
     range:
       "A spherical field around the beast-antenna, radius roughly 36 meters by his ch-419 static-tempo measurement — barely enough to reach from Room 1004 to the shared VVIP corridor's doors",
     targets: "Everyone inside the field at the moment of activation",
@@ -3013,6 +3013,8 @@ export const nenAbilities: NenAbility[] = [
       "The activation window (2.92 s at his ch-418 plateau) leaves him physically vulnerable, and pain breaks the running ability outright; stopping Zetsu is easy but restarting costs time, so mid-escape he prefers forcing resets by crossing the boundary.",
       "Its people-rules bar him from taking worn clothing — he cannot steal a uniform to disguise himself.",
       "The reset is loud evidence: bodies vanishing 'into thin air' before dozens of witnesses handed the royal army an invisible-enemy manhunt, gas masks and infrared goggles on order.",
+      "Against a top-class opponent the ability is life insurance, not a weapon: Hisoka closed and cut before the ch-420 vision's Tserriednich could even track the movement — hence the new sub-one-second Zetsu goal, without which it cannot be triggered from a fighting stance in real combat.",
+      "It may not be as invisible as its design requires: Hisoka's gaze snapped toward something after killing the phantom, and Tserriednich's own verdict — 'this ability is absolutely pointless if it's visible to the enemy' — hangs on a perception the chapter never confirms or denies.",
     ],
     firstSeenCh: 385,
     revealCh: 387,
@@ -3037,13 +3039,17 @@ export const nenAbilities: NenAbility[] = [
         ch: 419,
         note: "Named at last — 'Ephemeral Ten Seconds', read Laplace's Devil (Viz: 'Laplace's Demon') — and field-tested in combat: the radius measured at ≈36 m, a corridor massacre fought once in reality (four dead to his own gun, more to the crossfire his phantom drew) and once in script (a meat-shield double soaking the survivors' fire), the latecomer immunity confirmed on a live soldier, and a deliberate walk out of range to 'force quit' before the double could be unmasked. A stray data point: the Room 1004 guards heard the corridor door slam that none of them saw open.",
       },
+      {
+        ch: 420,
+        note: "Fired as a survival reflex against Hisoka: the Ephemeral Ten Seconds shows Tserriednich his own death — spun, cut, and dismissed as 'nothing but a corpse' before he can track the blade — and the sustained illusion cashes the vision in as life insurance, feeding the deceived Hisoka a phantom corpse to slash and eulogize while the real prince scrambles clear. The planned use (a bullet greeting, then activation, to grade the stranger's reaction) never happens; Hisoka reaches his back first. He ends the chapter dropping Zetsu deliberately to bank the beast's last full use.",
+      },
     ],
     status: "active",
     awareCharacterIds: [
       { characterId: "tserriednich", sinceCh: 387 },
       { characterId: "salkov", sinceCh: 386 },
     ],
-    affectedCharacterIds: ["theta", "salkov", "vantine", "benjamin"],
+    affectedCharacterIds: ["theta", "salkov", "vantine", "benjamin", "hisoka"],
     mysteryIds: ["my-tserriednich-god-beast"],
     evidence: [
       {
@@ -3059,6 +3065,11 @@ export const nenAbilities: NenAbility[] = [
       {
         chapter: 419,
         note: "The name is spoken at activation — official Viz text: '\"Ephemeral Ten Seconds\" — Laplace's Demon... activate!!' — and the 36 m radius, boundary reset, blink reactivation, latecomer immunity, and undone post-activation 'deaths' are all established by his on-page experiments. Reconciled against the official MANGA Plus release and the Hunterpedia page, which keeps the literal reading 'Laplace's Devil'.",
+        confidence: "canonical",
+      },
+      {
+        chapter: 420,
+        note: "The Hisoka encounter is the ability's first defensive proof: the death-vision, the phantom corpse, and the near-exhausted battery are all Tserriednich's on-page experience. Pre-official sourcing — VoraciousDrake's translation cross-checked against the Yorknew Scans release; no official translation exists yet.",
         confidence: "canonical",
       },
     ],

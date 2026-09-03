@@ -4313,4 +4313,45 @@ export const chapters: ChapterInfo[] = [
       mysteriesAdvanced: ["my-tserriednich-god-beast"],
     },
   },
+  {
+    number: 420,
+    title: "Encounter",
+    day: "12 (night)",
+    summary:
+      "The convergence chapter 419 staged as a lucky-number omen pays out. Under looping lockdown announcements, the hooded Fourth Prince works toward the casino's emergency exit and finds the floor emptied of soldiers — no relay point, no intermediate defensive posts, a basic line of defense simply missing. Then the bodies: royal-army patrols dead here, and here, every throat slit with a sharp blade, not one spent casing on the floor — killed before they had a chance to fire. His mafia-assassin hypothesis (Zhang Lei's or Luzurus's people, clashing with the army as they fled the martial law) dies the moment he sees the room's one living occupant: a man absorbed in a Swamp Ball pachinko machine in the middle of the crisis. Maybe it's the other way around, he realizes — maybe he got rid of the military, then stayed to play. He decides to test him: creep inside his 36 meters under a perfect Zetsu, greet him with a bullet, then activate Laplace's Devil and watch the reaction. The gambler vanishes off the machine mid-plan and reappears at his back — 'Hey. Who are you?' — and the Ephemeral Ten Seconds shows the prince the next ten seconds: he spins, and is cut down before he can track the movement, bleeding out on the carpet while the stranger dismisses him with a letdown ('I thought you'd be a Spider, because you're using Zetsu'), notices he's killed a prince, and pokes the body with a Dragon Quest epitaph — 'No response. It seems to be nothing but a corpse.' The reality replay runs on the illusion's rails: the real prince scrambles clear while the deceived monster cuts down a phantom and repeats the script over a corpse that isn't there. Watching from cover, Tserriednich sees the man's amusement curdle ('a prince-slayer... not a bad ring to it — but killing these people wouldn't exactly give me a thrill') — and then the killer's gaze snaps up, and the prince's blood runs cold: did he notice the Nen beast? Impossible — the ability is meaningless if it can be seen. What breaks out of him instead is ecstatic laughter: a completely different level, so Nen can take you that far — no, he will go beyond it, past him, and for that his Zetsu activation must fall under one second, combat-stance fast. The corpses, he now sees, died exactly the way 'he' just did: the Swampire (name tentative) killed every patrolling soldier and went back to gambling. His first taste of humiliation converts, on the page, into a rush of motivation. The exit he came for is hopeless — the liner sits lit against full darkness, ringed by lights, vehicles, and troops; total encirclement, no way out and none in. The battery math is worse: if the pessimistic 23:1 recharge ratio is real, the beast is nearly dry, and losing because the battery died would be pathetic. Two options — fall back to the 'penthouse' (the princes' residential block) or lie low inside the liner and recharge — get a third: drop Zetsu right now, bank one more full use, and let the new pair of options it surfaces carry him to his destination. 'I am Tserriednich Hui Guo Rou!! A man who doesn't know how to quit...!'",
+    eventIds: [
+      "ev-420-emptied-casino",
+      "ev-420-hisoka-clash",
+      "ev-420-one-more-round",
+    ],
+    appearingCharacterIds: ["tserriednich", "hisoka"],
+    locationIds: ["tier-1-casino", "tier-1"],
+    storylineIds: [
+      "tserriednich-nen",
+      "troupe-hisoka-hunt",
+      "special-martial-law",
+    ],
+    abilitiesUsedIds: ["parallel-future"],
+    changes: {
+      newKnowledge: [
+        "Hisoka has not moved since chapter 405: he is still on the casino floor, and the missing garrison is his work — patrols killed blade-to-throat before they could fire, then back to the machines",
+        "Laplace's Devil functions as a life insurance policy against a faster opponent: the vision died in his place, and the sustained illusion fed the killer a phantom corpse to dismiss",
+        "The chapter's one open tease: Hisoka's gaze snapped toward something no one should be able to see — whether he perceived the invisible Nen beast is not confirmed",
+        "Tserriednich's own account seals the beast's reserves: at the worst-case 23:1 ratio it is 'almost out of power', with exactly one more full use in the tank if he drops Zetsu immediately",
+      ],
+      movement: [
+        "Tserriednich descends from the gaming floor toward the casino's emergency exit — and finds the liner's surroundings under total encirclement, no way out and none in",
+        "Hisoka stays put: the casino floor is his, garrison removed, machines running",
+      ],
+      newThreats: [
+        "An 'outright monster' now shares the sealed tier with the escaping prince — one who kills elite patrols between rounds of pachinko and may or may not have seen his invisible beast",
+        "The royal army has the liner ringed from outside: the casino exit route ends at a floodlit cordon",
+      ],
+      changedObjectives: [
+        "The spiral-staircase exit is dead on arrival; Tserriednich drops Zetsu to bank one last use of Laplace's Devil and re-plans around the two options that come with it",
+        "A new long-term vow, minted in humiliation: exceed the monster — starting with sub-one-second Zetsu activation, fast enough to trigger from a fighting stance",
+      ],
+      mysteriesAdvanced: ["my-tserriednich-god-beast"],
+    },
+  },
 ];

@@ -316,6 +316,11 @@ export const mysteries: Mystery[] = [
         value: "likely-answered",
         note: "Two of the open items close by experiment: the field's radius is roughly 36 meters, and latecomers entering the zone are NOT deceived — the ability is even named, 'Ephemeral Ten Seconds: Laplace's Devil'. Still open: the Guardian Spirit Beast's own type and ability, the will anomaly, and now a stray cousin of it — the Room 1004 guards heard the corridor door slam that the illusion never let them see open.",
       },
+      {
+        ch: 420,
+        value: "likely-answered",
+        note: "A new open item joins the file: after cutting down the phantom, Hisoka's gaze snaps toward something — and Tserriednich panics that the beast has been seen ('this ability is absolutely pointless if it's visible to the enemy'). The chapter neither confirms nor denies the perception; the archive records the tease, not a conclusion.",
+      },
     ],
     relatedCharacterIds: ["tserriednich", "theta", "salkov"],
     evidenceFor: [
@@ -349,6 +354,11 @@ export const mysteries: Mystery[] = [
         note: "The activation panel names the ability outright, and his corridor experiments fix the radius (≈36 m), the boundary reset, and the latecomer immunity on-page.",
         confidence: "canonical",
       },
+      {
+        chapter: 420,
+        note: "Hisoka's sharp glance after killing the phantom — at what might be the beast-antenna — is drawn but never explained; Tserriednich's terror at the possibility is on-page.",
+        confidence: "canonical",
+      },
     ],
     possibleExplanations: [
       {
@@ -365,8 +375,8 @@ export const mysteries: Mystery[] = [
       },
     ],
     latestDevelopment: {
-      ch: 419,
-      text: "The engine gets its name — 'Ephemeral Ten Seconds: Laplace's Devil' — and its dimensions: a 36-meter field measured by ear, boundary resets, blink reactivation, and latecomer immunity, all settled by live experiment mid-massacre. The Guardian Spirit Beast, its type, and its truth-branding ability remain a separate, still-open file — as does the will anomaly, now joined by a door the deceived guards heard but never saw open.",
+      ch: 420,
+      text: "Did Hisoka see it? After cutting down the phantom, his gaze snaps toward something no one should perceive, and Tserriednich's blood runs cold — an ability that can be seen is 'absolutely pointless'. The chapter leaves the perception unconfirmed, alongside the still-open files: the Guardian Spirit Beast's own type and truth-branding ability, the will anomaly, and the door the deceived guards heard but never saw open.",
     },
   },
   {

@@ -770,7 +770,7 @@ export const storylines: Storyline[] = [
     name: "Tserriednich's Awakening",
     color: "#a67fb8",
     summary:
-      "Theta agrees to teach the Fourth Prince Nen, planning to throttle the pace. Tserriednich learns in days what takes others years, survives her point-blank bullet through a Zetsu-borne vision of the future, and turns his teacher's deception into a leash around her neck. When martial law names him a terrorist he answers with his masterpiece: a scripted execution under Benjamin's gun, taken by an illusion while he stands beside it — then a self-managed wake, a rulebook written from live experiments, and a hooded exit with under four hours of illusion left. The escape itself becomes the final exam: the ability named at last — Laplace's Devil — its 36-meter field measured mid-massacre, and a lockdown-beating reroute through the casino toward Tier 2.",
+      "Theta agrees to teach the Fourth Prince Nen, planning to throttle the pace. Tserriednich learns in days what takes others years, survives her point-blank bullet through a Zetsu-borne vision of the future, and turns his teacher's deception into a leash around her neck. When martial law names him a terrorist he answers with his masterpiece: a scripted execution under Benjamin's gun, taken by an illusion while he stands beside it — then a self-managed wake, a rulebook written from live experiments, and a hooded exit with under four hours of illusion left. The escape itself becomes the final exam: the ability named at last — Laplace's Devil — its 36-meter field measured mid-massacre, a lockdown-beating reroute through the casino — and then the exam's true grader, Hisoka, who kills his ten-second vision before it can track the blade. The prodigy escapes behind a phantom corpse, answers his first humiliation with a vow to exceed the monster, and drops Zetsu at the encircled exit to bank the beast's last full use.",
     status: [
       { ch: 362, value: "active" },
       {
@@ -793,6 +793,11 @@ export const storylines: Storyline[] = [
         value: "escalating",
         note: "Blood drawn: four soldiers dead in the VVIP corridor, Tier 1 sealed into a search grid, and the dead prince gambling his way toward the casino's back stairs.",
       },
+      {
+        ch: 420,
+        value: "escalating",
+        note: "The ceiling meets him in the casino: Hisoka cuts down his vision, the illusion buys his life, and the escape continues on one banked use and a vow to exceed the monster.",
+      },
     ],
     participantIds: ["tserriednich", "theta", "salkov"],
     factionIds: ["tserriednich-camp"],
@@ -804,7 +809,9 @@ export const storylines: Storyline[] = [
       "Did Theta perceive anything at the casket — and what happens the moment the illusion collapses?",
       "Can Theta survive a third lie?",
       "How does a will written inside the illusion end up readable by the deceived — and why did the Room 1004 guards hear a door the illusion never showed them opening?",
-      "Where is he ultimately going — the destination was cut off mid-thought, and the casino floor he just entered is the one where Hisoka was last seen",
+      "Where is he ultimately going — twice now the destination has been invoked and never named",
+      "Did Hisoka's parting glance find the invisible beast-antenna — and what happened to the phantom corpse he believes in when Zetsu dropped?",
+      "What are the 'different pair of options' one banked use of Laplace's Devil opens?",
     ],
     relatedIds: ["succession-contest", "heil-ly-morena"],
     nodes: [
@@ -877,6 +884,17 @@ export const storylines: Storyline[] = [
           "ev-419-passageway-fight",
           "ev-419-outsider-test",
           "ev-419-casino-infiltration",
+        ],
+      },
+      {
+        ch: 420,
+        kind: "intersect",
+        title: "Encounter: cut down by the Swampire",
+        linkId: "troupe-hisoka-hunt",
+        eventIds: [
+          "ev-420-emptied-casino",
+          "ev-420-hisoka-clash",
+          "ev-420-one-more-round",
         ],
       },
     ],
@@ -1222,7 +1240,7 @@ export const storylines: Storyline[] = [
     name: "The Troupe Hunts Hisoka",
     color: "#b89b7f",
     summary:
-      "The Phantom Troupe boards to finish Hisoka before he finishes them — with Illumi seated in Uvogin's chair at Hisoka's own request. The hunt sweeps up through mafia territory, plants a fake Hisoka to blind the families, unearths the Troupe's own founding tragedy in flashback, and finally finds its quarry lounging in the Tier 1 casino while Chrollo quietly targets Kakin's three sacred treasures to evolve Skill Hunter.",
+      "The Phantom Troupe boards to finish Hisoka before he finishes them — with Illumi seated in Uvogin's chair at Hisoka's own request. The hunt sweeps up through mafia territory, plants a fake Hisoka to blind the families, unearths the Troupe's own founding tragedy in flashback, and finally finds its quarry lounging in the Tier 1 casino while Chrollo quietly targets Kakin's three sacred treasures to evolve Skill Hunter. Fifteen chapters later the magician still hasn't moved: he kills the lockdown's patrols between rounds of pachinko, and his first actual engagement aboard is with the wrong prey entirely — a Zetsu-concealed stranger he takes for a Spider, cuts down, and leaves as 'a corpse' that was never really there.",
     status: [
       {
         ch: 357,
@@ -1233,6 +1251,11 @@ export const storylines: Storyline[] = [
         ch: 405,
         value: "escalating",
         note: "Hisoka located on Tier 1; the treasures enter the game.",
+      },
+      {
+        ch: 420,
+        value: "escalating",
+        note: "Hisoka draws first blood aboard — against a prince, not a Spider — and shows what the hunters are walking toward: patrol details killed to a man without firing a shot.",
       },
     ],
     participantIds: [
@@ -1258,6 +1281,7 @@ export const storylines: Storyline[] = [
     openQuestions: [
       "Who reaches Hisoka first — the Spiders, or their leader alone?",
       "What does Hisoka's contract with Illumi actually stipulate?",
+      "What does Hisoka make of the 'prince' whose corpse he left — a body that will have vanished the moment Tserriednich dropped Zetsu?",
     ],
     relatedIds: ["mafia-war", "heavens-arena-duel"],
     nodes: [
@@ -1308,6 +1332,13 @@ export const storylines: Storyline[] = [
         kind: "advance",
         title: "Chrollo names the three sacred treasures",
         eventIds: ["ev-406-chrollo-treasures"],
+      },
+      {
+        ch: 420,
+        kind: "intersect",
+        title: "First blood aboard — the wrong prey",
+        linkId: "tserriednich-nen",
+        eventIds: ["ev-420-emptied-casino", "ev-420-hisoka-clash"],
       },
     ],
     introducedCh: 357,
@@ -1820,6 +1851,13 @@ export const storylines: Storyline[] = [
         title: "Emergency: an invisible enemy locks down Tier 1",
         linkId: "tserriednich-nen",
         eventIds: ["ev-419-passageway-fight", "ev-419-tier1-lockdown"],
+      },
+      {
+        ch: 420,
+        kind: "advance",
+        title: "The cordon closes: total encirclement of the liner",
+        linkId: "tserriednich-nen",
+        eventIds: ["ev-420-one-more-round"],
       },
     ],
     introducedCh: 400,

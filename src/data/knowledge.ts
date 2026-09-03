@@ -747,6 +747,14 @@ export const characterKnowledge: CharacterKnowledge[] = [
     sinceCh: 358,
     note: "Has larger problems than the magician's itinerary.",
   },
+  {
+    factId: "fact-hisoka-aboard",
+    characterId: "tserriednich",
+    state: "observed",
+    sinceCh: 420,
+    revealCh: 420,
+    note: "Met him without the name: the 'Swampire (tentative)' who slaughtered the casino garrison, cut down his ten-second vision, and went back to gambling. He has no idea who the monster is.",
+  },
 
   // fact-momoze-death
   {

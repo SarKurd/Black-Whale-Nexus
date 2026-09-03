@@ -272,6 +272,15 @@ export const glossary: GlossaryTerm[] = [
     introducedCh: 418,
   },
   {
+    id: "swamp-ball",
+    term: "Swamp Ball",
+    definition:
+      "A pachinko-style gambling machine on the Tier 1 casino floor — the game Hisoka feeds through Special Martial Law, corpses of the garrison he killed around him. Its cabinet reproduces 'The Bog', the infamous rigged pachinko monster from the manga Kaiji. The game also names Tserriednich's tentative label for the stranger who nearly killed him: 沼男 (numao, 'swamp man'), punning on 沼にハマった — 'stuck in a bog', hopelessly addicted — rendered by VoraciousDrake as 'the Swampire'.",
+    category: "ship",
+    relatedIds: ["ship-tiers", "black-whale"],
+    introducedCh: 420,
+  },
+  {
     id: "hidden-passages-term",
     term: "Hidden passages",
     definition:

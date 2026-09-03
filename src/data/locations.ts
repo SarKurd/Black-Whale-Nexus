@@ -980,7 +980,7 @@ export const locations: ShipLocation[] = [
     parentId: "tier-1",
     canonicity: "canonical",
     description:
-      "A high-end casino on the royal deck: card tables running Square-X — the 'go to heaven' variant where a player cannot fold — and banks of slot machines. Hisoka resurfaces on-page here on the twelfth day, winning absurd hands and rolling triple sevens while monologuing about his tastes; Bonolenov, mid-decoy, spots the real man across the floor. Its emergency exit — by Tserriednich's recall, a spiral staircase built against rioters from below — makes it the officially dead Fourth Prince's chosen way off the sealed tier: he walks the floor as the lockdown sweep begins, past machines numbered 4 and 9.",
+      "A high-end casino on the royal deck: card tables running Square-X — the 'go to heaven' variant where a player cannot fold — banks of slot machines, and Swamp Ball pachinko cabinets. Hisoka resurfaces on-page here on the twelfth day, winning absurd hands and rolling triple sevens while monologuing about his tastes; Bonolenov, mid-decoy, spots the real man across the floor — and fifteen chapters later he still hasn't left, its lockdown garrison dead by his blade between rounds. Its emergency exit — by Tserriednich's recall, a spiral staircase built against rioters from below — drew the officially dead Fourth Prince onto the floor, into the arc's first meeting of prince and magician; the exit itself ends at the army's floodlit cordon around the liner.",
     connectedIds: ["tier-1"],
     introducedCh: 405,
   },

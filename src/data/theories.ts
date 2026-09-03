@@ -586,6 +586,11 @@ export const theories: Theory[] = [
         value: "unresolved",
         note: "Pure staging so far: the shared location, the lucky-number set piece, and fourteen chapters of Hisoka going unseen since the casino.",
       },
+      {
+        ch: 420,
+        value: "confirmed",
+        note: "Chapter 420 is titled 'Encounter' and delivers exactly this: Hisoka never left the casino — he killed its garrison and kept gambling — and the officially dead Fourth Prince walks into him, is cut down in his own ten-second vision, and escapes behind a phantom corpse. Neither man learns the other's name.",
+      },
     ],
     supporting: [
       {
@@ -603,6 +608,11 @@ export const theories: Theory[] = [
         note: "Chrollo's assessment aboard: someone of princely rank likely invited Hisoka up to Tier 1 — a standing thread connecting the magician to the royal deck.",
         confidence: "strong-inference",
       },
+      {
+        chapter: 420,
+        note: "Confirmed on-page: Hisoka is on the casino floor playing Swamp Ball amid the garrison he killed, and Tserriednich walks into him. The encounter — vision-death, phantom corpse, the 'Swampire' christening — is the chapter.",
+        confidence: "canonical",
+      },
     ],
     contradicting: [
       {
@@ -617,8 +627,9 @@ export const theories: Theory[] = [
       },
     ],
     relatedCharacterIds: ["tserriednich", "hisoka", "chrollo"],
-    chapters: [392, 405, 419],
-    confidence: "theory",
-    lastUpdatedCh: 419,
+    relatedEventIds: ["ev-420-hisoka-clash"],
+    chapters: [392, 405, 419, 420],
+    confidence: "canonical",
+    lastUpdatedCh: 420,
   },
 ];

@@ -442,6 +442,61 @@ prod server. The user often has their own dev server on 3000; don't fight it.
     flavor text; the MANGA Plus page ends on "To be continued!" without
     it.
 
+- **Chapter 420 rulings (PRE-OFFICIAL ingest — no official translation
+  exists yet; reconcile against MANGA Plus and the Hunterpedia page when
+  they appear):** `ARC_END` is now **420**. Sources: VoraciousDrake's
+  translation post ("HxH 420: Encounter", 2026-09-03) cross-checked
+  page-by-page against the Yorknew Scans release on karh.org
+  (`karh.org/hxh-yorknew/420`, translation Nodoka). Working title
+  **"Encounter"** (both sources) — treat like "Practice"/"Emergency":
+  it may not survive the official release; don't defend it later.
+  The Hunterpedia Chapter 420 page did not exist at ingest time, so
+  the appearance-list and wiki cross-checks are still owed.
+  - **appearingCharacterIds is `["tserriednich", "hisoka"]`** — every
+    dead or living soldier is unnamed (no registry entries, no death
+    records, the ch-419 precedent); Zhang Lei, Luzurus ("the 3rd or 7th
+    Prince's forces"), Nasubi ("the King"), and the Phantom Troupe
+    ("a Spider") are mention-only. Hisoka's kills of the patrol details
+    all happened off-page before the chapter opens.
+  - **The encounter's vision/illusion split, read per the settled ch
+    418–419 mechanics:** the ZZT static brackets mark the Ephemeral Ten
+    Seconds — inside it Tserriednich spins, is cut, bleeds out, and
+    hears the full corpse eulogy; in the reality replay he scrambles
+    clear while the deceived Hisoka (inside the field at activation)
+    cuts down the script's phantom and repeats the predicted lines over
+    a corpse that isn't there. Whether the real body took a graze is
+    not clearly resolved on-page — the archive doesn't claim either
+    way. Hisoka ends the chapter believing he killed a prince; the
+    corpse will have vanished when Zetsu dropped, off-page.
+  - **The noticing tease is recorded, not resolved** (the Theta-casket
+    precedent): Hisoka's gaze snaps toward something after the kill and
+    Tserriednich panics about the beast being visible; no confirmation
+    either way. `my-tserriednich-god-beast` carries it as an open item.
+  - **`th-casino-convergence` is confirmed** (confidence `canonical`),
+    the `th-tserriednich-time-beast` precedent.
+  - **Vocabulary:** "Swampire" renders 沼男 (*numao*, swamp man) — VD's
+    coinage, explicitly tentative in-story; the scanlation adopted VD's
+    text for that page (its own credit note says so). "Swamp Ball" is
+    the pachinko game, drawn as Kaiji's "The Bog" (reader-confirmed in
+    VD's comments; glossary entry `swamp-ball`). The corpse line
+    matches Dragon Quest's English localization per VD's note.
+    王子居住区 (princes' living quarters) carries the katakana reading
+    "penthouse" for the first time. The sub-one-second Zetsu goal:
+    VD notes the text says コンマ０秒台 (literally suggesting 0.0x s);
+    the archive records "under one second" and leaves the oddity alone.
+  - **Numbers:** the 23:1 worst-case ratio is now treated by
+    Tserriednich as the live estimate — "almost out of power", exactly
+    one more full use if Zetsu drops immediately. Do not invent a
+    minutes figure for what remains.
+  - **Timeline:** day 12, after the ch-418/419 events; the exterior
+    spread shows the liner lit against full darkness under total
+    encirclement, which sits awkwardly against the SML's ≈2:15 p.m.
+    start (fan explanations: hours spent in Room 1004, the dome, sun
+    angle). The archive uses day "12 (night)" for the chapter and
+    records no clock time for any event.
+  - The closing caption says the next installment's date will be
+    announced in the magazine — an unscheduled hiatus follows.
+
 ## Registry completeness
 
 Every named character within the dataset's chapter coverage belongs in the

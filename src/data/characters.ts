@@ -310,6 +310,10 @@ export const characters: Character[] = [
         revealCh: 419,
         text: "The escape's first leg doubles as his ability's christening — 'Ephemeral Ten Seconds', read Laplace's Devil (Viz: 'Laplace's Demon'), spoken at activation as he turns the VVIP corridor into a laboratory. He measures the field at roughly 36 meters by the static in his ears, kills four soldiers for real while a scripted double soaks the survivors' fire behind a corpse shield, confirms on a live volunteer that latecomers to the field are never deceived, and walks out of range to 'force quit' before the double can be unmasked — leaving two knots of soldiers staring at vanished bodies and commanders requesting gas masks and infrared goggles against a 'refractive suit'. When the emergency lockdown seals Tier 1, he re-plans without breaking stride: downstairs from the rec hall, across the connecting bridge to Tier 2, starting with the casino's anti-mob spiral staircase — and strolls onto the gaming floor past machines numbered 4 and 9.",
       },
+      {
+        revealCh: 420,
+        text: "The casino delivers the ceiling of the world he just entered: the garrison is already dead — throats slit, no casings, no chance to fire — and the killer is playing pachinko amid the corpses. His careful test (a bullet greeting, then Laplace's Devil) never fires; the gambler appears at his back mid-plan, and the Ephemeral Ten Seconds shows him his own death, cut down before he can track the blade. The illusion pays his life insurance — Hisoka slashes a phantom and dismisses the 'corpse' with a Dragon Quest line — while the real prince scrambles clear, watches a glance that may or may not have found his invisible beast, and answers his first-ever humiliation with laughter and a vow: exceed the monster, starting with sub-one-second Zetsu. With the exit under total encirclement and the beast nearly dry, he drops Zetsu to bank one last use — 'a man who doesn't know how to quit'.",
+      },
     ],
     monogram: "P4",
     factionIds: ["tserriednich-camp", "royal-family"],
@@ -339,6 +343,11 @@ export const characters: Character[] = [
         status: "alive",
         note: "Loose in the VVIP entertainment district with four kills by his own gun behind him — plus the untotaled crossfire dead his phantom drew — and Tier 1 locked down around him. The army hunts an invisible enemy it explains as hallucinatory gas or a refractive suit — it has not identified him, and the ruse holds: officially he is still the executed Fourth Prince.",
       },
+      {
+        ch: 420,
+        status: "alive",
+        note: "Survived Hisoka by ten borrowed seconds: the vision took the slash meant for him and the illusion left a phantom corpse in his place. The ruse still holds — Hisoka only made him as 'one of the princes' — but the exit is under total encirclement and Laplace's Devil is down to one banked use, Zetsu deliberately dropped to save it.",
+      },
     ],
     locationHistory: [
       { ch: 359, locationId: "tserriednich-quarters" },
@@ -346,6 +355,11 @@ export const characters: Character[] = [
         ch: 419,
         locationId: "tier-1-casino",
         note: "Escape in progress: out of Room 1004, through the massacred VVIP corridor, into the casino as the lockdown sweep begins — aiming for its spiral-staircase emergency exit and Tier 2 beyond.",
+      },
+      {
+        ch: 420,
+        locationId: "tier-1-casino",
+        note: "Still in the entertainment district after the Hisoka encounter: the emergency exit ends at a floodlit cordon — the liner's surroundings under total encirclement — and he stays inside, Zetsu dropped, banking one last use of the ability.",
       },
     ],
     objectives: [
@@ -369,6 +383,18 @@ export const characters: Character[] = [
         text: "Beat the lockdown: get downstairs from the rec hall via the casino's spiral-staircase emergency exit, cross the connecting bridge to Tier 2, and find a way to 'stay dead' through the sweep.",
         kind: "hidden",
         revealCh: 419,
+        status: "abandoned",
+      },
+      {
+        text: "Refuse retreat: with the exit encircled, drop Zetsu to bank one final use of Laplace's Devil and ride the two options it surfaces to the still-unnamed destination.",
+        kind: "hidden",
+        revealCh: 420,
+        status: "active",
+      },
+      {
+        text: "Exceed the monster from the casino: get Zetsu activation under one second, fast enough to trigger from a fighting stance in real combat.",
+        kind: "hidden",
+        revealCh: 420,
         status: "active",
       },
     ],
@@ -395,7 +421,7 @@ export const characters: Character[] = [
     ],
     chapterAppearances: [
       345, 348, 349, 358, 359, 362, 366, 368, 375, 376, 385, 387, 394, 402, 404,
-      413, 415, 416, 417, 418, 419,
+      413, 415, 416, 417, 418, 419, 420,
     ],
     tags: ["prince", "nen-user", "killer"],
   },
@@ -3164,7 +3190,7 @@ export const characters: Character[] = [
     id: "hisoka",
     name: "Hisoka Morow",
     role: "Rogue Nen user; former Phantom Troupe #4",
-    bio: "The magician, presumed aboard and unlocated since the voyage began. Declared war on the Spider after his staged duel with Chrollo, killing Kortopi and Shalnark ashore. Every faction hunting him is working from guesses.",
+    bio: "The magician, who declared war on the Spider after his staged duel with Chrollo, killing Kortopi and Shalnark ashore. Aboard as a Tier 1 VIP and camped in its casino, where he has quietly killed the royal army's patrols and gambled through the lockdown. Every faction hunting him is still working from guesses.",
     bioReveals: [
       {
         revealCh: 351,
@@ -3177,6 +3203,10 @@ export const characters: Character[] = [
       {
         revealCh: 405,
         text: "Finally on-page: playing Square-X and slots in the Tier 1 VIP casino, hair down, no makeup, monologuing about his 'normal tastes'. The 'Hisoka' the mafia caught on Tier 3 was Bonolenov in disguise — a decoy Chrollo planted so the families would stand down. Chrollo privately reckons the real one reached Tier 1 as a VIP on some prince's invitation.",
+      },
+      {
+        revealCh: 420,
+        text: "Fifteen chapters after the casino reveal, he is exactly where he was left — and the lockdown's missing garrison is his work: patrols dead across the floor, throats slit before anyone could fire, the killer back at a Swamp Ball pachinko machine mid-crisis. When a Zetsu-concealed stranger stalks him, he vanishes off the machine, appears at the man's back, and cuts him down with a disappointed shrug — 'I thought you'd be a Spider' — before clocking the victim as a prince and dismissing the body with a Dragon Quest line. The kill is Laplace's Devil's phantom, though he has no way to know it: what he takes for a dead prince is Tserriednich's illusion, and the sharp glance he throws afterward — at what might be the invisible Nen beast — is the chapter's unresolved tease. His own verdict on the night: 'a prince-slayer... not a bad ring to it', but killing this lot brings no thrill.",
       },
     ],
     monogram: "HI",
@@ -3207,6 +3237,11 @@ export const characters: Character[] = [
         status: "alive",
         note: "Confirmed aboard, at large on Tier 1; no faction has actually engaged him.",
       },
+      {
+        ch: 420,
+        status: "alive",
+        note: "Still holding the casino floor through the lockdown, its garrison quietly dead by his blade. First engaged at last — by the officially dead Fourth Prince — and walked away believing he killed him; the corpse was a phantom. Whether his parting glance found the invisible Nen beast is unconfirmed.",
+      },
     ],
     locationHistory: [
       {
@@ -3219,6 +3254,11 @@ export const characters: Character[] = [
         locationId: "tier-1-casino",
         note: "VIP casino; how he obtained Tier 1 access is unconfirmed — Chrollo guesses a prince's invitation.",
       },
+      {
+        ch: 420,
+        locationId: "tier-1-casino",
+        note: "Never left: on the same floor through Special Martial Law and the Tier 1 lockdown, the patrolling garrison dead around his machine of choice.",
+      },
     ],
     objectives: [
       {
@@ -3227,7 +3267,7 @@ export const characters: Character[] = [
         revealCh: 357,
       },
     ],
-    chapterAppearances: [351, 352, 353, 354, 355, 356, 357, 405],
+    chapterAppearances: [351, 352, 353, 354, 355, 356, 357, 405, 420],
     tags: ["nen-user", "hunted"],
   },
   {

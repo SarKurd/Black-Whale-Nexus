@@ -4970,4 +4970,83 @@ export const events: StoryEvent[] = [
     ],
     confidence: "canonical",
   },
+  {
+    id: "ev-420-emptied-casino",
+    title: "The garrison that wasn't there",
+    summary:
+      "Working down from the gaming floor toward the emergency exit, Tserriednich reads the casino's silence as a professional: no relay point during a heightened alert, no intermediate defensive posts, the complete absence of soldiers even after any VIP evacuation — abnormal, a basic line of defense simply missing. His worry that the exits were sealed with reinforced barrier material lasts until he finds the garrison: royal-army patrols dead across the floor, here and here, every throat slit with a sharp blade and not a single spent casing anywhere — killed before they even had a chance to fire. His working theory is mafia: the 3rd or 7th Prince's private forces (Zhang Lei's or Luzurus's), caught fleeing to the lower tiers when Special Martial Law dropped, fielding 'killers of this caliber'. Then he registers the room's one living occupant — a man serenely feeding a Swamp Ball pachinko machine in the middle of the lockdown — and reverses the causality: maybe he's not ignoring the missing military. Maybe he removed it, and stayed to play.",
+    chapter: 420,
+    day: 12,
+    kind: "investigation",
+    locationId: "tier-1-casino",
+    participantIds: ["tserriednich"],
+    storylineIds: ["tserriednich-nen", "troupe-hisoka-hunt"],
+    consequences: [
+      "The missing casino garrison is accounted for: dead by blade, without firing, by the gambler still on the floor",
+      "Every faction hunting Hisoka is fourteen chapters stale — the reader learns he never left the chapter-405 casino",
+    ],
+    evidence: [
+      {
+        chapter: 420,
+        note: "The defensive-line analysis, the slit throats, the no-casings observation, the mafia hypothesis, and the 'maybe it's the other way around' reversal are all Tserriednich's on-page monologue. The victims are anonymous soldiers: no registry entries, no death records.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "ev-420-hisoka-clash",
+    title: "Encounter: ten seconds against the monster",
+    summary:
+      "Tserriednich decides to test the gambler: close inside his 36 meters under a Zetsu he judges perfect, greet him with a bullet, then activate Laplace's Devil and grade the reaction. He never gets the greeting off. The man vanishes from the machine mid-approach and reappears at his back — 'Hey. Who are you?' — and the prince activates on reflex. The Ephemeral Ten Seconds shows him his own death: he spins, and is cut before he can follow the motion, bleeding out while the stranger dismisses him — 'What a letdown. I thought you'd be a Spider, because you're using Zetsu' — recognizes a prince in an odd place, and delivers a Dragon Quest epitaph over the body: 'No response. It seems to be nothing but a corpse.' Then the replay, on the illusion's rails: the real prince scrambles clear while the deceived Hisoka cuts down the script's phantom and repeats every predicted line over a corpse that isn't there. From cover, huffing, Tserriednich watches the amusement curdle — 'A prince-slayer... not a bad ring to it. But it's not like I get excited from killing this lot' — and then Hisoka's gaze snaps up at something, and the prince's blood runs cold: did he notice the Nen beast? Impossible — the ability is completely meaningless if the enemy can see it. What erupts instead is ecstatic laughter at the gap just demonstrated: an outright monster, a completely different level ('I pissed myself a little!!'). He will not merely reach those heights — he will exceed them, and that means Zetsu activation under one second, fast enough to trigger from a fighting stance in real combat. The corpses around him, he now sees, died exactly the way 'he' just did: the Swampire (name tentative — the Swamp Ball player, 沼男) killed all the patrolling soldiers and went back to gambling. His first-ever humiliation converts on the spot into a rush of motivation.",
+    chapter: 420,
+    day: 12,
+    kind: "battle",
+    locationId: "tier-1-casino",
+    participantIds: ["tserriednich", "hisoka"],
+    storylineIds: [
+      "tserriednich-nen",
+      "troupe-hisoka-hunt",
+      "special-martial-law",
+    ],
+    consequences: [
+      "Laplace's Devil pays out as life insurance: the vision died in the prince's place, and the sustained illusion fed Hisoka a phantom corpse — Hisoka currently believes he killed a prince",
+      "Neither man knows who he met: Hisoka guessed 'Spider' from the Zetsu and settled on 'a prince'; Tserriednich files the monster as 'the Swampire (tentative)'",
+      "The tease stands unresolved: Hisoka's sharp glance may or may not have found the invisible beast-antenna",
+      "A new vow with a number on it: sub-one-second Zetsu activation, born of first-ever humiliation",
+    ],
+    evidence: [
+      {
+        chapter: 420,
+        note: "The ambush plan, the vision of his own death, the phantom-corpse replay, Hisoka's Spider/prince/corpse lines, the noticing glance and Tserriednich's panic, the laughing resolution, and the Swampire deduction are all on-page. The Dragon Quest line matches the game's English localization (VD's note); 'Swampire' renders 沼男 (numao), VD's coinage for the swamp-ball addict wordplay. Pre-official sourcing: VoraciousDrake's translation cross-checked against the Yorknew Scans release.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
+  {
+    id: "ev-420-one-more-round",
+    title: "Total encirclement, one round left",
+    summary:
+      "The exit Tserriednich fought his way toward is worthless: outside, the liner sits lit stem to stern against full darkness, ringed by floodlights, vehicles, and troops — 'total encirclement... can't get out, and can't get in either'. The battery is the harder wall: if the drain-to-recharge ratio really runs at his worst-case 23:1, the Nen beast has almost nothing left in reserve, and losing because the battery died would be 'pathetic as hell'. He lays out the retreat options — fall back to the 'penthouse' (the princes' residential block) and rebuild the plan, or lie low somewhere inside the liner, recharge, and wait for an opening — and rejects both: if he drops Zetsu right now, there is enough in the tank for one more full use, and that one round surfaces a different pair of options that can still carry him to his destination. The chapter closes on the vow — 'I am Tserriednich Hui Guo Rou!! A man who doesn't know how to quit...!' — with the destination itself still unspoken.",
+    chapter: 420,
+    day: 12,
+    kind: "decision",
+    locationId: "tier-1",
+    participantIds: ["tserriednich"],
+    storylineIds: ["tserriednich-nen", "special-martial-law"],
+    consequences: [
+      "The casino escape route is dead: the army has the liner's surroundings cordoned from outside, complementing the interior sweep",
+      "Laplace's Devil is down to one deliberate use; Zetsu is dropped to bank it, ending the illusion that still had Hisoka dismissing a corpse",
+      "The destination stays the arc's open question — named as reachable, never as a place",
+    ],
+    evidence: [
+      {
+        chapter: 420,
+        note: "The encirclement spread, the 23:1 reserve math, the two retreat options, the drop-Zetsu-now decision, and the closing vow are all on-page. VD's note: 王子居住区 (the princes' living quarters) carries the katakana reading 'penthouse' here for the first time. The next-installment date is 'to be announced in this magazine' — the chapter ends on an unscheduled hiatus.",
+        confidence: "canonical",
+      },
+    ],
+    confidence: "canonical",
+  },
 ];
