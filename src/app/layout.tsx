@@ -24,7 +24,7 @@ const cinzel = Cinzel({
 export const metadata: Metadata = {
   metadataBase: SITE_URL,
   title: {
-    default: SITE_NAME,
+    default: `${SITE_NAME} — Hunter × Hunter Succession War Archive`,
     template: `%s — ${SITE_NAME}`,
   },
   description: SITE_DESCRIPTION,
@@ -51,12 +51,12 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "/",
     siteName: SITE_NAME,
-    title: SITE_NAME,
+    title: `${SITE_NAME} — Hunter × Hunter Succession War Archive`,
     description: SITE_DESCRIPTION,
   },
   twitter: {
     card: "summary_large_image",
-    title: SITE_NAME,
+    title: `${SITE_NAME} — Hunter × Hunter Succession War Archive`,
     description: SITE_DESCRIPTION,
   },
   robots: {

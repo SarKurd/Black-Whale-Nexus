@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { StaticPageStructuredData } from "@/components/seo/StaticPageStructuredData";
 import { createPageMetadata, STATIC_PAGE_SEO } from "@/lib/seo";
 
 export const metadata: Metadata = createPageMetadata(
@@ -10,5 +11,10 @@ export default function TheoriesLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return children;
+  return (
+    <>
+      <StaticPageStructuredData page={STATIC_PAGE_SEO["/theories"]} />
+      {children}
+    </>
+  );
 }

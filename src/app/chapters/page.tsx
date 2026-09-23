@@ -42,7 +42,9 @@ export default function ChaptersIndexPage() {
     <div>
       <div className="archive-page-header mb-6">
         <div className="intel-label-gold">Incident reports</div>
-        <h1 className="royal-heading text-3xl">Chapter Archive</h1>
+        <h1 className="royal-heading text-3xl">
+          Hunter × Hunter Chapter Archive
+        </h1>
         <p className="mt-1 max-w-2xl text-xs text-muted">
           Filed reports for every covered chapter of the voyage. Reports above
           your clearance stay sealed — not even their titles are written out.

@@ -202,13 +202,16 @@ export default function CommandCenter() {
             <div className="intel-label-gold">
               Kingdom of Kakin · Bureau of Succession Intelligence
             </div>
-            <h1 className="royal-heading mt-3 max-w-2xl text-4xl leading-none sm:text-6xl">
+            <h1 className="royal-heading mt-3 max-w-3xl text-4xl leading-none sm:text-6xl">
               Black Whale Nexus
+              <span className="mt-3 block font-mono text-[0.28em] font-medium uppercase tracking-[0.18em] text-gold-bright">
+                Hunter × Hunter Succession War Archive
+              </span>
             </h1>
             <p className="mt-5 max-w-xl text-sm leading-relaxed text-muted">
-              Live situation archive for the succession war aboard Black Whale
-              No.&nbsp;1. Records reconstructed to your clearance level —
-              nothing appears before the story reveals it.
+              Live situation archive for the Hunter × Hunter succession war
+              aboard Black Whale No.&nbsp;1. Records reconstructed to your
+              clearance level — nothing appears before the story reveals it.
             </p>
           </div>
           <div className="ml-auto min-w-0 max-w-full border-l border-line-strong pl-5 text-right">

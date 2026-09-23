@@ -1,5 +1,9 @@
 <h1 align="center">Black Whale Nexus</h1>
 
+<p align="center">
+  <a href="https://black-whale-nexus.sarbast.dev/"><strong>Explore the live Hunter × Hunter Succession War archive →</strong></a>
+</p>
+
 An interactive intelligence archive for the full Hunter × Hunter **Succession
 War continuity from chapter 340 onward** — from Beyond Netero's Dark Continent
 announcement and the Hisoka–Chrollo deathmatch through the voyage itself: the
@@ -48,6 +52,9 @@ npm run build      # production build
 npm run lint       # biome check
 npx tsx scripts/validate-content.ts   # referential-integrity check for the dataset
 ```
+
+Production metadata uses `SITE_URL` for canonical URLs and
+`SITE_LAST_MODIFIED` for truthful sitemap update dates.
 
 ## Content model
 

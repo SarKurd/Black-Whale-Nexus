@@ -108,7 +108,9 @@ export default function StorylinesPage() {
     <div>
       <div className="archive-page-header mb-6">
         <div className="intel-label-gold">Mission map</div>
-        <h1 className="royal-heading text-3xl">Storyline Explorer</h1>
+        <h1 className="royal-heading text-3xl">
+          Hunter × Hunter Succession War Storylines
+        </h1>
         <p className="mt-1 max-w-2xl text-xs text-muted">
           Every thread of the succession war laid out as parallel rails — hollow
           circles begin a thread, large filled circles mark climaxes, squares

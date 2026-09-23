@@ -96,6 +96,10 @@ export function StorylineFile({ id }: { id: string }) {
   ].filter(({ rid }) => (storylineById.get(rid)?.introducedCh ?? 0) <= ch);
   const currentSummary = currentIntelText(s.summary, ch);
   const showCurrentAnalysis = currentIntelVisible(ch);
+  const pageHeading =
+    s.id === "succession-contest"
+      ? "Hunter × Hunter Succession War: The Succession Contest"
+      : s.name;
 
   return (
     <div className="space-y-4">
@@ -113,7 +117,7 @@ export function StorylineFile({ id }: { id: string }) {
                 style={{ background: s.color }}
                 aria-hidden
               />
-              {s.name}
+              {pageHeading}
             </h1>
           </div>
           <div className="text-right">

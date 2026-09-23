@@ -346,7 +346,7 @@ export function EventChronology() {
         <div>
           <div className="intel-label-gold">Two readings of the record</div>
           <h1 className="royal-heading mt-1 text-3xl sm:text-4xl">
-            Event Archive
+            Succession War Event Archive
           </h1>
           <p className="mt-2 max-w-3xl text-sm leading-relaxed text-muted">
             Follow the story by when incidents happened, or replay it in the

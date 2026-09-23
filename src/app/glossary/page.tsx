@@ -91,7 +91,9 @@ export default function GlossaryPage() {
     <div>
       <div className="archive-page-header mb-6">
         <div className="intel-label-gold">Reference · Codex</div>
-        <h1 className="royal-heading text-3xl">Glossary</h1>
+        <h1 className="royal-heading text-3xl">
+          Hunter × Hunter Succession War Glossary
+        </h1>
         <p className="mt-1 max-w-2xl text-sm text-muted">
           Working vocabulary of the succession war. Terms the story has not yet
           introduced at chapter {ch} are withheld.

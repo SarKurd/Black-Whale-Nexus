@@ -1,5 +1,7 @@
 import {
   absoluteUrl,
+  COMIC_SERIES_ID,
+  COMIC_SERIES_SCHEMA,
   type SeoPage,
   SITE_DESCRIPTION,
   SITE_NAME,
@@ -22,12 +24,18 @@ export function SiteStructuredData() {
     <JsonLd
       data={{
         "@context": "https://schema.org",
-        "@type": "WebSite",
-        "@id": `${absoluteUrl("/")}#website`,
-        url: absoluteUrl("/"),
-        name: SITE_NAME,
-        description: SITE_DESCRIPTION,
-        inLanguage: "en",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": `${absoluteUrl("/")}#website`,
+            url: absoluteUrl("/"),
+            name: SITE_NAME,
+            description: SITE_DESCRIPTION,
+            inLanguage: "en",
+            about: { "@id": COMIC_SERIES_ID },
+          },
+          COMIC_SERIES_SCHEMA,
+        ],
       }}
     />
   );
@@ -40,6 +48,9 @@ export function PageStructuredData({ page }: { page: SeoPage }) {
     ...(page.path === "/" ? [] : [{ name: page.heading, path: page.path }]),
   ];
   const pageUrl = absoluteUrl(page.path);
+  const mainEntityRef = page.mainEntity
+    ? { "@id": page.mainEntity["@id"] }
+    : undefined;
 
   return (
     <JsonLd
@@ -56,6 +67,9 @@ export function PageStructuredData({ page }: { page: SeoPage }) {
             isPartOf: {
               "@id": `${absoluteUrl("/")}#website`,
             },
+            ...(mainEntityRef
+              ? { mainEntity: mainEntityRef, about: mainEntityRef }
+              : {}),
           },
           {
             "@type": "BreadcrumbList",
@@ -67,6 +81,7 @@ export function PageStructuredData({ page }: { page: SeoPage }) {
               item: absoluteUrl(item.path),
             })),
           },
+          ...(page.mainEntity ? [page.mainEntity] : []),
         ],
       }}
     />

@@ -37,7 +37,9 @@ function WebPageFallback() {
     <div>
       <div className="archive-page-header mb-4">
         <div className="intel-label-gold">Investigation board</div>
-        <h1 className="royal-heading text-3xl">Relationship Web</h1>
+        <h1 className="royal-heading text-3xl">
+          Succession War Relationship Web
+        </h1>
         <p className="max-w-3xl text-xs text-muted">
           {presetById.get("all")?.description} — Solid edges are public and
           confirmed, dashed are secret, dotted are suspected. Drag to pan,
@@ -151,7 +153,9 @@ function WebPageInner() {
     <div>
       <div className="archive-page-header mb-4">
         <div className="intel-label-gold">Investigation board</div>
-        <h1 className="royal-heading text-3xl">Relationship Web</h1>
+        <h1 className="royal-heading text-3xl">
+          Succession War Relationship Web
+        </h1>
         <p className="max-w-3xl text-xs text-muted">
           {presetById.get(presetId)?.description} — Solid edges are public and
           confirmed, dashed are secret, dotted are suspected. Drag to pan,

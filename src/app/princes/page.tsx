@@ -86,7 +86,7 @@ export default function RoyalWarCouncilPage() {
         <div className="intel-label-gold">
           Registry · The royal line of Kakin
         </div>
-        <h1 className="royal-heading text-3xl">Royal War Council</h1>
+        <h1 className="royal-heading text-3xl">The Fourteen Kakin Princes</h1>
         <p className="mt-1 max-w-2xl text-sm text-muted">
           The fourteen heirs of Nasubi Hui Guo Rou, ranked by birth order and
           tracked through the succession war. All assessments reconstructed to

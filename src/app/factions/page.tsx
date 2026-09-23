@@ -74,7 +74,9 @@ export default function FactionsPage() {
     <div>
       <div className="archive-page-header mb-6">
         <div className="intel-label-gold">Registry · Organizations</div>
-        <h1 className="royal-heading text-3xl">Faction Registry</h1>
+        <h1 className="royal-heading text-3xl">
+          Hunter × Hunter Succession War Factions
+        </h1>
         <p className="mt-1 max-w-2xl text-sm text-muted">
           Every organized power aboard the whale, filed by allegiance.
           Organizations not yet surfaced at chapter {ch} are withheld.

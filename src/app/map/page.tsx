@@ -27,7 +27,7 @@ function MapPageFallback() {
       <div className="archive-page-header mb-6 flex flex-wrap items-end justify-between gap-3">
         <div>
           <div className="intel-label-gold">Deck plans · conceptual</div>
-          <h1 className="royal-heading text-3xl">Tactical Blueprint</h1>
+          <h1 className="royal-heading text-3xl">Black Whale No. 1 Map</h1>
         </div>
         <div className="flex w-full items-center gap-2 border-y border-line py-2 sm:w-auto sm:border-0 sm:py-0">
           <span className="intel-label">Voyage replay</span>
@@ -188,7 +188,7 @@ function MapPageInner() {
       <div className="archive-page-header mb-6 flex flex-wrap items-end justify-between gap-3">
         <div>
           <div className="intel-label-gold">Deck plans · conceptual</div>
-          <h1 className="royal-heading text-3xl">Tactical Blueprint</h1>
+          <h1 className="royal-heading text-3xl">Black Whale No. 1 Map</h1>
         </div>
         <div className="flex w-full items-center gap-2 border-y border-line py-2 sm:w-auto sm:border-0 sm:py-0">
           <span className="intel-label">Voyage replay</span>

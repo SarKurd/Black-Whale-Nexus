@@ -122,7 +122,9 @@ export default function NenPage() {
     <div>
       <div className="archive-page-header mb-6">
         <div className="intel-label-gold">Nen research archive</div>
-        <h1 className="royal-heading text-3xl">Ability Files</h1>
+        <h1 className="royal-heading text-3xl">
+          Hunter × Hunter Nen Abilities
+        </h1>
         <p className="mt-2 max-w-3xl text-xs text-muted">
           Every observed or inferred Nen phenomenon aboard the Black Whale,
           filed by classification. Files unlock as your clearance chapter

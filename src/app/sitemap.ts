@@ -7,15 +7,14 @@ import {
   princes,
   storylines,
 } from "@/lib/db";
-import { absoluteUrl, STATIC_PAGE_SEO } from "@/lib/seo";
+import { absoluteUrl, SITE_LAST_MODIFIED, STATIC_PAGE_SEO } from "@/lib/seo";
 
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages = Object.values(STATIC_PAGE_SEO).map((page) => ({
     url: absoluteUrl(page.path),
-    changeFrequency: "weekly" as const,
-    priority: page.path === "/" ? 1 : 0.8,
+    lastModified: SITE_LAST_MODIFIED,
   }));
 
   const detailPages = [
@@ -27,8 +26,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...chapters.map((chapter) => `/chapters/${chapter.number}`),
   ].map((path) => ({
     url: absoluteUrl(path),
-    changeFrequency: "monthly" as const,
-    priority: 0.6,
+    lastModified: SITE_LAST_MODIFIED,
   }));
 
   return [...staticPages, ...detailPages];
