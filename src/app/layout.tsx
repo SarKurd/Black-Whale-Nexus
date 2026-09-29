@@ -85,6 +85,11 @@ export default function RootLayout({
       <body className="min-h-full">
         <SiteStructuredData />
         <AppShell>{children}</AppShell>
+        <script
+          type="module"
+          src="https://static.cloudflareinsights.com/beacon.min.js"
+          data-cf-beacon='{"token": "9a4f20de5acb4fa4871aa058bc9b0b7f"}'
+        />
       </body>
     </html>
   );
