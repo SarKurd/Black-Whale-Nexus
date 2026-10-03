@@ -7,9 +7,18 @@ import {
   princes,
   storylines,
 } from "@/lib/db";
-import { absoluteUrl, SITE_LAST_MODIFIED, STATIC_PAGE_SEO } from "@/lib/seo";
+import {
+  abilitySeo,
+  absoluteUrl,
+  characterSeo,
+  type SeoPage,
+  SITE_LAST_MODIFIED,
+  STATIC_PAGE_SEO,
+} from "@/lib/seo";
 
 export const dynamic = "force-static";
+
+const isIndexable = (page: SeoPage) => page.indexable !== false;
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages = Object.values(STATIC_PAGE_SEO).map((page) => ({
@@ -18,10 +27,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   const detailPages = [
-    ...characters.map((character) => `/characters/${character.id}`),
+    ...characters
+      .map(characterSeo)
+      .filter(isIndexable)
+      .map((page) => page.path),
     ...princes.map((prince) => `/princes/${prince.id}`),
     ...factions.map((faction) => `/factions/${faction.id}`),
-    ...nenAbilities.map((ability) => `/nen/${ability.id}`),
+    ...nenAbilities
+      .map(abilitySeo)
+      .filter(isIndexable)
+      .map((page) => page.path),
     ...storylines.map((storyline) => `/storylines/${storyline.id}`),
     ...chapters.map((chapter) => `/chapters/${chapter.number}`),
   ].map((path) => ({

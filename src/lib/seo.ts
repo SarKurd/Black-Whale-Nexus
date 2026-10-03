@@ -39,6 +39,54 @@ export interface SeoPage {
   };
   /** Primary schema.org entity described by this page. */
   mainEntity?: SeoEntity;
+  /**
+   * False for detail pages too thin to stand alone in search. They stay
+   * crawlable (`noindex, follow`) and drop out of the sitemap.
+   */
+  indexable?: boolean;
+}
+
+// Unique prose a detail page needs before it is offered to search engines.
+// Measured on the statically rendered view only (the default Dossier tab for
+// characters), so pages graduate automatically as their records grow.
+export const MIN_INDEXABLE_WORDS = 60;
+
+function countWords(parts: (string | undefined)[]): number {
+  return parts.reduce(
+    (total, part) => total + (part?.split(/\s+/).filter(Boolean).length ?? 0),
+    0,
+  );
+}
+
+export function characterProseWords(character: Character): number {
+  return countWords([
+    character.role,
+    character.bio,
+    ...(character.bioReveals ?? []).map((reveal) => reveal.text),
+    ...(character.objectives ?? []).map((objective) => objective.text),
+    ...(character.secrets ?? []).map((secret) => secret.text),
+    ...(character.falseBeliefs ?? []).flatMap((belief) => [
+      belief.text,
+      belief.truth,
+    ]),
+    ...(character.possessions ?? []).map((possession) => possession.text),
+  ]);
+}
+
+export function abilityProseWords(ability: NenAbility): number {
+  return countWords([
+    ability.description,
+    ability.activation,
+    ability.cost,
+    ability.range,
+    ability.targets,
+    ...(ability.conditions ?? []),
+    ...(ability.restrictions ?? []),
+    ...ability.effects,
+    ...(ability.weaknesses ?? []),
+    ...(ability.counters ?? []),
+    ...(ability.uses ?? []).map((use) => use.note),
+  ]);
 }
 
 export const COMIC_SERIES_ID = `${SITE_URL.origin}/#hunter-x-hunter-series`;
@@ -86,6 +134,9 @@ export function createPageMetadata(page: SeoPage): Metadata {
     alternates: {
       canonical: page.path,
     },
+    ...(page.indexable === false && {
+      robots: { index: false, follow: true },
+    }),
     openGraph: {
       type: "website",
       locale: "en_US",
@@ -242,6 +293,7 @@ export function characterSeo(character: Character): SeoPage {
     description: `${character.role}. ${character.bio}`,
     path,
     section: { name: "Characters", path: "/characters" },
+    indexable: characterProseWords(character) >= MIN_INDEXABLE_WORDS,
     mainEntity: {
       "@type": "Person",
       "@id": `${absoluteUrl(path)}#character`,
@@ -325,6 +377,7 @@ export function abilitySeo(ability: NenAbility): SeoPage {
     description: ability.description,
     path,
     section: { name: "Nen Abilities", path: "/nen" },
+    indexable: abilityProseWords(ability) >= MIN_INDEXABLE_WORDS,
     mainEntity: {
       "@type": "Thing",
       "@id": `${absoluteUrl(path)}#nen-ability`,
